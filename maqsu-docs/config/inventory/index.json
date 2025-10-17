@@ -1,0 +1,47 @@
+{
+  "route": "inventory",
+  "label": "Inventory",
+  "title": "Inventory",
+  "description": "Just new to MAQSU? Get off to a flying start, learn how to create an company, customers, vendors, chart of accounts, add security to your account.",
+  "image": "/img/feature/recycle.png",
+  "blocks": [
+    {
+      "title": "Inventory",
+      "subtitle": "Documentations",
+      "document": "docs/intro.mdx",
+      "documentLabel": "MAQSU Tutorial - 5min ⏱️",
+      "_template": "hero"
+    },
+    {
+      "items": [
+        {
+          "title": "Overviews",
+          "description": "7 articals\n",
+          "image": ""
+        },
+        {
+          "title": "Operations",
+          "description": "8 articals\n",
+          "link": "blog/welcome",
+          "image": ""
+        },
+        {
+          "title": "Reporting",
+          "description": "15 articals\n",
+          "link": "blog/welcome",
+          "image": ""
+        },
+        {
+          "title": "Configurations",
+          "description": "3 articals\n"
+        }
+      ],
+      "_template": "features"
+    },
+    {
+      "title": "Watch the demo",
+      "url": "https://www.youtube.com/watch?v=2bHBwM54UB8",
+      "_template": "youTubeEmbed"
+    }
+  ]
+}

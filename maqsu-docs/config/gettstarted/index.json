@@ -1,0 +1,84 @@
+{
+  "label": "Getting Started",
+  "title": "Getting Started",
+  "description": "Just new to MAQSU? Get off to a flying start, learn how to create an company, customers, vendors, chart of accounts, add security to your account.",
+  "image": "/img/feature/play.png",
+  "blocks": [
+    {
+      "title": "Getting Started",
+      "subtitle": "Documentations",
+      "document": "docs/intro.mdx",
+      "documentLabel": "MAQSU Tutorial - 5min ⏱️",
+      "_template": "hero"
+    },
+    {
+      "items": [
+        {
+          "title": "Introduction",
+          "description": "7 articals\n",
+          "link": "",
+          "image": ""
+        },
+        {
+          "title": "User Account",
+          "description": "8 articals\n",
+          "link": "",
+          "image": "",
+          "items": [
+            {
+              "title": "User login",
+              "description": "This page is about user login to system.\n"
+            },
+            {
+              "title": "Reset User Password",
+              "description": ""
+            },
+            {
+              "title": "Account Security",
+              "description": ""
+            }
+          ]
+        },
+        {
+          "title": "Interface",
+          "description": "15 articals\n",
+          "link": "blog/welcome",
+          "image": ""
+        },
+        {
+          "title": "Setup Master Data",
+          "description": "18 articals\n",
+          "image": "",
+          "items": [
+            {
+              "title": "Company",
+              "description": ""
+            },
+            {
+              "title": "Customers and Vendors",
+              "description": ""
+            },
+            {
+              "title": "Chart of Accounts",
+              "description": ""
+            },
+            {
+              "title": "Products",
+              "description": ""
+            },
+            {
+              "title": "Product Categories",
+              "description": ""
+            }
+          ]
+        }
+      ],
+      "_template": "features"
+    },
+    {
+      "title": "Watch the demo",
+      "url": "https://www.youtube.com/watch?v=2bHBwM54UB8",
+      "_template": "youTubeEmbed"
+    }
+  ]
+}

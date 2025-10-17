@@ -1,0 +1,61 @@
+{
+  "label": "Homepage",
+  "title": "MAQSU",
+  "description": "Description will go into a meta tag in <head />",
+  "image": "/img/undraw_docusaurus_mountain.svg",
+  "blocks": [
+    {
+      "title": "G'Day. How can we help?",
+      "subtitle": "Documentations",
+      "document": "docs/intro.mdx",
+      "documentLabel": "MAQSU Tutorial - 5min ⏱️",
+      "_template": "hero"
+    },
+    {
+      "items": [
+        {
+          "title": "Getting Started",
+          "description": "12 articals\n",
+          "link": "getting-started",
+          "image": "/img/feature/play.png"
+        },
+        {
+          "title": "Sales",
+          "description": "7 articals\n",
+          "link": "sales",
+          "image": "/img/feature/consulting.png"
+        },
+        {
+          "title": "Purchase",
+          "description": "8 articals\n",
+          "link": "purchase",
+          "image": "/img/feature/credit-card (1).png"
+        },
+        {
+          "title": "Accounting",
+          "description": "15 articals\n",
+          "link": "accounting",
+          "image": "/img/feature/reporting.png"
+        },
+        {
+          "title": "Inventory",
+          "description": "18 articals\n",
+          "link": "inventory",
+          "image": "/img/feature/commercial.png"
+        },
+        {
+          "title": "Settings",
+          "description": "10 articals\n",
+          "link": "settings",
+          "image": "/img/feature/setting.png"
+        }
+      ],
+      "_template": "features"
+    },
+    {
+      "title": "Watch the demo",
+      "url": "https://www.youtube.com/watch?v=2bHBwM54UB8",
+      "_template": "youTubeEmbed"
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "route": "settings",
+  "label": "Settings",
+  "title": "Settings",
+  "description": "Just new to MAQSU? Get off to a flying start, learn how to create an company, customers, vendors, chart of accounts, add security to your account.",
+  "image": "/img/feature/setting.png",
+  "blocks": [
+    {
+      "title": "Settings",
+      "subtitle": "Documentations",
+      "document": "docs/intro.mdx",
+      "documentLabel": "MAQSU Tutorial - 5min ⏱️",
+      "_template": "hero"
+    },
+    {
+      "items": [
+        {
+          "title": "General Settings",
+          "description": "7 articals\n",
+          "image": ""
+        },
+        {
+          "title": "Sales",
+          "description": "8 articals\n",
+          "link": "blog/welcome",
+          "image": ""
+        },
+        {
+          "title": "Purchase",
+          "description": "15 articals\n",
+          "link": "blog/welcome",
+          "image": ""
+        },
+        {
+          "title": "Accounting",
+          "description": "3 articals\n"
+        },
+        {
+          "title": "Inventory",
+          "description": "12 articals\n"
+        },
+        {
+          "title": "Users & Roles",
+          "description": "11 articals\n"
+        },
+        {
+          "title": "Integrations",
+          "description": "25 articals\n"
+        },
+        {
+          "title": "Import & Export",
+          "description": "21 articals\n"
+        },
+        {
+          "title": "API",
+          "description": "5 articals\n"
+        }
+      ],
+      "_template": "features"
+    },
+    {
+      "title": "Watch the demo",
+      "url": "https://www.youtube.com/watch?v=2bHBwM54UB8",
+      "_template": "youTubeEmbed"
+    }
+  ]
+}

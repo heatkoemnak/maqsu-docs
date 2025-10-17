@@ -1,0 +1,112 @@
+{
+  "route": "sales",
+  "label": "Sales",
+  "title": "Sales",
+  "description": "Just new to MAQSU? Get off to a flying start, learn how to create an company, customers, vendors, chart of accounts, add security to your account.",
+  "image": "/img/feature/consulting.png",
+  "blocks": [
+    {
+      "title": "Sales",
+      "subtitle": "Manage entire sale process here.",
+      "document": "docs/intro.mdx",
+      "documentLabel": "",
+      "_template": "hero"
+    },
+    {
+      "items": [
+        {
+          "title": "Overviews",
+          "description": "In MAQSU ERP Software, the **Sales Module** is a core business application designed to manage the entire sales process — from creating quotations to confirming sales orders, delivering products, and issuing invoices. It helps businesses streamline their sales operations, track customer interactions, and improve efficiency across departments.\n",
+          "link": "/sales/overviews",
+          "image": "",
+          "items": [
+            {
+              "title": "🎯 Purpose",
+              "description": ""
+            },
+            {
+              "title": "Key Functions",
+              "description": "1. Quotation Management\n\n   Create and send professional quotes to customers.\n\n   Track quotation status (e.g., draft, sent, accepted, or rejected).\n\n   Convert accepted quotations into sales orders in one click.\n\n   Sales Order Management\n\n   Confirm and manage customer orders.\n\n   Automatically generate delivery orders and invoices.\n\n   Monitor order progress from quotation to payment.\n\n   Customer Management (CRM Integration)\n\n   Maintain customer profiles and history.\n\n   Analyze sales trends and customer preferences.\n\n   Product & Pricing Control\n\n   Manage product catalog, pricing rules, and discounts.\n\n   Set up price lists and taxes based on customer or region.\n\n   Delivery & Invoicing Integration\n\n   Link sales orders with stock operations for delivery.\n\n   Generate invoices automatically once goods are delivered.\n\n   Reporting & Analytics\n\n   Access real-time sales performance reports.\n\n   Analyze revenue, profit margins, and salesperson performance.\n"
+            },
+            {
+              "title": "Process Flow",
+              "description": ""
+            }
+          ]
+        },
+        {
+          "title": "Orders1",
+          "description": "In this section, you will learn how to create **quotations** and **sales orders** — two essential steps in the sales process. By the end of this section, you will understand how to efficiently manage quotations and sales orders to streamline your company’s sales workflow.\n",
+          "link": "/sales/orders",
+          "image": "",
+          "items": [
+            {
+              "link": "orders/quotation",
+              "title": "Quotations",
+              "related_page": "src/pages/sales/orders/quotations.mdx",
+              "description": "A **quotation** is a formal offer from a seller to a buyer showing the price and details of goods or services before a sale happens.\n"
+            },
+            {
+              "link": "orders/sales-orders",
+              "title": "Sales Orders",
+              "description": "**A Sale Order (SO)** is a commercial document issued by a seller (a company or business) to confirm a customer's purchase request. It lists the products or services the buyer wants to purchase, their quantities, prices, terms, and delivery details.\n"
+            }
+          ]
+        },
+        {
+          "title": "Reporting",
+          "description": "The **Sales Reporting** feature in MAQSU ERP provides a powerful and insightful way to analyze your company’s sales performance. It helps managers and sales teams make informed decisions by displaying real-time data on sales activities, revenues, customers, and products.\n",
+          "link": "blog/welcome",
+          "image": "",
+          "items": [
+            {
+              "title": "Sales Analysis",
+              "description": ""
+            },
+            {
+              "title": "Sales Register",
+              "description": ""
+            }
+          ]
+        },
+        {
+          "title": "Settings",
+          "description": "The **Sales Settings** section in MAQSU ERP allows users to configure how the Sales Module behaves according to the company’s policies and workflow. It provides options to customize quotation management, pricing, invoicing, and integration with other modules like inventory and accounting. Proper configuration of sales settings ensures that your sales operations run smoothly, accurately, and in line with business requirements.\n",
+          "image": "",
+          "items": [
+            {
+              "title": "Product Catalog",
+              "description": ""
+            },
+            {
+              "title": "Pricing",
+              "description": ""
+            },
+            {
+              "title": "Quotations & Orders",
+              "description": ""
+            },
+            {
+              "title": "Shipping",
+              "description": ""
+            },
+            {
+              "title": "Invoicing",
+              "description": ""
+            },
+            {
+              "title": "Sale Barcode Scanner",
+              "description": ""
+            }
+          ]
+        }
+      ],
+      "_template": "features"
+    },
+    {
+      "title": "Watch the demo",
+      "url": "https://www.youtube.com/watch?v=2bHBwM54UB8",
+      "_template": "youTubeEmbed"
+    }
+  ]
+}

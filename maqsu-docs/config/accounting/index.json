@@ -1,0 +1,67 @@
+{
+  "route": "accounting",
+  "label": "Accounting",
+  "title": "Accounting",
+  "description": "Just new to MAQSU? Get off to a flying start, learn how to create an company, customers, vendors, chart of accounts, add security to your account.",
+  "image": "/img/feature/reporting.png",
+  "blocks": [
+    {
+      "title": "Accounting",
+      "subtitle": "Documentations",
+      "document": "docs/intro.mdx",
+      "documentLabel": "MAQSU Tutorial - 5min ⏱️",
+      "_template": "hero"
+    },
+    {
+      "items": [
+        {
+          "title": "Overviews",
+          "description": "7 articals\n",
+          "image": ""
+        },
+        {
+          "title": "Configurations",
+          "description": "5 articals\n"
+        },
+        {
+          "title": "Account Revievable",
+          "description": "8 articals\n",
+          "link": "blog/welcome",
+          "image": ""
+        },
+        {
+          "title": "Account Payable",
+          "description": "15 articals\n",
+          "link": "blog/welcome",
+          "image": ""
+        },
+        {
+          "title": "Journal Entry",
+          "description": "3 articals\n"
+        },
+        {
+          "title": "AI OCR",
+          "description": "12 articals\n"
+        },
+        {
+          "title": "Managements",
+          "description": "11 articals\n"
+        },
+        {
+          "title": "Reporting",
+          "description": "25 articals\n"
+        },
+        {
+          "title": "Compliance",
+          "description": "21 articals\n"
+        }
+      ],
+      "_template": "features"
+    },
+    {
+      "title": "Watch the demo",
+      "url": "https://www.youtube.com/watch?v=2bHBwM54UB8",
+      "_template": "youTubeEmbed"
+    }
+  ]
+}
