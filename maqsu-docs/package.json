@@ -27,6 +27,7 @@
     "@pinecone-database/pinecone": "^6.1.2",
     "@supabase/supabase-js": "^2.75.0",
     "@tinacms/cli": "^1.10.2",
+    "@tinacms/datalayer": "^1.4.1",
     "axios": "^1.12.2",
     "body-parser": "^2.2.0",
     "chalk": "^4.1.2",
@@ -45,6 +46,7 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "tinacms": "^2.8.2",
+    "tinacms-authjs": "^12.0.0",
     "title": "^3.5.3"
   },
   "devDependencies": {

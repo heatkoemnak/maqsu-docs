@@ -1,5 +1,7 @@
 import React from "react";
-import { defineConfig, TextField } from "tinacms";
+import { defineConfig, TextField,LocalAuthProvider } from "tinacms";
+import { UsernamePasswordAuthJSProvider } from 'tinacms-authjs/dist/tinacms'
+
 import { ReferenceField } from "tinacms";
 import { FeaturesBlockTemplate } from "../src/components/Features/template";
 import { HeroBlockTemplate } from "../src/components/Hero/template";
@@ -7,7 +9,9 @@ import { YouTubeEmbedBlockTemplate } from "../src/components/YouTubeEmbed/templa
 import { MDXTemplates } from "../src/theme/template";
 import { docusaurusDate, titleFromSlug } from "../util";
 import title from "title";
+import { ProtobufNullValue } from "@pinecone-database/pinecone/dist/pinecone-generated-ts-fetch/db_data";
 // import { FeaturesBlockTemplate } from "../src/components/Started/FeatureSection/template";
+const isLocal = process.env.TINA_PUBLIC_IS_LOCAL === 'true'
 
 // Your hosting provider likely exposes this as an environment variable
 const branch =
@@ -1277,9 +1281,16 @@ const PagesCollection = {
 };
 
 export default defineConfig({
-  branch,
-  clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID || '9ecacd79-23a8-46cb-8198-3bbe6c466ff0', // Get this from tina.io
-  token: process.env.TINA_TOKEN || '0859726b0cc7f42a535a7fc58e3121782566cf7e', // Get this from tina.io
+  // authProvider: isLocal
+  //   ? new LocalAuthProvider()
+  //   : new UsernamePasswordAuthJSProvider(),
+  // apiURL: "http://localhost:4001", // local Tina API
+  // client: {
+  //   skip: true, // disables Tina Cloud
+  // },
+  branch: process.env.GIT_BRANCH || "main",
+  clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID,
+  token: process.env.TINA_TOKEN,
   build: {
     outputFolder: "admin",
     publicFolder: "static",
