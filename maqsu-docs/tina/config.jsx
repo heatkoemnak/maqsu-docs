@@ -11,7 +11,6 @@ import { docusaurusDate, titleFromSlug } from "../util";
 import title from "title";
 import { ProtobufNullValue } from "@pinecone-database/pinecone/dist/pinecone-generated-ts-fetch/db_data";
 // import { FeaturesBlockTemplate } from "../src/components/Started/FeatureSection/template";
-const isLocal = process.env.TINA_PUBLIC_IS_LOCAL === 'true'
 
 // Your hosting provider likely exposes this as an environment variable
 const branch =
@@ -805,6 +804,7 @@ const HomepageCollection = {
   ],
 };
 
+
 const GettingStartedCollection = {
   name: "gettstarted",
   label: "Getting Started",
@@ -1183,7 +1183,6 @@ const SettingCollection = {
 };
 
 
-
 const subLinkTemplate = {
   name: "features",
   label: "Sub Links",
@@ -1210,6 +1209,7 @@ const subLinkTemplate = {
     },
   ],
 };
+
 
 const PagesCollection = {
   name: "pages",
@@ -1281,13 +1281,6 @@ const PagesCollection = {
 };
 
 export default defineConfig({
-  // authProvider: isLocal
-  //   ? new LocalAuthProvider()
-  //   : new UsernamePasswordAuthJSProvider(),
-  // apiURL: "http://localhost:4001", // local Tina API
-  // client: {
-  //   skip: true, // disables Tina Cloud
-  // },
   branch: process.env.GIT_BRANCH || "main",
   clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID,
   token: process.env.TINA_TOKEN,

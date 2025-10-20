@@ -15,13 +15,13 @@
       "items": [
         {
           "title": "Getting Started",
-          "description": "12 articals\n",
+          "description": "Card description with lots of great facts and interesting details.\n",
           "link": "getting-started",
           "image": "/img/feature/play.png"
         },
         {
           "title": "Sales",
-          "description": "7 articals\n",
+          "description": "Card description with lots of great facts and interesting details.\n",
           "link": "sales",
           "image": "/img/feature/consulting.png"
         },

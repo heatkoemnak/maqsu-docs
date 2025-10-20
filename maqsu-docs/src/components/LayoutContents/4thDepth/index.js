@@ -7,6 +7,7 @@ import Link from "@docusaurus/Link";
 import styles from "../styles.module.css";
 import { motion } from "framer-motion";
 
+
 const containerVariants = {
   hidden: { opacity: 0 },
   show: {
@@ -31,7 +32,6 @@ const itemVariantsSidebar = {
   hidden: { opacity: 0, y: 15 },
   show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
 };
-
 
 export default function FourthDepth({path}) {
     console.log(path);
@@ -100,6 +100,7 @@ export default function FourthDepth({path}) {
                 })}
 
             </div>
+
 
             <div className={clsx( styles.container)}>
                 <motion.div
@@ -196,6 +197,7 @@ export default function FourthDepth({path}) {
                     </motion.div>
                 </motion.div>
             </div>
+
         </>
       );
 }

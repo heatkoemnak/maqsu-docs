@@ -1,0 +1,21 @@
+
+
+.cardSlider{
+    max-width: 80%;
+    margin: 50px auto;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.heading{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.react-card-slider img {
+  display: none;
+}
+.react-card-slider-card {
+  background: #f0f0f0 !important;
+}

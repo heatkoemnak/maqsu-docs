@@ -16,7 +16,6 @@ export default function QuotationsPage() {
           : siteConfig.tagline
       }
     >
-
       {pageData && pageData.blocks ? <LayoutContents route={pageData.route} blocks={pageData.blocks} /> : null}
     </Layout>
   );
