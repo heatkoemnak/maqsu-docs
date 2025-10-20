@@ -31,7 +31,10 @@
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
-
+*{
+  font-family: 'Arial', sans-serif !important;
+  /* color: #2f2f2f !important; */
+}
 .navbar__inner{
   width: 90% !important;
   margin: 0 auto !important;

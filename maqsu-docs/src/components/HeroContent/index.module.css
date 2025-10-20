@@ -9,12 +9,13 @@
   text-align: center;
   position: relative;
   overflow: hidden;
-  background-color: #25435e;
+  background-color: #253749;
 }
 
 @media screen and (max-width: 996px) {
   .heroBanner {
     padding: 2rem;
+    /* margin: 30px; */
   }
 }
 

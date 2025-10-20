@@ -8,16 +8,32 @@
       "title": "Getting Started",
       "subtitle": "Documentations",
       "document": "docs/intro.mdx",
-      "documentLabel": "MAQSU Tutorial - 5min ⏱️",
+      "documentLabel": "",
       "_template": "hero"
     },
     {
       "items": [
         {
           "title": "Introduction",
-          "description": "7 articals\n",
-          "link": "",
-          "image": ""
+          "description": "**MAQSU ERP** is a comprehensive enterprise resource planning (ERP) system designed to streamline and automate various business processes. It offers a wide range of features and functionalities to help organizations manage their operations efficiently.\n",
+          "link": "getting-started/login-to-maqsu",
+          "items": [
+            {
+              "title": "What is MAQSU ERP?",
+              "related_page": "",
+              "description": ""
+            },
+            {
+              "title": "Key Features and Modules",
+              "related_page": "",
+              "description": ""
+            },
+            {
+              "title": "Benefits of Using MAQSU ERP",
+              "related_page": "",
+              "description": ""
+            }
+          ]
         },
         {
           "title": "User Account",
@@ -36,22 +52,50 @@
             {
               "title": "Account Security",
               "description": ""
+            },
+            {
+              "title": "Roles and Permissions",
+              "related_page": "",
+              "description": ""
             }
           ]
         },
         {
-          "title": "Interface",
-          "description": "15 articals\n",
-          "link": "blog/welcome",
-          "image": ""
+          "title": "Navigating the Interface",
+          "description": "![](/img/homepage/home.png)\n",
+          "link": "getting-started/interface",
+          "image": "",
+          "items": [
+            {
+              "title": "Understanding the Dashboard",
+              "related_page": "",
+              "description": ""
+            },
+            {
+              "title": "Sidebar Overview (Main Modules and Menus)",
+              "related_page": "",
+              "description": ""
+            },
+            {
+              "title": "Notifications and Alerts",
+              "related_page": "",
+              "description": ""
+            },
+            {
+              "title": "Profile Settings",
+              "related_page": "",
+              "description": ""
+            }
+          ]
         },
         {
-          "title": "Setup Master Data",
+          "title": "Setup your master data",
           "description": "18 articals\n",
           "image": "",
           "items": [
             {
-              "title": "Company",
+              "title": "Set up company profile",
+              "related_page": "",
               "description": ""
             },
             {
@@ -68,6 +112,116 @@
             },
             {
               "title": "Product Categories",
+              "description": ""
+            }
+          ]
+        },
+        {
+          "title": "Module Overview (Quick Start for Each)",
+          "description": "",
+          "items": [
+            {
+              "title": "Sales",
+              "related_page": "",
+              "description": ""
+            },
+            {
+              "title": "Purchases",
+              "related_page": "",
+              "description": ""
+            },
+            {
+              "title": "Inventory",
+              "related_page": "",
+              "description": ""
+            },
+            {
+              "title": "Accounting",
+              "related_page": "",
+              "description": ""
+            }
+          ]
+        },
+        {
+          "title": "Tips for New Users",
+          "description": "",
+          "items": [
+            {
+              "title": "Keyboard Shortcuts",
+              "related_page": "",
+              "description": ""
+            },
+            {
+              "title": "How to Contact Support",
+              "related_page": "",
+              "description": ""
+            }
+          ]
+        },
+        {
+          "title": "Troubleshooting",
+          "description": "",
+          "items": [
+            {
+              "title": "Common Login Issues",
+              "related_page": "",
+              "description": ""
+            },
+            {
+              "title": "Module Not Loading",
+              "related_page": "",
+              "description": ""
+            },
+            {
+              "title": "Report Formatting Errors",
+              "related_page": "",
+              "description": ""
+            },
+            {
+              "title": "Data Import Errors",
+              "related_page": "",
+              "description": ""
+            }
+          ]
+        },
+        {
+          "title": "FAQs",
+          "description": "",
+          "items": [
+            {
+              "title": "General Questions",
+              "related_page": "",
+              "description": ""
+            },
+            {
+              "title": "Module-Specific FAQs",
+              "related_page": "",
+              "description": ""
+            },
+            {
+              "title": "Licensing and Subscription",
+              "related_page": "",
+              "description": ""
+            }
+          ]
+        },
+        {
+          "title": "Support and Resources",
+          "description": "",
+          "items": [
+            {
+              "title": "How to Submit a Ticket",
+              "related_page": "",
+              "description": ""
+            },
+            {
+              "title": "Community & Forums",
+              "related_page": "",
+              "description": ""
+            },
+            {
+              "title": "Contact Information",
+              "related_page": "",
               "description": ""
             }
           ]
