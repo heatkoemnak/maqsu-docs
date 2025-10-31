@@ -1,6 +1,8 @@
 
 .features{
-  margin: 10px 0;
+  margin: 0;
+  padding: 20px 0;
+  background-color: rgb(245, 245, 245);
 }
  .container_section{
   display: flex;
@@ -21,7 +23,8 @@
   border-radius: 5px;
   padding: 20px;
   width: 100%;
-  border: 1px solid #eaeaea;
+  border: 1px solid #dbd9d9;
+  background-color: #ffffff;
   transition: box-shadow 0.3s ease;
 
 }
@@ -140,6 +143,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 10px 20px;
 }
 
 .paginationLink{

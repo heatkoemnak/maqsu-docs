@@ -32,11 +32,17 @@
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 *{
-  font-family: 'Arial', sans-serif !important;
-  /* color: #2f2f2f !important; */
+  font-family: 'Helvetica', sans-serif !important;
+}
+
+.navbar{
+  position: sticky !important;
+  top: -60px !important;
+  width: 100% !important;
+  margin: 0 !important;
 }
 .navbar__inner{
-  width: 90% !important;
+  width: 80% !important;
   margin: 0 auto !important;
 }
 .navbar__title{
@@ -45,9 +51,7 @@
 .menu__list{
   width: 60% !important;
   margin: 0 auto !important;
-
   margin-top: 30px !important;
-  /* margin-left: 90px !important; */
 }
 
 

@@ -22,7 +22,6 @@
           "items": [
             {
               "title": "Overview of the Sales Process in MAQSU ERP",
-              "related_page": "",
               "description": ""
             },
             {
@@ -35,12 +34,10 @@
             },
             {
               "title": "Sales Workflow Overview",
-              "related_page": "",
               "description": ""
             },
             {
               "title": "Relation to Other Modules",
-              "related_page": "",
               "description": ""
             }
           ]
@@ -51,38 +48,55 @@
           "items": [
             {
               "title": "Navigating to the Sales Menu",
-              "related_page": "",
               "description": ""
             },
             {
               "title": "Understanding the Sales Dashboard",
-              "related_page": "",
               "description": ""
             },
             {
               "title": "Quick Access Shortcuts",
-              "related_page": "",
               "description": ""
             },
             {
               "title": "Filters and Search Bar",
-              "related_page": "",
               "description": ""
             }
           ]
         },
         {
           "title": "Creating a Quotation",
-          "description": ""
+          "description": "",
+          "items": [
+            {
+              "title": "Add products or services",
+              "description": ""
+            },
+            {
+              "title": "Add a  line product",
+              "description": ""
+            },
+            {
+              "title": "Add multi products",
+              "description": ""
+            },
+            {
+              "title": "Add discounts",
+              "description": ""
+            },
+            {
+              "title": "Add taxes",
+              "description": ""
+            }
+          ]
         },
         {
-          "title": "Manage your quote",
+          "title": "Manage Quotations",
           "description": "",
           "link": "/sales/quotations",
           "items": [
             {
               "title": "Quick Access Shortcuts",
-              "related_page": "",
               "description": ""
             },
             {
@@ -95,21 +109,6 @@
             },
             {
               "title": "Filters and Search Bar",
-              "related_page": "",
-              "description": ""
-            }
-          ]
-        },
-        {
-          "title": "Add products or services on quotation",
-          "description": "",
-          "items": [
-            {
-              "title": "Add a  line product",
-              "description": ""
-            },
-            {
-              "title": "Add multi products",
               "description": ""
             }
           ]
@@ -151,7 +150,6 @@
             {
               "link": "orders/sales-orders",
               "title": "Editing or Cancelling a Sales Order",
-              "related_page": "",
               "description": "**A Sale Order (SO)** is a commercial document issued by a seller (a company or business) to confirm a customer's purchase request. It lists the products or services the buyer wants to purchase, their quantities, prices, terms, and delivery details.\n"
             }
           ]
@@ -162,22 +160,18 @@
           "items": [
             {
               "title": "Checking Stock Availability",
-              "related_page": "",
               "description": ""
             },
             {
               "title": "Managing Partial or Full Deliveries",
-              "related_page": "",
               "description": ""
             },
             {
               "title": "Delivery Status Tracking",
-              "related_page": "",
               "description": ""
             },
             {
               "title": "Printing Delivery Slip",
-              "related_page": "",
               "description": ""
             }
           ]
@@ -188,12 +182,10 @@
           "items": [
             {
               "title": "Generating Invoice from Sales Order",
-              "related_page": "",
               "description": ""
             },
             {
               "title": "Editing Invoice Details (Taxes, Discounts, Due Date)",
-              "related_page": "",
               "description": ""
             }
           ]
@@ -218,12 +210,10 @@
             },
             {
               "title": "Viewing Sales Reports by Date",
-              "related_page": "",
               "description": ""
             },
             {
               "title": "Sales Reports by Customers",
-              "related_page": "",
               "description": ""
             }
           ]
@@ -277,22 +267,18 @@
           "items": [
             {
               "title": "How to Duplicate a Sales Order?",
-              "related_page": "",
               "description": ""
             },
             {
               "title": "Can I Edit a Confirmed Quotation?",
-              "related_page": "",
               "description": ""
             },
             {
               "title": "How to Handle Returned Orders?",
-              "related_page": "",
               "description": ""
             },
             {
               "title": "How to Apply Multi-Currency in Sales?",
-              "related_page": "",
               "description": ""
             }
           ]

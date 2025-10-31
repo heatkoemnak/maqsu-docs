@@ -10,6 +10,7 @@ import { useLocation } from "@docusaurus/router";
 export const HeroContent = ({ data, index }) => {
   const location = useLocation();
   const { siteConfig } = useDocusaurusContext();
+  console.log("pathname:",location.pathname);
 
   // Example mapping based on pathname
   const getPageTitle = (pathname) => {

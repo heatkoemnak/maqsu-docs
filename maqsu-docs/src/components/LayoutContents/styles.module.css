@@ -1,50 +1,52 @@
 
-/* Header */
-/* header {
-  padding: 60px;
-  text-align: center;
-  background: #1abc9c;
-  color: white;
-} */
 
 /* Top navigation bar */
 .navbar {
-    width: 80%;
+  width: 70%;
   margin: 15px auto;
   display: flex;
-  color: #aaa;
+  color: #7b3434;
+  position: sticky;
+  top: 0;
+  padding: 20px;
+  z-index: 100;
+  border-bottom: 1px solid #ddd;
+  background-color: #ffffff;
 
 }
 
 /* Navigation bar links */
 .navbar a {
-  color: #aaa;
+  color: #3a1b1b;
   padding: 14px 20px;
+  
   text-decoration: none;
   text-align: center;
 }
 
 /* Change color on hover */
 .navbar a:hover {
-  background-color: #ddd;
+  background-color: #dedede;
   color: black;
+  border-radius: 50px;
+  
 }
 
 /* Column container */
 .container {
-  width: 80%;
+  width: 70%;
   margin: 0 auto;
   gap: 10px;
   display: flex;
   justify-content: space-between;
-  /* flex-wrap: wrap; */
+  flex-wrap: wrap;
 }
 
 /* Sidebar/left column */
 .side {
   flex: 25%;
   max-width: 25%;
-   background-color: rgba(187, 199, 226, 0.3);
+  background-color: rgba(244, 244, 244, 0.3);
   padding: 20px;
 }
 .pageTitle{
@@ -53,29 +55,27 @@
   font-size: 38px;
   font-weight: bold;
 }
+
 /* Main column */
 .main {
   flex: 70%;
-  height: 100vh;
   max-width: 70%;
   overflow-y: scroll;
   background-color: white;
   padding: 20px;
 }
   ::-webkit-scrollbar {
-    width: 0px; /* ✅ Set width */
+    width: 0px; 
   }
 ::-webkit-scrollbar-thumb {
-  background: #f0f0f0; /* ✅ Set color */
-  border-radius: 4px; /* ✅ Roundness */
+  background: #f0f0f0; 
+  border-radius: 4px; 
 
 }
 
 /* Fake image, just for this example */
 .fakeimg {
-  /* background-color: #aaa; */
   width: 100%;
-  /* padding: 20px; */
   color: cadetblue;
   height: 30px;
 }
@@ -84,16 +84,77 @@
   flex-direction: column;
   gap: 2px;
 }
-/* Footer */
-/* footer {
-  padding: 20px;
-  text-align: center;
-  background: #ddd;
-} */
 
 /* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 700px) {
   .container, .navbar {
     flex-direction: column;
   }
+}
+
+
+.features {
+  padding: 2rem 0;
+  display: flex;
+  width: 70%;
+  justify-content: space-between;
+  border-top: 1px solid #e5e7eb;
+}
+.flex{
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.pageNavigation {
+  display: flex;width: 100%;
+  margin: 0 auto;   
+  justify-content: space-between;
+  /* align-items: center; */
+}
+
+.prev_navigation,
+.button_navigation {
+  transition: all 0.2s ease-in-out;
+  padding: 0.75rem 1.25rem;
+  border-radius: 0.75rem;
+  border: 1px solid #ccc;
+}
+
+.prev_navigation:hover,
+.button_navigation:hover {
+  background-color: #e0f2fe;
+  transform: translateY(-2px);
+}
+
+.paginationLink {
+  color: #374151;
+  font-weight: 500;
+}
+.next{
+  text-align: right;
+  font-size: small;
+}
+
+.Link{
+  font-weight: 500;
+  color: #374151;
+  font-size: large;
+}
+.Link:hover{
+  cursor: pointer;
+  text-decoration: none;
+  color: #374151;
+}
+.LinkContainer{
+  padding: 10px;
+  background: transparent;
+  text-decoration: none;
+  border-radius: 10px;
+  border: 1px solid rgb(219, 217, 217);
+}
+.LinkContainer:hover{
+  border: 1px solid gray;
+  border-radius: 10px;
+  padding: 10px;
 }

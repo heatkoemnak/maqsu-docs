@@ -231,30 +231,30 @@ export const FeatureSections = ({ data, index }) => {
           </Link>
         )}
       </div>
- {/* ✅ Pagination controls under card list */}
-{totalPages > 1 && (
-  <div className={clsx("margin-top--lg text--right", styles.paginationContainer)}>
-    <button
-      onClick={handlePrevPage}
-      disabled={currentPage === 1}
-      className={clsx(styles.paginationButton, currentPage === 1 && styles.disabled)}
-    >
-      <HiMiniChevronLeft size={20} />
-    </button>
+      {/* ✅ Pagination controls under card list */}
+      {totalPages > 1 && (
+        <div className={clsx("margin-top--lg text--right", styles.paginationContainer)}>
+          <button
+            onClick={handlePrevPage}
+            disabled={currentPage === 1}
+            className={clsx(styles.paginationButton, currentPage === 1 && styles.disabled)}
+          >
+            <HiMiniChevronLeft size={20} />
+          </button>
 
-    <span className={clsx(styles.paginationText)}>
-      Page {currentPage} / {totalPages}
-    </span>
+          <span className={clsx(styles.paginationText)}>
+            Page {currentPage} / {totalPages}
+          </span>
 
-    <button
-      onClick={handleNextPage}
-      disabled={currentPage === totalPages}
-      className={clsx(styles.paginationButton, currentPage === totalPages && styles.disabled)}
-    >
-      <HiMiniChevronRight size={20} />
-    </button>
-  </div>
-)}
+          <button
+            onClick={handleNextPage}
+            disabled={currentPage === totalPages}
+            className={clsx(styles.paginationButton, currentPage === totalPages && styles.disabled)}
+          >
+            <HiMiniChevronRight size={20} />
+          </button>
+        </div>
+      )}
 
 
       <div className={clsx("container", styles.container_section)}>
@@ -275,6 +275,7 @@ export const FeatureSections = ({ data, index }) => {
               items={props.items}
             />
           ))}
+          
         </div>
 
 

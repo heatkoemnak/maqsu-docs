@@ -1198,15 +1198,18 @@ const subLinkTemplate = {
       label: "Title"
     },
     {
-      type: "rich-text",
-      name: "body",
-      label: "Body"
-    },
-    {
       type: "image",
       name: "icon",
       label: "Icon"
     },
+    {
+      type: "rich-text",
+      name: "body",
+      label: "Body",
+      isBody: true,
+      templates: [...MDXTemplates],
+    }
+    
   ],
 };
 
@@ -1229,10 +1232,23 @@ const PagesCollection = {
       name: "description",
       label: "Description",
     },
+    // {
+    //   type: "object",
+    //   name: "how_to",
+    //   label: "How To",
+    //   list: true,
+    //   ui: {
+    //     itemProps: (item) => ({
+    //       label: item?.title || "Untitled Feature",
+    //       icon: "⭐", // (optional) adds emoji or icon
+    //     }),
+    //   },
+    //   fields: subLinkTemplate.fields
+    // },
     {
       type: "object",
-      name: "how_to",
-      label: "How To",
+      name: "breadcrumbs",
+      label: "Breadcrumbs",
       list: true,
       ui: {
         itemProps: (item) => ({
@@ -1259,6 +1275,32 @@ const PagesCollection = {
       type: "object",
       name: "related",
       label: "Related Process",
+      list: true,
+      ui: {
+        itemProps: (item) => ({
+          label: item?.title || "Untitled Feature",
+          icon: "⭐", // (optional) adds emoji or icon
+        }),
+      },
+      fields: subLinkTemplate.fields
+    },
+    {
+      type: "object",
+      name: "previous",
+      label: "PEVIOUS",
+      list: true,
+      ui: {
+        itemProps: (item) => ({
+          label: item?.title || "Untitled Feature",
+          icon: "⭐", // (optional) adds emoji or icon
+        }),
+      },
+      fields: subLinkTemplate.fields
+    },
+    {
+      type: "object",
+      name: "next",
+      label: "NEXT",
       list: true,
       ui: {
         itemProps: (item) => ({

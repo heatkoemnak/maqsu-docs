@@ -14,77 +14,51 @@
     {
       "items": [
         {
-          "title": "Introduction",
-          "description": "**MAQSU ERP** is a comprehensive enterprise resource planning (ERP) system designed to streamline and automate various business processes. It offers a wide range of features and functionalities to help organizations manage their operations efficiently.\n",
-          "link": "getting-started/login-to-maqsu",
+          "title": "Introduction to MAQSU ERP",
+          "description": "**MAQSU ERP** is a comprehensive enterprise resource planning (ERP) system designed to streamline and automate various business processes. It offers a wide range of features and functionalities to help organizations manage their operations efficiently.\n\nMAQSU provides a modern and user-friendly interface that allows organizations to manage their entire workflow from quotation to payment, ensuring better visibility, control, and collaboration across departments.\n\nBuilt with scalability and flexibility in mind, MAQSU ERP is suitable for small, medium, and large enterprises, offering both cloud-based and on-premise deployment options.\n",
+          "link": "getting-started/introduction",
           "items": [
             {
               "title": "What is MAQSU ERP?",
-              "related_page": "",
               "description": ""
             },
             {
+              "link": "introduction/key-feature",
               "title": "Key Features and Modules",
-              "related_page": "",
-              "description": ""
+              "description": "This key feature page\n"
             },
             {
               "title": "Benefits of Using MAQSU ERP",
-              "related_page": "",
               "description": ""
             }
           ]
         },
         {
           "title": "User Account",
-          "description": "8 articals\n",
-          "link": "",
-          "image": "",
+          "description": "",
+          "link": "/getting-started/user.account/signup",
           "items": [
             {
-              "title": "User login",
-              "description": "This page is about user login to system.\n"
-            },
-            {
-              "title": "Reset User Password",
+              "link": "user.account/signup",
+              "title": "Sign up to get started with MAQSU!",
               "description": ""
             },
             {
-              "title": "Account Security",
+              "link": "user.account/login",
+              "title": "Login User Account",
               "description": ""
             },
             {
-              "title": "Roles and Permissions",
-              "related_page": "",
-              "description": ""
-            }
-          ]
-        },
-        {
-          "title": "Navigating the Interface",
-          "description": "![](/img/homepage/home.png)\n",
-          "link": "getting-started/interface",
-          "image": "",
-          "items": [
-            {
-              "title": "Understanding the Dashboard",
-              "related_page": "",
-              "description": ""
-            },
-            {
-              "title": "Sidebar Overview (Main Modules and Menus)",
-              "related_page": "",
-              "description": ""
-            },
-            {
-              "title": "Notifications and Alerts",
-              "related_page": "",
-              "description": ""
-            },
-            {
-              "title": "Profile Settings",
-              "related_page": "",
-              "description": ""
+              "link": "user.account/manage",
+              "title": "Manage User Account",
+              "description": "",
+              "items": [
+                {
+                  "link": "/manage/reset-user-password",
+                  "title": "Reset User Password",
+                  "description": ""
+                }
+              ]
             }
           ]
         },
@@ -94,8 +68,8 @@
           "image": "",
           "items": [
             {
+              "link": "setup-master-data/company-profile",
               "title": "Set up company profile",
-              "related_page": "",
               "description": ""
             },
             {
@@ -117,27 +91,47 @@
           ]
         },
         {
+          "title": "Navigating the Interface",
+          "description": "![](/img/homepage/home.png)\n",
+          "link": "getting-started/interface",
+          "image": "",
+          "items": [
+            {
+              "title": "Understanding the Dashboard",
+              "description": ""
+            },
+            {
+              "title": "Sidebar Overview (Main Modules and Menus)",
+              "description": ""
+            },
+            {
+              "title": "Notifications and Alerts",
+              "description": ""
+            },
+            {
+              "title": "Profile Settings",
+              "description": ""
+            }
+          ]
+        },
+        {
           "title": "Module Overview (Quick Start for Each)",
           "description": "",
           "items": [
             {
               "title": "Sales",
-              "related_page": "",
               "description": ""
             },
             {
               "title": "Purchases",
-              "related_page": "",
               "description": ""
             },
             {
               "title": "Inventory",
-              "related_page": "",
               "description": ""
             },
             {
               "title": "Accounting",
-              "related_page": "",
               "description": ""
             }
           ]
@@ -148,12 +142,10 @@
           "items": [
             {
               "title": "Keyboard Shortcuts",
-              "related_page": "",
               "description": ""
             },
             {
               "title": "How to Contact Support",
-              "related_page": "",
               "description": ""
             }
           ]
@@ -164,22 +156,18 @@
           "items": [
             {
               "title": "Common Login Issues",
-              "related_page": "",
               "description": ""
             },
             {
               "title": "Module Not Loading",
-              "related_page": "",
               "description": ""
             },
             {
               "title": "Report Formatting Errors",
-              "related_page": "",
               "description": ""
             },
             {
               "title": "Data Import Errors",
-              "related_page": "",
               "description": ""
             }
           ]
@@ -190,17 +178,14 @@
           "items": [
             {
               "title": "General Questions",
-              "related_page": "",
               "description": ""
             },
             {
               "title": "Module-Specific FAQs",
-              "related_page": "",
               "description": ""
             },
             {
               "title": "Licensing and Subscription",
-              "related_page": "",
               "description": ""
             }
           ]
@@ -211,17 +196,14 @@
           "items": [
             {
               "title": "How to Submit a Ticket",
-              "related_page": "",
               "description": ""
             },
             {
               "title": "Community & Forums",
-              "related_page": "",
               "description": ""
             },
             {
               "title": "Contact Information",
-              "related_page": "",
               "description": ""
             }
           ]

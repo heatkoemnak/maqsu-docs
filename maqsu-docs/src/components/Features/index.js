@@ -22,7 +22,6 @@ const Feature = ({link, image, title, description }) => {
 };
 
 export const Features = ({ data, index }) => {
-  console.log(data);
   return (
     <div key={index} className={styles.features}>
       {/* <div className="container"> */}

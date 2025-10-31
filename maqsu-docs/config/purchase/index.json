@@ -14,14 +14,36 @@
     {
       "items": [
         {
-          "title": "Overviews",
+          "title": "Introduction to Purchase Module",
           "description": "7 articals\n",
-          "image": ""
+          "image": "",
+          "items": [
+            {
+              "title": "Overview",
+              "description": ""
+            },
+            {
+              "title": "Purpose and Importance of the Purchase Module",
+              "description": ""
+            },
+            {
+              "title": "How Purchase Integrates with Other Modules",
+              "description": ""
+            },
+            {
+              "title": "Key Benefits",
+              "description": ""
+            }
+          ]
         },
         {
-          "title": "Orders",
-          "description": "8 articals\n",
-          "link": "blog/welcome",
+          "title": "Purchase Workflow Overview",
+          "description": ""
+        },
+        {
+          "title": "Creating a Purchase Request (PR)",
+          "description": "1. Navigating from Sidebar → Purchase\n\n![](/img/purchase/Requests-for-Quotation-MAQSU-10-21-2025_12_18_AM.png)\n",
+          "link": "/purchase/purchase",
           "image": ""
         },
         {

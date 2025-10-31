@@ -4,9 +4,6 @@ import { HeroContent } from "../HeroContent";
 // import { YouTubeEmbed } from "../YouTubeEmbed";
 
 export  const LayoutFeatures = ({ blocks }) => {
-  console.log(blocks);
-  // console.log(blocks);
-  // console.log(blocks[0]._template);
 
   return (
     <>
