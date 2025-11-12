@@ -168,10 +168,84 @@ const DocCardListTemplate = {
   ],
 };
 
+
+
+const CardTemplate = {
+      name: "Card",
+      name: "CardGrid",
+      label: "Card Grid",
+      fields: [
+        {
+          type: "object",
+          name: "cards",
+          label: "Cards",
+          ui: {
+            itemProps: (item) => ({
+              label: item?.title || "Untitled Feature",
+              icon: "⭐", // (optional) adds emoji or icon
+            }),
+          },
+          list: true,
+          fields: [
+            { name: "title", label: "Title", type: "string" },
+            { name: "description", label: "Description", type: "string" },
+            { name: "image", label: "Image", type: "image" },
+          ],
+        },
+      ],
+};
+
+
+const VideoPlayerTemplate = {
+  name: "VideoPlayer",
+  name: "VideoPlayer",
+  label: "Video Player",
+  fields: [
+    {
+      name: "videoUrl",
+      label: "Video URL",
+      type: "string",
+    },
+    {
+      name: "caption",
+      label: "Caption",
+      type: "string",
+    },
+  ],
+};
+
+const ProcessFlow = {
+  name: "ProcessFlow",
+  label: "Process Flow",
+  fields: [
+    {
+      type: "object",
+      name: "steps",
+      label: "Steps",
+      ui: {
+        itemProps: (item) => ({
+          label: item?.title || "Untitled Feature",
+          icon: "⭐", // (optional) adds emoji or icon
+        }),
+      },
+      list: true,
+      fields: [
+        { name: "title", label: "Step Title", type: "string" },
+        { name: "description", label: "Step Description", type: "string" },
+      ],
+    },
+  ],
+};
+
+
+
 export const MDXTemplates = [
   AdmonitionTemplate,
   DetailsTemplate,
   CodeBlockTemplate,
   TabsTemplate,
   DocCardListTemplate,
+  CardTemplate,
+  VideoPlayerTemplate,
+  ProcessFlow
 ];

@@ -25,7 +25,7 @@ export const Hero = ({ data, index }) => {
   return (
     <header
       key={index}
-      className={clsx("hero hero--primary", styles.heroBanner)}
+      className={clsx(styles.heroBanner)}
     >
       <div className="container">
         <h1 className="hero__title">{pageTitle}</h1>

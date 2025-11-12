@@ -14,8 +14,13 @@
     {
       "items": [
         {
+          "title": "Introduction",
+          "description": "",
+          "image": "/img/icon/book-open-cover.png"
+        },
+        {
           "title": "Getting Started",
-          "description": "Card description with lots of great facts and interesting details.\n",
+          "description": "",
           "link": "getting-started",
           "image": "/img/feature/play.png"
         },

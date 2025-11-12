@@ -34,7 +34,7 @@
           ]
         },
         {
-          "title": "User Account",
+          "title": "Account management",
           "description": "",
           "link": "/getting-started/user.account/signup",
           "items": [
@@ -63,8 +63,9 @@
           ]
         },
         {
-          "title": "Setup your master data",
+          "title": "Advanced and Master Data",
           "description": "18 articals\n",
+          "link": "/getting-started/setup-master-data/company-profile",
           "image": "",
           "items": [
             {
@@ -73,10 +74,12 @@
               "description": ""
             },
             {
+              "link": "setup-master-data/customer-profile",
               "title": "Customers and Vendors",
               "description": ""
             },
             {
+              "link": "setup-master-data/setup-chart-of-accounts",
               "title": "Chart of Accounts",
               "description": ""
             },

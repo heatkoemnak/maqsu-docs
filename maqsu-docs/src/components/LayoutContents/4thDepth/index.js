@@ -8,6 +8,10 @@ import styles from "../styles.module.css";
 import { motion } from "framer-motion";
 import { LiaAngleRightSolid } from "react-icons/lia";
 import { HiHome, HiMiniChevronLeft, HiMiniChevronRight } from "react-icons/hi2";
+import { CardGrid } from "../../Cards/CardGrid";
+import { VideoPlayer } from "../../VideoPlayer/VideoPlayer";
+import { ProcessFlow } from "../../ProcessFlow/ProcessFlow";
+import SearchContent from "../../Search/SearchContent";
 const salesData = require("../../../../config/gettstarted/index.json");
 
 
@@ -76,32 +80,24 @@ export default function FourthDepth({path}) {
 
     return (
         <>
-            <div className={clsx(styles.navbar)}>
-            {posts?.map((post, i) => {
-                // const formattedBreadcrumbs = post._sys.breadcrumbs.map((bar, j) => {
-                //     let word = bar.toLowerCase();
-                //     if (j > 1 && word.endsWith("s")) {
-                //         word = word.slice(0, -1); // remove 's'
-                //     }
-                //     return word;
-                // });
 
-                return (
-                    <div key={i}>
-                        {post?.breadcrumbs?.map((word, j) => {
-                            // const href = "/" + formattedBreadcrumbs.slice(0, j + 1).join("/");
-                            // const displayWord = word.charAt(0).toUpperCase() + word.slice(1);
-                            return (
-                                <span key={j}>
-                                    
-                                    {j > 0 && <LiaAngleRightSolid />}
-                                    <Link to={word?.link}>{word?.title}</Link>
-                                </span>
-                            );
-                        })}
-                    </div>
-                );
-            })}
+            <SearchContent/>
+            <div className={clsx(styles.navbar)}>
+                {posts?.map((post, i) => {
+
+                    return (
+                        <div key={i}>
+                            {post?.breadcrumbs?.map((word, j) => {
+                                return (
+                                    <span key={j}>
+                                        {j > 0 && <LiaAngleRightSolid />}
+                                        <Link to={word?.link}>{word?.title}</Link>
+                                    </span>
+                                );
+                            })}
+                        </div>
+                    );
+                })}
             </div>
            
 
@@ -121,7 +117,12 @@ export default function FourthDepth({path}) {
                             // whileTap={{ scale: 0.98 }}
                         >
                             <h2 className={clsx(styles.pageTitle)}>{post.title}</h2>
-                            <TinaMarkdown content={post.body} />
+                            <TinaMarkdown 
+                            content={post.body}  
+                            components={{CardGrid: (props) => <CardGrid {...props} />,
+                            VideoPlayer: (props) => <VideoPlayer {...props} />,
+                            ProcessFlow: (props) => <ProcessFlow {...props} />,}}
+                            />
                         </motion.div>
                     ))}
                 </motion.div>
@@ -159,7 +160,13 @@ export default function FourthDepth({path}) {
                     {/* <PageNavigation/> */}
 
                     <>
-                        <motion.h4 variants={itemVariantsSidebar}>TABLE OF CONTENTS</motion.h4>
+                        {posts?.map((post, i) => (
+                            <React.Fragment key={i}>
+                                {post?.managements?.length > 0 && (
+                                    <motion.h2 variants={itemVariantsSidebar}>TABLE OF CONTENTS</motion.h2>
+                                )}
+                            </React.Fragment>
+                        ))}
                         <motion.div
                             className={clsx(styles.manageLinks)}
                             variants={containerVariantsSidebar}
@@ -178,14 +185,12 @@ export default function FourthDepth({path}) {
                                 </React.Fragment>
                             ))}
                         </motion.div>
-                        <hr />
                     </>
 
                     {posts?.some(post => post?.related?.length > 0) && (
                         <>
-                            <motion.h3 variants={itemVariantsSidebar}>Related Process</motion.h3>
+                            <motion.span className={clsx(styles.CONTENT)} variants={itemVariantsSidebar}>Related Contents</motion.span>
                             <motion.p variants={itemVariantsSidebar}>
-                                It's gonna be the next step in the sales process.
                             </motion.p>
                             <motion.div variants={containerVariantsSidebar}>
                                 {posts?.map((post, i) => (
@@ -205,11 +210,11 @@ export default function FourthDepth({path}) {
                         </>
                     )}
 
-                    {posts?.some(post => post?.next?.length > 0) && (
+                    {/* {posts?.some(post => post?.next?.length > 0) && (
                         <>
                             <motion.h3 variants={itemVariantsSidebar}>Next</motion.h3>
                             <motion.p variants={itemVariantsSidebar}>
-                                It's gonna be the next step in the sales process.
+                                
                             </motion.p>
                             <motion.div variants={containerVariantsSidebar}>
                                 {posts?.map((post, i) => (
@@ -227,7 +232,7 @@ export default function FourthDepth({path}) {
                                 ))}
                             </motion.div>
                         </>
-                    )}
+                    )} */}
                 </motion.div>
 
                
@@ -254,8 +259,8 @@ export default function FourthDepth({path}) {
                                                     className={clsx(styles.LinkContainer)}
                                                 >
                                                     <Link to={item.link} className={clsx(styles.Link)}>
-                                                        <span> {item.title}</span><br/>
-                                                        <span className={clsx(styles.next)}>PEVIOUS</span>
+                                                    <span className={clsx(styles.Title)}> {item.title}</span><br/>
+                                                    <span className={clsx(styles.next)}>PEVIOUS</span>
                                                     </Link>
                                                 </motion.div>
                                             ))}
@@ -278,7 +283,7 @@ export default function FourthDepth({path}) {
                                                     className={clsx(styles.LinkContainer)}
                                                 >
                                                     <Link to={item.link} className={clsx(styles.Link)}>
-                                                        <span> {item.title}</span><br/>
+                                                        <span className={clsx(styles.Title)}> {item.title}</span><br/>
                                                         <span className={clsx(styles.next)}>NEXT</span>
                                                     </Link>
                                                 </motion.div>

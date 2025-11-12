@@ -3,15 +3,15 @@
 /* Top navigation bar */
 .navbar {
   width: 70%;
-  margin: 15px auto;
+  margin: 5px auto;
   display: flex;
   color: #7b3434;
   position: sticky;
   top: 0;
-  padding: 20px;
+  padding: 10px;
   z-index: 100;
   border-bottom: 1px solid #ddd;
-  background-color: #ffffff;
+  background-color: white;
 
 }
 
@@ -19,16 +19,16 @@
 .navbar a {
   color: #3a1b1b;
   padding: 14px 20px;
-  
   text-decoration: none;
   text-align: center;
 }
 
 /* Change color on hover */
 .navbar a:hover {
-  background-color: #dedede;
+  background-color: #e1eff7;
   color: black;
   border-radius: 50px;
+  font-weight: 400;
   
 }
 
@@ -71,6 +71,13 @@
   background: #f0f0f0; 
   border-radius: 4px; 
 
+}
+
+.CONTENT{
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+  text-transform: uppercase;
 }
 
 /* Fake image, just for this example */
@@ -124,37 +131,30 @@
 .prev_navigation:hover,
 .button_navigation:hover {
   background-color: #e0f2fe;
-  transform: translateY(-2px);
+  /* transform: translateY(-2px); */
 }
 
 .paginationLink {
   color: #374151;
   font-weight: 500;
 }
-.next{
-  text-align: right;
-  font-size: small;
-}
 
 .Link{
-  font-weight: 500;
-  color: #374151;
-  font-size: large;
+  color: #509eec;
+  font-size: bold;
+}
+.Title{
+  font-size: 15px;
+  font-weight: 800;
+  color: #2894ce;
 }
 .Link:hover{
   cursor: pointer;
   text-decoration: none;
-  color: #374151;
+  color: #79a6ef;
 }
-.LinkContainer{
-  padding: 10px;
-  background: transparent;
-  text-decoration: none;
-  border-radius: 10px;
-  border: 1px solid rgb(219, 217, 217);
-}
-.LinkContainer:hover{
-  border: 1px solid gray;
-  border-radius: 10px;
-  padding: 10px;
+.next{
+  text-align: right;
+  font-size: small;
+  color: #333;
 }

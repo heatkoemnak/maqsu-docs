@@ -17,7 +17,7 @@
         {
           "title": "Introduction to Sales Module",
           "description": "In MAQSU ERP Software, the **Sales Module** is a core business application designed to manage the entire sales process — from creating quotations to confirming sales orders, delivering products, and issuing invoices. It helps businesses streamline their sales operations, track customer interactions, and improve efficiency across departments.\n",
-          "link": "/sales/overviews",
+          "link": "sales/introduction",
           "image": "",
           "items": [
             {
@@ -67,6 +67,7 @@
         {
           "title": "Creating a Quotation",
           "description": "",
+          "link": "sales/create-quotation",
           "items": [
             {
               "title": "Add products or services",
@@ -144,7 +145,6 @@
             {
               "link": "orders/quotation",
               "title": "How to Confirm a Quotation",
-              "related_page": "src/pages/sales/orders/quotations.mdx",
               "description": "A **quotation** is a formal offer from a seller to a buyer showing the price and details of goods or services before a sale happens.\n"
             },
             {
