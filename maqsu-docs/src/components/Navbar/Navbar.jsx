@@ -68,7 +68,7 @@ export default function Navbar() {
           </div>
           <div className="mobile-links">
             <Link
-              to="#home"
+              to="https://maqsu.com/en/blog"
               className="mobile-nav-item"
               onClick={toggleMobileMenu}
             >
