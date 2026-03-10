@@ -1664,7 +1664,7 @@ const DocCategoryCollection = {
 
 
 export default defineConfig({
-  branch: process.env.TINA_BRANCH || branch,
+  branch: process.env.TINA_BRANCH || "main",
   clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID,
   token: process.env.TINA_TOKEN,
   build: {
