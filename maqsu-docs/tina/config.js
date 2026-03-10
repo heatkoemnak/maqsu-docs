@@ -14,8 +14,12 @@ import { ProtobufNullValue } from "@pinecone-database/pinecone/dist/pinecone-gen
 // import { FeaturesBlockTemplate } from "../src/components/Started/FeatureSection/template";
 
 // Your hosting provider likely exposes this as an environment variable
-const branch =
-  process.env.HEAD || process.env.VERCEL_GIT_COMMIT_REF || "main";
+  const branch =
+  process.env.GITHUB_BRANCH ||
+  process.env.VERCEL_GIT_COMMIT_REF ||
+  process.env.HEAD ||
+  "main";
+
 const WarningIcon = (props) => {
   return (
     <svg
@@ -1664,12 +1668,12 @@ const DocCategoryCollection = {
 
 
 export default defineConfig({
-  branch: "main",
-  clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID || "db9b6a90-a273-4eb1-a727-4fec44559677",
-  token: process.env.TINA_TOKEN || "6e3e3c42faefee121f4e515d7bbafee6949c522d",
+  branch: process.env.TINA_BRANCH || "main",
+  clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID || "9ecacd79-23a8-46cb-8198-3bbe6c466ff0",
+  token: process.env.TINA_TOKEN || "868a447170da07eba440b3cb591ad7b3f236d270",
   build: {
     outputFolder: "admin",
-    publicFolder: "static",
+    publicFolder: "public",
   },
   media: {
     tina: {
