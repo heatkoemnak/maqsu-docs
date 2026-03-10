@@ -88,7 +88,7 @@ const formatNavbarItem = (item, subnav = false) => {
 const config = {
   title: docusaurusData.title || "My Site",
   tagline: docusaurusData.tagline || "Dinosaurs are cool",
-  url: docusaurusData.url || "https://tinasaurus.vercel.app/",
+  url: docusaurusData.url || "maqsu-documents.netlify.app",
   baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
@@ -100,9 +100,6 @@ const config = {
     defaultLocale: "en",
     locales: ["en"],
   },
-   url: 'maqsu-documents.netlify.app', // Url to your site with no trailing slash
-  baseUrl: '/',
-
   presets: [
     [
       "classic",
