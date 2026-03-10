@@ -4,6 +4,7 @@ import { UsernamePasswordAuthJSProvider } from 'tinacms-authjs/dist/tinacms'
 
 import { ReferenceField } from "tinacms";
 import { FeaturesBlockTemplate } from "../src/components/Features/template";
+import { CategoriesTemplate } from "../src/components/Templates/template";
 import { HeroBlockTemplate } from "../src/components/Hero/template";
 import { YouTubeEmbedBlockTemplate } from "../src/components/YouTubeEmbed/template";
 import { MDXTemplates } from "../src/theme/template";
@@ -308,439 +309,439 @@ const CategoryTemplateProps = {
   },
 };
 
-const CategoryTemplate = {
-  ...CategoryTemplateProps,
-  fields: [
-    ...CategoryFields,
-    {
-      ...ItemsField,
-      templates: [
-        {
-          ...CategoryTemplateProps,
-          fields: [
-            ...CategoryFields,
-            {
-              ...ItemsField,
-              templates: [
-                {
-                  ...CategoryTemplateProps,
-                  fields: [
-                    ...CategoryFields,
-                    {
-                      ...ItemsField,
-                      templates: [DocLinkTemplate, ExternalLinkTemplate],
-                    },
-                  ],
-                },
-                DocLinkTemplate,
-                ExternalLinkTemplate,
-              ],
-            },
-          ],
-        },
-        DocLinkTemplate,
-        ExternalLinkTemplate,
-      ],
-    },
-  ],
-};
+// const CategoryTemplate = {
+//   ...CategoryTemplateProps,
+//   fields: [
+//     ...CategoryFields,
+//     {
+//       ...ItemsField,
+//       templates: [
+//         {
+//           ...CategoryTemplateProps,
+//           fields: [
+//             ...CategoryFields,
+//             {
+//               ...ItemsField,
+//               templates: [
+//                 {
+//                   ...CategoryTemplateProps,
+//                   fields: [
+//                     ...CategoryFields,
+//                     {
+//                       ...ItemsField,
+//                       templates: [DocLinkTemplate, ExternalLinkTemplate],
+//                     },
+//                   ],
+//                 },
+//                 DocLinkTemplate,
+//                 ExternalLinkTemplate,
+//               ],
+//             },
+//           ],
+//         },
+//         DocLinkTemplate,
+//         ExternalLinkTemplate,
+//       ],
+//     },
+//   ],
+// };
 
-const SidebarItemsField = {
-  ...ItemsField,
-  templates: [CategoryTemplate, DocLinkTemplate, ExternalLinkTemplate],
-};
+// const SidebarItemsField = {
+//   ...ItemsField,
+//   templates: [CategoryTemplate, DocLinkTemplate, ExternalLinkTemplate],
+// };
 
-const SidebarCollection = {
-  name: "sidebar",
-  label: "Docs Sidebar",
-  path: "config/sidebar",
-  format: "json",
-  ui: {
-    global: true,
-    allowedActions: {
-      create: false,
-      delete: false,
-    },
-  },
-  fields: [
-    {
-      type: "string",
-      name: "_warning",
-      ui: {
-        component: () => {
-          return <RestartWarning />;
-        },
-      },
-    },
-    {
-      type: "string",
-      label: "Label",
-      name: "label",
-      required: true,
-      isTitle: true,
-      ui: {
-        component: "hidden",
-      },
-    },
-    SidebarItemsField,
-  ],
-};
+// const SidebarCollection = {
+//   name: "sidebar",
+//   label: "Docs Sidebar",
+//   path: "config/sidebar",
+//   format: "json",
+//   ui: {
+//     global: true,
+//     allowedActions: {
+//       create: false,
+//       delete: false,
+//     },
+//   },
+//   fields: [
+//     {
+//       type: "string",
+//       name: "_warning",
+//       ui: {
+//         component: () => {
+//           return <RestartWarning />;
+//         },
+//       },
+//     },
+//     {
+//       type: "string",
+//       label: "Label",
+//       name: "label",
+//       required: true,
+//       isTitle: true,
+//       ui: {
+//         component: "hidden",
+//       },
+//     },
+//     SidebarItemsField,
+//   ],
+// };
 
-const NavbarItemFields = [
-  {
-    name: "label",
-    label: "Label",
-    type: "string",
-    isTitle: true,
-    required: true,
-  },
-  {
-    name: "link",
-    label: "Link",
-    type: "string",
-    options: [
-      {
-        label: "None",
-        value: "none",
-      },
-      {
-        label: "Document",
-        value: "doc",
-      },
-      {
-        label: "Page",
-        value: "page",
-      },
-      {
-        label: "Blog",
-        value: "blog",
-      },
-      {
-        label: "External",
-        value: "external",
-      },
-    ],
-  },
-  {
-    name: "docLink",
-    label: "Document",
-    type: "reference",
-    collections: ["doc"],
-    ui: {
-      component: (props) => {
-        const link = React.useMemo(() => {
-          let fieldName = props.field.name;
-          fieldName =
-            fieldName.substring(0, fieldName.lastIndexOf(".")) || fieldName;
+// const NavbarItemFields = [
+//   {
+//     name: "label",
+//     label: "Label",
+//     type: "string",
+//     isTitle: true,
+//     required: true,
+//   },
+//   {
+//     name: "link",
+//     label: "Link",
+//     type: "string",
+//     options: [
+//       {
+//         label: "None",
+//         value: "none",
+//       },
+//       {
+//         label: "Document",
+//         value: "doc",
+//       },
+//       {
+//         label: "Page",
+//         value: "page",
+//       },
+//       {
+//         label: "Blog",
+//         value: "blog",
+//       },
+//       {
+//         label: "External",
+//         value: "external",
+//       },
+//     ],
+//   },
+//   {
+//     name: "docLink",
+//     label: "Document",
+//     type: "reference",
+//     collections: ["doc"],
+//     ui: {
+//       component: (props) => {
+//         const link = React.useMemo(() => {
+//           let fieldName = props.field.name;
+//           fieldName =
+//             fieldName.substring(0, fieldName.lastIndexOf(".")) || fieldName;
 
-          return fieldName
-            .split(".")
-            .reduce((o, i) => o[i], props.tinaForm.values).link;
-        }, [props.tinaForm.values]);
+//           return fieldName
+//             .split(".")
+//             .reduce((o, i) => o[i], props.tinaForm.values).link;
+//         }, [props.tinaForm.values]);
 
-        if (link !== "doc") {
-          return null;
-        }
+//         if (link !== "doc") {
+//           return null;
+//         }
 
-        return ReferenceField(props);
-      },
-    },
-  },
-  {
-    name: "pageLink",
-    label: "Page",
-    type: "reference",
-    collections: ["pages"],
-    ui: {
-      component: (props) => {
-        const link = React.useMemo(() => {
-          let fieldName = props.field.name;
-          fieldName =
-            fieldName.substring(0, fieldName.lastIndexOf(".")) || fieldName;
+//         return ReferenceField(props);
+//       },
+//     },
+//   },
+//   {
+//     name: "pageLink",
+//     label: "Page",
+//     type: "reference",
+//     collections: ["pages"],
+//     ui: {
+//       component: (props) => {
+//         const link = React.useMemo(() => {
+//           let fieldName = props.field.name;
+//           fieldName =
+//             fieldName.substring(0, fieldName.lastIndexOf(".")) || fieldName;
 
-          return fieldName
-            .split(".")
-            .reduce((o, i) => o[i], props.tinaForm.values).link;
-        }, [props.tinaForm.values]);
+//           return fieldName
+//             .split(".")
+//             .reduce((o, i) => o[i], props.tinaForm.values).link;
+//         }, [props.tinaForm.values]);
 
-        if (link !== "page") {
-          return null;
-        }
+//         if (link !== "page") {
+//           return null;
+//         }
 
-        return ReferenceField(props);
-      },
-    },
-  },
-  {
-    name: "externalLink",
-    label: "URL",
-    type: "string",
-    ui: {
-      component: (props) => {
-        const link = React.useMemo(() => {
-          let fieldName = props.field.name;
-          fieldName =
-            fieldName.substring(0, fieldName.lastIndexOf(".")) || fieldName;
+//         return ReferenceField(props);
+//       },
+//     },
+//   },
+//   {
+//     name: "externalLink",
+//     label: "URL",
+//     type: "string",
+//     ui: {
+//       component: (props) => {
+//         const link = React.useMemo(() => {
+//           let fieldName = props.field.name;
+//           fieldName =
+//             fieldName.substring(0, fieldName.lastIndexOf(".")) || fieldName;
 
-          return fieldName
-            .split(".")
-            .reduce((o, i) => o[i], props.tinaForm.values).link;
-        }, [props.tinaForm.values]);
+//           return fieldName
+//             .split(".")
+//             .reduce((o, i) => o[i], props.tinaForm.values).link;
+//         }, [props.tinaForm.values]);
 
-        if (link !== "external") {
-          return null;
-        }
+//         if (link !== "external") {
+//           return null;
+//         }
 
-        return TextField(props);
-      },
-    },
-  },
-  {
-    name: "position",
-    label: "Position",
-    type: "string",
-    required: true,
-    options: [
-      {
-        label: "Left",
-        value: "left",
-      },
-      {
-        label: "Right",
-        value: "right",
-      },
-    ],
-    ui: {
-      component: "button-toggle",
-    },
-  },
-];
+//         return TextField(props);
+//       },
+//     },
+//   },
+//   {
+//     name: "position",
+//     label: "Position",
+//     type: "string",
+//     required: true,
+//     options: [
+//       {
+//         label: "Left",
+//         value: "left",
+//       },
+//       {
+//         label: "Right",
+//         value: "right",
+//       },
+//     ],
+//     ui: {
+//       component: "button-toggle",
+//     },
+//   },
+// ];
 
-const NavbarSubitemProps = {
-  name: "items",
-  label: "Items",
-  type: "object",
-  list: true,
-  ui: {
-    itemProps: (item) => ({
-      label: item.label,
-    }),
-  },
-};
+// const NavbarSubitemProps = {
+//   name: "items",
+//   label: "Items",
+//   type: "object",
+//   list: true,
+//   ui: {
+//     itemProps: (item) => ({
+//       label: item.label,
+//     }),
+//   },
+// };
 
-const SettingsCollection = {
-  label: "Settings",
-  name: "settings",
-  path: "config/docusaurus",
-  format: "json",
-  ui: {
-    global: true,
-    allowedActions: {
-      create: false,
-      delete: false,
-    },
-  },
-  fields: [
-    {
-      type: "string",
-      name: "_warning",
-      ui: {
-        component: () => {
-          return <RestartWarning />;
-        },
-      },
-    },
-    {
-      type: "string",
-      label: "Label",
-      name: "label",
-      required: true,
-      isTitle: true,
-      ui: {
-        component: "hidden",
-      },
-    },
-    {
-      type: "object",
-      label: "Logo",
-      name: "logo",
-      fields: [
-        {
-          type: "string",
-          label: "Alt Text",
-          name: "alt",
-        },
-        {
-          type: "image",
-          label: "Source",
-          name: "src",
-        },
-      ],
-    },
-    {
-      type: "string",
-      label: "Title",
-      name: "title",
-      required: true,
-    },
-    {
-      type: "string",
-      label: "Tagline",
-      name: "tagline",
-    },
-    {
-      type: "string",
-      label: "URL",
-      name: "url",
-      required: true,
-    },
-    {
-      type: "object",
-      label: "Navbar",
-      name: "navbar",
-      list: true,
-      ui: {
-        itemProps: (item) => ({
-          label: item.label + " - " + title(item.position),
-        }),
-        defaultItem: {
-          position: "left",
-        },
-      },
-      fields: [
-        ...NavbarItemFields,
-        {
-          ...NavbarSubitemProps,
-          fields: [
-            ...NavbarItemFields,
-            {
-              ...NavbarSubitemProps,
-              fields: NavbarItemFields,
-            },
-          ],
-        },
-      ],
-    },
-    {
-      type: "object",
-      label: "Footer",
-      name: "footer",
-      fields: [
-        {
-          name: "style",
-          label: "Style",
-          type: "string",
-          options: [
-            {
-              label: "Dark",
-              value: "dark",
-            },
-            {
-              label: "Light",
-              value: "light",
-            },
-          ],
-          ui: {
-            component: "button-toggle",
-          },
-        },
-        {
-          type: "object",
-          label: "Categories",
-          name: "links",
-          list: true,
-          ui: {
-            itemProps: (item) => ({
-              label: item.title,
-            }),
-          },
-          fields: [
-            {
-              type: "string",
-              label: "Title",
-              name: "title",
-            },
-            {
-              type: "object",
-              label: "Links",
-              name: "items",
-              list: true,
-              templates: [
-                {
-                  name: "internal",
-                  label: "Internal",
-                  ui: {
-                    itemProps: (item) => ({
-                      label: item.label,
-                    }),
-                  },
-                  fields: [
-                    {
-                      type: "string",
-                      label: "Label",
-                      name: "label",
-                    },
-                    {
-                      type: "reference",
-                      label: "Page",
-                      name: "to",
-                      collections: ["doc", "pages", "post"],
-                    },
-                  ],
-                },
-                {
-                  name: "blog",
-                  label: "Blog",
-                  ui: {
-                    defaultItem: {
-                      label: "Blog",
-                    },
-                    itemProps: (item) => ({
-                      label: item.label,
-                    }),
-                  },
-                  fields: [
-                    {
-                      type: "string",
-                      label: "Label",
-                      name: "label",
-                    },
-                  ],
-                },
-                {
-                  name: "external",
-                  label: "External",
-                  ui: {
-                    itemProps: (item) => ({
-                      label: item.label,
-                    }),
-                  },
-                  fields: [
-                    {
-                      type: "string",
-                      label: "Label",
-                      name: "label",
-                    },
-                    {
-                      type: "string",
-                      label: "URL",
-                      name: "href",
-                    },
-                  ],
-                },
-              ],
-            },
-          ],
-        },
-        {
-          type: "string",
-          label: "Copyright",
-          name: "copyright",
-        },
-      ],
-    },
-  ],
-};
+// const SettingsCollection = {
+//   label: "Settings",
+//   name: "settings",
+//   path: "config/docusaurus",
+//   format: "json",
+//   ui: {
+//     global: true,
+//     allowedActions: {
+//       create: false,
+//       delete: false,
+//     },
+//   },
+//   fields: [
+//     {
+//       type: "string",
+//       name: "_warning",
+//       ui: {
+//         component: () => {
+//           return <RestartWarning />;
+//         },
+//       },
+//     },
+//     {
+//       type: "string",
+//       label: "Label",
+//       name: "label",
+//       required: true,
+//       isTitle: true,
+//       ui: {
+//         component: "hidden",
+//       },
+//     },
+//     {
+//       type: "object",
+//       label: "Logo",
+//       name: "logo",
+//       fields: [
+//         {
+//           type: "string",
+//           label: "Alt Text",
+//           name: "alt",
+//         },
+//         {
+//           type: "image",
+//           label: "Source",
+//           name: "src",
+//         },
+//       ],
+//     },
+//     {
+//       type: "string",
+//       label: "Title",
+//       name: "title",
+//       required: true,
+//     },
+//     {
+//       type: "string",
+//       label: "Tagline",
+//       name: "tagline",
+//     },
+//     {
+//       type: "string",
+//       label: "URL",
+//       name: "url",
+//       required: true,
+//     },
+//     {
+//       type: "object",
+//       label: "Navbar",
+//       name: "navbar",
+//       list: true,
+//       ui: {
+//         itemProps: (item) => ({
+//           label: item.label + " - " + title(item.position),
+//         }),
+//         defaultItem: {
+//           position: "left",
+//         },
+//       },
+//       fields: [
+//         ...NavbarItemFields,
+//         {
+//           ...NavbarSubitemProps,
+//           fields: [
+//             ...NavbarItemFields,
+//             {
+//               ...NavbarSubitemProps,
+//               fields: NavbarItemFields,
+//             },
+//           ],
+//         },
+//       ],
+//     },
+//     {
+//       type: "object",
+//       label: "Footer",
+//       name: "footer",
+//       fields: [
+//         {
+//           name: "style",
+//           label: "Style",
+//           type: "string",
+//           options: [
+//             {
+//               label: "Dark",
+//               value: "dark",
+//             },
+//             {
+//               label: "Light",
+//               value: "light",
+//             },
+//           ],
+//           ui: {
+//             component: "button-toggle",
+//           },
+//         },
+//         {
+//           type: "object",
+//           label: "Categories",
+//           name: "links",
+//           list: true,
+//           ui: {
+//             itemProps: (item) => ({
+//               label: item.title,
+//             }),
+//           },
+//           fields: [
+//             {
+//               type: "string",
+//               label: "Title",
+//               name: "title",
+//             },
+//             {
+//               type: "object",
+//               label: "Links",
+//               name: "items",
+//               list: true,
+//               templates: [
+//                 {
+//                   name: "internal",
+//                   label: "Internal",
+//                   ui: {
+//                     itemProps: (item) => ({
+//                       label: item.label,
+//                     }),
+//                   },
+//                   fields: [
+//                     {
+//                       type: "string",
+//                       label: "Label",
+//                       name: "label",
+//                     },
+//                     {
+//                       type: "reference",
+//                       label: "Page",
+//                       name: "to",
+//                       collections: ["doc", "pages", "post"],
+//                     },
+//                   ],
+//                 },
+//                 {
+//                   name: "blog",
+//                   label: "Blog",
+//                   ui: {
+//                     defaultItem: {
+//                       label: "Blog",
+//                     },
+//                     itemProps: (item) => ({
+//                       label: item.label,
+//                     }),
+//                   },
+//                   fields: [
+//                     {
+//                       type: "string",
+//                       label: "Label",
+//                       name: "label",
+//                     },
+//                   ],
+//                 },
+//                 {
+//                   name: "external",
+//                   label: "External",
+//                   ui: {
+//                     itemProps: (item) => ({
+//                       label: item.label,
+//                     }),
+//                   },
+//                   fields: [
+//                     {
+//                       type: "string",
+//                       label: "Label",
+//                       name: "label",
+//                     },
+//                     {
+//                       type: "string",
+//                       label: "URL",
+//                       name: "href",
+//                     },
+//                   ],
+//                 },
+//               ],
+//             },
+//           ],
+//         },
+//         {
+//           type: "string",
+//           label: "Copyright",
+//           name: "copyright",
+//         },
+//       ],
+//     },
+//   ],
+// };
 
 const HomepageCollection = {
   name: "homepage",
@@ -803,7 +804,6 @@ const HomepageCollection = {
     },
   ],
 };
-
 
 const GettingStartedCollection = {
   name: "gettstarted",
@@ -1206,12 +1206,14 @@ const subLinkTemplate = {
       type: "rich-text",
       name: "body",
       label: "Body",
-      isBody: true,
-      templates: [...MDXTemplates],
     }
-    
+
   ],
 };
+
+
+
+
 
 
 const PagesCollection = {
@@ -1322,6 +1324,345 @@ const PagesCollection = {
   ],
 };
 
+const TabsTemplateNew= {
+     name: "tabsesctions",
+      label: "Tabs",
+      fields: [
+        {
+          type: "object",
+          name: "lists",
+          label: "Tabs Sections",
+          ui: {
+            itemProps: (item) => ({
+              label: item?.label || "Untitled Feature",
+              icon: "⭐", // (optional) adds emoji or icon
+            }),
+          },
+          list: true,
+          fields: [
+            { name: "label", label: "Label", type: "string" },
+            {
+              name: "children",
+              label: "Body",
+              type: "rich-text",
+              isBody: true,
+              templates: [...MDXTemplates],
+            },
+
+          ],
+        },
+
+      ],
+};
+
+const Sections = {
+  name: "sections",
+  label: "Sections",
+  fields: [
+    {
+      type: "string",
+      name: "link",
+      label: "URL",
+      description: "Link to the feature page",
+    },
+     {
+      type: "string",
+      name:"uid",
+      label: "ID",
+      description: "Unique identifier for the section group, used for linking and referencing"
+    },
+    {
+      type: "string",
+      name: "title",
+      label: "Title",
+    },
+    {
+      type: "image",
+      name: "icon",
+      label: "Icon",
+    },
+    {
+      type: "rich-text",
+      name: "body",
+      label: "Body",
+      isBody: true,
+      templates: [...MDXTemplates,TabsTemplateNew],
+    },
+  ],
+};
+
+
+
+const breadcrumps = {
+  name: "features",
+  label: "Sub Links",
+  fields: [
+     {
+        type: "string",
+        name: "link",
+        label: "URL",
+        description: "Link to the feature page"},
+    {
+      type: "string",
+      name: "title",
+      label: "Title"
+    },
+    {
+      type: "image",
+      name: "icon",
+      label: "Icon"
+    },
+    {
+      type: "rich-text",
+      name: "body",
+      label: "Body",
+    }
+
+  ],
+};
+
+
+
+
+const GroupSections = {
+  name: "groupSections",
+  label: "Group Sections",
+  fields: [
+
+    {
+      type: "string",
+      name: "link",
+      label: "URL",
+      description: "Link to the feature page",
+    },
+     {
+      type: "string",
+      name:"uid",
+      label: "ID",
+      description: "Unique identifier for the section group, used for linking and referencing"
+    },
+    {
+      type: "string",
+      name: "title",
+      label: "Title",
+      ui: {
+        itemProps: (item) => ({
+          label: item?.title || "Untitled Section",
+          icon: "⭐",
+        }),
+      },
+    },
+     {
+        name: "date",
+        label: "Date & Time",
+        type: "string",
+        required: false,
+        ui: {
+          component: "date",
+          dateFormat: "YYYY-MM-DD",
+          parse: (val) => {
+            if (!val) return new Date().toISOString();
+
+            // Keep selected date but inject current time
+            const selected = new Date(val);
+            const now = new Date();
+
+            selected.setHours(
+              now.getHours(),
+              now.getMinutes(),
+              now.getSeconds(),
+              now.getMilliseconds()
+            );
+
+            return selected.toISOString();
+          },
+        },
+      },
+     {
+      type: "object",
+      name: "breadcrumbs",
+      label: "Breadcrumbs",
+      list: true,
+      ui: {
+        itemProps: (item) => ({
+          label: item?.title || "Untitled Feature",
+          icon: "⭐", // (optional) adds emoji or icon
+        }),
+      },
+      fields: breadcrumps.fields
+    },
+    {
+      type: "object",
+      list: true,
+      name: "sections",
+      label: "Sections",
+      ui: {
+        itemProps: (item) => ({
+          label: item?.title || "Untitled Section",
+          icon: "⭐",
+        }),
+      },
+      fields: Sections.fields,
+    },
+    {
+      type: "image",
+      name: "icon",
+      label: "Icon",
+    },
+    {
+      type: "rich-text",
+      name: "body",
+      label: "Body",
+      templates: [...MDXTemplates],
+    },
+  ],
+};
+
+const Topic = {
+  name: "topic",
+  label: "Topic",
+  fields: [
+    {
+      type: "string",
+      name: "link",
+      label: "URL",
+      description: "Link to the feature page",
+    },
+     {
+      type: "string",
+      name:"uid",
+      label: "ID",
+      description: "Unique identifier for the topic, used for linking and referencing"
+    },
+    {
+      type: "string",
+      name: "title",
+      label: "Title",
+      ui: {
+        itemProps: (item) => ({
+          label: item?.title || "Untitled Section",
+          icon: "⭐",
+        }),
+      },
+    },
+    {
+      name: "date",
+      label: "Date & Time",
+      type: "string",
+      required: false,
+      ui: {
+        component: "date",
+        dateFormat: "YYYY-MM-DD",
+        parse: (val) => {
+          if (!val) return new Date().toISOString();
+
+          // Keep selected date but inject current time
+          const selected = new Date(val);
+          const now = new Date();
+
+          selected.setHours(
+            now.getHours(),
+            now.getMinutes(),
+            now.getSeconds(),
+            now.getMilliseconds()
+          );
+
+          return selected.toISOString();
+        },
+      },
+    },
+    {
+      type: "image",
+      name: "icon",
+      label: "Icon",
+    },
+    {
+      type: "string",
+      name: "description",
+      label: "Description",
+    },
+  ],
+};
+
+const TopicsTemplate ={
+  name: "topics",
+  label: "Topic",
+  path: "topics",
+  format: "mdx",
+  fields: [
+    {
+      type: "object",
+      list: true,
+      name: "topics",
+      label: "Topics",
+      ui: {
+        itemProps: (item) => ({
+          label: item?.title || "Untitled Topic",
+          icon: "⭐",
+        }),
+      },
+      fields: Topic.fields // ✅ better approach
+    },
+  ],
+}
+
+const DocCategoryCollection = {
+  name: "categories",
+  label: "Document Categories",
+  path: "pages/Categories",
+  format: "mdx",
+  fields: [
+
+    {
+      type: "string",
+      name: "link",
+      label: "URL",
+    },
+     {
+      type: "string",
+      name:"uid",
+      label: "ID",
+      description: "Unique identifier for the section group, used for linking and referencing"
+    },
+    {
+      type: "string",
+      name: "title",
+      label: "Category Title",
+    },
+    {
+      type: "string",
+      name: "slug",
+      label: "Slug",
+      required: true,
+      ui: {
+        validate: (value) => {
+          if (!value) return "Slug is required";
+          if (value.includes(" ")) return "Slug cannot contain spaces";
+        },
+      },
+    },
+    {
+      type: "string",
+      name: "description",
+      label: "Description",
+    },
+    {
+      type: "object",
+      list: true,
+      name: "groupSections",
+      label: "Group Sections",
+      ui: {
+        itemProps: (item) => ({
+          label: item?.title || "Untitled Group Section",
+          icon: "⭐",
+        }),
+      },
+      fields: GroupSections.fields // ✅ better approach
+    },
+  ],
+};
+
+
 export default defineConfig({
   branch: process.env.GIT_BRANCH || "main",
   clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID,
@@ -1338,6 +1679,8 @@ export default defineConfig({
   },
   schema: {
     collections: [
+      TopicsTemplate,
+      DocCategoryCollection,
       DocsCollection,
       PostCollection,
       HomepageCollection,
@@ -1348,8 +1691,8 @@ export default defineConfig({
       InventoryCollection,
       SettingCollection,
       PagesCollection,
-      SidebarCollection,
-      SettingsCollection,
+      // SidebarCollection,
+      // SettingsCollection,
     ],
   },
 });

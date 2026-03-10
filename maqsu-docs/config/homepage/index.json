@@ -5,7 +5,7 @@
   "image": "/img/undraw_docusaurus_mountain.svg",
   "blocks": [
     {
-      "title": "G'Day. How can we help?",
+      "title": "Help Center",
       "subtitle": "Documentations",
       "document": "docs/intro.mdx",
       "documentLabel": "MAQSU Tutorial - 5min ⏱️",
@@ -15,44 +15,45 @@
       "items": [
         {
           "title": "Introduction",
-          "description": "",
-          "image": "/img/icon/book-open-cover.png"
+          "date": "2026-03-01T04:34:00.787Z",
+          "description": "Before we dive into the workflow or any processes. Understand what MAQSU is so everything makes sense in context.\n",
+          "link": "/introduction",
+          "image": "/img/icon/sparkles1.png"
         },
         {
           "title": "Getting Started",
-          "description": "",
+          "date": "2026-02-27T04:36:01.683Z",
+          "description": "Set up all your master data before starting the operation.\n",
           "link": "getting-started",
-          "image": "/img/feature/play.png"
+          "image": "/img/icon/Spaceship-01-256.png"
         },
         {
           "title": "Sales",
-          "description": "Card description with lots of great facts and interesting details.\n",
+          "date": "2026-03-02T04:36:07.314Z",
+          "description": "Guiding you from customer quotations to invoicing and payment collection in one connected workflow.\n",
           "link": "sales",
-          "image": "/img/feature/consulting.png"
+          "image": "/img/icon/graph.png"
         },
         {
           "title": "Purchase",
-          "description": "8 articals\n",
+          "date": "2026-03-02T04:36:12.491Z",
+          "description": "Step-by-step connected workflow for purchases—from quotation to payment.\n",
           "link": "purchase",
-          "image": "/img/feature/credit-card (1).png"
+          "image": "/img/icon/Credit-Card2-WF-256.png"
         },
         {
           "title": "Accounting",
-          "description": "15 articals\n",
+          "date": "2026-03-01T04:36:19.011Z",
+          "description": "Guide you on how to record daily transactions in a clear, organized, and effective way.\n",
           "link": "accounting",
-          "image": "/img/feature/reporting.png"
+          "image": "/img/icon/roi.png"
         },
         {
           "title": "Inventory",
-          "description": "18 articals\n",
+          "date": "2026-02-27T04:36:25.291Z",
+          "description": "Inventory Management and Control\n",
           "link": "inventory",
-          "image": "/img/feature/commercial.png"
-        },
-        {
-          "title": "Settings",
-          "description": "10 articals\n",
-          "link": "settings",
-          "image": "/img/feature/setting.png"
+          "image": "/img/icon/Product-Box-01-WF-256.png"
         }
       ],
       "_template": "features"

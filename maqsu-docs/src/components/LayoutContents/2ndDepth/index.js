@@ -216,7 +216,7 @@ export const FeatureSections = ({data, index }) => {
             </Link>
           )}
         </div>
-        <div className={clsx("container", styles.container_section)}>
+        <div className={clsx(styles.container_section)}>
           {/* Left Section */}
           <div className={clsx(styles.left_section)}>
             <LeftSection

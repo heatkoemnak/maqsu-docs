@@ -15,273 +15,46 @@
     {
       "items": [
         {
-          "title": "Introduction to Sales Module",
+          "title": "Introduction",
           "description": "In MAQSU ERP Software, the **Sales Module** is a core business application designed to manage the entire sales process — from creating quotations to confirming sales orders, delivering products, and issuing invoices. It helps businesses streamline their sales operations, track customer interactions, and improve efficiency across departments.\n",
           "link": "sales/introduction",
-          "image": "",
-          "items": [
-            {
-              "title": "Overview of the Sales Process in MAQSU ERP",
-              "description": ""
-            },
-            {
-              "title": "Purpose",
-              "description": ""
-            },
-            {
-              "title": "Key Functions",
-              "description": "1. Quotation Management\n\n   Create and send professional quotes to customers.\n\n   Track quotation status (e.g., draft, sent, accepted, or rejected).\n\n   Convert accepted quotations into sales orders in one click.\n\n   Sales Order Management\n\n   Confirm and manage customer orders.\n\n   Automatically generate delivery orders and invoices.\n\n   Monitor order progress from quotation to payment.\n\n   Customer Management (CRM Integration)\n\n   Maintain customer profiles and history.\n\n   Analyze sales trends and customer preferences.\n\n   Product & Pricing Control\n\n   Manage product catalog, pricing rules, and discounts.\n\n   Set up price lists and taxes based on customer or region.\n\n   Delivery & Invoicing Integration\n\n   Link sales orders with stock operations for delivery.\n\n   Generate invoices automatically once goods are delivered.\n\n   Reporting & Analytics\n\n   Access real-time sales performance reports.\n\n   Analyze revenue, profit margins, and salesperson performance.\n"
-            },
-            {
-              "title": "Sales Workflow Overview",
-              "description": ""
-            },
-            {
-              "title": "Relation to Other Modules",
-              "description": ""
-            }
-          ]
+          "image": ""
         },
         {
-          "title": "Accessing the Sales Module",
+          "title": "Create New Quotation",
           "description": "",
-          "items": [
-            {
-              "title": "Navigating to the Sales Menu",
-              "description": ""
-            },
-            {
-              "title": "Understanding the Sales Dashboard",
-              "description": ""
-            },
-            {
-              "title": "Quick Access Shortcuts",
-              "description": ""
-            },
-            {
-              "title": "Filters and Search Bar",
-              "description": ""
-            }
-          ]
+          "link": "sales/quotations"
         },
         {
-          "title": "Creating a Quotation",
-          "description": "",
-          "link": "sales/create-quotation",
-          "items": [
-            {
-              "title": "Add products or services",
-              "description": ""
-            },
-            {
-              "title": "Add a  line product",
-              "description": ""
-            },
-            {
-              "title": "Add multi products",
-              "description": ""
-            },
-            {
-              "title": "Add discounts",
-              "description": ""
-            },
-            {
-              "title": "Add taxes",
-              "description": ""
-            }
-          ]
-        },
-        {
-          "title": "Manage Quotations",
-          "description": "",
-          "link": "/sales/quotations",
-          "items": [
-            {
-              "title": "Quick Access Shortcuts",
-              "description": ""
-            },
-            {
-              "title": "Edit Quotation",
-              "description": ""
-            },
-            {
-              "title": "Delete Quotation",
-              "description": ""
-            },
-            {
-              "title": "Filters and Search Bar",
-              "description": ""
-            }
-          ]
-        },
-        {
-          "title": "Add product discounts",
-          "description": "",
-          "items": [
-            {
-              "title": "Add global discount",
-              "description": ""
-            },
-            {
-              "title": "Add discount by item",
-              "description": ""
-            },
-            {
-              "title": "Add fixed discounts",
-              "description": ""
-            },
-            {
-              "title": "Add discount as percentage",
-              "description": ""
-            }
-          ]
-        },
-        {
-          "title": "Converting Quotation to Sales Order",
+          "title": "Confirm Sales Orders",
           "description": "In this section, you will learn how to create **quotations** and **sales orders** — two essential steps in the sales process. By the end of this section, you will understand how to efficiently manage quotations and sales orders to streamline your company’s sales workflow.\n",
-          "link": "/sales/orders",
-          "image": "",
-          "items": [
-            {
-              "link": "orders/quotation",
-              "title": "How to Confirm a Quotation",
-              "description": "A **quotation** is a formal offer from a seller to a buyer showing the price and details of goods or services before a sale happens.\n"
-            },
-            {
-              "link": "orders/sales-orders",
-              "title": "Editing or Cancelling a Sales Order",
-              "description": "**A Sale Order (SO)** is a commercial document issued by a seller (a company or business) to confirm a customer's purchase request. It lists the products or services the buyer wants to purchase, their quantities, prices, terms, and delivery details.\n"
-            }
-          ]
+          "link": "/sales/sales-order",
+          "image": ""
         },
         {
-          "title": "Creating Delivery Order (DO)",
+          "title": "Delivery Order",
           "description": "",
-          "items": [
-            {
-              "title": "Checking Stock Availability",
-              "description": ""
-            },
-            {
-              "title": "Managing Partial or Full Deliveries",
-              "description": ""
-            },
-            {
-              "title": "Delivery Status Tracking",
-              "description": ""
-            },
-            {
-              "title": "Printing Delivery Slip",
-              "description": ""
-            }
-          ]
+          "link": "/sales/delivery-order"
         },
         {
-          "title": "Invoicing Customers",
+          "title": "Issued Invoice",
           "description": "",
-          "items": [
-            {
-              "title": "Generating Invoice from Sales Order",
-              "description": ""
-            },
-            {
-              "title": "Editing Invoice Details (Taxes, Discounts, Due Date)",
-              "description": ""
-            }
-          ]
+          "link": "/sales/issued-invoice"
         },
         {
-          "title": "Add other information to your quotation",
-          "description": ""
+          "title": "Add Payment",
+          "description": "",
+          "link": "/sales/add-payment"
         },
         {
-          "title": "Sales Reports & Analytics",
-          "description": "The **Sales Reporting** feature in MAQSU ERP provides a powerful and insightful way to analyze your company’s sales performance. It helps managers and sales teams make informed decisions by displaying real-time data on sales activities, revenues, customers, and products.\n",
-          "link": "/sales/reporting",
-          "image": "",
-          "items": [
-            {
-              "title": "Sales Analysis",
-              "description": ""
-            },
-            {
-              "title": "Sales Register",
-              "description": ""
-            },
-            {
-              "title": "Viewing Sales Reports by Date",
-              "description": ""
-            },
-            {
-              "title": "Sales Reports by Customers",
-              "description": ""
-            }
-          ]
+          "title": "Reporting",
+          "description": "",
+          "link": "/sales/reporting"
         },
         {
           "title": "Settings",
           "description": "The **Sales Settings** section in MAQSU ERP allows users to configure how the Sales Module behaves according to the company’s policies and workflow. It provides options to customize quotation management, pricing, invoicing, and integration with other modules like inventory and accounting. Proper configuration of sales settings ensures that your sales operations run smoothly, accurately, and in line with business requirements.\n",
-          "image": "",
-          "items": [
-            {
-              "title": "Product Catalog",
-              "description": ""
-            },
-            {
-              "title": "Pricing",
-              "description": ""
-            },
-            {
-              "title": "Quotations & Orders",
-              "description": ""
-            },
-            {
-              "title": "Shipping",
-              "description": ""
-            },
-            {
-              "title": "Invoicing",
-              "description": ""
-            },
-            {
-              "title": "Sale Barcode Scanner",
-              "description": ""
-            }
-          ]
-        },
-        {
-          "title": "Sending Invoice via Email or Download as PDF",
-          "description": ""
-        },
-        {
-          "title": "Posting Invoice (Recording into Accounting Module)",
-          "description": ""
-        },
-        {
-          "title": "Canceling or Modifying Invoices",
-          "description": ""
-        },
-        {
-          "title": "FAQs",
-          "description": "",
-          "items": [
-            {
-              "title": "How to Duplicate a Sales Order?",
-              "description": ""
-            },
-            {
-              "title": "Can I Edit a Confirmed Quotation?",
-              "description": ""
-            },
-            {
-              "title": "How to Handle Returned Orders?",
-              "description": ""
-            },
-            {
-              "title": "How to Apply Multi-Currency in Sales?",
-              "description": ""
-            }
-          ]
+          "image": ""
         }
       ],
       "_template": "features"

@@ -26,12 +26,11 @@ export const HeroContent = ({ data, index }) => {
   return (
     <header
       key={index}
-      className={clsx("hero hero--primary", styles.heroBanner)}
     >
       <div className="container">
-        <h1 className="hero__title">{pageTitle}</h1>
+        {/* <h1 className="hero__title">{pageTitle}</h1> */}
 
-        {data.document && data.documentLabel && (
+        {/* {data.document && data.documentLabel && (
           <div className={styles.buttons}>
             <Link
               className="button button--secondary button--lg"
@@ -42,7 +41,7 @@ export const HeroContent = ({ data, index }) => {
                 : titleFromSlug(data.document)}
             </Link>
           </div>
-        )}
+        )} */}
 
         <Search title={pageTitle} />
       </div>

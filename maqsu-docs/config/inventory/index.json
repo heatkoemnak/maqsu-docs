@@ -20,20 +20,55 @@
           "image": ""
         },
         {
+          "title": "Configurations",
+          "description": "3 articals\n",
+          "items": [
+            {
+              "link": "warehouse",
+              "title": "Warehouses",
+              "description": ""
+            },
+            {
+              "link": "location",
+              "title": "Locations",
+              "description": ""
+            }
+          ]
+        },
+        {
           "title": "Operations",
           "description": "8 articals\n",
           "link": "blog/welcome",
-          "image": ""
+          "image": "",
+          "items": [
+            {
+              "link": "transfers",
+              "title": "Transfer",
+              "description": ""
+            },
+            {
+              "title": "Batch Transfer",
+              "description": ""
+            },
+            {
+              "title": "Inventory Update Quantity",
+              "description": ""
+            },
+            {
+              "title": "Inventory Adjustments",
+              "description": ""
+            },
+            {
+              "title": "Scrap",
+              "description": ""
+            }
+          ]
         },
         {
           "title": "Reporting",
           "description": "15 articals\n",
           "link": "blog/welcome",
           "image": ""
-        },
-        {
-          "title": "Configurations",
-          "description": "3 articals\n"
         }
       ],
       "_template": "features"

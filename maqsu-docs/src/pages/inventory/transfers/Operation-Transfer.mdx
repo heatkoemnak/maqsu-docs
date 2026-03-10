@@ -1,0 +1,128 @@
+---
+title: Operation Transfer
+breadcrumbs:
+  - link: /
+    title: All Categories
+    body: ''
+  - link: /inventory
+    title: Inventory
+    body: ''
+  - link: transfer
+    title: Transfer
+    body: ''
+previous:
+  - link: /inventory
+    title: Introduction of Inventory
+    body: ''
+next:
+  - link: /inventory/operations
+    title: Inventory / Operations
+    body: ''
+---
+
+A **Transfer Operation** in inventory management refers to the process of moving products between warehouses or internal locations within the same organization. In **MAQSU ERP**, these transfers help you keep real-time track of your stock levels across all locations.
+
+### Why you see multiple lines for one PO
+
+![](/img/inventory/transfer/2.png)
+
+This warehouse flow is:
+
+`Vendor` → `Input` → `Quality Control` → `Stock`
+
+>So MAQSU automatically creates 3 pickings per receipt.
+
+**Example: PO P00003**
+
+1. WH-03/IN/00003— Vendor → Input
+
+    - From: Partner Locations / Vendors
+
+    - To: WH-03 / Input
+
+    - Status: **Ready**
+        - 👉 Goods were ready to receive from the vendor
+
+2. WH-03/IN/00005 — Input → Quality Control
+
+    - From: WH-03 / Input
+
+    - To: WH-03 / Quality Control
+
+    - Status: **Waiting for another Operation**
+        - 👉 Goods are waiting for the previous step (Vendor → Input)
+
+3. WH-03/INT/00006 — Quality Control → Stock
+
+    - From: WH-03 / Quality Control
+
+    - To: WH-03 / Stock
+
+    - Status: **Waiting Another Operation**
+        -👉 This transfer is blocked until QC step is completed
+---
+### Understanding “Waiting Another Operation”
+
+**"Waiting Another Operation"** means this transfer is **on hold** until a required earlier transfer is completed.
+
+**Example:**
+
+- The **QC → Stock** transfer cannot proceed (waiting).
+- The **Input → QC** transfer must be completed first.
+
+>Think of it as a relay race—each step waits for the baton to be passed along!
+
+### Why Use Operation Transfer?
+
+- **Balance Stock Levels**: Move items from overflowing locations to those in need.
+- **Fulfill Orders Faster**: Relocate products closer to where they are required.
+- **Maintain Accurate Inventory**: Prevent discrepancies by documenting all internal product movements.
+
+---
+
+## How to Perform an Operation Transfer
+
+### 1. **Inventory > Operations > Transfers**  
+>![](/img/inventory/transfer/1.png)
+
+### 2. **Click "Transfer line"**  
+   Begin a new transfer operation.
+>![](/img/inventory/transfer/3.png)
+
+### 3. **Fill In the Transfer Details:**
+   - **Operation Type:** Select *Internal Transfer*.
+   - **Source Location:** Choose the warehouse or location where products are currently stored.
+   - **Destination Location:** Choose where you want to move the products.
+   - **Scheduled Date:** Select when the transfer should take place.
+
+### 4. **Add Products to Transfer:**  
+   - Enter each product and its quantity to transfer.
+
+### 5. **Verify & Confirm:**  
+   - Review all details and click **Confirm** to validate the transfer.
+
+6. **Process the Transfer:**  
+   - MAQSU may require steps like picking, packing, or validating the move depending on your configuration.
+
+7. **Done:**  
+   Once validated, your inventory levels will update to reflect the move.
+
+---
+
+## Example
+
+Suppose you want to move 20 units of Product *A* from Warehouse 1 to Warehouse 2:
+
+- **Source Location:** Warehouse 1 / Stock
+- **Destination Location:** Warehouse 2 / Stock
+- **Product:** Product A
+- **Quantity:** 20
+
+After following the steps above and confirming, *20 units* will be subtracted from Warehouse 1 and added to Warehouse 2.
+
+---
+
+> **Tip:**  
+> Always ensure both source and destination locations are correctly configured in the system to prevent errors during transfers.
+
+

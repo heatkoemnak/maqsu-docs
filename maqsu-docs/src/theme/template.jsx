@@ -96,6 +96,7 @@ const CodeBlockTemplate = {
   ],
 };
 
+
 const TabsTemplate = {
   name: "Tabs",
   fields: [
@@ -156,6 +157,100 @@ const TabsTemplate = {
   ],
 };
 
+
+const TabsPageTemplate = {
+  name: "tab",
+  label: "Tab",
+  fields: [
+    {
+      name: "id",
+      type: "string",
+      ui: {
+        component: "hidden",
+      },
+    },
+    {
+      name: "label",
+      label: "Label",
+      type: "string",
+      isTitle: true,
+      required: true,
+    },
+    {
+      name: "children",
+      label: "Body",
+      type: "rich-text",
+      isBody: true,
+    },
+  ],
+}
+
+
+// const TabsTemplateNew= {
+//      name: "tabsesctions",
+//       label: "Tabs",
+//       fields: [
+//         {
+//           type: "object",
+//           name: "lists",
+//           label: "Tabs Sections",
+//           ui: {
+//             itemProps: (item) => ({
+//               label: item?.label || "Untitled Feature",
+//               icon: "⭐", // (optional) adds emoji or icon
+//             }),
+//           },
+//           list: true,
+//           fields: [
+//             { name: "label", label: "Label", type: "string" },
+//             {
+//               name: "children",
+//               label: "Body",
+//               type: "rich-text",
+//               isBody: true,
+//               templates: [],
+//             },
+
+//           ],
+//         },
+
+//       ],
+// };
+
+
+// const CustomTabsPage = {
+//   name: "CustomTabsPage",
+//   label: "Custom Tabs",
+//   fields: [TabSection]
+// }
+// const TabSection ={
+//   name: "tabsections",
+//   label: "Tabs Section",
+//   type: "object",
+//   list: true,   // 👈 THIS makes it an array
+//   templates: [
+//     {
+//       name: "tab",
+//       label: "Tab",
+//       fields: [
+//         {
+//           name: "label",
+//           label: "Label",
+//           type: "string",
+//           isTitle: true,
+//           required: true,
+//         },
+//         {
+//           name: "children",
+//           label: "Body",
+//           type: "rich-text",
+//           isBody: true,
+//         },
+//       ],
+//     }
+//   ]
+// }
+
 const DocCardListTemplate = {
   name: "DocCardList",
   label: "Doc Card List",
@@ -167,8 +262,6 @@ const DocCardListTemplate = {
     },
   ],
 };
-
-
 
 const CardTemplate = {
       name: "Card",
@@ -192,6 +285,50 @@ const CardTemplate = {
             { name: "image", label: "Image", type: "image" },
           ],
         },
+
+      ],
+};
+
+const ListTemplate = {
+     name: "Lists",
+      label: "Lists",
+      fields: [
+        {
+          type: "object",
+          name: "lists",
+          label: "Lists",
+          ui: {
+            itemProps: (item) => ({
+              label: item?.title || "Untitled Feature",
+              icon: "⭐", // (optional) adds emoji or icon
+            }),
+          },
+          list: true,
+          fields: [
+            { name: "title", label: "Title", type: "string" },
+            { name: "description", label: "Description", type: "string" },
+            { name: "image", label: "Image", type: "image" },
+            {
+              type: "object",
+              name: "sublists",
+              label: "SubLists",
+              ui: {
+                itemProps: (item) => ({
+                  label: item?.title || "Untitled Feature",
+                  icon: "⭐", // (optional) adds emoji or icon
+                }),
+              },
+              list: true,
+              fields: [
+                { name: "title", label: "Title", type: "string" },
+                { name: "link", label: "Link", type: "string" },
+                { name: "description", label: "Description", type: "string" },
+                { name: "image", label: "Image", type: "image" },
+              ]
+          },
+          ],
+        },
+
       ],
 };
 
@@ -210,6 +347,14 @@ const VideoPlayerTemplate = {
       name: "caption",
       label: "Caption",
       type: "string",
+    },
+    {
+      type: "string",
+      name: "video",
+      label: "Video Upload",
+      ui: {
+        component: "image", // allows uploading video too if enabled
+      },
     },
   ],
 };
@@ -237,6 +382,123 @@ const ProcessFlow = {
   ],
 };
 
+const Noted = {
+  name:"Noted",
+  label:"Noted",
+  fields:[
+    {
+      name: "title",
+      label: "Title",
+      type: "string",
+      isTitle: true,
+      required: true,
+    },
+    {
+      name: "type",
+      label: "Type",
+      type: "string",
+      options: [
+        {
+          label: "Note",
+          value: "note",
+        },
+        {
+          label: "Tip",
+          value: "tip",
+        },
+        {
+          label: "Info",
+          value: "info",
+        },
+        {
+          label: "Caution",
+          value: "caution",
+        },
+        {
+          label: "Danger",
+          value: "danger",
+        },
+      ],
+    },
+    {
+      name: "children",
+      label: "Content",
+      type: "rich-text",
+      isBody: true,
+            // Enable link support
+      tinaField: {
+        mutations: {
+          insertLink: true,
+        },
+      },
+    },
+     { name: "image", label: "Image", type: "image" },
+  ],
+}
+
+
+const Steps = {
+  name:"Steps",
+  label:"Steps",
+  fields:[
+    {
+      name: "title",
+      label: "Title",
+      type: "string",
+      isTitle: true,
+      required: true,
+    },
+    {
+      name: "number",
+      label: "Step Number",
+      type: "string",
+      options: [
+        {
+          label: "Step 1",
+          value: "1",
+        },
+        {
+          label: "Step 2",
+          value: "2",
+        },
+        {
+          label: "Step 3",
+          value: "info",
+        },
+        {
+          label: "Step 4",
+          value: "4",
+        },
+        {
+          label: "Step 5",
+          value: "5",
+        },
+        {
+          label: "Step 6",
+          value: "6",
+        },
+        {
+          label: "Step 7",
+          value: "7",
+        },
+        {
+          label: "Step 8",
+          value: "8",
+        },
+        {
+          label: "Step 9",
+          value: "9",
+        },
+        {
+          label: "Step 10",
+          value: "10",
+        },
+      ],
+    },
+
+  ],
+}
+
 
 
 export const MDXTemplates = [
@@ -245,7 +507,11 @@ export const MDXTemplates = [
   CodeBlockTemplate,
   TabsTemplate,
   DocCardListTemplate,
+  ListTemplate,
   CardTemplate,
   VideoPlayerTemplate,
-  ProcessFlow
+  ProcessFlow,
+  Noted,
+  Steps,
+  // TabsTemplateNew
 ];

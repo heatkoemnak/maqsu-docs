@@ -1,9 +1,24 @@
-/* From Uiverse.io by Prince4fff */
-
-.container{
-    width: 80%;
-    margin: 0 auto;
+.hero_page{
+  /* height: 50vh; */
+  width: 100%;
+  padding: 100px 0;
+  margin: 0 auto;
+  display: flex;
+  /* position: absolute  ; */
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-primary);
+  /* background: linear-gradient(180deg, rgb(70, 121, 149) 0%, rgb(40, 108, 135) 37%, rgb(47, 87, 117) 100%, rgb(117, 114, 114) 100%); */
+  /* border-radius:  0% 0% 20% 80% / 0 30% 0 50%; */
+  /* background: linear-gradient(140deg, rgb(44, 96, 124) 0%, rgb(44, 107, 129) 37%, rgb(109, 164, 203) 100%, rgb(211, 97, 97) 100%); */
 }
+.features{
+  width: 80%;
+  margin: 20px auto;
+  margin-bottom: 100px;
+  border-radius:  0% 30% 0% 0%  / 0% 10% 0 30%;
+}
+
 .index{
     display: flex;
     width: 100%;
@@ -11,45 +26,69 @@
     justify-content: start;
 }
 .header{
-    margin: 0 12px;
+  display: flex;
+  align-items: center;
+  /* margin:10px 15px; */
+  justify-content: space-between;
+}
+.header div span{
+  font-size: 20px;
+  font-weight: 600;
+}
+.display_icon{
+  display: flex;
+  gap: 5px;
+  background: rgb(255, 255, 255);
+  padding: 10px 20px;
+  margin-right: 25px;
+  border-radius: 25px;
+  border: solid 1px #a4c2cf;
+
+}
+.inactive_icon{
+  /* background-color: #ffffff; */
+  cursor: pointer;
+  color: #bdcad4;
+
+}
+.active_icon{
+  /* background-color: #25435e; */
+  color: #25435e;
+  cursor: pointer;
+}
+
+.icon_1{
+  cursor: pointer;
+  color: #bdcad4;
+  /* color: #25435e; */
+}
+.icon_2{
+    color: #bdcad4;
+}
+
+.icon_1:hover {
+  color: #a6c4e7;
+  cursor: pointer;
+}
+.icon_2:hover {
+  color: #a6c4e7;
+  cursor: pointer;
+}
+.category{
+  margin-left: 15px;
+  padding: 5px 18px;
+  background-color: #25435e;
+  color: #ffffff;
+  font-size: 15px !important;
+  font-weight: 500;
+  border-radius: 20px;
 }
 .cards{
     display: flex;
     width:100%;
     margin: 0 auto;
     flex-wrap: wrap;
-}
-
-.card1{
-    display: block;
-    position: relative;
-    min-width: 380px;
-    min-height:  202px;
-    /* background-color: #ffffff; */
-    border-radius: 4px;
-    padding: 32px 24px;
-    margin: 12px;
-    text-decoration: none;
-    z-index: 0;
-    overflow: hidden;
-}
-
-
-@media (min-width: 997px) {
-    .card1{
-        /* display: block;
-        position: relative; */
-        min-width: 372px;
-        min-height:  210px;
-        background-color: #ffffff;
-        border-radius: 4px;
-        /* padding: 32px 24px; */
-        /* margin: 12px; */
-        text-decoration: none;
-        z-index: 0;
-        overflow: hidden;
-    }
-}
+  }
 
 .card p {
   font-size: 17px;
@@ -98,18 +137,6 @@
   font-family: courier, sans;
 }
 
-.card1 {
-  display: block;
-  position: relative;
-  max-width: 262px;
-  background-color: #ffffff;
-  border-radius: 4px;
-  padding: 32px 24px;
-  margin: 12px;
-  text-decoration: none;
-  z-index: 0;
-  overflow: hidden;
-}
 .card1:hover{
   text-decoration: none;
   color: aquamarine;
@@ -147,8 +174,12 @@
     color: royalblue;
 }
 .featureSvg1{
-    width: 30px;
-    height: 30px;
+    width: 35px;
+    height: 35px;
+    background: #ffffff;
+    padding: 5px;
+    border:solid 1px #9ac5e0;
+    border-radius: 10px;
 }
 
 

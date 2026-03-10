@@ -1,0 +1,136 @@
+---
+title: Warehouse
+breadcrumbs:
+  - link: /
+    title: All Categories
+    body: ''
+  - link: /inventory
+    title: Inventory
+    body: ''
+previous:
+  - link: /inventory
+    title: Introduction of Inventory
+    body: ''
+next:
+  - link: /inventory/operations
+    title: Inventory / Operations
+    body: ''
+---
+
+A **Warehouse** in **MAQSU ERP** is a central module that helps you manage, control, and monitor your company’s physical inventory. Warehouses can represent actual storage locations (such as depots, stores, or distribution centers) or logical ones (such as virtual zones or consignment stock). They are essential for tracking the movement of goods—from receiving and storage to transfer and delivery.
+
+![](/img/inventory/1_1.png)
+
+> **Note:**  
+  MAQSU allows you to create and manage multiple warehouses to suit your business needs.
+
+
+---
+
+## How to Configure a Warehouse
+
+Warehouse configuration determines how products are received, stored, and dispatched. Follow these steps to set up a warehouse effectively:
+
+### 1. Inventory > configuration > Warehouse
+
+>![](/img/inventory/2.png)
+
+- if you have multi-warehouse, it will list all of the warehouses you have.
+
+>![](/img/inventory/1.png)
+
+### 2. Basic Information
+
+**Warehouse Name:**  
+Enter the full name of the warehouse. This is how it will appear in reports and documents.
+E.g.: `WH-01`  
+
+>![](/img/inventory/warehouse/1.png)
+
+**Short Name:**  
+Provide a short code for the warehouse. This code is used internally throughout stock locations and references.
+E.g.: `WH-01`  
+>![](/img/inventory/warehouse/2.png)
+
+**Address:**  
+Link the warehouse with your company’s address. This address will be displayed on delivery slips, invoices, and logistics paperwork.
+E.g.: `My Company`  
+>![](/img/inventory/warehouse/3.png)
+
+>![](/img/inventory/6.png)
+---
+
+### 2. Configure Incoming Shipments
+
+Decide **how you want to receive goods** into the warehouse. Choose the method that fits your workflow:
+
+- **Receive Goods Directly (1 step):**  
+  `Vendor` → `Stock`  
+  For quick receiving when no quality check or staging is needed.
+
+- **Receive goods in input and then stock(2 step):**  
+  `Vendor` → `Input` → `Stock`  
+  Ideal if you want to temporarily receive goods in an input area (e.g., for initial counting or staging) before storing them.
+
+- **Receive goods in input and then quality and then stock(3 step):**  
+  `Vendor` → `Input` → `Quality` → `Stock`  
+  Use this if your business process requires a quality inspection before products are moved to stock.
+
+>![](/img/inventory/7.png)
+
+> **Tip:**  
+- Use one-step receipts for small businesses or when receiving is simple and fast.
+- opt for two- or three-step processes if you require quality checks or need to stage incoming items.
+
+---
+
+### 3. Configure Outgoing Shipments
+
+Choose how products are dispatched from the warehouse. For most simple operations, you can use:
+
+- **Deliver goods directly (1 step):**  
+  Ship goods directly from stock to the customer.
+
+- **Send goods in output and then deliver (2 steps):**  
+  `Stock` → `Output` → `Customer`  
+  Use this method if you want to move goods to an output (staging) area before shipping them to the customer, useful for preparing or consolidating orders before dispatch.
+
+- **Pack goods, send goods in output and then deliver (3 steps):**  
+  `Stock` → `Pack` → `Output` → `Customer`  
+  Use this method if your workflow requires packing products before moving them to an output (staging) area, and then delivering them to the customer.
+
+>![](/img/inventory/8.png)
+
+### 4. Resupply (Optional)
+
+- **Buy to Resupply**
+
+  - When this is checked, MAQSU will purchase items from suppliers to replenish stock.
+  
+  - It means resupply will be done via procurement (purchase orders) rather than only internal transfers.
+
+- **Resupply From**
+
+  - This section defines **internal inventory locations** that can supply this location.
+
+    - WH-02
+
+    - WH-03
+
+  - If you check one of these:
+
+    - MAQSU will try to **transfer stock from that warehouse** instead of buying it.
+
+    - Example: If WH-02 has enough stock, the system can move items from WH-02 to this location.
+
+>![](/img/inventory/9.png)
+
+### 5. Save
+Once your configuration is done, click on the **Save** button.
+
+>**Note:**
+  If your business needs more control (such as picking and packing in multiple steps), see advanced shipment configurations in the settings.
+
+---
+
+With these configurations, you can tailor your warehouse management to match your organization’s requirements, improving traceability and operational efficiency.

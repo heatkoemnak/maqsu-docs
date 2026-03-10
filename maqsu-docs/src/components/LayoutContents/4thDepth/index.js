@@ -7,11 +7,22 @@ import Link from "@docusaurus/Link";
 import styles from "../styles.module.css";
 import { motion } from "framer-motion";
 import { LiaAngleRightSolid } from "react-icons/lia";
-import { HiHome, HiMiniChevronLeft, HiMiniChevronRight } from "react-icons/hi2";
+import { FaLink } from "react-icons/fa6";
 import { CardGrid } from "../../Cards/CardGrid";
 import { VideoPlayer } from "../../VideoPlayer/VideoPlayer";
 import { ProcessFlow } from "../../ProcessFlow/ProcessFlow";
-import SearchContent from "../../Search/SearchContent";
+
+import { Lists } from "../../Cards/Lists";
+import { Noted } from "../../Noted/Noted";
+import { Steps } from "../../Steps/Steps";
+import { RiArrowLeftDoubleLine,RiArrowRightDoubleLine } from "react-icons/ri";
+
+
+import Page from "../../Page";
+import CustomTabsPage from "../../CustomTabsPage";
+import { HeroContent } from "../../HeroContent";
+import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+import Navbar from "../../Navbar/Navbar";
 const salesData = require("../../../../config/gettstarted/index.json");
 
 
@@ -41,27 +52,19 @@ const itemVariantsSidebar = {
 };
 
 export default function FourthDepth({path}) {
-    console.log(path);
+  const [sidebarOpen, setSidebarOpen] = React.useState(false);
     const location = useLocation();
-    console.log(location.pathname);
     const [posts, setPosts] = React.useState(null);
-    console.log("posts:",posts);
-    
-  // ✅ Find "features" block and its items
+    console.log(location.pathname);
+//  console.log(posts.map((post) => post?.body))
+        // ✅ Find "features" block and its items
         const featureBlock = salesData.blocks.find((b) => b._template === "features");
         const items = featureBlock?.items || [];
-        console.log("items:",items);
-
 
         // ✅ Find current item index for page navigation
         const currentIndex = items.findIndex((item) => `/${item.link}` === location.pathname);
-        console.log("currentIndex:",currentIndex);
         const prevItem = currentIndex > 0 ? items[currentIndex - 1] : null;
-        
         const nextItem = currentIndex >= 0 && currentIndex < items.length - 1 ? items[currentIndex + 1] : null;
-        console.log("nextItem:",prevItem);
-        console.log("nextItem:",nextItem);
-
 
     React.useEffect(() => {
         async function fetchData() {
@@ -78,225 +81,142 @@ export default function FourthDepth({path}) {
         fetchData();
     }, []);
 
+    //  const location = useLocation();
+    //   const { siteConfig } = useDocusaurusContext();
+    //   console.log("pathname:",location.pathname);
+
+    //   // Example mapping based on pathname
+    //   const getPageTitle = (pathname) => {
+    //     if (pathname.startsWith("/sales")) return "Sales";
+    //     if (pathname.startsWith("/purchase")) return "Purchase";
+    //     if (pathname.startsWith("/inventory")) return "Inventory";
+
+    //     // default fallback
+    //     return data.title ? data.title : siteConfig.title;
+
+    //   };
+
+    //   const pageTitle = getPageTitle(location.pathname);
+
     return (
         <>
+            {/* <HeroContent data={"Hello"} index={0}/> */}
+            <Navbar/>
+            {/* {
+                sidebarOpen &&
+                    <div className={clsx(styles.navbar)}>
+                        {posts?.map((post, i) => {
+                            return (
+                                <div key={i} className={clsx(styles.Link)}>
+                                    {post?.breadcrumbs?.map((word, j) => {
+                                        return (
+                                            <span key={j}>
+                                                {j > 0 && <LiaAngleRightSolid size={10}/>}
+                                                <Link to={word?.link}>{word?.title}</Link>
+                                            </span>
+                                        );
+                                    })}
+                                </div>
+                            );
+                        })}
+                    </div>
+                    } */}
 
-            <SearchContent/>
-            <div className={clsx(styles.navbar)}>
-                {posts?.map((post, i) => {
-
-                    return (
-                        <div key={i}>
-                            {post?.breadcrumbs?.map((word, j) => {
-                                return (
-                                    <span key={j}>
-                                        {j > 0 && <LiaAngleRightSolid />}
-                                        <Link to={word?.link}>{word?.title}</Link>
-                                    </span>
-                                );
-                            })}
-                        </div>
-                    );
-                })}
-            </div>
-           
-
-            <div className={clsx(styles.container)}>
-                <motion.div
-                    className={clsx(styles.main)}
-                    variants={containerVariants}
-                    initial="hidden"
-                    animate="show"
-                >
-                    {posts?.map((post, i) => (
-                        <motion.div
-                            key={i}
-                            className="list-group-item"
-                            variants={itemVariants}
-                            whileHover={{ scale: 1 }}
-                            // whileTap={{ scale: 0.98 }}
-                        >
-                            <h2 className={clsx(styles.pageTitle)}>{post.title}</h2>
-                            <TinaMarkdown 
-                            content={post.body}  
-                            components={{CardGrid: (props) => <CardGrid {...props} />,
-                            VideoPlayer: (props) => <VideoPlayer {...props} />,
-                            ProcessFlow: (props) => <ProcessFlow {...props} />,}}
-                            />
-                        </motion.div>
-                    ))}
-                </motion.div>
-
-                <motion.div
-                    className={clsx(styles.side)}
-                    variants={containerVariantsSidebar}
-                    initial="hidden"
-                    animate="show"
-                >
-                    {posts?.how_to?.length > 0 && (
-                        <>
-                            <motion.h2 variants={itemVariantsSidebar}>How to</motion.h2>
-                            <motion.div
-                                className={clsx(styles.manageLinks)}
-                                variants={containerVariantsSidebar}
-                            >
-                                {posts?.map((post, i) => (
-                                    <React.Fragment key={i}>
-                                        {post?.how_to?.map((item, j) => (
-                                            <motion.div
-                                                key={j}
-                                                variants={itemVariantsSidebar}
-                                                whileHover={{ scale: 1.05, color: "#059669" }}
-                                            >
-                                                <Link to={item.link}>{item.title}</Link>
-                                            </motion.div>
-                                        ))}
-                                    </React.Fragment>
-                                ))}
-                            </motion.div>
-                            <hr />
-                        </>
-                    )}
-                    {/* <PageNavigation/> */}
-
-                    <>
-                        {posts?.map((post, i) => (
-                            <React.Fragment key={i}>
-                                {post?.managements?.length > 0 && (
-                                    <motion.h2 variants={itemVariantsSidebar}>TABLE OF CONTENTS</motion.h2>
-                                )}
-                            </React.Fragment>
-                        ))}
-                        <motion.div
-                            className={clsx(styles.manageLinks)}
-                            variants={containerVariantsSidebar}
-                        >
-                            {posts?.map((post, i) => (
-                                <React.Fragment key={i}>
-                                    {post?.managements?.map((item, j) => (
-                                        <motion.div
-                                            key={j}
-                                            variants={itemVariantsSidebar}
-                                            whileHover={{ scale: 1.05, color: "#059669" }}
-                                        >
-                                            <Link to={item.link}>{item.title}</Link>
-                                        </motion.div>
-                                    ))}
-                                </React.Fragment>
-                            ))}
-                        </motion.div>
-                    </>
-
+            {/* <div className={clsx(styles.main)}>
+                <div className={clsx(styles.side)}>
                     {posts?.some(post => post?.related?.length > 0) && (
-                        <>
-                            <motion.span className={clsx(styles.CONTENT)} variants={itemVariantsSidebar}>Related Contents</motion.span>
-                            <motion.p variants={itemVariantsSidebar}>
-                            </motion.p>
-                            <motion.div variants={containerVariantsSidebar}>
+                        <div className={clsx(styles.related_link)}>
+                            <span className={clsx(styles.CONTENT)}>Related Contents</span>
+                            <p>
+                            </p>
+                            <div>
                                 {posts?.map((post, i) => (
                                     <React.Fragment key={i}>
                                         {post?.related?.map((item, j) => (
+                                            <div
+                                                key={j}
+                                            >
+                                                <Link to={item.link}><span className={clsx(styles.LinkText)}>{item.title}</span></Link>
+                                            </div>
+
+                                        ))}
+                                    </React.Fragment>
+                                ))}
+                            </div>
+                        </div>
+                    )}
+                </div>
+                {posts?.map((post, i) => (
+                    <div
+                        key={i}
+                        className="list-group-item"
+                    >
+                        <h2 className={clsx(styles.pageTitle)}>{post.title}</h2>
+                        <TinaMarkdown
+                        content={post.body}
+                        components={{CardGrid: (props) => <CardGrid {...props} />,
+                        tabsesctions: (props) => <CustomTabsPage {...props} />,
+                        VideoPlayer: (props) => <VideoPlayer {...props} />,
+                        Lists: (props) => <Lists {...props} />,
+                        ProcessFlow: (props) => <ProcessFlow {...props} />,
+                        Noted: (props) => <Noted {...props}/>,
+                        Steps: (props) => <Steps {...props}/>,}}
+                        />
+                    </div>
+                ))}
+            </div> */}
+
+              <Page sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen}/>
+                <section
+                    key={prevItem?.link}
+                    className={clsx(styles.features)}
+                >
+                    <div className={clsx(styles.pageNavigation)}>
+                        {posts?.some(post => post?.previous?.length > 0) && (
+                            <motion.div variants={containerVariantsSidebar} className={clsx(styles.prev)}>
+                                {posts?.map((post, i) => (
+                                    <React.Fragment key={i}>
+                                        {post?.previous?.map((item, j) => (
                                             <motion.div
                                                 key={j}
                                                 variants={itemVariantsSidebar}
-                                                whileHover={{ scale: 1.05, color: "#059669" }}
+                                                whileHover={{color: "#059669" }}
+                                                className={clsx(styles.LinkContainer)}
                                             >
-                                                <Link to={item.link}>{item.title}</Link>
+                                                <Link to={item.link} className={clsx(styles.Link)}>
+                                                    <span className={clsx(styles.PREV)}>PEVIOUS</span>
+                                                    <span className={clsx(styles.PREV_title)}> <RiArrowLeftDoubleLine size={17} />{item.title}</span>
+                                                </Link>
                                             </motion.div>
                                         ))}
                                     </React.Fragment>
                                 ))}
                             </motion.div>
-                        </>
-                    )}
-
-                    {/* {posts?.some(post => post?.next?.length > 0) && (
-                        <>
-                            <motion.h3 variants={itemVariantsSidebar}>Next</motion.h3>
-                            <motion.p variants={itemVariantsSidebar}>
-                                
-                            </motion.p>
-                            <motion.div variants={containerVariantsSidebar}>
+                        )}
+                        {posts?.some(post => post?.next?.length > 0) && (
+                            <motion.div variants={containerVariantsSidebar} className={clsx(styles.next)}>
                                 {posts?.map((post, i) => (
-                                    <React.Fragment key={i}>
+                                    <React.Fragment key={i} >
                                         {post?.next?.map((item, j) => (
                                             <motion.div
                                                 key={j}
                                                 variants={itemVariantsSidebar}
-                                                whileHover={{ scale: 1.05, color: "#059669" }}
+                                                whileHover={{color: "#059669" }}
+                                                className={clsx(styles.LinkContainer)}
                                             >
-                                                <Link to={item.link}>{item.title}</Link>
+                                                <Link to={item.link} className={clsx(styles.Link)}>
+                                                    <span className={clsx(styles.NEXT)}>NEXT</span>
+                                                    <span className={clsx(styles.NEXT_title)}>{item.title} <RiArrowRightDoubleLine size={17} /></span>
+                                                </Link>
                                             </motion.div>
                                         ))}
                                     </React.Fragment>
                                 ))}
                             </motion.div>
-                        </>
-                    )} */}
-                </motion.div>
+                        )}
+                    </div>
+                </section>
 
-               
-                <section
-                    key={prevItem?.link}
-                    className={clsx(
-                        styles.features)}
-                    >
-                    <div
-                        className={clsx(
-                        styles.pageNavigation)}
-                    >
-                        {posts?.some(post => post?.previous?.length > 0) && (
-                            <>
-                                {/* <motion.h3 variants={itemVariantsSidebar}>Next</motion.h3> */}
-                                <motion.div variants={containerVariantsSidebar}>
-                                    {posts?.map((post, i) => (
-                                        <React.Fragment key={i}>
-                                            {post?.previous?.map((item, j) => (
-                                                <motion.div
-                                                    key={j}
-                                                    variants={itemVariantsSidebar}
-                                                    whileHover={{ scale: 1.05, color: "#059669" }}
-                                                    className={clsx(styles.LinkContainer)}
-                                                >
-                                                    <Link to={item.link} className={clsx(styles.Link)}>
-                                                    <span className={clsx(styles.Title)}> {item.title}</span><br/>
-                                                    <span className={clsx(styles.next)}>PEVIOUS</span>
-                                                    </Link>
-                                                </motion.div>
-                                            ))}
-                                        </React.Fragment>
-                                    ))}
-                                </motion.div>
-                            </>
-                        )}
-                        {posts?.some(post => post?.next?.length > 0) && (
-                            <>
-                                {/* <motion.h3 variants={itemVariantsSidebar}>Next</motion.h3> */}
-                                <motion.div variants={containerVariantsSidebar}>
-                                    {posts?.map((post, i) => (
-                                        <React.Fragment key={i}>
-                                            {post?.next?.map((item, j) => (
-                                                <motion.div
-                                                    key={j}
-                                                    variants={itemVariantsSidebar}
-                                                    whileHover={{ scale: 1.05, color: "#059669" }}
-                                                    className={clsx(styles.LinkContainer)}
-                                                >
-                                                    <Link to={item.link} className={clsx(styles.Link)}>
-                                                        <span className={clsx(styles.Title)}> {item.title}</span><br/>
-                                                        <span className={clsx(styles.next)}>NEXT</span>
-                                                    </Link>
-                                                </motion.div>
-                                            ))}
-                                        </React.Fragment>
-                                    ))}
-                                </motion.div>
-                            </>
-                        )}
-                        </div>
-                    </section>
-            </div>
-          
         </>
     );
 }

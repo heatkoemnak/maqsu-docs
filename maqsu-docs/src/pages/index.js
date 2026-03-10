@@ -1,18 +1,14 @@
 import React from "react";
-import Layout from "@theme/Layout";
-import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
-import clsx from "clsx";
-const pageData = require("../../config/homepage/index.json");
-import styles from "./styles.module.css";
 import HomeContent from "../components/HomeContent";
-
-console.log(pageData);
+import DefaultLayout from "../layout/DefaultLayout";
+import Footer from "../components/Footer";
+const pageData = require("../../config/homepage/index.json");
 
 export default function Home() {
-  const { siteConfig } = useDocusaurusContext();
 
 
   React.useEffect(() => {
+
     (function (d, t) {
       var BASE_URL="https://app.chatwoot.com";
       var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
@@ -29,14 +25,9 @@ export default function Home() {
   }, []);
 
   return (
-    <Layout
-      title={pageData?.title || siteConfig.title}
-      description={pageData?.description || siteConfig.tagline}
-    >
-      {/* {pageData?.blocks && <Blocks blocks={pageData.blocks} />} */}
-      <div className={clsx(styles.layout)}>
+    <DefaultLayout>
        <HomeContent cardList={pageData.blocks[1].items}/>
-      </div>
-    </Layout>
+      <Footer/>
+    </DefaultLayout>
   );
 }

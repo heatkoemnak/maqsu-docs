@@ -1,0 +1,1727 @@
+---
+link: inventory
+uid: inventory
+title: Inventory
+slug: inventory
+description: This section provides an overview of the Inventory module in MAQSU ERP. Learn how to manage your stock levels, track inventory movements, and optimize your warehouse operations.
+groupSections:
+  - link: introduction#introduction
+    uid: introduction
+    title: Introduction
+    date: '2026-02-20T02:40:52.106Z'
+    breadcrumbs:
+      - link: /
+        title: All
+        body: ''
+      - link: /inventory
+        title: Inventory
+        body: ''
+      - link: /inventory/introduction
+        title: Introduction
+        body: ''
+    sections:
+      - link: /inventory-overviews
+        title: Overviews
+        body: |
+          Welcome to the MAQSU ERP Inventory Module. This comprehensive guide will help you understand and effectively use the inventory management system to track, manage, and control your stock across multiple warehouses and locations.
+
+          #### By mastering this module, you will gain the skills to:
+
+            - **Track Stock Levels** – Monitor inventory quantities across all warehouses and locations in real-time
+            - **Manage Receipts and Deliveries** – Process incoming goods from vendors and outgoing shipments to customers
+            - **Transfer Products** – Move inventory between warehouses, locations, or storage areas
+            - **Adjust Inventory** – Correct stock discrepancies and account for losses or gains
+            - **Scrap Products** – Record damaged, expired, or obsolete items removed from inventory
+            - **Batch Processing** – Group multiple operations together for efficient execution
+            - **Generate Reports** – Analyze inventory levels, movements, and valuation
+
+          ---
+
+      - link: /dashboard
+        title: Dashboard
+        body: |
+
+            ![Creating a new Goods Receipt](/img/inventory/introduction/0002.png)
+
+            The main dashboard displays cards for each warehouse and operation type:
+
+            #### [Goods Receipts](/inventory/goods-receipts#goods-receipts)
+            - Shows pending receipts to be processed
+            - Displays counts for Waiting, Late, and Back Orders
+            - `0 To Do` indicates current workload
+
+            ---
+
+            #### [Internal Transfers](/inventory/stock-transfers#stock-transfers)
+            - Tracks movements within or between warehouses
+            - Monitors transfer status and timing
+            - `0 To Do` when no transfers are pending
+
+            ---
+
+            #### [Delivery Orders](/inventory/delivery-order#delivery-order)
+            - Lists customer shipments to be processed
+            - Shows status counts for outbound operations
+            - `0 To Do` indicates ready-to-ship orders
+
+            ---
+
+      - link: /setup
+        title: Setup
+        body: |
+
+          Before beginning inventory operations, you must configure essential master data in the system. Proper setup ensures smooth operations and accurate tracking.
+
+            - [Warehouses](/getting-started/setup-master-datas#setup-warehouse) – Define a physical building or facility where goods are stored and managed.
+            - [Locations](/getting-started/setup-master-datas#setup-location) – Define a specific place inside a warehouse where items are stored.
+            - [Product Category](/getting-started/setup-master-datas#setup-product-category) – To group or classification of similar products.
+            - [Product UOM (Units of Measure)](/getting-started/setup-master-datas#setup-product-uom) – Standard unit used to measure, store, buy, or sell in an inventory
+            - [Products](/getting-started/setup-master-datas#products) – Item that is bought, sold, or stored.
+
+          ---
+    body: >
+
+
+
+  - link: goods-receipts#goods-receipts
+    uid: goods-receipts
+    title: Goods Receipts
+    date: '2026-02-19T07:20:05.517Z'
+    breadcrumbs:
+      - link: /
+        title: All
+        body: ''
+      - link: /inventory
+        title: Inventory
+        body: ''
+      - link:
+        title: Goods Receipts
+        body: ''
+    body: |
+
+      The **Goods Receipts** process is a critical component of inventory management, allowing you to track and document the arrival of stock from your vendors. This ensures that your physical inventory levels match your digital records and provides a clear audit trail for every item entering your warehouse.
+
+      > **Note:** Goods Receipts remain in the "Ready" status until the physical items are counted and the transaction is validated. Once validated, the inventory levels are updated, and the record moves to "Done."
+
+      ---
+
+      ### Access Goods Receipts
+
+
+      From the left sidebar, click **Inventory**. On the Inventory Overview dashboard, locate the **Goods Receipts** card (marked by the **Red Arrow**) and click on it to view all incoming shipments.
+
+
+      ![Accessing Goods Receipts from the Inventory Dashboard](/img/inventory/goods-receipts/0001.png)
+
+      ---
+
+      ### Goods Receipts Overview
+
+      The list view displays all receipt operations, categorized by their current progress. You can quickly identify the status of any shipment using the **Status** column:
+
+      1.  **Ready** – Items that are expected and available to be processed.
+      2.  **Done** – Receipts that have been fully processed and added to stock.
+      3.  **Cancelled** – Orders that were terminated before completion.
+
+      ![Overview of the Goods Receipts list](/img/inventory/goods-receipts/0002.png)
+
+      ---
+
+      ### Creating a New Receipt
+
+      If you need to record an incoming shipment manually without a pre-existing purchase order:
+
+      1.  Click the **Create** button (marked by the **Red Arrow**) at the top left.
+      2.  Fill in the vendor details in the **Receive From** field and set the **Scheduled Date**.
+
+      ![Creating a new Goods Receipt](/img/inventory/goods-receipts/0003.png)
+
+      ---
+
+      ### Processing a Receipt (WH/IN/00028)
+
+      To receive items into your warehouse, select a specific receipt (e.g., **WH/IN/00028**) from the list to open the detailed view.
+
+      1.  **Review Products**: Check the **Operations** tab to see the items and their **Demand** quantities.
+      2.  **Edit Quantities**: If the delivered amount differs from the demand, click the line to adjust the **Done** quantity.
+      3.  **Save Changes**: Click the **Save** button (marked by the **Red Arrow**) to store your updates.
+
+      ![Reviewing and saving the receipt details](/img/inventory/goods-receipts/0004.png)
+
+      ![Saving the record](/img/inventory/goods-receipts/0005.png)
+
+      ---
+
+      ### Validating the Receipt
+
+      Once you have confirmed that the physical items match the record, you must finalize the transaction:
+
+      1.  Click the **Validate** button (marked by the **Red Arrow**).
+      2.  The system will prompt you if there is a quantity mismatch (e.g., creating a Backorder).
+      3.  Upon validation, the status indicator in the top right will change to **Done**.
+
+      ![Validating the receipt to update inventory](/img/inventory/goods-receipts/0006.png)
+
+      ---
+
+      ### Completed Receipt Status
+
+      Once the process is finished, the receipt is locked. The **Effective Date** is recorded, and the items are officially added to your **WH/Stock** location.
+
+      ![Finalized Goods Receipt in Done status](/img/inventory/goods-receipts/0007.png)
+
+      <Noted type="info" title="Pro Tip" image="/img/icon/notes.png">
+      Always compare the "Source Document" (e.g., NPO-260005) against the vendor's physical packing slip before clicking Validate to ensure 100% inventory accuracy.
+      </Noted>
+
+      ---
+
+      For details on moving items between internal warehouse locations, see the [Internal Transfers Guide](/inventory/internal-transfers).
+
+
+  - link: delivery-order#delivery-order
+    uid: delivery-order
+    title: Delivery Orders
+    date: '2026-02-19T07:20:05.517Z'
+    breadcrumbs:
+      - link: /
+        title: All
+        body: ''
+      - link: /inventory
+        title: Inventory
+        body: ''
+      - link: null
+        title: Delivery Orders
+        body: ''
+    body: |
+
+          A **Delivery Order** is a document that authorizes and records the shipment of goods from a warehouse or source location to a customer or destination. In MAQSU ERP, delivery orders are essential for managing outbound inventory movements, tracking shipments, and ensuring accurate fulfillment of sales orders.
+
+          > **Note:** Delivery orders are typically created after confirming a sales order or quotation. They serve as the link between order management and inventory, ensuring products are properly allocated and shipped to customers. Accurate delivery processing is vital for customer satisfaction and inventory control.
+
+          ---
+
+          ### Step 1: Go to Delivery Orders
+
+          From the left sidebar, click **Inventory**. Then from the Dashboard, locate and click on the **Delivery Orders** card in the inventory operations section.
+
+          ![](/img/inventory/delivery-orders/0001.png)
+
+          ---
+
+          ### Step 2: Delivery Orders List Overview
+
+          Once you navigate to **Delivery Orders**, you will see the master list of all existing delivery orders. The list displays the following columns:
+
+          1. **Reference** – The unique delivery order reference number (e.g., WH/OUT/00022).
+          2. **From** – The source location from which goods are being shipped (e.g., WH/Stock).
+          3. **To** – The destination location where goods are being delivered (e.g., Partner Locations/Customers).
+          4. **Contact** – The name of the customer or contact person receiving the delivery.
+          5. **Scheduled Date** – The planned date and time for the delivery.
+          6. **Source Document** – The originating document reference (e.g., sales order number Q-0003).
+          7. **Batch Transfer** – Any batch or serial number tracking associated with the delivery.
+          8. **Status** – The current document status: **Draft**, **Waiting**, **Ready**, **Done**, or **Cancelled**.
+
+          The list view also shows color-coded status indicators:
+          - **Done** (black text) – Delivery has been completed and validated
+          - **Ready** (red text) – Products are available and ready for shipment
+          - **Cancelled** (gray text) – Delivery order has been cancelled
+
+          ![](/img/inventory/delivery-orders/0002.png)
+
+          ---
+
+          ### Step 3: Click Create
+
+          Click the **Create** button at the top-left of the Delivery Orders list page to open a new blank delivery order form.
+
+          ![](/img/inventory/delivery-orders/0003.png)
+
+          ---
+
+          ### Step 4: Fill Out the Delivery Order Form
+
+          The new delivery order form will open in **Draft** status. Fill in the following required and optional fields:
+
+          #### Header Fields
+
+          1. **Delivery Address** *(Required)* – Search and select the customer or delivery address. Start typing the customer name and select the correct entry from the dropdown list. This field determines where the goods will be shipped.
+
+          2. **Operation Type** *(Required)* – This is automatically set based on the delivery operation type (e.g., "My Company: Delivery Orders"). This determines the workflow and inventory locations used.
+
+          3. **Source Location** *(Required)* – The warehouse location from which products will be picked and shipped. This typically defaults to your main stock location (e.g., "WH/Stock").
+
+          4. **Doc. No.** – Automatically generated by the system after validation. You do not need to fill this in manually. It will appear as "Auto Numbering" initially.
+
+          5. **Scheduled Date** *(Required)* – The planned date and time when the delivery should occur. This helps coordinate logistics and customer expectations.
+
+          6. **Inventory Date** – The accounting date for inventory movements. This determines when the stock changes are recorded in your system.
+
+          7. **Source Document** *(Optional)* – The reference to the originating sales order, quotation, or other document that created this delivery order. This helps trace the delivery back to its source.
+
+          ![](/img/inventory/delivery-orders/0004.png)
+
+          Once you fill in the delivery address and other header details, the form will update to show the selected information.
+
+          ---
+
+          ### Step 5: Add Products to Ship
+
+          Under the **Detailed Operations** tab, add the products that need to be delivered to the customer. Click **Add a line** to add a new product line, then fill in the following fields for each item:
+
+          1. **Product** *(Required)* – Choose the product being delivered. Start typing the product name or code and select the correct entry. The system will auto-populate related fields.
+
+          2. **From** – The specific source location from which this product will be picked. This is typically the same as the main source location specified in the header.
+
+          3. **Reserved** – The quantity that has been reserved or allocated for this delivery from your inventory. This shows what is committed to this shipment.
+
+          4. **Done** – The actual quantity that has been picked and prepared for shipment. Initially, this will be 0.00 and should be updated when products are physically picked.
+
+          5. **UOM** – The unit of measure for the product (e.g., Pcs, Units, kg, liters). This should match the product's standard UOM.
+
+          The system tracks both reserved quantities (what should be shipped) and done quantities (what has actually been prepared).
+
+          ![](/img/inventory/delivery-orders/0005.png)
+
+          <Noted type="info" title="Note" image="/img/icon/notes.png">
+          Carefully verify that all quantities are correct before validating the delivery. The "Reserved" quantity shows what should be shipped, while the "Done" quantity tracks what has actually been picked and prepared.
+          </Noted>
+
+          ---
+
+          ### Step 6: Save the Delivery Order
+
+          After completing all required fields and adding product lines, click **Save** to save the delivery order. At this stage, the delivery remains in **Draft** status and can still be edited.
+
+          ![](/img/inventory/delivery-orders/0006.png)
+
+          ---
+
+          ### Step 7: Click Validate to Confirm Availability
+
+          Once you have reviewed the delivery order, click the **Validate** button to check product availability and reserve the quantities. This will:
+
+          - Change the status from **Draft** to **Waiting** or **Ready**
+          - Reserve the specified quantities from inventory
+          - Confirm that products are available for shipment
+
+          The status will change to:
+          - **Waiting** – If products are not yet available or reserved
+          - **Ready** – If all products are available and ready to ship
+
+          ![](/img/inventory/delivery-orders/0007.png)
+
+          After validation, the delivery order cannot be edited unless you unreserve it first. The **Done** column becomes editable, allowing you to track the actual picked quantities.
+
+          ---
+
+          ### Step 8: Update Done Quantities and Complete Delivery
+
+          When products are physically picked and ready to ship, update the **Done** quantities to match what has been prepared:
+
+          1. In the **Detailed Operations** tab, update the **Done** column for each product line to reflect the actual quantity picked and packed.
+
+          2. The **Done** quantity should typically match the **Reserved** quantity, unless there are shortages or partial shipments.
+
+          3. Once all done quantities are entered, click the status button (currently showing **Ready**) to advance the delivery order to **Done** status.
+
+          ![](/img/inventory/delivery-orders/0008.png)
+
+          When you mark the delivery as **Done**:
+          - The inventory quantities are deducted from your stock
+          - The delivery order is locked and cannot be edited
+          - The shipment is officially recorded in your system
+          - Inventory movements are posted to your accounting records
+
+          <Noted type="info" title="Note" image="/img/icon/notes.png">
+          If you need to modify a completed delivery order, you may need to create a return or adjustment. Contact your system administrator for guidance on handling delivery corrections or returns.
+          </Noted>
+
+          ---
+
+          ### Additional Operations and Features
+
+          #### Partial Deliveries
+
+          If you cannot ship the full reserved quantity, you can update the **Done** quantities to reflect a partial shipment. The remaining quantities can be handled in several ways:
+          - Create a backorder for the remaining items
+          - Cancel the remaining quantity if no longer needed
+          - Adjust the original sales order to reflect the partial fulfillment
+
+          #### Batch and Serial Number Tracking
+
+          For products that require batch or serial number tracking, additional fields will appear in the **Detailed Operations** tab. You must specify which batches or serial numbers are being shipped to maintain proper traceability.
+
+          #### Printing Delivery Documents
+
+          After validating the delivery order, you can print delivery documents for the shipping team or customer:
+          1. Click the **Print** button at the top of the form
+          2. Select the appropriate delivery document template
+          3. Generate a PDF with all delivery details, products, and quantities
+
+          #### Cancelling a Delivery Order
+
+          If a delivery needs to be cancelled:
+          1. Open the delivery order
+          2. Click the **Cancel** button
+          3. The status will change to **Cancelled**
+          4. Reserved quantities will be released back to available inventory
+
+          ---
+
+          ### Delivery Order Workflow Summary
+
+          1. **Draft** → Create delivery order and add products
+          2. **Save** → Save the draft delivery order
+          3. **Validate** → Reserve inventory and confirm availability (→ Waiting/Ready)
+          4. **Update Done Quantities** → Record actual picked quantities
+          5. **Mark as Done** → Complete the delivery and deduct inventory
+
+          ---
+
+          For more details on inventory management and delivery operations, see the [Inventory Management Guide](/inventory/inventory-overview).
+
+  - link: stock-transfers#stock-transfers
+    uid: stock-transfers
+    title: Transfers
+    date: '2026-02-19T07:20:05.517Z'
+    breadcrumbs:
+      - link: /
+        title: All
+        body: ''
+      - link: /inventory
+        title: Inventory
+        body: ''
+      - link: null
+        title: Transfers
+        body: ''
+    sections:
+      - link: /internal-transfers
+        title: Internal Transfers
+        body: |
+
+          An **Internal Transfer** is a document that records the movement of products between different locations within the same company. In MAQSU ERP, internal transfers are essential for managing warehouse-to-warehouse movements, location reallocations, and inventory reorganization without affecting customer shipments or vendor receipts.
+
+              > **Note:** Internal transfers are used to move stock between your own locations, such as from one warehouse to another, or from stock to a quality control area. These transfers maintain accurate inventory levels across all locations and ensure proper traceability of product movements.
+
+              ---
+
+              ### Step 1: Go to Internal Transfers
+
+              From the left sidebar, click **Inventory**. Then from the Dashboard, locate and click on the **Internal Transfers** card in the inventory operations section.
+
+              ![](/img/inventory/internal-transfers/0001.png)
+
+              ---
+
+              ### Step 2: Internal Transfers List Overview
+
+              Once you navigate to **Internal Transfers**, you will see the list view. If no transfers have been created yet, you'll see an empty state with the message:
+
+              **"Create a new transfer"**
+
+              *"Transfers allow you to move products from one location to another."*
+
+              This screen serves as the starting point for creating your first internal transfer.
+
+              ![](/img/inventory/internal-transfers/0002.png)
+
+              When transfers exist, the list will display the following columns:
+              - **Reference** – The unique transfer reference number
+              - **From** – The source location
+              - **To** – The destination location
+              - **Contact** – The responsible person or contact
+              - **Scheduled Date** – The planned date for the transfer
+              - **Source Document** – Any originating document reference
+              - **Status** – Draft, Waiting, Ready, Done, or Cancelled
+
+              ---
+
+              ### Step 3: Click Create
+
+              Click the **Create** button at the top-left of the Internal Transfers page to open a new blank transfer form.
+
+              ![](/img/inventory/internal-transfers/0003.png)
+
+              ---
+
+              ### Step 4: Fill Out the Internal Transfer Form
+
+              The new internal transfer form will open in **Draft** status. Fill in the following required and optional fields:
+
+              #### Header Fields
+
+              1. **Contact** *(Optional)* – Search and select the person or team responsible for this transfer. This could be a warehouse manager, logistics coordinator, or any contact who oversees the movement. Start typing and select from the dropdown list.
+
+              2. **Operation Type** *(Required)* – This is automatically set to "My Company: Internal Transfers" and determines the workflow for the transfer operation.
+
+              3. **Source Location** *(Required)* – Select the warehouse or location from which products will be moved. This is where the inventory will be deducted. For example, "WH/Stock" for your main warehouse stock area.
+
+              4. **Destination Location** *(Required)* – Select the target warehouse or location where products will be moved to. This is where the inventory will be added. For example, "WH/Stock2" for a secondary warehouse or storage area.
+
+              5. **Doc. No.** – Automatically generated by the system after validation. You do not need to fill this in manually. It will show "Auto Numbering" initially.
+
+              6. **Scheduled Date** *(Required)* – The planned date and time when the transfer should occur. This helps coordinate logistics and warehouse operations.
+
+              7. **Inventory Date** *(Optional)* – The accounting date for inventory movements. This determines when the stock changes are recorded in your financial system.
+
+              8. **Source Document** *(Optional)* – An internal reference to any document that initiated this transfer, such as a purchase order, production order, or manual request number (e.g., P00032).
+
+              ![](/img/inventory/internal-transfers/0004.png)
+
+              <Noted type="info" title="Important" image="/img/icon/notes.png">
+              The source and destination locations must be different. You cannot transfer products from a location to itself. Ensure you select the correct source and destination to maintain accurate inventory tracking across your warehouses.
+              </Noted>
+
+              ---
+
+              ### Step 5: Add Products to Transfer
+
+              Under the **Detailed Operations** tab, add the products that need to be moved between locations. The system may auto-populate products if this transfer was created from another document, or you can add them manually.
+
+              For each product line, the following information is displayed:
+
+              1. **Product** *(Required)* – The name and internal reference code of the product being transferred. The product name appears in red text to draw attention.
+
+              2. **From** – The source location where the product will be picked from. This should match the Source Location specified in the header.
+
+              3. **To** – The destination location where the product will be placed. This should match the Destination Location specified in the header.
+
+              4. **Done** – The actual quantity that has been physically moved. Initially this will be 0.00 and should be updated during the transfer process.
+
+              5. **UOM** – The unit of measure for the product (e.g., Pcs, Units, kg). This ensures consistency in quantity tracking.
+
+              Click **Add a line** if you need to add additional products to the transfer.
+
+              ![](/img/inventory/internal-transfers/0005.png)
+
+              In the example shown, two products are being transferred:
+              - **[1AB-438-001] ABB SN 564406 Z78/2301-002 (Second Hand)** – 3.00 Pcs
+              - **[1AC-114-001] ACB-2500A (4P), LV with metal enclose (Complete Set)** – 3.00 Pcs
+
+              Both are moving from WH/Stock to WH/Stock2.
+
+              <Noted type="info" title="Note" image="/img/icon/notes.png">
+              Verify that all product codes, quantities, and locations are correct before proceeding. Internal transfers affect inventory levels in both the source and destination locations, so accuracy is essential for proper stock management.
+              </Noted>
+
+              ---
+
+              ### Step 6: Save the Internal Transfer
+
+              After completing all required fields and adding product lines, click **Save** to save the internal transfer. At this stage, the transfer remains in **Draft** status and can still be edited or cancelled.
+
+              The **Save** button is located at the top-left of the form.
+
+              ---
+
+              ### Step 7: Click Validate to Confirm the Transfer
+
+              Once you have reviewed and confirmed all details are correct, click the **Validate** button to officially initiate the transfer. This will:
+
+              - Change the transfer status from **Draft** to **Waiting** or **Ready**
+              - Reserve the quantities from the source location
+              - Generate the transfer operations in the system
+              - Assign a permanent reference number (e.g., INT/00125)
+
+              ![](/img/inventory/internal-transfers/0006.png)
+
+              The status progression typically follows this pattern:
+              - **Draft** → Initial state while editing
+              - **Waiting** → Products reserved but not yet available
+              - **Ready** → Products available and ready to be moved
+              - **Done** → Transfer completed and inventory updated
+
+              <Noted type="info" title="Note" image="/img/icon/notes.png">
+              After validation, you can no longer freely edit the transfer. If you need to make changes, you may need to use the "Unreserve" button to return to Draft status, or create a new transfer for corrections.
+              </Noted>
+
+              ---
+
+              ### Step 8: Update Done Quantities and Complete the Transfer
+
+              When products are physically moved from the source to the destination location, update the **Done** quantities:
+
+              1. In the **Detailed Operations** tab, update the **Done** column for each product line to reflect the actual quantity that has been moved.
+
+              2. The **Done** quantity should match the requested quantity unless there are issues like damage, shortage, or partial movements.
+
+              3. Once all done quantities are entered, the system will allow you to advance the transfer status.
+
+              4. Click the appropriate status button or action to mark the transfer as complete.
+
+              When you mark the transfer as **Done**:
+              - Inventory is deducted from the source location
+              - Inventory is added to the destination location
+              - The transfer is locked and cannot be edited
+              - All inventory movements are recorded in the system
+              - Accounting entries are posted if configured
+
+              ---
+
+              ### Additional Operations and Features
+
+              #### Partial Transfers
+
+              If you cannot move the full quantity at once, you can update the **Done** quantities to reflect a partial transfer. The remaining quantities can be handled in several ways:
+              - Create a backorder transfer for the remaining items
+              - Cancel the remaining quantity if no longer needed
+              - Complete multiple partial transfers until all quantities are moved
+
+              #### Batch and Serial Number Tracking
+
+              For products that require batch or serial number tracking, additional fields will appear allowing you to specify which specific batches or serial numbers are being transferred. This ensures complete traceability across locations.
+
+              #### Transfer History and Traceability
+
+              Each internal transfer is fully traceable in the system. You can view:
+              - The complete transfer history for any product
+              - Who created and validated the transfer
+              - The exact date and time of inventory movements
+              - Links to source and destination stock levels
+
+              #### Cancelling a Transfer
+
+              If a transfer needs to be cancelled before completion:
+              1. Open the transfer document
+              2. Click the **Cancel** button
+              3. The status will change to **Cancelled**
+              4. Reserved quantities will be released back to the source location
+              5. No inventory movements will be recorded
+
+              #### Scrapping During Transfer
+
+              If products are damaged during the transfer process, you can use the **Scrap** button to remove them from inventory entirely rather than completing the transfer to the destination location.
+
+              ---
+
+              ### Internal Transfer Workflow Summary
+
+              1. **Draft** → Create transfer and specify source/destination locations
+              2. **Add Products** → Define which items and quantities to transfer
+              3. **Save** → Save the draft transfer
+              4. **Validate** → Reserve inventory and initiate the transfer (→ Waiting/Ready)
+              5. **Update Done Quantities** → Record actual moved quantities
+              6. **Mark as Done** → Complete the transfer and update inventory in both locations
+
+              ---
+
+              ### Best Practices for Internal Transfers
+
+              - Always verify source and destination locations before validating
+              - Use clear naming conventions for warehouse locations
+              - Update done quantities promptly after physical movements
+              - Use the Contact field to assign responsibility for the transfer
+              - Link transfers to source documents for better traceability
+              - Regularly review pending transfers to avoid inventory discrepancies
+              - Conduct periodic physical counts to verify transfer accuracy
+
+              ---
+
+              For more details on inventory management and warehouse operations, see the [Inventory Management Guide](/inventory/inventory-overview).
+
+      - link: /batch-transfers
+        title: Batch Tarnsfers
+        body: |
+
+          A **Batch Transfer** is a document that allows you to group multiple individual transfer operations together for efficient processing and management. In MAQSU ERP, batch transfers are essential for organizing related transfers, assigning jobs to specific personnel, and managing timing for multiple operations that need to be completed together.
+
+              > **Note:** Batch transfers help improve operational efficiency by grouping transfers that should be done together, assigning them to specific team members, or scheduling them for coordinated execution. This is particularly useful for warehouse operations that involve multiple related movements or when managing workload distribution among staff.
+
+              ---
+
+              ### Step 1: Go to Batch Transfers
+
+              From the left sidebar, click **Inventory**. From the Dashboard, hover over the **Transfers** menu and click on **Batch Transfers** from the dropdown menu.
+
+              ![](/img/inventory/batch-transfers/0001.png)
+
+              ---
+
+              ### Step 2: Batch Transfers List Overview
+
+              Once you navigate to **Batch Transfers**, you will see the list view. If no batch transfers have been created yet, you'll see an empty state with the message:
+
+              **"Create a new batch transfer"**
+
+              *"The goal of the batch transfer is to group operations that may (needs to) be done together in order to increase their efficiency. It may also be useful to assign jobs (one person = one batch) or help the timing management of operations (tasks to be done at 1pm)."*
+
+              ![](/img/inventory/batch-transfers/0002.png)
+
+              This screen provides context about the purpose of batch transfers and serves as the starting point for creating your first batch.
+
+              When batch transfers exist, the list will display columns including:
+              - **Reference** – The unique batch transfer identifier
+              - **Responsible** – The person assigned to complete the batch
+              - **Scheduled Date** – When the batch should be processed
+              - **Status** – Draft, In Progress, or Done
+              - **Transfer Count** – Number of transfers included in the batch
+
+              ---
+
+              ### Step 3: Create a New Batch Transfer
+
+              Click the **Create** button at the top-left of the Batch Transfers page to open a new blank batch transfer form.
+
+              ![](/img/inventory/batch-transfers/0003.png)
+
+              ---
+
+              ### Step 4: Fill Out the Batch Transfer Form
+
+              The new batch transfer form will open in **Draft** status with a default name of "New". Fill in the following fields:
+
+              #### Header Fields
+
+              1. **Responsible** *(Optional)* – Select the person or team member who will be responsible for executing all transfers in this batch. This helps assign workload and accountability. For example, select "Administrator" or the specific warehouse staff member.
+
+              The form initially shows minimal fields. The main work involves adding individual transfer operations to the batch in the **Transfers** tab.
+
+              ![](/img/inventory/batch-transfers/0004.png)
+
+              ---
+
+              ### Step 5: Add Transfers to the Batch
+
+              Under the **Transfers** tab, you need to add the individual transfer operations that should be grouped together in this batch. The tab displays a table with the following columns:
+
+              - **Reference** – The transfer operation reference number
+              - **Scheduled Date** – When each transfer is scheduled
+              - **Source Location** – Where products are coming from
+              - **Back Order of** – Any related backorder reference
+              - **Source Document** – The originating document
+              - **Status** – The current status of each transfer (Draft, Ready, etc.)
+
+              #### Adding Transfers
+
+              Click **Add a line** to open the transfer selection dialog.
+
+              ![](/img/inventory/batch-transfers/0005.png)
+
+              ---
+
+              ### Step 6: Select Transfers from the Dialog
+
+              A modal dialog titled **"Add: Transfers"** will appear, showing all available transfer operations that can be added to the batch. The dialog displays a searchable, filterable list of transfers with the following information:
+
+              - **Reference** – Transfer reference numbers (e.g., DS/00001, WH/IN/00028, WH/OUT/00022)
+              - **From** – Source location for each transfer
+              - **To** – Destination location for each transfer
+              - **Contact** – Associated contact or customer
+              - **Scheduled Date** – When each transfer is planned
+              - **Source Document** – Related document references
+              - **Batch Transfer** – Current batch assignment (if any)
+              - **Status** – Current status (Draft, Ready, Done)
+
+              ![](/img/inventory/batch-transfers/0006.png)
+
+              #### Selecting Transfers
+
+              1. Review the list of available transfers
+              2. Check the boxes next to the transfers you want to include in this batch
+              3. You can select multiple transfers at once
+              4. Use filters or search to find specific transfers
+              5. Click the **Select** button to add the checked transfers to your batch
+
+              In the example shown, three transfers are selected:
+              - **DS/00001** – Draft status, to Partner Locations
+              - **WH/IN/00028** – Ready status, from Partner Locations to WH/Stock (NPO-260005)
+              - **WH/IN/00029** – Ready status, from Partner Locations to WH/Stock (NPO-260006)
+
+              You can also click **Create** from this dialog if you need to create a new transfer operation to add to the batch.
+
+              <Noted type="info" title="Important" image="/img/icon/notes.png">
+              Only transfers that are not already assigned to another batch can be added. Transfers that are already part of a batch will either be filtered out or clearly marked. You can group different types of transfers (receipts, deliveries, internal transfers) in the same batch if they need to be processed together.
+              </Noted>
+
+              ---
+
+              ### Step 7: Review Selected Transfers
+
+              After clicking **Select**, the chosen transfers will be added to the **Transfers** tab in your batch. The table will now display all the selected transfer operations with their details.
+
+              ![](/img/inventory/batch-transfers/0007.png)
+
+              The transfers list shows:
+              - **DS/00001** – Scheduled for 15/02/2026 23:59:00, from Partner Locations/Vendors, Draft status
+              - **WH/IN/00028** – Scheduled for 23/02/2026 23:59:00, from Partner Locations/Vendors, NPO-260005, Ready status
+              - **WH/IN/00029** – Scheduled for 23/02/2026 23:59:00, from Partner Locations/Vendors, NPO-260006, Ready status
+
+              Each transfer line has action buttons:
+              - **Checkmark icon** – View or edit the transfer details
+              - **Red circle icon** – Remove the transfer from this batch
+              - **X icon** – Delete the transfer line
+
+              A tooltip appears showing: *"List of transfers associated to this batch"*
+
+              You can continue to add more transfers by clicking **Add a line** again, or remove transfers that shouldn't be included.
+
+              ---
+
+              ### Step 8: Save the Batch Transfer
+
+              Once you have added all the transfers that should be grouped together, click the **Save** button at the top of the form to save the batch transfer. At this stage, the batch remains in **Draft** status.
+
+              ---
+
+              ### Step 9: Confirm the Batch Transfer
+
+              When you are ready to activate the batch and begin processing, click the **Confirm** button. This will:
+
+              - Change the batch status from **Draft** to **In Progress**
+              - Lock the transfers to this batch
+              - Generate a permanent batch reference number
+              - Signal that this group of transfers should be processed together
+
+              ![](/img/inventory/batch-transfers/0008.png)
+
+              After confirmation:
+              - The batch status will update to **In Progress**
+              - The assigned person can begin executing the transfers
+              - All transfers in the batch are linked and tracked together
+              - Progress can be monitored at the batch level
+
+              ---
+
+              ### Step 10: Process Transfers and Complete the Batch
+
+              Once the batch is confirmed and in **In Progress** status, the responsible person should:
+
+              1. Open each transfer in the batch (by clicking the checkmark icon)
+              2. Execute each transfer according to its type (validate, update quantities, complete)
+              3. Mark each individual transfer as complete
+              4. Return to the batch transfer to monitor progress
+
+              When all transfers in the batch have been completed, the batch status will automatically update to **Done**, indicating that the entire batch has been successfully processed.
+
+              ---
+
+              ### Additional Operations and Features
+
+              #### Removing Transfers from a Batch
+
+              If you need to remove a transfer from the batch before confirmation:
+              1. Locate the transfer in the Transfers tab
+              2. Click the red circle icon next to the transfer
+              3. The transfer will be removed from the batch and can be added to a different batch or processed independently
+
+              #### Editing Transfer Details
+
+              While a batch is in Draft status, you can:
+              1. Click the checkmark icon next to any transfer
+              2. View and edit the transfer details
+              3. Make necessary changes
+              4. Return to the batch transfer form
+
+              #### Viewing Batch Progress
+
+              The batch transfer form provides visibility into the overall progress:
+              - See which transfers are complete vs. pending
+              - Monitor the status of each operation
+              - Identify any transfers that are blocked or delayed
+              - Track who is responsible for the work
+
+              #### Cancelling a Batch
+
+              If a batch is no longer needed:
+              1. Open the batch transfer
+              2. Remove all transfers from the Transfers tab
+              3. Or delete the batch transfer entirely before confirmation
+              4. Transfers will return to unassigned status and can be processed individually
+
+              #### Best Use Cases for Batch Transfers
+
+              Batch transfers are most useful when:
+              - Multiple deliveries need to be loaded on the same truck
+              - A warehouse worker should pick multiple orders together
+              - Several internal transfers need to happen at a specific time
+              - Related incoming and outgoing transfers should be coordinated
+              - Workload needs to be distributed fairly among staff members
+              - Time-critical operations need to be grouped for efficiency
+
+              ---
+
+              ### Batch Transfer Workflow Summary
+
+              1. **Create** → Open a new batch transfer form
+              2. **Assign Responsible** → Select the person who will execute the batch
+              3. **Add Transfers** → Select individual transfers to group together
+              4. **Review** → Verify all transfers are correct
+              5. **Save** → Save the batch as a draft
+              6. **Confirm** → Activate the batch (→ In Progress)
+              7. **Process** → Execute each transfer in the batch
+              8. **Complete** → Finish all transfers (→ Done)
+
+              ---
+
+              ### Benefits of Using Batch Transfers
+
+              **Improved Efficiency**
+              - Group related operations to reduce movement and time
+              - Process multiple transfers in a single trip or session
+              - Optimize warehouse picking routes
+
+              **Better Organization**
+              - Clear assignment of responsibilities
+              - Structured approach to managing multiple operations
+              - Easy tracking of related transfers
+
+              **Workload Management**
+              - Distribute tasks fairly among team members
+              - One person assigned to one batch
+              - Clear accountability for completion
+
+              **Timing Coordination**
+              - Schedule groups of transfers for specific times
+              - Coordinate receiving and shipping operations
+              - Manage time-sensitive movements together
+
+              **Visibility and Control**
+              - Monitor progress at the batch level
+              - Identify bottlenecks quickly
+              - Track completion rates for grouped operations
+
+              ---
+
+              ### Best Practices for Batch Transfers
+
+              - Group transfers logically based on location, timing, or type
+              - Assign batches to specific team members to ensure accountability
+              - Use clear naming or reference conventions if customizing batch names
+              - Keep batch sizes manageable (typically 5-15 transfers per batch)
+              - Review batch contents before confirming to avoid errors
+              - Monitor in-progress batches regularly to ensure timely completion
+              - Use batch transfers consistently for recurring grouped operations
+              - Train warehouse staff on the batch transfer workflow
+              - Review completed batches to identify process improvements
+
+              ---
+
+              For more details on inventory management and transfer operations, see the [Inventory Management Guide](/inventory/inventory-overview).
+
+  - link: stock-adjustments#stock-adjustments
+    uid: stock-adjustments
+    title: Adjustments
+    date: '2026-02-19T07:20:05.517Z'
+    breadcrumbs:
+      - link: /
+        title: All
+        body: ''
+      - link: /inventory
+        title: Inventory
+        body: ''
+      - link:
+        title: Adjustments
+        body: ''
+    sections:
+      - link: /overview
+        title: Overviews
+        body: |
+
+            A **Adjustments** is a feature used to correct inventory quantities in the system to match the actual physical stock. In MAQSU, stock adjustments are essential for maintaining accurate inventory records by reconciling system quantities with physical counts, recording found or lost inventory, and correcting data entry errors.
+
+            > **Note:** Stock adjustments directly impact your inventory values and financial records. They should be used carefully and only when there is a verified discrepancy between system records and physical reality. All adjustments should be documented with clear reasons for audit and control purposes.
+
+            ---
+
+      - link: /inventory-update-quantity
+        title: Inventory Quantity Update
+        body: |
+            This is Inventory Quantity Update
+
+      - link: /inventory-adjustments
+        title: Inventory Adjustments
+        body: |
+
+            This section will guide you through the process of creating and managing inventory adjustments. It will cover the different types of adjustments, how to create and validate them, and how to manage and track adjustments over time.
+
+            ---
+
+            #### Step 1: Navigation
+
+            From the Inventory Dashboard, click on **Inventory** in the left sidebar. Then hover over the **Adjustments** menu section and click on **Inventory Adjustments** from the dropdown menu.
+
+            ![](/img/inventory/adjustments/0001.png)
+
+            ---
+
+            #### Step 2: Master List
+
+            Once you navigate to **Inventory Adjustments**, you will see the master list of all existing inventory adjustment records. The list displays the following columns:
+
+            1. **Inventory Reference** – The name or reference of the inventory adjustment (e.g., "Inventory")
+            2. **Inventory Date** – The date and time when the adjustment was created or validated
+            3. **Status** – The current document status, either **Draft**, **In Progress**, or **Validated**
+
+            ![](/img/inventory/adjustments/0002.png)
+
+            The list shows all historical adjustments. In the example, two adjustments are shown:
+            - **Inventory** – 14/02/2026 15:08:29 – Validated
+            - **Inventory** – 10/02/2026 23:26:03 – Validated
+
+            Both adjustments have been completed and their status shows as **Validated**, meaning the inventory changes have been applied to the system.
+
+            ---
+
+            #### Step 3: Click Create
+
+            Click the **Create** button at the top-left of the Inventory Adjustments list page to open a new blank adjustment form.
+
+            ![](/img/inventory/adjustments/0003.png)
+
+            ---
+
+            #### Step 4: Fill Out the Inventory Adjustment Form
+
+            The new inventory adjustment form will open in **Draft** status with a default name of "Inventory". The form includes several important configuration options:
+
+            ![](/img/inventory/adjustments/0004.png)
+
+            ##### Header Fields
+
+            **Inventory Reference**
+            - The name or reference for this adjustment
+            - Defaults to "Inventory" but can be customized for better tracking
+            - Example: "Q1 2026 Physical Count", "Cycle Count - Section A", "Correction - Damaged Goods"
+
+            **Action Buttons**
+            - **Start Inventory** – Begin the adjustment process and populate products
+            - **Start Scan** – Use barcode scanning to add products to the adjustment
+
+            ##### Configuration Options
+
+            1. **Locations** *(Required)*
+              - Select which warehouse location(s) to adjust inventory for
+              - You can select one or multiple locations
+              - Click the dropdown to see available locations
+
+            ![](/img/inventory/adjustments/0005.png)
+
+            Available locations may include:
+            - Installation warehouse
+            - Physical Locations/My Company: Transit Location
+            - WH/B-Kheang
+            - WH/Installation Warehouse
+            - WH/Sen Sok
+            - WH/Stock
+
+            You can select multiple locations if you're conducting adjustments across different areas.
+
+            2. **Products** *(Optional)*
+              - Filter which products to include in the adjustment
+              - Leave blank to include all products in the selected location(s)
+              - Click the dropdown to select specific products
+
+            ![](/img/inventory/adjustments/0006.png)
+
+            The product dropdown shows all available products with their codes and descriptions:
+            - [1AB-438-001] ABB SN 564406 Z78/2301-002 (Second Hand)
+            - [1AC-111-001] ACB-2000A (3P), LV with metal enclose (Complete Set)
+            - [1AC-112-001] ACB-2000A (4P), LV with metal enclose (Complete Set)
+            - [1AC-113-001] ACB-2500A (3P), LV with metal enclose (Complete Set)
+            - [1AC-114-001] ACB-2500A (4P), LV with metal enclose (Complete Set)
+            - [1AC-115-001] ACB-3000A (4P), LV with metal enclose (Complete Set)
+            - [1AC-116-001] ACB-4000A (3P), LV with metal enclose (Complete Set)
+
+            Click "Search More..." to browse additional products.
+
+            <Noted type="info" title="Tip" image="/img/icon/notes.png">
+            If you're conducting a full physical count, leave the Products field empty to include all items. If you're only adjusting specific products (spot check or correction), select only those products to reduce the list size.
+            </Noted>
+
+            3. **Accounting Date** *(Optional)*
+              - The date when this adjustment should be recorded in accounting
+              - Defaults to the current date
+              - Important for month-end and period closings
+
+            4. **Inventory Date** *(Required)*
+              - The date and time when the physical count was conducted
+              - Defaults to the current date and time
+              - This determines which stock movements are included in the calculation
+
+            ![](/img/inventory/adjustments/0007.png)
+
+            5. **On Hand Quantity**
+              - Determines which quantities are shown in the "On Hand" column
+              - **Current Date** (default) – Shows the current system quantity as of now
+              - **Based on Inventory Date** – Shows the system quantity as of the specified Inventory Date
+
+            6. **Counted Quantities**
+              - Determines the default values in the "Counted" column
+              - **Default to stock on hand** (default) – Pre-fills counted quantities with current system quantities
+              - **Default to zero** – Leaves counted quantities blank or at zero, requiring manual entry
+
+            <Noted type="info" title="Important" image="/img/icon/notes.png">
+            Setting "Counted Quantities" to "Default to stock on hand" is useful for cycle counts where most items match and you only need to correct discrepancies. Setting it to "Default to zero" is better for full physical counts where you want to enter all counted quantities manually to ensure accuracy.
+            </Noted>
+
+            ---
+
+            #### Step 5: Start Inventory
+
+            After configuring the locations, products, and options, click the **Start Inventory** button to generate the adjustment lines. This will:
+
+            - Populate the Lines tab with all products in the selected locations
+            - Show current system quantities in the "On Hand" column
+            - Prepare the "Counted" column for physical count entry
+            - Change the status from **Draft** to **In Progress**
+
+            ![](/img/inventory/adjustments/0008.png)
+
+            Alternatively, you can click **Start Scan** to use barcode scanning to add products to the adjustment. This is useful for mobile barcode counting workflows.
+
+            ---
+
+            #### Step 6: Review the Lines Tab
+
+            After starting the inventory, switch to the **Lines** tab to see all products that need to be counted. The Lines tab displays a table with the following columns:
+
+            ![](/img/inventory/adjustments/0009.png)
+
+            - **Product** – The product code and name
+            - **Location** – The warehouse location where the product is stored
+            - **On Hand** – The current system quantity (what the system thinks you have)
+            - **Counted** – The actual physical quantity (what you counted in the warehouse)
+            - **Difference** – Automatically calculated as: Counted - On Hand
+            - **UoM** – The unit of measure for the product (Pcs, kg, etc.)
+
+            In the example shown, two products have been counted:
+
+            1. **[1CT-300-001] Current Transformer - CT LV 2000/5A Brand Thaimaxwell**
+              - Location: WH/Stock
+              - On Hand: 0.00
+              - Counted: 3.00
+              - Difference: 3.00 Pcs
+              - *This indicates 3 pieces were found that weren't in the system*
+
+            2. **[1ED-492-001] EDMI Meter set up CT LV 2000/5A**
+              - Location: WH/Stock
+              - On Hand: 0.00
+              - Counted: 1.00
+              - Difference: 1.00 Pcs
+              - *This indicates 1 piece was found that wasn't in the system*
+
+            ---
+
+            #### Step 7: Enter Counted Quantities
+
+            For each product line, enter the actual physical quantity you counted in the warehouse in the **Counted** column:
+
+            1. Conduct the physical count in the warehouse
+            2. Locate each product in the Lines tab
+            3. Enter the exact quantity counted in the **Counted** field
+            4. The **Difference** column will automatically calculate
+            5. Positive differences indicate found inventory (system was lower than reality)
+            6. Negative differences indicate lost inventory (system was higher than reality)
+
+            **Best Practices for Counting:**
+            - Count systematically by location or product category
+            - Use a second person to verify counts for high-value items
+            - Take photos or notes for significant discrepancies
+            - Count at a time when warehouse activity is minimal
+            - Use barcode scanners when available for accuracy
+            - Document any damaged or expired items found during counting
+
+            <Noted type="warning" title="Important" image="/img/icon/notes.png">
+            Enter only the actual counted quantity, not the difference. The system will automatically calculate the adjustment needed. For example, if the system shows 10 pieces but you counted 8, enter "8" in the Counted column. The system will calculate a difference of -2 and reduce inventory by 2 pieces.
+            </Noted>
+
+            ---
+
+            #### Step 8: Review Differences
+
+            Before validating, carefully review all differences to understand what adjustments will be made:
+
+            **Positive Differences (Counted > On Hand)**
+            - Inventory will be increased
+            - Indicates found stock, counting errors, or unrecorded receipts
+            - Common causes: products received but not entered, previous counting errors, products returned but not recorded
+
+            **Negative Differences (Counted < On Hand)**
+            - Inventory will be decreased
+            - Indicates lost stock, shrinkage, theft, or unrecorded shipments
+            - Common causes: products shipped but not entered, damage or scrap not recorded, theft, previous counting errors
+
+            **Zero Differences (Counted = On Hand)**
+            - No adjustment needed
+            - System quantity matches physical reality
+            - These lines can remain but will not create inventory movements
+
+            **Investigate Large Discrepancies:**
+            - Check for recent unposted transactions
+            - Verify product identification (correct SKU)
+            - Review recent movements in location
+            - Consider recounting items with large differences
+            - Document reasons for significant adjustments
+
+            ---
+
+            #### Step 9: Validate the Adjustment
+
+            Once all counted quantities are entered and differences reviewed, validate the adjustment to apply the changes to inventory:
+
+            1. Review all entries one final time
+            2. Ensure all discrepancies are explained and documented
+            3. Click the **Validate** button (or select **Validated** from the status pills)
+            4. The system will process the adjustment
+
+            ![](/img/inventory/adjustments/0009.png)
+
+            When you validate the adjustment:
+            - The status changes from **In Progress** to **Validated**
+            - Inventory quantities are updated in all locations
+            - Stock movements are recorded for each adjustment
+            - Accounting entries are posted (if configured)
+            - The adjustment is locked and can no longer be edited
+            - Inventory valuation is recalculated
+
+            After validation, the adjustment is complete and your inventory records now match your physical count.
+
+            ---
+
+            ##### Workflow Summary
+
+            1. **Create** → Open new inventory adjustment form
+            2. **Configure** → Select locations, products, and options
+            3. **Start Inventory** → Generate product lines
+            4. **Count** → Physically count products in warehouse
+            5. **Enter** → Input counted quantities in the Lines tab
+            6. **Review** → Verify all differences and investigate discrepancies
+            7. **Document** → Record reasons for significant adjustments
+            8. **Validate** → Apply changes to inventory (→ Validated)
+
+
+      - link: /additional-features
+        title: Additional Features
+        body: |
+
+            ### Print Option
+
+            ![](/img/inventory/adjustments/0012.png)
+
+            After validation, you can print the adjustment report:
+            1. Click the **Print** button at the top of the form
+            2. Select the report format
+            3. Generate a PDF document showing all adjustments
+
+            The printed report is useful for:
+            - Management review and approval
+            - Audit documentation
+            - Filing with physical count sheets
+            - Variance analysis reports
+
+            ### Product Moves
+
+            ![](/img/inventory/adjustments/0010.png)
+
+            Click the **Product Moves** button (icon with arrows) to view the detailed inventory movements created by this adjustment. This shows:
+            - Each individual stock movement
+            - Source and destination locations
+            - Quantities moved
+            - Date and time stamps
+            - Full traceability of changes
+
+            ![](/img/inventory/adjustments/0011.png)
+
+            ### Editing Draft Adjustments
+
+            While an adjustment is in **Draft** or **In Progress** status, you can:
+            - Click **Edit** to modify the configuration
+            - Change locations or products
+            - Adjust the inventory date
+            - Delete lines that aren't needed
+            - Start over if necessary
+
+            Once **Validated**, adjustments cannot be edited. If you find an error after validation, you must create a new adjustment to correct it.
+
+            ---
+
+            ### Troubleshooting Common Issues
+
+            **Issue: Cannot find a product in the list**
+            - **Solution:** Check if you've filtered by location or products. Remove filters to see all items. Verify the product exists and is set as "storable" product type.
+
+            **Issue: On Hand quantity seems wrong**
+            - **Solution:** Check the "On Hand Quantity" setting. Try "Current Date" vs. "Based on Inventory Date". Review recent stock movements for unposted transactions.
+
+            **Issue: Large unexpected differences**
+            - **Solution:** Don't validate immediately. Recount the physical stock. Check for pending receipts or deliveries. Verify you're looking at the correct location. Review recent transfers.
+
+            **Issue: Cannot validate the adjustment**
+            - **Solution:** Ensure all required fields are filled. Check for error messages. Verify you have proper user permissions. Ensure counted quantities are entered for products with differences.
+
+            **Issue: Need to reverse a validated adjustment**
+            - **Solution:** You cannot reverse a validated adjustment directly. Create a new adjustment with the opposite corrections. Document clearly that it's a reversal.
+
+            ---
+
+            For more details on inventory management and related operations, see the [Inventory Module Overview](/inventory/inventory-overview).
+
+  - link: reporting#reporting
+    uid: reporting
+    title: Reporting
+    date: '2026-02-19T07:20:05.517Z'
+    breadcrumbs:
+      - link: /
+        title: All
+        body: ''
+      - link: /inventory
+        title: Inventory
+        body: ''
+      - link:
+        title: Reporting
+        body: ''
+    sections:
+      - link: /inventory-balance
+        title: Inventory Balance
+        body: |
+
+            The **Inventory Balance Report** is a comprehensive view of all product quantities and values across your warehouse locations. In MAQSU ERP, this report provides real-time visibility into what products you have, where they are located, their quantities, and their current inventory values. It's an essential tool for inventory management, planning, and financial reporting.
+
+            > **Note:** The Inventory Balance report shows the current state of your inventory as of a specific date and time. It includes all storable products with their on-hand quantities, locations, and valuations. This report is crucial for stock analysis, reordering decisions, and inventory audits.
+
+            ---
+
+            ### Go to Inventory Balance Report
+
+            From the Inventory Dashboard, click on **Inventory** in the left sidebar. Then click on the **Reporting** dropdown menu at the top of the screen and select **Inventory Balance** from the list of available reports.
+
+            ![](/img/inventory/reporting/balance/0001.png)
+
+            The Reporting menu includes many inventory report options:
+            - **Inventory Balance** – Current stock quantities and values by product and location
+            - Inventory Balance by UOM
+            - Inventory Balance by Locations
+            - Inventory Balance by Multi-Level UOM
+            - Inventory Balance by Converted UOM
+            - Inventory Valuation
+            - Inventory Analysis
+            - Inventory Analysis by Locations
+            - Inventory Ledger
+            - Product Move
+            - Product Margin
+            - And many more...
+
+            ---
+
+            ### Inventory Balance Report Overview
+
+            Once you navigate to the **Inventory Balance** report, you will see a comprehensive list of all products with inventory. The report displays the following columns:
+
+            ![](/img/inventory/reporting/balance/0002.png)
+
+            1. **Checkbox** – Select products for batch actions or export
+            2. **Product** – The product code and name (e.g., [1AC-431-001] ACB electrical cabinet-4000A-3P (New))
+            3. **Location** – The warehouse location where the product is stored (e.g., WH/Stock)
+            4. **Quantity On Hand** – The current available quantity in the location
+            5. **UOM** – The unit of measure (Pcs, m, Set, kg, etc.)
+            6. **Value** – The total inventory value for this product at this location
+
+            <Noted type="info" title="Note" image="/img/icon/notes.png">
+            The report only shows products that have inventory (quantity on hand > 0). Products with zero inventory are not displayed in the standard view. The values shown may be $0.00 if product costs have not been configured or if using a specific costing method.
+            </Noted>
+
+            ---
+
+            ### Inventory at Date
+
+            One of the most powerful features of the Inventory Balance report is the ability to view inventory as it existed at any specific date and time in the past. This is useful for:
+
+            - Historical analysis and trend reporting
+            - Month-end or period-end inventory reporting
+            - Reconciliation and audit purposes
+            - Comparing inventory levels over time
+
+            #### How to Use Inventory at Date
+
+            1. Click the **Inventory at Date** button at the top-left of the report
+
+            ![](/img/inventory/reporting/balance/0003.png)
+
+            2. A dialog box titled "MAQSU" will appear with a date/time picker
+
+            ![](/img/inventory/reporting/balance/0004.png)
+
+            3. Select the desired date and time (e.g., 02/03/2026 09:38:00)
+            4. Click **Confirm** to update the report
+
+            The report will refresh to show inventory quantities and values as they existed at the selected date and time. This takes into account all stock movements up to that moment.
+
+            **Use Cases for Historical Inventory:**
+            - View inventory at the end of last month for month-end reporting
+            - Check stock levels before a major sale or promotion
+            - Analyze inventory before and after a physical count
+            - Verify stock levels at the time of a specific transaction
+            - Generate year-end inventory reports for accounting
+
+            ---
+
+            ### Filtering the Report
+
+            The Inventory Balance report includes powerful filtering capabilities to help you focus on specific subsets of inventory.
+
+            #### Available Filters
+
+            Click the **Filters** button to access the filter dropdown menu:
+
+            ![](/img/inventory/reporting/balance/0005.png)
+
+            Available filter options include:
+
+            1. **Internal Locations** (Currently active) – Shows only internal warehouse locations
+            2. **Transit Locations** – Shows products in transit between locations
+            3. **On Hand** – Shows only products with positive quantities
+            4. **Negative Stock** – Shows products with negative quantities (potential stock issues)
+            5. **Positive Stock** – Shows products with positive quantities (same as On Hand)
+            6. **Reservations** – Shows reserved quantities for pending orders
+            7. **Add Custom Filter** – Create your own custom filter criteria
+
+            #### Using Filters
+
+            The default filter is **Internal Locations**, which shows only products in your physical warehouse locations (not in customer or vendor locations). This is the most commonly used view for day-to-day inventory management.
+
+            **Filter Examples:**
+
+            - **On Hand** – View only products currently in stock (excludes zero inventory)
+            - **Negative Stock** – Identify stock discrepancies where system shows negative quantities (usually indicates an error)
+            - **Transit Locations** – See products currently being moved between warehouses
+            - **Reservations** – View quantities reserved for pending sales orders or manufacturing
+
+            To apply a filter:
+            1. Click **Filters**
+            2. Select the desired filter option
+            3. The report updates immediately
+            4. The active filter is shown as a badge/pill (e.g., "Internal Locations" with an X to remove)
+
+            <Noted type="info" title="Tip" image="/img/icon/notes.png">
+            You can combine multiple filters for more refined views. For example, use "Internal Locations" + "On Hand" to see only products with positive stock in your warehouses. Use the X icon on filter badges to remove individual filters.
+            </Noted>
+
+            ---
+
+            ### Grouping and Organizing Data
+
+            The **Group By** feature allows you to organize the report data in different hierarchical structures for better analysis.
+
+            Click the **Group By** button to access grouping options:
+
+            ![](/img/inventory/reporting/balance/0006.png)
+
+            Available grouping options:
+
+            1. **Category** – Group products by their product category
+            2. **Product** – Group by product (then by location within each product)
+            3. **Location** – Group by warehouse location (then by product within each location)
+            4. **Add Custom Group** – Create your own custom grouping
+
+            #### Grouping by Product > Location
+
+            When you select **Product > Location** grouping, the report reorganizes to show:
+
+            - **Product Level** (expandable/collapsible)
+              - Product code and name
+              - Total quantity across all locations
+              - Total value
+            - **Location Level** (nested under each product)
+              - Specific location where product is stored
+              - Quantity at that location
+              - Value at that location
+
+            ![](/img/inventory/reporting/balance/0006.png)
+
+            **Example of Grouped View:**
+
+            **▼ [1AC-431-001] ACB electrical cabinet-4000A-3P (New) (1)**
+            - Total: 1.00 Pcs, $0.00
+              - **▼ WH/Stock (1)**
+                - 1.00 Pcs, $0.00
+                - **[1AC-431-001] ACB electrical cabinet-4000A-3P (New)** – WH/Stock – 1.00 Pcs – $0.00
+
+            The number in parentheses (1) indicates how many location records exist for this product.
+
+            **Benefits of Grouping:**
+            - **By Product** – See total inventory per product across all locations
+            - **By Location** – Analyze inventory composition at each warehouse
+            - **By Category** – Review stock levels by product category for strategic planning
+
+            ---
+
+            ### Exporting the Report
+
+            The Inventory Balance report can be exported for further analysis, reporting, or archival purposes.
+
+            Click the **Export** button at the top of the report to download the data.
+
+            ![](/img/inventory/reporting/balance/0003.png)
+
+            **Export Options:**
+            - The data is typically exported as a spreadsheet (Excel/CSV format)
+            - Includes all columns visible in the current view
+            - Respects current filters and groupings
+            - Contains the same data shown on screen
+
+            **Use Cases for Export:**
+            - Import into Excel for pivot tables and advanced analysis
+            - Share with management or external auditors
+            - Archive for regulatory compliance
+            - Create custom reports or dashboards
+            - Perform variance analysis between periods
+
+            **Best Practices for Exporting:**
+            - Apply filters first to export only relevant data
+            - Use meaningful filenames with dates (e.g., "Inventory_Balance_2026-03-02.xlsx")
+            - Export at consistent times (e.g., end of month) for trend analysis
+            - Store exports securely for audit trail
+            - Document any adjustments made after export
+
+      - link: /inventory-valuation
+        title: Inventory Valuation
+        body: |
+
+            The **Inventory Valuation Report** provides a detailed view of your inventory value based on stock movements and costing methods. In MAQSU ERP, this report is essential for financial reporting, cost accounting, and understanding the true value of your inventory assets. Unlike the Inventory Balance report which shows current quantities, the Inventory Valuation report focuses on the financial value and movement history of your inventory.
+
+              > **Note:** The Inventory Valuation report is organized chronologically by transaction date, showing how inventory value changes over time. This report is crucial for month-end financial closing, cost analysis, and reconciling inventory values with your accounting records.
+
+              ---
+
+              ### Go to Inventory Valuation Report
+
+              From the Inventory Dashboard, click on **Inventory** in the left sidebar. Then click on the **Reporting** dropdown menu at the top of the screen and select **Inventory Valuation** from the list of available reports.
+
+              ![](/img/inventory/reporting/valuation/0001.png)
+
+              The Reporting menu includes the Inventory Valuation option among other inventory reports. This report is specifically designed for financial and accounting purposes.
+
+              ---
+
+              ### Inventory Valuation Report Overview
+
+              Once you navigate to the **Inventory Valuation** report, you will see a chronological list of all inventory transactions with their associated values. The report displays the following columns:
+
+              ![](/img/inventory/reporting/valuation/0002.png)
+
+              1. **Checkbox** – Select transactions for batch actions or analysis
+              2. **Date** ↑ – The date and time of the inventory transaction (sortable)
+              3. **Product** – The product code and name involved in the transaction
+              4. **Quantity** – The quantity involved in the transaction
+              5. **UOM** – The unit of measure (Pcs, m, Set, kg, etc.)
+              6. **Total Value** – The total value of the transaction
+
+              #### Report Header Summary
+
+              At the top of the report, you'll see:
+              - **Active Filter:** "Create Date: Month" indicating the report is filtered by the current month
+              - **Period Grouping:** ▼ **February 2026 (213)** – Shows the month being viewed with the number of transactions in parentheses
+              - **Period Totals:**
+                - Total Quantity: 58,687.50
+                - Total Value: 33,008.10
+              - **Pagination:** "1-20 | 213" showing you're viewing records 1-20 out of 213 total transactions
+
+              <Noted type="info" title="Understanding Negative Quantities" image="/img/icon/notes.png">
+              Negative quantities in the Inventory Valuation report indicate stock decreases such as deliveries to customers, scrap, or adjustments. Positive quantities indicate stock increases from receipts, adjustments, or production. The report shows all movements chronologically, allowing you to track how inventory value changes over time.
+              </Noted>
+
+              ---
+
+              ### Inventory at Date Feature
+
+              Similar to the Inventory Balance report, the Inventory Valuation report supports historical date viewing. This allows you to see the inventory valuation as it existed at any point in the past.
+
+              #### How to Use Inventory at Date
+
+              1. Click the **Inventory at Date** button at the top-left of the report
+
+              ![](/img/inventory/reporting/valuation/0003.png)
+
+              2. A date/time picker dialog will appear
+              3. Select the desired date and time for the historical view
+              4. Click **Confirm** to update the report
+
+              ![](/img/inventory/reporting/valuation/0004.png)
+
+              After selecting a date, the report title updates to show:
+              **Inventory Valuation 2026-03-02 02:46:03**
+
+              This indicates you're now viewing the inventory valuation as it existed at that specific moment. The report will show all transactions up to and including that date/time.
+
+              **Use Cases for Historical Valuation:**
+              - Month-end financial reporting (select last day of month at 23:59:59)
+              - Year-end inventory valuation for annual financial statements
+              - Period-over-period comparison (export data for multiple periods)
+              - Audit compliance (provide historical snapshots)
+              - Variance analysis (compare actual vs. budgeted inventory values)
+              - Cost trend analysis over time
+
+              ---
+
+              ### Exporting the Reports
+
+              Click the **Export** button to download the Inventory Valuation report for external analysis.
+
+              ![](/img/inventory/reporting/valuation/0003.png)
+
+              **Export Details:**
+              - Downloads in spreadsheet format (Excel/CSV)
+              - Includes all visible columns and data
+              - Respects current filters and groupings
+              - Contains the period or date range specified
+
+              **Use Cases for Export:**
+              - Financial reporting packages for management
+              - Reconciliation with general ledger
+              - Detailed variance analysis in Excel
+              - Audit documentation and compliance
+              - Long-term archival of inventory valuations
+              - Integration with other accounting systems
+
+              ---
+
+              ### Understanding Inventory Valuation
+
+              #### How Valuation is Calculated
+
+              The Total Value for each transaction depends on your inventory costing method:
+
+              **FIFO (First In, First Out)**
+              - Values stock based on the cost of the oldest inventory
+              - When stock is sold/used, the cost of the oldest purchase is applied
+              - Remaining inventory is valued at more recent purchase prices
+              - Best for products where older inventory is sold first
+
+              **AVCO (Average Cost)**
+              - Calculates a weighted average cost of all inventory
+              - Average cost is recalculated with each purchase
+              - All units are valued at the current average cost
+              - Best for interchangeable commodities or bulk materials
+
+              **Standard Cost**
+              - Uses a predetermined fixed cost per unit
+              - Cost doesn't change unless manually updated
+              - Variances between standard and actual are tracked separately
+              - Best for manufacturing with stable material costs
+
+              #### Why Some Values Show $0.00
+
+              You may notice some transactions show a value of $0.00. This can occur when:
+
+              1. **Products without cost data** – The product master doesn't have a cost configured
+              2. **Inventory adjustments** – Some systems don't value adjustments until reconciliation
+              3. **Zero-cost receipts** – Products received without a purchase price
+              4. **Scrapped inventory** – Items removed from inventory with no salvage value
+              5. **Configuration issues** – Costing method not properly set up
+
+              <Noted type="warning" title="Important" image="/img/icon/notes.png">
+              Zero-value transactions indicate missing cost data. For accurate financial reporting, ensure all products have proper cost information configured. Review and update product costs regularly, especially after receiving new purchases at different prices.
+              </Noted>
+
+              #### Transaction Types in the Report
+
+              The Inventory Valuation report includes various transaction types:
+
+              - **Receipts** – Goods received from suppliers (positive quantity, increases value)
+              - **Deliveries** – Products shipped to customers (negative quantity, decreases value)
+              - **Adjustments** – Inventory corrections from physical counts (positive or negative)
+              - **Transfers** – Movements between locations (appears as decrease at source, increase at destination)
+              - **Scrap** – Damaged or obsolete items removed (negative quantity)
+              - **Production** – Finished goods from manufacturing (positive quantity)
+              - **Consumption** – Materials used in production (negative quantity)
+
+              ---
+
+              ### Differences Between Inventory Reports
+
+              #### Inventory Valuation vs. Inventory Balance
+
+              **Inventory Valuation:**
+              - Transaction-based view (one line per movement)
+              - Shows historical changes over time
+              - Includes positive and negative quantities
+              - Organized chronologically by date
+              - Focus on value changes and cost analysis
+              - Used for financial reporting and cost accounting
+
+              **Inventory Balance:**
+              - Current status view (one line per product per location)
+              - Shows only current on-hand quantities
+              - Only positive quantities (what you have now)
+              - Organized by product or location
+              - Focus on stock availability and levels
+              - Used for operations and inventory management
+
+              #### When to Use Each Report
+
+              **Use Inventory Valuation for:**
+              - Month-end and year-end financial closing
+              - Cost accounting and variance analysis
+              - Audit documentation and compliance
+              - Reconciliation with general ledger
+              - Understanding value trends over time
+              - Detailed transaction traceability
+
+              **Use Inventory Balance for:**
+              - Daily operational management
+              - Stock availability checks
+              - Reorder point monitoring
+              - Physical count preparation
+              - Quick inventory status overview
+              - Location-based stock analysis
+
+              ---
+
+              For more details on inventory reporting and financial management, see the [Inventory Module Overview](/inventory/inventory-overview) and [Inventory Balance Report](/inventory/inventory-balance-report).
+
+      - link: /inventory-analysis
+        title: Inventory Analysis
+        body: |
+
+          The **Inventory Analysis** report provides a comprehensive overview of stock movements and balances for products over a specified period. Its primary purpose is to help businesses track inventory flow, manage stock levels, and ensure financial accuracy by reconciling physical quantities with system records.
+
+          ![](/img/inventory/reporting/inventory-analysis/0001.png)
+
+          ### Purpose of the Report
+          * **Track Stock Movement**: It monitors how inventory changes through Purchases, Sales, and Other Operations (such as adjustments or internal transfers).
+          * **Balance Reconciliation**: The report calculates the Ending quantity and Current Balance to show exactly how much stock remains after all transactions.
+          * **Trend Analysis**: By filtering by Date Range, users can analyze inventory trends for specific months or quarters to aid in future purchasing decisions.
+          * **Audit Support**: It serves as an audit trail for accounting, showing the B/F (Brought Forward) balance from previous periods alongside current activity.
+
+          ### Go to the Report
+
+          From the Inventory Dashboard, click on **Inventory** in the left sidebar. Then click on the **Reporting** dropdown menu at the top of the screen and select **Inventory Analysis** from the list of available reports.
+
+          ![](/img/inventory/reporting/inventory-analysis/0002.png)
+
+      - link: /inventory-count
+        title: Inventory Count
+        body: |
+
+          The **Inventory Count** report serves as a snapshot or audit log of stock levels at a specific point in time.
+
+          ![](/img/inventory/reporting/count/0001.png)
+
+          * **Audit Trail**: It lists specific products alongside their Location (e.g., WH/Stock) and the exact Date and time the inventory was recorded.
+          * **Reference**: Each entry is tagged with a reference (e.g., "Inventory"), indicating it is part of a formal counting or validation process.
+
+          ### To view the Report
+
+          From the Inventory Dashboard, click on **Inventory** in the left sidebar. Then click on the **Reporting** dropdown menu at the top of the screen and select **Inventory Count** from the list of available reports.
+
+          ![](/img/inventory/reporting/count/0002.png)
+
+    body: >
+      The **Reporting** section in the Inventory module provides a comprehensive suite of analytical tools to track stock levels, monitor product movements, and evaluate financial performance. It serves as a central hub for generating real-time data to optimize your supply chain and warehouse operations.
+
+
+      Key Reporting Capabilities
+
+
+      The reporting menu offers various specialized views to help you manage your inventory effectively:
+
+      * *Stock Monitoring*: Track current quantities through Inventory Balance, Inventory Valuation, and Forecasted Inventory reports.
+
+      * *Performance Analysis*: Evaluate efficiency using Inventory Analysis, Product Margin, and Inventory Age metrics.
+
+      * *Operational Tracking*: Audit movements with the Inventory Ledger, Product Move, and Inventory Count logs.
+
+      * *Alerts & Expiries*: Stay proactive with Inventory Overstocked, Product Expiry, and Low Inventory Notify reports.
+
+

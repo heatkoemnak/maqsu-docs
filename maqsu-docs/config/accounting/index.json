@@ -15,45 +15,110 @@
     {
       "items": [
         {
-          "title": "Overviews",
+          "title": "Introduction of Accounting",
           "description": "7 articals\n",
+          "link": "/accounting/introduction",
           "image": ""
         },
         {
-          "title": "Configurations",
-          "description": "5 articals\n"
-        },
-        {
-          "title": "Account Revievable",
+          "title": "Account Receivable",
           "description": "8 articals\n",
-          "link": "blog/welcome",
-          "image": ""
+          "link": "/accounting/create-customer-invoice",
+          "image": "",
+          "items": [
+            {
+              "link": "create-customer-invoice",
+              "title": "Invoice",
+              "description": ""
+            },
+            {
+              "link": "add-credit-note",
+              "title": "Credit Notes",
+              "description": ""
+            },
+            {
+              "link": "add-payment-to-invoice",
+              "title": "Payments",
+              "description": ""
+            }
+          ]
         },
         {
           "title": "Account Payable",
           "description": "15 articals\n",
           "link": "blog/welcome",
-          "image": ""
+          "image": "",
+          "items": [
+            {
+              "link": "create-vendor-bill",
+              "title": "Bills",
+              "description": ""
+            },
+            {
+              "title": "Refunds",
+              "description": ""
+            },
+            {
+              "link": "add-payment-to-bill",
+              "title": "Payments",
+              "description": ""
+            }
+          ]
         },
         {
-          "title": "Journal Entry",
-          "description": "3 articals\n"
+          "title": "General Journal",
+          "description": "3 articals\n",
+          "items": [
+            {
+              "link": "journal-entry",
+              "title": "Journal Entry",
+              "description": ""
+            },
+            {
+              "link": "journal-items",
+              "title": "Journal Items",
+              "description": ""
+            }
+          ]
         },
         {
           "title": "AI OCR",
-          "description": "12 articals\n"
+          "description": "12 articals\n",
+          "items": [
+            {
+              "link": "ai-invoice-upload",
+              "title": "Ai Invoice Upload",
+              "description": ""
+            },
+            {
+              "link": "ai-bill-upload",
+              "title": "Ai Bill Upload",
+              "description": ""
+            }
+          ]
         },
         {
-          "title": "Managements",
-          "description": "11 articals\n"
+          "title": "Fixed Assets Management",
+          "description": "11 articals\n",
+          "link": "/accounting/fixed-assets-management"
+        },
+        {
+          "title": "Deferred Revenue & Deferred Expenses",
+          "description": ""
+        },
+        {
+          "title": "Bank Reconciliation",
+          "description": ""
         },
         {
           "title": "Reporting",
-          "description": "25 articals\n"
+          "description": "25 articals\n",
+          "link": "accounting/reporting"
         },
         {
-          "title": "Compliance",
-          "description": "21 articals\n"
+          "title": "e-Filing Reports",
+          "description": "21 articals\n",
+          "link": "/accounting/compliance"
         }
       ],
       "_template": "features"

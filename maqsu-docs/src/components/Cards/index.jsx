@@ -12,24 +12,22 @@ import styled from 'styled-components';
 
 export function Card({image,link, title, description, href = "#" }) {
   return (
-    // <Link to={link} className={clsx(styles.card)}>
       <StyledWrapper>
-      <Link to={link} className="card work">
-        <div className="card-desc">
-          <div className="card-header">
-            <h3 className="card-title">{title}</h3>
-            <div className="card-menu">
-            {image && (
-            <img className={styles.featureSvg1} src={image} />
-          )}
+        <Link to={link} className="card work">
+          <div className="card-desc">
+            <div className="card-header">
+              <h3 className="card-title">{title}</h3>
+              <div className="card-menu">
+              {image && (
+              <img className={styles.featureSvg1} src={image} />
+            )}
+              </div>
             </div>
+            <div className="card-time">{description}</div>
+            <p className="recent">Last update 9 days ago </p>
           </div>
-          <div className="card-time">{description}</div>
-          <p className="recent">Last Week-36hrs</p>
-        </div>
-     </Link>
-    </StyledWrapper>
-    // </Link>
+        </Link>
+      </StyledWrapper>
   );
 }
 
@@ -54,25 +52,6 @@ export default function Cards({cardList = []}) {
                     : null}
                 <br/>
 
-                <div className={clsx(styles.header)}>
-                 <h2>All Categories</h2>
-                </div>
-               
-                <div className={clsx(styles.cards)}>
-                    {cardList.map((card, index) => (
-
-                        <Card
-                        key={index + 1} // offset key to avoid duplication
-                        link={card.link}
-                        variant={card.variant}
-                        title={card.title}
-                        image={card.image}
-                        description={card.description}
-                        />
-                    ))}
-                   
-                </div>
-
             </div>
 
   );
@@ -82,32 +61,8 @@ export default function Cards({cardList = []}) {
 
 const StyledWrapper = styled.div`
 
-  .card {
-   font-family: "Arial";
-   color: #000;
-   display: grid;
-   cursor: pointer;
-   grid-template-rows: 150px 1fr;
-   grid-template-column: 1fr; /* Added auto rows */
-   margin: 10px; /* Added margin */
-   --dot-clr: #BBC0FF;
-   --play: hsl(195, 74%, 62%);
-   width: 350px;
-   border-radius: 10px;
-   gap: 10px; /* Added gap */
-   padding:15px
-  }
-  .card:hover {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    text-decoration: none;
-
-  }
-  .card:hover .img-section {
-   transform: translateY(1em);
-  }
 
   .card-desc {
-  //  border-radius: 10px;
    padding: 15px;
    position: relative;
    top: -10px;
@@ -117,8 +72,9 @@ const StyledWrapper = styled.div`
   }
 
   .card-time {
-   font-size: 1em;
+   font-size: 0.9em;
    font-weight: 500;
+   color:hsl(0, 1.40%, 27.50%)
   }
 
   .img-section {
@@ -140,9 +96,8 @@ const StyledWrapper = styled.div`
   .card-title {
    flex: 1;
    font-size: 1.5em;
-   font-weight: 800;
+   color:#24435f;
   }
-
 
   .card-menu {
    display: flex;
@@ -166,4 +121,6 @@ const StyledWrapper = styled.div`
   .card .recent {
    line-height: 0;
    font-size: 0.8em;
+   color:hsl(0, 0.00%, 35.70%);
+   margin-top: 12px;
   }`;

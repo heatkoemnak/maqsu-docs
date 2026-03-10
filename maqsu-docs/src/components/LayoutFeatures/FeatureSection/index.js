@@ -9,13 +9,15 @@ import {
   HiMiniChevronLeft,
   HiMiniChevronRight,
 } from "react-icons/hi2";
-import { MdLibraryBooks } from "react-icons/md";
-import { PiNote } from "react-icons/pi";
+import { MdGridView, MdLibraryBooks } from "react-icons/md";
+import { PiInfo, PiNote } from "react-icons/pi";
 import { TbExternalLink } from "react-icons/tb";
 import { CgNotes } from "react-icons/cg";
 import { motion } from "framer-motion";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
-
+import { PiPlusCircleLight } from "react-icons/pi";
+import { RiListCheck2 } from "react-icons/ri";
+import { LiaAngleRightSolid } from "react-icons/lia";
 const gettingStartedData = require("../../../../config/gettstarted/index.json");
 const salesData = require("../../../../config/sales/index.json");
 const purchaseData = require("../../../../config/purchase/index.json");
@@ -42,19 +44,22 @@ const RightSection = ({
     e.preventDefault();
     setExpanded(!expanded);
   };
-
+const baseUrl =
+  typeof window !== "undefined"
+    ? window.location.origin
+    : ""
   return (
     <motion.div
-      initial={{ opacity: 0, y: 30, x: 10 }}
+      initial={{ opacity: 0, y: 10, x: 0 }}
       animate={{ opacity: 1, y: 0, x: 0 }}
       transition={{
-        duration: 0.5,
+        duration: 0.1,
         delay: idx * 0.1,
         ease: "easeOut",
       }}
-      className={clsx("row", styles.card, expanded && styles.cardExpanded)}
+      className={clsx(styles.categoriesList, expanded && styles.cardExpanded)}
     >
-      <div onClick={toggleExpand} className={clsx(styles.cardLink)}>
+      <div className={clsx(styles.cardLink)}>
         <div className="flex items-center gap-3">
           {image && (
             <div className="text--center">
@@ -66,18 +71,20 @@ const RightSection = ({
             className={clsx("text--center padding-horiz--md", styles.cardContent)}
           >
             <div className={clsx(styles.toggleButton)}>
-              <Link to={link} className={styles.titleLink}>
-                <div className={clsx(styles.title)}>
-                  <div>
-                    {/* <CgNotes size={17} /> */}
-                    <PiNote size={22} />
+              <a href={`${link}`} className={styles.titleLink}>
+                <div className={clsx(styles.titleContainer)}>
+                  <div className={clsx(styles.iconNote)}>
+                    {/* <CgNotes color="#1a4569" size={17} /> */}
+                    <PiNote fill="#276292" size={19} />
                   </div>
-                  <div>{title && <span>{title}</span>}</div>
+                    <span className={styles.title4}>{title}</span>
                 </div>
+
                 {/* <div>
                   <TbExternalLink size={25} color="teal" className={clsx(styles.icon)} />
                 </div> */}
-              </Link>
+              </a>
+
             </div>
 
             {items.length > 0 && (
@@ -85,23 +92,27 @@ const RightSection = ({
                 {!expanded && items?.length > 0 && (
                   <div className={styles.expandableContentRow}>
                     {items
-                      ?.slice(0, 4)
+                      ?.slice(0, 3)
                       .map((item) => (
                         <Link
                           key={item?.title}
                           href={`${source}/${item.link}`}
-                          className="block text-gray-700 hover:text-emerald-600"
+                          className={clsx(styles.Link)}
                         >
                           <div className={clsx(styles.expandableLink)}>
                             {item?.title || item.name}
-                            <TbExternalLink color="teal" />
+
+                            {/* <TbExternalLink color="teal" /> */}
                           </div>
+
                         </Link>
                       ))}
-
-                    {items.length > 4 && (
-                      <div className="text-gray-500 text-sm mt-1">…</div>
+                      {items.length > 3 && (
+                      <div className="text-gray-500 text-sm mt-1"><span className={clsx(styles.more)}>{items.length -3}+ <span>More</span></span></div>
+                      // <PiPlusCircleLight />
                     )}
+
+
                   </div>
                 )}
               </div>
@@ -130,6 +141,7 @@ const RightSection = ({
             >
               <div className={clsx(styles.expandableLink)}>
                 {item?.title || item.name}
+
                 <TbExternalLink color="teal" />
               </div>
             </Link>
@@ -144,17 +156,22 @@ const RightSection = ({
 // Left Section
 // ========================================================
 const LeftSection = ({ image, title, description }) => (
-  <div className={clsx("col col--12", styles.card)}>
-    {image && (
+  <div className={clsx("col col--12")}>
+    {/* {image && (
       <div className="text--center">
         <img className={styles.featureSvg} src={image} role="img" />
       </div>
-    )}
+    )} */}
 
-    <div className={clsx("text--center padding-horiz--md", styles.cardContent)}>
-      {title && <h2 className="text--center">{title}</h2>}
-      <hr />
-      {description && <p className="text--center">{description}</p>}
+    <div className={clsx(styles.Definition)}>
+        <div className="text--center">
+        <div className="text--center">
+           <PiInfo  fill="#276292"  size={21} />
+        </div>
+         <span>{title}</span>
+         <hr className={clsx(styles.hr)}/>
+        </div>
+      {description && <span className={clsx(styles.description)}>{description}</span>}
     </div>
   </div>
 );
@@ -163,10 +180,13 @@ const LeftSection = ({ image, title, description }) => (
 // Feature Sections
 // ========================================================
 export const FeatureSections = ({ data, index }) => {
+  console.log(data);
   const location = useLocation();
   const [pageData, setPageData] = React.useState(null);
   const [currentPage, setCurrentPage] = React.useState(1);
-  const itemsPerPage = 6; // 👈 number of cards per page
+  const itemsPerPage = 8; // 👈 number of cards per page
+  const [gridView, setGridView] = React.useState(true);
+  console.log(pageData);
 
   React.useEffect(() => {
     try {
@@ -206,7 +226,79 @@ export const FeatureSections = ({ data, index }) => {
 
   return (
     <section key={index} className={styles.features}>
-      {/* ✅ Page Navigation Controls */}
+      <div className={clsx(styles.breadcrumb)}>
+        <div className={clsx(styles.breadcrumbLeft)}>
+            <Link href="/" className={clsx(styles.breadcrumbLink)}>All Categories</Link>
+            <LiaAngleRightSolid size={13} />
+            <span>{pageData?.title}</span>
+        </div>
+
+        <div className={clsx(styles.breadcrumbRight)}>
+          <div className={clsx(styles.pagination)}>
+            {totalPages > 1 && (
+              <div className={clsx(styles.paginationContainer)}>
+                <div className={clsx(styles.paginationButton,currentPage > 1 && styles.Paginationbutton)}>
+                  <HiMiniChevronLeft onClick={handlePrevPage} size={20} />
+                </div>
+
+                <span className={clsx(styles.paginationText)}>
+                  Page {currentPage} / {totalPages}
+                </span>
+                <div className={clsx(styles.paginationButton,currentPage < totalPages && styles.Paginationbutton)}>
+                  <HiMiniChevronRight onClick={handleNextPage} size={20} />
+                </div>
+              </div>
+            )}
+          </div>
+          <div className={clsx(styles.display_view_container)}>
+              <RiListCheck2 onClick={() => setGridView(false)} size={20} className={clsx(`${gridView ? styles.inactive_icon : styles.active_icon}`)} />
+              <MdGridView onClick={() => setGridView(true)} size={20} className={clsx(`${gridView ? styles.active_icon : styles.icon_1}`)} />
+          </div>
+        </div>
+      </div>
+      <div className={clsx(styles.container_section)}>
+        <div className={clsx(styles.left_section)}>
+          <LeftSection image={pageData?.image} title={pageData?.title} description={pageData?.description} />
+        </div>
+
+        {/* Right section with pagination */}
+        <div className={clsx( styles.right_section)}>
+          {visibleCards.map((props, idx) => (
+            <RightSection
+              key={startIndex + idx}
+              idx={startIndex + idx}
+              {...props}
+              source={location?.pathname}
+              items={props.items}
+            />
+          ))}
+        </div>
+      </div>
+
+      {/* Pagination controls under card list */}
+      {/* {totalPages > 1 && (
+        <div className={clsx("margin-top--lg text--right", styles.paginationContainer)}>
+          <button
+            onClick={handlePrevPage}
+            disabled={currentPage === 1}
+            className={clsx(styles.paginationButton, currentPage === 1 && styles.disabled)}
+          >
+            <HiMiniChevronLeft size={20} />
+          </button>
+
+          <span className={clsx(styles.paginationText)}>
+            Page {currentPage} / {totalPages}
+          </span>
+
+          <button
+            onClick={handleNextPage}
+            disabled={currentPage === totalPages}
+            className={clsx(styles.paginationButton, currentPage === totalPages && styles.disabled)}
+          >
+            <HiMiniChevronRight size={20} />
+          </button>
+        </div>
+      )} */}
       <div className={clsx("container text--left margin-bottom--lg", styles.pageNavigation)}>
         {prevItem ? (
           <Link to={`/${prevItem.link}`} className={clsx(styles.prev_navigation)}>
@@ -230,55 +322,6 @@ export const FeatureSections = ({ data, index }) => {
             </span>
           </Link>
         )}
-      </div>
-      {/* ✅ Pagination controls under card list */}
-      {totalPages > 1 && (
-        <div className={clsx("margin-top--lg text--right", styles.paginationContainer)}>
-          <button
-            onClick={handlePrevPage}
-            disabled={currentPage === 1}
-            className={clsx(styles.paginationButton, currentPage === 1 && styles.disabled)}
-          >
-            <HiMiniChevronLeft size={20} />
-          </button>
-
-          <span className={clsx(styles.paginationText)}>
-            Page {currentPage} / {totalPages}
-          </span>
-
-          <button
-            onClick={handleNextPage}
-            disabled={currentPage === totalPages}
-            className={clsx(styles.paginationButton, currentPage === totalPages && styles.disabled)}
-          >
-            <HiMiniChevronRight size={20} />
-          </button>
-        </div>
-      )}
-
-
-      <div className={clsx("container", styles.container_section)}>
-        {/* Left Section */}
-        <div className={clsx(styles.left_section)}>
-          <LeftSection image={pageData?.image} title={pageData?.title} description={pageData?.description} />
-        </div>
-
-
-        {/* ✅ Right Section with Pagination */}
-        <div className={clsx("row", styles.right_section)}>
-          {visibleCards.map((props, idx) => (
-            <RightSection
-              key={startIndex + idx}
-              idx={startIndex + idx}
-              {...props}
-              source={location?.pathname}
-              items={props.items}
-            />
-          ))}
-          
-        </div>
-
-
       </div>
     </section>
   );

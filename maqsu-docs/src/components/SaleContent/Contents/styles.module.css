@@ -15,15 +15,14 @@
   margin-left: 50px;
   gap: 5px;
  }
-.card{
-  /* box-shadow: 0 2px 4px 0 rgba(224, 184, 248, 0.2); */
+/* .card{
   transition: 0.3s;
   border-radius: 5px;
   padding: 20px;
   width: 100%;
   border: 1px solid #eaeaea;
   transition: box-shadow 0.3s ease;
-}
+} */
 
 .featureSvg {
   height: 50px;

@@ -89,6 +89,32 @@ export const FeaturesBlockTemplate = {
           type: "string",
         },
         {
+        name: "date",
+        label: "Date & Time",
+        type: "string",
+        required: false,
+        ui: {
+          component: "date",
+          dateFormat: "YYYY-MM-DD",
+          parse: (val) => {
+            if (!val) return new Date().toISOString();
+
+            // Keep selected date but inject current time
+            const selected = new Date(val);
+            const now = new Date();
+
+            selected.setHours(
+              now.getHours(),
+              now.getMinutes(),
+              now.getSeconds(),
+              now.getMilliseconds()
+            );
+
+            return selected.toISOString();
+          },
+        },
+      },
+        {
           name: "description",
           label: "Description",
           type: "rich-text",

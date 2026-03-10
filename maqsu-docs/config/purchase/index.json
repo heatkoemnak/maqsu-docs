@@ -1,7 +1,7 @@
 {
   "label": "Purchase",
   "title": "Purchase",
-  "description": "Just new to MAQSU? Get off to a flying start, learn how to create an company, customers, vendors, chart of accounts, add security to your account.",
+  "description": "A Purchase Order (PO) is a formal document issued by a buyer to a seller that lists the products or services the buyer wants to purchase, along with details like quantities, prices, delivery dates, and payment terms.",
   "image": "/img/feature/credit-card.png",
   "blocks": [
     {
@@ -14,37 +14,36 @@
     {
       "items": [
         {
-          "title": "Introduction to Purchase Module",
+          "title": "Introduction",
           "description": "7 articals\n",
-          "image": "",
-          "items": [
-            {
-              "title": "Overview",
-              "description": ""
-            },
-            {
-              "title": "Purpose and Importance of the Purchase Module",
-              "description": ""
-            },
-            {
-              "title": "How Purchase Integrates with Other Modules",
-              "description": ""
-            },
-            {
-              "title": "Key Benefits",
-              "description": ""
-            }
-          ]
-        },
-        {
-          "title": "Purchase Workflow Overview",
-          "description": ""
-        },
-        {
-          "title": "Creating a Purchase Request (PR)",
-          "description": "1. Navigating from Sidebar → Purchase\n\n![](/img/purchase/Requests-for-Quotation-MAQSU-10-21-2025_12_18_AM.png)\n",
-          "link": "/purchase/purchase",
+          "link": "/purchase/introduction",
           "image": ""
+        },
+        {
+          "title": "Create a Purchase Request",
+          "description": "",
+          "link": "/purchase/requests-for-quotation"
+        },
+        {
+          "title": "Confirm Purchase Order",
+          "description": "",
+          "link": "/purchase/confirm-purchase-order",
+          "image": ""
+        },
+        {
+          "title": "Receive Goods",
+          "description": "",
+          "link": "/purchase/receive-goods"
+        },
+        {
+          "title": "Create Vendor Bill",
+          "description": "",
+          "link": "purchase/generate-vendor-bill"
+        },
+        {
+          "title": "Add Payment to Bill",
+          "description": "",
+          "link": "/purchase/add-payment-to-bill"
         },
         {
           "title": "Reporting",

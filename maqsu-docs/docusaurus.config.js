@@ -1,7 +1,7 @@
 const docusaurusData = require("./config/docusaurus/index.json");
 
-const lightCodeTheme = require("prism-react-renderer").themes.github;
-const darkCodeTheme = require("prism-react-renderer").themes.dracula;
+// const lightCodeTheme = require("prism-react-renderer").themes.github;
+// const darkCodeTheme = require("prism-react-renderer").themes.dracula;
 
 const getDocId = (doc) => {
   return doc
@@ -106,10 +106,7 @@ const config = {
       "classic",
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
-        docs: {
-          sidebarPath: require.resolve("./sidebars.js"),
-          editUrl: docusaurusData.url + "/admin/#/collections/doc",
-        },
+        docs: false,
         blog: {
           showReadingTime: true,
           editUrl: docusaurusData.url + "/admin/#/collections/post",
@@ -121,57 +118,39 @@ const config = {
     ],
   ],
 
-  themeConfig:
-    /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
-    ({
-      navbar: {
-        title: docusaurusData.title || "Maqsu",
-        logo: {
-          alt: docusaurusData?.logo?.alt
-            ? docusaurusData?.logo?.alt
-            : "My Logo",
-          src: docusaurusData?.logo?.src
-            ? docusaurusData?.logo?.src
-            : "img/logo/maqsu.svg",
-        },
-        items: docusaurusData.navbar.map((item) => {
-          return formatNavbarItem(item);
-        }),
-      },
-      footer: {
-        style: docusaurusData.footer?.style || "dark",
-        links: docusaurusData.footer?.links.map((item) => {
-          return formatFooterItem(item);
-        }),
-        copyright:
-          `Copyright © ${new Date().getFullYear()} ` +
-          (docusaurusData.footer?.copyright || docusaurusData.title),
-      },
-      prism: {
-        theme: lightCodeTheme,
-        darkTheme: darkCodeTheme,
-      },
-      plugins: [
-        [
-          "@chatwoot/docusaurus-plugin",
-          {
-            websiteToken: "YOUR_WEBSITE_INBOX_TOKEN",
-            baseURL: "https://app.chatwoot.com",
-            enableInDevelopment: true,
-            chatwootSettings: {
-              hideMessageBubble: false,
-              position: "right",
-              locale: "en",
-              useBrowserLanguage: true,
-              darkMode: "auto",
-              type: "expanded_bubble",
-              launcherTitle: "Chat with us",
-            },
-          },
-        ],
-      ],
+  // themeConfig:
+  //   /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
+  //   ({
+  //     navbar: {
+  //       title: docusaurusData.title || "Maqsu",
+  //       logo: {
+  //         alt: docusaurusData?.logo?.alt
+  //           ? docusaurusData?.logo?.alt
+  //           : "My Logo",
+  //         src: docusaurusData?.logo?.src
+  //           ? docusaurusData?.logo?.src
+  //           : "img/logo/maqsu.svg",
+  //       },
+  //       items: docusaurusData.navbar.map((item) => {
+  //         return formatNavbarItem(item);
+  //       }),
+  //     },
 
-    }),
+  //     footer: {
+  //       style: docusaurusData.footer?.style || "dark",
+  //       links: docusaurusData.footer?.links.map((item) => {
+  //         return formatFooterItem(item);
+  //       }),
+  //       copyright:
+  //         `Copyright © ${new Date().getFullYear()} ` +
+  //         (docusaurusData.footer?.copyright || docusaurusData.title),
+  //     },
+  //     prism: {
+  //       theme: lightCodeTheme,
+  //       darkTheme: darkCodeTheme,
+  //     },
+
+  //   }),
 };
 
 module.exports = config;

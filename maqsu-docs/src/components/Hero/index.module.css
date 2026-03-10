@@ -1,29 +1,73 @@
-/**
- * CSS files with the .module.css suffix will be treated as CSS modules
- * and scoped locally.
- */
-
-
-.heroBanner {
-  /* padding: 6rem 2px; */
-  text-align: center;
-  /* height: 50vh; */
-  position: relative;
-  overflow: hidden;
-  border-radius: 15px;
-  color: #25435e;
-  /* margin: 0  0 10px 10px; */
-  /* box-shadow:
-    0 10px 25px -2px rgba(0, 0, 0, 0.1),
-    0 10px 10px -2px rgba(0, 0, 0, 0.04); */
-}
-
-
-
-.buttons {
+.heroContainer{
   display: flex;
-  padding: 16px 0;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+}
+.heroContainer div{
+  /* width: 1000px; */
+  text-align: center;
+}
+.searchWraper{
+  margin-top: 50px;
+}
+.heroTitle{
+  font-size:50px;
+  color: aliceblue !important;
+}
+.subTitle{
+  font-size:20px;
+  color: aliceblue;
+}
+.heroFeatures{
+  display:flex;
+  gap:10px;
+  padding-top:50px;
+
+}
+.heroFeatures div{
+  height:60px  ;
+  width:220px;
+  padding:10px;
+  display:flex;
+  border-radius:15px;
+  /* background-color:rgb(233,435,234,0.6); */
+  background-color:rgb(246, 248, 249);
+  cursor:pointer;
+  justify-content:center;
+  align-items:center;
+  gap:5px;
+}
+.heroFeatures div:hover{
+  background-color:rgb(255,255,255,1);
+  color:rgb(31, 59, 100);
+
+}
+.heroFeatures div h2{
+  padding-top:10px;
+  line-height:2;
+
+}
+.heroModuleTitle{
+  color:rgb(111, 125, 140);
+  text-decoration:none;
+  font-size: 20px;
+}
+.heroDiv{
+  display:flex;
+  cursor:pointer;
+  justify-content:center;
+  align-items:center;
+  gap:15px;
+  color:rgb(123, 126, 128);
+  text-decoration:none;
+}
+.heroDiv h2{
+  padding-top:10px;
+  color:rgb(31, 59, 100);
+  line-height:2;
 }
 
+.heroDiv:hover{
+  color:rgb(78, 92, 113);
+  text-decoration:none;
+}

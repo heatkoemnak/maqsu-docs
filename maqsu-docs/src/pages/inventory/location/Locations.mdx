@@ -1,0 +1,109 @@
+---
+title: Locations
+breadcrumbs:
+  - link: /
+    title: All Categories
+    body: ''
+  - link: /inventory
+    title: Inventory
+    body: ''
+  - link: location
+    title: Locations
+    body: ''
+previous:
+  - link: /inventory
+    title: Introduction of Inventory
+    body: ''
+next:
+  - link: /inventory/operations
+    title: Inventory / Operations
+    body: ''
+---
+
+An inventory **location** is the specific place where items are **stored**, **picked**, and **managed** within a warehouse, retail store, or distribution center.
+
+It plays a critical role in inventory management by determining **where stock is kept**, **how it is accessed**, and **how it is tracked** across your operations. Locations can be defined using coordinates such as **warehouse**, **aisle**, **rack**, **shelf**, and **bin**, which help structure your storage space and make products easier to find.
+
+Well‑configured locations:
+
+- Improve stock accuracy and traceability  
+- Reduce picking and put‑away time  
+- Minimize stockouts and misplacements  
+- Support multi‑warehouse and multi‑location operations
+
+These locations are essential for managing stock efficiently, especially in systems that do not yet use full warehouse management processes but still require strong control and visibility.
+
+**Default Location**
+
+![](/img/inventory/locations/3.png)
+
+> **Note:**  
+  MAQSU allows you to create and manage multiple warehouses to suit your business needs.
+
+
+---
+
+## How to Create a New Location in MAQSU
+
+Warehouse and location configuration determines how products are received, stored, moved, and dispatched. Follow these steps to set up locations effectively and align them with your physical warehouse layout and internal processes.
+
+### 1. Inventory > configuration > Locations
+
+>![](/img/inventory/locations/1.png)
+
+- **Multi‑warehouse overview**:  
+  If you have a **multi‑warehouse** setup, this screen will list all warehouses and the locations configured within each of them.
+
+>![](/img/inventory/locations/4.png)
+
+> **Note:**  
+> When you create a warehouse, the system will **automatically generate default locations** for you. If you need more detailed control (for example, separate picking, packing, or quarantine areas), you can create additional locations at any time.
+
+### 2. Click **Create**
+
+On the Locations screen, click the **Create** button to add a new location. 
+
+>![](/img/inventory/Locations/5.png)
+
+This will open a form where you can configure the details for your new storage location.
+
+>![](/img/inventory/Locations/6.png)
+
+
+### 3. Basic Information
+
+**Location Name:**  
+Enter the name of the location.
+E.g.: `Quality Control`  
+
+>![](/img/inventory/Locations/7.png)
+
+**Select Parent Location or Warehouse:**  
+Choose the parent location or warehouse where this location will reside. This establishes the location’s place in your warehouse hierarchy. For example, you might select `WH-03` as the main warehouse or a specific sub-location within it. [Create Warehouse Guide](/inventory/location). 
+
+
+>![](/img/inventory/Locations/8.png)
+
+**Additional Information:**  
+Use this section to provide extra details about the location, such as its intended operation (e.g., Storage, Picking, Packing, Quality Check), special handling requirements, or notes relevant for warehouse management.
+E.g.: Operation Type: `Internal Location`  
+
+- Is Scrap Location?
+
+  - Indicate if this location is intended for scrapped or disposed inventory (e.g., write-offs, damaged goods). Enable this if products moved here should be considered unusable.
+
+- Is Return Location? 
+
+  - Enable this if this location will be used for receiving returned goods from customers or suppliers (for inspection, restocking, or disposal).
+
+>![](/img/inventory/Locations/9.png)
+
+---
+
+### 4. Save the Location
+
+After entering all required details, click the **Save** button to create your new location.  
+Your location will now appear in the list of locations within the warehouse or parent location you selected.
+
+>![](/img/inventory/Locations/10.png)
+

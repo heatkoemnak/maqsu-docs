@@ -1,0 +1,36 @@
+.navbarContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 110px;
+    background: var(--color-primary);
+    width: 100%;
+    margin: 0 auto;
+    color: var(--color-white);
+}
+.logoContainer{
+    display: flex;
+    align-items: center;
+}
+.logo{
+    width: 100px;
+    font-weight: bold;
+    color: #333;
+}
+.rightSide{
+    display: flex;
+    gap: 20px;
+    color: var(--color-white)!important;
+}
+.navLink {
+  text-decoration: none;
+  color: var(--color-white);
+  font-weight: 500;
+  margin: 0 15px;
+  transition: color 0.3s ease;
+}
+
+.navLink:hover {
+    text-decoration: none;
+  color: #9eaab8;
+}

@@ -9,26 +9,15 @@
   "url": "https://tinasaurus.vercel.app/",
   "navbar": [
     {
-      "label": "Docs",
-      "link": "doc",
-      "docLink": "docs/intro.mdx",
-      "position": "left"
-    },
-    {
       "label": "Blog",
-      "link": "blog",
+      "link": "external",
+      "externalLink": "https://maqsu.com/en/blog",
       "position": "left"
     },
     {
-      "label": "Docusaurus GitHub",
+      "label": "Support",
       "link": "external",
       "externalLink": "https://github.com/facebook/docusaurus",
-      "position": "right"
-    },
-    {
-      "label": "Tina",
-      "link": "external",
-      "externalLink": "https://tina.io/",
       "position": "right"
     }
   ],
@@ -36,50 +25,27 @@
     "style": "dark",
     "links": [
       {
-        "title": "Docs",
+        "title": "Contacts",
         "items": [
           {
-            "label": "Introduction",
-            "to": "docs/intro.mdx",
-            "_template": "internal"
-          }
-        ]
-      },
-      {
-        "title": "Community",
-        "items": [
-          {
-            "label": "Stack Overflow",
-            "href": "https://stackoverflow.com/questions/tagged/docusaurus",
+            "label": "Telegram",
+            "href": "https://t.me/VON_MAQSU",
             "_template": "external"
           },
           {
-            "label": "Discord",
-            "href": "https://discordapp.com/invite/docusaurus",
+            "label": "Email",
+            "href": "hell@maqsu.com",
             "_template": "external"
           },
           {
-            "label": "Twitter",
-            "href": "https://twitter.com/docusaurus",
-            "_template": "external"
-          }
-        ]
-      },
-      {
-        "title": "More",
-        "items": [
-          {
-            "label": "Blog",
-            "_template": "blog"
-          },
-          {
-            "label": "GitHub",
-            "href": "https://github.com/facebook/docusaurus",
+            "label": "Facebook",
+            "href": "https://web.facebook.com/MAQSU.ERP?_rdc=1&_rdr#",
             "_template": "external"
           }
         ]
       }
+
     ],
-    "copyright": "My Project, Inc. Built with Docusaurus."
+    "copyright": "MAQSU™. All Rights Reserved."
   }
 }

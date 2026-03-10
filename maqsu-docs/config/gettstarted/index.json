@@ -2,7 +2,7 @@
   "label": "Getting Started",
   "title": "Getting Started",
   "description": "Just new to MAQSU? Get off to a flying start, learn how to create an company, customers, vendors, chart of accounts, add security to your account.",
-  "image": "/img/feature/play.png",
+  "image": "/img/icon/Spaceship-01-256.png",
   "blocks": [
     {
       "title": "Getting Started",
@@ -14,38 +14,22 @@
     {
       "items": [
         {
-          "title": "Introduction to MAQSU ERP",
-          "description": "**MAQSU ERP** is a comprehensive enterprise resource planning (ERP) system designed to streamline and automate various business processes. It offers a wide range of features and functionalities to help organizations manage their operations efficiently.\n\nMAQSU provides a modern and user-friendly interface that allows organizations to manage their entire workflow from quotation to payment, ensuring better visibility, control, and collaboration across departments.\n\nBuilt with scalability and flexibility in mind, MAQSU ERP is suitable for small, medium, and large enterprises, offering both cloud-based and on-premise deployment options.\n",
-          "link": "getting-started/introduction",
-          "items": [
-            {
-              "title": "What is MAQSU ERP?",
-              "description": ""
-            },
-            {
-              "link": "introduction/key-feature",
-              "title": "Key Features and Modules",
-              "description": "This key feature page\n"
-            },
-            {
-              "title": "Benefits of Using MAQSU ERP",
-              "description": ""
-            }
-          ]
-        },
-        {
-          "title": "Account management",
+          "title": "User Account",
           "description": "",
           "link": "/getting-started/user.account/signup",
           "items": [
             {
-              "link": "user.account/signup",
-              "title": "Sign up to get started with MAQSU!",
+              "link": "user.account/login",
+              "title": "Login User Account",
               "description": ""
             },
             {
-              "link": "user.account/login",
-              "title": "Login User Account",
+              "link": "user.account/manage/reset-user-password",
+              "title": "Reset Password",
+              "description": ""
+            },
+            {
+              "title": "Account Security",
               "description": ""
             },
             {
@@ -63,19 +47,25 @@
           ]
         },
         {
-          "title": "Advanced and Master Data",
-          "description": "18 articals\n",
+          "title": "Explore Interface",
+          "description": "![](/img/homepage/home.png)\n",
+          "link": "getting-started/interface",
+          "image": ""
+        },
+        {
+          "title": "Setting Up Master Data",
+          "description": "",
           "link": "/getting-started/setup-master-data/company-profile",
           "image": "",
           "items": [
             {
               "link": "setup-master-data/company-profile",
-              "title": "Set up company profile",
+              "title": "Company",
               "description": ""
             },
             {
-              "link": "setup-master-data/customer-profile",
-              "title": "Customers and Vendors",
+              "link": "setup-master-data/currencies",
+              "title": "Currencies",
               "description": ""
             },
             {
@@ -84,129 +74,23 @@
               "description": ""
             },
             {
+              "link": "setup-master-data/journals",
+              "title": "Journals",
+              "description": ""
+            },
+            {
+              "link": "setup-master-data/taxes",
+              "title": "Taxes",
+              "description": ""
+            },
+            {
+              "link": "setup-master-data/customer-profile",
+              "title": "Customers and Vendors",
+              "description": ""
+            },
+            {
+              "link": "setup-master-data/product",
               "title": "Products",
-              "description": ""
-            },
-            {
-              "title": "Product Categories",
-              "description": ""
-            }
-          ]
-        },
-        {
-          "title": "Navigating the Interface",
-          "description": "![](/img/homepage/home.png)\n",
-          "link": "getting-started/interface",
-          "image": "",
-          "items": [
-            {
-              "title": "Understanding the Dashboard",
-              "description": ""
-            },
-            {
-              "title": "Sidebar Overview (Main Modules and Menus)",
-              "description": ""
-            },
-            {
-              "title": "Notifications and Alerts",
-              "description": ""
-            },
-            {
-              "title": "Profile Settings",
-              "description": ""
-            }
-          ]
-        },
-        {
-          "title": "Module Overview (Quick Start for Each)",
-          "description": "",
-          "items": [
-            {
-              "title": "Sales",
-              "description": ""
-            },
-            {
-              "title": "Purchases",
-              "description": ""
-            },
-            {
-              "title": "Inventory",
-              "description": ""
-            },
-            {
-              "title": "Accounting",
-              "description": ""
-            }
-          ]
-        },
-        {
-          "title": "Tips for New Users",
-          "description": "",
-          "items": [
-            {
-              "title": "Keyboard Shortcuts",
-              "description": ""
-            },
-            {
-              "title": "How to Contact Support",
-              "description": ""
-            }
-          ]
-        },
-        {
-          "title": "Troubleshooting",
-          "description": "",
-          "items": [
-            {
-              "title": "Common Login Issues",
-              "description": ""
-            },
-            {
-              "title": "Module Not Loading",
-              "description": ""
-            },
-            {
-              "title": "Report Formatting Errors",
-              "description": ""
-            },
-            {
-              "title": "Data Import Errors",
-              "description": ""
-            }
-          ]
-        },
-        {
-          "title": "FAQs",
-          "description": "",
-          "items": [
-            {
-              "title": "General Questions",
-              "description": ""
-            },
-            {
-              "title": "Module-Specific FAQs",
-              "description": ""
-            },
-            {
-              "title": "Licensing and Subscription",
-              "description": ""
-            }
-          ]
-        },
-        {
-          "title": "Support and Resources",
-          "description": "",
-          "items": [
-            {
-              "title": "How to Submit a Ticket",
-              "description": ""
-            },
-            {
-              "title": "Community & Forums",
-              "description": ""
-            },
-            {
-              "title": "Contact Information",
               "description": ""
             }
           ]

@@ -1,12 +1,10 @@
-import React from "react";
 import clsx from "clsx";
 import Link from "@docusaurus/Link";
 import styles from "./index.module.css";
-import { getDocPath, titleFromSlug } from "../../../util";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
-import Search from "../Search";
 import { useLocation } from "@docusaurus/router";
 
+import { RiBarChart2Fill,RiBox3Fill, RiBankCardFill,RiBarChartBoxFill   } from "react-icons/ri";
 export const Hero = ({ data, index }) => {
   const location = useLocation();
   const { siteConfig } = useDocusaurusContext();
@@ -16,7 +14,7 @@ export const Hero = ({ data, index }) => {
     if (pathname.startsWith("/sales")) return "Sales";
     if (pathname.startsWith("/purchase")) return "Purchase";
     if (pathname.startsWith("/inventory")) return "Inventory";
-    // default fallback
+  // default fallbackage
     return data.title ? data.title : siteConfig.title;
   };
 
@@ -25,26 +23,40 @@ export const Hero = ({ data, index }) => {
   return (
     <header
       key={index}
-      className={clsx(styles.heroBanner)}
+      className={clsx(styles.heroContainer)}
     >
-      <div className="container">
-        <h1 className="hero__title">{pageTitle}</h1>
+      <div>
+        <h1 className={clsx(styles.heroTitle)}>{pageTitle}</h1>
+        <span className={clsx(styles.subTitle)}>We’ll guide you through our features with free tutorials, help articles, video and more.</span>
 
-        {data.document && data.documentLabel && (
-          <div className={styles.buttons}>
-            <Link
-              className="button button--secondary button--lg"
-              to={getDocPath(data.document)}
-            >
-              {data.documentLabel
-                ? data.documentLabel
-                : titleFromSlug(data.document)}
+        <div className={clsx(styles.heroFeatures)}>
+          <div>
+            <Link to="/accounting" className={clsx(styles.heroDiv)}>
+              <RiBarChart2Fill  size={28} />
+              <span  className={clsx(styles.heroModuleTitle)}>Accounting</span >
             </Link>
           </div>
-        )}
-
-        <Search title={pageTitle} />
+          <div>
+            <Link to="/sales" className={clsx(styles.heroDiv)}>
+              <RiBarChartBoxFill size={28} /><br></br>
+              <span  className={clsx(styles.heroModuleTitle)}>Sales</span >
+            </Link>
+          </div>
+          <div>
+            <Link to="/purchase" className={clsx(styles.heroDiv)}>
+            <RiBankCardFill  size={28} /><br></br>
+            <span  className={clsx(styles.heroModuleTitle)}>Purchase</span >
+            </Link>
+          </div>
+          <div>
+            <Link to="/inventory" className={clsx(styles.heroDiv)}>
+            <RiBox3Fill  size={28} /><br></br>
+            <span  className={clsx(styles.heroModuleTitle)}>Inventory</span >
+            </Link>
+          </div>
+        </div>
       </div>
     </header>
   );
 };
+

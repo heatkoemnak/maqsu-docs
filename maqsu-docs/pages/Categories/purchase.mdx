@@ -1,0 +1,1469 @@
+---
+link: purchase
+uid: purchase
+title: Purchase
+slug: purchase
+description: >-
+  Just new to MAQSU? Get off to a flying start, learn how to create an company,
+  customers, vendors, chart of accounts, add security to your account.
+groupSections:
+  - link: introduction#introduction
+    uid: introduction
+    title: Introduction
+    date: '2026-02-20T02:40:52.106Z'
+    breadcrumbs:
+      - link: /
+        title: All
+        body: ''
+      - link: /purchase
+        title: Purchase
+        body: ''
+      - link: /purchase/introduction
+        title: Introduction
+        body: ''
+    body: |
+
+      The **Purchase Module** is designed to manage the complete procurement lifecycle within your organization — from initiating a purchase request to final payment and reporting.
+
+      It ensures that every purchasing activity is properly recorded, approved, and tracked. This helps businesses maintain financial control, improve inventory accuracy, and ensure full transparency in supplier transactions.
+
+      ---
+
+      ## Complete Purchase Process
+
+      The Purchase Module follows a structured and sequential workflow:
+
+      ---
+
+      ### 1. Purchase Request (PR)
+
+      The process begins with a **Purchase Request (PR)**, where a department or user submits a request for goods or services.
+
+      This step ensures:
+
+      - Internal review and approval
+      - Budget control before committing to a supplier
+      - Proper documentation of purchase intent
+
+      ---
+
+      ### 2. Purchase Order (PO)
+
+      Once the request is approved, a **Purchase Order (PO)** is generated and sent to the supplier.
+
+      The PO includes:
+
+      - Item details
+      - Quantities
+      - Agreed pricing
+      - Delivery terms
+      - Payment conditions
+
+      After supplier confirmation, the PO becomes an official purchasing document.
+
+      ---
+
+      ### 3. Goods Receipt
+
+      When the supplier delivers the items, a **Goods Receipt** is created to:
+
+      - Verify received quantities
+      - Confirm item condition
+      - Update inventory records
+
+      This ensures the organization pays only for items that were actually received and verified.
+
+      ---
+
+      ### 4. Generate Bill
+
+      After confirming the goods, a **Bill** is generated based on the approved Purchase Order and corresponding Goods Receipt.
+
+      This step:
+
+      - Records the financial liability
+      - Updates accounts payable
+      - Ensures accurate financial documentation
+
+      ---
+
+      ### 5. Payment
+
+      Once the bill is verified and approved, **Payment** is processed according to the agreed terms.
+
+      The system records:
+
+      - Payment method
+      - Payment date
+      - Transaction reference
+
+      This supports proper financial tracking and reconciliation.
+
+      ---
+
+      ### 6. Reports
+
+      The module provides comprehensive **Reports** to monitor:
+
+      - Purchase history
+      - Outstanding payments
+      - Supplier performance
+      - Expense analysis
+      - Procurement trends
+
+      These insights help management make informed financial and operational decisions.
+
+  - link: purchase-request#purchase-request
+    uid: purchase-request
+    title: Request for Quotation (RFQ)
+    date: '2026-02-19T07:20:05.517Z'
+    breadcrumbs:
+      - link: /
+        title: All
+        body: ''
+      - link: /purchase
+        title: Purchase
+        body: ''
+      - link: null
+        title: Request for Quotation (RFQ)
+        body: ''
+    body: |
+      A **Request for Quotation (RFQ)** is the starting point of the purchasing
+      process in MAQSU ERP. It is a formal document sent to a supplier
+      requesting a price quote for specific goods or services. Once the supplier
+      responds and you confirm the details, the RFQ can be converted into a
+      **Purchase Order**.
+
+          Creating a new Purchase Request for Quotation (RFQ) in MAQSU ERP is
+          the first step in the purchasing process. Follow the steps below to
+          get started.
+
+          ***
+
+          #### Step 1: Go to Request for Quotation (RFQ)
+
+          From the left sidebar, click on **Purchase** to open the Purchase
+          module. Then, from the top navigation menu, go to **Orders** →
+          **Requests for Quotation**.
+
+          ![](/img/purchase/requests/0001.png)
+
+          Once you navigate to **Requests for Quotation**, you will see the
+          master list of all existing RFQs. The list displays the following
+          columns:
+
+          1. **RFQ Number** – The unique document number automatically assigned
+          to each request (e.g., P00008, P00009).
+
+          2. **Order Date** – The date and time the RFQ was created.
+
+          3. **Vendor** – The name of the supplier associated with the request.
+
+          4. **Reference** – An optional reference identifier for internal
+          tracking.
+
+          5. **Purchase Representative** – The MAQSU user responsible for
+          managing this request.
+
+          6. **Total** – The total value of the RFQ.
+
+          7. **Status** – The current status of the document, such as **RFQ** or
+          **Purchase Order**.
+
+          ![](/img/purchase/requests/0002.png)
+
+          <Noted type="info" title="Note" image="/img/icon/notes.png">
+            You can use the **Filters**, **Group By**, and **Search** bar at the top right to quickly find specific records. You can also switch between **List**, **Kanban**, and **Calendar** views using the view icons.
+          </Noted>
+
+          ***
+
+          #### Step 2: Click on the Create button
+
+          To start a new purchase request, click the **Create** button at the
+          top-left of the Requests for Quotation list page.
+
+
+          This will open a blank **Request for Quotation** form ready for you to
+          fill in.
+
+          ![](/img/purchase/requests/0003.png)
+
+          ***
+
+          #### Step 3: Fill in the Required Fields
+
+          Once the form is open, you will see the RFQ form in **New** status.
+          Fill in the following required and optional fields:
+
+          1. **Vendor** *(Required)* – Search and select the supplier by name,
+          TIN, email, or reference. This field identifies who you are sending
+          the quotation request to. Start typing and select the correct vendor
+          from the dropdown list.
+
+          2. **Reference** *(Optional)* – Enter an internal reference number or
+          note to help identify this request. This is useful for linking the RFQ
+          to an internal purchase requisition or project.
+
+          3. **Doc. No.** – This field is automatically generated by the system.
+          You can fill this in manually if you have your own document number.
+
+          4. **Order Date** – This is automatically set to the current date and
+          time. You can adjust it if needed.
+
+          ![](/img/purchase/requests/0004.png)
+
+          #### Order Lines
+
+          Under the **Order Lines** tab, add the products or services you wish
+          to request:
+
+          * Click **Add a product** to add a new line item.
+
+          * Fill in the **Product**, **Description**, **Quantity**, **UOM**,
+          **Unit Price**, **Discount**, and **Taxes** for each line.
+
+          * The **Subtotal** will be calculated automatically.
+
+          ![](/img/purchase/requests/0005.png)
+
+          <Noted type="info" title="Tip" image="/img/icon/tips.png">
+            You can also click **Add a section** to group your order lines, or **Add a note** to include internal remarks on a specific line.
+          </Noted>
+
+          ***
+
+          #### Step 4: Save the Purchase Request
+
+          After filling in all the required fields, click the **Save** button at
+          the top-left to save your new Purchase Request for Quotation.
+
+
+          Once saved, the system will assign a **Doc. No.** automatically and
+          the RFQ will appear in the master list with the status **RFQ**.
+
+
+          ![](/img/purchase/requests/0006.png)
+
+
+          <Noted type="info" title="Next step" image="/img/icon/next.png">
+            After saving, you can send the RFQ to your supplier by clicking **Send by Email**, or confirm it directly into a **Purchase Order** by clicking **Confirm Order**.
+          </Noted>
+
+  - link: purchase-order#purchase-order
+    uid: purchase-order
+    title: Purchase Order (PO)
+    date: '2026-02-23T07:20:37.066Z'
+    breadcrumbs:
+      - link: /
+        title: All
+        body: ''
+      - link: /purchase
+        title: Purchase
+        body: ''
+      - link: /purchase/purchase-order
+        title: Purchase Order (PO)
+        body: ''
+    sections:
+      - link: /confirm-existing-order
+        title: Option 1:Confirm Existing Order
+        body: >
+          If you already have an existing **Request for Quotation (RFQ)**, you
+          can confirm it directly into a Purchase Order without creating a new
+          one from scratch. Follow the steps below:
+
+          ***
+
+          ### Step 1: Go to Requests for Quotation
+
+          From the left sidebar, click **Purchase**. Then from the top
+          navigation menu, go to **Orders** → **Requests for Quotation**.
+
+          ![](/img/purchase/orders/0007.png)
+
+          ***
+
+          ### Step 2: Find and Open the RFQ
+
+          In the master list, look for the record with the status **RFQ**. Click
+          on the RFQ number to open it.
+
+          <Noted type="info" title="Tip" image="/img/icon/sparkles.png">
+            You can use the **Search** bar or **Filters** to quickly find the RFQ you want to confirm. Look for records showing **RFQ** in the Status column.
+          </Noted>
+
+          ![](/img/purchase/orders/0008.png)
+
+          ***
+
+          ### Step 3: Click Confirm Order
+
+          Once the RFQ is open, review the details to ensure everything is
+          accurate. When you are ready, click the **Confirm Order** button at
+          the top of the form.
+
+          ![](/img/purchase/orders/0009.png)
+
+          ***
+
+          ### Step 4: Check the Status
+
+
+          After confirming, the document status will automatically change from
+          **RFQ** to **Purchase Order**. The document number remains the same.
+
+
+          ![](/img/purchase/orders/00010.png)
+
+
+          <Noted type="info" title="Next Step" image="/img/icon/sparkles.png">
+            Once the Purchase Order is confirmed, the next step is **Receiving Goods**. You will receive the products and validate the receipt against the Purchase Order.
+          </Noted>
+
+      - link: /create-new-purchase-order
+        title: Option 2:Create New Purchase Order
+        body: |
+          If you do not have an existing Request for Quotation, you can create a
+          Purchase Order directly from scratch. Follow the steps below:
+
+          ***
+
+          ### Step 1: Go to Purchase Orders
+
+
+          From the left sidebar, click **Purchase**. Then from the top
+          navigation menu, go to **Orders** → **Purchase Orders**.
+
+
+          ![](/img/purchase/orders/0001.png)
+
+
+          ***
+
+
+          ### Step 2: Purchase Orders List Overview
+
+
+          Once you navigate to **Purchase Orders**, you will see the master list
+          of all confirmed purchase orders. The list displays the following
+          columns:
+
+
+          1. **Order Number** – The unique document number assigned to each
+          purchase order (e.g., P00008, P00009).
+
+          2. **Approved Date** – The date and time the purchase order was
+          confirmed.
+
+          3. **Vendor** – The supplier associated with the purchase order.
+
+          4. **Reference** – An optional reference for internal tracking.
+
+          5. **Receipt Date** – The expected or actual date goods were received.
+
+          6. **Purchase Representative** – The MAQSU user managing this purchase
+          order.
+
+          7. **Source Document** – The originating document linked to this
+          purchase order, if any.
+
+          8. **Total** – The total value of the purchase order.
+
+          9. **Billing Status** – Indicates the billing progress, such as
+          **Waiting Bills** or **Fully Billed**.
+
+
+          ![](/img/purchase/orders/0002.png)
+
+
+          ***
+
+
+          ### Step 3: Click Create
+
+
+          Click the **Create** button at the top-left of the Purchase Orders
+          list page to open a new blank purchase order form.
+
+
+          ![](/img/purchase/orders/0003.png)
+
+
+          ***
+
+
+          ### Step 4: Fill in the Required Fields
+
+
+          The new purchase order form will open in **New** status. Fill in the
+          following fields:
+
+
+          #### Header Fields
+
+
+          1. **Vendor** *(Required)* – Search and select the supplier by name,
+          TIN, email, or reference. Start typing and select the correct vendor
+          from the dropdown list.
+
+          2. **Reference** *(Optional)* – Enter an internal reference number or
+          note to help identify this purchase order. This is useful for linking
+          it to a project or internal request.
+
+          3. **Doc. No.** – Automatically generated by the system. You do not
+          need to fill this in manually.
+
+          4. **Order Date** – Automatically set to the current date and time.
+          You can adjust it if needed.
+
+
+          ![](/img/purchase/orders/0004.png)
+
+
+          #### Order Lines
+
+
+          Under the **Order Lines** tab, add the products or services you wish
+          to purchase:
+
+
+          * Click **Add a product** to add a new line item.
+
+          * Fill in the **Product**, **Description**, **Quantity**, **UOM**,
+          **Unit Price**, **Discount**, and **Taxes** for each line.
+
+          * The **Subtotal** is calculated automatically.
+
+
+          <Noted type="info" title="Tip" image="/img/icon/sparkles.png">
+            You can click **Add a section** to group your order lines, or **Add a note** to include internal remarks on a specific line.
+          </Noted>
+
+
+          ![](/img/purchase/orders/0005.png)
+
+
+          ***
+
+
+          ### Step 5: Save the Purchase Order
+
+
+          After filling in all required fields, click the **Save** button at the
+          top-left to save your new Purchase Order.
+
+
+          Once saved, the system will assign a **Doc. No.** automatically. You
+          can then click **Confirm Order** to confirm it, or keep it as a draft
+          to review later.
+
+
+          ![](/img/purchase/orders/0006.png)
+
+
+          <Noted type="info" title="Next Step" image="/img/icon/sparkles.png">
+            Once the Purchase Order is confirmed, the next step is **Receiving Goods**. You will receive the products and validate the receipt against the Purchase Order.
+          </Noted>
+
+
+          ***
+    body: >
+      Once the RFQ details are correct, it can be confirmed into a Purchase
+      Order. A **Purchase Order (PO)** is a legally binding document that
+      authorizes a supplier to deliver goods or services at the agreed price and
+      terms.
+
+
+      ### To create a purchase order, you have two options:
+
+
+      * **Confirm Existing Order:** Use this option if you already have an
+      existing Request for Quotation that you want to convert into a Purchase
+      Order.
+
+      * **Create New Purchase Order:** Use this option if you do not have an
+      existing quotation and want to create a Purchase Order from scratch.
+
+      ---
+
+  - link: receiving-goods#receiving-goods
+    uid: receiving-goods
+    title: Receiving Goods
+    date: '2026-02-22T07:20:55.556Z'
+    breadcrumbs:
+      - link: /
+        title: All
+        body: ''
+      - link: /purchase
+        title: Purchase
+        body: ''
+      - link: /purchase/receiving-goods
+        title: Receiving Goods
+        body: ''
+    sections:
+      - link: /receiving-goods
+        title: Receiving Goods
+        body: >
+          Once a Purchase Order has been confirmed, the next step is to receive
+          the goods from the supplier. Follow the steps below to complete the
+          goods receiving process in MAQSU ERP.
+
+
+          ***
+
+
+          ### Step 1: Go to Purchase Orders
+
+
+          From the left sidebar, click **Purchase**. Then from the top
+          navigation menu, go to **Orders** → **Purchase Orders**.
+
+
+          ![](/img/purchase/receiving/0001.png)
+
+
+          ***
+
+
+          ### Step 2: Find the Purchase Order
+
+
+          You need to find the Purchase Order you want to receive goods for. Use
+          the **Filters** to narrow down the list quickly.
+
+
+          Click the **Filters** button at the top-right of the list, then look
+          for **Billing Status is "Nothing to Bill"** from the filter options
+          and click it.
+
+
+          ![](/img/purchase/receiving/0002.png)
+
+
+          <Noted type="info" title="Can't find the filter?"
+          image="/img/icon/sparkles.png">
+            If **Billing Status is "Nothing to Bill"** does not appear in the standard filter list, you can use a **Custom Filter** instead. Click **Add Custom Filter**, then set the conditions as follows:
+
+            1. **Field:** Billing Status
+            2. **Operator:** is
+            3. **Value:** Nothing to Bill
+
+            Then click **Apply** to apply the custom filter.
+          </Noted>
+
+
+          ![](/img/purchase/receiving/0003.png)
+
+
+          After applying the filter, the list will show only Purchase Orders
+          with a **Billing Status** of **Nothing to Bill**.
+
+
+          ![](/img/purchase/receiving/0004.png)
+
+
+          ***
+
+
+          ### Step 3: Open the Purchase Order
+
+
+          Click on the **Order Number** of the Purchase Order you want to
+          receive goods for to open it.
+
+
+          You will see the Purchase Order detail page showing the vendor, order
+          date, and the **Order Lines** with the ordered products, quantities,
+          and amounts. Note that the **Received** column will show **0.00**,
+          indicating that no goods have been received yet.
+
+
+          ![](/img/purchase/receiving/0005.png)
+
+
+          ***
+
+
+          ### Step 4: Click Receive Products
+
+
+          Click the **Receive Products** button at the top of the Purchase Order
+          form to start the goods receiving process.
+
+
+          This will open the **Goods Receipt** form (e.g., WH/IN/00004) which
+          shows all products from the Purchase Order that are pending receipt.
+
+
+          ![](/img/purchase/receiving/0006.png)
+
+
+          The Goods Receipt form displays:
+
+
+          * **Receive From** – The vendor supplying the goods.
+
+          * **Operation Type** – The warehouse operation type, typically **Goods
+          Receipts**.
+
+          * **Scheduled Date** – The expected date of receipt.
+
+          * **Source Document** – The Purchase Order number this receipt is
+          linked to.
+
+          * **Operations Tab** – Lists each product with its **Demand** (ordered
+          quantity) and **Done** (received quantity).
+
+
+          <Noted type="info" title="Note" image="/img/icon/sparkles.png">
+            The status bar at the top right shows the current stage of the receipt: **Draft → Waiting → Ready → Done**. When you open the receipt, it will be in **Ready** status, meaning the goods are ready to be validated.
+          </Noted>
+
+
+          ***
+
+
+          ### Step 5: Click Validate
+
+
+          After reviewing the goods receipt, click the **Validate** button to
+          confirm that the goods have been physically received.
+
+
+          ![](/img/purchase/receiving/0007.png)
+
+
+          ***
+
+
+          ### Step 6: Click Apply on the Confirmation Dialog
+
+
+          A confirmation dialog — **Immediate Transfer?** — will appear. This
+          dialog informs you that you have not yet recorded the **Done**
+          quantities manually, and that clicking **Apply** will instruct MAQSU
+          to automatically process all quantities as received.
+
+
+          Click **Apply** to confirm and complete the goods receipt.
+
+
+          ![](/img/purchase/receiving/0008.png)
+
+
+          <Noted type="info" title="Note" image="/img/icon/sparkles.png">
+            If you want to record partial receipts or specify exact done quantities manually before validating, click **Cancel** on this dialog, update the **Done** column for each product, then click **Validate** again.
+          </Noted>
+
+
+          ***
+
+
+          ### Step 7: Verify the Status Changed to Done
+
+
+          After clicking **Apply**, the goods receipt status will automatically
+          update to **Done**. You will also notice that:
+
+
+          * The **Done** column now shows the received quantities matching the
+          **Demand**.
+
+          * An **Effective Date** has been recorded, showing the exact date and
+          time the goods were received.
+
+          * The available action buttons change to **Return**, **Scrap**, and
+          **Unlock**, confirming the receipt is complete.
+
+
+          ![](/img/purchase/receiving/0009.png)
+
+
+          <Noted type="info" title="Next Step" image="/img/icon/sparkles.png">
+            Once goods are received, the next step is to **Create a Vendor Bill** to record the supplier invoice and process payment against the Purchase Order.
+          </Noted>
+
+
+          ***
+    body: >
+      Receiving goods is a critical step in the purchasing process in MAQSU ERP.
+      It confirms that the ordered products have been physically delivered by
+      the supplier, updates your inventory stock levels, and prepares the
+      Purchase Order for vendor billing.
+
+
+      > **Note:** Always verify that the quantities and products received match
+      the Purchase Order before validating the goods receipt. Any discrepancies
+      should be resolved with the supplier before completing the process.
+  - link: create-vendor-bill#create-vendor-bill
+    uid: create-vendor-bill
+    title: Generate Bill
+    date: '2026-02-23T09:51:49.000Z'
+    breadcrumbs:
+      - link: /
+        title: All
+        body: ''
+      - link: /purchase
+        title: Purchase
+        body: ''
+      - link: /purchase/create-vendor-bill
+        title: Create Vendor Bill
+        body: ''
+    sections:
+      - link: /create-vendor-bill
+        title: Create Vendor Bill
+        body: >
+          After goods have been received, the next step is to create a **Vendor
+          Bill** to record the supplier invoice and process payment. Follow the
+          steps below:
+
+
+          ***
+
+
+          ### Step 1: Go to Purchase Orders
+
+
+          From the left sidebar, click **Purchase**. Then from the top
+          navigation menu, go to **Orders** → **Purchase Orders**.
+
+
+          ![](/img/purchase/vendor-bill/0001.png)
+
+
+          ***
+
+
+          ### Step 2: Find the Purchase Order
+
+
+          You need to find the Purchase Order that is ready for billing. Use the
+          **Filters** to narrow down the list quickly.
+
+
+          Click the **Filters** button at the top-right of the list, then select
+          **Billing Status is "Waiting Bills"** from the filter options.
+
+
+          ![](/img/purchase/vendor-bill/0002.png)
+
+
+          <Noted type="info" title="Can't find the filter?"
+          image="/img/icon/sparkles.png">
+            If **Billing Status is "Waiting Bills"** does not appear in the standard filter list, use a **Custom Filter** instead. Click **Add Custom Filter**, then set the conditions as follows:
+
+            1. **Field:** Billing Status
+            2. **Operator:** is
+            3. **Value:** Waiting Bills
+
+            Then click **Apply** to apply the custom filter.
+          </Noted>
+
+
+          ![](/img/purchase/vendor-bill/0003.png)
+
+
+          After applying the filter, the list will display only Purchase Orders
+          with a **Billing Status** of **Waiting Bills**.
+
+
+          ![](/img/purchase/vendor-bill/0004.png)
+
+
+          ***
+
+
+          ### Step 3: Open the Purchase Order
+
+
+          Click on the **Order Number** of the Purchase Order you want to create
+          a vendor bill for to open it.
+
+
+          On the Purchase Order detail page, verify that goods have been
+          received by checking the **Received** column in the Order Lines — it
+          should now show the received quantity (e.g., 100.00). The **Billed**
+          column will still show **0.00**, indicating no bill has been created
+          yet.
+
+
+          ![](/img/purchase/vendor-bill/0005.png)
+
+
+          ***
+
+
+          ### Step 4: Click Create Bill
+
+
+          Click the **Create Bill** button at the top of the Purchase Order form
+          to start the billing process.
+
+
+          ![](/img/purchase/vendor-bill/0006.png)
+
+
+          ***
+
+
+          ### Step 5: Choose Bill Type and Confirm
+
+
+          A **Create Bill** dialog will appear. The bill will be created in
+          **Draft** status so you can review it before posting. Select the
+          appropriate bill type:
+
+
+          1. **Regular Bill** *(Default)* – Creates a standard vendor bill for
+          the full amount of the purchase order. Use this for normal purchases.
+
+          2. **Down Payment (Percentage)** – Creates a partial bill based on a
+          percentage of the total purchase order amount. Use this when paying a
+          deposit upfront.
+
+          3. **Down Payment (Fixed Amount)** – Creates a partial bill for a
+          specific fixed amount. Use this when the advance payment is a set
+          amount rather than a percentage.
+
+
+          Select the appropriate option, then click **Create and View Bill** to
+          create the bill and open it immediately.
+
+
+          ![](/img/purchase/vendor-bill/0007.png)
+
+
+          <Noted type="info" title="Note" image="/img/icon/sparkles.png">
+            If you click **Create Bill** instead of **Create and View Bill**, the bill will be created in the background without opening it. You can find it later under the **Accounting** module → **Vendor Bills**.
+          </Noted>
+
+
+          ***
+
+
+          ### Step 6: Review the Draft Bill and Click Post
+
+
+          The **Draft Bill** form will open automatically. Review all the
+          details carefully before posting:
+
+
+          * **Vendor** – The supplier linked to this bill.
+
+          * **Bill Date** – The date the bill was created.
+
+          * **Accounting Date** – The date used for accounting entries.
+
+          * **Payment Terms** – The agreed payment due date.
+
+          * **Journal** – The accounting journal, typically **Vendor Bills
+          (USD)**.
+
+          * **Invoice Lines** – Lists all products from the Purchase Order with
+          their quantities, unit prices, accounts, and subtotals.
+
+
+          Once you have verified all the information is correct, click the
+          **Post** button to validate and post the vendor bill. This will change
+          the status from **Draft** to **Posted** and record the corresponding
+          journal entries in your accounting.
+
+
+          ![](/img/purchase/vendor-bill/0008.png)
+
+
+          <Noted type="info" title="Next Step" image="/img/icon/sparkles.png">
+            Once the vendor bill is posted, the next step is to **Register Payment** to record the actual payment made to the supplier against this bill.
+          </Noted>
+
+
+          ***
+    body: >
+      Creating a **Vendor Bill** in MAQSU ERP records the supplier's invoice
+      into your accounting system after goods have been received. It ensures
+      that your financial records accurately reflect what is owed to the
+      supplier and prepares the transaction for payment.
+
+
+      > **Note:** A vendor bill can only be created after the goods have been
+      received and the Purchase Order billing status is **Waiting Bills**.
+      Always verify the invoice details match the Purchase Order before posting
+      the bill.
+  - link: register-payment#register-payment
+    uid: register-payment
+    title: Register Payment
+    date: '2026-02-23T09:51:49.000Z'
+    breadcrumbs:
+      - link: /
+        title: All
+        body: ''
+      - link: /purchase
+        title: Purchase
+        body: ''
+      - link: /purchase/register-payment
+        title: Register Payment
+        body: ''
+    sections:
+      - link: /register-payment
+        title: Register Payment
+        body: >
+          After the vendor bill has been posted, the final step in the
+          purchasing process is to **Register Payment** to record the actual
+          payment made to the supplier. Follow the steps below:
+
+
+          ***
+
+
+          ### Step 1: Go to Purchase Orders
+
+
+          From the left sidebar, click **Purchase**. Then from the top
+          navigation menu, go to **Orders** → **Purchase Orders**.
+
+
+          ![](/img/purchase/register-payment/0001.png)
+
+
+          ***
+
+
+          ### Step 2: Find the Purchase Order
+
+
+          You need to find the Purchase Order that has been fully billed. Use
+          the **Filters** to narrow down the list quickly.
+
+
+          Click the **Filters** button at the top-right of the list, then select
+          **Billing Status is "Fully Billed"** from the filter options.
+
+
+          ![](/img/purchase/register-payment/0002.png)
+
+
+          <Noted type="info" title="Can't find the filter?"
+          image="/img/icon/sparkles.png">
+            If **Billing Status is "Fully Billed"** does not appear in the standard filter list, use a **Custom Filter** instead. Click **Add Custom Filter**, then set the conditions as follows:
+
+            1. **Field:** Billing Status
+            2. **Operator:** is
+            3. **Value:** Fully Billed
+
+            Then click **Apply** to apply the custom filter.
+          </Noted>
+
+
+          ![](/img/purchase/register-payment/0003.png)
+
+
+          After applying the filter, the list will display only Purchase Orders
+          with a **Billing Status** of **Fully Billed**.
+
+
+          ![](/img/purchase/register-payment/0004.png)
+
+
+          ***
+
+
+          ### Step 3: Open the Purchase Order
+
+
+          Click on the **Order Number** of the Purchase Order you want to
+          register payment for to open it.
+
+
+          ![](/img/purchase/register-payment/0009.png)
+
+
+          ### Step 3: Click the Vendor Bills Button
+
+
+          On the Purchase Order detail page, you can confirm that both goods
+          have been received and billed by checking the **Received** and
+          **Billed** columns in the Order Lines — both should now show matching
+          quantities (e.g., 100.00). You will also see the **1 Vendor Bills**
+          smart button at the top right of the form.
+
+
+          Click the **1 Vendor Bills** smart button at the top right of the
+          Purchase Order form. This will open the posted vendor bill linked to
+          this purchase order.
+
+
+          ![](/img/purchase/register-payment/0005.png)
+
+
+          The Vendor Bill (e.g., BILL/2026/0004) will open in **Posted** status.
+          You will see the bill details including the vendor, bill date,
+          accounting date, payment terms, journal, and invoice lines. The **Add
+          Payment** button will be visible at the top of the form.
+
+
+          ***
+
+
+          ### Step 4: Click Add Payment
+
+
+          Click the **Add Payment** button at the top of the Vendor Bill form to
+          open the payment dialog.
+
+
+          ![](/img/purchase/register-payment/0006.png)
+
+
+          A payment wizard window will appear. Fill in the following details:
+
+
+          1. **Journal** – Select the payment method or account the payment is
+          made from (e.g., Bank (USD), Cash). This determines which financial
+          account is debited.
+
+          2. **Doc. No.** – This is automatically generated by the system. You
+          can leave it as is or enter a custom reference such as a check number
+          or bank transfer ID.
+
+          3. **Amount** – The payment amount is automatically pre-filled based
+          on the outstanding balance on the bill. You can adjust this for a
+          partial payment if needed.
+
+          4. **Payment Date** – The date the payment was made to the vendor.
+          This defaults to today's date but can be changed.
+
+          5. **Memo** – An optional internal note for reference, such as a
+          payment remark. This is auto-populated from the Purchase Order number
+          by default.
+
+
+          ***
+
+
+          ### Step 5: Click Validate
+
+
+          After reviewing all the payment details, click the **Validate** button
+          to confirm and post the payment.
+
+
+          ![](/img/purchase/register-payment/0007.png)
+
+
+          ***
+
+
+          ### Step 6: Verify the Bill Status Changed to PAID
+
+
+          Once validated, the vendor bill status will immediately update. A
+          green **PAID** stamp will appear on the top right of the bill form,
+          confirming that the payment has been successfully registered and the
+          bill is fully settled.
+
+
+          The **Add Payment** button will disappear and be replaced by **Add
+          Credit Note** and **Reset to Draft**, confirming no further payment
+          action is required.
+
+
+          ![](/img/purchase/register-payment/0008.png)
+
+
+          <Noted type="info" title="Note" image="/img/icon/sparkles.png">
+            If you registered a partial payment, the bill status will show **Partially Paid** instead of **PAID**. You can click **Add Payment** again to register the remaining balance.
+          </Noted>
+
+
+          ***
+    body: >
+      **Registering Payment** is the final step in the MAQSU ERP purchasing
+      workflow. It records the actual payment made to the supplier against the
+      posted vendor bill, updates your accounting records, and marks the bill as
+      fully settled.
+
+
+      > **Note:** Always ensure the vendor bill has been posted before
+      registering payment. Payments cannot be registered against a bill that is
+      still in **Draft** status.
+  - link: reporting#reporting
+    uid: reporting
+    title: Reporting
+    date: '2026-02-23T09:51:49.000Z'
+    breadcrumbs:
+      - link: /
+        title: All
+        body: ''
+      - link: /purchase
+        title: Purchase
+        body: ''
+      - link: /purchase/reporting
+        title: Reporting
+        body: ''
+    sections:
+      - link: /purchase-analysis
+        title: Purchase Analysis
+        body: >
+          The **Purchase Analysis** report gives you a visual and data-driven
+          overview of all your purchase activities. It helps you monitor
+          spending trends, track order volumes, and evaluate supplier
+          performance over time.
+
+
+          ***
+
+
+          ### Step 1: Go to Purchase Analysis
+
+
+          From the top navigation menu, click **Reporting** → **Purchase
+          Analysis**.
+
+
+          ![](/img/purchase/reporting/0001.png)
+
+
+          ***
+
+
+          ### Step 2: Understand the Report Views
+
+
+          The Purchase Analysis report offers multiple view modes so you can
+          analyze your data in different ways. Use the view toggle icons at the
+          top-left of the report to switch between views:
+
+
+          #### Line Chart View
+
+
+          Displays purchase data as a continuous line or area chart over time.
+          This is useful for tracking purchase trends across a date range, such
+          as daily or monthly spending patterns.
+
+
+          ![](/img/purchase/reporting/0002.png)
+
+
+          #### Bar Chart View
+
+
+          Displays purchase data as vertical bars grouped by a selected
+          dimension such as Confirmation Date, Vendor, or Product. This makes it
+          easy to compare purchase volumes or totals between groups at a glance.
+
+
+          ![](/img/purchase/reporting/0003.png)
+
+
+          #### Pie Chart View
+
+
+          Displays purchase data as a proportional pie chart. This is ideal for
+          understanding the share or percentage contribution of each group
+          (e.g., by date, vendor, or product) relative to the total.
+
+
+          ![](/img/purchase/reporting/0004.png)
+
+
+          #### Pivot Table View
+
+
+          Displays purchase data in a structured table format with rows,
+          columns, and subtotals. This is the most detailed view and is useful
+          for in-depth data analysis and exporting reports.
+
+
+          ![](/img/purchase/reporting/0005.png)
+
+
+          <Noted type="info" title="Tip" image="/img/icon/sparkles.png">
+            You can switch between the **Pivot Table** and **Chart** views at any time using the view toggle icons on the right side of the toolbar. Each view retains your current filters and groupings.
+          </Noted>
+
+
+          ***
+
+
+          ### Step 3: Customize Measures
+
+
+          Click the **Measures** button at the top-left to select which data
+          columns or metrics you want to display in the report. You can enable
+          or disable any combination of the following measures:
+
+
+          1. **# of Lines** – The total number of purchase order lines included
+          in the analysis.
+
+          2. **Average Cost** – The average unit cost across all purchase lines.
+
+          3. **Days to Confirm** – The average number of days taken to confirm a
+          purchase order from its creation date.
+
+          4. **Days to Receive** – The average number of days taken to receive
+          goods after the purchase order was confirmed.
+
+          5. **Gross Weight** – The total gross weight of all purchased
+          products.
+
+          6. **Qty Billed** – The total quantity of items that have been billed.
+
+          7. **Qty Ordered** – The total quantity of items ordered across all
+          purchase orders.
+
+          8. **Qty Received** – The total quantity of items physically received
+          from suppliers.
+
+          9. **Qty to be Billed** – The quantity of received items that have not
+          yet been billed.
+
+          10. **Total** – The grand total value of all purchase orders including
+          taxes.
+
+          11. **Untaxed Total** – The total value of all purchase orders
+          excluding taxes.
+
+          12. **Volume** – The total volume of purchased products.
+
+          13. **Count** – The total number of purchase order records included in
+          the report.
+
+
+          ![](/img/purchase/reporting/0006.png)
+
+
+          Tick or untick any measure to add or remove it from the current view.
+          Active measures are shown with a checkmark.
+
+
+          ![](/img/purchase/reporting/0007.png)
+
+
+          ***
+
+
+          ### Step 4: Filter and Group the Data
+
+
+          Use the toolbar options to further refine your report:
+
+
+          * **Filters** – Narrow the data by date range, vendor, order status,
+          or other conditions.
+
+          * **Group By** – Group results by fields such as Vendor, Product,
+          Purchase Representative, or Confirmation Date.
+
+          * **Time Ranges** – Quickly apply predefined date ranges such as This
+          Month, This Quarter, or This Year to focus the analysis on a specific
+          period.
+
+
+          <Noted type="info" title="Tip" image="/img/icon/sparkles.png">
+            Combining **Group By** with **Measures** gives you the most powerful analysis. For example, grouping by **Vendor** and measuring **Total** and **Qty Ordered** lets you instantly compare spending across all your suppliers.
+          </Noted>
+
+
+          ***
+      - link: /purchase-register
+        title: Purchase Register
+        body: >
+          The **Purchase Register** report provides a detailed line-by-line
+          record of all purchase transactions. Unlike the Purchase Analysis
+          which focuses on trends and aggregates, the Purchase Register shows
+          each individual order line with its full transaction details — making
+          it ideal for auditing, reconciliation, and financial reporting.
+
+
+          ***
+
+
+          ### Step 1: Go to Purchase Register
+
+
+          From the top navigation menu, click **Reporting** → **Purchase
+          Register**.
+
+
+          ![](/img/purchase/reporting/register/0001.png)
+
+
+          ***
+
+
+          ### Step 2: Understand the Report Views
+
+
+          The Purchase Register offers two view modes you can switch between
+          using the view toggle icons at the top of the report:
+
+
+          #### List View
+
+
+          Displays all purchase order lines in a flat, row-by-row format. Each
+          row represents a single order line and shows the following columns:
+
+
+          1. **Date** – The date the purchase order was created or confirmed.
+
+          2. **Order Number** – The unique purchase order number (e.g., P00008,
+          P00009).
+
+          3. **Vendor** – The supplier name associated with the order line.
+
+          4. **Product** – The product or service purchased on that line.
+
+          5. **UOM** – The unit of measure for the product (e.g., Units, Can,
+          kg).
+
+          6. **Quantity** – The number of units ordered on that line.
+
+          7. **Price** – The unit price of the product.
+
+          8. **Tax** – The tax amount applied to that line.
+
+          9. **Amount** – The total amount for that line including taxes.
+
+
+          The bottom row displays the **grand totals** for Quantity, Price
+          (weighted), Tax, and Amount across all lines.
+
+
+          ![](/img/purchase/reporting/register/0002.png)
+
+
+          #### Pivot Table View
+
+
+          Displays the purchase register data in a structured pivot table
+          grouped by product and period (e.g., January 2026, February 2026).
+          This view is useful for comparing purchase volumes and amounts across
+          different time periods side by side.
+
+
+          Each row shows a product with its **Price**, **Quantity**, and
+          **Amount** broken down by month, with a **Total** column summarizing
+          all periods.
+
+
+          ![](/img/purchase/reporting/register/0003.png)
+
+
+          ***
+
+
+          ### Step 3: Customize Measures (Pivot View)
+
+
+          When in **Pivot Table View**, click the **Measures** button to select
+          which columns are displayed. The available measures for the Purchase
+          Register are:
+
+
+          1. **Amount** *(Active by default)* – The total amount for each line
+          including taxes.
+
+          2. **Base UOM QTY** – The quantity expressed in the product's base
+          unit of measure.
+
+          3. **Billed** – The quantity or amount that has been billed to date.
+
+          4. **Price** *(Active by default)* – The unit price of the product on
+          each order line.
+
+          5. **Product QTY** – The product quantity as ordered.
+
+          6. **Quantity** *(Active by default)* – The number of units ordered.
+
+          7. **Received** – The quantity of goods received against the order
+          line.
+
+          8. **Tax** – The tax amount applied to each line.
+
+          9. **Count** – The number of order line records included in the
+          report.
+
+
+          ![](/img/purchase/reporting/register/0004.png)
+
+
+          <Noted type="info" title="Tip" image="/img/icon/sparkles.png">
+            Active measures are shown with a checkmark. Tick or untick any measure to add or remove it from the current pivot table view.
+          </Noted>
+
+
+          ***
+
+
+          ### Step 4: Filter the Data
+
+
+          Click the **Filters** button to narrow down the records displayed in
+          the report. The available filter options are:
+
+
+          1. **RFQs** – Show only records with a status of Request for
+          Quotation.
+
+          2. **Purchase Orders** – Show only confirmed Purchase Orders.
+
+          3. **Cancelled** – Show only cancelled purchase records.
+
+          4. **Fully Billed** – Show only order lines that have been fully
+          billed.
+
+          5. **Fully Received** – Show only order lines where goods have been
+          fully received.
+
+          6. **Add Custom Filter** – Define your own filter conditions for more
+          specific queries.
+
+
+          ![](/img/purchase/reporting/register/0005.png)
+
+
+          ***
+
+
+          ### Step 5: Group the Data
+
+
+          Click the **Group By** button to organize the report records into
+          logical groups. The available grouping options are:
+
+
+          1. **Products** – Group all lines by product name.
+
+          2. **Vendor** – Group all lines by supplier.
+
+          3. **Category** – Group all lines by product category.
+
+          4. **Date** – Group records by order date (with sub-options for day,
+          week, month, quarter, or year).
+
+          5. **Receipt Date** – Group records by the date goods were received
+          (with sub-options for period).
+
+          6. **Add Custom Group** – Define your own grouping field for more
+          specific analysis.
+
+
+          ![](/img/purchase/reporting/register/0006.png)
+
+
+          <Noted type="info" title="Tip" image="/img/icon/sparkles.png">
+            You can combine multiple **Group By** options and **Filters** together to create highly targeted views. For example, grouping by **Vendor** and filtering by **Purchase Orders** gives you a breakdown of confirmed purchases per supplier. Use the **Export** button in List View to download the report as a spreadsheet for further analysis.
+          </Noted>
+
+
+          ***
+    body: >
+      The **Reporting** section in the MAQSU Purchase module provides powerful
+      analytical tools to help you monitor and evaluate your purchasing
+      activities. Use these reports to gain insights into spending trends,
+      supplier performance, and order fulfillment efficiency.
+---
+
