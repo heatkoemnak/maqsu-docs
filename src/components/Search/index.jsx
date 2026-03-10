@@ -1,80 +1,70 @@
 import React, { useState, useRef, useEffect, useMemo } from "react";
-import { Search as SearchIcon, X, ChevronDown, FileText, ChevronRight, Loader2 } from "lucide-react";
+import { Search as SearchIcon, X, ChevronDown, FileText, ChevronRight } from "lucide-react";
 import styles from "./styles.module.css";
-import client from "../../../tina/__generated__/client";
-let cachedSearchData = null;
+import useGlobalData from "@docusaurus/useGlobalData";
+import Link from "@docusaurus/Link";
+
 const Search = () => {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState([]);
   const [showDropdown, setShowDropdown] = useState(false);
   const dropdownRef = useRef(null);
 
-  const [posts, setPosts] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const globalData = useGlobalData();
+  const topics = globalData?.["topics-data"]?.default?.topics ?? [];
+  const categoriesBySlug = globalData?.["categories-data"]?.default?.bySlug ?? {};
+  const categories = useMemo(() => {
+    const list = Object.entries(categoriesBySlug).map(([slug, data]) => ({
+      slug,
+      ...(data || {}),
+    }));
 
-useEffect(() => {
-  async function fetchData() {
-    try {
-      // ✅ If already cached, use it
-      if (cachedSearchData) {
-        setPosts(cachedSearchData);
-        setLoading(false);
-        return;
-      }
+    const order = new Map(
+      topics
+        .map((t, idx) => {
+          const slug = String(t?.link || "").replace(/^\//, "").split("/")[0];
+          return slug ? [slug, idx] : null;
+        })
+        .filter(Boolean)
+    );
 
-      setLoading(true);
+    list.sort((a, b) => {
+      const oa = order.has(a.slug) ? order.get(a.slug) : Number.POSITIVE_INFINITY;
+      const ob = order.has(b.slug) ? order.get(b.slug) : Number.POSITIVE_INFINITY;
+      if (oa !== ob) return oa - ob;
+      return String(a.title || a.slug).localeCompare(String(b.title || b.slug));
+    });
 
-      const result = await client.queries.categoriesConnection();
+    return list;
+  }, [categoriesBySlug, topics]);
 
-      const allCategories =
-        result?.data?.categoriesConnection?.edges?.map(
-          (edge) => edge.node
-        ) || [];
-
-      // ✅ Save to cache
-      cachedSearchData = allCategories;
-
-      setPosts(allCategories);
-    } catch (err) {
-      console.error("Error fetching Tina data:", err);
-    } finally {
-      setLoading(false);
-    }
-  }
-
-  fetchData();
-}, []);
   /* -------------------------
      🔥 Build Global Search Index from Tina Data
   ------------------------- */
   const searchIndex = useMemo(() => {
-  if (!posts || !Array.isArray(posts)) return [];
+  if (!categories || !Array.isArray(categories)) return [];
 
   const items = [];
 
-  posts.forEach((category) => {
-    // Get the base slug from the filename or a field (e.g., 'accounting' or 'inventory')
-    // For this example, I'll assume you want the URL to match the category title/slug
-    const baseSlug = category.title?.toLowerCase().replace(/\s+/g, '-') || "docs";
+  categories.forEach((category) => {
+    const baseSlug = category.slug || category.uid || category.link || category.title?.toLowerCase().replace(/\s+/g, '-') || "docs";
 
     category.groupSections?.forEach((group) => {
       // Add the group
       items.push({
         title: group.title,
-        link: `/${baseSlug}/${group.link}`,
+        link: `/${baseSlug}/${group.uid || group.link}`,
         category: category.title, // Now shows "Accounting" or "Inventory"
       });
 
       // Add nested sections
       group.sections?.forEach((section) => {
-        let finalLink = section.link;
-        if (finalLink.startsWith("/")) {
-          finalLink = `/${baseSlug}${finalLink}`;
-        } else if (!finalLink.includes("#")) {
-          finalLink = `/${baseSlug}/${group.link.split("#")[0]}#${finalLink}`;
-        } else {
-          finalLink = `/${baseSlug}/${finalLink}`;
-        }
+        const raw = section.uid || section.link || "";
+        const anchor = String(raw).includes("#")
+          ? String(raw).split("#")[1]
+          : String(raw).replace(/^\//, "");
+        const groupSlug = group.uid || String(group.link || "").split("#")[0];
+        const finalLink = `/${baseSlug}/${groupSlug}#${anchor}`;
 
         items.push({
           title: section.title,
@@ -86,7 +76,7 @@ useEffect(() => {
   });
 
   return items;
-}, [posts]);
+ }, [categories]);
   /* -------------------------
      🔥 Close Dropdown Outside Click
   ------------------------- */
@@ -168,75 +158,55 @@ useEffect(() => {
       <div className={styles.topics} ref={dropdownRef}>
         <button
           type="button"
-          disabled={loading}
           onClick={() => setShowDropdown(!showDropdown)}
           className={styles.dropDownTopic}
         >
           <span>All Topics</span>
-          {loading ? (
-            <Loader2 className={styles.spinner} size={16} />
-          ) : (
-            <ChevronDown className={showDropdown ? styles.rotate180 : ""} size={16} />
-          )}
+          <ChevronDown className={showDropdown ? styles.rotate180 : ""} size={16} />
         </button>
 
-        {showDropdown && posts && (
+        {showDropdown && (
           <div className={styles.megaMenuContainer}>
             <div className={styles.megaMenuGrid}>
-              {posts.map((category, index) => {
-                // Create a URL-friendly slug from the category title
-                const baseSlug = category.title?.toLowerCase().replace(/\s+/g, '-') || "docs";
+              {categories.map((category) => {
+                const baseSlug = category.slug || category.uid || category.link || "docs";
+                const groups = category.groupSections || [];
 
                 return (
-                  <div key={index} className={styles.megaMenuColumn}>
-                    {/* Category Title - Acts as the Header */}
-                    <h3 className={styles.categoryTitle}>{category.title}</h3>
+                  <div key={baseSlug} className={styles.megaMenuColumn}>
+                    <Link
+                      to={`/${baseSlug}`}
+                      className={styles.categoryTitleLink}
+                      onClick={() => setShowDropdown(false)}
+                    >
+                      {category.title || baseSlug}
+                    </Link>
 
-                    {/* Map through the Group Sections within this file */}
+                    {/* {category.description && (
+                      <p className={styles.categoryDescription}>{category.description}</p>
+                    )} */}
+
                     <div className={styles.groupList}>
-                      {category.groupSections?.map((group) => (
-                        <a
-                          key={group.link}
-                          href={`/${baseSlug}/${group.link}`}
-                          className={styles.megaMenuItem}
-                          onClick={() => setShowDropdown(false)}
-                        >
-                          <div className={styles.itemText}>
-                            <span className={styles.itemTitle}>{group.title}</span>
-                            {/* If your Tina schema has a 'description' field, show it here */}
-                            {group.description && (
-                              <p className={styles.itemDescription}>{group.description}</p>
-                            )}
-                          </div>
-                        </a>
-                      ))}
+                      {groups.map((group) => {
+                        const groupSlug = group.uid || String(group.link || "").split("#")[0];
+                        return (
+                          <Link
+                            key={`${baseSlug}-${groupSlug}`}
+                            to={`/${baseSlug}/${groupSlug}`}
+                            className={styles.megaMenuItem}
+                            onClick={() => setShowDropdown(false)}
+                          >
+                            <div className={styles.itemText}>
+                              <span className={styles.itemTitle}>{group.title}</span>
+                              {/* <ChevronRight size={14} className={styles.itemChevron} /> */}
+                            </div>
+                          </Link>
+                        );
+                      })}
                     </div>
                   </div>
                 );
               })}
-            </div>
-
-            {/* Optional: Right-side Promo Area (matching the Microsoft sample) */}
-            <div className={styles.promoSection}>
-              <span className={styles.promoTag}>HIGHLIGHTS</span>
-              <h2 className={styles.promoTitle}>Release Notes</h2>
-              <ul className={styles.promoList}>
-                <li>
-                  <h3 className={styles.promoItemTitle}>Version 3.9.0 Released</h3>
-                </li>
-                <li>
-                  <h3 className={styles.promoItemTitle}>Version 4.0 Released</h3>
-                </li>
-                <li>
-                  <h3 className={styles.promoItemTitle}>Version 4.1 Released</h3>
-                </li>
-                <li>
-                  <h3 className={styles.promoItemTitle}>Version 5.0 Released</h3>
-                </li>
-              </ul>
-                <span className={styles.promoTag}>LATEST UPDATE</span>
-                <h3 className={styles.promoItemTitle}>Version 5.2 Released</h3>
-                  <p>Read the release notes for the version 5.2.</p>
             </div>
           </div>
         )}
@@ -251,7 +221,6 @@ useEffect(() => {
             className={styles.input}
             placeholder="Search for keywords, article ..."
             aria-label="Search"
-            disabled={loading}
           />
 
           <button

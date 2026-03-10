@@ -12,7 +12,7 @@ export default function Purchase() {
     // </Layout>
     <DefaultLayout>
       <MainLayout>
-        <DynamicPage/>
+        <DynamicPage slug="purchase" />
        {/* {pageData && pageData.blocks ? <LayoutFeatures route={pageData.route} blocks={pageData.blocks} /> : null} */}
       </MainLayout>
     </DefaultLayout>

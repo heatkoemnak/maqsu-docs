@@ -35,7 +35,7 @@ export default function Accounting() {
 
     <DefaultLayout>
       <MainLayout>
-        <DynamicPage/>
+        <DynamicPage slug="accounting" />
       </MainLayout>
     </DefaultLayout>
   );

@@ -1,11 +1,11 @@
 import { useEffect, useState, useMemo, useCallback } from "react";
-import { client } from "../../tina/__generated__/client";
-import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { useLocation } from "@docusaurus/router";
+import useGlobalData from "@docusaurus/useGlobalData";
 import { BiCollapseAlt, BiExpandAlt } from "react-icons/bi";
 import { LiaAngleRightSolid } from "react-icons/lia";
 import { IoClose } from "react-icons/io5";
 import Link from "@docusaurus/Link";
+import MdxString from "./MdxString";
 import { CardGrid } from "./Cards/CardGrid";
 import CustomTabsPage from "./CustomTabsPage";
 import { VideoPlayer } from "./VideoPlayer/VideoPlayer";
@@ -20,6 +20,7 @@ import { formatDistanceToNow } from "date-fns";
 
 export default function Page() {
   const location = useLocation();
+  const globalData = useGlobalData();
 
   const [posts, setPosts] = useState([]);
   const [active, setActive] = useState(null);
@@ -47,40 +48,21 @@ export default function Page() {
   useEffect(() => {
     if (!pageSlug) return;
 
-    let isMounted = true;
+    const bySlug = globalData?.["categories-data"]?.default?.bySlug ?? {};
+    const category = bySlug[pageSlug] ?? null;
+    const sections = category?.groupSections || [];
 
-    async function fetchData() {
-      try {
-        const result = await client.queries.categories({
-          relativePath: `${pageSlug}.mdx`,
-        });
+    setAllGroups(sections);
 
-        if (!isMounted) return;
-
-        const sections = result?.data?.categories?.groupSections || [];
-        setAllGroups(sections);
-
-        if (endPath) {
-          const matchedGroup = sections.find((group) => group.uid === endPath);
-          setPosts(matchedGroup ? [matchedGroup] : sections);
-        } else {
-          setPosts(sections);
-        }
-
-        setActive(null);
-      } catch (err) {
-        if (isMounted) {
-          console.error("Error fetching Tina data:", err);
-        }
-      }
+    if (endPath) {
+      const matchedGroup = sections.find((group) => group.uid === endPath);
+      setPosts(matchedGroup ? [matchedGroup] : sections);
+    } else {
+      setPosts(sections);
     }
 
-    fetchData();
-
-    return () => {
-      isMounted = false;
-    };
-  }, [pageSlug, endPath]);
+    setActive(null);
+  }, [pageSlug, endPath, globalData]);
 
   /* -----------------------------------
      🔥 COMBINED INITIAL SETUP
@@ -437,7 +419,7 @@ export default function Page() {
                   <TimeAgo date={group.date} />
                 </div>
                 {group.body && (
-                  <TinaMarkdown content={group.body} components={tinaComponents} />
+                  <MdxString source={group.body} components={tinaComponents} />
                 )}
               </section>
 
@@ -452,7 +434,7 @@ export default function Page() {
                     >
                       <h2>{sub.title}</h2>
                       {sub.body && (
-                        <TinaMarkdown content={sub.body} components={tinaComponents} />
+                        <MdxString source={sub.body} components={tinaComponents} />
                       )}
                     </section>
                   </div>

@@ -12,7 +12,7 @@ export default function Introduction() {
     // </Layout>
     <DefaultLayout>
       <MainLayout>
-        <DynamicPage/>
+        <DynamicPage slug="introduction" />
        {/* {pageData && pageData.blocks ? <LayoutFeatures route={pageData.route} blocks={pageData.blocks} /> : null} */}
       </MainLayout>
     </DefaultLayout>

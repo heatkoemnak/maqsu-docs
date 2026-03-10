@@ -1,6 +1,5 @@
 import React from "react";
 import './note.css';
-import { TinaMarkdown } from "tinacms/dist/rich-text";
 
 const NOTE_CONFIG = {
   info: {
@@ -44,7 +43,7 @@ export const Noted = ({ title, type = "success", image, children }) => {
           )}
           <span className="note-header__title">{title}</span>
         </div>
-        <TinaMarkdown content={children} />
+        <div className="note-content">{children}</div>
       </div>
     </div>
   );

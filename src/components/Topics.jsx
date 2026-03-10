@@ -1,10 +1,10 @@
 
 import { useEffect, useState } from 'react'
 import { formatDistanceToNow } from "date-fns";
-import client from '../../tina/__generated__/client';
 import styles from '../css/styles.module.css'
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
+import useGlobalData from "@docusaurus/useGlobalData";
 import { motion } from "framer-motion";
 import { FileText, Loader2 } from "lucide-react";
 
@@ -20,11 +20,12 @@ import { BsList, BsGrid } from "react-icons/bs";
 export default function Topics({ topics }) {
   const location = useLocation();
   const [currentPage, setCurrentPage] = useState(1);
-  const [topicData, setTopicData] = useState([]);
   const [viewMode, setViewMode] = useState('row'); // 'row' | 'grid'
+  const globalData = useGlobalData();
+  const [topicData, setTopicData] = useState([]);
   const [loading, setLoading] = useState(true);
   const itemsPerPage = 7;
-  const totalPages = Math.ceil(topics?.groupSections.length / itemsPerPage);
+  const totalPages = Math.ceil((topics?.groupSections?.length ?? 0) / itemsPerPage);
   const startIndex = (currentPage - 1) * itemsPerPage;
 
   const currentIndex = topicData?.findIndex(
@@ -37,7 +38,22 @@ export default function Topics({ topics }) {
       ? topicData[currentIndex + 1]
       : null;
 
-  const visibleCards = topics?.groupSections.slice(startIndex, startIndex + itemsPerPage);
+  const visibleCards = topics?.groupSections?.slice(startIndex, startIndex + itemsPerPage) ?? [];
+
+  if (!topics) {
+    return (
+      <div className={clsx(styles.pageRoot)}>
+        <div className={clsx(styles.mainLayout)} style={{ padding: 24 }}>
+          <div>
+            <h2 style={{ margin: 0 }}>Category not found</h2>
+            <p style={{ marginTop: 8 }}>
+              Missing category data for this route. Check `pages/Categories/*.mdx` and rebuild.
+            </p>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
 
 
@@ -45,10 +61,7 @@ export default function Topics({ topics }) {
     async function fetchData() {
       try {
         setLoading(true); // 🔥 Start loading
-        const result = await client.queries.topics({
-          relativePath: `topic.mdx`,
-        });
-        const fetchedTopics = result?.data?.topics?.topics || [];
+        const fetchedTopics = globalData?.["topics-data"]?.default?.topics ?? [];
         setTopicData(fetchedTopics);
       } catch (err) {
         console.error("Error fetching Tina data:", err);
@@ -57,7 +70,7 @@ export default function Topics({ topics }) {
       }
     }
     fetchData();
-  }, []);
+  }, [globalData]);
 
   const handleNextPage = () => {
     if (currentPage < totalPages) setCurrentPage((p) => p + 1);

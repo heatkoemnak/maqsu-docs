@@ -6,7 +6,6 @@ import DefaultLayout from "../../layout/DefaultLayout";
 import MainLayout from "../../components/MainLayout";
 import DynamicPage from "../dynamic";
 const pageData = require("../../../config/sales/index.json");
-console.log(pageData);
 
 export default function SalesPage() {
   const { siteConfig } = useDocusaurusContext();
@@ -27,7 +26,7 @@ export default function SalesPage() {
     //         </DefaultLayout>
     <DefaultLayout>
           <MainLayout>
-            <DynamicPage/>
+            <DynamicPage slug="sales" />
           </MainLayout>
         </DefaultLayout>
   );

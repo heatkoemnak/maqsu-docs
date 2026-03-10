@@ -1,4 +1,52 @@
 const docusaurusData = require("./config/docusaurus/index.json");
+const fs = require("fs");
+const path = require("path");
+const matter = require("gray-matter");
+
+function topicsDataPlugin() {
+  return {
+    name: "topics-data",
+    async loadContent() {
+      const filePath = path.resolve(__dirname, "topics", "topic.mdx");
+      const raw = fs.readFileSync(filePath, "utf8");
+      const { data } = matter(raw);
+
+      return {
+        topics: Array.isArray(data?.topics) ? data.topics : [],
+      };
+    },
+    async contentLoaded({ content, actions }) {
+      actions.setGlobalData(content);
+    },
+  };
+}
+
+function categoriesDataPlugin() {
+  return {
+    name: "categories-data",
+    async loadContent() {
+      const categoriesDir = path.resolve(__dirname, "pages", "Categories");
+      const entries = fs.readdirSync(categoriesDir, { withFileTypes: true });
+      const mdxFiles = entries
+        .filter((entry) => entry.isFile() && entry.name.endsWith(".mdx"))
+        .map((entry) => entry.name);
+
+      const bySlug = {};
+      for (const fileName of mdxFiles) {
+        const slug = fileName.replace(/\.mdx$/, "");
+        const filePath = path.join(categoriesDir, fileName);
+        const raw = fs.readFileSync(filePath, "utf8");
+        const { data } = matter(raw);
+        bySlug[slug] = data || {};
+      }
+
+      return { bySlug };
+    },
+    async contentLoaded({ content, actions }) {
+      actions.setGlobalData(content);
+    },
+  };
+}
 
 // const lightCodeTheme = require("prism-react-renderer").themes.github;
 // const darkCodeTheme = require("prism-react-renderer").themes.dracula;
@@ -117,6 +165,8 @@ const config = {
       }),
     ],
   ],
+
+  plugins: [topicsDataPlugin, categoriesDataPlugin],
 
   // themeConfig:
   //   /** @type {import('@docusaurus/preset-classic').ThemeConfig} */

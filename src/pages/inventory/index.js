@@ -35,7 +35,7 @@ export default function Inventory() {
 
     <DefaultLayout>
       <MainLayout>
-        <DynamicPage/>
+        <DynamicPage slug="inventory" />
       </MainLayout>
     </DefaultLayout>
   );

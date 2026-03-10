@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { TinaMarkdown } from "tinacms/dist/rich-text"
+import MdxString from "./MdxString"
 
 export default function CustomTabsPage({ lists }) {
   const [activeIndex, setActiveIndex] = useState(0)
@@ -35,15 +35,14 @@ export default function CustomTabsPage({ lists }) {
         {/* <h3 style={styles.title}>
           {lists[activeIndex]?.label}
         </h3> */}
-
-        <TinaMarkdown
-          content={lists[activeIndex]?.children}
+        <MdxString
+          source={lists[activeIndex]?.children}
           components={{
-            url: (props) => (
+            img: (props) => (
               <img
                 {...props}
                 style={styles.image}
-                onClick={() => setPreviewImage(props?.url)}
+                onClick={() => setPreviewImage(props?.src)}
               />
             ),
           }}

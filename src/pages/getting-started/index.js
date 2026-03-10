@@ -19,7 +19,7 @@ export default function GetingStarted() {
     // </Layout>
     <DefaultLayout>
       <MainLayout>
-        <DynamicPage/>
+        <DynamicPage slug="getting-started" />
        {/* {pageData && pageData.blocks ? <LayoutFeatures route={pageData.route} blocks={pageData.blocks} /> : null} */}
       </MainLayout>
     </DefaultLayout>

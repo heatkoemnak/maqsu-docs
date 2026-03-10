@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import clsx from "clsx";
 import styles from "./styles.module.css";
 import Link from "@docusaurus/Link";
+import useGlobalData from "@docusaurus/useGlobalData";
 import { Hero } from "../Hero";
 import { MdGridView } from "react-icons/md";
 import { RiListCheck2 } from "react-icons/ri";
@@ -9,7 +10,6 @@ import { formatDistanceToNow } from "date-fns";
 const pageData = require("../../../config/homepage/index.json");
 const blocks = pageData.blocks;
 import styled from 'styled-components';
-import client from "../../../tina/__generated__/client";
 
 const SkeletonCard = () => (
   <div className="card skeleton-card">
@@ -30,30 +30,8 @@ const SkeletonCard = () => (
 export default function HomeContent({cardList = []}) {
 
   const [gridView, setGridView] = React.useState(true);
-
-  const [posts, setPosts] = useState([]);
-
-  const [loading, setLoading] = useState(true);
-
-   useEffect(() => {
-    async function fetchData() {
-      try {
-        setLoading(true);
-        const result = await client.queries.topics({
-          relativePath: `topic.mdx`,
-        });
-
-        const sections = result?.data.topics.topics || [];
-        setPosts(sections);
-      } catch (err) {
-        console.error("Error fetching Tina data:", err);
-      } finally {
-        setLoading(false); // Stop loading regardless of success/fail
-      }
-    }
-
-    fetchData();
-  }, []);
+  const globalData = useGlobalData();
+  const posts = globalData?.["topics-data"]?.default?.topics ?? [];
 
 
 
@@ -123,33 +101,39 @@ function TimeAgo({ date }) {
         </div>
 
         <div className={clsx("cards-container", gridView ? "grid-layout" : "list-layout")}>
-            {loading
-              ? // Render 6 Skeletons while loading
-                Array(6).fill(0).map((_, i) => <SkeletonCard key={i} />)
-              : // Render actual posts
-                posts.map((card, index) => (
-                  <Link key={index + 1} to={card.link} className="card-link">
-                    <article className="card">
-                      <div className="card-content">
-                        <div className="card-header">
-                          {card.icon && (
-                            <div className="card-icon">
-                              <img src={card.icon} alt="" />
-                            </div>
-                          )}
-                          <div className="card-info">
-                            <h3 className="card-title">{card.title}</h3>
-                            <time className="card-time">
-                              <TimeAgo date={card?.date} />
-                            </time>
-                          </div>
+          {posts.length === 0 ? (
+            <div className="card">
+              <div className="card-content">
+                <h3 className="card-title">No categories found</h3>
+                <span className="card-description">
+                  Check `topics/topic.mdx` and rebuild the site.
+                </span>
+              </div>
+            </div>
+          ) : (
+            posts.map((card, index) => (
+              <Link key={index + 1} to={card.link} className="card-link">
+                <article className="card">
+                  <div className="card-content">
+                    <div className="card-header">
+                      {card.icon && (
+                        <div className="card-icon">
+                          <img src={card.icon} alt="" />
                         </div>
-                        <span className="card-description">{card.description}</span>
+                      )}
+                      <div className="card-info">
+                        <h3 className="card-title">{card.title}</h3>
+                        <time className="card-time">
+                          <TimeAgo date={card?.date} />
+                        </time>
                       </div>
-                    </article>
-                  </Link>
-                ))
-            }
+                    </div>
+                    <span className="card-description">{card.description}</span>
+                  </div>
+                </article>
+              </Link>
+            ))
+          )}
           </div>
 
         {/* <div className={clsx("cards-container", gridView ? "grid-layout" : "list-layout")}>
