@@ -94,7 +94,11 @@ const Search = () => {
   /* -------------------------
      🔥 ESC Close + Scroll Lock
   ------------------------- */
+  const isActive = Boolean(query) || showDropdown;
+
   useEffect(() => {
+    if (!isActive) return;
+
     function handleEsc(e) {
       if (e.key === "Escape") {
         setQuery("");
@@ -103,18 +107,25 @@ const Search = () => {
       }
     }
 
-    if (query || showDropdown) {
-      document.body.style.overflow = "hidden";
-      document.addEventListener("keydown", handleEsc);
-    } else {
-      document.body.style.overflow = "auto";
+    const body = document.body;
+    const prevOverflow = body.style.overflow;
+    const prevPaddingRight = body.style.paddingRight;
+
+    const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+
+    body.style.overflow = "hidden";
+    if (scrollbarWidth > 0) {
+      body.style.paddingRight = `${scrollbarWidth}px`;
     }
 
+    document.addEventListener("keydown", handleEsc);
+
     return () => {
-      document.body.style.overflow = "auto";
+      body.style.overflow = prevOverflow;
+      body.style.paddingRight = prevPaddingRight;
       document.removeEventListener("keydown", handleEsc);
     };
-  }, [query, showDropdown]);
+  }, [isActive]);
 
   /* -------------------------
      🔥 Search Logic
@@ -136,8 +147,6 @@ const Search = () => {
 
     setResults(filtered);
   };
-
-  const isActive = query || showDropdown;
 
   return (
     <div className={styles.SearchContainer}>
