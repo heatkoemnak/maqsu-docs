@@ -7,22 +7,22 @@ const pageData = require("../../config/homepage/index.json");
 export default function Home() {
 
 
-  React.useEffect(() => {
+  // React.useEffect(() => {
 
-    (function (d, t) {
-      var BASE_URL="https://app.chatwoot.com";
-      var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-      g.src=BASE_URL+"/packs/js/sdk.js";
-      g.async = true;
-      s.parentNode.insertBefore(g,s);
-      g.onload=function(){
-        window.chatwootSDK.run({
-          websiteToken: 'Nn92Qfh3a9Pvd46kzXoWuCqQ',
-          baseUrl: BASE_URL
-        })
-      }
-    })(document,"script");
-  }, []);
+  //   (function (d, t) {
+  //     var BASE_URL="https://app.chatwoot.com";
+  //     var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+  //     g.src=BASE_URL+"/packs/js/sdk.js";
+  //     g.async = true;
+  //     s.parentNode.insertBefore(g,s);
+  //     g.onload=function(){
+  //       window.chatwootSDK.run({
+  //         websiteToken: 'Nn92Qfh3a9Pvd46kzXoWuCqQ',
+  //         baseUrl: BASE_URL
+  //       })
+  //     }
+  //   })(document,"script");
+  // }, []);
 
   return (
     <DefaultLayout>

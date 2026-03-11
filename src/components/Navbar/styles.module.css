@@ -16,8 +16,8 @@
   justify-content: space-between;
   width: 100%;
   margin: 0 auto;
-  padding: 0.5rem 5rem;
-  gap: 2rem;
+  padding: 0.75rem clamp(1rem, 4vw, 5rem);
+  gap: clamp(0.75rem, 2vw, 2rem);
   background: var(--color-primary);
   color: var(--color-white);
 }
@@ -35,14 +35,15 @@
 }
 
 .logoImage {
-  height: 30px;
+  height: clamp(30px, 2.4vw, 36px);
   width: auto;
   object-fit: contain;
 }
 
 .searchContainer {
   flex: 1;
-  max-width: 500px;
+  min-width: 0;
+  max-width: 560px;
   display: flex;
   align-items: center;
 }
@@ -51,6 +52,7 @@
   display: flex;
   align-items: center;
   gap: 2rem;
+  flex-shrink: 0;
 }
 
 .navItem {
@@ -117,130 +119,162 @@
 .mobileMenu {
   position: fixed;
   inset: 0;
-  background: rgba(15, 23, 42, 0.95);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-    visibility 0s linear 0.3s;
-  z-index: 999;
-  will-change: opacity;
+  z-index: 1100;
 }
 
 .mobileMenu.open {
-  opacity: 1;
   visibility: visible;
   pointer-events: auto;
-  transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-    visibility 0s linear 0s;
+}
+
+.mobileMenuBackdrop {
+  position: absolute;
+  inset: 0;
+  border: 0;
+  padding: 0;
+  background: rgba(10, 20, 30, 0.45);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  opacity: 0;
+  cursor: pointer;
+  transition: opacity 0.28s ease;
+}
+
+.mobileMenuPanel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  width: min(420px, 100vw);
+  height: 100dvh;
+  padding: max(1rem, env(safe-area-inset-top)) 1rem max(1.25rem, env(safe-area-inset-bottom));
+  background:
+    linear-gradient(180deg, rgba(37, 83, 105, 0.98) 0%, rgba(23, 52, 69, 0.98) 100%);
+  box-shadow: -24px 0 48px rgba(0, 0, 0, 0.18);
+  transform: translateX(100%);
+  transition: transform 0.32s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mobileMenu.open .mobileMenuBackdrop {
+  opacity: 1;
+}
+
+.mobileMenu.open .mobileMenuPanel {
+  transform: translateX(0);
+}
+
+.mobileMenuHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.25rem 0 1rem;
+}
+
+.mobileMenuLogo {
+  display: inline-flex;
+  align-items: center;
+}
+
+.mobileMenuClose {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--color-white);
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.mobileMenuClose:hover {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.mobileMenuClose:active {
+  transform: scale(0.96);
 }
 
 .mobileMenuContent {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  gap: 2rem;
-  padding: 2rem;
-  transform: translateY(20px);
-  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1) 0.1s;
-  will-change: transform;
-}
-
-.mobileMenu.open .mobileMenuContent {
-  transform: translateY(0);
+  gap: 1.25rem;
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
 }
 
 .mobileSearch {
   width: 100%;
-  max-width: 400px;
+  max-width: none;
 }
 
 .mobileLinks {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 1.5rem;
+  align-items: stretch;
+  gap: 0.875rem;
   width: 100%;
+  margin-top: auto;
 }
 
 .mobileNavItem {
+  display: block;
   color: white;
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-weight: 600;
   text-decoration: none;
-  transition: all 0.3s ease;
-  padding: 0.5rem 1rem;
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+  padding: 0.95rem 1rem;
   position: relative;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .mobileNavItem::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 0;
-  height: 3px;
-  background: linear-gradient(90deg, #050505 0%, #0b0713 100%);
-  transition: width 0.3s ease;
+  display: none;
 }
 
 .mobileNavItem:hover {
-  color: #60a5fa;
-}
-
-.mobileNavItem:hover::after {
-  width: 100%;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.14);
+  text-decoration: none;
+  transform: translateY(-1px);
 }
 
 .mobileCtaButton {
-  padding: 1rem 2.5rem;
-  background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
-  color: white;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 1rem 1.25rem;
+  background: linear-gradient(135deg, #f0f5fb 0%, #d6e2ee 100%);
+  color: #173445;
   font-weight: 700;
-  font-size: 1.125rem;
-  border-radius: 12px;
+  font-size: 1rem;
+  border-radius: 14px;
   text-decoration: none;
-  transition: all 0.3s ease;
-  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.4);
-  margin-top: 1rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
+  margin-top: 0.5rem;
 }
 
 .mobileCtaButton:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 12px 28px rgba(59, 130, 246, 0.5);
+  transform: translateY(-1px);
+  text-decoration: none;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.18);
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1180px) {
   .navbarWrapper {
-    padding: 1rem 1.5rem;
-  }
-
-  .searchContainer {
-    max-width: 400px;
-  }
-
-  .navLinks {
-    gap: 1.5rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .navbarWrapper {
-    padding: 0.875rem 1rem;
-    gap: 1rem;
-  }
-
-  .logoImage {
-    height: 35px;
-  }
-
-  .searchContainer {
-    display: none;
+    padding-inline: 1.25rem;
   }
 
   .navLinks {
@@ -248,26 +282,56 @@
   }
 
   .mobileMenuButton {
-    display: flex;
+    display: inline-flex;
+  }
+
+  .searchContainer {
+    max-width: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .navbarWrapper {
+    padding-block: 0.875rem;
+  }
+
+  .searchContainer {
+    display: none;
+  }
+
+  .logoImage {
+    height: 34px;
+  }
+}
+
+@media (max-width: 640px) {
+  .navbarWrapper {
+    padding-inline: 1rem;
+  }
+
+  .mobileMenuPanel {
+    width: 100vw;
+    padding-inline: 0.875rem;
+  }
+
+  .mobileMenuHeader {
+    padding-bottom: 0.875rem;
   }
 }
 
 @media (max-width: 480px) {
-  .navbarWrapper {
-    padding: 0.75rem 1rem;
-  }
-
   .logoImage {
     height: 32px;
   }
 
   .mobileNavItem {
-    font-size: 1.25rem;
+    font-size: 0.95rem;
+    padding: 0.875rem 0.9rem;
   }
 
   .mobileCtaButton {
-    font-size: 1rem;
-    padding: 0.875rem 2rem;
+    font-size: 0.95rem;
+    padding: 0.95rem 1rem;
   }
 }
 
