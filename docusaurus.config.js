@@ -6,6 +6,9 @@ const matter = require("gray-matter");
 function topicsDataPlugin() {
   return {
     name: "topics-data",
+    getPathsToWatch() {
+      return [path.resolve(__dirname, "topics", "**", "*.mdx")];
+    },
     async loadContent() {
       const filePath = path.resolve(__dirname, "topics", "topic.mdx");
       const raw = fs.readFileSync(filePath, "utf8");
@@ -24,6 +27,9 @@ function topicsDataPlugin() {
 function categoriesDataPlugin() {
   return {
     name: "categories-data",
+    getPathsToWatch() {
+      return [path.resolve(__dirname, "pages", "Categories", "**", "*.mdx")];
+    },
     async loadContent() {
       const categoriesDir = path.resolve(__dirname, "pages", "Categories");
       const entries = fs.readdirSync(categoriesDir, { withFileTypes: true });

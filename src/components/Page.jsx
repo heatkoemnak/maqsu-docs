@@ -752,8 +752,8 @@ const GlobalStyles = () => (
     }
 
     .pq-sub-section h3 {
-      font-size: 1.5rem !important;
-      font-weight: 450 !important;
+      font-size: 1.2rem !important;
+      font-weight: 550 !important;
       color: rgb(89, 94, 94) !important;
       line-height: 1.4 !important;
       margin-top: 28px !important;

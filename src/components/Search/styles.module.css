@@ -86,12 +86,6 @@
   text-decoration: none;
 }
 
-.categoryDescription {
-  margin: 0 0 14px 0;
-  font-size: 12px;
-  color: #475569;
-}
-
 .megaMenuItem {
   display: block;
   padding: 8px 0;
@@ -118,37 +112,6 @@
   justify-content: space-between;
   gap: 0.5rem;
 }
-
-.itemChevron {
-  flex-shrink: 0;
-  opacity: 0.7;
-}
-.promoTag{
-  letter-spacing: 3.5px;
-}
-.promoTitle{
-  color: rgb(43, 94, 134) !important;
-  font-size: 14px;
-  font-weight: 300 ! important;
-}
-.promoItemTitle{
-  color: rgb(43, 94, 134) !important;
-  font-size: 15px;
-  font-weight: 400 ! important;
-  line-height: 1.2;
-}
-.itemDescription {
-  font-size: 11px;
-  color: #323232;
-  margin: 0;
-}
-
-.promoSection {
-  flex: 1;
-  padding-left: 40px;
-  border-left: 1px solid #333;
-  margin-left: 40px;
-}
 .dropDownTopic {
   display: flex;
   align-items: center;
@@ -173,46 +136,6 @@
 .dropDownTopic:disabled {
   opacity: 0.5;
   cursor: not-allowed;
-}
-
-.dropDown {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  margin-top: 0.5rem;
-  /* width: 16rem; */
-  background-color: #ffffff;
-  border-radius: 0.75rem;
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-  border: 1px solid #e2e8f0;
-  padding: 0.5rem 0;
-  overflow: hidden;
-  animation: slideIn 0.2s ease-out;
-}
-
-.dropDownTitle {
-  padding: 0.5rem 0.75rem;
-  font-size: 0.75rem;
-  font-weight: 600;
-  color: #94a3b8;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-.dropDownItem {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0.625rem 1rem;
-  font-size: 0.875rem;
-  color: #475569;
-  text-decoration: none;
-  transition: all 0.2s;
-}
-
-.dropDownItem:hover {
-  background-color: #f8fafc;
-  color: #4c5a7a;
 }
 
 .form {
@@ -305,20 +228,6 @@
   color: #3a7eaf;
 }
 
-.resultIcon {
-  margin-top: 0.125rem;
-  padding: 0.375rem;
-  background-color: #f1f5f9;
-  border-radius: 0.5rem;
-  color: #64748b;
-  transition: all 0.2s;
-}
-
-.resultWrapper:hover .resultIcon {
-  background-color: #eef2ff;
-  color: #4f46e5;
-}
-
 .resultContent {
   display: flex;
   flex-direction: column;
@@ -356,15 +265,6 @@
 
 .rotate180 {
   transform: rotate(180deg);
-}
-
-.spinner {
-  animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
 }
 
 @media (max-width: 1180px) {
