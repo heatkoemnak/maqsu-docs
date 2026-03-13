@@ -1,5 +1,4 @@
 const express = require('express');
-const bodyParser = require('body-parser');
 const dotenv = require('dotenv');
 const OpenAI = require('openai');
 // const fetch = require('node-fetch'); // To send replies back to Chatwoot
@@ -7,7 +6,7 @@ const OpenAI = require('openai');
 dotenv.config();
 
 const app = express();
-app.use(bodyParser.json());
+app.use(express.json());
 
 const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 

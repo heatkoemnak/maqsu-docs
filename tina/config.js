@@ -1,16 +1,13 @@
 import React from "react";
-import { defineConfig, TextField,LocalAuthProvider } from "tinacms";
-import { UsernamePasswordAuthJSProvider } from 'tinacms-authjs/dist/tinacms'
+import { defineConfig } from "tinacms";
 
 import { ReferenceField } from "tinacms";
 import { FeaturesBlockTemplate } from "../src/components/Features/template";
-import { CategoriesTemplate } from "../src/components/Templates/template";
 import { HeroBlockTemplate } from "../src/components/Hero/template";
 import { YouTubeEmbedBlockTemplate } from "../src/components/YouTubeEmbed/template";
 import { MDXTemplates } from "../src/theme/template";
 import { docusaurusDate, titleFromSlug } from "../util";
 import title from "title";
-import { ProtobufNullValue } from "@pinecone-database/pinecone/dist/pinecone-generated-ts-fetch/db_data";
 // import { FeaturesBlockTemplate } from "../src/components/Started/FeatureSection/template";
 
 // Your hosting provider likely exposes this as an environment variable
