@@ -206,8 +206,8 @@ const Search = () => {
                             onClick={() => setShowDropdown(false)}
                           >
                             <div className={styles.itemText}>
+                              <ChevronRight size={14} className={styles.itemLeadIcon} />
                               <span className={styles.itemTitle}>{group.title}</span>
-                              {/* <ChevronRight size={14} className={styles.itemChevron} /> */}
                             </div>
                           </Link>
                         );

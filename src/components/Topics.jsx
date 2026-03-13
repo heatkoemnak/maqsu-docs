@@ -176,17 +176,21 @@ export default function Topics({ topics }) {
         <div className={clsx(styles.pageNavigation)}>
           {prevItem ? (
             <Link to={prevItem.link} className={clsx(styles.navLink, styles.navLinkPrev)}>
-              <HiMiniChevronLeft size={18} />
+              <span className={clsx(styles.navIcon)}>
+                <HiMiniChevronLeft size={18} />
+              </span>
               <div>
                 <span className={clsx(styles.navLabel)}>Previous</span>
                 <span className={clsx(styles.navTitle)}>{prevItem.title}</span>
               </div>
             </Link>
-          ) : <div />}
+          ) : <div className={clsx(styles.navPlaceholder)} />}
 
           {nextItem && (
             <Link to={nextItem.link} className={clsx(styles.navLink, styles.navLinkNext)}>
-              <HiMiniChevronRight size={18} />
+              <span className={clsx(styles.navIcon)}>
+                <HiMiniChevronRight size={18} />
+              </span>
               <div>
                 <span className={clsx(styles.navLabel)}>Next</span>
                 <span className={clsx(styles.navTitle)}>{nextItem.title}</span>
@@ -256,18 +260,24 @@ const ArticleCard = ({ idx, link, title, root_path, date }) => (
     className={clsx(styles.articleCard)}
   >
     <a href={`${root_path}/${link}`} className={clsx(styles.articleCardLink)}>
-      <span className={clsx(styles.articleCardIcon)}>
-         <FileText size={23} />
-      </span>
+      <div className={clsx(styles.articleCardTop)}>
+        <span className={clsx(styles.articleCardIconWrap)}>
+          <span className={clsx(styles.articleCardIcon)}>
+            <FileText size={20} />
+          </span>
+        </span>
+        <span className={clsx(styles.articleCardArrowWrap)}>
+          <span className={clsx(styles.articleCardArrow)}>
+            <HiMiniChevronRight size={16} />
+          </span>
+        </span>
+      </div>
       <div className={clsx(styles.articleCardBody)}>
         <span className={clsx(styles.articleTitle)}>{title}</span>
         <span className={clsx(styles.articleDate)}>
           Updated <TimeAgo date={date} />
         </span>
       </div>
-      <span className={clsx(styles.articleCardArrow)}>
-        <HiMiniChevronRight size={16} />
-      </span>
     </a>
   </motion.div>
 );

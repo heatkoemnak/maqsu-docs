@@ -807,7 +807,6 @@ const GlobalStyles = () => (
     .pq-section h1 {
       font-size: 2.6rem !important;
       font-weight: 600 !important;
-      color: var(--c-text) !important;
       line-height: 1.2 !important;
       letter-spacing: -0.02em !important;
       margin-top: 20px !important;

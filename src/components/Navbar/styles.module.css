@@ -15,8 +15,8 @@
   justify-content: space-between;
   width: 100%;
   margin: 0 auto;
-  padding: 0.75rem clamp(1rem, 4vw, 5rem);
-  gap: clamp(0.75rem, 2vw, 2rem);
+  padding: 0.55rem clamp(1rem, 4vw, 5rem);
+  gap: clamp(0.65rem, 1.6vw, 1.5rem);
   background: var(--color-primary);
   color: var(--color-white);
 }
@@ -34,7 +34,7 @@
 }
 
 .logoImage {
-  height: clamp(30px, 2.4vw, 36px);
+  height: clamp(28px, 2.1vw, 33px);
   width: auto;
   object-fit: contain;
 }
@@ -50,7 +50,7 @@
 .navLinks {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 1.5rem;
   flex-shrink: 0;
 }
 
@@ -59,9 +59,9 @@
   text-decoration: none;
   color: var(--color-white);
   font-weight: 500;
-  font-size: 0.95rem;
+  font-size: 0.92rem;
   transition: color 0.3s ease;
-  padding: 0.5rem 0;
+  padding: 0.4rem 0;
   white-space: nowrap;
 }
 
@@ -71,11 +71,11 @@
 }
 
 .ctaButton {
-  padding: 0.625rem 1.5rem;
+  padding: 0.55rem 1.3rem;
   background: linear-gradient(135deg, #567ba3 0%, #3e3949 100%);
   color: white;
   font-weight: 600;
-  font-size: 0.95rem;
+  font-size: 0.92rem;
   border-radius: 10px;
   text-decoration: none;
   transition: all 0.3s ease;
