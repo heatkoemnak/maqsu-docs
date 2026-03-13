@@ -13,7 +13,7 @@ import { Lists } from "./Cards/Lists";
 import { ProcessFlow } from "./ProcessFlow/ProcessFlow";
 import { Noted } from "./Noted/Noted";
 import { Steps } from "./Steps/Steps";
-import { HiMiniChevronLeft, HiMiniChevronRight } from "react-icons/hi2";
+import { HiMiniChevronLeft, HiMiniChevronRight, HiMiniChevronUp } from "react-icons/hi2";
 import Navbar from "./Navbar/Navbar";
 import Footer from "./Footer";
 import { formatDistanceToNow } from "date-fns";
@@ -29,6 +29,7 @@ export default function Page() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [headings, setHeadings] = useState({});
   const [modalImage, setModalImage] = useState(null);
+  const [showScrollTop, setShowScrollTop] = useState(false);
 
   /* -----------------------------------
      🔥 GET PAGE + END PATH SEGMENT
@@ -193,6 +194,19 @@ export default function Page() {
     };
   }, [posts, headings]);
 
+  useEffect(() => {
+    const handleWindowScroll = () => {
+      setShowScrollTop(window.scrollY > 320);
+    };
+
+    handleWindowScroll();
+    window.addEventListener("scroll", handleWindowScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", handleWindowScroll);
+    };
+  }, []);
+
   /* -----------------------------------
      🔥 COMBINED MODAL HANDLERS
   ----------------------------------- */
@@ -247,6 +261,9 @@ export default function Page() {
   }, []);
 
   const buildUrl = useCallback((uid) => `/${pageSlug}/${uid}`, [pageSlug]);
+  const scrollToTop = useCallback(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
 
   /* -----------------------------------
      🔥 NEXT & PREV
@@ -324,7 +341,7 @@ export default function Page() {
 
       {/* ── BREADCRUMB ── */}
       {sidebarOpen && (
-        <div className="pq-breadcrumb-bar">
+        <div className="pq-content-breadcrumb">
           {posts?.map((post, i) => (
             <div key={i} className="pq-breadcrumb-row">
               {post?.breadcrumbs?.map((word, j) => (
@@ -399,7 +416,17 @@ export default function Page() {
         )}
 
         {/* Content */}
-        <div className="pq-content">
+        <div className={`pq-content${!sidebarOpen ? " no-sidebar" : ""}`}>
+          {showScrollTop && (
+            <button
+              onClick={scrollToTop}
+              className="pq-scroll-top-btn"
+              aria-label="Scroll to top"
+            >
+              <HiMiniChevronUp size={18} />
+            </button>
+          )}
+
           <button
             onClick={() => setSidebarOpen((prev) => !prev)}
             className="pq-toggle-btn"
@@ -407,6 +434,23 @@ export default function Page() {
           >
             {sidebarOpen ? <BiExpandAlt size={15} /> : <BiCollapseAlt size={15} />}
           </button>
+
+          <div className={`pq-inline-breadcrumb${!sidebarOpen ? " full-width" : ""}`}>
+            {posts?.map((post, i) => (
+              <div key={i} className="pq-breadcrumb-row">
+                {post?.breadcrumbs?.map((word, j) => (
+                  <span key={j} style={{ display: "flex", alignItems: "center", gap: 2 }}>
+                    {j > 0 && (
+                      <span className="sep" style={{ margin: "0 2px" }}>
+                        <LiaAngleRightSolid size={8} />
+                      </span>
+                    )}
+                    <Link to={word?.link}>{word?.title}</Link>
+                  </span>
+                ))}
+              </div>
+            ))}
+          </div>
 
           {posts.map((group) => (
             <div key={group.uid}>
@@ -447,7 +491,7 @@ export default function Page() {
 
       {/* ── PAGINATION ── */}
       {endPath && (
-        <div className="pq-pagination">
+        <div className={`pq-pagination${!sidebarOpen ? " full-width" : ""}`}>
           {prevItem ? (
             <Link to={buildUrl(prevItem.uid)} className="pq-nav-link prev">
               <HiMiniChevronLeft size={20} className="pq-nav-icon" />
@@ -507,25 +551,37 @@ const GlobalStyles = () => (
     }
 
     .time-ago {
+      display: block;
       font-size: 12px;
       font-weight: 500;
       color: var(--c-muted);
+      margin-top: 6px;
+      margin-bottom: 34px;
     }
 
     .pq-page {
       min-height: 100vh;
       background-color: var(--c-bg);
+      overflow-x: hidden;
     }
 
-    .pq-breadcrumb-bar {
-      width: 100%;
-      position: sticky;
-      top: 0;
-      padding: 0 48px;
-      border-bottom: 1px solid var(--c-border);
+    .pq-content-breadcrumb {
+      display: none;
+    }
+
+    .pq-inline-breadcrumb {
+      width: 70%;
+      margin: 0 auto;
+      padding: 18px 0 6px;
       display: flex;
       align-items: center;
-      min-height: 42px;
+      position: relative;
+      left: -40px;
+    }
+
+    .pq-inline-breadcrumb.full-width {
+      max-width: 960px;
+      left: 0;
     }
 
     .pq-breadcrumb-row {
@@ -558,17 +614,17 @@ const GlobalStyles = () => (
     .pq-layout {
       display: flex;
       background: var(--c-bg);
-      min-height: calc(100vh - 42px);
+      min-height: 100vh;
     }
 
     .pq-sidebar {
       width: var(--sidebar-w);
       flex-shrink: 0;
       padding: 32px 0;
-      border-right: 1px solid var(--c-border);
       height: 100vh;
-      position: sticky;
-      top: 42px;
+      position: fixed;
+      left: 0;
+      top: 60px;
       overflow-y: auto;
       background: var(--c-sidebar);
       display: flex;
@@ -677,18 +733,24 @@ const GlobalStyles = () => (
     .pq-content {
       flex: 1;
       min-width: 0;
+      margin-left: var(--sidebar-w);
       background: #ffffff;
       position: relative;
     }
 
+    .pq-content.no-sidebar {
+      margin-left: 0;
+    }
+
     .pq-toggle-btn {
-      position: sticky;
-      top: 58px;
+      position: fixed;
+      left: 16px;
+      bottom: 16px;
       z-index: 40;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      margin: 14px 0 0 16px;
+      margin: 0;
       width: 34px;
       height: 34px;
       border-radius: 8px;
@@ -705,14 +767,41 @@ const GlobalStyles = () => (
       box-shadow: var(--shadow-md);
     }
 
+    .pq-scroll-top-btn {
+      position: fixed;
+      left: 16px;
+      bottom: 58px;
+      z-index: 40;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 34px;
+      height: 34px;
+      border-radius: 8px;
+      border: 1px solid var(--c-border);
+      background: var(--c-surface);
+      color: var(--c-muted);
+      cursor: pointer;
+      box-shadow: var(--shadow-sm);
+      transition: background var(--transition), color var(--transition), box-shadow var(--transition), opacity var(--transition);
+    }
+
+    .pq-scroll-top-btn:hover {
+      color: var(--c-accent);
+      box-shadow: var(--shadow-md);
+    }
+
     .pq-section {
       margin: 0 auto;
       width: 70%;
-      scroll-margin-top: 100px;
+      scroll-margin-top: 70px;
+      position: relative;
+      left: -40px;
     }
 
     .pq-section.full-width {
       max-width: 960px;
+      left: 0;
     }
 
     .pq-section h1 {
@@ -721,6 +810,7 @@ const GlobalStyles = () => (
       color: var(--c-text) !important;
       line-height: 1.2 !important;
       letter-spacing: -0.02em !important;
+      margin-top: 20px !important;
     }
 
     .header-title {
@@ -735,11 +825,14 @@ const GlobalStyles = () => (
       margin: 0 auto;
       width: 70%;
       padding: 36px 0;
-      scroll-margin-top: 70px;
+      scroll-margin-top: 30px;
+      position: relative;
+      left: -40px;
     }
 
     .pq-sub-section.full-width {
       max-width: 960px;
+      left: 0;
     }
 
     .pq-sub-section h2 {
@@ -787,6 +880,35 @@ const GlobalStyles = () => (
       margin-bottom: 14px;
     }
 
+    .pq-section ol,
+    .pq-section ul,
+    .pq-sub-section ol,
+    .pq-sub-section ul {
+      margin: 0.75rem 0 1rem;
+      padding-left: 1.5rem;
+    }
+
+    .pq-section li,
+    .pq-sub-section li {
+      margin: 0.35rem 0;
+      line-height: 1.7;
+    }
+
+    .pq-section li > p,
+    .pq-sub-section li > p {
+      margin: 0;
+    }
+
+    .pq-section li > p + p,
+    .pq-sub-section li > p + p {
+      margin-top: 0.4rem;
+    }
+
+    .pq-section li > :last-child,
+    .pq-sub-section li > :last-child {
+      margin-bottom: 0;
+    }
+
     .pq-section code,
     .pq-sub-section code {
       font-size: 13px;
@@ -828,18 +950,22 @@ const GlobalStyles = () => (
     }
 
     .pq-pagination {
-      width: 100%;
+      width: 70%;
+      margin: 0 auto;
       display: flex;
       justify-content: space-between;
       align-items: stretch;
       gap: 16px;
-      padding: 52px 250px;
-      background: var(--c-border);
-      border-top: 1px solid var(--c-border);
-    }
+      padding: 0 0 52px;
+      }
+
+      .pq-pagination.full-width {
+        max-width: 960px;
+        }
 
     .pq-nav-link {
       display: flex;
+      z-index:999;
       align-items: center;
       gap: 12px;
       text-decoration: none !important;
@@ -850,10 +976,10 @@ const GlobalStyles = () => (
       transition: border-color var(--transition), box-shadow var(--transition), transform var(--transition);
       flex: 1;
       min-width: 0;
+      border-color: #93c5fd;
     }
 
     .pq-nav-link:hover {
-      border-color: #93c5fd;
       box-shadow: var(--shadow-md);
       transform: translateY(-1px);
     }

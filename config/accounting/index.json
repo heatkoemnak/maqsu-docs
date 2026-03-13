@@ -46,7 +46,7 @@
         {
           "title": "Account Payable",
           "description": "15 articals\n",
-          "link": "blog/welcome",
+          "link": "/accounting/account-payable",
           "image": "",
           "items": [
             {
@@ -55,12 +55,18 @@
               "description": ""
             },
             {
-              "title": "Refunds",
+              "link": "post-vendor-bill",
+              "title": "Post Bill",
               "description": ""
             },
             {
-              "link": "add-payment-to-bill",
+              "link": "add-payment-bill",
               "title": "Payments",
+              "description": ""
+            },
+            {
+              "link": "add-credit-note-bill",
+              "title": "Credit Notes",
               "description": ""
             }
           ]

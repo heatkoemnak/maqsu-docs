@@ -70,4 +70,3 @@ export default function MdxString({ source, components }) {
     </BrowserOnly>
   );
 }
-

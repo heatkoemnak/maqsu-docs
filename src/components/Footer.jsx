@@ -13,10 +13,14 @@ const Footer = () => {
       backgroundColor: theme === 'dark' ? '#35576d' : '#f1f5f9',
       color: theme === 'dark' ? '#e2e8f0' : '#1e293b',
       transition: 'all 0.3s ease',
-
+      position: 'relative',
+      left: '0',
+      right: '0',
+      // marginLeft: '-50vw',
+      // marginRight: '-50vw',
     },
     container: {
-      maxWidth: '1280px',
+      maxWidth: '100%',
       margin: '0 auto',
       padding: '16px 24px',
       display: 'flex',

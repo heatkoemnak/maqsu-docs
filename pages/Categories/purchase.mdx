@@ -23,95 +23,50 @@ groupSections:
         body: ''
     body: |
 
-      The **Purchase Module** is designed to manage the complete procurement lifecycle within your organization — from initiating a purchase request to final payment and reporting.
+      The **Purchase** module helps you manage the full supplier buying process in MAQSU ERP, from requesting supplier pricing to paying the final vendor bill.
 
-      It ensures that every purchasing activity is properly recorded, approved, and tracked. This helps businesses maintain financial control, improve inventory accuracy, and ensure full transparency in supplier transactions.
+      Use this module when you need to:
 
-      ---
+      - request quotations from suppliers
+      - create and confirm purchase orders
+      - receive goods into stock
+      - generate vendor bills
+      - register supplier payments
+      - review purchase reports
 
-      ## Complete Purchase Process
+      This guide is organized in a simple order:
 
-      The Purchase Module follows a structured and sequential workflow:
+      1. **Get Started** – Understand the purchase workflow and what to prepare
+      2. **Requests for Quotation** – Create the first supplier document
+      3. **Purchase Order** – Confirm an RFQ or create a purchase order directly
+      4. **Receiving Goods** – Record what was received from the supplier
+      5. **Generate Bill** – Create the vendor bill from the purchase order
+      6. **Register Payment** – Pay the supplier bill
+      7. **Reporting** – Review purchase analysis and purchase register
 
-      ---
+      ### Workflow Overview
 
-      ### 1. Purchase Request
+      Use the following steps to complete a standard purchase process:
 
-      The process begins with a **Purchase Request**, where a department or user submits a request for goods or services.
+      1. Create a **Request for Quotation** or a **Purchase Order**.
+      2. Review the details and confirm the order with the supplier.
+      3. Receive the goods when they arrive.
+      4. Generate the vendor bill from the purchase order.
+      5. Register the supplier payment based on the agreed terms.
+      6. Review reports to track purchases, bills, and supplier activity.
 
-      This step ensures:
+      ### What You Need to Prepare
 
-      - Internal review and approval
-      - Budget control before committing to a supplier
-      - Proper documentation of purchase intent
+      Before starting, make sure you have:
 
-      ---
+      - the correct vendor
+      - the products or services to purchase
+      - the expected quantities and prices
+      - the expected delivery details
+      - the bill and payment terms
+      - any internal reference or approval note
 
-      ### 2. Purchase Order
-
-      Once the request is approved, a **Purchase Order** is generated and sent to the supplier.
-
-      The PO includes:
-
-      - Item details
-      - Quantities
-      - Agreed pricing
-      - Delivery terms
-      - Payment conditions
-
-      After supplier confirmation, the PO becomes an official purchasing document.
-
-      ---
-
-      ### 3. Goods Receipt
-
-      When the supplier delivers the items, a **Goods Receipt** is created to:
-
-      - Verify received quantities
-      - Confirm item condition
-      - Update inventory records
-
-      This ensures the organization pays only for items that were actually received and verified.
-
-      ---
-
-      ### 4. Generate Bill
-
-      After confirming the goods, a **Bill** is generated based on the approved Purchase Order and corresponding Goods Receipt.
-
-      This step:
-
-      - Records the financial liability
-      - Updates accounts payable
-      - Ensures accurate financial documentation
-
-      ---
-
-      ### 5. Payment
-
-      Once the bill is verified and approved, **Payment** is processed according to the agreed terms.
-
-      The system records:
-
-      - Payment method
-      - Payment date
-      - Transaction reference
-
-      This supports proper financial tracking and reconciliation.
-
-      ---
-
-      ### 6. Reports
-
-      The module provides comprehensive **Reports** to monitor:
-
-      - Purchase history
-      - Outstanding payments
-      - Supplier performance
-      - Expense analysis
-      - Procurement trends
-
-      These insights help management make informed financial and operational decisions.
+      **Note:** If the purchase affects inventory, receive the goods before creating the final vendor bill so stock, quantities, and accounting stay aligned.
 
   - link: purchase-request#purchase-request
     uid: purchase-request
@@ -128,15 +83,9 @@ groupSections:
         title: Requests for Quotation
         body: ''
     body: |
-      A **Requests for Quotation** is the starting point of the purchasing
-      process in MAQSU ERP. It is a formal document sent to a supplier
-      requesting a price quote for specific goods or services. Once the supplier
-      responds and you confirm the details, the RFQ can be converted into a
-      **Purchase Order**.
+      A **Request for Quotation (RFQ)** is the first supplier document in the purchase flow. Use it when you need to request prices, quantities, or order details from a vendor before confirming a purchase order.
 
-          Creating a new Purchase Requests for Quotation in MAQSU ERP is
-          the first step in the purchasing process. Follow the steps below to
-          get started.
+          Use the following steps to create a request for quotation:
 
           ***
 
@@ -191,10 +140,9 @@ groupSections:
 
           ***
 
-          #### Step 3: Fill in the Required Fields
+          #### Step 3: Complete the Fields
 
-          Once the form is open, you will see the RFQ form in **New** status.
-          Fill in the following required and optional fields:
+          Once the form is open in **New** status, complete the following fields:
 
           1. **Vendor** *(Required)* – Search and select the supplier by name,
           TIN, email, or reference. This field identifies who you are sending
@@ -467,24 +415,15 @@ groupSections:
 
 
           ***
-    body: >
-      Once the RFQ details are correct, it can be confirmed into a Purchase
-      Order. A **Purchase Order** is a legally binding document that
-      authorizes a supplier to deliver goods or services at the agreed price and
-      terms.
+    body: |
+      A **Purchase Order** is the official document you send to the supplier after the purchase details are confirmed.
 
+      Use this page when you are ready to turn an RFQ into a confirmed order, or when you need to create a purchase order directly.
 
-      ### To create a purchase order, you have two options:
+      This guide is organized in two options:
 
-
-      * **Confirm Existing Order:** Use this option if you already have an
-      existing Request for Quotation that you want to convert into a Purchase
-      Order.
-
-      * **Create New Purchase Order:** Use this option if you do not have an
-      existing quotation and want to create a Purchase Order from scratch.
-
-      ---
+      1. **Confirm Existing Order** – Convert an existing RFQ into a purchase order
+      2. **Create New Purchase Order** – Create a purchase order directly without an RFQ
 
   - link: receiving-goods#receiving-goods
     uid: receiving-goods
@@ -1466,4 +1405,3 @@ groupSections:
       activities. Use these reports to gain insights into spending trends,
       supplier performance, and order fulfillment efficiency.
 ---
-
