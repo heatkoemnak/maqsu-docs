@@ -756,73 +756,66 @@ groupSections:
         body: ''
     sections:
       - link: /company
-        title: Setup Company Information
+        title: Company Information
         body: |
 
-            Setting up your **Company Profile** is the first essential step in MAQSU ERP. This configuration controls your organizational details, default currency, accounting structure, and ensures that your business identity is correctly reflected on all official documents like invoices and reports.
+            The **Company Information** form defines your legal identity, contact details, and accounting defaults in MAQSU ERP. This data appears in invoices, reports, and tax documents.
 
-            > **Note:** The system provides a default record named "My Company." You can simply edit this existing record to match your business details rather than creating a new one from scratch.
-
-            ---
-
-            ### Step 1: Login as Admin
-            To configure company-wide settings, you must be logged in with **Administrator** privileges. This ensures you have the necessary permissions to modify legal and financial profiles.
+            > **Note:** MAQSU already includes a default record named **My Company**. Edit this record instead of creating a new one.
 
             ---
 
-            ### Step 2: Navigate to Companies
-            From the main dashboard, go to **Settings**. Then, from the top navigation menu, proceed to **Users & Companies** → **Companies**.
+            ### Step 1: Navigate to Companies
+            Go to **Settings** → **Users & Companies** → **Companies**.
 
             ![](/img/getting-started/masters/company/0002.png)
 
-            This page displays all entities within your environment. Locate the default "My Company" entry to begin editing.
+            Open **My Company** from the list.
 
             ![](/img/getting-started/masters/company/0004.png)
 
             ---
 
-            ### Step 3: Update Company Details
-            Click on the company name to open the edit view and update the following key areas:
+            ### Step 2: Complete Company Profile
+            Fill in the most important fields:
 
-            #### 1. Identity & Branding
-            * **Company Name** – Enter your official registered business name.
-            * **Company Logo** – Upload your official logo by clicking the edit icon. This logo will automatically appear on your printed invoices and reports.
+            #### 1. Identity and Branding
+            * **Company Name** - Official registered name.
+            * **Company Logo** - Appears on invoices and reports.
 
             ![](/img/getting-started/masters/company/0001.png)
             ![](/img/getting-started/masters/company/0003.png)
 
-            #### 2. General Information & Compliance
-            Accurate contact data is vital for regional compliance (e.g., General Department of Taxation in Cambodia).
-            * **Address** – Enter your primary building, street, and city/province details.
-            * **Tax ID / VAT** – Enter your government-issued tax identification number (e.g., `K001-2002168909`).
-            * **Company Registry** – Input your MoC registration number.
-            * **Currency** – Select your primary reporting currency (e.g., `USD` or `KHR`).
-            * **Contact Info** – Provide your official phone, email, and website.
+            #### 2. Contact and Registration
+            * **Address** - Main business address.
+            * **Tax ID / VAT** - Government-issued tax number (example: `K001-2002168909`).
+            * **Company Registry** - Ministry of Commerce registration number.
+            * **Phone / Email / Website** - Official contact channels.
 
             ![](/img/getting-started/masters/company/0006.png)
 
-            #### 3. Cambodian Compliance (Local Requirements)
-            If operating in Cambodia, ensure you complete the localized fields to meet GDT invoicing standards. This includes setting up Khmer translations for your company name and address.
+            #### 3. Accounting Defaults
+            * **Currency** - Main reporting currency (example: `USD` or `KHR`).
+
+            #### 4. Local Compliance (Cambodia)
+            If your company operates in Cambodia, complete localized Khmer fields for compliant invoice output.
 
             ![](/img/getting-started/company_info/0007.png)
 
             ---
 
-            ### Step 4: Save the Profile
-            Once all required fields are verified, click the **Save** button. Your business identity is now established across the entire system.
+            ### Step 3: Save and Verify
+            Click **Save**, then verify the header details in your sample invoice/report template.
 
-            <Noted type="info" title="Note" image="/img/icon/notes.png">
-            Always double-check your **Tax ID** and **Address** before saving, as these fields are pulled directly into your legal financial statements and tax reports.
+            <Noted type="info" title="Best Practice" image="/img/icon/notes.png">
+            Confirm **Tax ID**, **Address**, and **Currency** before going live. These fields drive legal and financial documents across the system.
             </Noted>
 
             ---
 
-            Now that your company profile is active, you are ready to configure how you handle money.
-
-            See the [Setup Currencies Guide](/getting-started/setup-master-datas#currencies) next.
-
+            Next: [Currencies](/getting-started/setup-master-datas#currencies)
       - link: /currencies
-        title: Setup Currencies
+        title: Currencies
         body: |
 
           A **Currency** represents the system of money used for recording and valuing transactions in MAQSU ERP (e.g., USD, KHR, EUR). Proper currency configuration allows your company to operate both locally and internationally while maintaining accurate financial records in your General Ledger.
@@ -884,7 +877,7 @@ groupSections:
           For more details on how to enable auto update exhange rate, see the [Enable Auto NVC Guide](/accounting/aged-payable).
 
       - link: /chart-of-accounts
-        title: Setup Chart of Accounts
+        title: Chart of Accounts
         body: |
           The **Chart of Accounts** (COA) is an organized system for categorizing and tracking every financial transaction in your business. Think of these as specific "folders" where activities are sorted to keep your General Ledger structured, accurate, and ready for reporting.
 
@@ -939,7 +932,7 @@ groupSections:
           For more details on setting up the rules that govern these accounts, see the [Setup Taxes Guide](/accounting/taxes).
 
       - link: /taxes
-        title: Setup Taxes
+        title: Taxes
         body: |
 
           A **Tax** is a levy imposed by the government on a taxpayer's income or profits. In MAQSU ERP, taxes are configured as specific rules that automate the calculation of government levies on sales and purchases, ensuring your General Ledger remains organized and compliant.
@@ -1023,8 +1016,22 @@ groupSections:
 
           For more details on managing customer transactions with these taxes, see the [Create Customer Invoice Guide](/accounting/create-new-customer-invoice).
 
+      - link: /payment-terms
+        title: Payment Terms
+        body: |
+
+          Payment Terms define when customer invoices and vendor bills are due (for example, `Immediate Payment`, `30 Days`, or `50% Advance`).
+
+          ### Step 1: Navigate to Payment Terms
+
+          From the left sidebar, click **Accounting**. Then from the top navigation menu, go to **Configuration** → **Accounting** → **Payment Terms**.
+
+          Configure these terms and then assign them on customer, vendor, invoice, and bill forms.
+
+          > **Note:** Setting clear payment terms helps control cash flow and ensures accurate due-date tracking in aging reports.
+
       - link: /customer-vendor
-        title: Setup Customer / Vendor
+        title: Customer / Vendor
         body: |
 
           Accurate contact management is the foundation of your business operations. This guide provides step-by-step instructions for completing the **Customer/Vendor Creation** form in MAQSU ERP, ensuring all required details are captured for both English and Khmer reporting.
@@ -1083,7 +1090,7 @@ groupSections:
           For more details on managing sales for these contacts, see the [Create Customer Invoice Guide](/accounting/create-new-customer-invoice).
 
       - link: /journals
-        title: Setup Journals
+        title: Journals
         body: |
 
           A **Journal** is a chronological record of financial transactions. In MAQSU ERP, journals act as specific folders that categorize business activities (like Sales, Purchases, or Bank movements) to keep your General Ledger organized and easily searchable.
@@ -1142,70 +1149,8 @@ groupSections:
 
           ---
 
-      - link: /products
-        title: Setup Products
-        body: |
-          Creating accurate **Product Records** is essential for inventory control, automated pricing, and seamless integration across Sales, Purchasing, and Accounting.
-
-          ---
-
-          ### Step 1: Access the Product Menu
-          From the left sidebar, click **Inventory**. Then, from the top navigation menu, go to **Products** → **Products**.
-
-          ![](/img/getting-started/products/0001.png)
-
-          ---
-
-          ### Step 2: Create New Product
-          Click the **Create** button to open a blank product template.
-
-          ![](/img/getting-started/products/0002-1.png)
-
-          ---
-
-          ### Step 3: Enter Product Details
-          Provide the necessary information to manage the product throughout its lifecycle:
-
-          #### 1. General Identification
-          * **Product Name** – Enter a clear name (e.g., "MacBook Pro 14").
-          * **Can be Sold / Can be Purchased** – Check these boxes to determine if the item appears in Sales or Purchase menus.
-          * **Product Image** – Upload a visual for easy identification.
-
-          ![](/img/getting-started/products/0003.png)
-
-          #### 2. Product Type & Classification
-          * **Product Type**:
-              * **Storable**: Physical goods tracked in inventory (e.g., Hardware).
-              * **Service**: Non-physical labor or consulting.
-              * **Consumable**: Items used quickly without precise stock tracking (e.g., Office Supplies).
-          * **Category**: Group the product for organized reporting.
-          * **Product Code / Barcode**: Assign unique identifiers for SKUs and scanning.
-
-          ![](/img/getting-started/products/image1.png)
-
-          #### 3. Pricing & Units
-          * **Sales Price**: Your standard selling price.
-          * **Cost**: Your internal purchase or manufacturing cost.
-          * **Customer Taxes**: The default tax applied at checkout.
-          * **UOM (Unit of Measure)**: How you count the item (e.g., Pieces, Kg, Boxes).
-
-          ![](/img/getting-started/products/0006.png)
-
-          ---
-
-          ### Step 4: Save Product
-          Review your settings—especially **Type** and **UOM** as they are difficult to change once transactions begin—then click **Save**.
-
-          <Noted type="info" title="Note" image="/img/icon/notes.png">
-          Adding **Internal Notes** can help your warehouse and sales teams with specific handling or shipping instructions that aren't visible to the customer.
-          </Noted>
-
-          ---
-
-          For more details on managing stock for these products, see the [Goods Receipts Guide](/inventory/goods-receipts).
-
       - link: /setup-warehouse
-        title: Setup Warehouse
+        title: Warehouse
         body: |
           A **Warehouse** in **MAQSU ERP** is the central hub for managing your company’s physical inventory. Whether representing an actual storage facility (depots, distribution centers) or logical zones (consignment stock), warehouses are essential for tracking goods from receiving to final delivery.
 
@@ -1269,7 +1214,7 @@ groupSections:
           **Would you like me to help you set up specific [Inventory Locations](/inventory/setup-location) within your new warehouse next?**
 
       - link: /setup-location
-        title: Setup Inventory Locations
+        title: Inventory Locations
         body: |
           An inventory **Location** is a specific physical or virtual space where items are stored, picked, and managed within your operations. Properly configured locations are the backbone of efficient warehouse management, ensuring stock visibility and operational speed.
 
@@ -1329,7 +1274,7 @@ groupSections:
 
           Now that your storage spots are ready, would you like to learn how to [Transfer Stock](/inventory/transfers) between these locations?
       - link: /setup-product-category
-        title: Setup Product Category
+        title: Product Category
         body: |
           **Product Categories** serve as the foundation for how groups of products are handled in terms of logistics, accounting, and automated valuation. By setting these properties at the category level, all products assigned to a specific group (e.g., "Drinks") will inherit these rules, ensuring consistency across your inventory and financial records.
 
@@ -1405,10 +1350,77 @@ groupSections:
             Ensure your **Stock Valuation Account** matches your physical asset account in the Chart of Accounts to maintain accurate financial statements and Cambodian tax compliance.
           </Noted>
 
+      - link: /products
+        title: Products
+        body: |
+          Creating accurate **Product Records** is essential for inventory control, automated pricing, and seamless integration across Sales, Purchasing, and Accounting.
+
+          ---
+
+          ### Step 1: Access the Product Menu
+          From the left sidebar, click **Inventory**. Then, from the top navigation menu, go to **Products** → **Products**.
+
+          ![](/img/getting-started/products/0001.png)
+
+          ---
+
+          ### Step 2: Create New Product
+          Click the **Create** button to open a blank product template.
+
+          ![](/img/getting-started/products/0002-1.png)
+
+          ---
+
+          ### Step 3: Enter Product Details
+          Provide the necessary information to manage the product throughout its lifecycle:
+
+          #### 1. General Identification
+          * **Product Name** – Enter a clear name (e.g., "MacBook Pro 14").
+          * **Can be Sold / Can be Purchased** – Check these boxes to determine if the item appears in Sales or Purchase menus.
+          * **Product Image** – Upload a visual for easy identification.
+
+          ![](/img/getting-started/products/0003.png)
+
+          #### 2. Product Type & Classification
+          * **Product Type**:
+              * **Storable**: Physical goods tracked in inventory (e.g., Hardware).
+              * **Service**: Non-physical labor or consulting.
+              * **Consumable**: Items used quickly without precise stock tracking (e.g., Office Supplies).
+          * **Category**: Group the product for organized reporting.
+          * **Product Code / Barcode**: Assign unique identifiers for SKUs and scanning.
+
+          ![](/img/getting-started/products/image1.png)
+
+          #### 3. Pricing & Units
+          * **Sales Price**: Your standard selling price.
+          * **Cost**: Your internal purchase or manufacturing cost.
+          * **Customer Taxes**: The default tax applied at checkout.
+          * **UOM (Unit of Measure)**: How you count the item (e.g., Pieces, Kg, Boxes).
+
+          ![](/img/getting-started/products/0006.png)
+
+          ---
+
+          ### Step 4: Save Product
+          Review your settings—especially **Type** and **UOM** as they are difficult to change once transactions begin—then click **Save**.
+
+          <Noted type="info" title="Note" image="/img/icon/notes.png">
+          Adding **Internal Notes** can help your warehouse and sales teams with specific handling or shipping instructions that aren't visible to the customer.
+          </Noted>
+
+          ---
+
+          For more details on managing stock for these products, see the [Goods Receipts Guide](/inventory/goods-receipts).
+
+
     body: |
       Just new to MAQSU? Get off to a flying start, learn how to create an
       company, customers, vendors, chart of accounts, add security to your
       account.
+
+      <Noted type="info" title="Note" image="/img/icon/notes.png">
+      To set up all these things, you must log in as Administrator.
+      </Noted>
 
       ***
 ---

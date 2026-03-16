@@ -1184,7 +1184,6 @@ groupSections:
             7. **Document** → Record reasons for significant adjustments
             8. **Validate** → Apply changes to inventory (→ Validated)
 
-
       - link: /additional-features
         title: Additional Features
         body: |
@@ -1250,6 +1249,284 @@ groupSections:
             ---
 
             For more details on inventory management and related operations, see the [Inventory Module Overview](/inventory/inventory-overview).
+
+  - link: traceability#traceability
+    uid: traceability
+    title: Traceability
+    date: '2026-02-19T07:20:05.517Z'
+    breadcrumbs:
+      - link: /
+        title: All
+        body: ''
+      - link: /inventory
+        title: Inventory
+        body: ''
+      - link:
+        title: Traceability
+        body: ''
+    sections:
+      - link: /traceability-overviews
+        title: Overviews
+        body: |
+          This section provides a comprehensive tutorial on Traceability settings within the MAQSU Inventory module. It explains how these settings enable businesses to track products from vendors to customers, ensuring quality control and transparency.
+
+          ### Traceability Features
+
+          * **Lot and Serial Numbers:** The fundamental tracking mechanism. Lots are used for groups of products (batches), while Serial Numbers identify unique individual items. This provides a full history from the vendor's supply to the end customer's receipt.
+          * **Expiration Dates:** Essential for perishable goods. This feature tracks critical dates including:
+              * **Expiration Date:** When the product becomes unsafe for consumption.
+              * **Best Before Date:** When the product begins to decline in quality.
+              * **Removal Date:** When the product should be pulled from the shelf.
+              * **Alert Date:** When the system should notify staff of upcoming expiration.
+          * **Consignment Tracking:** Allows you to manage stock that is stored in your warehouse but owned by a vendor. Ownership only changes once the product is officially sold.
+          * **GS1 Barcode Support:** Integration with global standards to print compliant barcodes that include lot numbers and expiry data in a single scan.
+
+          ### Workflow
+
+          1.  **Configuration:** Enable Traceability under *Inventory > Configuration > Settings*. You can also choose to display lot numbers and expiration dates directly on **Delivery Slips** to build customer trust.
+          2.  **Product Setup:** On the Product form, set the Tracking method to "By Lots" or "By Unique Serial Number." Under the Inventory tab, define the specific duration for expiration and removal alerts.
+          3.  **Receiving & Delivery:** When receiving goods, assign or generate Lot/Serial numbers. Upon delivery, the system automatically tracks which specific batch is being sent to the customer, maintaining a clear product history.
+          4.  **Traceability Reports:** Access detailed reports at any time to view the movement of a specific lot, including reference documents, dates, and locations.
+
+      - link: /lots-and-serial-numbers
+        title: Lots and Serial Numbers
+        body: |
+          ### Configuration
+
+          To enable Traceability, follow these specific steps as shown in the documentation:
+
+          <Noted type="info" title="Note" image="/img/icon/notes.png">
+          You must login as **Admin** to enable or modify Traceability settings.
+          </Noted>
+
+           ![](/img/inventory/traceability/0001.png)
+
+
+          1. From the main dashboard, click **Settings** from the left sidebar.
+
+          2. Open Inventory Settings
+          In the **Settings** page, select **Inventory** from the left-side settings menu.
+
+          3. Enable Traceability Options
+          Scroll to the **Traceability** section, then enable:
+            * **Lots and Serial Numbers** - to track items by lot or unique serial number.
+            * **Expiration Dates** - to track expiry-related dates for items that require shelf-life control.
+
+          You can also enable **Consignment** if your company manages vendor-owned stock.
+
+          4. Save the Configuration
+          Click the **Save** button at the top-left corner of the page to apply the configuration.
+
+          <Noted type="info" title="Note" image="/img/icon/notes.png">
+          After saving, you must go to individual **Product Forms** under the **Inventory Tab** and set the **Tracking** field to either *By Lots* or *By Unique Serial Number* to begin tracking that specific item. This will enable the system to generate and track unique identifiers for each item throughout its lifecycle.
+          </Noted>
+
+          ### Configure Products
+
+          After enabling global Traceability, you must configure individual products to define how they should be tracked.
+
+          #### Step 1: Navigate
+          ![](/img/inventory/traceability/product-setup/0001.png)
+          Go to **Inventory → Products → Products** and open the product you want to configure (e.g., *Buger [00001]*).
+
+          #### Step 2: Open the Inventory Tab
+          ![](/img/inventory/traceability/product-setup/0002.png)
+          Inside the product form, click on the **Inventory** tab. Scroll down to find the **Operations** and **Traceability** sections.
+
+          #### Step 3: Set the Tracking Method
+          ![](/img/inventory/traceability/product-setup/0003.png)
+          Under the **Traceability** section, find the **Tracking** field and select one of the following options:
+          * **By Unique Serial Number:** Tracks each individual unit separately (e.g., electronics, machinery, or high-value items).
+          * **By Lots:** Tracks large batches of identical items together (e.g., food, chemicals, or textiles).
+          * **No Tracking:** No lot or serial tracking applied (default).
+
+          #### Step 4: Configure Expiration Dates (Optional)
+          ![](/img/inventory/traceability/product-setup/0004.png)
+          If you enabled **Expiration Dates** in the global configuration, the **Dates** section will appear. Fill in the relevant fields for this product:
+          * **Product Use Time:** Number of days after receipt before quality starts to decline (Best Before).
+          * **Product Life Time:** Number of days after receipt before the product becomes unsafe (Expiration).
+          * **Product Removal Time:** Number of days before expiration to remove the product from stock.
+          * **Product Alert Time:** Number of days before expiration to send an alert to the responsible user.
+
+          <Noted type="tip" title="Tip" image="/img/icon/tip.png">
+          Once a tracking method is set and stock moves have been recorded, you cannot change the tracking method for that product unless you first empty the stock for that item.
+          </Noted>
+
+          ### Operations
+
+          Once traceability is configured on a product, you can assign lot or serial numbers during stock movements such as goods receipts.
+
+          #### Step 1: Navigate
+          ![](/img/inventory/traceability/operations/0001.png)
+          Go to **Inventory > Operations > Transfers**. This will display a list of all existing stock transfers across all operation types.
+
+          #### Step 2: Create a New Transfer
+          ![](/img/inventory/traceability/operations/0002.png)
+          Click the **Create** button in the top-left corner to start a new transfer record.
+
+          #### Step 3: Fill in the Transfer Header
+          ![](/img/inventory/traceability/operations/0003.png)
+          Fill in the transfer header details before adding any products:
+          * **Receive From:** Select the vendor or source location the stock is coming from (e.g., *Vendor A*).
+          * **Operation Type:** Choose the appropriate operation type that defines the nature of the transfer (e.g., *My Company: Goods Receipts*).
+          * **Destination Location:** Select the internal location where the received stock will be stored (e.g., *WH/Stock*).
+          * **Doc No.:** This is typically auto-generated by the system. You may set it manually if required.
+          * **Source Document:** An optional reference field to link this transfer to an external document such as a Purchase Order number.
+
+          #### Step 4: Add a Product Line
+          ![](/img/inventory/traceability/operations/0004.png)
+          Click on the **Operations** tab, then click **Add a line** to add the product you are receiving. Search and select the product from the list (e.g., *[00001] Buger*).
+
+          #### Step 5: Set the Demand Quantity
+          ![](/img/inventory/traceability/operations/0005.png)
+          In the **Demand** field of the product line, enter the total expected quantity to be received for this transfer (e.g., *10.00*). This represents what you plan to receive, not what has been confirmed yet.
+
+          #### Step 6: Save the Transfer
+          ![](/img/inventory/traceability/operations/0006.png)
+          Click **Save** to store the transfer record. Before proceeding, verify that the header information and product line are correctly filled in. At this stage the transfer is still in draft status.
+
+          #### Step 7: Mark as Todo
+          ![](/img/inventory/traceability/operations/0007.png)
+          Click **Mark as Todo** to confirm the transfer is ready to be processed. The system will assign a transfer reference number (e.g., *WH/IN/00001*) and move the transfer to **Ready** status, indicating it is awaiting physical receipt.
+
+          #### Step 8: Open Detailed Operations
+          ![](/img/inventory/traceability/operations/0008.png)
+          Once the transfer is in **Ready** status, locate the product line in the **Operations** tab and click the **detail icon** (the list icon on the right side of the product line) to open the **Detailed Operations** dialog. This is where you assign lot or serial numbers to the received quantity.
+
+          #### Step 9: Add a Lot/Serial Number Line
+          ![](/img/inventory/traceability/operations/0009.png)
+          Inside the **Detailed Operations** popup, click **Add a line** to create a new entry. Each line represents one lot or serial number assignment for a portion (or all) of the received quantity.
+
+          #### Step 10: Enter Lot/Serial Number
+          ![](/img/inventory/traceability/operations/0010.png)
+          Fill in the following fields for each lot or serial number line:
+          * **To:** The destination storage location for this specific lot (e.g., *WH/Stock*).
+          * **Lot/Serial Number Name:** Type in a new lot or serial number, or select an existing one from the dropdown (e.g., *SN-000001*). If it does not exist yet, Odoo will prompt you to create it.
+          * **Done:** Enter the quantity that has physically been received and assigned to this lot number (e.g., *10*). For serial number tracking, each line must have a quantity of 1.
+
+          > [!NOTE]
+          > If you are tracking **By Lots**, one line can cover multiple units under the same lot number. If tracking **By Unique Serial Number**, you must add a separate line for each individual unit.
+
+          #### Step 11: Confirm the Detailed Operations
+          ![](/img/inventory/traceability/operations/0011.png)
+          Once all lot or serial number lines are fully filled in and validated (a green checkmark will appear next to each completed line), click **Confirm** to save and apply the entries back to the transfer.
+
+          #### Step 12: Validate the Transfer
+          ![](/img/inventory/traceability/operations/0012.png)
+          Back on the main transfer form, verify that the **Done** quantity matches the **Demand** quantity (e.g., *10.00*). Once confirmed, click **Validate** to officially complete the goods receipt and update stock levels.
+
+          #### Step 13: Transfer Completed
+          ![](/img/inventory/traceability/operations/0013.png)
+          The transfer status will update to **Done**. The **Effective Date** is automatically recorded by the system, confirming the exact date and time the stock movement was completed. The inventory is now updated with the received stock.
+
+          #### Step 14: View the Traceability Report
+          ![](/img/inventory/traceability/operations/0014.png)
+          On the completed transfer form, click the **Traceability** smart button at the top of the page to open the traceability history associated with this receipt. This button is only visible after the transfer has been validated.
+
+          #### Step 15: Review the Traceability Report
+          ![](/img/inventory/traceability/operations/0015.png)
+          The **Traceability Report** provides a complete audit trail of the stock movement. For each entry, you can review the following details:
+          * **Reference:** The transfer document number (e.g., *WH/IN/00001*).
+          * **Product:** The item that was received.
+          * **Date:** The date and time the movement was recorded.
+          * **Lot/Serial Number:** The lot or serial number assigned during receipt.
+          * **Origin:** The source location the stock moved from.
+          * **Destination:** The internal location where the stock was delivered.
+          * **Quantity:** The number of units moved under this lot or serial number.
+
+      - link: /consignments-tracking
+        title: Consignments Tracking
+        body: |
+            Allows you to manage stock that is stored in your warehouse but owned by a vendor. Ownership only changes once the product is officially sold.
+
+            ### Configuration
+
+            Enables the tracking of vendor-owned stock stored in your warehouse.
+
+             <Noted type="info" title="Note" image="/img/icon/notes.png">
+              You must login as **Admin** to enable or modify Traceability settings.
+             </Noted>
+
+            ![](/img/inventory/traceability/consignments/0001.png)
+
+            ### Add Assign Owner
+
+            Once you anabling the that particular option which is consignments, So here we have an Assign Owner field in side the receipt side
+
+            ![](/img/inventory/traceability/consignments/0002.png)
+
+      - link: /display-lots-serial-numbers-on-delivery-slips
+        title: Delivery Slips Tracking
+        body: |
+
+            ### Configuration
+
+            This ensures that the specific batch number is printed on the paperwork you give to your customers.
+
+            <Noted type="info" title="Note" image="/img/icon/notes.png">
+              You must login as **Admin** to enable or modify Traceability settings.
+             </Noted>
+
+            ![](/img/inventory/traceability/lot-delivery-slip/0001.png)
+
+            ### Operations
+
+            Once traceability is configured on a product, you can assign lot or serial numbers during stock movements such as delivery orders.
+
+            #### Step 1: Navigate
+            ![](/img/inventory/traceability/lot-delivery-slip/0002.png)
+            Go to **Inventory > Operations > Transfers**. This will display a list of all existing stock transfers across all operation types.
+
+            #### Step 2: Create a New Transfer
+            ![](/img/inventory/traceability/lot-delivery-slip/0003.png)
+            Click **New** to create a new transfer record. The form will open in **Draft** status with a header section and an **Operations** tab below. Fill in the transfer header details:
+            * **Delivery Address:** Select the customer or destination contact the stock is being sent to (e.g., *ABC*).
+            * **Operation Type:** Choose the appropriate operation type for this movement (e.g., *My Company: Delivery Orders*).
+            * **Source Location:** The internal location from which the stock will be picked (e.g., *WH/Stock*).
+            * **Doc No.:** Auto-generated by the system upon saving (e.g., *WH/IN/00002*).
+            * **Scheduled Date:** The planned date and time for this transfer to be completed.
+            * **Source Document:** An optional reference field to link to an external document such as a sales order or PO number (e.g., *PO0032*).
+
+            ![](/img/inventory/traceability/lot-delivery-slip/0004.png)
+
+            #### Step 3: Add a Product Line
+            ![](/img/inventory/traceability/lot-delivery-slip/0005.png)
+            In the **Operations** tab, click **Add a line** to add the product being delivered. Search for and select the product (e.g., *[00001] Buger*), then enter the expected quantity in the **Demand** field (e.g., *10.00*). This represents the quantity planned to be shipped. The **Reserved** and **Done** columns will initially show *0.00*.
+
+            #### Step 4: Save and Mark as Todo
+            ![](/img/inventory/traceability/lot-delivery-slip/0006.png)
+            Click **Save** to store the transfer record. Once saved, the transfer reference number is assigned (e.g., *WH/IN/00002*) and the status remains at **Draft**. Click **Mark as Todo** to confirm the transfer is ready to be processed. The status will move to **Ready**, and action buttons such as **Validate**, **Unreserve**, **Scrap**, **Unlock**, and **Cancel** will become available.
+
+            #### Step 5: Assign a Lot/Serial Number
+            ![](/img/inventory/traceability/lot-delivery-slip/0007.png)
+            Once the transfer is in **Ready** status, the **Detailed Operations** tab becomes the active view. In the product line, click on the **Lot/Serial Number** field. A dropdown will appear showing existing lot or serial numbers available for this product (e.g., *SN-000001*, *SN-000002*). Select the appropriate one, or click **Create and Edit...** to register a new lot or serial number if it does not yet exist in the system.
+
+            #### Step 6: Validate the Transfer
+            ![](/img/inventory/traceability/lot-delivery-slip/0008.png)
+            After selecting the lot or serial number, the **Detailed Operations** tab will display the full assignment: the product, its source location (**From**), the assigned **Lot/Serial Number** (e.g., *SN-000001*), the **Reserved** quantity (*10.00*), and the **Done** quantity. Once everything is confirmed, click **Validate** to complete the delivery and update the stock.
+
+            #### Step 7: Transfer Completed
+            ![](/img/inventory/traceability/lot-delivery-slip/0009.png)
+            The transfer status will update to **Done**. The **Effective Date** is automatically recorded (e.g., *16/03/2026 17:05:28*), confirming the exact date and time the stock movement was completed. The **Done** quantity on the product line will update to reflect the actual quantity shipped (e.g., *10.00 Units*). A **Traceabi...** smart button will now appear in the top-right area of the form.
+
+            #### Step 8: Open the Traceability Report
+            ![](/img/inventory/traceability/lot-delivery-slip/0010.png)
+            On the completed transfer form, click the **Traceabi...** smart button located in the upper-right corner of the page to open the traceability history for this transfer. This button is only visible after the transfer has been validated and the status is **Done**.
+
+            #### Step 9: Review the Traceability Report
+            ![](/img/inventory/traceability/lot-delivery-slip/0011.png)
+            The **Traceability Report** (accessible via *Transfers / WH/IN/00002 / Traceability Report*) provides a complete audit trail of the stock movement. You can also click **Print** to export the report. Each row in the report displays the following details:
+            * **Reference:** The transfer document number (e.g., *WH/IN/00002*).
+            * **Product:** The item that was moved (e.g., *[00001] Buger*).
+            * **Date:** The exact date and time the movement was recorded (e.g., *16/03/2026 17:05:28*).
+            * **Lot/Serial #:** The lot or serial number assigned to this movement (e.g., *SN-000001*).
+            * **From:** The source location the stock moved from (e.g., *Stock*).
+            * **To:** The destination the stock was delivered to (e.g., *Customers*).
+            * **Quantity:** The number of units moved under this lot or serial number (e.g., *10.00 Units*).
+
+    body: |
+
+
 
   - link: reporting#reporting
     uid: reporting

@@ -1,50 +1,41 @@
 import React from "react";
-import './note.css';
+import { HiMiniMapPin } from "react-icons/hi2";
+import "./note.css";
 
 const NOTE_CONFIG = {
   info: {
-    header: "note-header--info",
-    body: "note-body--info",
-    defaultIcon: "✦",
+    tone: "info",
+    defaultTitle: "Note",
   },
-  caution: {
-    header: "note-header--caution",
-    body: "note-body--caution",
-    defaultIcon: "⚠",
+  warning: {
+    tone: "warning",
+    defaultTitle: "Warning",
   },
   success: {
-    header: "note-header--success",
-    body: "note-body--success",
-    defaultIcon: "✔",
+    tone: "success",
+    defaultTitle: "Success",
   },
   danger: {
-    header: "note-header--danger",
-    body: "note-body--danger",
-    defaultIcon: "✕",
+    tone: "danger",
+    defaultTitle: "Important",
   },
 };
 
-export const Noted = ({ title, type = "success", image, children }) => {
-  const config = NOTE_CONFIG[type] || NOTE_CONFIG.info;
+export const Noted = ({ title, type = "info", children }) => {
+  const normalizedType = type === "caution" ? "warning" : type;
+  const config = NOTE_CONFIG[normalizedType] || NOTE_CONFIG.info;
+  const heading = title || config.defaultTitle;
 
   return (
-    <div className="note">
-      {/* Header bar */}
-
-      {/* Body */}
-      <div className={`note-body ${config.body}`}>
-        <div className={`note-header ${config.header}`}>
-          {image ? (
-            <img src={image} className="note-header__icon" alt="" aria-hidden="true" />
-          ) : (
-            <span className="note-header__icon-fallback" aria-hidden="true">
-              {config.defaultIcon}
-            </span>
-          )}
-          <span className="note-header__title">{title}</span>
+    <aside className={`note note--${config.tone}`}>
+      <div className="note__header">
+        <div className="note__icon-wrap" aria-hidden="true">
+          <HiMiniMapPin className="note__pin" />
         </div>
-        <div className="note-content">{children}</div>
+        <span className="note__title">{heading}</span>
       </div>
-    </div>
+
+      <div className="note__content">{children}</div>
+    </aside>
   );
 };
