@@ -1,23 +1,29 @@
-import React from "react";
-import { HiMiniMapPin } from "react-icons/hi2";
 import "./note.css";
+import notes from "../../../static/img/icon/notes.png";
+import warning from "../../../static/img/icon/warning.png";
+import tips from "../../../static/img/icon/tips.png";
+import tip from "../../../static/img/icon/tip.png";
 
 const NOTE_CONFIG = {
   info: {
     tone: "info",
     defaultTitle: "Note",
+    icon: notes,
   },
   warning: {
     tone: "warning",
     defaultTitle: "Warning",
+    icon: warning,
   },
   success: {
     tone: "success",
     defaultTitle: "Success",
+    icon: tips,
   },
   danger: {
     tone: "danger",
     defaultTitle: "Important",
+    icon: tip,
   },
 };
 
@@ -30,7 +36,7 @@ export const Noted = ({ title, type = "info", children }) => {
     <aside className={`note note--${config.tone}`}>
       <div className="note__header">
         <div className="note__icon-wrap" aria-hidden="true">
-          <HiMiniMapPin className="note__pin" />
+          <img src={config.icon} className="note__icon" alt="" />
         </div>
         <span className="note__title">{heading}</span>
       </div>

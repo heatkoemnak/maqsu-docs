@@ -26,7 +26,7 @@ export default function Page() {
   const [active, setActive] = useState(null);
   const [expandedSections, setExpandedSections] = useState({});
   const [allGroups, setAllGroups] = useState([]);
-  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [sidebarOpen, setSidebarOpen] = useState(true);
   const [headings, setHeadings] = useState({});
   const [modalImage, setModalImage] = useState(null);
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -435,57 +435,65 @@ export default function Page() {
             {sidebarOpen ? <BiExpandAlt size={15} /> : <BiCollapseAlt size={15} />}
           </button>
 
-          <div className={`pq-inline-breadcrumb${!sidebarOpen ? " full-width" : ""}`}>
-            {posts?.map((post, i) => (
-              <div key={i} className="pq-breadcrumb-row">
-                {post?.breadcrumbs?.map((word, j) => (
-                  <span key={j} style={{ display: "flex", alignItems: "center", gap: 2 }}>
-                    {j > 0 && (
-                      <span className="sep" style={{ margin: "0 2px" }}>
-                        <LiaAngleRightSolid size={8} />
-                      </span>
-                    )}
-                    <Link to={word?.link}>{word?.title}</Link>
-                  </span>
-                ))}
+          <div className={`pq-docs-body${!sidebarOpen ? " full-width" : ""}`}>
+            <div className={`pq-inline-breadcrumb${!sidebarOpen ? " full-width" : ""}`}>
+              {posts?.map((post, i) => (
+                <div key={i} className="pq-breadcrumb-row">
+                  {post?.breadcrumbs?.map((word, j) => (
+                    <span key={j} style={{ display: "flex", alignItems: "center", gap: 2 }}>
+                      {j > 0 && (
+                        <span className="sep" style={{ margin: "0 2px" }}>
+                          <LiaAngleRightSolid size={8} />
+                        </span>
+                      )}
+                      <Link to={word?.link}>{word?.title}</Link>
+                    </span>
+                  ))}
+                </div>
+              ))}
+            </div>
+
+            {posts.map((group) => (
+              <div key={group.uid}>
+                <section
+                  id={group.uid}
+                  className={`pq-section-shell pq-section${!sidebarOpen ? " full-width" : ""}`}
+                >
+                  <div className="pq-section-head">
+                    <h1 className="pq-section-title pq-section-title-main">{group.title}</h1>
+                    <TimeAgo date={group.date} />
+                  </div>
+                  {group.body && (
+                    <div className="pq-section-content">
+                      <MdxString source={group.body} components={tinaComponents} />
+                    </div>
+                  )}
+                </section>
+
+                {group.sections?.map((sub, si) => {
+                  const id = sub.uid || sub.link?.replace("/", "");
+                  return (
+                    <div key={id}>
+                      {si > 0 && <div className="page-divider" />}
+                      <section
+                        id={id}
+                        className={`pq-section-shell pq-sub-section${!sidebarOpen ? " full-width" : ""}`}
+                      >
+                        <div className="pq-section-head">
+                          <h2 className="pq-section-title pq-section-title-sub">{sub.title}</h2>
+                        </div>
+                        {sub.body && (
+                          <div className="pq-section-content">
+                            <MdxString source={sub.body} components={tinaComponents} />
+                          </div>
+                        )}
+                      </section>
+                    </div>
+                  );
+                })}
               </div>
             ))}
           </div>
-
-          {posts.map((group) => (
-            <div key={group.uid}>
-              <section
-                id={group.uid}
-                className={`pq-section${!sidebarOpen ? " full-width" : ""}`}
-              >
-                <div className="header-title">
-                  <h1>{group.title}</h1>
-                  <TimeAgo date={group.date} />
-                </div>
-                {group.body && (
-                  <MdxString source={group.body} components={tinaComponents} />
-                )}
-              </section>
-
-              {group.sections?.map((sub, si) => {
-                const id = sub.uid || sub.link?.replace("/", "");
-                return (
-                  <div key={id}>
-                    {si > 0 && <div className="page-divider" />}
-                    <section
-                      id={id}
-                      className={`pq-sub-section${!sidebarOpen ? " full-width" : ""}`}
-                    >
-                      <h2>{sub.title}</h2>
-                      {sub.body && (
-                        <MdxString source={sub.body} components={tinaComponents} />
-                      )}
-                    </section>
-                  </div>
-                );
-              })}
-            </div>
-          ))}
         </div>
       </div>
 
@@ -528,26 +536,29 @@ const GlobalStyles = () => (
     :root {
       --c-bg: #ffffff;
       --c-surface: #ffffff;
-      --c-border: #eff3f6;
-      --c-accent: #3188b7;
-      --c-accent-2: #1d4ed8;
-      --c-accent-bg: #e4edf2;
-      --c-text: #6f96b3;
-      --c-muted: #6b7280;
-      --c-faint: #9ca3af;
-      --c-sidebar: rgb(255, 255, 255);
-      --sidebar-w: 318px;
-      --radius: 10px;
-      --shadow-sm: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
-      --shadow-md: 0 4px 16px rgba(27, 98, 143, 0.07);
-      --transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      --c-border: #d9dfec;
+      --c-accent: #4f46e5;
+      --c-accent-2: #4338ca;
+      --c-accent-bg: #eef0ff;
+      --c-text: #111827;
+      --c-muted: #5b6475;
+      --c-faint: #9aa3b6;
+      --c-sidebar: #ffffff;
+      --sidebar-w: 250px;
+      --content-max: 960px;
+      --content-pad: clamp(16px, 3vw, 34px);
+      --nav-h: 60px;
+      --radius: 12px;
+      --shadow-sm: 0 1px 2px rgba(17, 24, 39, 0.06), 0 1px 3px rgba(17, 24, 39, 0.08);
+      --shadow-md: 0 16px 30px rgba(17, 24, 39, 0.12);
+      --transition: 180ms cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     .page-divider {
       width: 100%;
-      height: 12px;
-      background-color: #eef3f7;
-      margin: 2rem 0;
+      height: 1px;
+      background-color: var(--c-border);
+      margin: 34px 0;
     }
 
     .time-ago {
@@ -555,8 +566,8 @@ const GlobalStyles = () => (
       font-size: 12px;
       font-weight: 500;
       color: var(--c-muted);
-      margin-top: 6px;
-      margin-bottom: 34px;
+      margin-top: 2px;
+      margin-bottom: 0;
     }
 
     .pq-page {
@@ -570,39 +581,39 @@ const GlobalStyles = () => (
     }
 
     .pq-inline-breadcrumb {
-      width: 70%;
-      margin: 0 auto;
-      padding: 18px 0 6px;
+      width: 75%;
+      margin: 0  auto;
+      padding: 18px 0 10px;
       display: flex;
       align-items: center;
       position: relative;
-      left: -40px;
     }
 
     .pq-inline-breadcrumb.full-width {
-      max-width: 960px;
-      left: 0;
+      width: 80%;
     }
 
     .pq-breadcrumb-row {
       display: flex;
       align-items: center;
-      gap: 2px;
+      gap: 3px;
       font-size: 12px;
       font-weight: 500;
       color: var(--c-muted);
+      flex-wrap: wrap;
     }
 
     .pq-breadcrumb-row a {
       color: var(--c-muted);
       text-decoration: none;
-      padding: 2px;
-      border-radius: 5px;
+      padding: 2px 4px;
+      border-radius: 6px;
       transition: color var(--transition), background var(--transition);
     }
 
     .pq-breadcrumb-row a:hover {
       color: var(--c-accent);
+      background: var(--c-accent-bg);
     }
 
     .pq-breadcrumb-row .sep {
@@ -620,34 +631,39 @@ const GlobalStyles = () => (
     .pq-sidebar {
       width: var(--sidebar-w);
       flex-shrink: 0;
-      padding: 32px 0;
-      height: 100vh;
+      padding: 20px 0 26px;
+      height: calc(100vh - var(--nav-h));
       position: fixed;
       left: 0;
-      top: 60px;
+      top: var(--nav-h);
       overflow-y: auto;
       background: var(--c-sidebar);
+      border-right: 1px solid var(--c-border);
       display: flex;
       flex-direction: column;
-      gap: 4px;
+      gap: 2px;
       scrollbar-width: thin;
       scrollbar-color: var(--c-border) transparent;
+      z-index: 30;
     }
 
-    .pq-sidebar::-webkit-scrollbar { width: 4px; }
+    .pq-sidebar::-webkit-scrollbar {
+      width: 4px;
+    }
+
     .pq-sidebar::-webkit-scrollbar-thumb {
       background: var(--c-border);
       border-radius: 4px;
     }
 
     .pq-group-header {
-      padding: 6px 20px 0;
-      margin-top: -10px;
+      padding: 8px 18px 4px;
     }
 
     .pq-group-title {
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 700;
+      letter-spacing: 0.04em;
       text-transform: uppercase;
       color: var(--c-faint);
     }
@@ -655,35 +671,36 @@ const GlobalStyles = () => (
     .pq-sub-menu {
       display: flex;
       flex-direction: column;
-      padding: 2px 10px;
+      padding: 2px 10px 0;
     }
 
     .pq-sub-btn {
       background: none;
       border: none;
       text-align: left;
-      padding: 7px 14px;
-      border-radius: 7px;
+      padding: 8px 12px;
+      border-radius: 8px;
       cursor: pointer;
-      font-size: 13.5px;
-      font-weight: 400;
+      font-size: 13px;
+      font-weight: 500;
       color: var(--c-muted);
       transition: background var(--transition), color var(--transition);
-      line-height: 1.45;
+      line-height: 1.42;
       position: relative;
       display: flex;
       align-items: center;
-      gap: 2px;
+      gap: 6px;
     }
 
     .pq-sub-btn:hover {
-      background: var(--c-border);
-      color: var(--c-text);
+      background: #f1f5f9;
+      color: #1e293b;
     }
 
     .pq-sub-btn.is-active {
       color: var(--c-accent);
       font-weight: 600;
+      background: #eef2ff;
     }
 
     .pq-sub-btn.is-active::before {
@@ -701,7 +718,7 @@ const GlobalStyles = () => (
       display: flex;
       flex-direction: column;
       margin-left: 12px;
-      padding-left: 8px;
+      padding-left: 10px;
       border-left: 1px solid var(--c-border);
     }
 
@@ -709,11 +726,11 @@ const GlobalStyles = () => (
       background: none;
       border: none;
       text-align: left;
-      padding: 6px 12px;
+      padding: 6px 10px;
       border-radius: 6px;
       cursor: pointer;
-      font-size: 12.5px;
-      font-weight: 400;
+      font-size: 12px;
+      font-weight: 500;
       color: var(--c-muted);
       transition: background var(--transition), color var(--transition);
       line-height: 1.4;
@@ -721,39 +738,55 @@ const GlobalStyles = () => (
     }
 
     .pq-nested-btn:hover {
-      background: var(--c-border);
-      color: var(--c-text);
+      background: #f1f5f9;
+      color: #1e293b;
     }
 
     .pq-nested-btn.is-active {
       color: var(--c-accent);
-      font-weight: 500;
+      font-weight: 600;
     }
 
     .pq-content {
       flex: 1;
       min-width: 0;
       margin-left: var(--sidebar-w);
-      background: #ffffff;
       position: relative;
+      padding-bottom: 32px;
     }
 
     .pq-content.no-sidebar {
       margin-left: 0;
     }
 
+    .pq-docs-body {
+      width: 90%;
+      margin: 0 auto;
+      border: 0;
+      border-radius: 0;
+      box-shadow: none;
+    }
+
+    .pq-docs-body.full-width {
+      width:70%;
+      margin: 0 auto;
+      border: 0;
+      border-radius: 0;
+      box-shadow: none;
+    }
+
     .pq-toggle-btn {
       position: fixed;
-      left: 16px;
-      bottom: 16px;
+      left: 14px;
+      bottom: 82px;
       z-index: 40;
       display: inline-flex;
       align-items: center;
       justify-content: center;
       margin: 0;
-      width: 34px;
-      height: 34px;
-      border-radius: 8px;
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
       border: 1px solid var(--c-border);
       background: var(--c-surface);
       color: var(--c-muted);
@@ -769,15 +802,15 @@ const GlobalStyles = () => (
 
     .pq-scroll-top-btn {
       position: fixed;
-      left: 16px;
-      bottom: 58px;
+      left: 14px;
+      bottom: 126px;
       z-index: 40;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 34px;
-      height: 34px;
-      border-radius: 8px;
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
       border: 1px solid var(--c-border);
       background: var(--c-surface);
       color: var(--c-muted);
@@ -791,150 +824,144 @@ const GlobalStyles = () => (
       box-shadow: var(--shadow-md);
     }
 
-    .pq-section {
-      margin: 0 auto;
-      width: 70%;
-      scroll-margin-top: 70px;
-      position: relative;
-      left: -40px;
-    }
-
-    .pq-section.full-width {
-      max-width: 960px;
-      left: 0;
-    }
-
-    .pq-section h1 {
-      font-size: 2.6rem !important;
-      font-weight: 600 !important;
-      line-height: 1.2 !important;
-      letter-spacing: -0.02em !important;
-      margin-top: 20px !important;
-    }
-
-    .header-title {
-      display: block;
-      font-size: 2.8rem !important;
-      font-weight: 600 !important;
-      color: var(--c-text) !important;
-      letter-spacing: 0.02em !important;
-    }
-
+    .pq-section,
     .pq-sub-section {
-      margin: 0 auto;
-      width: 70%;
-      padding: 36px 0;
-      scroll-margin-top: 30px;
-      position: relative;
-      left: -40px;
+      margin: 0  auto;
+      width: 75%;
+      scroll-margin-top: 84px;
+      padding-top: 6px;
     }
 
+    .pq-section.full-width,
     .pq-sub-section.full-width {
-      max-width: 960px;
-      left: 0;
+      width: 80%;
     }
 
-    .pq-sub-section h2 {
-      font-size: 1.8rem !important;
-      font-weight: 600 !important;
-      color: rgb(89, 94, 94) !important;
+    .pq-section-shell {
+      background: transparent;
+      border: 0;
+      border-radius: 0;
+      box-shadow: none;
+      padding: 8px 0;
+    }
+
+    .pq-section-head {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 12px;
+      margin: 0 0 10px;
+    }
+
+    .pq-section-title {
+      margin: 0;
+      color: var(--c-text) !important;
+      letter-spacing: -0.02em;
+    }
+
+    .pq-section-title-main {
+      font-size: clamp(2rem, 4.4vw, 2.8rem) !important;
+      font-weight: 700 !important;
+      line-height: 1.15 !important;
+      letter-spacing: -0.03em !important;
+    }
+
+    .pq-section-title-sub {
+      font-size: clamp(1.5rem, 2.5vw, 1.9rem) !important;
+      font-weight: 700 !important;
+      line-height: 1.25 !important;
+    }
+
+    .pq-section-content h2 {
+      font-size: clamp(1.35rem, 2.2vw, 1.65rem) !important;
+      font-weight: 700 !important;
+      color: var(--c-text) !important;
       line-height: 1.3 !important;
-      letter-spacing: -0.015em !important;
-      margin-bottom: 16px !important;
+      margin: 20px 0 12px !important;
     }
 
-    .pq-sub-section h3 {
-      font-size: 1.2rem !important;
-      font-weight: 550 !important;
-      color: rgb(89, 94, 94) !important;
+    .pq-section-content h3 {
+      font-size: 1.18rem !important;
+      font-weight: 650 !important;
+      color: #1e293b !important;
       line-height: 1.4 !important;
-      margin-top: 28px !important;
-      padding-top: 25px !important;
-      margin-bottom: 12px !important;
-    }
-
-    .pq-sub-section h4 {
-      font-size: 1.1rem !important;
-      font-weight: 450 !important;
-      color: rgb(89, 94, 94) !important;
-      line-height: 1.4 !important;
-      margin-top: 20px !important;
+      margin-top: 22px !important;
+      padding-top: 8px !important;
       margin-bottom: 10px !important;
     }
 
-    .pq-sub-section h5 {
-      font-size: 0.99rem !important;
-      font-weight: 450 !important;
-      color: rgb(89, 94, 94) !important;
+    .pq-section-content h4 {
+      font-size: 1.05rem !important;
+      font-weight: 600 !important;
+      color: #1e293b !important;
       line-height: 1.4 !important;
-      margin-top: 20px !important;
+      margin-top: 18px !important;
       margin-bottom: 10px !important;
     }
 
-    .pq-section p,
-    .pq-sub-section p {
+    .pq-section-content h5 {
+      font-size: 0.95rem !important;
+      font-weight: 600 !important;
+      color: #334155 !important;
+      line-height: 1.4 !important;
+      margin-top: 16px !important;
+      margin-bottom: 10px !important;
+    }
+
+    .pq-section-content p {
       font-size: 15px;
-      line-height: 1.8;
-      color: #374151;
-      margin-bottom: 14px;
+      line-height: 1.72;
+      color: #334155;
+      margin-bottom: 12px;
     }
 
-    .pq-section ol,
-    .pq-section ul,
-    .pq-sub-section ol,
-    .pq-sub-section ul {
+    .pq-section-content ol,
+    .pq-section-content ul {
       margin: 0.75rem 0 1rem;
       padding-left: 1.5rem;
     }
 
-    .pq-section li,
-    .pq-sub-section li {
-      margin: 0.35rem 0;
-      line-height: 1.7;
+    .pq-section-content li {
+      margin: 0.34rem 0;
+      line-height: 1.68;
     }
 
-    .pq-section li > p,
-    .pq-sub-section li > p {
+    .pq-section-content li > p {
       margin: 0;
     }
 
-    .pq-section li > p + p,
-    .pq-sub-section li > p + p {
+    .pq-section-content li > p + p {
       margin-top: 0.4rem;
     }
 
-    .pq-section li > :last-child,
-    .pq-sub-section li > :last-child {
+    .pq-section-content li > :last-child {
       margin-bottom: 0;
     }
 
-    .pq-section code,
-    .pq-sub-section code {
-      font-size: 13px;
-      background: #f3f4f6;
-      border: 1px solid var(--c-border);
-      border-radius: 5px;
+    .pq-section-content code {
+      font-size: 12.5px;
+      background: #f2f4f9;
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
       padding: 1px 6px;
-      color: #c2185b;
+      color: #9d174d;
       font-family: 'Fira Code', 'Cascadia Code', monospace;
     }
 
-    .pq-section a,
-    .pq-sub-section a {
+    .pq-section-content a {
       color: var(--c-accent);
       text-decoration: none;
       border-bottom: 1px solid transparent;
-      transition: border-color var(--transition);
+      transition: border-color var(--transition), color var(--transition);
     }
 
-    .pq-section a:hover,
-    .pq-sub-section a:hover {
+    .pq-section-content a:hover {
       border-color: var(--c-accent);
+      color: var(--c-accent-2);
     }
 
-    .pq-section a[href^="/"]:not([href^="#"])::after,
-    .pq-sub-section a[href^="/"]:not([href^="#"])::after {
-      content: '↗';
+    .pq-section-content a[href^="/"]:not([href^="#"])::after {
+      content: "\\2197";
       font-size: 0.75em;
       margin-left: 3px;
       opacity: 0.6;
@@ -949,22 +976,22 @@ const GlobalStyles = () => (
     }
 
     .pq-pagination {
-      width: 70%;
-      margin: 0 auto;
+      width: 60%;
+      margin: 30px 420px;
       display: flex;
       justify-content: space-between;
       align-items: stretch;
       gap: 16px;
-      padding: 0 0 52px;
-      }
+    }
 
-      .pq-pagination.full-width {
-        max-width: 960px;
-        }
+    .pq-pagination.full-width {
+      width: 60%;
+      margin: 30px auto;
+    }
 
     .pq-nav-link {
       display: flex;
-      z-index:999;
+      z-index: 1;
       align-items: center;
       gap: 12px;
       text-decoration: none !important;
@@ -975,16 +1002,22 @@ const GlobalStyles = () => (
       transition: border-color var(--transition), box-shadow var(--transition), transform var(--transition);
       flex: 1;
       min-width: 0;
-      border-color: #93c5fd;
     }
 
     .pq-nav-link:hover {
       box-shadow: var(--shadow-md);
       transform: translateY(-1px);
+      border-color: #bfdbfe;
     }
 
-    .pq-nav-link.next { justify-content: flex-end; text-align: right; }
-    .pq-nav-link.prev { justify-content: flex-start; }
+    .pq-nav-link.next {
+      justify-content: flex-end;
+      text-align: right;
+    }
+
+    .pq-nav-link.prev {
+      justify-content: flex-start;
+    }
 
     .pq-nav-icon {
       flex-shrink: 0;
@@ -1004,14 +1037,16 @@ const GlobalStyles = () => (
     .pq-nav-title {
       font-size: 14px;
       font-weight: 600;
-      color: var(--c-text);
+      color: #1e293b;
       line-height: 1.35;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
     }
 
-    .pq-spacer { flex: 1; }
+    .pq-spacer {
+      flex: 1;
+    }
 
     .pq-image-modal {
       position: fixed;
@@ -1029,8 +1064,13 @@ const GlobalStyles = () => (
     }
 
     @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
     }
 
     .pq-modal-content {
@@ -1045,6 +1085,7 @@ const GlobalStyles = () => (
         transform: scale(0.8);
         opacity: 0;
       }
+
       to {
         transform: scale(1);
         opacity: 1;
@@ -1078,14 +1119,112 @@ const GlobalStyles = () => (
     }
 
     .pq-modal-close:hover {
-      background: white;
+      background: #ffffff;
       transform: scale(1.1);
     }
 
     .sub-title {
       font-size: 0.9em;
       font-weight: 500;
-      color: hsl(0, 1%, 35%);
+      color: #3f3f46;
+    }
+
+    @media (max-width: 1200px) {
+      :root {
+        --sidebar-w: 238px;
+        --content-max: 920px;
+      }
+    }
+
+    @media (max-width: 996px) {
+      .pq-content {
+        margin-left: 0;
+      }
+
+      .pq-sidebar {
+        position: fixed;
+        top: var(--nav-h);
+        left: 0;
+        height: calc(100vh - var(--nav-h));
+        max-height: none;
+        width: min(82vw, 300px);
+        z-index: 50;
+        box-shadow: var(--shadow-md);
+      }
+
+      .pq-inline-breadcrumb {
+        padding-top: 14px;
+      }
+
+      .pq-section {
+        padding-top: 4px;
+      }
+
+      .pq-sub-section {
+        padding-top: 4px;
+      }
+
+      .pq-section-shell {
+        padding: 6px 0;
+      }
+
+      .pq-pagination {
+        padding: 0 16px 40px;
+      }
+
+      .pq-nav-link {
+        padding: 12px 14px;
+      }
+
+      .pq-toggle-btn {
+        left: 12px;
+        bottom: 72px;
+      }
+
+      .pq-scroll-top-btn {
+        left: 12px;
+        bottom: 116px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .pq-docs-body {
+        padding: 8px 12px 12px;
+      }
+
+      .pq-section-head {
+        display: block;
+      }
+
+      .time-ago {
+        margin-top: 6px;
+      }
+
+      .pq-pagination {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .pq-spacer {
+        display: none;
+      }
+
+      .pq-nav-link.next,
+      .pq-nav-link.prev {
+        justify-content: space-between;
+        text-align: left;
+      }
+
+      .pq-modal-content {
+        max-width: 100vw;
+        padding: 0 10px;
+      }
+
+      .pq-modal-close {
+        position: fixed;
+        top: 10px;
+        right: 10px;
+      }
     }
   `}</style>
 );

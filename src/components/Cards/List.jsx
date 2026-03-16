@@ -8,10 +8,13 @@ export const List = ({ title,link, description, image
  }) => {
   return (
     <div className={clsx(styles.card)}>
-      <div>
-
-      {image && <img src={image} alt={title} className={clsx(styles.card_image)}/>}
-      <h3 className={clsx(styles.card_title)}>{title}</h3>
+      <div className={clsx(styles.card_header)}>
+        {image && (
+          <div className={clsx(styles.card_image_wrap)}>
+            <img src={image} alt={title} className={clsx(styles.card_image)} />
+          </div>
+        )}
+        <h3 className={clsx(styles.card_title)}>{title}</h3>
       </div>
       <p className={clsx(styles.card_description)}>{description}</p>
       <ul className={clsx(styles.card_link_description)}>

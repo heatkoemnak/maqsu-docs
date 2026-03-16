@@ -36,6 +36,13 @@
   flex-shrink: 0;
 }
 
+.note__icon {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
 .note__pin {
   width: 14px;
   height: 14px;
