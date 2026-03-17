@@ -800,7 +800,12 @@
 
 @media (max-width: 640px) {
   .pageRoot {
-    width: calc(100% - 1rem);
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding-left: 12px;
+    padding-right: 12px;
+    box-sizing: border-box;
   }
 
   .articleGrid {

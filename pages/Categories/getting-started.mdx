@@ -165,14 +165,14 @@ groupSections:
           modules. The Customers tab is currently selected (highlighted in
           grey).
 
-          * **Banking**: Manage bank accounts, reconciliations, and cash flow.\\
-          * **Customers**: Access sales-related documents and client lists.\\
-          * **Vendors**: Manage suppliers, purchase orders, and bills.\\
+          * **Banking**: Manage bank accounts, reconciliations, and cash flow.
+          * **Customers**: Access sales-related documents and client lists.
+          * **Vendors**: Manage suppliers, purchase orders, and bills.
           * **Accounting**: General ledger, journal entries, and chart of
-            accounts.\\
-          * **Compliance**: Tax filings, regulatory reports, or audit logs.\\
+            accounts.
+          * **Compliance**: Tax filings, regulatory reports, or audit logs.
           * **Reporting**: Financial statements (P\&L, Balance Sheet) and custom
-            data views.\\
+            data views.
           * **Configuration**: System settings, user permissions, and
             integrations.
 
@@ -756,62 +756,67 @@ groupSections:
         body: ''
     sections:
       - link: /company
-        title: Company Information
+        title: Company
         body: |
 
-            The **Company Information** form defines your legal identity, contact details, and accounting defaults in MAQSU ERP. This data appears in invoices, reports, and tax documents.
+            The **Company** section in MAQSU allows you to set up and manage your organization's core information used across all modules.
 
-            > **Note:** MAQSU already includes a default record named **My Company**. Edit this record instead of creating a new one.
+            ### Step 1 -  Navigation
 
-            ---
-
-            ### Step 1: Navigate to Companies
-            Go to **Settings** → **Users & Companies** → **Companies**.
+            1. Go to **Settings** from the left sidebar.
+            2. Click on **Users & Companies** in the top navigation menu.
+            3. Select **Companies** from the dropdown.
 
             ![](/img/getting-started/masters/company/0002.png)
 
-            Open **My Company** from the list.
+            You will see a list of all registered companies. Click on an existing company (e.g., **My Company**) to edit it, or click **Create** to add a new one.
 
             ![](/img/getting-started/masters/company/0004.png)
 
-            ---
-
-            ### Step 2: Complete Company Profile
-            Fill in the most important fields:
-
-            #### 1. Identity and Branding
-            * **Company Name** - Official registered name.
-            * **Company Logo** - Appears on invoices and reports.
+            ### Setp 2 - Enter Company Name and Logo
+            On the company form, enter your official company name in the **Company Name** field (e.g., `MAQSU GROUP CO,.LTD`).
 
             ![](/img/getting-started/masters/company/0001.png)
+
+            To update the **company logo**, hover your mouse over the logo thumbnail in the top-right corner of the form. Two icons will appear — a **pencil icon** to upload a new image and a **trash icon** to remove the existing one.
+
             ![](/img/getting-started/masters/company/0003.png)
 
-            #### 2. Contact and Registration
-            * **Address** - Main business address.
-            * **Tax ID / VAT** - Government-issued tax number (example: `K001-2002168909`).
-            * **Company Registry** - Ministry of Commerce registration number.
-            * **Phone / Email / Website** - Official contact channels.
+            ### Setp 3 - Complete General Information Tab
+
+            Under the **General Information** tab, fill in the following fields:
+
+            - **Address 1 / Address 2** – Your company's street address.
+            - **City** – City name and postal code.
+            - **Country** – Select the country from the dropdown.
+            - **Phone** – Company contact number.
+            - **Email** – Official company email address.
+            - **Website** – Your company's website URL.
+            - **Tax ID** – Your company's tax identification number.
+            - **Company Registry** – The official registry number.
+            - **Currency** – Select the operating currency (e.g., USD).
 
             ![](/img/getting-started/masters/company/0006.png)
 
-            #### 3. Accounting Defaults
-            * **Currency** - Main reporting currency (example: `USD` or `KHR`).
+            ### Setp 4 - Cambodia Compliance Tab (Optional)
 
-            #### 4. Local Compliance (Cambodia)
-            If your company operates in Cambodia, complete localized Khmer fields for compliant invoice output.
+            If your company operates in Cambodia, click the **Cambodia Compliance** tab to fill in localized information required for compliance:
+
+            - **Company Name (KH)** – Company name in Khmer script.
+            - **Email (KH)** / **Phone (KH)** – Contact details in local format.
+            - **Registry Date** – The official registration date.
+            - **Business Activities** – Brief description of business type (e.g., Software Solution).
+            - **Business Operations** – Detailed description of operations.
+            - **Address fields** – Nº, Street, Village, Commune/Sangkat, District/Khan, Province/Capital, and Zip.
 
             ![](/img/getting-started/company_info/0007.png)
 
-            ---
-
-            ### Step 3: Save and Verify
-            Click **Save**, then verify the header details in your sample invoice/report template.
+            ### Step 5 - Save and Verify
+            Once all information is filled in, click **Save** to apply your changes.
 
             <Noted type="info" title="Best Practice" image="/img/icon/notes.png">
             Confirm **Tax ID**, **Address**, and **Currency** before going live. These fields drive legal and financial documents across the system.
             </Noted>
-
-            ---
 
             Next: [Currencies](/getting-started/setup-master-datas#currencies)
       - link: /currencies
@@ -824,7 +829,7 @@ groupSections:
 
           ---
 
-          ### Step 1: Go to Currency Configuration
+          ### Step 1 - Navigation
 
           From the left sidebar, click **Accounting**. Then, from the top navigation menu, go to **Configuration** → **Currencies**.
 
@@ -833,7 +838,7 @@ groupSections:
 
           ---
 
-          ### Step 2: Click Create
+          ### Step 2 - Click Create
 
           Click the **Create** button to add a new currency or define a new exchange rate. This opens the currency form where you can define how the currency behaves across accounting transactions and reports.
 
@@ -841,7 +846,7 @@ groupSections:
 
           ---
 
-          ### Step 3: Fill Out Currency Information
+          ### Step 3 - Fill Out Currency Information
 
           #### 1. Top-Level Configuration
           * **Currency Name** – The ISO code or name (e.g., USD, KHR).
@@ -864,7 +869,7 @@ groupSections:
 
           ---
 
-          ### Step 4: Save the Configuration
+          ### Step 4 - Save
 
           Once all details are verified, click the **Save** button. Your currency settings will now be applied across all modules, including Invoices, Payments, and Financial Statements.
 
@@ -885,7 +890,7 @@ groupSections:
 
           ---
 
-          ### Step 1: Access Chart of Accounts
+          ### Step 1 - Navigation
 
           From the left sidebar, click **Accounting**. Then, from the top navigation menu, go to **Configuration** → **Accounting** → **Chart of Accounts**.
 
@@ -894,7 +899,7 @@ groupSections:
 
           ---
 
-          ### Step 2: Click Create
+          ### Step 2 - Click Create
 
           Click the **Create** button to open a new account entry line. This allows you to define a new category for your financial tracking.
 
@@ -902,7 +907,7 @@ groupSections:
 
           ---
 
-          ### Step 3: Fill Out Account Information
+          ### Step 3 - Fill Out Account Information
 
           Enter the following details to define the account's behavior and classification:
 
@@ -929,7 +934,7 @@ groupSections:
 
           Completing your **Chart of Accounts** ensures that your financial reports, like the Balance Sheet, are accurate from day one.
 
-          For more details on setting up the rules that govern these accounts, see the [Setup Taxes Guide](/accounting/taxes).
+          For more details on setting up the rules that govern these accounts, see the [Setup Taxes Guide](/getting-started/setup-master-datas#taxes).
 
       - link: /taxes
         title: Taxes
@@ -941,7 +946,7 @@ groupSections:
 
           ---
 
-          ### Step 1: Go to Taxes
+          ### Step 1 - Navigation
 
           From the left sidebar, click **Accounting**. Then, from the top navigation menu, go to **Configuration** → **Taxes**.
 
@@ -950,7 +955,7 @@ groupSections:
 
           ---
 
-          ### Step 2: Click Create
+          ### Step 2 - Create
 
           Click the **Create** button at the top-left of the Taxes list page to open a new blank tax configuration form.
 
@@ -958,7 +963,7 @@ groupSections:
 
           ---
 
-          ### Step 3: Fill Out Tax Information
+          ### Step 3 - Fill Out Tax Information
 
           Define the properties and behavior of your new tax by filling in the following sections:
 
@@ -994,7 +999,7 @@ groupSections:
 
           ---
 
-          ### Step 4: Save the Tax
+          ### Step 4 - Save
 
           After entering all required details, click the **Save** button. Your tax configuration is now active and will be applied throughout the system.
 
@@ -1002,84 +1007,88 @@ groupSections:
           Completing the Tax Setup accurately is critical for automated accounting. Always double-check your **Tax Name** and **GL Accounts** to avoid discrepancies in your financial statements later.
           </Noted>
 
-          ---
-
-          ### How Taxes Function in Operations
-
-          When you create an invoice or bill, MAQSU ERP automatically applies your settings:
-          * **Sale Amount:** $100
-          * **Tax Calculation:** $10 (10% of $100)
-          * **Total Due:** $110
-          * **Accounting Update:** The system automatically debits Sales Income ($100) and credits VAT Output ($10) upon posting.
-
-          ---
-
-          For more details on managing customer transactions with these taxes, see the [Create Customer Invoice Guide](/accounting/create-new-customer-invoice).
-
-      - link: /payment-terms
-        title: Payment Terms
-        body: |
-
-          Payment Terms define when customer invoices and vendor bills are due (for example, `Immediate Payment`, `30 Days`, or `50% Advance`).
-
-          ### Step 1: Navigate to Payment Terms
-
-          From the left sidebar, click **Accounting**. Then from the top navigation menu, go to **Configuration** → **Accounting** → **Payment Terms**.
-
-          Configure these terms and then assign them on customer, vendor, invoice, and bill forms.
-
-          > **Note:** Setting clear payment terms helps control cash flow and ensures accurate due-date tracking in aging reports.
-
       - link: /customer-vendor
         title: Customer / Vendor
         body: |
 
-          Accurate contact management is the foundation of your business operations. This guide provides step-by-step instructions for completing the **Customer/Vendor Creation** form in MAQSU ERP, ensuring all required details are captured for both English and Khmer reporting.
+          The **Customer & Vendor** section allows you to manage your contacts — whether they are customers, vendors, or both — directly from the Accounting module.
 
           > **Note:** A contact can be configured as a Customer, a Vendor, or both simultaneously. This flexibility allows you to maintain a single record for partners who both buy from and sell to your company.
 
           ---
 
-          ### Step 1: Navigate to the Customer Menu
+          ### Step 1 - Navigation
 
-          From the main dashboard, navigate to the sidebar and click **Accounting**. From the top navigation menu, go to **Customers** → **Customers**.
+           1. Go to the **Accounting** module from the left sidebar.
+           2. Click on **Customers** in the top navigation menu.
+           3. Select **Customers** from the dropdown.
 
           ![](/img/getting-started/customers/0001.png)
 
           ---
 
-          ### Step 2: Click on Create
+          ### Step 2 - Create
 
-          Click the **Create** button located at the top-left of the Customers list page to open a new blank profile form.
+          On the Customers list page, click the **Create** button to open a new contact form.
 
           ![](/img/getting-started/customers/0002.png)
 
           ---
 
-          ### Step 3: Complete Contact Information
+          ### Step 3 - Contact Type
 
-          Fill out the profile by defining the entity type and their specific roles within your system:
+          At the top of the form, select the type of contact:
 
-          #### 1. Entity Type and Name
-          * **Individual** – Select this for private persons or end-users.
-          * **Company** – Select this for registered businesses or organizations.
-          * **Customer/Vendor Selection** – Check the **Customer** box if they purchase from you, and/or the **Vendor** box if they act as a supplier.
+          - **Customer** – for customers only
+          - **Vendor** – for vendors only
+          - **Customer & Vendor** – for contacts who are both
+
+           ### Step 4 - Basic Information
+
+           In the main section of the form, fill in:
+
+          - **Individual / Company** – Select whether the contact is an individual person or a company.
+          - **Name (English)** – Enter the contact's full name in English (e.g., `LY CHAIMOUY`).
+          - **Name (Khmer)** *(Optional)* – Enter the name in Khmer script.
+          - **Customer / Vendor checkboxes** – Check the appropriate box to classify the contact.
+          - **Photo** *(Optional)* – Upload a profile photo using the image field in the top-right corner.
 
           ![](/img/getting-started/customers/0003.png)
 
-          #### 2. General Information
-          Provide the primary contact details to ensure accurate delivery and invoicing:
-          * **Address** – Enter the physical or billing address details.
-          * **Contact** – Input the phone number, email address, and mobile details.
+          ### Step 5 - General Information Tab
+
+          #### 1. Address
+          - **Address 1** – Full street address (e.g., St 2004, Sleng Rolerng Village, Sangkat Terk Thla, Khan Sensok, Phnom Penh).
+          - **Address 2** – Additional address details (e.g., Phnom Penh Capital, Cambodia).
+          - **Country** – Select the country from the dropdown (e.g., Cambodia).
 
           ![](/img/getting-started/customers/0004.png)
+
+           #### 2. Contact
+          - **Phone** – Primary phone number.
+          - **Mobile** – Mobile number.
+          - **Email** – Email address.
+          - **Website** *(Optional)* – Website URL.
+          - **Category** *(Optional)* – Assign a contact category for grouping.
+
           ![](/img/getting-started/customers/0005.png)
+
+          #### 3. Identification Registry *(Optional)*
+
+          - **VAT TIN** – The customer's VAT Tax Identification Number (e.g., `L001-100305542`).
+          - **Tax Type** – Select the applicable tax type (e.g., Taxable Person).
+          - **Customer Code** – A unique customer code, which can be auto-generated by the system (e.g., `CUST-000001`).
+
+          ![](/img/getting-started/customers/0006.png)
+
+          Once all required information is filled in, click **Save** to store the new customer or vendor record.
 
           ---
 
-          ### Step 4: Save the Record
+          ### Step 6 - Save
 
-          Once all required information has been entered and verified, click the **Save** button. This profile is now active and can be selected in Sales Orders, Purchase Orders, and Invoices.
+
+          Once all required information is filled in, click **Save** to store the new customer or vendor record.
 
           <Noted type="info" title="Pro Tip" image="/img/icon/notes.png">
           Maintaining clean contact data, including proper Khmer names where applicable, ensures that your tax reports and official government filings are generated without errors.
@@ -1089,72 +1098,148 @@ groupSections:
 
           For more details on managing sales for these contacts, see the [Create Customer Invoice Guide](/accounting/create-new-customer-invoice).
 
-      - link: /journals
-        title: Journals
+      - link: /payment-terms
+        title: Payment Terms
         body: |
 
-          A **Journal** is a chronological record of financial transactions. In MAQSU ERP, journals act as specific folders that categorize business activities (like Sales, Purchases, or Bank movements) to keep your General Ledger organized and easily searchable.
+          Payment Terms define when customer invoices and vendor bills are due (for example, `Immediate Payment`, `30 Days`, or `50% Advance`).
 
-          > **Note:** MAQSU ERP comes pre-configured with standard journals. You only need to create new ones if you open a new bank account, manage a new petty cash fund, or require a specialized tracking category.
+          ### Step 1 - Navigation
+
+          From the top navigation menu, go to **Configuration**, under configuration, select **Payment Terms**.
+          ![](/img/getting-started/payment-terms/0001.png)
+
+          Once you navigate to Payment Terms, you will see the master list of all existing Payment Terms. The list displays the following columns:
+
+          ![](/img/getting-started/payment-terms/0002.png)
+
+          ### Step 2 - Create
+          Click the Create button at the top-left of the Payment Terms list page to open a new blank payment terms form.
+
+          ![](/img/getting-started/payment-terms/0003.png)
+          > **Note:** Setting clear payment terms helps control cash flow and ensures accurate due-date tracking in aging reports.
 
           ---
 
-          ### Understanding Journal Types
+          ### Step 3 - Complete the Header
+
+          In the Payment Terms form, enter:
+          * **Payment Terms**: a clear name (e.g., `7 Days`, `Net 30`, `50% Advance`).
+          * **Note** (optional): add a short description (for internal reference or for printing, depending on your setup).
+
+          ![](/img/getting-started/payment-terms/0004.png)
+
+          ---
+
+          ### Step 4 - Define the Terms
+
+          On the **Terms** tab, click **Add a line** and configure one or more lines. Each line represents a due amount and a due date rule.
+
+          ![](/img/getting-started/payment-terms/0005.png)
+
+          **1. Type options**
+          * **Balance**: the remaining amount that is still unpaid.
+          * **Percent**: a percentage of the invoice total.
+          * **Fixed Amount**: a fixed amount in your company currency.
+
+          **2. Due date fields**
+          * **On the**: number used to compute the due date.
+          * **Rule** (dropdown): chooses how the due date is calculated (for example, *days after the invoice date*).
+          * **Specifically on Day #** (optional): forces the due date to a specific day of the month.
+
+          **3. Rule details (dropdown)**
+          * **Days after the invoice date**: sets the due date to *Invoice Date + On the (days)*.
+            Example: Invoice Date **March 17, 2026**, **On the** = `7`. Due Date: **March 24, 2026**.
+          * **Of the current month**: sets the due date within the *same month as the invoice* (commonly used for month-end or fixed day-of-month collections).
+            Example: Invoice Date **March 17, 2026**, **Specifically on Day #** = `25`. Due Date: **March 25, 2026**.
+          * **Of the following month**: sets the due date within the *next month after the invoice month*.
+            Example: Invoice Date **March 17, 2026**, **Specifically on Day #** = `5`. Due Date: **April 5, 2026**.
+
+          > **Tip:** If you use **Specifically on Day #**, choose a day between `1` and `31`. If a month does not have that day (for example, `31` in April), MAQSU may adjust the due date. Verify the result on a test invoice.
+
+          ---
+
+          ### Step 5 - Save
+
+          Click **Save** to create the payment term.
+
+          ---
+
+          <Noted type="info" title="Where It Shows Up" image="/img/icon/notes.png">
+          Payment terms affect the invoice/bill due dates and the amounts shown in aging reports (Aged Receivable/Aged Payable). For multi-line terms, MAQSU splits the total into multiple due dates.
+          </Noted>
+
+
+      - link: /journals
+        title: Journals
+        body: |
+          **Journals** are used to record all financial transactions. Each journal corresponds to a specific type of accounting operation such as sales, purchases, cash, or bank transactions.
+
+          ### Step 1 - Navigation
+
+          1. Go to the **Accounting** module from the left sidebar.
+          2. Click on **Configuration** in the top navigation menu.
+          3. Select **Journals** from the dropdown under the **Invoicing** section.
+
+          ![](/img/getting-started/journal/0001.png)
+
+          The journals list displays all configured journals with their corresponding types:
+
+          ![](/img/getting-started/journal/0002.png)
+
+          Below is a list of all existing journals:
+
+          * **Customer Invoices**: Sales
+          * **Vendor Bills**: Purchase
+          * **Miscellaneous Operations**: Miscellaneous
+          * **Exchange Difference**: Miscellaneous
+          * **Bank**: Bank
+          * **Cash**: Cash
+          * **Cash Basis Taxes**: Miscellaneous
+          * **Inventory Valuation**: Miscellaneous
+          * **Debit Notes**: Sales
+
+          ### Step 2 - Create
+
+          Click the **Create** button on the Journals list page to open a new journal form.
+
+          ![](/img/getting-started/journal/0003.png)
+
+          ### Step 3 - Basic Information
+
+          Fill in the following required fields at the top of the form:
+
+          - **Journal Name** – Enter a descriptive name for the journal (e.g., `Petty Cash Office`).
+          - **Type** – Select the journal type from the dropdown. Available types include Sales, Purchase, Cash, Bank, and Miscellaneous.
+
+          ###### Understanding Journal Types
           1.  **Sales**: Records all customer invoices and accounts receivable.
           2.  **Purchase**: Records all vendor bills and accounts payable.
           3.  **Cash & Bank**: Tracks liquid money movements (deposits, transfers, and petty cash).
           4.  **Miscellaneous**: Used for non-cash entries like depreciation or internal adjustments.
 
-          ---
+          ![](/img/getting-started/journal/0004.png)
 
-          ### Step 1: Go to Journals
-          From the left sidebar, click **Accounting**. Then, from the top navigation menu, go to **Configuration** → **Accounting** → **Journals**.
+          ### Step 4 - Journal Entries Tab
 
-          ![](/img/getting-started/journal/0002.jpg)
+          Under the **Journal Entries** tab, configure the following:
 
-          ---
+          - **Short Code** – Enter a short abbreviation for the journal (e.g., `PCO`). This is used as a prefix for journal entry numbers.
+          - **Next Number** – The sequence number for the next journal entry (defaults to `1`).
+          - **Default Debit Account** – Select the default account to use for debit entries (e.g., `102002 Petty Cash Office`).
+          - **Default Credit Account** – Select the default account to use for credit entries (e.g., `102002 Petty Cash Office`).
+          - **Currency** – Select the currency for this journal (e.g., `USD`).
 
-          ### Step 2: Click Create
-          Click the **Create** button to open a new journal configuration form.
+          ![](/img/getting-started/journal/0005.png)
 
-          ![](/img/getting-started/journal/0003.jpg)
+          ### Step 4: Save
 
-          ---
-
-          ### Step 3: Fill Out Journal Information
-          Define how the journal will handle transactions and document numbering:
-
-          #### 1. Basic Details
-          * **Journal Name** – Give it a clear, descriptive name (e.g., "ABA Bank - USD" or "Petty Cash HQ").
-          * **Type** – This is the most critical field. It determines how the system processes entries (Sales, Purchase, Cash, Bank, or Miscellaneous).
-
-          ![](/img/getting-started/journal/0006.png)
-          ![](/img/getting-started/journal/0007.png)
-
-          #### 2. Sequence and Coding
-          * **Short Code** – A unique 1–5 character prefix (e.g., `BANK1`). Every transaction in this journal will follow this prefix (e.g., `BANK1/2026/0001`).
-          * **Currency** – Set the specific currency for this journal.
-
-          ![](/img/getting-started/journal/0008_1.png)
-
-          #### 3. Default Accounts
-          * **Debit/Credit Account** – Specify the default GL accounts the system should use when recording transactions in this journal (e.g., linking a Bank Journal to your "101200 Bank Account").
-
-          ![](/img/getting-started/journal/0009.png)
-
-          ---
-
-          ### Step 4: Save the Journal
           Click the **Save** button. This journal is now ready to be used in your daily accounting entries and financial reports.
-
-          ---
 
       - link: /setup-warehouse
         title: Warehouse
         body: |
-          A **Warehouse** in **MAQSU ERP** is the central hub for managing your company’s physical inventory. Whether representing an actual storage facility (depots, distribution centers) or logical zones (consignment stock), warehouses are essential for tracking goods from receiving to final delivery.
-
-
+          A **Warehouse** is the central hub for managing your company’s physical inventory. Whether representing an actual storage facility (depots, distribution centers) or logical zones (consignment stock), warehouses are essential for tracking goods from receiving to final delivery.
 
           <Noted type="info" title="Note" image="/img/icon/notes.png">
             MAQSU supports **multi-warehouse management**, allowing you to create and monitor several locations to suit your business scale.
@@ -1164,12 +1249,12 @@ groupSections:
 
           Your warehouse configuration defines the "rules of the road" for how products move in and out. Follow these steps to establish your setup:
 
-          ### Step 1: Navigate to Warehouse
+          ### Step 1 - Navigation
           Go to **Inventory** → **Configuration** → **Warehouses**. If you have an existing setup, this screen will list all active warehouses.
 
-          ![](/img/inventory/2.png)
+          ![](/img/getting-started/warehouse/0001.png)
 
-          ### Step 2: Define Basic Information
+          ### Step 2 - Define Basic Information
           Provide the core identity for your storage facility:
           * **Warehouse Name**: The full descriptive name for reports (e.g., `Main Warehouse - Phnom Penh`).
           * **Short Name**: A concise internal code used for stock locations and references (e.g., `WH-01`).
@@ -1179,18 +1264,20 @@ groupSections:
 
           ---
 
-          ### Step 3: Configure Incoming Shipments
+          ### Step 3 - Configure In and Out Shipments
+
+          ![](/img/inventory/9.png)
+
+          ##### 1. Configure Incomming Shipments
           Select the method for receiving goods based on your operational complexity:
 
           * **Receive Directly (1 Step)**: `Vendor` → `Stock`. Best for simple, fast receiving without staging.
           * **Input then Stock (2 Steps)**: `Vendor` → `Input` → `Stock`. Ideal for staging or counting items before final storage.
           * **Input, Quality, then Stock (3 Steps)**: `Vendor` → `Input` → `Quality` → `Stock`. Essential if your process requires a formal quality inspection.
 
-
-
           ---
 
-          ### Step 4: Configure Outgoing Shipments
+          ##### 2. Configure Outgoing Shipments
           Choose how products are dispatched to customers:
 
           * **Deliver Directly (1 Step)**: Ship directly from stock to the customer.
@@ -1204,34 +1291,26 @@ groupSections:
           * **Buy to Resupply**: When checked, MAQSU will automatically generate Purchase Orders to replenish stock from suppliers.
           * **Resupply From**: Select internal warehouses (e.g., `WH-02`) to transfer stock from another branch instead of buying new items.
 
-          ![](/img/inventory/9.png)
 
           ---
 
           ### Step 6: Save and Finalize
           Click **Save** to apply your configurations. Your warehouse is now active and will dictate the movement paths for all inventory transactions.
 
-          **Would you like me to help you set up specific [Inventory Locations](/inventory/setup-location) within your new warehouse next?**
+          Would you like me to help you set up specific [Locations](/getting-started/setup-master-datas#setup-location) within your new warehouse next?
 
       - link: /setup-location
-        title: Inventory Locations
+        title: Locations
         body: |
-          An inventory **Location** is a specific physical or virtual space where items are stored, picked, and managed within your operations. Properly configured locations are the backbone of efficient warehouse management, ensuring stock visibility and operational speed.
-
-
-
-          ### Why Configure Locations?
-          Well‑structured locations provide several operational benefits:
-          * **Improved Accuracy**: Enhances stock traceability and reduces misplacements.
-          * **Operational Efficiency**: Drastically reduces picking and put-away times.
-          * **Advanced Control**: Supports multi-warehouse environments and specialized areas like Quality Control or Scrap.
+          An inventory **Location** is a specific physical or virtual space where items are stored, picked, and managed within your operations. Properly configured locations are the backbone of efficient warehouse management, ensuring stock visibility and operational speed. To create a new location, please following step below:
 
           ---
 
-          ### Step 1: Navigate to Locations
+          ### Step 1 - Navigation
+
           From the main dashboard, go to **Inventory** → **Configuration** → **Locations**.
 
-          ![](/img/inventory/locations/1.png)
+          ![](/img/getting-started/location/0001.png)
 
           If you are running a **multi‑warehouse** setup, this screen provides an overview of all warehouses and their nested sub-locations.
 
@@ -1239,40 +1318,40 @@ groupSections:
 
           ---
 
-          ### Step 2: Create a New Location
+          ### Step 2 - Create
           Click the **Create** button to define a new storage area in your system.
 
-          ![](/img/inventory/Locations/5.png)
+          ![](/img/getting-started/location/0002.png)
 
           ---
 
-          ### Step 3: Configure Location Details
+          ### Step 3 - Configure Location Details
           Fill in the form to establish where this location sits in your warehouse hierarchy:
 
-          #### 1. Identification
+          #### 1. Enter Name
           * **Location Name**: Enter a clear, descriptive name (e.g., `Quality Control`, `Aisle 1`, or `Damaged Goods`).
           * **Parent Location**: Select the warehouse or higher-level location this belongs to. This creates a "breadcrumb" path like `WH/Stock/Aisle 1`.
 
-          ![](/img/inventory/Locations/7.png)
+          ![](/img/getting-started/location/0003.png)
 
-          #### 2. Specialized Attributes
+
+          #### 2. Additional Information
           Use these checkboxes to define how the system treats inventory in this location:
           * **Is Scrap Location?**: Check this if the location is for damaged or unusable goods. Items moved here are typically considered write-offs.
           * **Is Return Location?**: Check this for areas dedicated to receiving goods from customers or suppliers for inspection.
           * **Location Type**: Usually set to `Internal Location` for standard storage.
 
-          ![](/img/inventory/Locations/9.png)
+          ![](/img/getting-started/location/0004.png)
+
 
           ---
 
-          ### Step 4: Save & Verify
+          ### Step 4 - Save & Verify
           Click **Save** to finalize the setup. Your new location is now ready to be used in stock moves, internal transfers, and inventory adjustments.
 
-          ![](/img/inventory/Locations/10.png)
-
           ---
 
-          Now that your storage spots are ready, would you like to learn how to [Transfer Stock](/inventory/transfers) between these locations?
+          Now that your storage spots are ready, would you like to learn how to [Transfer](/inventory/stock-transfers) between these locations?
       - link: /setup-product-category
         title: Product Category
         body: |
@@ -1280,31 +1359,29 @@ groupSections:
 
           >**Note**: Proper category configuration is essential for automated accounting and accurate inventory valuation in compliance with local standards.
 
-          ### Step 1: Go to Product Categories
-
+          ### Step 1 - Navigation
           From the main dashboard, select the Inventory module. Then, navigate to the top menu and click Configuration → Product Categories.
 
           ![](/img/getting-started/product-category/0001.png)
 
-          ### Step 2: Product Category List Overview
+          ### Step 2 - Product Category List Overview
 
           ![](/img/getting-started/product-category/0002.png)
 
           Once you navigate to Product Categories, you will see a list of all existing categories. This view allows you to organize your products into a hierarchical structure (e.g., Panasonic / AC Product / PAC).
 
-          ### Step 3: Click Create
+          ### Step 3 - Click Create
 
           ![](/img/getting-started/product-category/0003.png)
 
           Click the Create button at the top-left of the categories list page to open a new configuration form.
 
-          ### Step 4: Configure Category Details
+          ### Step 4 - Configure Category Details
 
           Fill in the required information to define how the system should manage products within this category.
 
           ![](/img/getting-started/product-category/0004.png)
 
-          #### Header Fields
           * **Name** *(Required)*: Enter the name of the category (e.g., Drinks, Labor Costs, or Beauty Equipment).
           * **Parent Category** *(Optional)*: Select a parent category if you are creating a sub-category to help in grouping products for reporting.
 
@@ -1323,7 +1400,7 @@ groupSections:
               * **Automated**: The system automatically creates journal entries whenever stock moves in or out of the warehouse.
           ---
 
-          ### Step 5: Define Account Properties
+          ### Step 5 - Define Account Properties
 
           These settings determine where the financial value is recorded during sales and purchases.
 
@@ -1342,7 +1419,7 @@ groupSections:
 
           ---
 
-          ### Step 6: Save the Category
+          ### Step 6 - Save
 
           After completing all required fields, click the **Save** button to apply your changes. At this stage, you can also view the number of **Products** currently assigned to this category or set up **Putaway Rules** via the smart buttons at the top right.
 
@@ -1357,21 +1434,21 @@ groupSections:
 
           ---
 
-          ### Step 1: Access the Product Menu
+          ### Step 1 - Navigation
           From the left sidebar, click **Inventory**. Then, from the top navigation menu, go to **Products** → **Products**.
 
           ![](/img/getting-started/products/0001.png)
 
           ---
 
-          ### Step 2: Create New Product
+          ### Step 2 - Create
           Click the **Create** button to open a blank product template.
 
           ![](/img/getting-started/products/0002-1.png)
 
           ---
 
-          ### Step 3: Enter Product Details
+          ### Step 3 - Enter Product Details
           Provide the necessary information to manage the product throughout its lifecycle:
 
           #### 1. General Identification
@@ -1401,7 +1478,7 @@ groupSections:
 
           ---
 
-          ### Step 4: Save Product
+          ### Step 4 - Save Product
           Review your settings—especially **Type** and **UOM** as they are difficult to change once transactions begin—then click **Save**.
 
           <Noted type="info" title="Note" image="/img/icon/notes.png">

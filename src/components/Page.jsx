@@ -88,16 +88,44 @@ export default function Page() {
           const h3Elements = sectionEl.querySelectorAll('h3');
           if (h3Elements.length === 0) return;
 
-          extractedHeadings[id] = Array.from(h3Elements).map((h3) => {
-            const sectionWrapperId = group.uid;
-            const textSlug = h3.textContent.toLowerCase().replace(/\s+/g, '-');
-            const scopedId = `${sectionWrapperId}-${textSlug}`;
+          const usedHeadingIds = {};
+          const formatStepTitle = (title) => {
+            const t0 = (title || "").trim();
+            // Normalize common "dash" characters to ASCII hyphen for consistent formatting.
+            const t = t0.replace(/\u2013|\u2014|\u2212/g, "-");
+            const m = t.match(/^step\s*([0-9]+)\s*[-:]+\s*(.+)$/i);
+            if (m) return `Step ${m[1]} - ${m[2].trim()}`;
 
-            if (!h3.id) h3.id = scopedId;
+            const m2 = t.match(/^step\s*([0-9]+)\s+(.+)$/i);
+            if (m2) return `Step ${m2[1]} - ${m2[2].trim()}`;
+
+            const m3 = t.match(/^step\s*([0-9]+)$/i);
+            if (m3) return `Step ${m3[1]}`;
+
+            return t0;
+          };
+
+          extractedHeadings[id] = Array.from(h3Elements).map((h3) => {
+            const rawTitle = (h3.textContent || "").trim();
+            const textSlug = rawTitle
+              .toLowerCase()
+              .replace(/[^a-z0-9\\s-]/g, "")
+              .replace(/\\s+/g, "-")
+              .replace(/-+/g, "-");
+
+            // Scope heading IDs to the subsection so repeated "Step 1 - Navigate"
+            // in different subsections doesn't collide.
+            const scopePrefix = `${group.uid}-${id}`;
+            const baseId = `${scopePrefix}-${textSlug || "section"}`;
+            const nextCount = (usedHeadingIds[baseId] || 0) + 1;
+            usedHeadingIds[baseId] = nextCount;
+            const uniqueId = nextCount === 1 ? baseId : `${baseId}-${nextCount}`;
+
+            h3.id = uniqueId;
 
             return {
-              id: scopedId,
-              title: h3.textContent,
+              id: uniqueId,
+              title: formatStepTitle(rawTitle || h3.textContent),
               level: 3,
             };
           });
@@ -107,15 +135,11 @@ export default function Page() {
       setHeadings(extractedHeadings);
     }, 300);
 
-    // Handle initial hash scroll
+    // Initialize active state from hash (no JS scrolling)
     hashTimeoutId = setTimeout(() => {
       const hash = window.location.hash.replace("#", "");
       if (hash) {
-        const el = document.getElementById(hash);
-        if (el) {
-          el.scrollIntoView({ behavior: "smooth", block: "start" });
-          setActive(hash);
-        }
+        setActive(hash);
       }
     }, 400);
 
@@ -126,73 +150,24 @@ export default function Page() {
   }, [posts]);
 
   /* -----------------------------------
-     🔥 COMBINED SCROLL SPY & HASH HANDLING
+     🔥 HASH HANDLING (no scroll spy)
   ----------------------------------- */
   useEffect(() => {
     if (!posts.length) return;
 
-    // Build IDs list
-    const allIds = [];
-    posts.forEach((group) => {
-      allIds.push(group.uid);
-      group.sections?.forEach((sub) => {
-        const id = sub.uid || sub.link?.replace("/", "");
-        if (id) {
-          allIds.push(id);
-          headings[id]?.forEach((heading) => allIds.push(heading.id));
-        }
-      });
-    });
-
-    let scrollTimeoutId;
-
-    // Scroll spy handler
-    const handleScroll = () => {
-      if (scrollTimeoutId) clearTimeout(scrollTimeoutId);
-
-      scrollTimeoutId = setTimeout(() => {
-        let currentId = null;
-        const threshold = window.innerHeight * 0.3;
-
-        for (const id of allIds) {
-          const el = document.getElementById(id);
-          if (!el) continue;
-
-          const rect = el.getBoundingClientRect();
-          if (rect.top <= threshold) {
-            currentId = id;
-          }
-        }
-
-        if (currentId && currentId !== active) {
-          setActive(currentId);
-          window.history.replaceState(null, "", `#${currentId}`);
-        }
-      }, 100);
-    };
-
     // Hash change handler
     const handleHashChange = () => {
       const hash = window.location.hash.replace("#", "");
-      if (hash) {
-        const el = document.getElementById(hash);
-        if (el) {
-          el.scrollIntoView({ behavior: "smooth", block: "start" });
-          setActive(hash);
-        }
-      }
+      setActive(hash || null);
     };
 
-    // Add listeners
-    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleHashChange();
     window.addEventListener("hashchange", handleHashChange);
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("hashchange", handleHashChange);
-      if (scrollTimeoutId) clearTimeout(scrollTimeoutId);
     };
-  }, [posts, headings]);
+  }, [posts]);
 
   useEffect(() => {
     const handleWindowScroll = () => {
@@ -244,15 +219,6 @@ export default function Page() {
   /* -----------------------------------
      🔥 MEMOIZED FUNCTIONS
   ----------------------------------- */
-  const scrollTo = useCallback((id) => {
-    const el = document.getElementById(id);
-    if (!el) return;
-
-    el.scrollIntoView({ behavior: "smooth", block: "start" });
-    window.history.replaceState(null, "", `#${id}`);
-    setActive(id);
-  }, []);
-
   const toggleSection = useCallback((id) => {
     setExpandedSections((prev) => ({
       ...prev,
@@ -363,7 +329,26 @@ export default function Page() {
       <div className="pq-layout">
         {/* Sidebar */}
         {sidebarOpen && (
+          <div
+            className="pq-sidebar-backdrop"
+            onClick={() => setSidebarOpen(false)}
+            aria-hidden="true"
+          />
+        )}
+
+        {sidebarOpen && (
           <nav className="pq-sidebar">
+            <div className="pq-sidebar-mobile-bar">
+              <span className="pq-sidebar-mobile-title">Menu</span>
+              <button
+                className="pq-sidebar-close"
+                onClick={() => setSidebarOpen(false)}
+                aria-label="Close sidebar"
+              >
+                <IoClose size={18} />
+              </button>
+            </div>
+
             {posts.map((group) => (
               <div key={group.uid}>
                 <div className="pq-group-header">
@@ -379,9 +364,10 @@ export default function Page() {
 
                       return (
                         <div key={id}>
-                          <button
+                          <a
+                            href={`#${id}`}
                             onClick={() => {
-                              scrollTo(id);
+                              setActive(id);
                               if (hasSubHeadings) toggleSection(id);
                             }}
                             className={`pq-sub-btn${active === id ? " is-active" : ""}`}
@@ -389,19 +375,20 @@ export default function Page() {
                             <div className="sub-title">
                               <span>{sub.title}</span>
                             </div>
-                          </button>
+                          </a>
 
                           {hasSubHeadings && isExpanded && (
                             <div className="pq-nested-menu">
                               {headings[id].map((heading) => (
-                                <button
+                                <a
                                   key={heading.id}
-                                  onClick={() => scrollTo(heading.id)}
+                                  href={`#${heading.id}`}
+                                  onClick={() => setActive(heading.id)}
                                   className={`pq-nested-btn${active === heading.id ? " is-active" : ""}`}
                                   style={{ paddingLeft: heading.level === 4 ? '24px' : '12px' }}
                                 >
                                   {heading.title}
-                                </button>
+                                </a>
                               ))}
                             </div>
                           )}
@@ -647,6 +634,14 @@ const GlobalStyles = () => (
       z-index: 30;
     }
 
+    .pq-sidebar-backdrop {
+      display: none;
+    }
+
+    .pq-sidebar-mobile-bar {
+      display: none;
+    }
+
     .pq-sidebar::-webkit-scrollbar {
       width: 4px;
     }
@@ -684,17 +679,20 @@ const GlobalStyles = () => (
       font-size: 13px;
       font-weight: 500;
       color: var(--c-muted);
+      text-decoration: none;
       transition: background var(--transition), color var(--transition);
       line-height: 1.42;
       position: relative;
       display: flex;
       align-items: center;
       gap: 6px;
+      width: 100%;
     }
 
     .pq-sub-btn:hover {
       background: #f1f5f9;
       color: #1e293b;
+      text-decoration: none;
     }
 
     .pq-sub-btn.is-active {
@@ -732,14 +730,18 @@ const GlobalStyles = () => (
       font-size: 12px;
       font-weight: 500;
       color: var(--c-muted);
+      text-decoration: none;
       transition: background var(--transition), color var(--transition);
       line-height: 1.4;
       position: relative;
+      display: block;
+      width: 100%;
     }
 
     .pq-nested-btn:hover {
       background: #f1f5f9;
       color: #1e293b;
+      text-decoration: none;
     }
 
     .pq-nested-btn.is-active {
@@ -779,7 +781,7 @@ const GlobalStyles = () => (
       position: fixed;
       left: 14px;
       bottom: 82px;
-      z-index: 40;
+      z-index: 60;
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -804,7 +806,7 @@ const GlobalStyles = () => (
       position: fixed;
       left: 14px;
       bottom: 126px;
-      z-index: 40;
+      z-index: 60;
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -1096,7 +1098,6 @@ const GlobalStyles = () => (
       max-width: 100%;
       max-height: 95vh;
       object-fit: contain;
-      border-radius: 8px;
       box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
     }
 
@@ -1137,6 +1138,54 @@ const GlobalStyles = () => (
     }
 
     @media (max-width: 996px) {
+      .pq-sidebar-backdrop {
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: var(--nav-h);
+        bottom: 0;
+        background: rgba(15, 23, 42, 0.35);
+        z-index: 49;
+      }
+
+      .pq-sidebar-mobile-bar {
+        position: sticky;
+        top: 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 12px 14px 10px;
+        background: var(--c-sidebar);
+        border-bottom: 1px solid var(--c-border);
+        z-index: 1;
+      }
+
+      .pq-sidebar-mobile-title {
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        color: var(--c-faint);
+      }
+
+      .pq-sidebar-close {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 32px;
+        height: 32px;
+        border-radius: 10px;
+        border: 1px solid var(--c-border);
+        background: var(--c-surface);
+        color: var(--c-muted);
+        cursor: pointer;
+      }
+
+      .pq-sidebar-close:hover {
+        color: var(--c-accent);
+        box-shadow: var(--shadow-sm);
+      }
+
       .pq-content {
         margin-left: 0;
       }
@@ -1150,6 +1199,7 @@ const GlobalStyles = () => (
         width: min(82vw, 300px);
         z-index: 50;
         box-shadow: var(--shadow-md);
+        padding-top: 0;
       }
 
       .pq-inline-breadcrumb {
@@ -1188,6 +1238,26 @@ const GlobalStyles = () => (
     }
 
     @media (max-width: 768px) {
+      .pq-sidebar {
+        width: min(86vw, 320px);
+      }
+
+      .pq-inline-breadcrumb {
+        width: 92%;
+      }
+
+      .pq-docs-body,
+      .pq-docs-body.full-width {
+        width: 100%;
+      }
+
+      .pq-section,
+      .pq-sub-section,
+      .pq-section.full-width,
+      .pq-sub-section.full-width {
+        width: 92%;
+      }
+
       .pq-docs-body {
         padding: 8px 12px 12px;
       }
