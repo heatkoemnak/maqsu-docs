@@ -1204,14 +1204,23 @@ const GlobalStyles = () => (
 
       .pq-inline-breadcrumb {
         padding-top: 14px;
+        width: 92%;
+        margin: 0 auto;
       }
 
       .pq-section {
         padding-top: 4px;
+        width: 92%;
       }
 
       .pq-sub-section {
         padding-top: 4px;
+        width: 92%;
+      }
+
+      .pq-docs-body,
+      .pq-docs-body.full-width {
+        width: 100%;
       }
 
       .pq-section-shell {

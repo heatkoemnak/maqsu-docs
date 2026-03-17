@@ -766,7 +766,12 @@
 
 @media (max-width: 960px) {
   .pageRoot {
-    width: calc(100% - 1.5rem);
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding-left: 12px;
+    padding-right: 12px;
+    box-sizing: border-box;
   }
 
   .topBar {
@@ -781,11 +786,17 @@
 
   .mainLayout {
     flex-direction: column;
+    /* In column mode, stretch children to full width (avoid shrink-to-content cards). */
+    align-items: stretch;
   }
 
   .sidebar {
     width: 100%;
     position: static;
+  }
+
+  .articleList {
+    width: 100%;
   }
 
   .pageNavigation {
@@ -811,6 +822,14 @@
   .articleGrid {
     grid-template-columns: 1fr;
     gap: 14px;
+  }
+
+  .articleRowLink {
+    padding: 18px 16px;
+  }
+
+  .sidebarInner {
+    padding: 18px;
   }
 
   .articleCardLink {

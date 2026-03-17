@@ -25,9 +25,9 @@ export const Hero = ({ data, index }) => {
       key={index}
       className={clsx(styles.heroContainer)}
     >
-      <div>
+      <div className={clsx(styles.heroInner)}>
         <h1 className={clsx(styles.heroTitle)}>{pageTitle}</h1>
-        <span className={clsx(styles.subTitle)}>We’ll guide you through our features with free tutorials, help articles, video and more.</span>
+        <span className={clsx(styles.subTitle)}>We'll guide you through our features with free tutorials, help articles, video and more.</span>
 
         <div className={clsx(styles.heroFeatures)}>
           <div>
@@ -38,19 +38,19 @@ export const Hero = ({ data, index }) => {
           </div>
           <div>
             <Link to="/sales" className={clsx(styles.heroDiv)}>
-              <RiBarChartBoxFill size={28} /><br></br>
+              <RiBarChartBoxFill size={28} />
               <span  className={clsx(styles.heroModuleTitle)}>Sales</span >
             </Link>
           </div>
           <div>
             <Link to="/purchase" className={clsx(styles.heroDiv)}>
-            <RiBankCardFill  size={28} /><br></br>
+            <RiBankCardFill  size={28} />
             <span  className={clsx(styles.heroModuleTitle)}>Purchase</span >
             </Link>
           </div>
           <div>
             <Link to="/inventory" className={clsx(styles.heroDiv)}>
-            <RiBox3Fill  size={28} /><br></br>
+            <RiBox3Fill  size={28} />
             <span  className={clsx(styles.heroModuleTitle)}>Inventory</span >
             </Link>
           </div>
