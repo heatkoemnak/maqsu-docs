@@ -1265,16 +1265,115 @@ groupSections:
         title: Traceability
         body: ''
     sections:
+      - link: /traceability-config
+        title: Configurations
+        body: |
+            Configure traceability settings to track products throughout your supply chain using lot numbers and serial numbers.
+
+              <Noted type="info" title="Note" image="/img/icon/notes.png">
+            To enable all these features, you must log in as **Admin** to enable or modify Traceability settings.
+            </Noted>
+
+            ---
+
+            ### Lots & Serial Number
+
+              Activate lot and serial number tracking to gain full traceability of products from receipt to delivery
+
+            To enable Lots & Serial Number, please following these steps:
+
+            ![](/img/inventory/traceability/0001.png)
+
+              1. From the left sidebar, click **Settings** (gear icon)
+              2. In the **Settings** menu, select **Inventory** from the left navigation panel
+              3. Locate traceability section, by scroll down to the **Traceability** section on the Inventory Settings page. This section contains all options related to product tracking and traceability.
+              4. Find the **Lots and Serial Numbers** checkbox in the Traceability section
+              5. Click the checkbox to enable this feature
+
+              After activating this feature, you will get the **Lots/Serial Numbers** option under the **Products** menu. Now let's check how to [Configure Product](#traceability-traceability-config-configureproductt)
+
+            ---
+
+
+            ### Configure Product
+
+            Configure traceability settings at the product level to determine how individual products are tracked through lot numbers, serial numbers, or no tracking. Please following steps down below.
+
+            ![](/img/inventory/traceability/product-setup/0001.png)
+
+            1. From the left sidebar, click **Inventory**
+            2. Click **Products** in the menu
+            3. Select the product you want to configure (or create a new product)
+            4. Open inventory tab
+            5. Locate **Traceability** section, by scroll down to the **Traceability** section on the Inventory tab. You'll see three tracking options:
+            - ⚪ **By Unique Serial Number**
+            - 🔵 **By Lots** (currently selected in the image)
+            - ⚪ **No Tracking**
+
+            Each product in your system can have one of three tracking methods. The tracking method you choose depends on the nature of the product and your business requirements.
+
+            You can set the tracking of the product by using **Unique Serial Number** or **Lots** from this window. If you don’t want to track the product, you can select the **No Tracking** option. [Learn more about Traceability options](#traceability-help-references-traceabilityoptions)
+
+            You can assign lots/serial numbers to products while receiving them in the inventory. After confirming a purchase order, you will be able to manage lots and serial numbers for the products before receiving them. In order to understand this precisely, let’s create a new purchase order and confirm it. See how to [Receiving Products with Traceability from Purchase module](#traceability-help-references-receivingproductswithtraceabilityfrompurchasemodule)
+
+            <Noted type="info" title="Note" image="/img/icon/notes.png">
+              This setting must be configured before receiving or shipping the product, as it cannot be changed once inventory transactions exist.
+            </Noted>
+
+            ---
+
+            ### Expiration Date
+            Enable expiration date tracking for lots and serial numbers to manage products with limited shelf life and ensure timely stock rotation.
+
+            <Noted type="info" title="Note" image="/img/icon/notes.png">
+            Before enabling expiration dates, ensure that:
+            - **Lots and Serial Numbers** feature is already enabled in Inventory Settings
+            - Your team understands expiration date management workflows
+            </Noted>
+
+            ![](/img/inventory/traceability/0002.png)
+
+             1. From the left sidebar, click **Settings**
+             2. In the Settings menu, select **Inventory** from the left navigation panel
+             3. Scroll down to the **Traceability** section on the Inventory Settings page. Ensure that **Lots and Serial Numbers** is already enabled (indicated by a checkmark ✓).
+             4. Find the **Expiration Dates** checkbox in the Traceability section, then click the *checkbox* to enable this feature.
+
+            <Noted type="info" title="Best Practice" image="/img/icon/notes.png">
+            Expiration date tracking is essential for industries like food & beverage, pharmaceuticals, and cosmetics where products have defined shelf lives. This feature helps prevent selling expired products and supports compliance with safety regulations.
+            </Noted>
+
+            Upon enabling this feature, the **Expiration Date** field will be available on the **Inventory** tab of the Product page, allowing you to configure expiration dates for individual products.
+
+            ---
+
+            ### Consignment
+
+            Enable consignment tracking to manage inventory that you store in your warehouse but is owned by vendors or third parties.
+
+            <Noted type="info" title="Note" image="/img/icon/notes.png">
+              Consignment inventory allows you to hold products on your premises without purchasing them upfront. You only pay the supplier when you sell or use the consigned goods. This feature helps manage cash flow and reduces inventory risk.
+            </Noted>
+
+            ![](/img/inventory/traceability/0003.png)
+
+            1. From the left sidebar, click **Settings**
+            2. In the Settings menu, select **Inventory** from the left navigation panel
+            3. Scroll down to the **Traceability** section on the Inventory Settings page. This feature is located below the Expiration Dates option.
+            4. Find the **Consignment** checkbox in the Traceability section, then click the checkbox to enable this feature.
+            5. Click the **Save** button at the top of the page, after enabling consignment.
+
+            ---
 
       - link: /lots-and-serial-numbers
-        title: Receive Stock with Lots & Serial Numbers
+        title: Goods Receipt Tracking
         body: |
 
           This section focuses on receiving stock and assigning lot/serial numbers.
 
-          <Noted type="info" title="Before You Start" image="/img/icon/notes.png">
-          Make sure each product is configured with the correct **Tracking** method in the [Configurations](#traceability-traceability-config-configureproducts) section before you receive stock.
-          </Noted>
+            <Noted type="info" title="Before You Start" image="/img/icon/notes.png">
+            Make sure each product is configured with **Lots & Serial Number** before you deliver stock. See how to [Configure Product](#traceability-traceability-config-configureproduct)
+
+            </Noted>
 
           ---
 
@@ -1337,40 +1436,22 @@ groupSections:
           After validation, use the **Traceability** smart button to review the lot/serial history and movement details.
           Use this report for audits, recalls, or to verify the exact identifiers that were received.
 
-      - link: /consignments-tracking
-        title: Assign Owner on Receipt
-        body: |
-            Consignment lets you store vendor-owned stock in your warehouse. The items become your inventory only when they are sold (based on your company policy).
-
-            <Noted type="info" title="Before You Start" image="/img/icon/notes.png">
-            Make sure each product is configured with the correct **Tracking** method in the [Configurations](#traceability-traceability-config-configureproducts) section before you receive stock.
-            </Noted>
-
-            ### Step 1 - Enable Consignment
-            Go to **Settings → Inventory** and enable **Consignment**, then click **Save**. See how to [Enable Consignment](#traceability-traceability-config-enabletraceabilitysettings)
-            Enable this only if you need to track vendor-owned stock separately from company-owned stock.
-
-            ### Step 2 - Assign Owner on Receipt
-            ![](/img/inventory/traceability/consignments/0002.png)
-            When receiving consignment stock, set **Assign Owner** on the receipt so the system records who owns the stock.
-            This keeps ownership reporting accurate while the stock is stored in your warehouse.
-
-            <Noted type="info" title="Tip" image="/img/icon/notes.png">
-            Use consignment when you need accurate ownership reporting while still managing the physical stock in your warehouse locations.
-            </Noted>
-
       - link: /display-lots-serial-numbers-on-delivery-slips
-        title: Delivery Slips Tracking
+        title: Delivery Slip Tracking
         body: |
 
             Use this guide when you want lot/serial numbers to be selected during delivery and shown on delivery documents.
 
+            <Noted type="info" title="Before You Start" image="/img/icon/notes.png">
+            Make sure each product is configured with **Lots & Serial Number** before you deliver stock. See how to [Configure Product](#traceability-traceability-config-configureproduct)
+
+            </Noted>
+
             ### Step 1 - Open Transfers
             ![](/img/inventory/traceability/lot-delivery-slip/0002.png)
-            Go to **Inventory > Operations > Transfers**.
-            Delivery orders are created and managed from the same Transfers list as receipts.
+             Delivery orders are created and managed from the same Transfers list as receipts.
 
-            ### Step 2 - Create a Delivery Order
+            ### Step 2 - Create
             ![](/img/inventory/traceability/lot-delivery-slip/0003.png)
             Create a new transfer and select an **Operation Type** such as **Delivery Orders**.
             The operation type determines whether the move ships to customers, receives from vendors, or moves internally.
@@ -1380,12 +1461,12 @@ groupSections:
             Fill in fields like **Delivery Address**, **Source Location**, and **Scheduled Date**.
             Correct header data helps reservation and picking use the right locations and timing.
 
-            ### Step 4 - Add Products and Demand Quantity
+            ### Step 4 - Add a line
             ![](/img/inventory/traceability/lot-delivery-slip/0005.png)
             Add the product lines and enter the expected quantities.
             For tracked products, you will select the exact lots/serials before validation.
 
-            ### Step 5 - Save and Mark as Todo
+            ### Step 5 - Mark as Todo
             ![](/img/inventory/traceability/lot-delivery-slip/0006.png)
             Click **Save**, then click **Mark as Todo** to move the delivery to **Ready**.
             This indicates the order is ready for picking and lot/serial assignment.
@@ -1395,7 +1476,7 @@ groupSections:
             In **Detailed Operations**, select the correct lot/serial numbers for the quantities you are shipping.
             Pick the identifiers that match your FIFO/FEFO policy or the items physically picked.
 
-            ### Step 7 - Validate the Delivery
+            ### Step 7 - Validate
             ![](/img/inventory/traceability/lot-delivery-slip/0008.png)
             Confirm the **Done** quantities and click **Validate**.
             Validation reduces stock and records exactly which lots/serials were delivered.
@@ -1407,111 +1488,129 @@ groupSections:
             After validation, open the Traceability report to verify the exact lots/serials delivered to the customer.
             Use this when investigating customer claims or quality issues.
 
-      - link: /traceability-config
-        title: Configurations
+      - link: /consignments-tracking
+        title: Consignments
         body: |
-            ### Enable Traceability (Settings)
+            Using the **Consignment** option available under the **Settings** menu, it is possible to set owner on stored products in your inventory. The product will be sold by the retailer but the actual ownership of the product will be held by the supplier until the product has been sold to a customer. You can return unsold products to the suppliers easily with this method. The retailers don’t need to keep a permanent inventory in the case of consignment.
 
-            <Noted type="info" title="Access Required" image="/img/icon/notes.png">
-            You must log in as **Admin** to enable or modify Traceability settings.
-            </Noted>
+            ### Step 1 - Enable Consignment
+            See how to enable [Consignment](#traceability-traceability-config-consignment).
+            Enable this only if you need to track vendor-owned stock separately from company-owned stock.
 
-            #### Step 1 - Open Inventory Settings
-            ![](/img/inventory/traceability/0001.png)
-            From the dashboard, open **Settings**, then select **Inventory** from the left menu.
-            This is where you enable tracking features before configuring products.
+            ### Step 2 - Assign Owner
+            While receiving products in your inventory, you can assign an owner to them with this feature. Let’s create a receipt for the consignment stock and assign an owner for the stock.
+            ![](/img/inventory/traceability/consignments/0002_1.png)
 
-            #### Step 2 - Enable Traceability Options
-            In the **Traceability** section, enable what you need:
-            * **Lots and Serial Numbers:** records lot/serial history on receipts and deliveries.
-            * **Expiration Dates** (optional): enables expiry tracking and alerts on lots.
-            * **Consignment** (optional): tracks vendor-owned stock in your warehouse.
-            * **Display Lots & Serial Numbers on Delivery Slips** (optional): prints lot/serial on delivery documents.
+            While creating the receipt, you can mention the name of the consignee in the **Assign Owner** field. The consignment stock and its quantity can be mentioned in the **Operations** tab using the **Add a Line** button. Here, we assigned **LY CHAIMOUY** as the consignee for the product Cheese Burger. We assigned 14 quantities of the product to LY CHAIMOUY. you can click the **Save** button. The consignment of 14 quantities of the Cheese Burger to LY CHAIMOUY is completed.
 
-            ![](/img/inventory/traceability/0002.png)
-            Enable only the options you plan to use to keep operational screens simpler for users.
+            ### Step 3 - Click Mark as Todo
 
-            #### Step 3 - Save
-            Click **Save** to apply the configuration.
-            Saving updates system behavior across receipts, deliveries, and reports.
+            ![](/img/inventory/traceability/consignments/0003_1.png)
 
-            <Noted type="tip" title="Next Step" image="/img/icon/tip.png">
-            After enabling Traceability, configure each product's **Tracking** method in **Inventory > Products > Products**.
-            </Noted>
+            Once **Saved**, then click **Mark as Todo** to move the transfer to Ready. Marking as Todo prepares the transfer for detailed lot/serial entry and validation.
 
-            ---
+            ### Step 4 - Validate
 
-            ### Configure Products
+            ![](/img/inventory/traceability/consignments/0004_1.png)
 
-            After enabling Traceability, configure each product you want to track with lots or serial numbers.
+            Confirm the detailed lines, then click **Validate** to complete the receipt. Validation posts the stock movement and updates on-hand quantities.
 
-            #### Step 1 - Navigate
-            ![](/img/inventory/traceability/product-setup/0001.png)
-            Go to **Inventory > Products > Products** and open the product you want to configure (e.g., *Burger [00001]*).
-            Configure tracking per product so MAQSU knows when to require lot/serial details.
+            ### Step 5 - Apply
 
-            #### Step 2 - Open the Inventory Tab
-            ![](/img/inventory/traceability/product-setup/0002.png)
-            In the product form, open the **Inventory** tab and find the **Operations** and **Traceability** sections.
-            Product-level settings control whether lot/serial entry is required during stock moves.
+            ![](/img/inventory/traceability/consignments/0005_1.png)
+            Click the **Apply** button to confirm and finalize the stock receipt, ensuring that the on-hand quantities are updated accurately.
 
-            #### Step 3 - Set the Tracking Method
-            ![](/img/inventory/traceability/product-setup/0003.png)
-            Under **Traceability**, set **Tracking** to one of the following:
-            * **By Unique Serial Number:** one serial per unit.
-            * **By Lots:** one lot per batch.
-            * **No Tracking:** no lot/serial tracking.
-            Choose lots for batch traceability and serials for unit-level traceability.
+            ### Step 5 - View Reporting
+            ![](/img/inventory/traceability/consignments/0006_1.png)
+            When you check the **Inventory Balance** report from the Reporting menu, you can observe that currently 14 quantities of the product are on hand.
 
-            #### Step 4 - Configure Expiration Dates (Optional)
-            ![](/img/inventory/traceability/product-setup/0004.png)
-            If **Expiration Dates** are enabled, fill in the product date rules:
-            * **Product Use Time:** days after receipt before quality starts to decline (Best Before).
-            * **Product Life Time:** days after receipt before the product becomes unsafe (Expiration).
-            * **Product Removal Time:** days before expiration to remove the product from stock.
-            * **Product Alert Time:** days before expiration to send an alert.
-            These values help MAQSU calculate lot dates automatically during receiving.
+            The Owner field will show the name of the consignee. From this report, we can analyze that 14 quantities are managed by LY CHAIMOUY. This is how MAQSU assigns owners on received products.
 
-            <Noted type="tip" title="Tip" image="/img/icon/tip.png">
-            After stock moves exist for a product, changing the tracking method may not be allowed. Decide the tracking method before you start receiving stock.
+
+            <Noted type="info" title="Tip" image="/img/icon/notes.png">
+            Use consignment when you need accurate ownership reporting while still managing the physical stock in your warehouse locations.
             </Noted>
 
             ---
 
-            ### Quick Links
-            * [Lots and Serial Numbers](#lots-and-serial-numbers)
-            * [Consignments Tracking](#consignments-tracking)
-            * [Delivery Slips Tracking](#display-lots-serial-numbers-on-delivery-slips)
+      - link: /help-references
+        title: Help & References
+        body: |
+           ### Traceability options
+
+           ##### By Unique Serial Number
+            - Each individual unit has a unique identifier
+            - One serial number = one unit of product
+            - Use for: Electronics, machinery, vehicles, high-value items
+            - Example: Laptop with serial number SN-LAP-001234
+
+            ##### By Lots
+            - Groups of products share the same lot/batch number
+            - One lot number = multiple units
+            - Use for: Food, pharmaceuticals, manufactured goods, raw materials
+            - Example: Lot #2024-03-15 containing 1,000 units of Product A
+
+            ##### No Tracking
+            - No lot or serial number required
+            - Inventory tracked by total quantity only
+            - Use for: Low-value items, consumables, commodities
+            - Example: Office supplies, packaging materials
+
+            ---
+
+            ### Receiving Products with Traceability from Purchase module
+
+            Learn how to assign lot numbers or serial numbers to products when receiving them from vendors, ensuring complete traceability from receipt through delivery.
+
+            Before you can assign lots/serial numbers during receiving:
+
+            - **Enabled Lots and Serial Numbers:** "Lots and Serial Numbers" must be enabled in Inventory Settings
+            - **Product Configuration:** The product must be configured for lot or serial number tracking in its product settings
+            - **Purchase Order:** A confirmed purchase order must exist for the products being received
+            - **User Permissions:** You must have permission to validate inventory receipts
+
+
+            <Noted type="info" title="Note" image="/img/icon/notes.png">
+              Assigning lot or serial numbers during receiving is a critical step in maintaining product traceability. This process creates the foundation for tracking products throughout your supply chain, from vendor to customer.
+            </Noted>
+
+            ![](/img/inventory/traceability/assign-lots/0001.png)
+            Open the purchase order you want to receive (e.g., P00001). This status indicates that the purchase order is confirmed and ready for receipt.   Here, you will get a smart button to manage the Receipt of the purchase. Click this button.
+
+            ![](/img/inventory/traceability/assign-lots/0002.png)
+            Click the **detailed operations icon** (≡) on the far right of the product line
+
+            ![](/img/inventory/traceability/assign-lots/0003.png)
+            Here, you can specify the Lot/Serial number in the corresponding fields using the **Add a Line** button. Click the **Confirm** button.
+
+            ![](/img/inventory/traceability/assign-lots/0004.png)
+            Now, you can **validate** the receipt and receive the product in your inventory. This lot/serial number will be added to the product details window of this newly purchased product.
+
+            ![](/img/inventory/traceability/assign-lots/0005.png)
+             After validation, you get to see **Receipt Status** Changes to "Done" (shown in status bar), click the **Traceability** button (↑↓ icon) in the top right to view reports.
+
+            ![](/img/inventory/traceability/assign-lots/0006.png)
+             The Traceability Report will open, showing:
+             - **Reference:** WH/IN/00004
+             - **Product:** [00001] Buger
+             - **Date:** 18/03/2026 13:42:11
+             - **Lot/Serial #:** SN-000003 (or whatever you assigned)
+             - **From:** Vendors
+             - **To:** Stock
+             - **Quantity:** 5.00 Units
+
+             This report provides a complete audit trail of the product movement.
+
 
     body: |
 
-      Traceability in MAQSU Inventory helps you track each product movement from vendor receipt to customer delivery. It is commonly used for regulated products, high-value items, and anything that requires recall or expiry control.
+      The **Product Traceability** feature offered by MAQSU will assist in tracing and tracking each and every component of a product. Tracking a product at each stage of stock movement is necessary to bring all operations under control. In order to ensure effective monitoring of the stock movement, lots and serial numbers play an important role. From manufacturing processes to delivery operations, product traceability will keep a proper track that improves the efficiency of stock management. Proper monitoring is required to reduce the risk factors during the stock movements of any company. The MAQSU ERP system will record exact details of the stock movement of each component of a product in inventory in the form of a traceability report. The user can observe the whole production to distribution procedures in the inventory using the lots and serial numbers.
 
-      ### What Traceability Solves
+      **Lots** and **Serial Numbers** are not exactly the same. Commonly we use a lot as a unique identification number to identify a group of products of the same type. If the products are small or can not count as individual products, you can put them together in a single pack and allot a lot number. They are picked as batches in the inventory. For individual products, you can assign serial numbers. The serial number is considered to identify individual products in the inventory.
 
-      * Identify exactly which lot/serial was received, stored, and delivered.
-      * Investigate quality issues and recalls faster.
-      * Control expiration dates and alerts for perishable goods.
+      You can assign lots and serial numbers to the products while configuring them in the Inventory module so that you can easily keep the traceability report of the respective products thereafter.
 
-      ### Key Concepts
-
-      * **Lots:** One identifier for a batch of identical items.
-      * **Serial Numbers:** One identifier per individual unit.
-
-      ### Features
-
-      * **Lot and Serial Numbers:** Full history from receipt to delivery.
-      * **Expiration Dates:** Tracks Expiration, Best Before, Removal, and Alert dates for each lot.
-      * **Consignment Tracking:** Vendor-owned stock stored in your warehouse until it is sold.
-      * **GS1 Barcode Support:** Supports global barcode formats that can include lot and expiry data.
-
-      ### Recommended Setup Order
-
-      1. Enable Traceability in Settings (see **Configurations**).
-      2. Configure products (tracking method and optional expiration rules).
-      3. Receive stock and assign lot/serial numbers.
-      4. Deliver stock and select the correct lot/serial numbers.
-      5. Review Traceability reports when needed.
+      In order to get the complete features of the traceability in the Inventory module, you are requested to activate the **Lots & Serial Numbers** option from the **Settings** menu.
 
       ---
 

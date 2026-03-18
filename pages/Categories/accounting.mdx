@@ -23,36 +23,25 @@ groupSections:
        title: Introduction
        body: ''
    sections:
-     - link: key-purpose
-       uid: key-purpose
-       title: Key Purpose
-       body: |
-         The **Accounting Module** is designed to provide a comprehensive and accurate view of your company's financial health. It enables your business to:
+      - link: 'work-flow#work-flow'
+        uid: work-flow
+        title: Workflow
+        body: |
+          Accounting in MAQSU follows a synchronized workflow where financial entries are triggered by operational activities across the system.
 
-         - **Automate Financial Records**: Capture transactions from Sales and Purchase modules in real-time to maintain an organized General Ledger.
-         - **Ensure Compliance**: Manage tax configurations and reporting requirements specific to your operating region, such as Cambodia.
-         - **Track Cash Flow**: Monitor all liquid money movements through dedicated Bank and Cash journals.
-         - **Analyze Performance**: Generate essential financial statements including Profit & Loss, Balance Sheets, and Aged Payables.
-         - **Maintain Accuracy**: Utilize a structured Chart of Accounts (COA) to categorize every business activity systematically.
-     - link: 'work-flow#work-flow'
-       uid: work-flow
-       title: Accounting Workflow
-       body: |
-         Accounting in MAQSU ERP follows a synchronized workflow where financial entries are triggered by operational activities across the system.
+          ![](/img/accounting/introduction/0001.png)
 
-         ![](/img/accounting/introduction/0001.png)
+          1. **Transaction Entry**: Triggered by Sales Invoices, Vendor Bills, or manual Journal Entries.
+          2. **Journal Recording**: Transactions are categorized into specific Sales, Purchase, Bank, or Miscellaneous journals.
+          3. **General Ledger Posting**: Entries are automatically mapped to the appropriate accounts in the Chart of Accounts.
+          4. **Reconciliation**: Matching bank statements with internal records to ensure data integrity.
+          5. **Financial Reporting**: Final data is compiled into real-time reports for business analysis.
 
-         1. **Transaction Entry**: Triggered by Sales Invoices, Vendor Bills, or manual Journal Entries.
-         2. **Journal Recording**: Transactions are categorized into specific Sales, Purchase, Bank, or Miscellaneous journals.
-         3. **General Ledger Posting**: Entries are automatically mapped to the appropriate accounts in the Chart of Accounts.
-         4. **Reconciliation**: Matching bank statements with internal records to ensure data integrity.
-         5. **Financial Reporting**: Final data is compiled into real-time reports for business analysis.
-
-     - link: 'accounting-features#accounting-features'
-       uid: accounting-features
-       title: Core Features
-       body: |
-         In this section, you will learn how to set up your Chart of Accounts, manage journal entries, track fixed assets, and configure accounting settings. Additionally, you will discover how to manage multi-currency transactions and generate essential financial reports.
+      - link: 'accounting-features#accounting-features'
+        uid: accounting-features
+        title: Sections
+        body: |
+         In this section, you will learn how to set up your Chart of Accounts, manage journal entries, track fixed assets, and configure accounting settings. Additionally, you will discover how to manage multi-currency transactions and generate essential financial reports and more.
 
                <CardGrid
                  cards={[
@@ -114,10 +103,87 @@ groupSections:
                  },
                  ]}
                  />
-   body: |
-     The **Accounting Module** is the financial core of **MAQSU ERP**, responsible for transforming daily business operations into structured financial intelligence. It serves as a formal system for recording, summarizing, and analyzing all financial transactions to ensure transparency and legal compliance.
+      - link: 'accounting-setup'
+        uid: setup
+        title: Setup
+        body: |
+            This page guides you through the setup of the accounting module in MAQSU, including configuration of the chart of accounts, journal management, bank reconciliation, and more.
 
-     By integrating directly with Sales, Purchasing, and Inventory, the module eliminates the need for manual data entry, allowing your finance team to focus on high-level analysis and strategic growth.
+            <CardGrid
+                 cards={[
+                 {
+                 title: "Chart of Accounts",
+                 description: "Set up your account list to categorize and track every accounting entry.",
+                 image: "/img/icon/chart-of-account.png"
+                 },
+                 {
+                 title: "Currencies",
+                 description: "Enable multi-currency and keep exchange rates up to date for accurate reporting.",
+                 image: "/img/icon/exchange-rate.png"
+                 },
+                 {
+                 title: "Journals",
+                 description: "Create journals for sales, purchases, bank, and cash to organize transactions.",
+                 image: "/img/icon/bookkeeping.png"
+                 },
+
+                 {
+                 title: "Bank Accounts",
+                 description: "Connect bank accounts and reconcile statements with your accounting records.",
+                 image: "/img/icon/bank.png",
+                 },
+                 {
+                 title: "Taxes",
+                 description: "Configure tax types and rates, then apply them to invoices and bills.",
+                 image: "/img/icon/budgeting.png"
+                 },
+                 {
+                 title: "Payment Terms",
+                 description: "Set payment due dates and rules for customer invoices and vendor bills.",
+                 image: "/img/icon/payable.png"
+                 },
+                 {
+                 title: "Asset Categories",
+                 description: "Define asset categories and depreciation settings for fixed assets.",
+                 image: "/img/icon/ai.png"
+                 },
+                 {
+                 title: "Customer and Vendor",
+                 description: "Manage customer and vendor records for invoicing, bills, and payments.",
+                 image: "/img/icon/assets.png"
+                 },
+                 {
+                 title: "Products",
+                 description: "Set up products and services with default accounts and taxes for faster billing.",
+                 image: "/img/icon/defer.png"
+                 },
+                 {
+                   title: "E-filing",
+                   description: "Prepare and submit tax and statutory reports online with the required formats.",
+                   image: "/img/icon/compliance.png"
+                 }
+                 ]}
+                 />
+
+
+   body: |
+     **Accounting** is important for every business. If you do not track and control your finances, you can run into serious money problems. Doing accounting by hand takes a lot of time and
+      can lead to mistakes. You should record every transaction and keep clear records. The
+      MAQSU Accounting module helps you do this with automation and built-in reports.
+
+      MAQSU can automatically record payments, receipts, vendor bills, customer invoices, and more.
+      It can also sync your bank statements and help you reconcile them with your bank accounts.
+      You can generate reports for any date range and compare periods to see how your business is
+      performing. It also helps you manage accounts payable and accounts receivable to avoid
+      cash flow issues. Multi-currency support makes it easier to work with international
+      transactions.
+
+      In this chapter, we explain the features available in the MAQSU 5.0.2 Accounting module.
+      From the main dashboard, click the **Accounting** module to open the Accounting dashboard
+      shown below.
+
+      ---
+
  - link: 'account-receivable#account-receivable'
    uid: account-receivable
    title: Account Receivable

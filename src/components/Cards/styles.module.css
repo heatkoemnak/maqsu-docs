@@ -14,7 +14,7 @@
   min-height: 220px;
   padding: 34px 34px 30px;
   border: 1px solid #dbe2ea;
-  border-radius: 22px;
+  border-radius: 0px !important;
   background: #ffffff;
   transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
@@ -23,6 +23,17 @@
   transform: translateY(-3px);
   border-color: #c7d2fe;
   box-shadow: 0 14px 32px rgba(15, 23, 42, 0.09);
+}
+
+.card_clickable {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.card_clickable:focus-visible {
+  outline: 3px solid rgba(37, 99, 235, 0.45);
+  outline-offset: 3px;
 }
 
 .card_icon_wrap {
