@@ -542,10 +542,10 @@ const GlobalStyles = () => (
     }
 
     .page-divider {
-      width: 100%;
+      width: 75%;
       height: 1px;
+      margin: 0 auto 25px;
       background-color: var(--c-border);
-      margin: 34px 0;
     }
 
     .time-ago {
@@ -883,9 +883,9 @@ const GlobalStyles = () => (
     }
 
     .pq-section-content h3 {
-      font-size: 1.18rem !important;
+      font-size: 1.08rem !important;
       font-weight: 650 !important;
-      color: #1e293b !important;
+      color: #444444 !important;
       line-height: 1.4 !important;
       margin-top: 22px !important;
       padding-top: 8px !important;
@@ -894,8 +894,8 @@ const GlobalStyles = () => (
 
     .pq-section-content h4 {
       font-size: 1.05rem !important;
-      font-weight: 600 !important;
-      color: #1e293b !important;
+      font-weight: 700 !important;
+      color: #444444 !important;
       line-height: 1.4 !important;
       margin-top: 18px !important;
       margin-bottom: 10px !important;

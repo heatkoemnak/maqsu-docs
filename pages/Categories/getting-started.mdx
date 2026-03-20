@@ -1427,6 +1427,48 @@ groupSections:
             Ensure your **Stock Valuation Account** matches your physical asset account in the Chart of Accounts to maintain accurate financial statements and Cambodian tax compliance.
           </Noted>
 
+      - link: /uom
+        title: Units of Measure
+        body: |
+          The **Units of Measure** (UOM) play a crucial role in managing invenotry, sales and purchase operations efficiently and they allow you to define and manage difference unit for your product esuring accurate calculations and reporting.
+
+          In some cases, handling products in different units of measure is necessary. For example, a business can buy products from a country that uses the metric system, and then sell those products in a country that uses the imperial system. In that case, the business needs to convert the units.
+
+          Another case for unit conversion is when a business buys products in a big pack from a supplier, and then sells those products in individual units.
+
+          MAQSU can be set up to use different units of measure (UoM) for one product. To set units of measure, please following steps down below:
+
+          ---
+          #### Step 1 - Navigation
+
+          From the left sidebar, click **Inventory**. Then, from the top navigation menu, go to **Configuration** ‣ **Units of Measure**.
+
+          ![](/img/getting-started/uom/0001.png)
+
+           From the Units of Measure page, click the **Create** button to define a new unit of measure.
+
+          ---
+
+          #### Step 2 - Fill out UOM details
+
+          ![](/img/getting-started/uom/0002.png)
+
+          On this form, create the UoM like this:
+
+          1. In **Name**, enter the unit name, for example **Box**, **Pack**, or **Piece**.
+          2. In **Category**, choose the matching category.
+            Units in the same category can be converted into each other.
+          3. In **Type**, choose one of these:
+
+              * **Reference Unit of Measure for this category**: the base unit in that category.
+              * **Bigger than the reference Unit of Measure**: use this when the new UoM is larger than the base unit.
+              * **Smaller than the reference Unit of Measure**: use this when the new UoM is smaller than the base unit.
+          4. Keep **Active** checked if you want to use it immediately.
+          5. Set **Rounding Precision** as needed.
+          6. Click **Save**.
+
+          If you want, I can also explain which **Type** to choose for your specific unit. See the expaination [Units of Measure Type](/getting-started/setup-master-datas#help)
+
       - link: /products
         title: Products
         body: |
@@ -1488,6 +1530,69 @@ groupSections:
           ---
 
           For more details on managing stock for these products, see the [Goods Receipts Guide](/inventory/goods-receipts).
+
+      - link: /help
+        title: Help & Reference
+        body: |
+
+            ### Units of Measure Types
+
+            Choose **Type** based on how your new unit compares to the main unit in that **Category**.
+
+            **1. Reference Unit of Measure for this category**
+            Use this for the **base unit** in the category.
+            Example:
+
+            * Category: **Unit**
+            * Reference UoM: **Units**
+            * Meaning: this is the standard unit everything else converts to
+
+            **2. Bigger than the reference Unit of Measure**
+            Use this when the new unit contains **more** than the base unit.
+            Examples:
+
+            * **Dozen** is bigger than **Unit** because 1 Dozen = 12 Units
+            * **kg** is bigger than **g** because 1 kg = 1000 g
+            * **Box** is bigger than **Piece** if 1 Box = 24 Pieces
+
+            **3. Smaller than the reference Unit of Measure**
+            Use this when the new unit is **less** than the base unit.
+            Examples:
+
+            * **cm** is smaller than **m**
+            * **g** is smaller than **kg** if kg is the reference
+            * **ml** is smaller than **L**
+
+            A simple way to decide:
+
+            * If it is the **main/base unit** → choose **Reference**
+            * If it is **larger than the base** → choose **Bigger**
+            * If it is **smaller than the base** → choose **Smaller**
+
+            Examples by common setup:
+
+            * **Unit category**
+
+              * **Units** → Reference
+              * **Dozen** → Bigger
+
+            * **Weight category**
+
+              * **kg** → Reference
+              * **g** → Smaller
+              * **Ton** → Bigger
+
+            * **Length category**
+
+              * **m** → Reference
+              * **cm** → Smaller
+              * **km** → Bigger
+
+            * **Volume category**
+
+              * **L** → Reference
+              * **ml** → Smaller
+              * **gallon** → Bigger
 
 
     body: |

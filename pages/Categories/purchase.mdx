@@ -21,52 +21,74 @@ groupSections:
       - link: /purchase/introduction
         title: Introduction
         body: ''
+    sections:
+      - link: /
+        title: Workflow
+        body: |
+            Use the following steps to complete a standard purchase process:
+
+            ![](/img/purchase/intro/0001.png)
+      - link: operations#operations
+        uid: operations
+        title: Operations
+        body: |
+          These features cover the core purchase flow. To complete the full quote-to-cash process, Purchase connects with the modules below for customer records, product data, invoicing, and payments.
+
+          <CardGrid
+            cards={[
+              {
+                title: "Requests fo Quotation",
+                description: "An offer you send to a vendor before it becomes a confirmed purchase.",
+                image: "/img/icon/quote.png"
+              },
+              {
+                title: "Purchase Order",
+                description: "Convert approved quotations into purchase orders and reserve stock in your warehouse.",
+                image: "/img/icon/Sales-Order-256.png"
+              },
+              {
+                title: "Receive Products",
+                description: "Receive Product from purchase orders and check stock before receipt.",
+                image: "/img/icon/delivery.png"
+              },
+              {
+                title: "Generate Bill",
+                description: "MAQSU can auto-create bill after Purchase Order is confirmed.",
+                image: "/img/icon/delivery.png"
+              },
+              {
+                title: "Payments",
+                description: "Register vendor payments against invoices.",
+                image: "/img/icon/Documents-02-256.png"
+              }
+            ]}
+          />
+      - link: setup#setup
+        uid: setup
+        title: Set Up
+        body: |
+          Setting up the following things before doing operations
+          <CardGrid
+            cards={[
+              {
+                title: "Vendors",
+                description: "To create a Requests for Quotation or Purchase Order, ensure you have set up Vendor records first.",
+                image: "/img/icon/quote.png"
+              },
+              {
+                title: "Products",
+                description: "To create a Requests for Quotation or Purchase Order, you must first properly set up your product.",
+                image: "/img/icon/Sales-Order-256.png"
+              }
+            ]}
+          />
+
+
     body: |
 
-      The **Purchase** module helps you manage the full supplier buying process in MAQSU ERP, from requesting supplier pricing to paying the final vendor bill.
+      MAQSU **Purchase** helps automate the whole purchasing process. It makes purchase management faster and easier by helping you create vendor quotations based on your stock levels. Since businesses handle many purchase tasks every day, it is important to manage them well. MAQSU helps organize these activities smoothly. With the Purchase module, you can easily manage purchase operations, vendors, vendor bills, product updates, and other related tasks in just a few clicks. In this chapter, we will be discussing the Purchasing module in MAQSU in detail.
 
-      Use this module when you need to:
-
-      - request quotations from suppliers
-      - create and confirm purchase orders
-      - receive goods into stock
-      - generate vendor bills
-      - register supplier payments
-      - review purchase reports
-
-      This guide is organized in a simple order:
-
-      1. **Get Started** – Understand the purchase workflow and what to prepare
-      2. **Requests for Quotation** – Create the first supplier document
-      3. **Purchase Order** – Confirm an RFQ or create a purchase order directly
-      4. **Receiving Goods** – Record what was received from the supplier
-      5. **Generate Bill** – Create the vendor bill from the purchase order
-      6. **Register Payment** – Pay the supplier bill
-      7. **Reporting** – Review purchase analysis and purchase register
-
-      ### Workflow Overview
-
-      Use the following steps to complete a standard purchase process:
-
-      1. Create a **Request for Quotation** or a **Purchase Order**.
-      2. Review the details and confirm the order with the supplier.
-      3. Receive the goods when they arrive.
-      4. Generate the vendor bill from the purchase order.
-      5. Register the supplier payment based on the agreed terms.
-      6. Review reports to track purchases, bills, and supplier activity.
-
-      ### What You Need to Prepare
-
-      Before starting, make sure you have:
-
-      - the correct vendor
-      - the products or services to purchase
-      - the expected quantities and prices
-      - the expected delivery details
-      - the bill and payment terms
-      - any internal reference or approval note
-
-      **Note:** If the purchase affects inventory, receive the goods before creating the final vendor bill so stock, quantities, and accounting stay aligned.
+      ---
 
   - link: purchase-request#purchase-request
     uid: purchase-request
