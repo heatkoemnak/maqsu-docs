@@ -20,7 +20,7 @@ const env = {
   WATCHPACK_POLLING: process.env.WATCHPACK_POLLING || "true",
 };
 
-const preferredPort = Number(process.env.TINA_DATALAYER_PORT || "3000");
+const preferredPort = Number(process.env.TINA_DATALAYER_PORT || "3001");
 const extraArgs = process.argv.slice(2);
 
 function checkPort(port) {

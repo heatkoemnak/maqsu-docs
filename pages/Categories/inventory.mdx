@@ -79,302 +79,6 @@ groupSections:
 
           ---
 
-  - link: goods-receipts#goods-receipts
-    uid: goods-receipts
-    title: Goods Receipts
-    date: '2026-02-19T07:20:05.517Z'
-    breadcrumbs:
-      - link: /
-        title: All
-        body: ''
-      - link: /inventory
-        title: Inventory
-        body: ''
-      - link:
-        title: Goods Receipts
-        body: ''
-    body: |
-
-      The **Goods Receipts** process is a critical component of inventory management, allowing you to track and document the arrival of stock from your vendors. This ensures that your physical inventory levels match your digital records and provides a clear audit trail for every item entering your warehouse.
-
-      > **Note:** Goods Receipts remain in the "Ready" status until the physical items are counted and the transaction is validated. Once validated, the inventory levels are updated, and the record moves to "Done."
-
-      ---
-
-      ### Access Goods Receipts
-
-
-      From the left sidebar, click **Inventory**. On the Inventory Overview dashboard, locate the **Goods Receipts** card (marked by the **Red Arrow**) and click on it to view all incoming shipments.
-
-
-      ![Accessing Goods Receipts from the Inventory Dashboard](/img/inventory/goods-receipts/0001.png)
-
-      ---
-
-      ### Goods Receipts Overview
-
-      The list view displays all receipt operations, categorized by their current progress. You can quickly identify the status of any shipment using the **Status** column:
-
-      1.  **Ready** – Items that are expected and available to be processed.
-      2.  **Done** – Receipts that have been fully processed and added to stock.
-      3.  **Cancelled** – Orders that were terminated before completion.
-
-      ![Overview of the Goods Receipts list](/img/inventory/goods-receipts/0002.png)
-
-      ---
-
-      ### Creating a New Receipt
-
-      If you need to record an incoming shipment manually without a pre-existing purchase order:
-
-      1.  Click the **Create** button (marked by the **Red Arrow**) at the top left.
-      2.  Fill in the vendor details in the **Receive From** field and set the **Scheduled Date**.
-
-      ![Creating a new Goods Receipt](/img/inventory/goods-receipts/0003.png)
-
-      ---
-
-      ### Processing a Receipt (WH/IN/00028)
-
-      To receive items into your warehouse, select a specific receipt (e.g., **WH/IN/00028**) from the list to open the detailed view.
-
-      1.  **Review Products**: Check the **Operations** tab to see the items and their **Demand** quantities.
-      2.  **Edit Quantities**: If the delivered amount differs from the demand, click the line to adjust the **Done** quantity.
-      3.  **Save Changes**: Click the **Save** button (marked by the **Red Arrow**) to store your updates.
-
-      ![Reviewing and saving the receipt details](/img/inventory/goods-receipts/0004.png)
-
-      ![Saving the record](/img/inventory/goods-receipts/0005.png)
-
-      ---
-
-      ### Validating the Receipt
-
-      Once you have confirmed that the physical items match the record, you must finalize the transaction:
-
-      1.  Click the **Validate** button (marked by the **Red Arrow**).
-      2.  The system will prompt you if there is a quantity mismatch (e.g., creating a Backorder).
-      3.  Upon validation, the status indicator in the top right will change to **Done**.
-
-      ![Validating the receipt to update inventory](/img/inventory/goods-receipts/0006.png)
-
-      ---
-
-      ### Completed Receipt Status
-
-      Once the process is finished, the receipt is locked. The **Effective Date** is recorded, and the items are officially added to your **WH/Stock** location.
-
-      ![Finalized Goods Receipt in Done status](/img/inventory/goods-receipts/0007.png)
-
-      <Noted type="info" title="Pro Tip" image="/img/icon/notes.png">
-      Always compare the "Source Document" (e.g., NPO-260005) against the vendor's physical packing slip before clicking Validate to ensure 100% inventory accuracy.
-      </Noted>
-
-      ---
-
-      For details on moving items between internal warehouse locations, see the [Internal Transfers Guide](/inventory/internal-transfers).
-
-
-  - link: delivery-order#delivery-order
-    uid: delivery-order
-    title: Delivery Orders
-    date: '2026-02-19T07:20:05.517Z'
-    breadcrumbs:
-      - link: /
-        title: All
-        body: ''
-      - link: /inventory
-        title: Inventory
-        body: ''
-      - link: null
-        title: Delivery Orders
-        body: ''
-    body: |
-
-          A **Delivery Order** is a document that authorizes and records the shipment of goods from a warehouse or source location to a customer or destination. In MAQSU ERP, delivery orders are essential for managing outbound inventory movements, tracking shipments, and ensuring accurate fulfillment of sales orders.
-
-          > **Note:** Delivery orders are typically created after confirming a sales order or quotation. They serve as the link between order management and inventory, ensuring products are properly allocated and shipped to customers. Accurate delivery processing is vital for customer satisfaction and inventory control.
-
-          ---
-
-          ### Step 1: Go to Delivery Orders
-
-          From the left sidebar, click **Inventory**. Then from the Dashboard, locate and click on the **Delivery Orders** card in the inventory operations section.
-
-          ![](/img/inventory/delivery-orders/0001.png)
-
-          ---
-
-          ### Step 2: Delivery Orders List Overview
-
-          Once you navigate to **Delivery Orders**, you will see the master list of all existing delivery orders. The list displays the following columns:
-
-          1. **Reference** – The unique delivery order reference number (e.g., WH/OUT/00022).
-          2. **From** – The source location from which goods are being shipped (e.g., WH/Stock).
-          3. **To** – The destination location where goods are being delivered (e.g., Partner Locations/Customers).
-          4. **Contact** – The name of the customer or contact person receiving the delivery.
-          5. **Scheduled Date** – The planned date and time for the delivery.
-          6. **Source Document** – The originating document reference (e.g., sales order number Q-0003).
-          7. **Batch Transfer** – Any batch or serial number tracking associated with the delivery.
-          8. **Status** – The current document status: **Draft**, **Waiting**, **Ready**, **Done**, or **Cancelled**.
-
-          The list view also shows color-coded status indicators:
-          - **Done** (black text) – Delivery has been completed and validated
-          - **Ready** (red text) – Products are available and ready for shipment
-          - **Cancelled** (gray text) – Delivery order has been cancelled
-
-          ![](/img/inventory/delivery-orders/0002.png)
-
-          ---
-
-          ### Step 3: Click Create
-
-          Click the **Create** button at the top-left of the Delivery Orders list page to open a new blank delivery order form.
-
-          ![](/img/inventory/delivery-orders/0003.png)
-
-          ---
-
-          ### Step 4: Fill Out the Delivery Order Form
-
-          The new delivery order form will open in **Draft** status. Fill in the following required and optional fields:
-
-          #### Header Fields
-
-          1. **Delivery Address** *(Required)* – Search and select the customer or delivery address. Start typing the customer name and select the correct entry from the dropdown list. This field determines where the goods will be shipped.
-
-          2. **Operation Type** *(Required)* – This is automatically set based on the delivery operation type (e.g., "My Company: Delivery Orders"). This determines the workflow and inventory locations used.
-
-          3. **Source Location** *(Required)* – The warehouse location from which products will be picked and shipped. This typically defaults to your main stock location (e.g., "WH/Stock").
-
-          4. **Doc. No.** – Automatically generated by the system after validation. You do not need to fill this in manually. It will appear as "Auto Numbering" initially.
-
-          5. **Scheduled Date** *(Required)* – The planned date and time when the delivery should occur. This helps coordinate logistics and customer expectations.
-
-          6. **Inventory Date** – The accounting date for inventory movements. This determines when the stock changes are recorded in your system.
-
-          7. **Source Document** *(Optional)* – The reference to the originating sales order, quotation, or other document that created this delivery order. This helps trace the delivery back to its source.
-
-          ![](/img/inventory/delivery-orders/0004.png)
-
-          Once you fill in the delivery address and other header details, the form will update to show the selected information.
-
-          ---
-
-          ### Step 5: Add Products to Ship
-
-          Under the **Detailed Operations** tab, add the products that need to be delivered to the customer. Click **Add a line** to add a new product line, then fill in the following fields for each item:
-
-          1. **Product** *(Required)* – Choose the product being delivered. Start typing the product name or code and select the correct entry. The system will auto-populate related fields.
-
-          2. **From** – The specific source location from which this product will be picked. This is typically the same as the main source location specified in the header.
-
-          3. **Reserved** – The quantity that has been reserved or allocated for this delivery from your inventory. This shows what is committed to this shipment.
-
-          4. **Done** – The actual quantity that has been picked and prepared for shipment. Initially, this will be 0.00 and should be updated when products are physically picked.
-
-          5. **UOM** – The unit of measure for the product (e.g., Pcs, Units, kg, liters). This should match the product's standard UOM.
-
-          The system tracks both reserved quantities (what should be shipped) and done quantities (what has actually been prepared).
-
-          ![](/img/inventory/delivery-orders/0005.png)
-
-          <Noted type="info" title="Note" image="/img/icon/notes.png">
-          Carefully verify that all quantities are correct before validating the delivery. The "Reserved" quantity shows what should be shipped, while the "Done" quantity tracks what has actually been picked and prepared.
-          </Noted>
-
-          ---
-
-          ### Step 6: Save the Delivery Order
-
-          After completing all required fields and adding product lines, click **Save** to save the delivery order. At this stage, the delivery remains in **Draft** status and can still be edited.
-
-          ![](/img/inventory/delivery-orders/0006.png)
-
-          ---
-
-          ### Step 7: Click Validate to Confirm Availability
-
-          Once you have reviewed the delivery order, click the **Validate** button to check product availability and reserve the quantities. This will:
-
-          - Change the status from **Draft** to **Waiting** or **Ready**
-          - Reserve the specified quantities from inventory
-          - Confirm that products are available for shipment
-
-          The status will change to:
-          - **Waiting** – If products are not yet available or reserved
-          - **Ready** – If all products are available and ready to ship
-
-          ![](/img/inventory/delivery-orders/0007.png)
-
-          After validation, the delivery order cannot be edited unless you unreserve it first. The **Done** column becomes editable, allowing you to track the actual picked quantities.
-
-          ---
-
-          ### Step 8: Update Done Quantities and Complete Delivery
-
-          When products are physically picked and ready to ship, update the **Done** quantities to match what has been prepared:
-
-          1. In the **Detailed Operations** tab, update the **Done** column for each product line to reflect the actual quantity picked and packed.
-          2. The **Done** quantity should typically match the **Reserved** quantity, unless there are shortages or partial shipments.
-          3. Once all done quantities are entered, click the status button (currently showing **Ready**) to advance the delivery order to **Done** status.
-
-          ![](/img/inventory/delivery-orders/0008.png)
-
-          When you mark the delivery as **Done**:
-          - The inventory quantities are deducted from your stock
-          - The delivery order is locked and cannot be edited
-          - The shipment is officially recorded in your system
-          - Inventory movements are posted to your accounting records
-
-          <Noted type="info" title="Note" image="/img/icon/notes.png">
-          If you need to modify a completed delivery order, you may need to create a return or adjustment. Contact your system administrator for guidance on handling delivery corrections or returns.
-          </Noted>
-
-          ---
-
-          ### Additional Operations and Features
-
-          #### Partial Deliveries
-
-          If you cannot ship the full reserved quantity, you can update the **Done** quantities to reflect a partial shipment. The remaining quantities can be handled in several ways:
-          - Create a backorder for the remaining items
-          - Cancel the remaining quantity if no longer needed
-          - Adjust the original sales order to reflect the partial fulfillment
-
-          #### Batch and Serial Number Tracking
-
-          For products that require batch or serial number tracking, additional fields will appear in the **Detailed Operations** tab. You must specify which batches or serial numbers are being shipped to maintain proper traceability.
-
-          #### Printing Delivery Documents
-
-          After validating the delivery order, you can print delivery documents for the shipping team or customer:
-          1. Click the **Print** button at the top of the form
-          2. Select the appropriate delivery document template
-          3. Generate a PDF with all delivery details, products, and quantities
-
-          #### Cancelling a Delivery Order
-
-          If a delivery needs to be cancelled:
-          1. Open the delivery order
-          2. Click the **Cancel** button
-          3. The status will change to **Cancelled**
-          4. Reserved quantities will be released back to available inventory
-
-          ---
-
-          ### Delivery Order Workflow Summary
-
-          1. **Draft** → Create delivery order and add products
-          2. **Save** → Save the draft delivery order
-          3. **Validate** → Reserve inventory and confirm availability (→ Waiting/Ready)
-          4. **Update Done Quantities** → Record actual picked quantities
-          5. **Mark as Done** → Complete the delivery and deduct inventory
-
-          ---
-
-          For more details on inventory management and delivery operations, see the [Inventory Management Guide](/inventory/inventory-overview).
-
   - link: stock-transfers#stock-transfers
     uid: stock-transfers
     title: Transfers
@@ -390,6 +94,85 @@ groupSections:
         title: Transfers
         body: ''
     sections:
+      - link: /goods-receipt
+        title: Goods Receipt
+        body: |
+          The **Goods Receipts** process is a critical component of inventory management, allowing you to track and document the arrival of stock from your vendors. This ensures that your physical inventory levels match your digital records and provides a clear audit trail for every item entering your warehouse.
+
+          > **Note:** Goods Receipts remain in the "Ready" status until the physical items are counted and the transaction is validated. Once validated, the inventory levels are updated, and the record moves to "Done."
+
+          ---
+
+          #### Step 1- Navigation
+
+
+          From the left sidebar, click **Inventory**. On the Inventory Overview dashboard, locate the **Goods Receipts** card (marked by the **Red Arrow**) and click on it to view all incoming shipments.
+
+
+          ![Accessing Goods Receipts from the Inventory Dashboard](/img/inventory/goods-receipts/0001.png)
+
+          The list view displays all receipt operations, categorized by their current progress. You can quickly identify the status of any shipment using the **Status** column:
+
+          1.  **Ready** – Items that are expected and available to be processed.
+          2.  **Done** – Receipts that have been fully processed and added to stock.
+          3.  **Cancelled** – Orders that were terminated before completion.
+
+          ![Overview of the Goods Receipts list](/img/inventory/goods-receipts/0002.png)
+
+          ---
+
+          #### Step 2 - Creating a New Receipt
+
+          If you need to record an incoming shipment manually without a pre-existing purchase order:
+
+          ![Creating a new Goods Receipt](/img/inventory/goods-receipts/0003.png)
+          1.  Click the **Create** button (marked by the **Red Arrow**) at the top left.
+          2.  Fill in the vendor details in the **Receive From** field and set the **Scheduled Date**.
+
+
+          ---
+
+          ### Processing a Receipt (WH/IN/00028)
+
+          To receive items into your warehouse, select a specific receipt (e.g., **WH/IN/00028**) from the list to open the detailed view.
+
+          1.  **Review Products**: Check the **Operations** tab to see the items and their **Demand** quantities.
+          2.  **Edit Quantities**: If the delivered amount differs from the demand, click the line to adjust the **Done** quantity.
+          3.  **Save Changes**: Click the **Save** button (marked by the **Red Arrow**) to store your updates.
+
+          ![Reviewing and saving the receipt details](/img/inventory/goods-receipts/0004.png)
+
+          ![Saving the record](/img/inventory/goods-receipts/0005.png)
+
+          ---
+
+          ### Validating the Receipt
+
+          Once you have confirmed that the physical items match the record, you must finalize the transaction:
+
+          1.  Click the **Validate** button (marked by the **Red Arrow**).
+          2.  The system will prompt you if there is a quantity mismatch (e.g., creating a Backorder).
+          3.  Upon validation, the status indicator in the top right will change to **Done**.
+
+          ![Validating the receipt to update inventory](/img/inventory/goods-receipts/0006.png)
+
+          ---
+
+          ### Completed Receipt Status
+
+          Once the process is finished, the receipt is locked. The **Effective Date** is recorded, and the items are officially added to your **WH/Stock** location.
+
+          ![Finalized Goods Receipt in Done status](/img/inventory/goods-receipts/0007.png)
+
+          <Noted type="info" title="Pro Tip" image="/img/icon/notes.png">
+          Always compare the "Source Document" (e.g., NPO-260005) against the vendor's physical packing slip before clicking Validate to ensure 100% inventory accuracy.
+          </Noted>
+
+          ---
+
+          For details on moving items between internal warehouse locations, see the [Internal Transfers Guide](/inventory/internal-transfers).
+
+
       - link: /internal-transfers
         title: Internal Transfers
         body: |
@@ -613,6 +396,193 @@ groupSections:
               ---
 
               For more details on inventory management and warehouse operations, see the [Inventory Management Guide](/inventory/inventory-overview).
+
+      - link: /delivery-order
+        title: Delivery Order
+        body: |
+            A **Delivery Order** is a document that authorizes and records the shipment of goods from a warehouse or source location to a customer or destination. In MAQSU ERP, delivery orders are essential for managing outbound inventory movements, tracking shipments, and ensuring accurate fulfillment of sales orders.
+
+            > **Note:** Delivery orders are typically created after confirming a sales order or quotation. They serve as the link between order management and inventory, ensuring products are properly allocated and shipped to customers. Accurate delivery processing is vital for customer satisfaction and inventory control.
+
+            ---
+
+            ### Step 1: Go to Delivery Orders
+
+            From the left sidebar, click **Inventory**. Then from the Dashboard, locate and click on the **Delivery Orders** card in the inventory operations section.
+
+            ![](/img/inventory/delivery-orders/0001.png)
+
+            ---
+
+            ### Step 2: Delivery Orders List Overview
+
+            Once you navigate to **Delivery Orders**, you will see the master list of all existing delivery orders. The list displays the following columns:
+
+            1. **Reference** – The unique delivery order reference number (e.g., WH/OUT/00022).
+            2. **From** – The source location from which goods are being shipped (e.g., WH/Stock).
+            3. **To** – The destination location where goods are being delivered (e.g., Partner Locations/Customers).
+            4. **Contact** – The name of the customer or contact person receiving the delivery.
+            5. **Scheduled Date** – The planned date and time for the delivery.
+            6. **Source Document** – The originating document reference (e.g., sales order number Q-0003).
+            7. **Batch Transfer** – Any batch or serial number tracking associated with the delivery.
+            8. **Status** – The current document status: **Draft**, **Waiting**, **Ready**, **Done**, or **Cancelled**.
+
+            The list view also shows color-coded status indicators:
+            - **Done** (black text) – Delivery has been completed and validated
+            - **Ready** (red text) – Products are available and ready for shipment
+            - **Cancelled** (gray text) – Delivery order has been cancelled
+
+            ![](/img/inventory/delivery-orders/0002.png)
+
+            ---
+
+            ### Step 3: Click Create
+
+            Click the **Create** button at the top-left of the Delivery Orders list page to open a new blank delivery order form.
+
+            ![](/img/inventory/delivery-orders/0003.png)
+
+            ---
+
+            ### Step 4: Fill Out the Delivery Order Form
+
+            The new delivery order form will open in **Draft** status. Fill in the following required and optional fields:
+
+            #### Header Fields
+
+            1. **Delivery Address** *(Required)* – Search and select the customer or delivery address. Start typing the customer name and select the correct entry from the dropdown list. This field determines where the goods will be shipped.
+
+            2. **Operation Type** *(Required)* – This is automatically set based on the delivery operation type (e.g., "My Company: Delivery Orders"). This determines the workflow and inventory locations used.
+
+            3. **Source Location** *(Required)* – The warehouse location from which products will be picked and shipped. This typically defaults to your main stock location (e.g., "WH/Stock").
+
+            4. **Doc. No.** – Automatically generated by the system after validation. You do not need to fill this in manually. It will appear as "Auto Numbering" initially.
+
+            5. **Scheduled Date** *(Required)* – The planned date and time when the delivery should occur. This helps coordinate logistics and customer expectations.
+
+            6. **Inventory Date** – The accounting date for inventory movements. This determines when the stock changes are recorded in your system.
+
+            7. **Source Document** *(Optional)* – The reference to the originating sales order, quotation, or other document that created this delivery order. This helps trace the delivery back to its source.
+
+            ![](/img/inventory/delivery-orders/0004.png)
+
+            Once you fill in the delivery address and other header details, the form will update to show the selected information.
+
+            ---
+
+            ### Step 5: Add Products to Ship
+
+            Under the **Detailed Operations** tab, add the products that need to be delivered to the customer. Click **Add a line** to add a new product line, then fill in the following fields for each item:
+
+            1. **Product** *(Required)* – Choose the product being delivered. Start typing the product name or code and select the correct entry. The system will auto-populate related fields.
+
+            2. **From** – The specific source location from which this product will be picked. This is typically the same as the main source location specified in the header.
+
+            3. **Reserved** – The quantity that has been reserved or allocated for this delivery from your inventory. This shows what is committed to this shipment.
+
+            4. **Done** – The actual quantity that has been picked and prepared for shipment. Initially, this will be 0.00 and should be updated when products are physically picked.
+
+            5. **UOM** – The unit of measure for the product (e.g., Pcs, Units, kg, liters). This should match the product's standard UOM.
+
+            The system tracks both reserved quantities (what should be shipped) and done quantities (what has actually been prepared).
+
+            ![](/img/inventory/delivery-orders/0005.png)
+
+            <Noted type="info" title="Note" image="/img/icon/notes.png">
+            Carefully verify that all quantities are correct before validating the delivery. The "Reserved" quantity shows what should be shipped, while the "Done" quantity tracks what has actually been picked and prepared.
+            </Noted>
+
+            ---
+
+            ### Step 6: Save the Delivery Order
+
+            After completing all required fields and adding product lines, click **Save** to save the delivery order. At this stage, the delivery remains in **Draft** status and can still be edited.
+
+            ![](/img/inventory/delivery-orders/0006.png)
+
+            ---
+
+            ### Step 7: Click Validate to Confirm Availability
+
+            Once you have reviewed the delivery order, click the **Validate** button to check product availability and reserve the quantities. This will:
+
+            - Change the status from **Draft** to **Waiting** or **Ready**
+            - Reserve the specified quantities from inventory
+            - Confirm that products are available for shipment
+
+            The status will change to:
+            - **Waiting** – If products are not yet available or reserved
+            - **Ready** – If all products are available and ready to ship
+
+            ![](/img/inventory/delivery-orders/0007.png)
+
+            After validation, the delivery order cannot be edited unless you unreserve it first. The **Done** column becomes editable, allowing you to track the actual picked quantities.
+
+            ---
+
+            ### Step 8: Update Done Quantities and Complete Delivery
+
+            When products are physically picked and ready to ship, update the **Done** quantities to match what has been prepared:
+
+            1. In the **Detailed Operations** tab, update the **Done** column for each product line to reflect the actual quantity picked and packed.
+            2. The **Done** quantity should typically match the **Reserved** quantity, unless there are shortages or partial shipments.
+            3. Once all done quantities are entered, click the status button (currently showing **Ready**) to advance the delivery order to **Done** status.
+
+            ![](/img/inventory/delivery-orders/0008.png)
+
+            When you mark the delivery as **Done**:
+            - The inventory quantities are deducted from your stock
+            - The delivery order is locked and cannot be edited
+            - The shipment is officially recorded in your system
+            - Inventory movements are posted to your accounting records
+
+            <Noted type="info" title="Note" image="/img/icon/notes.png">
+            If you need to modify a completed delivery order, you may need to create a return or adjustment. Contact your system administrator for guidance on handling delivery corrections or returns.
+            </Noted>
+
+            ---
+
+            ### Additional Operations and Features
+
+            #### Partial Deliveries
+
+            If you cannot ship the full reserved quantity, you can update the **Done** quantities to reflect a partial shipment. The remaining quantities can be handled in several ways:
+            - Create a backorder for the remaining items
+            - Cancel the remaining quantity if no longer needed
+            - Adjust the original sales order to reflect the partial fulfillment
+
+            #### Batch and Serial Number Tracking
+
+            For products that require batch or serial number tracking, additional fields will appear in the **Detailed Operations** tab. You must specify which batches or serial numbers are being shipped to maintain proper traceability.
+
+            #### Printing Delivery Documents
+
+            After validating the delivery order, you can print delivery documents for the shipping team or customer:
+            1. Click the **Print** button at the top of the form
+            2. Select the appropriate delivery document template
+            3. Generate a PDF with all delivery details, products, and quantities
+
+            #### Cancelling a Delivery Order
+
+            If a delivery needs to be cancelled:
+            1. Open the delivery order
+            2. Click the **Cancel** button
+            3. The status will change to **Cancelled**
+            4. Reserved quantities will be released back to available inventory
+
+            ---
+
+            ### Delivery Order Workflow Summary
+
+            1. **Draft** → Create delivery order and add products
+            2. **Save** → Save the draft delivery order
+            3. **Validate** → Reserve inventory and confirm availability (→ Waiting/Ready)
+            4. **Update Done Quantities** → Record actual picked quantities
+            5. **Mark as Done** → Complete the delivery and deduct inventory
+
+            ---
+
+            For more details on inventory management and delivery operations, see the [Inventory Management Guide](/inventory/inventory-overview).
 
       - link: /batch-transfers
         title: Batch Tarnsfers
@@ -892,6 +862,19 @@ groupSections:
               ---
 
               For more details on inventory management and transfer operations, see the [Inventory Management Guide](/inventory/inventory-overview).
+    body : |
+          Companies with **multiple warehouses** need to manage the transfer of products from one location to another. In some cases, the companies may have different branches at different locations, which requires a great effort to manage the product transfers successfully. Companies often manage such situations by allocating main warehouses and sub warehouses for product distributions. The Transfers feature in MAQSU supports the effortless management of product transfers from one location to another.
+
+          Inventory transfers included the movement of products between the warehouses and outside the warehouse. It also includes internal transfers for the movement of products within the warehouses of the company. MAQSU ERP system supports the configuration and management of warehouses which we will discuss in the next section. After configuring details of the warehouses and locations of the company, you can use the Transfers option available under the Operations menu to manage the product transfer between the configured warehouses and locations.
+
+          As shown in the image below, you will get the details of the Reference, From, To, Contact, Scheduled Date, Source Document, Batch Transfer, Company, and Status details of the preconfigured transfers here.
+
+          ![](/img/inventory/transfer/0001.png)
+
+          Using the Filters and Group By options, you can effortlessly accomplish the sorting operations. Additionally, you will get Kanban, Calendar, and Location views for this platform. Now, let’s check how Odoo helps you to create a new transfer for the movement of products from one location to another. For this, click on the Create button.
+
+
+          ---
 
   - link: stock-adjustments#stock-adjustments
     uid: stock-adjustments
@@ -1244,7 +1227,7 @@ groupSections:
             ---
 
             For more details on inventory management and related operations, see the [Inventory Module Overview](/inventory/inventory-overview).
-  
+
   - link: traceability#traceability
     uid: traceability
     title: Product Traceability

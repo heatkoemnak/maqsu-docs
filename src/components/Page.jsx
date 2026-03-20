@@ -17,6 +17,7 @@ import { HiMiniChevronLeft, HiMiniChevronRight, HiMiniChevronUp } from "react-ic
 import Navbar from "./Navbar/Navbar";
 import Footer from "./Footer";
 import { formatDistanceToNow } from "date-fns";
+import CardList from "./CardList/CardList";
 
 export default function Page() {
   const location = useLocation();
@@ -883,7 +884,7 @@ const GlobalStyles = () => (
     }
 
     .pq-section-content h3 {
-      font-size: 1.08rem !important;
+      font-size: 1.35rem !important;
       font-weight: 650 !important;
       color: #444444 !important;
       line-height: 1.4 !important;
@@ -899,12 +900,12 @@ const GlobalStyles = () => (
       line-height: 1.4 !important;
       margin-top: 18px !important;
       margin-bottom: 10px !important;
-    }
+      }
 
-    .pq-section-content h5 {
-      font-size: 0.95rem !important;
-      font-weight: 600 !important;
-      color: #334155 !important;
+      .pq-section-content h5 {
+        font-size: 0.95rem !important;
+        font-weight: 600 !important;
+        color: #444444 !important;
       line-height: 1.4 !important;
       margin-top: 16px !important;
       margin-bottom: 10px !important;

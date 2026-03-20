@@ -182,19 +182,30 @@ groupSections:
      - link: null
        title: Account Receivable
        body: ''
+   body: |
+      Accounts receivable (AR) refers to the money owed to a business for goods or services that have been delivered but not yet paid for, and it is recorded as a current asset on the company's balance sheet.
+
+      In MAQSU, Accounts Receivable is the account that tracks money customers owe you from unpaid customer invoices. When you create and confirm a customer invoice, MAQSU treats that amount as receivable until it is paid and reconciled.
+
+      <Noted type="info" title="Key Takeaway" image="/img/icon/tip.png">
+          * Accounts receivable (AR) is an item on a company's balance sheet that represents money due the company for products or services it has already delivered.
+          * Accounts receivable is considered an asset to the company.
+          * The opposite of accounts receivable is accounts payable, which reflects money that a company owes but has not yet paid.
+         </Noted>
+
+      ![](/img/accounting/receivable/0001.png)
+
+      ---
+
    sections:
-     - link: /create-new-customer-invoice
-       title: Create Invoice
-       body: |
+      - link: /invoices
+        title: Invoices
+        body: |
          An **Invoice** is an official document sent to a customer that details goods or services provided, their quantities, unit prices, taxes, and the total amount due. In MAQSU ERP, invoices are crucial for tracking sales, managing customer payments, and ensuring proper financial records.
 
-         > **Note:** Invoices are generally created after confirming and delivering a sales order, or you may generate a customer invoice for direct sales transactions.
+         There are several methods available in MAQSU that automate customer invoice creation depending on the operation you perform and the module you use. While discussing the **Sales** module, we mentioned the management of invoices. Once you confirm a sales order, you will get a draft customer invoice in MAQSU. You just need to validate the draft invoices and send them to the respective customers. All such automated invoices will be recorded and managed in the Invoices platform available under the **Customers** menu of the **Accounting** module. This platform will allow you to create invoices manually also.
 
-         ***
-
-         ### Step 1 - Navigation
-
-         From the left sidebar, click **Accounting**. Then from the top navigation menu, go to **Customers** → **Invoices**.
+         From the left sidebar, click **Accounting**. Then from the top navigation menu, go to **Customers** ‣ **Invoices**.
 
          ![](/img/accounting/invoices/create/0001.png)
 
@@ -202,49 +213,74 @@ groupSections:
 
          Once you navigate to **Invoices**, you will see the master list of all existing customer invoices. The list displays the following columns:
 
-         1. **Number** – The unique invoice number automatically assigned to each invoice (e.g., INV/2026/0005).
-         2. **Reference** – An optional internal reference linked to the invoice.
-         3. **Invoice Date** – The date the invoice was issued.
-         4. **Customer** – The name of the customer receiving the invoice.
-         5. **Due Date** – The payment due date based on the payment terms.
-         6. **Total** – The total invoice amount including taxes.
-         7. **Amount Due** – The remaining outstanding balance to be paid.
-         8. **Status** – The current document status, either **Draft** or **Posted**.
-         9. **Payment** – The payment status, either **Paid**, **Not Paid**, or **Partial**.
-
          ![](/img/accounting/invoices/create/0002.png)
+
+          1. **Number** – The unique system-generated invoice identifier following the format **INV/YEAR/SEQUENCE** (e.g., INV/2026/0001, INV/2026/0006). Automatically assigned when an invoice is created.
+
+          2. **Reference** – An optional field for adding external reference numbers, such as a purchase order (PO) number or any internal reference code from the customer. All invoices here have no reference filled in.
+
+          3. **Invoice Date** – The official date the invoice was issued to the customer. All invoices here are dated **20/03/2026**.
+
+          4. **Customer** – The name of the customer the invoice was billed to (e.g., Sin Piseth, LY CHAIMOUY, Seng Somaly, Mr. Bunleng, Chay Sokly).
+
+          5. **Due Date** – The deadline by which the customer must complete payment. All invoices here share the same due date **20/03/2026**, matching the invoice date.
+
+          6. **Total** – The full invoice amount including all products, services, and taxes (e.g., $8.99, $5.50, $1,524.60, $132.00).
+
+          7. **Amount Due** – The **remaining balance** still owed by the customer. Shows **$0.00** for fully paid invoices (e.g., INV/2026/0005 – Mr. Bunleng) and the outstanding amount for unpaid ones.
+
+          8. **Status** – The current processing stage of the invoice:
+            - **Posted** – Invoice has been confirmed and sent (e.g., INV/2026/0001, INV/2026/0004)
+            - **Draft** – Invoice has been created but not yet confirmed (e.g., INV/2026/0003 – Seng Somaly, shown in blue)
+
+          9. **Payment** – Indicates whether the invoice has been settled:
+            - **Paid** – Payment has been received in full (e.g., INV/2026/0005 – Mr. Bunleng, $0.00 remaining)
+            - **Not Paid** – Payment is still outstanding (e.g., INV/2026/0001 – Sin Piseth, $8.99 still due)
+
+         ![](/img/accounting/invoices/0003.png)
+
+         Using the default **Filters**, you can filter the invoices based on My Invoices, Draft, Posted, Canceled, To Check, Unpaid, Paid, Overdue, Invoice Date, and Due Date. You are allowed to create custom filters for invoices using the Add Custom Filter button.
+
+         ![](/img/accounting/invoices/0004.png)
+
+         In the **Group By** option, you can group the available invoices according to the Salesperson, Status, Sales Team, Electronic Invoicing State, Preferred Payment Method, Invoice Date, Due Date, and Referrer. The Add Custom Group button helps you to create custom group options.
+
+         ![](/img/accounting/invoices/0005.png)
+
+          From this menu, you can enable or disable required fields for the list view of the customer invoice. It includes the Invoice Date, Due Date, Source Document, Reference, Salesperson, Sales Team, Activities, Company, Tax Excluded, Tax, Total, Total in Currency, Amount Due, Invoice Currency, To Check, Payment Status, Electronic Invoicing, and Status.
 
          ***
 
-         ### Step 2 - Create
+         ### Create Invoice
 
-         Click the **Create** button at the top-left of the Invoices list page to open a new blank invoice form.
+         Let's create a new customer invoice by following steps down below:
+
+         ##### # Step 1 - Create
 
          ![](/img/accounting/invoices/create/0003.png)
+         Click the **Create** button at the top-left of the Invoices list page to open a new blank invoice form.
 
          ![](/img/accounting/invoices/create/0004.png)
 
-         ***
+         ##### # Step 2 - Basic information
 
-         ### Step 3 - Fill out the invoice information
+         ![](/img/accounting/invoices/create/0005.png)
 
          The new invoice form will open in **Draft** status. Fill in the following required and optional fields:
-
-         1. **Customer** _(Required)_ – Search and select the customer by name, code, email, or reference. Start typing and select the correct entry from the dropdown list.
+         1. **Customer** _(Required)_ – Search and select the customer by name, code, email, or reference. Start typing and select the correct entry from the dropdown list. Let's see how to setup [Cusomters](/getting-started/setup-master-datas#customer-vendor)
          2. **Reference** _(Optional)_ – Enter an internal reference number or note to help identify this invoice. This is useful for linking the invoice to a sales order or project.
          3. **Invoice Date** – The date the invoice is issued. This defaults to today's date but can be adjusted.
          4. **Doc. No.** – Automatically generated by the system after saving. You do not need to fill this in manually.
-         5. **Payment Terms** – Select the agreed payment timeframe or conditions (e.g., 15 Days, Due on Receipt). This determines the due date shown on the invoice.
-         6. **Journal** – The accounting journal where the invoice will be posted. This defaults to **Customer Invoices (USD)**.
+         5. **Payment Terms** – Select the agreed payment timeframe or conditions (e.g., 15 Days, Due on Receipt). This determines the due date shown on the invoice. Let's see how to setup [Payment Terms](/getting-started/setup-master-datas#payment-terms)
+         6. **Journal** – The accounting journal where the invoice will be posted. This defaults to **Customer Invoices (USD)**. Let's see how to setup [Journals](/getting-started/setup-master-datas#journals)
          7. **Pricelist** _(Optional)_ – Select a pricelist to automatically apply special pricing or discounts for the customer. The selected pricelist will update product prices on the invoice lines accordingly.
 
          Once you fill in the customer and other header details, the form will update to show the entered information.
 
-         ![](/img/accounting/invoices/create/0005.png)
 
-         ***
+         ##### # Step 3 - Add products or services
 
-         ### Step 4 - Add products or services
+         ![](/img/accounting/invoices/create/0006.png)
 
          Under the **Invoice Lines** tab, add the products or services you are invoicing the customer for. Click **Add a line** to add a new line item, then fill in the following fields for each line:
 
@@ -258,9 +294,6 @@ groupSections:
          8. **Taxes** – Select the applicable taxes for the product (e.g., VAT - Sales of Goods 10%). The tax amount is calculated and included in the total.
          9. **Subtotal** – Automatically calculated as: **Subtotal = (Quantity x Price) – Discount**.
 
-
-         **References:** [Create Product Guide](/getting-started/setup-master-datas#products), [Setup Taxes Guide](/getting-started/setup-master-datas#taxes).
-
          You can also use **Add a section** to group related items, or **Add a note** to include internal remarks on a specific line.
 
          At the bottom of the Invoice Lines section, the **Total Summary** shows:
@@ -269,32 +302,27 @@ groupSections:
          - **VAT** – The total tax amount applied.
          - **Total** – The grand total due including taxes.
 
-         ![](/img/accounting/invoices/create/0006.png)
+         ##### # Step 5 - Save
 
-         {' '}
          <Noted type="info" title="Note" image="/img/icon/notes.png">
            Carefully verify that all amounts are correct. If any discrepancies are found, review and
            adjust the corresponding invoice lines or tax settings before continuing.
          </Noted>
 
-         ***
-
-         ### Step 5 - Save
-
          After completing all required fields, click **Save** to save the invoice as a **Draft**. At this stage the invoice is not yet posted to accounting  -  you can still edit it.
 
-         ***
-     - link: /post-invoice
-       title: Post
-       body: |
-         Once you have reviewed and confirmed all details are correct, click the **Post** button to officially post the invoice. This will:
+         ---
+
+         ### Post Invoice
+
+         This Invoice Form currently in **Draft** status. So once you have reviewed and confirmed all details are correct, click the **Post** button to officially post the invoice. This will:
 
          - Change the invoice status from **Draft** to **Posted** – Assign a permanent invoice number (e.g., INV/2026/0007)
          - Record the corresponding journal entries in accounting
 
          ![](/img/accounting/invoices/create/0007.png)
 
-         After posting, the invoice is locked for editing. You will see the **Add Payment**, **Add Credit Note**, and **Reset to Draft** buttons at the top of the form.
+         After posting, the invoice is locked for editing. You will see the **Add Payment**, **Add Credit Note**, and **Reset to Draft** buttons at the top of the form. Let's see how to add payment for the posted cusotmer invoice [Add Payment](#account-receivable-invoices-addpayment).
 
          <Noted type="info" title="Note" image="/img/icon/notes.png">
            If you notice an error after posting, click **Reset to Draft** to bring the invoice back to
@@ -303,10 +331,218 @@ groupSections:
 
          ***
 
-         For more details on invoice management, see the [Customer Invoice Guide](#create-new-customer-invoice).
-     - link: /add-payment-invoice
-       title: Add Payment
-       body: |
+
+
+         ### Add Payment
+
+         Once the customer gets this invoice, they can check the details and pay the invoice. So now you can record their payment using the **Add Payment** button.
+
+         ##### # Step 1 - Click add payment
+
+         On the posted invoice, click the **Add Payment** button at the top of the invoice form.
+
+         ![](/img/accounting/payments/0004.png)
+
+         ##### # Step 2 - Add payment detials
+
+         MAQSU generates a pop-up window to confirm the details of the payment registration. The window will show the:
+
+         ![](/img/accounting/payments/0005.png)
+
+         1. **Journal** – Select the payment account where the money is received (e.g., Bank (USD), Cash). This determines which financial account is credited.
+         2. **Doc. No.** – Automatically generated by the system. Leave as is or enter a custom reference such as a bank transfer ID or check number.
+         3. **Amount** – Pre-filled with the outstanding invoice balance. Adjust for partial payments if needed.
+         4. **Payment Date** – The date the payment was received from the customer. Defaults to today.
+         5. **Memo** – Auto-populated with the invoice number for reference (e.g., INV/2026/0007).
+
+         You can make changes to the available details if needed. Now, click the **Validate** button. The payment registration can be completed by this step. Once the customer pays the invoice, the status of the invoice can be observed as Paid.
+
+
+         ***
+
+         ##### # Step 3 - Verify the Invoice
+
+         After validating, the invoice will be updated immediately. A green **PAID** stamp will appear on the top-right corner of the invoice form, confirming the invoice has been fully settled and the payment has been recorded in your accounting.
+
+         ![](/img/accounting/payments/0006.png)
+
+         In the case of any mistakes in the invoice, wrong delivery of products, damaged goods, or rejection of service, you can trigger a credit note to your customer. This can be done by using the **Add Credit Note** button.
+
+         <Noted type="info" title="Tip" image="/img/icon/tip.png">
+           If a partial payment was registered, the invoice will show **Partially Paid** instead of
+           **PAID**. You can click **Add Payment** again to register the remaining balance until the
+           invoice is fully settled.
+         </Noted>
+
+         ---
+
+         ### Add Credit Notes
+
+         As soon as you click on this button, a new wizard will appear to define the credit note.
+
+          ![](/img/accounting/invoices/direct-credit-notes/0001.png)
+
+          You can mention the reason to generate this credit note in the **Reason** field. The Reversal Date can be set as a Specific Date or the Journal Entry Date. The journal entry used to record the credit note can be specified in the **Use Specific Journal** field. The Refund Date will be available on the screen and you can click the **Reverse** button to reverse the payment.
+
+          MAQSU leads you to a new window where you can observe the draft customer credit note.
+
+          ![](/img/accounting/invoices/direct-credit-notes/0002.png)
+
+          You can click on the **Post** button to confirm the customer credit note. Later the payment can be recorded using the **Add Payment** button.
+
+         ---
+
+          ### Delete Invoices
+
+          Deleting an invoice in this system is a simple two-step process. Here is the breakdown of how to do it:
+
+          ![](/img/accounting/invoices/delete/0001.png)
+
+          1. **Select the Invoice**: Locate the invoice you wish to remove (for example, INV/2026/0005). Click the checkbox on the far left of the row. A checkmark will appear to indicate it is selected, as shown by the red marker (1).
+
+          2. **Open the Action Menu**: Navigate to the top of the table and click the Action button (represented by a briefcase icon with a dropdown arrow).
+
+          3. **Confirm Deletion**: From the dropdown menu that appears, click on Delete, as indicated by the red marker (2).
+
+          <Noted type="info" title="Tip" image="/img/icon/tip.png">
+            * **Status Check**: Notice that the selected invoice has a status of "Posted." In many accounting systems, you may need to "Reset to Draft" or "Unpost" an invoice before the system will allow you to delete it permanently.
+            * **Bulk Actions**: If you need to delete multiple invoices at once, you can select multiple checkboxes before clicking the Action > Delete button.
+          </Noted>
+
+          ---
+
+          ### Print Invoice
+
+          Printing an invoice in this system is a straightforward process. Here is the breakdown of how to do it:
+
+          ![](/img/accounting/invoices/print/0001.png)
+
+          1. **Select the Invoice**: Locate the invoice you wish to print (for example, INV/2026/0007). Click the checkbox on the far left of the row. A checkmark will appear to indicate it is selected, as shown by the red marker (1).
+
+          2. **Open the Print Menu**: Navigate to the top of the table and click the Print button, indicated by the red marker (2).
+
+          3. **Choose a Format**: From the dropdown menu that appears, select your desired document format (such as Tax Invoice or Commercial Invoice), as indicated by the red marker (3).
+
+          <Noted type="info" title="Tip" image="/img/icon/tip.png">
+
+            * **Multi Printing**: If you need to print multiple invoices at once, you can select multiple checkboxes before clicking the Print button to generate them in a single batch.
+
+            * **Search**: If the list is long, use the Type to search bar at the top right to quickly find a specific invoice number or reference.
+          </Noted>
+
+      - link: /credit-note
+        title: Add Credit Note
+        body: |
+         A **Credit Note** is an official document issued to a customer to reverse or reduce the amount owed from a previously posted invoice. In MAQSU ERP, credit notes are used to handle refunds, billing corrections, or returned goods. They are recorded in accounting and directly reduce the outstanding balance on the original invoice.
+
+         If any mistakes occur in an invoice, delivered goods, services, or payments, you can generate credit notes for your customers. You can generate credit notes for reversing both invoice and bill. We already discussed how to create credit notes from customer invoices. In the MAQSU Accounting module, you will get a separate platform under the **Customers** menu to manage such credit notes in one place. Let's following setps down below:
+
+         ***
+
+         ##### # Step 1 - Navigation
+
+         From the left sidebar, click **Accounting**. Then from the top navigation menu, go to **Customers** ‣ **Credit Notes**.
+
+         ![](/img/accounting/credit-notes/0001.png)
+
+         ***
+
+         ##### # Step 2 - Click Create
+
+         The Credit Notes list page will open. If no credit notes have been created yet, the page will show an empty state with the message _"The easiest way to create a credit note is to do it directly from the customer invoice."_
+         ![](/img/accounting/credit-notes/0002.png)
+
+         Click the **Create** button at the top-left to open a new blank Credit Note form.
+
+
+         ***
+
+         ##### # Step 3 - Fill Out the Credit Note Form
+
+         The new credit note form will open in **Draft** status. Fill in the following fields:
+         ![](/img/accounting/credit-notes/0003.png)
+
+         1. **Customer** _(Required)_ – Search and select the customer this credit note is issued for.
+         2. **Reference** _(Optional)_ – Enter an internal reference or reason for the credit note (e.g., "Refund to Long Meth").
+         3. **Invoice No. Ref** – Enter the original invoice number this credit note is linked to (e.g., INV/2026/0007). This links the credit note to the source invoice for traceability.
+         4. **Invoice Date Ref** – Select the date of the original invoice being referenced.
+         5. **Invoice Date** – The date this credit note is issued. Defaults to today.
+         6. **Doc. No.** – Automatically generated by the system after saving.
+         7. **Payment Terms** – The payment terms carried over from the original invoice.
+         8. **Journal** – The accounting journal to post this credit note to, defaulting to **Customer Invoices (USD)**.
+
+
+         Once filled in, the form will show all the entered header details.
+
+         ![](/img/accounting/credit-notes/0004.png)
+
+         ***
+
+         ##### # Step 4 - Add Invoice Lines
+
+         Under the **Invoice Lines** tab, add the products or services being credited. Click **Add a line** and fill in the Product, Description, Account, Quantity, UOM, Price, Discount, and Taxes for each line.
+
+         ![](/img/accounting/credit-notes/0005.png)
+         The **Total Summary** at the bottom displays:
+
+         - **Untaxed Amount** – Sum of all line subtotals before taxes.
+         - **VAT** – The total tax amount applied.
+         - **Total** – The grand total of the credit note including taxes.
+
+
+         ***
+
+         ##### # Step 5 - Save and Click Post
+
+         After completing all fields, click **Save** to save the credit note as a Draft. Then click **Post** to officially post the credit note.
+
+         This will change the status from **Draft** to **Posted** and assign a permanent credit note number (e.g., RINV/2026/0001).
+
+         ![](/img/accounting/credit-notes/0006.png)
+
+         ***
+
+         ##### # Step 6 - Register Refund Payment
+
+         Once posted, the credit note number is assigned (e.g., **RINV/2026/0001**). Click **Add Payment** to register the refund payment back to the customer.
+
+         ![](/img/accounting/credit-notes/0007.png)
+
+         An **Add Payment** dialog will appear. Fill in the following:
+
+         1. **Journal** – Select the payment account the refund is paid from (e.g., Bank (USD)).
+         2. **Doc. No.** – Automatically generated. Leave as is or enter a custom reference.
+         3. **Amount** – Pre-filled with the credit note total (e.g., $33.26).
+         4. **Payment Date** – The date the refund was issued to the customer.
+         5. **Memo** – Auto-populated from the credit note reference (e.g., "Refund to Long Meth").
+
+         Click **Validate** to confirm and post the refund payment.
+
+         ![](/img/accounting/credit-notes/0008.png)
+
+         ***
+
+         ##### # Step 7 - Verify Credit Note is Marked as PAID
+
+         After validating, the credit note will be stamped with a green **PAID** banner confirming the refund has been fully processed. The **Amount Due** at the bottom will show **$0.00** and the **Payment Info** section will display the refund details including the amount, memo, date, and payment journal.
+
+         ![](/img/accounting/credit-notes/0009.png)
+
+         ![](/img/accounting/credit-notes/0010.png)
+
+         ***
+
+         <Noted type="info" title="Tip" image="/img/icon/tip.png">
+           **Option 2 is the recommended approach** when you need to reverse or correct a specific posted
+           invoice, as it automatically links the credit note to the original invoice, pre-fills all
+           invoice details, and ensures proper reconciliation in your accounting records.
+         </Noted>
+
+
+
+      - link: /payments
+        title: Payments
+        body: |
          A **Payment** is a record in MAQSU ERP that tracks money received from a customer against a posted invoice. Registering a payment correctly ensures your accounting records are accurate, your invoices are marked as settled, and your cash flow is properly reflected.
 
          > **Note:** A payment can only be registered against a **Posted** invoice. Always verify the invoice details before registering a payment.
@@ -326,7 +562,7 @@ groupSections:
 
          #### Step 1 - Go to Customer Invoices
 
-         From the left sidebar, click **Accounting**. Then from the top navigation menu, go to **Customers** → **Invoices**.
+         From the left sidebar, click **Accounting**. Then from the top navigation menu, go to **Customers** ‣ **Invoices**.
 
          ![](/img/accounting/payments/0001.png)
 
@@ -384,7 +620,7 @@ groupSections:
 
          #### Step 1 - Go to Payments
 
-         From the left sidebar, click **Accounting**. Then from the top navigation menu, go to **Customers** → **Payments**.
+         From the left sidebar, click **Accounting**. Then from the top navigation menu, go to **Customers** ‣ **Payments**.
 
          ![](/img/accounting/payments/0007.png)
 
@@ -483,216 +719,7 @@ groupSections:
            better suited for advance payments, bulk matching, or when you need more control over the
            payment journal and matching process.
          </Noted>
-     - link: /credit-note
-       title: Add Credit Note
-       body: |
-         A **Credit Note** is an official document issued to a customer to reverse or reduce the amount owed from a previously posted invoice. In MAQSU ERP, credit notes are used to handle refunds, billing corrections, or returned goods. They are recorded in accounting and directly reduce the outstanding balance on the original invoice.
 
-         > **Note:** A credit note can only be created after the original invoice has been posted. Always reference the original invoice number when creating a credit note to maintain accurate financial records.
-
-         ***
-
-         In MAQSU ERP, there are **two ways** to issue a Credit Note to a customer:
-
-         - **Option 1 – From the Credit Notes Menu:** Create a credit note directly from the Credit Notes list under the Customers menu.
-         - **Option 2 – From the Invoice:** Add a credit note directly from a posted customer invoice using the **Add Credit Note** button.
-
-         ***
-
-         ### Option 1 - Create Credit Note from Credit Notes Menu
-
-         #### Step 1 - Go to Credit Notes
-
-         From the left sidebar, click **Accounting**. Then from the top navigation menu, go to **Customers** → **Credit Notes**.
-
-         ![](/img/accounting/credit-notes/0001.png)
-
-         ***
-
-         #### Step 2 - Click Create
-
-         The Credit Notes list page will open. If no credit notes have been created yet, the page will show an empty state with the message _"The easiest way to create a credit note is to do it directly from the customer invoice."_
-
-         Click the **Create** button at the top-left to open a new blank Credit Note form.
-
-         ![](/img/accounting/credit-notes/0002.png)
-
-         ***
-
-         #### Step 3 - Fill Out the Credit Note Form
-
-         The new credit note form will open in **Draft** status. Fill in the following fields:
-
-         1. **Customer** _(Required)_ – Search and select the customer this credit note is issued for.
-         2. **Reference** _(Optional)_ – Enter an internal reference or reason for the credit note (e.g., "Refund to Long Meth").
-         3. **Invoice No. Ref** – Enter the original invoice number this credit note is linked to (e.g., INV/2026/0007). This links the credit note to the source invoice for traceability.
-         4. **Invoice Date Ref** – Select the date of the original invoice being referenced.
-         5. **Invoice Date** – The date this credit note is issued. Defaults to today.
-         6. **Doc. No.** – Automatically generated by the system after saving.
-         7. **Payment Terms** – The payment terms carried over from the original invoice.
-         8. **Journal** – The accounting journal to post this credit note to, defaulting to **Customer Invoices (USD)**.
-
-         ![](/img/accounting/credit-notes/0003.png)
-
-         Once filled in, the form will show all the entered header details.
-
-         ![](/img/accounting/credit-notes/0004.png)
-
-         ***
-
-         #### Step 4 - Add Invoice Lines
-
-         Under the **Invoice Lines** tab, add the products or services being credited. Click **Add a line** and fill in the Product, Description, Account, Quantity, UOM, Price, Discount, and Taxes for each line.
-
-         The **Total Summary** at the bottom displays:
-
-         - **Untaxed Amount** – Sum of all line subtotals before taxes.
-         - **VAT** – The total tax amount applied.
-         - **Total** – The grand total of the credit note including taxes.
-
-         ![](/img/accounting/credit-notes/0005.png)
-
-         ***
-
-         #### Step 5 - Save and Click Post
-
-         After completing all fields, click **Save** to save the credit note as a Draft. Then click **Post** to officially post the credit note.
-
-         This will change the status from **Draft** to **Posted** and assign a permanent credit note number (e.g., RINV/2026/0001).
-
-         ![](/img/accounting/credit-notes/0006.png)
-
-         ***
-
-         #### Step 6 - Register Refund Payment
-
-         Once posted, the credit note number is assigned (e.g., **RINV/2026/0001**). Click **Add Payment** to register the refund payment back to the customer.
-
-         ![](/img/accounting/credit-notes/0007.png)
-
-         An **Add Payment** dialog will appear. Fill in the following:
-
-         1. **Journal** – Select the payment account the refund is paid from (e.g., Bank (USD)).
-         2. **Doc. No.** – Automatically generated. Leave as is or enter a custom reference.
-         3. **Amount** – Pre-filled with the credit note total (e.g., $33.26).
-         4. **Payment Date** – The date the refund was issued to the customer.
-         5. **Memo** – Auto-populated from the credit note reference (e.g., "Refund to Long Meth").
-
-         Click **Validate** to confirm and post the refund payment.
-
-         ![](/img/accounting/credit-notes/0008.png)
-
-         ***
-
-         #### Step 7 - Verify Credit Note is Marked as PAID
-
-         After validating, the credit note will be stamped with a green **PAID** banner confirming the refund has been fully processed. The **Amount Due** at the bottom will show **$0.00** and the **Payment Info** section will display the refund details including the amount, memo, date, and payment journal.
-
-         ![](/img/accounting/credit-notes/0009.png)
-
-         ![](/img/accounting/credit-notes/0010.png)
-
-         ***
-
-         ### Option 2 - Add Credit Note Directly from Invoice
-
-         This is the quickest and recommended method as it automatically links the credit note to the original invoice and pre-fills all the relevant details.
-
-         #### Step 1 - Go to Customer Invoices
-
-         From the left sidebar, click **Accounting**. Then from the top navigation menu, go to **Customers** → **Invoices**.
-
-         ![](/img/accounting/credit-notes/0011.png)
-
-         ***
-
-         #### Step 2 - Find the Invoice
-
-         Use the **Search bar** to find the invoice you want to issue a credit note for. Type the invoice number (e.g., INV/2026/0007) and select **Search Invoice for: INV/2026/0007** from the dropdown suggestions.
-
-         ![](/img/accounting/credit-notes/0012.png)
-
-         The list will filter to show the matching invoice. Click on the **Invoice Number** to open it.
-
-         ![](/img/accounting/credit-notes/0013.png)
-
-         ***
-
-         #### Step 3 - Click Add Credit Note
-
-         On the posted invoice (status **Posted** / **PAID**), click the **Add Credit Note** button at the top of the invoice form.
-
-         ![](/img/accounting/credit-notes/0014.png)
-
-         A **Draft Credit Note** will be automatically created and pre-filled with all the details from the original invoice, including the customer, invoice lines, taxes, and a reference to the original invoice number. The **Journal** will be set to **Customer Refund (USD)**.
-
-         Click **Post** to officially post the credit note.
-
-         ![](/img/accounting/credit-notes/0015.png)
-
-         Once posted, the credit note is assigned a permanent number (e.g., **RREF/2026/0001**) and the status changes to **Posted**.
-
-         ![](/img/accounting/credit-notes/0016.png)
-
-         ***
-
-         #### Step 4 - Register Refund Payment
-
-         Click **Add Payment** to register the refund payment back to the customer.
-
-         An **Add Payment** dialog will appear pre-filled with the refund amount and memo referencing the original invoice. Review the details and click **Validate**.
-
-         ![](/img/accounting/credit-notes/0017.png)
-
-         ***
-
-         #### Step 5 - Verify Credit Note is Marked as PAID
-
-         After validating, the credit note will be stamped with a green **PAID** banner, confirming the refund has been fully processed and the credit note is settled.
-
-         ![](/img/accounting/credit-notes/0018.png)
-
-         <Noted type="info" title="Tip" image="/img/icon/tip.png">
-           **Option 2 is the recommended approach** when you need to reverse or correct a specific posted
-           invoice, as it automatically links the credit note to the original invoice, pre-fills all
-           invoice details, and ensures proper reconciliation in your accounting records.
-         </Noted>
-     - link: /delete-invoice
-       title: Delete Invoices
-       body: |
-         Deleting an invoice in this system is a simple two-step process. Here is the breakdown of how to do it:
-
-         ![](/img/accounting/invoices/delete/0001.png)
-
-         1. **Select the Invoice**: Locate the invoice you wish to remove (for example, INV/2026/0005). Click the checkbox on the far left of the row. A checkmark will appear to indicate it is selected, as shown by the red marker (1).
-
-         2. **Open the Action Menu**: Navigate to the top of the table and click the Action button (represented by a briefcase icon with a dropdown arrow).
-
-         3. **Confirm Deletion**: From the dropdown menu that appears, click on Delete, as indicated by the red marker (2).
-
-         <Noted type="info" title="Tip" image="/img/icon/tip.png">
-           * **Status Check**: Notice that the selected invoice has a status of "Posted." In many accounting systems, you may need to "Reset to Draft" or "Unpost" an invoice before the system will allow you to delete it permanently.
-           * **Bulk Actions**: If you need to delete multiple invoices at once, you can select multiple checkboxes before clicking the Action > Delete button.
-         </Noted>
-     - link: /print-invoice
-       title: Print / Export
-       body: |
-         Printing an invoice in this system is a straightforward process. Here is the breakdown of how to do it:
-
-          ![](/img/accounting/invoices/print/0001.png)
-
-          1. **Select the Invoice**: Locate the invoice you wish to print (for example, INV/2026/0007). Click the checkbox on the far left of the row. A checkmark will appear to indicate it is selected, as shown by the red marker (1).
-
-          2. **Open the Print Menu**: Navigate to the top of the table and click the Print button, indicated by the red marker (2).
-
-          3. **Choose a Format**: From the dropdown menu that appears, select your desired document format (such as Tax Invoice or Commercial Invoice), as indicated by the red marker (3).
-
-          <Noted type="info" title="Tip" image="/img/icon/tip.png">
-
-            * **Multi Printing**: If you need to print multiple invoices at once, you can select multiple checkboxes before clicking the Print button to generate them in a single batch.
-
-            * **Search**: If the list is long, use the Type to search bar at the top right to quickly find a specific invoice number or reference.
-          </Noted>
 
  - link: 'account-payable#account-payable'
    uid: account-payable
@@ -721,7 +748,7 @@ groupSections:
 
          #### Step 1 - Navigation
 
-         From the left sidebar, click **Accounting**. Then from the top navigation menu, go to **Vendors** → **Bills**.
+         From the left sidebar, click **Accounting**. Then from the top navigation menu, go to **Vendors** ‣ **Bills**.
 
          ![](/img/accounting/vendor-bills/0001.png)
 
@@ -856,7 +883,7 @@ groupSections:
 
          #### Step 1 - Go to Vendor Bills
 
-         From the left sidebar, click **Accounting**. Then from the top navigation menu, go to **Banking** → **Bills**.
+         From the left sidebar, click **Accounting**. Then from the top navigation menu, go to **Banking** ‣ **Bills**.
 
          ![](/img/accounting/bill-payments/0001.png)
 
@@ -921,7 +948,7 @@ groupSections:
 
          #### Step 1 - Go to Payments
 
-         From the left sidebar, click **Accounting**. Then from the top navigation menu, go to **Banking** → **Payments**.
+         From the left sidebar, click **Accounting**. Then from the top navigation menu, go to **Banking** ‣ **Payments**.
 
          ![](/img/accounting/bill-payments/0007.png)
 
@@ -1082,7 +1109,7 @@ groupSections:
 
            #### Step 1 - Navigation
 
-           From the left sidebar, click **Accounting**. Then from the top navigation menu, go to **Vendors** → **Bills**.
+           From the left sidebar, click **Accounting**. Then from the top navigation menu, go to **Vendors** ‣ **Bills**.
 
            ![](/img/accounting/delete-bill/0001.png)
 
@@ -1231,7 +1258,7 @@ groupSections:
 
            #### Step 4 - Delete the Bill
 
-           1. Click **Action** → **Delete**
+           1. Click **Action** ‣ **Delete**
            2. Confirm the deletion
            3. The bill is permanently removed
            > **Important Guidelines: Before Deleting Any Bill**
@@ -1294,7 +1321,7 @@ groupSections:
 
            #### Step 1 - Navigation
 
-           From the left sidebar, click **Accounting**. Then from the top navigation menu, go to **Vednors** → **Payments**.
+           From the left sidebar, click **Accounting**. Then from the top navigation menu, go to **Vednors** ‣ **Payments**.
 
            ![](/img/accounting/unmatch-delete/0001.png)
 
@@ -1461,7 +1488,7 @@ groupSections:
 
            #### Step 1 - Navigate to the Bill to Refund
 
-           From the left sidebar, click **Accounting**. Then from the top navigation menu, go to **Vendors** → **Bills**.
+           From the left sidebar, click **Accounting**. Then from the top navigation menu, go to **Vendors** ‣ **Bills**.
 
            ![](/img/accounting/refunds/0001.png)
 
@@ -1543,7 +1570,7 @@ groupSections:
 
            #### Step 1 - Navigate to Refunds
 
-           From the left sidebar, click **Accounting**. Then from the top navigation menu, go to **Vendors** → **Refunds**.
+           From the left sidebar, click **Accounting**. Then from the top navigation menu, go to **Vendors** ‣ **Refunds**.
 
            ![](/img/accounting/refunds/0007.png)
 
@@ -1717,6 +1744,22 @@ groupSections:
            > - Ensure the correct vendor is selected to avoid misallocation of credits.
            > - Keep the original bill reference for audit trail purposes.
 
+ - link: 'payments#payments'
+   uid: payments
+   title: Payments
+   date: '2026-02-22T07:20:55.556Z'
+   body: |
+      MAQSU offers a dedicated platform in the Accounting module to record all payments from customers. You can check payment records from the Payments option available under the Customers menu. The preview of the list view shows the Date, Number, Journal, Payment Method, Partner, Batch Payment, Amount, and Status.
+   breadcrumbs:
+     - link: /
+       title: All
+       body: ''
+     - link: /accounting
+       title: Accounting
+       body: ''
+     - link: null
+       title: Payments
+       body: ''
  - link: 'general-journal#general-journal'
    uid: general-journal
    title: General Journals
@@ -2046,14 +2089,14 @@ groupSections:
 
          #### Check 1: Review Trial Balance
 
-         1. Go to **Accounting** → **Reporting** → **Trial Balance**
+         1. Go to **Accounting** ‣ **Reporting** ‣ **Trial Balance**
          2. Set date range to include your opening balance date
          3. Verify all accounts show correct opening balances
          4. Confirm total debits equal total credits
 
          #### Check 2: Review Balance Sheet
 
-         1. Go to **Accounting** → **Reporting** → **Balance Sheet**
+         1. Go to **Accounting** ‣ **Reporting** ‣ **Balance Sheet**
          2. Set date to your opening balance date
          3. Verify:
             - Total Assets = Total Liabilities + Total Equity
@@ -3550,7 +3593,7 @@ groupSections:
 
          ### Step 1: Navigate to Bills
 
-         From the left sidebar, click **Accounting**. Then from the top navigation menu, go to **Vendors** → **Bills**.
+         From the left sidebar, click **Accounting**. Then from the top navigation menu, go to **Vendors** ‣ **Bills**.
 
          ![](/img/accounting/purchase-asset/0001.png)
 
@@ -4389,7 +4432,7 @@ groupSections:
 
          ### Step 1: Go to Customer Invoices
 
-         From the left sidebar, click **Accounting**. Then from the top navigation menu, go to **Customers** → **Invoices**.
+         From the left sidebar, click **Accounting**. Then from the top navigation menu, go to **Customers** ‣ **Invoices**.
 
          ***
 
@@ -5166,7 +5209,7 @@ groupSections:
 
          #### Step 1: Access Sales Report Configuration
 
-         1. Navigate to **Compliance** → **E-Filing** → **Sales**
+         1. Navigate to **Compliance** ‣ **E-Filing** ‣ **Sales**
          2. On the Sales report page, click the **Configuration** button (gear icon) in the options area
 
          ![](/img/accounting/compliance/e-filing/config/sales/0001.png)
@@ -5252,7 +5295,7 @@ groupSections:
 
          #### Step 1: Access Purchase Report Configuration
 
-         1. Navigate to **Compliance** → **E-Filing** → **Purchase**
+         1. Navigate to **Compliance** ‣ **E-Filing** ‣ **Purchase**
          2. Click the **Configuration** button (gear icon) in the options area
 
          ![](/img/accounting/compliance/e-filing/config/purchase/0001.png)
@@ -5303,7 +5346,7 @@ groupSections:
 
          #### Step 1: Access Withholding Tax Configuration
 
-         1. Navigate to **Compliance** → **E-Filing** → **Withholding Tax**
+         1. Navigate to **Compliance** ‣ **E-Filing** ‣ **Withholding Tax**
          2. Click the **Configuration** button in the options area
 
          ![](/img/accounting/compliance/e-filing/config/witholding/0001.png)
@@ -5424,7 +5467,7 @@ groupSections:
 
          ### Access the Profit & Loss Report
 
-         From the left sidebar, click **Accounting**. Then, from the top navigation menu, go to **Reporting** → **Profit and Loss**.
+         From the left sidebar, click **Accounting**. Then, from the top navigation menu, go to **Reporting** ‣ **Profit and Loss**.
 
          ![](/img/accounting/reporting/pnl/0001.png)
 
@@ -5508,7 +5551,7 @@ groupSections:
 
              ### Access the Balance Sheet
 
-             From the left sidebar, click **Accounting**. Then, from the top navigation menu, go to **Reporting** → **Financial** → **Balance Sheet**.
+             From the left sidebar, click **Accounting**. Then, from the top navigation menu, go to **Reporting** ‣ **Financial** ‣ **Balance Sheet**.
 
              ![](/img/accounting/reporting/balance-sheet/0001.png)
 
@@ -5594,7 +5637,7 @@ groupSections:
 
          ### Access the Statement of Cash Flows
 
-         From the left sidebar, click **Accounting**. Then, from the top navigation menu, go to **Reporting** → **Financial** → **Statement of Cash Flows**.
+         From the left sidebar, click **Accounting**. Then, from the top navigation menu, go to **Reporting** ‣ **Financial** ‣ **Statement of Cash Flows**.
 
          ![Accessing the Cash Flow report from the Reporting menu](/img/accounting/reporting/cashflow-statement/0001.png)
 
@@ -5668,7 +5711,7 @@ groupSections:
 
          ### Access Aged Receivable Report
 
-         From the left sidebar, click **Accounting**. Then, from the top navigation menu, go to **Reporting** → **Receivable** → **Aged Receivable**.
+         From the left sidebar, click **Accounting**. Then, from the top navigation menu, go to **Reporting** ‣ **Receivable** ‣ **Aged Receivable**.
 
          ![Accessing the Aged Receivable report from the Reporting menu](/img/accounting/reporting/aged-receivable/0001.png)
 
@@ -5766,7 +5809,7 @@ groupSections:
 
          ### Access Aged Payable Report
 
-         From the left sidebar, click **Accounting**. Then, from the top navigation menu, go to **Reporting** → **Payable** → **Aged Payable**.
+         From the left sidebar, click **Accounting**. Then, from the top navigation menu, go to **Reporting** ‣ **Payable** ‣ **Aged Payable**.
 
          ![Accessing the Aged Payable report from the Reporting menu](/img/accounting/reporting/aged-payable/0001.png)
 
