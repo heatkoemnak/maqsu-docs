@@ -99,11 +99,11 @@ groupSections:
         body: |
           The **Goods Receipts** process is a critical component of inventory management, allowing you to track and document the arrival of stock from your vendors. This ensures that your physical inventory levels match your digital records and provides a clear audit trail for every item entering your warehouse.
 
-          > **Note:** Goods Receipts remain in the "Ready" status until the physical items are counted and the transaction is validated. Once validated, the inventory levels are updated, and the record moves to "Done."
+          <Noted type="info" title="Note" image="/img/icon/notes.png">
+            Goods Receipts remain in the "Ready" status until the physical items are counted and the transaction is validated. Once validated, the inventory levels are updated, and the record moves to "Done".
+          </Noted>
 
-          ---
-
-          #### Step 1- Navigation
+          ###### Step 1- Navigation
 
 
           From the left sidebar, click **Inventory**. On the Inventory Overview dashboard, locate the **Goods Receipts** card (marked by the **Red Arrow**) and click on it to view all incoming shipments.
@@ -119,9 +119,7 @@ groupSections:
 
           ![Overview of the Goods Receipts list](/img/inventory/goods-receipts/0002.png)
 
-          ---
-
-          #### Step 2 - Creating a New Receipt
+          ###### Step 2 — Creating a New Receipt
 
           If you need to record an incoming shipment manually without a pre-existing purchase order:
 
@@ -130,9 +128,7 @@ groupSections:
           2.  Fill in the vendor details in the **Receive From** field and set the **Scheduled Date**.
 
 
-          ---
-
-          ### Processing a Receipt (WH/IN/00028)
+          ##### Step 3 —  Processing a Receipt (WH/IN/00028)
 
           To receive items into your warehouse, select a specific receipt (e.g., **WH/IN/00028**) from the list to open the detailed view.
 
@@ -144,9 +140,7 @@ groupSections:
 
           ![Saving the record](/img/inventory/goods-receipts/0005.png)
 
-          ---
-
-          ### Validating the Receipt
+          ##### Step 4 — Validate
 
           Once you have confirmed that the physical items match the record, you must finalize the transaction:
 
@@ -156,9 +150,7 @@ groupSections:
 
           ![Validating the receipt to update inventory](/img/inventory/goods-receipts/0006.png)
 
-          ---
-
-          ### Completed Receipt Status
+          ##### Step 5 — Verify Status
 
           Once the process is finished, the receipt is locked. The **Effective Date** is recorded, and the items are officially added to your **WH/Stock** location.
 
@@ -172,26 +164,20 @@ groupSections:
 
           For details on moving items between internal warehouse locations, see the [Internal Transfers Guide](/inventory/internal-transfers).
 
-
       - link: /internal-transfers
         title: Internal Transfers
         body: |
 
           An **Internal Transfer** is a document that records the movement of products between different locations within the same company. In MAQSU ERP, internal transfers are essential for managing warehouse-to-warehouse movements, location reallocations, and inventory reorganization without affecting customer shipments or vendor receipts.
+              <Noted type="info" title="Note" image="/img/icon/notes.png">
+              Internal transfers are used to move stock between your own locations, such as from one warehouse to another, or from stock to a quality control area. These transfers maintain accurate inventory levels across all locations and ensure proper traceability of product movements.
+              </Noted>
 
-              > **Note:** Internal transfers are used to move stock between your own locations, such as from one warehouse to another, or from stock to a quality control area. These transfers maintain accurate inventory levels across all locations and ensure proper traceability of product movements.
-
-              ---
-
-              ### Step 1: Go to Internal Transfers
+              ##### Step 1 — Navigation
 
               From the left sidebar, click **Inventory**. Then from the Dashboard, locate and click on the **Internal Transfers** card in the inventory operations section.
 
               ![](/img/inventory/internal-transfers/0001.png)
-
-              ---
-
-              ### Step 2: Internal Transfers List Overview
 
               Once you navigate to **Internal Transfers**, you will see the list view. If no transfers have been created yet, you'll see an empty state with the message:
 
@@ -214,19 +200,18 @@ groupSections:
 
               ---
 
-              ### Step 3: Click Create
+              ##### Step 2 — Create
 
               Click the **Create** button at the top-left of the Internal Transfers page to open a new blank transfer form.
 
               ![](/img/inventory/internal-transfers/0003.png)
 
-              ---
 
-              ### Step 4: Fill Out the Internal Transfer Form
+              ##### Step 3 —  Fill Out the Internal Transfer Form
 
               The new internal transfer form will open in **Draft** status. Fill in the following required and optional fields:
 
-              #### Header Fields
+              ![](/img/inventory/internal-transfers/0004.png)
 
               1. **Contact** *(Optional)* – Search and select the person or team responsible for this transfer. This could be a warehouse manager, logistics coordinator, or any contact who oversees the movement. Start typing and select from the dropdown list.
 
@@ -244,19 +229,17 @@ groupSections:
 
               8. **Source Document** *(Optional)* – An internal reference to any document that initiated this transfer, such as a purchase order, production order, or manual request number (e.g., P00032).
 
-              ![](/img/inventory/internal-transfers/0004.png)
-
               <Noted type="info" title="Important" image="/img/icon/notes.png">
               The source and destination locations must be different. You cannot transfer products from a location to itself. Ensure you select the correct source and destination to maintain accurate inventory tracking across your warehouses.
               </Noted>
 
-              ---
-
-              ### Step 5: Add Products to Transfer
+              ##### Step 5 — Add Products to Transfer
 
               Under the **Detailed Operations** tab, add the products that need to be moved between locations. The system may auto-populate products if this transfer was created from another document, or you can add them manually.
 
               For each product line, the following information is displayed:
+
+              ![](/img/inventory/internal-transfers/0005.png)
 
               1. **Product** *(Required)* – The name and internal reference code of the product being transferred. The product name appears in red text to draw attention.
 
@@ -270,8 +253,6 @@ groupSections:
 
               Click **Add a line** if you need to add additional products to the transfer.
 
-              ![](/img/inventory/internal-transfers/0005.png)
-
               In the example shown, two products are being transferred:
               - **[1AB-438-001] ABB SN 564406 Z78/2301-002 (Second Hand)** – 3.00 Pcs
               - **[1AC-114-001] ACB-2500A (4P), LV with metal enclose (Complete Set)** – 3.00 Pcs
@@ -282,17 +263,13 @@ groupSections:
               Verify that all product codes, quantities, and locations are correct before proceeding. Internal transfers affect inventory levels in both the source and destination locations, so accuracy is essential for proper stock management.
               </Noted>
 
-              ---
-
-              ### Step 6: Save the Internal Transfer
+              ##### Step 6 — Save the Internal Transfer
 
               After completing all required fields and adding product lines, click **Save** to save the internal transfer. At this stage, the transfer remains in **Draft** status and can still be edited or cancelled.
 
               The **Save** button is located at the top-left of the form.
 
-              ---
-
-              ### Step 7: Click Validate to Confirm the Transfer
+              ##### Step 7 — Click Validate to Confirm the Transfer
 
               Once you have reviewed and confirmed all details are correct, click the **Validate** button to officially initiate the transfer. This will:
 
@@ -313,9 +290,7 @@ groupSections:
               After validation, you can no longer freely edit the transfer. If you need to make changes, you may need to use the "Unreserve" button to return to Draft status, or create a new transfer for corrections.
               </Noted>
 
-              ---
-
-              ### Step 8: Update Done Quantities and Complete the Transfer
+              ##### Step 8 — Update Done Quantities and Complete the Transfer
 
               When products are physically moved from the source to the destination location, update the **Done** quantities:
 
@@ -334,87 +309,20 @@ groupSections:
               - All inventory movements are recorded in the system
               - Accounting entries are posted if configured
 
-              ---
-
-              ### Additional Operations and Features
-
-              #### Partial Transfers
-
-              If you cannot move the full quantity at once, you can update the **Done** quantities to reflect a partial transfer. The remaining quantities can be handled in several ways:
-              - Create a backorder transfer for the remaining items
-              - Cancel the remaining quantity if no longer needed
-              - Complete multiple partial transfers until all quantities are moved
-
-              #### Batch and Serial Number Tracking
-
-              For products that require batch or serial number tracking, additional fields will appear allowing you to specify which specific batches or serial numbers are being transferred. This ensures complete traceability across locations.
-
-              #### Transfer History and Traceability
-
-              Each internal transfer is fully traceable in the system. You can view:
-              - The complete transfer history for any product
-              - Who created and validated the transfer
-              - The exact date and time of inventory movements
-              - Links to source and destination stock levels
-
-              #### Cancelling a Transfer
-
-              If a transfer needs to be cancelled before completion:
-              1. Open the transfer document
-              2. Click the **Cancel** button
-              3. The status will change to **Cancelled**
-              4. Reserved quantities will be released back to the source location
-              5. No inventory movements will be recorded
-
-              #### Scrapping During Transfer
-
-              If products are damaged during the transfer process, you can use the **Scrap** button to remove them from inventory entirely rather than completing the transfer to the destination location.
-
-              ---
-
-              ### Internal Transfer Workflow Summary
-
-              1. **Draft** → Create transfer and specify source/destination locations
-              2. **Add Products** → Define which items and quantities to transfer
-              3. **Save** → Save the draft transfer
-              4. **Validate** → Reserve inventory and initiate the transfer (→ Waiting/Ready)
-              5. **Update Done Quantities** → Record actual moved quantities
-              6. **Mark as Done** → Complete the transfer and update inventory in both locations
-
-              ---
-
-              ### Best Practices for Internal Transfers
-
-              - Always verify source and destination locations before validating
-              - Use clear naming conventions for warehouse locations
-              - Update done quantities promptly after physical movements
-              - Use the Contact field to assign responsibility for the transfer
-              - Link transfers to source documents for better traceability
-              - Regularly review pending transfers to avoid inventory discrepancies
-              - Conduct periodic physical counts to verify transfer accuracy
-
-              ---
-
-              For more details on inventory management and warehouse operations, see the [Inventory Management Guide](/inventory/inventory-overview).
-
       - link: /delivery-order
         title: Delivery Order
         body: |
             A **Delivery Order** is a document that authorizes and records the shipment of goods from a warehouse or source location to a customer or destination. In MAQSU ERP, delivery orders are essential for managing outbound inventory movements, tracking shipments, and ensuring accurate fulfillment of sales orders.
 
-            > **Note:** Delivery orders are typically created after confirming a sales order or quotation. They serve as the link between order management and inventory, ensuring products are properly allocated and shipped to customers. Accurate delivery processing is vital for customer satisfaction and inventory control.
+            <Noted type="info" title="Note" image="/img/icon/notes.png">
+            Delivery orders are typically created after confirming a sales order or quotation. They serve as the link between order management and inventory, ensuring products are properly allocated and shipped to customers. Accurate delivery processing is vital for customer satisfaction and inventory control.
+            </Noted>
 
-            ---
-
-            ### Step 1: Go to Delivery Orders
+            ##### Step 1 — Go to Delivery Orders
 
             From the left sidebar, click **Inventory**. Then from the Dashboard, locate and click on the **Delivery Orders** card in the inventory operations section.
 
             ![](/img/inventory/delivery-orders/0001.png)
-
-            ---
-
-            ### Step 2: Delivery Orders List Overview
 
             Once you navigate to **Delivery Orders**, you will see the master list of all existing delivery orders. The list displays the following columns:
 
@@ -434,21 +342,18 @@ groupSections:
 
             ![](/img/inventory/delivery-orders/0002.png)
 
-            ---
-
-            ### Step 3: Click Create
+            ##### Step 2 — Click Create
 
             Click the **Create** button at the top-left of the Delivery Orders list page to open a new blank delivery order form.
 
             ![](/img/inventory/delivery-orders/0003.png)
 
-            ---
 
-            ### Step 4: Fill Out the Delivery Order Form
+            ##### Step 3 — Fill Out the Delivery Order Form
 
             The new delivery order form will open in **Draft** status. Fill in the following required and optional fields:
 
-            #### Header Fields
+            ![](/img/inventory/delivery-orders/0004.png)
 
             1. **Delivery Address** *(Required)* – Search and select the customer or delivery address. Start typing the customer name and select the correct entry from the dropdown list. This field determines where the goods will be shipped.
 
@@ -464,15 +369,14 @@ groupSections:
 
             7. **Source Document** *(Optional)* – The reference to the originating sales order, quotation, or other document that created this delivery order. This helps trace the delivery back to its source.
 
-            ![](/img/inventory/delivery-orders/0004.png)
-
             Once you fill in the delivery address and other header details, the form will update to show the selected information.
 
-            ---
 
-            ### Step 5: Add Products to Ship
+            ##### Step 4 — Add Products
 
             Under the **Detailed Operations** tab, add the products that need to be delivered to the customer. Click **Add a line** to add a new product line, then fill in the following fields for each item:
+
+            ![](/img/inventory/delivery-orders/0005.png)
 
             1. **Product** *(Required)* – Choose the product being delivered. Start typing the product name or code and select the correct entry. The system will auto-populate related fields.
 
@@ -486,23 +390,18 @@ groupSections:
 
             The system tracks both reserved quantities (what should be shipped) and done quantities (what has actually been prepared).
 
-            ![](/img/inventory/delivery-orders/0005.png)
-
             <Noted type="info" title="Note" image="/img/icon/notes.png">
             Carefully verify that all quantities are correct before validating the delivery. The "Reserved" quantity shows what should be shipped, while the "Done" quantity tracks what has actually been picked and prepared.
             </Noted>
 
-            ---
 
-            ### Step 6: Save the Delivery Order
+            ##### Step 6 — Save the Delivery Order
 
             After completing all required fields and adding product lines, click **Save** to save the delivery order. At this stage, the delivery remains in **Draft** status and can still be edited.
 
             ![](/img/inventory/delivery-orders/0006.png)
 
-            ---
-
-            ### Step 7: Click Validate to Confirm Availability
+            ##### Step 7 — Click Validate to Confirm Availability
 
             Once you have reviewed the delivery order, click the **Validate** button to check product availability and reserve the quantities. This will:
 
@@ -518,9 +417,7 @@ groupSections:
 
             After validation, the delivery order cannot be edited unless you unreserve it first. The **Done** column becomes editable, allowing you to track the actual picked quantities.
 
-            ---
-
-            ### Step 8: Update Done Quantities and Complete Delivery
+            ##### Step 8 — Update Done Quantities and Complete Delivery
 
             When products are physically picked and ready to ship, update the **Done** quantities to match what has been prepared:
 
@@ -540,69 +437,25 @@ groupSections:
             If you need to modify a completed delivery order, you may need to create a return or adjustment. Contact your system administrator for guidance on handling delivery corrections or returns.
             </Noted>
 
-            ---
-
-            ### Additional Operations and Features
-
-            #### Partial Deliveries
-
-            If you cannot ship the full reserved quantity, you can update the **Done** quantities to reflect a partial shipment. The remaining quantities can be handled in several ways:
-            - Create a backorder for the remaining items
-            - Cancel the remaining quantity if no longer needed
-            - Adjust the original sales order to reflect the partial fulfillment
-
-            #### Batch and Serial Number Tracking
-
-            For products that require batch or serial number tracking, additional fields will appear in the **Detailed Operations** tab. You must specify which batches or serial numbers are being shipped to maintain proper traceability.
-
-            #### Printing Delivery Documents
-
-            After validating the delivery order, you can print delivery documents for the shipping team or customer:
-            1. Click the **Print** button at the top of the form
-            2. Select the appropriate delivery document template
-            3. Generate a PDF with all delivery details, products, and quantities
-
-            #### Cancelling a Delivery Order
-
-            If a delivery needs to be cancelled:
-            1. Open the delivery order
-            2. Click the **Cancel** button
-            3. The status will change to **Cancelled**
-            4. Reserved quantities will be released back to available inventory
-
-            ---
-
-            ### Delivery Order Workflow Summary
-
-            1. **Draft** → Create delivery order and add products
-            2. **Save** → Save the draft delivery order
-            3. **Validate** → Reserve inventory and confirm availability (→ Waiting/Ready)
-            4. **Update Done Quantities** → Record actual picked quantities
-            5. **Mark as Done** → Complete the delivery and deduct inventory
-
-            ---
-
-            For more details on inventory management and delivery operations, see the [Inventory Management Guide](/inventory/inventory-overview).
-
       - link: /batch-transfers
         title: Batch Tarnsfers
         body: |
 
           A **Batch Transfer** is a document that allows you to group multiple individual transfer operations together for efficient processing and management. In MAQSU ERP, batch transfers are essential for organizing related transfers, assigning jobs to specific personnel, and managing timing for multiple operations that need to be completed together.
 
-              > **Note:** Batch transfers help improve operational efficiency by grouping transfers that should be done together, assigning them to specific team members, or scheduling them for coordinated execution. This is particularly useful for warehouse operations that involve multiple related movements or when managing workload distribution among staff.
+              <Noted type="info" title="Note" image="/img/icon/notes.png">
+                Batch transfers help improve operational efficiency by grouping transfers that should be done together, assigning them to specific team members, or scheduling them for coordinated execution. This is particularly useful for warehouse operations that involve multiple related movements or when managing workload distribution among staff.
+              </Noted>
 
-              ---
 
-              ### Step 1: Go to Batch Transfers
+              ##### Step 1 — Go to Batch Transfers
 
               From the left sidebar, click **Inventory**. From the Dashboard, hover over the **Transfers** menu and click on **Batch Transfers** from the dropdown menu.
 
               ![](/img/inventory/batch-transfers/0001.png)
 
-              ---
 
-              ### Step 2: Batch Transfers List Overview
+              ##### Step 2 — Batch Transfers List Overview
 
               Once you navigate to **Batch Transfers**, you will see the list view. If no batch transfers have been created yet, you'll see an empty state with the message:
 
@@ -621,21 +474,15 @@ groupSections:
               - **Status** – Draft, In Progress, or Done
               - **Transfer Count** – Number of transfers included in the batch
 
-              ---
-
-              ### Step 3: Create a New Batch Transfer
+              ##### Step 3 — Create a New Batch Transfer
 
               Click the **Create** button at the top-left of the Batch Transfers page to open a new blank batch transfer form.
 
               ![](/img/inventory/batch-transfers/0003.png)
 
-              ---
-
-              ### Step 4: Fill Out the Batch Transfer Form
+              ##### Step 4 — Fill Out the Batch Transfer Form
 
               The new batch transfer form will open in **Draft** status with a default name of "New". Fill in the following fields:
-
-              #### Header Fields
 
               1. **Responsible** *(Optional)* – Select the person or team member who will be responsible for executing all transfers in this batch. This helps assign workload and accountability. For example, select "Administrator" or the specific warehouse staff member.
 
@@ -643,9 +490,7 @@ groupSections:
 
               ![](/img/inventory/batch-transfers/0004.png)
 
-              ---
-
-              ### Step 5: Add Transfers to the Batch
+              ##### Step 5 — Add Transfers to the Batch
 
               Under the **Transfers** tab, you need to add the individual transfer operations that should be grouped together in this batch. The tab displays a table with the following columns:
 
@@ -656,15 +501,12 @@ groupSections:
               - **Source Document** – The originating document
               - **Status** – The current status of each transfer (Draft, Ready, etc.)
 
-              #### Adding Transfers
-
               Click **Add a line** to open the transfer selection dialog.
 
               ![](/img/inventory/batch-transfers/0005.png)
 
-              ---
 
-              ### Step 6: Select Transfers from the Dialog
+              ##### Step 6 — Select Transfers from the Dialog
 
               A modal dialog titled **"Add: Transfers"** will appear, showing all available transfer operations that can be added to the batch. The dialog displays a searchable, filterable list of transfers with the following information:
 
@@ -679,28 +521,13 @@ groupSections:
 
               ![](/img/inventory/batch-transfers/0006.png)
 
-              #### Selecting Transfers
-
-              1. Review the list of available transfers
-              2. Check the boxes next to the transfers you want to include in this batch
-              3. You can select multiple transfers at once
-              4. Use filters or search to find specific transfers
-              5. Click the **Select** button to add the checked transfers to your batch
-
-              In the example shown, three transfers are selected:
-              - **DS/00001** – Draft status, to Partner Locations
-              - **WH/IN/00028** – Ready status, from Partner Locations to WH/Stock (NPO-260005)
-              - **WH/IN/00029** – Ready status, from Partner Locations to WH/Stock (NPO-260006)
-
               You can also click **Create** from this dialog if you need to create a new transfer operation to add to the batch.
 
               <Noted type="info" title="Important" image="/img/icon/notes.png">
               Only transfers that are not already assigned to another batch can be added. Transfers that are already part of a batch will either be filtered out or clearly marked. You can group different types of transfers (receipts, deliveries, internal transfers) in the same batch if they need to be processed together.
               </Noted>
 
-              ---
-
-              ### Step 7: Review Selected Transfers
+              ##### Step 7 — Review Selected Transfers
 
               After clicking **Select**, the chosen transfers will be added to the **Transfers** tab in your batch. The table will now display all the selected transfer operations with their details.
 
@@ -722,13 +549,13 @@ groupSections:
 
               ---
 
-              ### Step 8: Save the Batch Transfer
+              ##### Step 8 — Save the Batch Transfer
 
               Once you have added all the transfers that should be grouped together, click the **Save** button at the top of the form to save the batch transfer. At this stage, the batch remains in **Draft** status.
 
               ---
 
-              ### Step 9: Confirm the Batch Transfer
+              ##### Step 9 — Confirm the Batch Transfer
 
               When you are ready to activate the batch and begin processing, click the **Confirm** button. This will:
 
@@ -747,7 +574,7 @@ groupSections:
 
               ---
 
-              ### Step 10: Process Transfers and Complete the Batch
+              ##### Step 10 — Process Transfers and Complete the Batch
 
               Once the batch is confirmed and in **In Progress** status, the responsible person should:
 
@@ -758,110 +585,6 @@ groupSections:
 
               When all transfers in the batch have been completed, the batch status will automatically update to **Done**, indicating that the entire batch has been successfully processed.
 
-              ---
-
-              ### Additional Operations and Features
-
-              #### Removing Transfers from a Batch
-
-              If you need to remove a transfer from the batch before confirmation:
-              1. Locate the transfer in the Transfers tab
-              2. Click the red circle icon next to the transfer
-              3. The transfer will be removed from the batch and can be added to a different batch or processed independently
-
-              #### Editing Transfer Details
-
-              While a batch is in Draft status, you can:
-              1. Click the checkmark icon next to any transfer
-              2. View and edit the transfer details
-              3. Make necessary changes
-              4. Return to the batch transfer form
-
-              #### Viewing Batch Progress
-
-              The batch transfer form provides visibility into the overall progress:
-              - See which transfers are complete vs. pending
-              - Monitor the status of each operation
-              - Identify any transfers that are blocked or delayed
-              - Track who is responsible for the work
-
-              #### Cancelling a Batch
-
-              If a batch is no longer needed:
-              1. Open the batch transfer
-              2. Remove all transfers from the Transfers tab
-              3. Or delete the batch transfer entirely before confirmation
-              4. Transfers will return to unassigned status and can be processed individually
-
-              #### Best Use Cases for Batch Transfers
-
-              Batch transfers are most useful when:
-              - Multiple deliveries need to be loaded on the same truck
-              - A warehouse worker should pick multiple orders together
-              - Several internal transfers need to happen at a specific time
-              - Related incoming and outgoing transfers should be coordinated
-              - Workload needs to be distributed fairly among staff members
-              - Time-critical operations need to be grouped for efficiency
-
-              ---
-
-              ### Batch Transfer Workflow Summary
-
-              1. **Create** → Open a new batch transfer form
-              2. **Assign Responsible** → Select the person who will execute the batch
-              3. **Add Transfers** → Select individual transfers to group together
-              4. **Review** → Verify all transfers are correct
-              5. **Save** → Save the batch as a draft
-              6. **Confirm** → Activate the batch (→ In Progress)
-              7. **Process** → Execute each transfer in the batch
-              8. **Complete** → Finish all transfers (→ Done)
-
-              ---
-
-              ### Benefits of Using Batch Transfers
-
-              **Improved Efficiency**
-              - Group related operations to reduce movement and time
-              - Process multiple transfers in a single trip or session
-              - Optimize warehouse picking routes
-
-              **Better Organization**
-              - Clear assignment of responsibilities
-              - Structured approach to managing multiple operations
-              - Easy tracking of related transfers
-
-              **Workload Management**
-              - Distribute tasks fairly among team members
-              - One person assigned to one batch
-              - Clear accountability for completion
-
-              **Timing Coordination**
-              - Schedule groups of transfers for specific times
-              - Coordinate receiving and shipping operations
-              - Manage time-sensitive movements together
-
-              **Visibility and Control**
-              - Monitor progress at the batch level
-              - Identify bottlenecks quickly
-              - Track completion rates for grouped operations
-
-              ---
-
-              ### Best Practices for Batch Transfers
-
-              - Group transfers logically based on location, timing, or type
-              - Assign batches to specific team members to ensure accountability
-              - Use clear naming or reference conventions if customizing batch names
-              - Keep batch sizes manageable (typically 5-15 transfers per batch)
-              - Review batch contents before confirming to avoid errors
-              - Monitor in-progress batches regularly to ensure timely completion
-              - Use batch transfers consistently for recurring grouped operations
-              - Train warehouse staff on the batch transfer workflow
-              - Review completed batches to identify process improvements
-
-              ---
-
-              For more details on inventory management and transfer operations, see the [Inventory Management Guide](/inventory/inventory-overview).
     body : |
           Companies with **multiple warehouses** need to manage the transfer of products from one location to another. In some cases, the companies may have different branches at different locations, which requires a great effort to manage the product transfers successfully. Companies often manage such situations by allocating main warehouses and sub warehouses for product distributions. The Transfers feature in MAQSU supports the effortless management of product transfers from one location to another.
 
@@ -872,9 +595,6 @@ groupSections:
           ![](/img/inventory/transfer/0001.png)
 
           Using the Filters and Group By options, you can effortlessly accomplish the sorting operations. Additionally, you will get Kanban, Calendar, and Location views for this platform. Now, let’s check how Odoo helps you to create a new transfer for the movement of products from one location to another. For this, click on the Create button.
-
-
-          ---
 
   - link: stock-adjustments#stock-adjustments
     uid: stock-adjustments
@@ -891,15 +611,6 @@ groupSections:
         title: Adjustments
         body: ''
     sections:
-      - link: /overview
-        title: Overviews
-        body: |
-
-            A **Adjustments** is a feature used to correct inventory quantities in the system to match the actual physical stock. In MAQSU, stock adjustments are essential for maintaining accurate inventory records by reconciling system quantities with physical counts, recording found or lost inventory, and correcting data entry errors.
-
-            > **Note:** Stock adjustments directly impact your inventory values and financial records. They should be used carefully and only when there is a verified discrepancy between system records and physical reality. All adjustments should be documented with clear reasons for audit and control purposes.
-
-            ---
 
       - link: /inventory-adjustments
         title: Inventory Adjustments
@@ -907,17 +618,14 @@ groupSections:
 
             This section will guide you through the process of creating and managing inventory adjustments. It will cover the different types of adjustments, how to create and validate them, and how to manage and track adjustments over time.
 
-            ---
-
-            ### Step 1: Navigation
+            ##### Step 1 — Navigation
 
             From the Inventory Dashboard, click on **Inventory** in the left sidebar. Then hover over the **Adjustments** menu section and click on **Inventory Adjustments** from the dropdown menu.
 
             ![](/img/inventory/adjustments/0001.png)
 
-            ---
 
-            ### Step 2: Master List
+            ##### Step 2 — Master List
 
             Once you navigate to **Inventory Adjustments**, you will see the master list of all existing inventory adjustment records. The list displays the following columns:
 
@@ -933,17 +641,13 @@ groupSections:
 
             Both adjustments have been completed and their status shows as **Validated**, meaning the inventory changes have been applied to the system.
 
-            ---
-
-            ### Step 3: Click Create
+            ##### Step 3 — Click Create
 
             Click the **Create** button at the top-left of the Inventory Adjustments list page to open a new blank adjustment form.
 
             ![](/img/inventory/adjustments/0003.png)
 
-            ---
-
-            ### Step 4: Fill Out the Inventory Adjustment Form
+            ##### Step 4 — Fill Out the Inventory Adjustment Form
 
             The new inventory adjustment form will open in **Draft** status with a default name of "Inventory". The form includes several important configuration options:
 
@@ -1027,9 +731,7 @@ groupSections:
             Setting "Counted Quantities" to "Default to stock on hand" is useful for cycle counts where most items match and you only need to correct discrepancies. Setting it to "Default to zero" is better for full physical counts where you want to enter all counted quantities manually to ensure accuracy.
             </Noted>
 
-            ---
-
-            ### Step 5: Start Inventory
+            ##### Step 5 — Start Inventory
 
             After configuring the locations, products, and options, click the **Start Inventory** button to generate the adjustment lines. This will:
 
@@ -1042,9 +744,7 @@ groupSections:
 
             Alternatively, you can click **Start Scan** to use barcode scanning to add products to the adjustment. This is useful for mobile barcode counting workflows.
 
-            ---
-
-            ### Step 6: Review the Lines Tab
+            ##### Step 6 — Review the Lines Tab
 
             After starting the inventory, switch to the **Lines** tab to see all products that need to be counted. The Lines tab displays a table with the following columns:
 
@@ -1073,9 +773,7 @@ groupSections:
               - Difference: 1.00 Pcs
               - *This indicates 1 piece was found that wasn't in the system*
 
-            ---
-
-            ### Step 7: Enter Counted Quantities
+            ##### Step 7 — Enter Counted Quantities
 
             For each product line, enter the actual physical quantity you counted in the warehouse in the **Counted** column:
 
@@ -1098,9 +796,7 @@ groupSections:
             Enter only the actual counted quantity, not the difference. The system will automatically calculate the adjustment needed. For example, if the system shows 10 pieces but you counted 8, enter "8" in the Counted column. The system will calculate a difference of -2 and reduce inventory by 2 pieces.
             </Noted>
 
-            ---
-
-            ### Step 8: Review Differences
+            ##### Step 8 — Review Differences
 
             Before validating, carefully review all differences to understand what adjustments will be made:
 
@@ -1126,9 +822,7 @@ groupSections:
             - Consider recounting items with large differences
             - Document reasons for significant adjustments
 
-            ---
-
-            ### Step 9: Validate the Adjustment
+            ##### Step 9 — Validate the Adjustment
 
             Once all counted quantities are entered and differences reviewed, validate the adjustment to apply the changes to inventory:
 
@@ -1149,24 +843,11 @@ groupSections:
 
             After validation, the adjustment is complete and your inventory records now match your physical count.
 
-            ---
-
-            ##### Workflow Summary
-
-            1. **Create** → Open new inventory adjustment form
-            2. **Configure** → Select locations, products, and options
-            3. **Start Inventory** → Generate product lines
-            4. **Count** → Physically count products in warehouse
-            5. **Enter** → Input counted quantities in the Lines tab
-            6. **Review** → Verify all differences and investigate discrepancies
-            7. **Document** → Record reasons for significant adjustments
-            8. **Validate** → Apply changes to inventory (→ Validated)
-
-      - link: /additional-features
-        title: Additional Features
+      - link: /help
+        title: Help & References
         body: |
 
-            ### Print Option
+            ##### Print Option
 
             ![](/img/inventory/adjustments/0012.png)
 
@@ -1181,7 +862,7 @@ groupSections:
             - Filing with physical count sheets
             - Variance analysis reports
 
-            ### Product Moves
+            ##### Product Moves
 
             ![](/img/inventory/adjustments/0010.png)
 
@@ -1194,7 +875,7 @@ groupSections:
 
             ![](/img/inventory/adjustments/0011.png)
 
-            ### Editing Draft Adjustments
+            ##### Editing Draft Adjustments
 
             While an adjustment is in **Draft** or **In Progress** status, you can:
             - Click **Edit** to modify the configuration
@@ -1207,7 +888,7 @@ groupSections:
 
             ---
 
-            ### Troubleshooting Common Issues
+            ##### Troubleshooting Common Issues
 
             **Issue: Cannot find a product in the list**
             - **Solution:** Check if you've filtered by location or products. Remove filters to see all items. Verify the product exists and is set as "storable" product type.
@@ -1227,6 +908,12 @@ groupSections:
             ---
 
             For more details on inventory management and related operations, see the [Inventory Module Overview](/inventory/inventory-overview).
+    body : |
+      A **Adjustments** is a feature used to correct inventory quantities in the system to match the actual physical stock. In MAQSU, stock adjustments are essential for maintaining accurate inventory records by reconciling system quantities with physical counts, recording found or lost inventory, and correcting data entry errors.
+
+      <Noted type="info" title="Important Note" image="/img/icon/notes.png">
+        Stock adjustments directly impact your inventory values and financial records. They should be used carefully and only when there is a verified discrepancy between system records and physical reality. All adjustments should be documented with clear reasons for audit and control purposes.
+      </Noted>
 
   - link: traceability#traceability
     uid: traceability
@@ -1354,44 +1041,44 @@ groupSections:
 
           ---
 
-          ### Step 1 - Open Transfers
+          ##### Step 1 — Open Transfers
           Go to **Inventory → Operations → Transfers**.
           This is the main list of stock movements, including receipts and deliveries.
           ![](/img/inventory/traceability/operations/0001.png)
 
-          ### Step 2 - Create a New Receipt
+          ##### Step 2 — Create a New Receipt
           Click **Create** to start a new transfer.
           Use an operation type like **Goods Receipts** when you are receiving stock from a vendor.
           ![](/img/inventory/traceability/operations/0002.png)
 
-          ### Step 3 - Complete the Header
+          ##### Step 3 —  Complete the Header
           Set the header fields such as **Receive From**, **Operation Type**, and **Destination Location**.
           The header defines where stock is coming from and where it will be stored.
           ![](/img/inventory/traceability/operations/0003.png)
 
-          ### Step 4 - Add Products and Demand Quantity
+          ##### Step 4 — Add Products and Demand Quantity
           ![](/img/inventory/traceability/operations/0004.png)
           ![](/img/inventory/traceability/operations/0005.png)
           In the **Operations** tab, click **Add a line**, select the product, and enter the expected quantity in **Demand**.
           **Demand** is the planned quantity; you will confirm the actual received quantity later.
 
-          ### Step 5 - Save and Mark as Todo
+          ##### Step 5 — Save and Mark as Todo
           ![](/img/inventory/traceability/operations/0006.png)
           ![](/img/inventory/traceability/operations/0007.png)
           Click **Save**, then click **Mark as Todo** to move the transfer to **Ready**.
           Marking as Todo prepares the transfer for detailed lot/serial entry and validation.
 
-          ### Step 6 - Open Detailed Operations
+          ##### Step 6 — Open Detailed Operations
           ![](/img/inventory/traceability/operations/0008.png)
           Open **Detailed Operations** from the product line.
           Use this dialog to assign lot/serial numbers and confirm what was actually received.
 
-          ### Step 7 - Add Lot/Serial Lines
+          ##### Step 7 — Add Lot/Serial Lines
           ![](/img/inventory/traceability/operations/0009.png)
           Click **Add a line** to create lot/serial assignments.
           Add one line per lot (batch) or per serial (unit), depending on the tracking method.
 
-          ### Step 8 - Enter Lot/Serial and Done Quantity
+          ##### Step 8 — Enter Lot/Serial and Done Quantity
           ![](/img/inventory/traceability/operations/0010.png)
           Enter the **Lot/Serial Number** and the **Done** quantity for each line.
           **Done** is the quantity you physically received and are confirming into stock.
@@ -1400,13 +1087,13 @@ groupSections:
           For **Lots**, one line can cover multiple units under the same lot number. For **Serial numbers**, each unit typically needs its own line with quantity `1`.
           </Noted>
 
-          ### Step 9 - Confirm and Validate
+          ##### Step 9 — Confirm and Validate
           ![](/img/inventory/traceability/operations/0011.png)
           ![](/img/inventory/traceability/operations/0012.png)
           Confirm the detailed lines, then click **Validate** to complete the receipt.
           Validation posts the stock movement and updates on-hand quantities.
 
-          ### Step 10 - Review Traceability
+          ##### Step 10 — Review Traceability
           ![](/img/inventory/traceability/operations/0013.png)
           ![](/img/inventory/traceability/operations/0014.png)
           ![](/img/inventory/traceability/operations/0015.png)
@@ -1424,41 +1111,41 @@ groupSections:
 
             </Noted>
 
-            ### Step 1 - Open Transfers
+            ##### Step 1 — Open Transfers
             ![](/img/inventory/traceability/lot-delivery-slip/0002.png)
              Delivery orders are created and managed from the same Transfers list as receipts.
 
-            ### Step 2 - Create
+            ##### Step 2 — Create
             ![](/img/inventory/traceability/lot-delivery-slip/0003.png)
             Create a new transfer and select an **Operation Type** such as **Delivery Orders**.
             The operation type determines whether the move ships to customers, receives from vendors, or moves internally.
 
-            ### Step 3 - Complete the Header
+            ##### Step 3 —  Complete the Header
             ![](/img/inventory/traceability/lot-delivery-slip/0004.png)
             Fill in fields like **Delivery Address**, **Source Location**, and **Scheduled Date**.
             Correct header data helps reservation and picking use the right locations and timing.
 
-            ### Step 4 - Add a line
+            ##### Step 4 — Add a line
             ![](/img/inventory/traceability/lot-delivery-slip/0005.png)
             Add the product lines and enter the expected quantities.
             For tracked products, you will select the exact lots/serials before validation.
 
-            ### Step 5 - Mark as Todo
+            ##### Step 5 — Mark as Todo
             ![](/img/inventory/traceability/lot-delivery-slip/0006.png)
             Click **Save**, then click **Mark as Todo** to move the delivery to **Ready**.
             This indicates the order is ready for picking and lot/serial assignment.
 
-            ### Step 6 - Assign Lot/Serial Numbers
+            ##### Step 6 — Assign Lot/Serial Numbers
             ![](/img/inventory/traceability/lot-delivery-slip/0007.png)
             In **Detailed Operations**, select the correct lot/serial numbers for the quantities you are shipping.
             Pick the identifiers that match your FIFO/FEFO policy or the items physically picked.
 
-            ### Step 7 - Validate
+            ##### Step 7 — Validate
             ![](/img/inventory/traceability/lot-delivery-slip/0008.png)
             Confirm the **Done** quantities and click **Validate**.
             Validation reduces stock and records exactly which lots/serials were delivered.
 
-            ### Step 8 - Review Traceability
+            ##### Step 8 — Review Traceability
             ![](/img/inventory/traceability/lot-delivery-slip/0009.png)
             ![](/img/inventory/traceability/lot-delivery-slip/0010.png)
             ![](/img/inventory/traceability/lot-delivery-slip/0011.png)
@@ -1470,34 +1157,34 @@ groupSections:
         body: |
             Using the **Consignment** option available under the **Settings** menu, it is possible to set owner on stored products in your inventory. The product will be sold by the retailer but the actual ownership of the product will be held by the supplier until the product has been sold to a customer. You can return unsold products to the suppliers easily with this method. The retailers don’t need to keep a permanent inventory in the case of consignment.
 
-            ### Step 1 - Enable Consignment
+            ##### Step 1 — Enable Consignment
             See how to enable [Consignment](#traceability-traceability-config-consignment).
             Enable this only if you need to track vendor-owned stock separately from company-owned stock.
 
-            ### Step 2 - Assign Owner
+            ##### Step 2 — Assign Owner
             While receiving products in your inventory, you can assign an owner to them with this feature. Let’s create a receipt for the consignment stock and assign an owner for the stock.
             ![](/img/inventory/traceability/consignments/0002_1.png)
 
             While creating the receipt, you can mention the name of the consignee in the **Assign Owner** field. The consignment stock and its quantity can be mentioned in the **Operations** tab using the **Add a Line** button. Here, we assigned **LY CHAIMOUY** as the consignee for the product Cheese Burger. We assigned 14 quantities of the product to LY CHAIMOUY. you can click the **Save** button. The consignment of 14 quantities of the Cheese Burger to LY CHAIMOUY is completed.
 
-            ### Step 3 - Click Mark as Todo
+            ##### Step 3 —  Click Mark as Todo
 
             ![](/img/inventory/traceability/consignments/0003_1.png)
 
             Once **Saved**, then click **Mark as Todo** to move the transfer to Ready. Marking as Todo prepares the transfer for detailed lot/serial entry and validation.
 
-            ### Step 4 - Validate
+            ##### Step 4 — Validate
 
             ![](/img/inventory/traceability/consignments/0004_1.png)
 
             Confirm the detailed lines, then click **Validate** to complete the receipt. Validation posts the stock movement and updates on-hand quantities.
 
-            ### Step 5 - Apply
+            ##### Step 5 — Apply
 
             ![](/img/inventory/traceability/consignments/0005_1.png)
             Click the **Apply** button to confirm and finalize the stock receipt, ensuring that the on-hand quantities are updated accurately.
 
-            ### Step 5 - View Reporting
+            ##### Step 5 — View Reporting
             ![](/img/inventory/traceability/consignments/0006_1.png)
             When you check the **Inventory Balance** report from the Reporting menu, you can observe that currently 14 quantities of the product are on hand.
 
