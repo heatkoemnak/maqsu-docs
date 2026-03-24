@@ -64,6 +64,10 @@ h5 strong{
   color:rgb(86, 89, 92) !important;
   font-weight: 500;
 }
+h6{
+  font-size: 15px !important;
+  font-weight: 600 !important;
+}
 p em{
   font-size: 17px !important;
 }
@@ -157,7 +161,7 @@ p{
 }
 
 p img{
-  border:1px solid rgb(11, 11, 12);
+  border:1px solid rgb(158, 158, 158);
   margin-top:10px !important;
 }
 

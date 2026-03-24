@@ -25,6 +25,30 @@ function topicsDataPlugin() {
 }
 
 function categoriesDataPlugin() {
+  function normalizeGroupSection(group) {
+    if (!group || typeof group !== "object") return group;
+
+    const breadcrumbs = Array.isArray(group.breadcrumbs) ? group.breadcrumbs : [];
+    const breadcrumbWithSections = breadcrumbs.find(
+      (crumb) => Array.isArray(crumb?.sections) && crumb.sections.length > 0
+    );
+    const breadcrumbWithBody = breadcrumbs.find(
+      (crumb) => typeof crumb?.body === "string" && crumb.body.trim().length > 0
+    );
+
+    return {
+      ...group,
+      body:
+        typeof group.body === "string" && group.body.trim().length > 0
+          ? group.body
+          : breadcrumbWithBody?.body || group.body,
+      sections:
+        Array.isArray(group.sections) && group.sections.length > 0
+          ? group.sections
+          : breadcrumbWithSections?.sections || group.sections,
+    };
+  }
+
   return {
     name: "categories-data",
     getPathsToWatch() {
@@ -43,7 +67,11 @@ function categoriesDataPlugin() {
         const filePath = path.join(categoriesDir, fileName);
         const raw = fs.readFileSync(filePath, "utf8");
         const { data } = matter(raw);
-        bySlug[slug] = data || {};
+        const normalized = { ...(data || {}) };
+        if (Array.isArray(normalized.groupSections)) {
+          normalized.groupSections = normalized.groupSections.map(normalizeGroupSection);
+        }
+        bySlug[slug] = normalized;
       }
 
       return { bySlug };

@@ -21,14 +21,14 @@ app.post("/api/chatwoot-webhook", async (req, res) => {
 
     console.log("🆕 New user message:", content);
 
-    // Step 1: Create embedding for user question
+    // Step 1 — Create embedding for user question
     const embeddingResponse = await openai.embeddings.create({
       model: "text-embedding-ada-002",
       input: content
     });
     const userEmbedding = embeddingResponse.data[0].embedding;
 
-    // Step 2: Query Supabase for most relevant document content
+    // Step 2 — Query Supabase for most relevant document content
     const { data: matches, error } = await supabase.rpc("match_mdx_documents", {
       query_embedding: userEmbedding,
       match_threshold: 0.75,
@@ -40,7 +40,7 @@ app.post("/api/chatwoot-webhook", async (req, res) => {
     const context = matches.map(m => m.doc_content).join("\n\n");
     console.log(context);
 
-    // Step 3: Ask AI with context
+    // Step 3 — Ask AI with context
     const aiResponse = await openai.chat.completions.create({
       model: "gpt-4o-mini-2024-07-18",
       messages: [
@@ -54,7 +54,7 @@ app.post("/api/chatwoot-webhook", async (req, res) => {
 
     const answer = aiResponse.choices[0].message.content;
 
-    // Step 4: Reply back to Chatwoot
+    // Step 4 — Reply back to Chatwoot
     const chatwootUrl = `https://app.chatwoot.com/api/v1/accounts/${account.id}/conversations/${conversation.id}/messages`;
 
     await axios.post(chatwootUrl, { content: answer, message_type: "outgoing" }, {

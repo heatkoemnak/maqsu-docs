@@ -22,7 +22,6 @@ groupSections:
         title: Introduction
         body: ''
     sections:
-
       - link: work-flow#work-flow
         uid: work-flow
         title: Workflow
@@ -96,6 +95,31 @@ groupSections:
     uid: quotations
     title: Quotations
     date: '2026-02-20T02:41:09.211Z'
+    body: |
+      **Quotations** are the first step in the process of the generation of sales orders in a business. A sales quotation will document all necessary information related to the sales product in order to give an exact idea to the customer. You can consider a sales quotation and the commercial document between the seller and the customer. It will bring clarification for both parties related to the price of the products included in the sales operation. With the assistance of the MAQSU ERP system, you can easily create and send a quotation to a customer which will help the customer to know the exact price details of the products and services offered by your company before signing any sales deals. The sales quotation can be later converted into a successful sales order if the customer is satisfied with your company's offers.
+
+      To access these setting options, navigate to **Sales ‣ Orders ‣ Quoations**
+
+        ![](/img/sales/quotations/0001.png)
+
+        Once you navigate to **Quotations**, you will see the master list of all existing sales quotations. The list displays the following columns:
+
+        ![](/img/sales/quotations/0002.png)
+
+        1. **Number** – The unique quotation number automatically assigned to each quote (e.g., S00001, S00002).
+        2. **Reference** – An optional internal reference linked to the quotation.
+        3. **Quotation Date** – The date the quotation was created.
+        4. **Customer** – The name of the customer receiving the quotation.
+        5. **Expiration Date** – The deadline by which the customer must accept the quote.
+        6. **Total** – The total quotation amount including taxes.
+        7. **Status** – The current document status: **Quotation**, **Quotation Sent**, **Sales Order**, or **Cancelled**.
+
+        ![](/img/sales/quotations/0003.png)
+
+        Using the customizable and default sorting options you can filter and group the quotations as per your requirements.
+
+        Let’s take a look at the creation of a new sales quotation. For this, you can click on the *Create* button which will direct you to a new quotation creation window as depicted below.
+
     breadcrumbs:
       - link: /
         title: All
@@ -108,52 +132,24 @@ groupSections:
         body: ''
     sections:
       - link: /create-new-quotation
-        title: Create New Quotation
+        title: Create
         body: |
 
-          A **Quotation** (also called a Sales Quote) is a formal document sent to a potential customer that outlines the products or services you offer, their quantities, unit prices, taxes, and the total amount. In MAQSU ERP, quotations are essential for initiating the sales process, managing customer negotiations, and converting opportunities into confirmed orders.
-
-          > **Note:** Quotations are typically created at the beginning of the sales cycle before an order is confirmed. Once a customer accepts a quotation, it can be converted into a sales order. Accurate quotations help build customer trust and streamline the sales process.
+          **Quotations** are typically created at the beginning of the sales cycle before an order is confirmed. Once a customer accepts a quotation, it can be converted into a sales order. Accurate quotations help build customer trust and streamline the sales process. Let's follow step down below:
 
           ---
 
-          ### Step 1: Go to Quotations
-
-          From the left sidebar, click **Sales**. Then from the top navigation menu, go to **Orders** → **Quotations**.
-
-          ![](/img/sales/quote/0001.png)
-
-          ---
-
-          ### Step 2: Quotations List Overview
-
-          Once you navigate to **Quotations**, you will see the master list of all existing sales quotations. The list displays the following columns:
-
-          1. **Number** – The unique quotation number automatically assigned to each quote (e.g., S00001, S00002).
-          2. **Reference** – An optional internal reference linked to the quotation.
-          3. **Quotation Date** – The date the quotation was created.
-          4. **Customer** – The name of the customer receiving the quotation.
-          5. **Expiration Date** – The deadline by which the customer must accept the quote.
-          6. **Total** – The total quotation amount including taxes.
-          7. **Status** – The current document status: **Quotation**, **Quotation Sent**, **Sales Order**, or **Cancelled**.
-
-          ![](/img/sales/quote/0002.png)
-
-          ---
-
-          ### Step 3: Click Create
+          ###### Step 1 — Create
 
           Click the **Create** button at the top-left of the Quotations list page to open a new blank quotation form.
 
-          ![](/img/sales/quote/0003.png)
+          ![](/img/sales/quotations/0004.png)
 
-          ---
-
-          ### Step 4: Fill Out the Quotation Form
+          ###### Step 3 — Fill Out the Quotation Form
 
           The new quotation form will open in **Quotation** status. Fill in the following required and optional fields:
 
-          #### Header Fields
+          ![](/img/sales/quotations/0005.png)
 
           1. **Customer** *(Required)* – Search and select the customer by name, code, email, or reference. Start typing and select the correct entry from the dropdown list.
 
@@ -169,15 +165,16 @@ groupSections:
 
           7. **Pricelist** *(Optional)* – Select a pricelist to automatically apply special pricing or discounts for the customer. The selected pricelist will update product prices on the quotation lines accordingly.
 
-          ![](/img/sales/quote/0004.png)
 
           Once you fill in the customer and other header details, the form will update to show the entered information.
 
           ---
 
-          ### Step 5: Add Products or Services
+          ###### Step 4 — Add Products or Services
 
           Under the **Order Lines** tab, add the products or services you are quoting to the customer. Click **Add a product** to add a new line item, then fill in the following fields for each line:
+
+          ![](/img/sales/quotations/0006.png)
 
           1. **Product** – Choose the product or service being quoted. Start typing the product name and select the correct entry. This will auto-populate the description, unit price, and taxes.
 
@@ -205,7 +202,6 @@ groupSections:
           - **Taxes** – The total tax amount applied.
           - **Total** – The grand total including taxes.
 
-          ![](/img/sales/quote/0005.png)
 
           ![](/img/sales/quote/0006.png)
 
@@ -215,32 +211,9 @@ groupSections:
 
           ---
 
-          ### Step 6: Save the Quotation
+          ###### Step 5 — Save the Quotation
 
           After completing all required fields, click **Save** to save the quotation as a draft. At this stage the quotation is saved but not yet sent to the customer — you can still edit it.
-
-          ---
-
-          ### Step 7: Send the Quotation to Customer
-
-          Once you have reviewed and confirmed all details are correct, you have several options:
-
-          #### Option 1: Send by Email
-          Click the **Send by Email** button to compose and send the quotation directly to the customer's email address. The system will:
-          - Attach a PDF copy of the quotation
-          - Use your company's email template
-          - Mark the quotation status as **Quotation Sent**
-
-          #### Option 2: Print Quotation
-          Click the **Print** button to generate a PDF version of the quotation that you can:
-          - Print and deliver physically
-          - Save for your records
-          - Send through external channels
-
-          #### Option 3: Mark as Sent
-          If you send the quotation through other means (phone, in-person, etc.), click **Mark as Sent** to update the status without emailing.
-
-          After sending, the quotation status will change from **Quotation** to **Quotation Sent**.
 
           <Noted type="info" title="Tip" image="/img/icon/notes.png">
           Always preview the quotation before sending to ensure all company branding, contact information, and terms and conditions are correctly displayed.
@@ -248,9 +221,9 @@ groupSections:
 
           ---
 
-          ### Step 8: Converting to Sales Order
+          ###### Step 6 — Converting to Sales Order
 
-          When the customer accepts your quotation, click the **Confirm** button to convert it into a Sales Order. This will:
+          When the customer accepts your quotation, click the **Create Order** button to convert it into a Sales Order. This will:
 
           - Change the status from **Quotation Sent** to **Sales Order**
           - Lock the pricing and terms
@@ -264,69 +237,11 @@ groupSections:
 
           ---
 
-          ### Best Practices for Quotations
-
-          **Before Creating:**
-          - Verify customer contact information is up-to-date
-          - Check current product pricing and availability
-          - Review any special terms or discounts for this customer
-          - Confirm applicable tax rates
-
-          **During Creation:**
-          - Use clear, professional product descriptions
-          - Apply appropriate discounts transparently
-          - Set realistic expiration dates (typically 7-30 days)
-          - Double-check all calculations
-          - Include relevant notes for special terms or conditions
-
-          **After Sending:**
-          - Follow up with the customer before the expiration date
-          - Be prepared to answer questions or negotiate terms
-          - Update the quotation if customer requests changes
-          - Convert promptly when customer accepts
-
-          ---
-
-          ### Common Quotation Scenarios
-
-          #### Scenario 1: Standard Product Quote
-          - Select customer
-          - Add products from catalog
-          - Apply standard pricing from pricelist
-          - Set 30-day expiration
-          - Send by email
-
-          #### Scenario 2: Custom Service Quote
-          - Select customer
-          - Add service items with custom descriptions
-          - Apply negotiated pricing
-          - Include detailed notes about scope of work
-          - Set 15-day expiration
-          - Print and deliver in-person
-
-          #### Scenario 3: Volume Discount Quote
-          - Select customer
-          - Add products with higher quantities
-          - Apply volume discount percentage per line
-          - Add note explaining discount terms
-          - Send by email with follow-up call
-
-          ---
-
-          ### Quotation Status Lifecycle
-
-          Understanding the quotation workflow:
-
-          1. **Quotation** (Draft) – Created but not yet sent
-          2. **Quotation Sent** – Sent to customer, awaiting response
-          3. **Sales Order** – Customer accepted, converted to order
-          4. **Cancelled** – Customer declined or expired
-
           You can also create **Alternative Quotations** to present different options to the customer without losing the original quote.
 
           ---
 
-          ### Frequently Asked Questions
+          ##### Frequently Asked Questions
 
           **Q: Can I modify a quotation after sending it?**
           A: Yes, but it's better to create an alternative version. If you must edit a sent quotation, notify the customer of the changes.
@@ -349,7 +264,7 @@ groupSections:
 
       - link: delete-quotation
         uid: delete-quotation
-        title: Delete Quotations
+        title: Delete
         body: |
           The Delete action allows users to permanently remove quotation records from the system. This is typically used when quotations are created by mistake, are duplicates, or are no longer relevant.
 
@@ -357,19 +272,13 @@ groupSections:
             Permanent Action: Once deleted, a quotation cannot be recovered. It will no longer appear in reports, analysis, or historical records.
           </Noted>
 
-          Methods of Deletion
-
-          ### 1. Delete Single Quotation
-
-          ![](/img/sales/quote/0007.png)
+          ![](/img/sales/quotations/0007.png)
 
           Users can delete an individual quotation directly from the quotation form or action menu. This is ideal for removing a specific incorrect entry while keeping other records intact.
 
-          ### 2. Multi-Delete (Bulk Delete)
+          ![](/img/sales/quotations/0008.png)
 
-          ![](/img/sales/quote/0008.png)
-
-          The multi-delete feature allows users to select several quotations from the list view and remove them in a single action. This improves efficiency when cleaning up drafts, expired, or duplicate quotations in bulk.
+          The **multi-delete** feature allows users to select several quotations from the list view and remove them in a single action. This improves efficiency when cleaning up drafts, expired, or duplicate quotations in bulk.
 
           <Noted type="info" title="Important" image="/img/icon/tip.png">
             * Only users with proper access rights can delete quotations
@@ -386,41 +295,30 @@ groupSections:
 
       - link: archive-quotation
         uid: archive-quotation
-        title: Archive Quotations
+        title: Archive
         body: |
-          The Export function allows users to download quotation data in various file formats such as Excel or CSV for external analysis, reporting, or sharing. This is useful for sales reviews, management reporting, and data backup.
+          The Archive function allows users to permanently remove quotation records from the system while keeping historical data for audit, tracking, and sales analysis purposes.
 
           *Select Fields*: Select fields that you want to show.
 
-          ![](/img/sales/quote/0007.png)
+          ![](/img/sales/quotations/0009.png)
 
       - link: custom-export-quotation
         uid: custom-export-quotation
-        title: Custom Export
+        title: Export
         body: |
-          The Archive feature allows users to hide quotations that are no longer active without permanently deleting them. Archived quotations are kept in the system for reference, reporting, and audit tracking. This helps maintain clean records while preserving historical data.
+          The Export feature provides a convenient way to download quotation data in various file formats such as Excel or CSV for further analysis, reporting, or sharing. This is particularly useful for sales performance reviews, management reporting, and data backup purposes. In MAQSU, there are two options to export or download quotations.
 
-          *Archive*: Used for expired, rejected, or inactive quotations
-
-          *Unarchive*: Restores an archived quotation back to the active list
-
-          Best Practice: Use archive instead of delete to preserve audit trails and historical sales analysis.
+          ![](/img/sales/quotations/0010.png)
 
 
-          ![](/img/sales/quote/0009.png)
+          ![](/img/sales/quotations/0011.png)
 
-          ![](/img/sales/quote/00010.png)
-    body: >
-     A Quotation is a formal price offer sent to a customer before they commit to a purchase. It serves as the primary document during the negotiation or inquiry stage.
+          You can custom field you want to see by **select** the checkbox . then open action and select on the **Export** options
+          ![](/img/sales/quotations/0012.png)
 
-      ### Key Points:
-      * Lists specific prices, quantities, terms, and a validity period.
-      * Generally not legally binding until accepted.
-      * The customer can accept, reject, or request changes before it is converted to a Sales Order.
-
-      > **Note**: Accurate quotations are vital for ensuring tax compliance and maintaining healthy cash flow projections.
-
-      ***
+          Here you can find field you wan to display on the Excel file. Then jus t click on the export button.
+          ![](/img/sales/quotations/0013.png)
 
   - link: sales-orders#sales-orders
     uid: sales-orders
@@ -436,65 +334,111 @@ groupSections:
       - link: /sales/sales-orders
         title: Sales Orders
         body: ''
+    body: |
+      Once the customer confirms the quotation, it will be automatically converted into a sales order.
+
+
+      **Sales Orders** are a core part of the sales process in any business. A sales order documents all confirmed transaction details — including products, quantities, pricing, and customer information — serving as the official agreement between your company and the customer. Before a sales order is created, it typically begins as a **Quotation**, which is a preliminary commercial document presented to the customer for review and acceptance.
+
+      With the **MAQSU**, you can easily manage the full sales cycle — from creating and sending quotations to converting them into confirmed sales orders, tracking delivery status, and monitoring payment progress. This gives both your team and your customers full visibility into every stage of the transaction.
+
+      To access Sales Orders, navigate to **Sales ‣ Orders ‣ Sales Orders**
+      ![](/img/sales/sales-order/0001.png)
+
+
+
+      Once you navigate to **Sales Orders**, you will see two main views depending on where you are in the workflow:
+
+      The Quotations list displays all existing quotations, both draft and posted. The list shows the following columns:
+
+      ![](/img/sales/sales-order/0002.png)
+
+      1. **Quotation Number** – The unique reference number automatically assigned to each quotation (e.g., QT00001, QT00006).
+      2. **Quotation Date** – The date the quotation was created.
+      3. **Customer** – The name of the customer the quotation is addressed to.
+      4. **Reference** – An optional internal reference linked to the quotation.
+      5. **Salesperson** – The team member responsible for managing the quotation.
+      6. **Total** – The total amount of the quotation including applicable taxes.
+      7. **Status** – The current document status: **Draft** or **Posted**.
+
+      Once a quotation is confirmed and converted, it appears in the **Sales Orders** list filtered under **My Orders**. This view displays:
+
+      ![](/img/sales/sales-order/0003.png)
+
+      Using the **Filters** dropdown, you can narrow down the sales orders list by the following options:
+
+      - **My Orders** – Show only orders assigned to you
+      - **Pending Invoice** – Orders that have not yet been invoiced
+      - **Order Date** – Filter by a specific date range
+      - **Partially Shipped** – Orders with incomplete deliveries
+      - **Fully Shipped** – Orders where all items have been delivered
+      - **Partially Paid** – Orders with partial payment received
+      - **Fully Paid** – Orders that have been paid in full
+      - **Add Custom Filter** – Define your own filter criteria
+
+      You can also use **Group By** to organize and sort the list according to your reporting needs.
+
+      Let's take a look at the creation of a new sales quotation. For this, click the **Create** button at the top-left of the page, which will open a new quotation form as shown below.
+
     sections:
       - link: confirm-existing-order#confirm-existing-order
         uid: confirm-existing-order
-        title: Confirm Existing Order
-        body: >
-          To confirm the sales order:
+        title: Converting Quotation
+        body: |
+          To confirm an existing quotation, navigate to the **Sales  ‣  Orders** dashboard and locate the quotation with status *Posted*. Click on it to open the quotation form and confirm the sales order. This action will convert the quotation into a sales order, allowing you to create an invoice and collect payment.
+
+          ###### Step 1 — Open an existing Quotation
+
+          From the sales dashboard, navigate to **Sales  ‣  Orders** find
+          quotation with status *Quotation* click on it
+
+          ![](/img/sales/sales-order/0004.png)
+
+          ###### Step 2 — Create Order
+
+          After creating the quotation, you will see the **Create Order** button. Clicking this will automatically convert the quotation into a sales order.
+
+          ![](/img/sales/sales-order/0005.png)
+
+          ###### Step 3 — Post
+
+           Finally, click the **Post** button to officially confirm the sales order. This will update the document status from **Quotation** to **Sales Order**.
+
+          ![](/img/sales/sales-order/0006.png)
+
+          <Noted type="info" title="Next" image="/img/icon/sparkles.png">
+            The next step is to create a **Delivery Order**. See how to generate [Delivery Order](/sales/delivery-order#delivery-order)
+          </Noted>
 
 
-          ### 1. Open an existing Quotation
-
-
-          From the sales dashboard, navigate to *Sales  /  Orders* find
-          quotation with status *Quotation* → click on it
-
-          ![](/img/sales/confirm_sale_order/0007.png)
-
-
-          ### 2. Click on confirm
-
-
-          Once the quotation is confirmed, it becomes a sales order.
-
-          You will be able to create an invoice and collect the payment.
-
-          ![](/img/sales/confirm_sale_order/0008.png)
-
-
-          ***
       - link: create-new-sales-order#create-new-sales-order
         uid: create-new-sales-order
         title: Create New Sales Order
-        body: >
-          ### 1. Open Sales Order Dashboard
+        body: |
+          You can use this option if you don't want to create it from scratch or from a quotation. This can be useful if you want to create an order from an existing customer or supplier, or if you want to reuse an existing order template.
+
+          ###### Step 1 — Open Sales Order
+
+          From the sales dashboard, navigate to **Sales  ‣  Orders** find the *Sales
+          Order* menu, click on it to open the sales order list page. From there, you
+          can filter the list to find the order you want to create.
 
 
-          From the sales dashboard, navigate to *Sales  /  Orders* find *Sales
-          Order* menu
-
-          → click on it
+          ![](/img/sales/sales-order/0007.png)
 
 
-          ![](/img/sales/confirm_sale_order/0006.png)
+          ###### Step 2 — Create
+
+          Click the **Create** button to create a new sales order based on the selected quotation. This will open a new sales order form with all the details from the quotation pre-filled.
+
+          ![](/img/sales/sales-order/0008.png)
 
 
-          ### 2. Click on create
+          ###### Step 3 — Complete the required fields
 
+          After clicking the **Create** button, the sales quotation form will open, prompting you to fill in all required fields. This includes customer information, sales quotation date, items, quantities, and prices. Ensure that you accurately fill in all the required fields to create a valid sales quotation.
 
-          ![](/img/sales/confirm_sale_order/0005.png)
-
-
-          ### 3. Complete the required fields
-
-
-          Once you click on the create button, the quotation form will appear.
-
-          Fill in all required fields including customer information, sales
-
-          quotation date, items, quantities, and prices.
-
+          ![](/img/sales/sales-order/0009.png)
 
           1. **Customer:** The name of the customer receiving the sales
              quotation.
@@ -513,20 +457,13 @@ groupSections:
           7. **Payment Terms:** Specifies the agreed payment time frame or
              conditions (e.g., Due in 30 days).
 
-          ![](/img/sales/3333.png)
 
 
-          ### 4. Add Products or Services
+          ###### Step 4 —  Add products or services
 
+          To populate the sales quotation with items, click the **Add a product** button within the **Order Lines** section. Then, complete the required fields for each item, including the product/service, description, quantity, unit price, taxes, and subtotal. This will enable you to accurately capture the items and services being quoted to the customer.
 
-          To add items to the sales quotation, click the "**Add a product**"
-
-          button within the **Order Lines** section. Then fill in the
-
-          product/service, description, quantity, unit price, taxes, and
-
-          subtotal for each item.
-
+          ![](/img/sales/sales-order/0010.png)
 
           1. **Select Product:** Choose the product or service you are sales
              quoting the customer for. Start typing the product name and select the
@@ -558,94 +495,46 @@ groupSections:
              **Subtotal = (Quantity × Unit Price) – Discount**.\
              The subtotal for all lines is summed at the bottom of the sales quotation, before taxes are added.
 
-          ![](/img/sales/4444.png)
 
+          Additionally, you can structure the sales quotation by:
 
-          ### 5. Review Total Summary
+          * **Add a section:** Organize and categorize related items or services on the sales quotation for enhanced clarity and presentation.
+          * **Add a note:** Insert any supplementary comments or instructions for the customer or for your own reference. These notes will appear on the sales quotation.
 
+          These supplementary fields assist in providing a clearer sales quotation for the customer and can be viewed or downloaded from the sales quotation record.
+
+          ###### Step 5 — Review Total Summary
+
+          ![](/img/sales/sales-order/0011.png)
 
           Review the sales quotation total summary at the bottom of the sales
 
           quotation form. This section displays:
 
-
           * **Untaxed Amount:** The sum of all sales quotation lines before
             taxes.
+          * **Discount:** The total discount applied to all sales quotation
+            lines. (It shows only if discounts are added)
           * **Taxes:** The total tax amount applied to all sales quotation
             lines. (It shows only if taxes are added)
-          * **Total:** The grand total due, including taxes.
-
+          * **Total:** The grand total due, including taxes and discounts.
 
           <Noted type="info" title="Note" image="/img/icon/sparkles.png">
             Carefully verify that all amounts are correct. If any discrepancies are found, review and adjust the corresponding sales quotation lines or tax settings before continuing.
           </Noted>
 
+          ##### Step 6 — Save
+          Once all necessary fields are completed, click **Save** to create a new sales order. Subsequently, click **Post** to finalize the sales order, making it visible to the customer and updating the accounting records accordingly.
 
-          ![](/img/sales/5555.png)
+          ![](/img/sales/sales-order/0012.png)
 
+          <Noted type="info" title="Next" image="/img/icon/sparkles.png">
+            The next step is to create a **Delivery Order** to manage the physical delivery of products to the customer. This step involves tracking the delivery status, updating inventory levels, and managing any potential product returns. See how to generate [Delivery Order](/sales/delivery-order#delivery-order)
+          </Noted>
 
-          **Step 6: (Optional) Organize Information**
-
-
-          You can also organize the sales quotation by:
-
-
-          * **Add a section:** Organize and group related items or services on
-            the sales quotation for better clarity and presentation.
-          * **Add a note:** Include any extra comments or instructions for the
-            customer or your own reference. Notes will appear on the sales
-            quotation.
-
-          These additional fields help clarify your sales quotation for the
-
-          customer and can be viewed or downloaded from the sales quotation
-
-          record.
-
-
-          **Step 7: Save Quotation**
-
-
-          After completing all required fields, click **Save** to create the
-
-          sales quotation.
-
-
-          ![](/img/sales/6666.png)
-
-
-          ***
-    body: >
-      A *sales order* is a confirmed order from the customer agreeing to
-      purchase the goods/services.
-
-
-      ### Key points:
-
-
-      * Created after the quotation is accepted.
-
-      * Legally binding agreement (in most cases).
-
-      * Confirms quantities, price, delivery, and payment terms.
-
-      * Triggers production, delivery, and invoicing.
-
-      * Example: Customer approves the quote → you issue a sales order.
-
-
-      ### To create a sales order, you have two options:
-
-
-      * **Confirm Existing Order:** Use this option if you already have an
-        existing quotation that you want to convert to a sales order.
-      * **Create New Sales Order:** Use this option if you don't have any
-        existing quotation and want to create a new sales order from scratch.
-
-      ***
   - link: delivery-order#delivery-order
     uid: delivery-order
-    title: Delivery Order
+    title: Delivery
     date: '2026-02-19T03:00:25.188Z'
     breadcrumbs:
       - link: /
@@ -655,71 +544,62 @@ groupSections:
         title: Sales
         body: ''
       - link: /sales/delivery-order
-        title: Delivery Order
+        title: Delivery
         body: ''
-    sections:
-      - link: validate-delivery-order#validate-delivery-order
-        uid: validate-delivery-order
-        title: Validate Delivery Order
-        body: >
-          To validate the delivery order:
-
-
-          ### 1. Open existing sales order
-
-
-          ![](/img/sales/confirm_sale_order/0002.png)
-
-
-          ### 2. Click Delivery
-
-
-          Click the **Delivery** button to make a delivery order
-
-          ![](/img/sales/delivery_order/0001.png)
-
-
-          ### 3. Click Check Availablity
-
-
-          When you click the **Delivery** button, the system will redirect you
-          to this page. On this page, you will see the **Check Availability**
-          button. This button allows you to check whether the products on the
-          sales order are available in stock or not. This is an important step
-          to ensure that you can fulfill the order.
-
-          ![](/img/sales/delivery_order/0002.png)
-
-
-          ### 4. Click Validate
-
-
-          If the product is available in stock, the **Validate** button will
-          appear with a blue background, indicating that you can confirm the
-          delivery order. Clicking the **Validate** button will finalize the
-          delivery order.
-
-          ![](/img/sales/delivery_order/0003.png)
-
-
-          ### 5. Click Apply
-
-
-          ![](/img/sales/delivery_order/0004.png)
-
-          once validated, quanity **Resevered** has move to **Done**
-
-          ![](/img/sales/delivery_order/0005.png)
-
-
-          ***
     body: |
       A **Delivery Order** is the step in the sales process where a sales order
-      is delivered to the customer after the sales order is confirmed.
+      is delivered to the customer after the sales order is confirmed. Accurate
+      delivery processing is vital for customer satisfaction and inventory
+      control. It ensures that products are properly allocated and shipped
+      to customers.
 
       Please follow the steps below how to create a delivery order.
+      ##### Step 1 — Open existing sales order
 
-      ***
+      Open an existing sales order that you want to deliver by clicking on the sales order number. This will open the sales order form where you can review the details of the sales order.
+
+      ##### Step 2 — Delivery
+
+      Click the **Delivery** button to create a delivery order based on the sales order. This will allow you to track the delivery status, update inventory levels, and manage any potential product returns.
+
+      ![](/img/sales/delivery_order/0001.png)
+
+      ##### Step 3 — Validate
+
+      If the product is available in stock, the **Validate** button will
+      appear with a blue background, indicating that you can confirm the
+      delivery order. Clicking the **Validate** button will finalize the
+      delivery order and update inventory levels. This step is crucial as it
+      confirms that the products have been physically delivered to the customer.
+
+      ![](/img/sales/delivery_order/0002.png)
+
+      The **Delivery Address** shows Seng Somaly as the customer receiving this shipment. The **Operation Type** is set to My Company: **Delivery Orders**, which defines the warehouse operation category being performed. The **Source Location** is **WH/Stock**, meaning items will be picked from the main warehouse stock. On the right side, the **Scheduled Date** is 24/03/2026 23:59:00, which is the planned deadline for completing the delivery. The **Source Document** shows New, referencing the originating sales order or transfer that triggered this delivery.
+
+      <Noted type="caution" title="Important" image="/img/icon/sparkles.png">
+            Before clicking Validate, ensure the Done quantity is correctly filled in. If left at 0.00, the system may prompt a warning or automatically create a backorder for the remaining quantity.
+          </Noted>
+
+      ##### Step 4 — Apply
+
+      Click the **Apply** button to confirm the delivery order and update the inventory levels.
+
+      ![](/img/sales/delivery_order/0004.png)
+
+      ##### Step 5 — Verify
+
+      After applying, the delivery order status will change to **Delivered**.
+      Verify that the delivery order details are correct and the inventory levels
+      are updated accordingly.
+
+      ![](/img/sales/delivery_order/0005.png)
+
+      ##### Step 5 — View Quantity Sold
+
+      24.00 Units Sold (highlighted in red) reflects that 24 units have been sold and delivered
+
+      ![](/img/sales/delivery_order/0006.png)
+
   - link: invoicing#invoicing
     uid: invoicing
     title: Invoicing

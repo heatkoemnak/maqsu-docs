@@ -1,23 +1,23 @@
-import { useEffect, useState, useMemo, useCallback } from "react";
-import { useLocation } from "@docusaurus/router";
-import useGlobalData from "@docusaurus/useGlobalData";
-import { BiCollapseAlt, BiExpandAlt } from "react-icons/bi";
-import { LiaAngleRightSolid } from "react-icons/lia";
-import { IoClose } from "react-icons/io5";
-import Link from "@docusaurus/Link";
-import MdxString from "./MdxString";
-import { CardGrid } from "./Cards/CardGrid";
-import CustomTabsPage from "./CustomTabsPage";
-import { VideoPlayer } from "./VideoPlayer/VideoPlayer";
-import { Lists } from "./Cards/Lists";
-import { ProcessFlow } from "./ProcessFlow/ProcessFlow";
-import { Noted } from "./Noted/Noted";
-import { Steps } from "./Steps/Steps";
-import { HiMiniChevronLeft, HiMiniChevronRight, HiMiniChevronUp } from "react-icons/hi2";
-import Navbar from "./Navbar/Navbar";
-import Footer from "./Footer";
-import { formatDistanceToNow } from "date-fns";
-import CardList from "./CardList/CardList";
+import { useEffect, useState, useMemo, useCallback } from 'react';
+import { useLocation } from '@docusaurus/router';
+import useGlobalData from '@docusaurus/useGlobalData';
+import { BiCollapseAlt, BiExpandAlt } from 'react-icons/bi';
+import { LiaAngleRightSolid } from 'react-icons/lia';
+import { IoClose } from 'react-icons/io5';
+import Link from '@docusaurus/Link';
+import MdxString from './MdxString';
+import { CardGrid } from './Cards/CardGrid';
+import CustomTabsPage from './CustomTabsPage';
+import { VideoPlayer } from './VideoPlayer/VideoPlayer';
+import { Lists } from './Cards/Lists';
+import { ProcessFlow } from './ProcessFlow/ProcessFlow';
+import { Noted } from './Noted/Noted';
+import { Steps } from './Steps/Steps';
+import { HiMiniChevronLeft, HiMiniChevronRight, HiMiniChevronUp } from 'react-icons/hi2';
+import Navbar from './Navbar/Navbar';
+import Footer from './Footer';
+import { formatDistanceToNow } from 'date-fns';
+import CardList from './CardList/CardList';
 
 export default function Page() {
   const location = useLocation();
@@ -36,8 +36,8 @@ export default function Page() {
      🔥 GET PAGE + END PATH SEGMENT
   ----------------------------------- */
   const { pageSlug, endPath } = useMemo(() => {
-    const cleaned = location.pathname.replace(/\/$/, "");
-    const segments = cleaned.split("/").filter(Boolean);
+    const cleaned = location.pathname.replace(/\/$/, '');
+    const segments = cleaned.split('/').filter(Boolean);
     return {
       pageSlug: segments[0],
       endPath: segments[1] || null,
@@ -50,7 +50,7 @@ export default function Page() {
   useEffect(() => {
     if (!pageSlug) return;
 
-    const bySlug = globalData?.["categories-data"]?.default?.bySlug ?? {};
+    const bySlug = globalData?.['categories-data']?.default?.bySlug ?? {};
     const category = bySlug[pageSlug] ?? null;
     const sections = category?.groupSections || [];
 
@@ -81,7 +81,7 @@ export default function Page() {
 
       posts.forEach((group) => {
         group.sections?.forEach((sub) => {
-          const id = sub.uid || sub.link?.replace("/", "");
+          const id = sub.uid || sub.link?.replace('/', '');
           const sectionEl = document.getElementById(id);
 
           if (!sectionEl) return;
@@ -91,9 +91,9 @@ export default function Page() {
 
           const usedHeadingIds = {};
           const formatStepTitle = (title) => {
-            const t0 = (title || "").trim();
+            const t0 = (title || '').trim();
             // Normalize common "dash" characters to ASCII hyphen for consistent formatting.
-            const t = t0.replace(/\u2013|\u2014|\u2212/g, "-");
+            const t = t0.replace(/\u2013|\u2014|\u2212/g, '-');
             const m = t.match(/^step\s*([0-9]+)\s*[-:]+\s*(.+)$/i);
             if (m) return `Step ${m[1]} - ${m[2].trim()}`;
 
@@ -107,17 +107,17 @@ export default function Page() {
           };
 
           extractedHeadings[id] = Array.from(h3Elements).map((h3) => {
-            const rawTitle = (h3.textContent || "").trim();
+            const rawTitle = (h3.textContent || '').trim();
             const textSlug = rawTitle
               .toLowerCase()
-              .replace(/[^a-z0-9\\s-]/g, "")
-              .replace(/\\s+/g, "-")
-              .replace(/-+/g, "-");
+              .replace(/[^a-z0-9\\s-]/g, '')
+              .replace(/\\s+/g, '-')
+              .replace(/-+/g, '-');
 
-            // Scope heading IDs to the subsection so repeated "Step 1 - Navigate"
+            // Scope heading IDs to the subsection so repeated "Step 1 — Navigate"
             // in different subsections doesn't collide.
             const scopePrefix = `${group.uid}-${id}`;
-            const baseId = `${scopePrefix}-${textSlug || "section"}`;
+            const baseId = `${scopePrefix}-${textSlug || 'section'}`;
             const nextCount = (usedHeadingIds[baseId] || 0) + 1;
             usedHeadingIds[baseId] = nextCount;
             const uniqueId = nextCount === 1 ? baseId : `${baseId}-${nextCount}`;
@@ -138,7 +138,7 @@ export default function Page() {
 
     // Initialize active state from hash (no JS scrolling)
     hashTimeoutId = setTimeout(() => {
-      const hash = window.location.hash.replace("#", "");
+      const hash = window.location.hash.replace('#', '');
       if (hash) {
         setActive(hash);
       }
@@ -158,15 +158,15 @@ export default function Page() {
 
     // Hash change handler
     const handleHashChange = () => {
-      const hash = window.location.hash.replace("#", "");
+      const hash = window.location.hash.replace('#', '');
       setActive(hash || null);
     };
 
     handleHashChange();
-    window.addEventListener("hashchange", handleHashChange);
+    window.addEventListener('hashchange', handleHashChange);
 
     return () => {
-      window.removeEventListener("hashchange", handleHashChange);
+      window.removeEventListener('hashchange', handleHashChange);
     };
   }, [posts]);
 
@@ -176,10 +176,10 @@ export default function Page() {
     };
 
     handleWindowScroll();
-    window.addEventListener("scroll", handleWindowScroll, { passive: true });
+    window.addEventListener('scroll', handleWindowScroll, { passive: true });
 
     return () => {
-      window.removeEventListener("scroll", handleWindowScroll);
+      window.removeEventListener('scroll', handleWindowScroll);
     };
   }, []);
 
@@ -229,7 +229,7 @@ export default function Page() {
 
   const buildUrl = useCallback((uid) => `/${pageSlug}/${uid}`, [pageSlug]);
   const scrollToTop = useCallback(() => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }, []);
 
   /* -----------------------------------
@@ -242,25 +242,28 @@ export default function Page() {
 
     return {
       prevItem: currentIndex > 0 ? allGroups[currentIndex - 1] : null,
-      nextItem: currentIndex !== -1 && currentIndex < allGroups.length - 1
-        ? allGroups[currentIndex + 1]
-        : null,
+      nextItem:
+        currentIndex !== -1 && currentIndex < allGroups.length - 1
+          ? allGroups[currentIndex + 1]
+          : null,
     };
   }, [allGroups, endPath]);
 
   /* -----------------------------------
      🔥 TINA COMPONENTS
   ----------------------------------- */
-  const tinaComponents = useMemo(() => ({
-    CardGrid: (props) => <CardGrid {...props} />,
-    tabsesctions: (props) => <CustomTabsPage {...props} />,
-    VideoPlayer: (props) => <VideoPlayer {...props} />,
-    Lists: (props) => <Lists {...props} />,
-    ProcessFlow: (props) => <ProcessFlow {...props} />,
-    Noted: (props) => <Noted {...props} />,
-    Steps: (props) => <Steps {...props} />,
-
-  }), []);
+  const tinaComponents = useMemo(
+    () => ({
+      CardGrid: (props) => <CardGrid {...props} />,
+      tabsesctions: (props) => <CustomTabsPage {...props} />,
+      VideoPlayer: (props) => <VideoPlayer {...props} />,
+      Lists: (props) => <Lists {...props} />,
+      ProcessFlow: (props) => <ProcessFlow {...props} />,
+      Noted: (props) => <Noted {...props} />,
+      Steps: (props) => <Steps {...props} />,
+    }),
+    [],
+  );
 
   /* -----------------------------------
      🔥 TIME AGO COMPONENT
@@ -268,9 +271,9 @@ export default function Page() {
   const TimeAgo = useMemo(() => {
     return function TimeAgoComponent({ date }) {
       const getTimeAgo = () => {
-        if (!date) return "Just now";
+        if (!date) return 'Just now';
         const diffInSeconds = Math.floor((new Date() - new Date(date)) / 1000);
-        if (diffInSeconds < 60) return "Just now";
+        if (diffInSeconds < 60) return 'Just now';
         return formatDistanceToNow(new Date(date), { addSuffix: true });
       };
 
@@ -312,9 +315,9 @@ export default function Page() {
           {posts?.map((post, i) => (
             <div key={i} className="pq-breadcrumb-row">
               {post?.breadcrumbs?.map((word, j) => (
-                <span key={j} style={{ display: "flex", alignItems: "center", gap: 2 }}>
+                <span key={j} style={{ display: 'flex', alignItems: 'center', gap: 2 }}>
                   {j > 0 && (
-                    <span className="sep" style={{ margin: "0 2px" }}>
+                    <span className="sep" style={{ margin: '0 2px' }}>
                       <LiaAngleRightSolid size={8} />
                     </span>
                   )}
@@ -359,7 +362,7 @@ export default function Page() {
                 {group.sections?.length > 0 && (
                   <div className="pq-sub-menu">
                     {group.sections.map((sub) => {
-                      const id = sub.uid || sub.link?.replace("/", "");
+                      const id = sub.uid || sub.link?.replace('/', '');
                       const hasSubHeadings = headings[id]?.length > 0;
                       const isExpanded = expandedSections[id];
 
@@ -371,21 +374,23 @@ export default function Page() {
                               setActive(id);
                               if (hasSubHeadings) toggleSection(id);
                             }}
-                            className={`pq-sub-btn${active === id ? " is-active" : ""}`}
+                            className={`pq-sub-btn${active === id ? ' is-active' : ''}`}
                           >
                             <div className="sub-title">
                               <span>{sub.title}</span>
                             </div>
                           </a>
 
-                          {hasSubHeadings && isExpanded && (
+                          {hasSubHeadings && !isExpanded && (
                             <div className="pq-nested-menu">
                               {headings[id].map((heading) => (
                                 <a
                                   key={heading.id}
                                   href={`#${heading.id}`}
                                   onClick={() => setActive(heading.id)}
-                                  className={`pq-nested-btn${active === heading.id ? " is-active" : ""}`}
+                                  className={`pq-nested-btn${
+                                    active === heading.id ? ' is-active' : ''
+                                  }`}
                                   style={{ paddingLeft: heading.level === 4 ? '24px' : '12px' }}
                                 >
                                   {heading.title}
@@ -404,13 +409,9 @@ export default function Page() {
         )}
 
         {/* Content */}
-        <div className={`pq-content${!sidebarOpen ? " no-sidebar" : ""}`}>
+        <div className={`pq-content${!sidebarOpen ? ' no-sidebar' : ''}`}>
           {showScrollTop && (
-            <button
-              onClick={scrollToTop}
-              className="pq-scroll-top-btn"
-              aria-label="Scroll to top"
-            >
+            <button onClick={scrollToTop} className="pq-scroll-top-btn" aria-label="Scroll to top">
               <HiMiniChevronUp size={18} />
             </button>
           )}
@@ -423,14 +424,14 @@ export default function Page() {
             {sidebarOpen ? <BiExpandAlt size={15} /> : <BiCollapseAlt size={15} />}
           </button>
 
-          <div className={`pq-docs-body${!sidebarOpen ? " full-width" : ""}`}>
-            <div className={`pq-inline-breadcrumb${!sidebarOpen ? " full-width" : ""}`}>
+          <div className={`pq-docs-body${!sidebarOpen ? ' full-width' : ''}`}>
+            <div className={`pq-inline-breadcrumb${!sidebarOpen ? ' full-width' : ''}`}>
               {posts?.map((post, i) => (
                 <div key={i} className="pq-breadcrumb-row">
                   {post?.breadcrumbs?.map((word, j) => (
-                    <span key={j} style={{ display: "flex", alignItems: "center", gap: 2 }}>
+                    <span key={j} style={{ display: 'flex', alignItems: 'center', gap: 2 }}>
                       {j > 0 && (
-                        <span className="sep" style={{ margin: "0 2px" }}>
+                        <span className="sep" style={{ margin: '0 2px' }}>
                           <LiaAngleRightSolid size={8} />
                         </span>
                       )}
@@ -445,7 +446,7 @@ export default function Page() {
               <div key={group.uid}>
                 <section
                   id={group.uid}
-                  className={`pq-section-shell pq-section${!sidebarOpen ? " full-width" : ""}`}
+                  className={`pq-section-shell pq-section${!sidebarOpen ? ' full-width' : ''}`}
                 >
                   <div className="pq-section-head">
                     <h1 className="pq-section-title pq-section-title-main">{group.title}</h1>
@@ -459,13 +460,15 @@ export default function Page() {
                 </section>
 
                 {group.sections?.map((sub, si) => {
-                  const id = sub.uid || sub.link?.replace("/", "");
+                  const id = sub.uid || sub.link?.replace('/', '');
                   return (
                     <div key={id}>
                       {si > 0 && <div className="page-divider" />}
                       <section
                         id={id}
-                        className={`pq-section-shell pq-sub-section${!sidebarOpen ? " full-width" : ""}`}
+                        className={`pq-section-shell pq-sub-section${
+                          !sidebarOpen ? ' full-width' : ''
+                        }`}
                       >
                         <div className="pq-section-head">
                           <h2 className="pq-section-title pq-section-title-sub">{sub.title}</h2>
@@ -487,7 +490,7 @@ export default function Page() {
 
       {/* ── PAGINATION ── */}
       {endPath && (
-        <div className={`pq-pagination${!sidebarOpen ? " full-width" : ""}`}>
+        <div className={`pq-pagination${!sidebarOpen ? ' full-width' : ''}`}>
           {prevItem ? (
             <Link to={buildUrl(prevItem.uid)} className="pq-nav-link prev">
               <HiMiniChevronLeft size={20} className="pq-nav-icon" />
