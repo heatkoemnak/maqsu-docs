@@ -27,7 +27,7 @@ export default function Page() {
   const [active, setActive] = useState(null);
   const [expandedSections, setExpandedSections] = useState({});
   const [allGroups, setAllGroups] = useState([]);
-  const [sidebarOpen, setSidebarOpen] = useState(true);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
   const [headings, setHeadings] = useState({});
   const [modalImage, setModalImage] = useState(null);
   const [showScrollTop, setShowScrollTop] = useState(false);
