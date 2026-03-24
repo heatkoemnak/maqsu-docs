@@ -556,9 +556,9 @@ const GlobalStyles = () => (
       display: block;
       font-size: 12px;
       font-weight: 500;
-      color: var(--c-muted);
+      color: #848585;
       margin-top: 2px;
-      margin-bottom: 0;
+      margin-bottom: 20px;
     }
 
     .pq-page {
@@ -853,10 +853,7 @@ const GlobalStyles = () => (
 
     .pq-section-head {
       display: flex;
-      align-items: baseline;
-      justify-content: space-between;
-      gap: 12px;
-      margin: 0 0 10px;
+      flex-direction: column;
     }
 
     .pq-section-title {
