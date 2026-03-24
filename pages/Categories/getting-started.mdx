@@ -374,16 +374,17 @@ groupSections:
           fields based on the record type.
 
           ![](/img/getting-started/interface/00021.png)
-    body: >
+    body: |
       This interface follows a **dashboard layout** pattern, which is commonly
       used in business management and Enterprise Resource Planning (ERP) systems
       to provide an overview of key performance indicators and facilitate quick
       access to core modules.
 
       ![](/img/getting-started/interface/0001.png)
+
   - link: user-account#user-account
     uid: user-account
-    title: User Account
+    title: Account and Security
     date: '2026-02-20T06:56:48.823Z'
     breadcrumbs:
       - link: /
@@ -393,331 +394,9 @@ groupSections:
         title: Getting Started
         body: ''
       - link: ''
-        title: User Accounts
+        title: Account and Security
         body: ''
-    sections:
-      - link: /reset-password
-        title: Reset Password
-        body: >
-
-          Resetting your password in MAQSU is usually pretty straightforward.
-          Here’s the typical way it works:
-
-          This guide explains the steps to reset your password in MAQSU. Follow the method that matches your situation.
-
-          To Reset User Password, follow these steps:
-
-
-          Step 1 — Go to Users Module
-
-
-          Go to **Settings ‣ User & Commpanies ‣ Users** from the main dashboard.
-
-
-          ![](/img/getting-started/user_account/0001.png)
-
-          Step 2 — Click Change Password
-
-
-          Select the user whose password you want to reset and click **Change Password**.
-
-          ![](/img/getting-started/user_account/0002.jpg)
-
-          Step 3 — Enter a new password and click change ppassword
-
-          Enter a new password for the selected user and click **Change Password**.
-
-          ![](/img/getting-started/user_account/0003.jpg)
-
-      - link: account-security#account-security
-        uid: account-security
-        title: Account Security
-        body: >
-
-          ### User Authentication (Login Security)
-
-          This controls how users log into the system.
-
-          Typical features:
-
-
-          * Username & Password login
-
-          * Password policies (if configured)
-
-          * Session control (auto logout after inactivity)
-
-          * Admin-only user creation
-
-
-          Best practice:
-
-
-          * Use strong passwords
-
-          * Do NOT share admin credentials
-
-          * Disable unused user accounts
-
-      - link: role-based-security#role-based-security
-        uid: role-based-security
-        title: Role-Based Security
-        body: |
-
-          ### Setup Role
-
-          Roles are used to define the actions that a user can perform within
-          the system.
-
-
-          Setting up user roles in mAQSU is basically about defining what each
-          user can see and do inside the system (permissions, modules, actions,
-          etc.).
-
-
-          Roles can be configured to allow users to:
-
-
-          * Create, read, update, and delete records
-
-          * Access specific modules and features
-
-          * Perform actions such as posting journal entries, creating invoices,
-          etc.
-
-
-          Here’s the typical step-by-step:
-
-
-          #### 1. Log in as an Admin
-
-
-          * Log in as an Admin (only admins can manage roles)
-
-
-          #### 2. Go to User Management
-
-
-          * Navigate to: Settings ‣ Users & Companies ‣ Roles
-
-
-          ![](/img/getting-started/user_account/user_roles/0001.png)
-
-
-          #### 3. Create a New Role
-
-
-          * Click Create
-
-
-          ![](/img/getting-started/user_account/user_roles/0002.png)
-
-
-          #### 4. Enter role name or describe your role
-
-
-          * Role Name (e.g., Accountant, Sales, Warehouse)
-
-
-          Assigning a descriptive name to a role makes it easier to understand
-          the purpose of the role and facilitates better management of user
-          permissions.
-
-
-          ![](/img/getting-started/user_account/user_roles/0003.png)
-
-
-          #### 5. Users Field (Right Side)
-
-
-          This section lets you assign users to this role.
-
-
-          * Add the employees who should have “Accountant” permissions
-
-          * Any user added here automatically inherits all access rules below
-
-
-          ![](/img/getting-started/user_account/user_roles/0004.png)
-
-
-          #### 6. Hide Menu
-
-
-          This mean:
-
-
-          * U1 ‣ Accountant role ‣ Gets accounting access only
-
-
-          ![](/img/getting-started/user_account/user_roles/0005.png)
-
-
-          Now, U1 will only have access to the accounting module.
-
-
-          ![](/img/getting-started/user_account/user_roles/0006.png)
-
-          ### Access Rights
-
-
-          This is the core security system in mAQSU.
-
-
-          Security flow:
-
-
-          ![](/img/getting-started/user_account/user_roles/0007.png)
-
-
-          Example:
-
-
-          * Accountant role ‣ Access to Accounting only
-
-          * Sales role ‣ No access to Accounting
-
-          * Admin role ‣ Full system control
-
-
-          Permissions you control in Roles:
-
-
-          * Read (view data)
-
-          * Create (add data)
-
-          * Write (edit data)
-
-          * Delete (remove data)
-
-
-          If access is not given ‣ user cannot open that module.
-
-
-          ### Record Rules
-
-
-          This is more advanced security.
-
-
-          It controls which records a user can see, not just modules.
-
-
-          Example:
-
-
-          * Branch user ‣ Can only see their branch invoices
-
-          * Employee ‣ Can only see their own records
-
-          * Manager ‣ Can see all records
-
-
-          #### Menu Security (Hide Menu)
-
-
-          Using the **Hide Menu** tab in Role Management, administrators can
-          hide
-
-          specific menus from users based on their role.
-
-
-          You can hide menus such as:
-
-
-          * Finance
-
-          * HR
-
-          * Inventory
-
-          * Settings
-
-
-          If a menu is hidden, the user will not see it in the sidebar and
-          cannot
-
-          access that module even if they try to navigate directly.
-
-
-          This is useful for restricting access to sensitive modules.
-
-
-          #### Action & Button Restrictions (Hide Action / Hide Button &
-          Tab)
-
-
-          MAQSU allows administrators to control visibility of specific actions,
-
-          buttons, and interface elements to reduce operational risks.
-
-
-          You can restrict:
-
-
-          * Delete button
-
-          * Post button
-
-          * Approve actions
-
-          * Export options
-
-          * Edit buttons
-
-          * Sensitive tabs inside forms
-
-
-          This prevents accidental data deletion, unauthorized approvals,
-
-          and unwanted data exports.
-
-
-          #### Recommended Security Setup (Role-Based)
-
-
-          A proper role-based security structure is recommended for
-          organizations:
-
-
-          *Admin*
-
-
-          * Full access to all modules
-
-          * Access to Settings and Role Management
-
-          * Manage users, roles, and system configuration
-
-
-          *Accountant*
-
-
-          * Access to Accounting and Financial Reports
-
-          * Read, Create, and Write permissions enabled
-
-          * Delete permission disabled for safety
-
-          * No access to HR or System Settings
-
-
-          *Staff / User*
-
-
-          * Read-only or limited Create/Write access
-
-          * No Delete permissions
-
-          * Restricted module visibility based on job role
-
-
-          Following the principle of least privilege ensures better data
-          protection,
-
-          system stability, and compliance with internal security policies.
-    body: >
+    body: |
       A user account is essential for securing your business data and
       controlling access to your MAQSU ERP system. Each user account is
       associated with a unique set of permissions and roles, which define the
@@ -733,10 +412,258 @@ groupSections:
       Users can update their profile information, reset their password, or
       change their assigned roles as necessary.
 
-      ![](/img/getting-started/user_account/0001.png)
+      ![](/img/getting-started/account-security/0001.png)
+
+      <Noted type="info" title="Note" image="/img/icon/notes.png">
+      To perform and manage any action in this section, you must log in as an **Administrator**. Only administrators have the necessary permissions to manage all aspects of account and security settings.
+      </Noted>
+
+    sections:
+      - link: account-security#account-security
+        uid: account-security
+        title: Account Security
+        body: |
+            This section provides an overview of user account management and security features in MAQSU ERP. Topics covered include:
+
+            * User account creation and management
+            * Profile information and role assignment
+            * Advanced login security features
+            * Password policies and enforcement
+            * Strong password requirements and rotation
+
+            ---
+
+            ### Login Security
+
+            MAQSU ERP provides advanced login security features to ensure that only authorized users can access the system.
+
+            Key features:
+
+            1. **Email & Password login**: Users can log in using their email address and a unique password.
+
+            2. **Password policies**: Administrators can configure password policies to enforce strong password requirements, such as password length, complexity, and rotation.
+
+            3. **Session control (auto logout after inactivity)**: The system can be configured to automatically log out users after a specified period of inactivity to prevent unauthorized access.
+
+            4. **Admin-only user creation**: Only administrators can create new user accounts to ensure that access is properly controlled and audited.
+
+            5. **Two-factor authentication (2FA)**: MAQSU ERP supports two-factor authentication to provide an additional layer of security for users. This can be configured to require a second form of verification (e.g., code sent via SMS) in addition to the user's password.
+
+            <Noted type="info" title="Best Practices" image="/img/icon/notes.png">
+              * Implement a password rotation policy to ensure that all users change their passwords regularly
+
+              * Regularly review and disable unused user accounts to prevent unauthorized access
+
+              * Monitor login attempts and alert administrators of potential security breaches
+
+              * Use strong, unique passwords and store them securely
+
+              * Avoid sharing admin credentials and limit access to sensitive areas
+            </Noted>
+
+            ---
+
+            ### Reset Password
+
+            Password reset is a straightforward process in MAQSU. This guide outlines the steps to follow in order to reset a user's password. Please follow the method that best fits your situation.
+
+            To reset a user's password, follow these steps:
 
 
-      ***
+            ##### Step 1 — Navigation
+
+            From the main dashboard, navigate to **Settings** by clicking on the gear icon at the top-right corner of the page. Then, from the dropdown menu, select **User & Companies** and click on **Users** from the sub-menu.
+
+            ![](/img/getting-started/account-security/0002.png)
+
+
+            ##### Step 2 — Change Password
+            Select the user whose password you want to reset and click **Change Password**. The **Change Password** button will open a password reset form where you can enter a new password for the selected user. Make sure to enter a strong password that meets the password policy requirements.
+
+            ![](/img/getting-started/account-security/0003.png)
+
+            ##### Step 3 — Enter a new password
+
+            Enter a strong and unique password for the selected user, making sure it meets the password policy requirements (e.g., minimum length, complexity, and rotation period). Then, click **Change Password** to save the new password.
+
+            ![](/img/getting-started/account-security/0004.png)
+
+
+            <Noted type="info" title="Tip" image="/img/icon/notes.png">
+              Always use a **strong password** that combines uppercase and lowercase letters, numbers, and special characters. Avoid using easily guessable information such as names or birthdays. A strong password indicator showing full green bars, as seen here, confirms the password meets the recommended security standard.
+            </Noted>
+      - link: role-based-security#role-based-security
+        uid: role-based-security
+        title: Users and Permissions
+        body: |
+
+          Users and permissions are core components of MAQSU's security
+          system. The system is designed to be secure, scalable, and
+          customizable to meet the needs of various businesses.
+
+          The user and permission system is based on a Role-Based Access Control
+          (RBAC) model, which allows administrators to define roles and assign
+          them to users. Roles are used to define the actions that a user can
+          perform within the system.
+
+          ---
+
+          ### Roles
+          This is the Roles management page, where administrators can create and manage user roles within the system. Roles are used to define a specific set of access rules and permissions that can be assigned to one or more users, helping control what each user can see and do inside the system.
+
+          Here's the typical step-by-step:
+
+          ##### Step 1 — Navigation
+
+          Navigate to **Settings** by clicking on the gear icon at the top-right corner of the page.Then, from the dropdown menu, select **Users & Companies** and click on **Roles** from the sub-menu.
+
+          ![](/img/getting-started/account-security/0005.png)
+
+          The list displays one role record with the following details across each column.
+
+          The Name column shows SCT, which is the name of the role. This is the identifier used when assigning the role to users or referencing it in access configurations.
+
+          ![](/img/getting-started/account-security/0006.png)
+
+          1. The **Created by** column shows Administrator, meaning this role was created by the system administrator account.
+
+          2. The **Created on** column shows 14/03/2026 12:19:23, which is the exact date and time the role was first created in the system.
+
+          3. The **Users** column displays a tag labeled SCT, indicating that there is currently one user with the username SCT assigned to this role.
+
+          4. The **Access Rules** column shows the number 3, meaning this role has three access rules configured, which define what resources or actions users under this role are permitted to perform.
+
+          5. The **Active** column displays a toggle switch that is turned on (shown in dark blue), confirming that this role is currently active and in use within the system. Toggling it off would deactivate the role without deleting it.
+
+          ##### Step 2 — Create New
+
+          Click the **Create** button to create a new role. This will open a blank role form where you can enter the role name and description.
+
+          ![](/img/getting-started/account-security/0007.png)
+
+          ##### Step 3 — Enter role name or describe your role
+
+          Assigning a descriptive name to a role makes it easier to understand
+          the purpose of the role and facilitates better management of user
+          permissions.
+
+          ![](/img/getting-started/account-security/0008.png)
+
+
+          ##### Step 3 — Assign users to this role
+
+          This section enables you to assign users to this role, inheriting all access rules configured below.
+
+          * Add the employees who should have "Accountant" permissions, such as accountants, bookkeepers, and other financial professionals.
+
+          * Any user added here will automatically inherit all access rules below, ensuring that only authorized personnel can access sensitive financial information.
+
+
+          ![](/img/getting-started/user_account/user_roles/0004.png)
+
+          ---
+
+          ### Access Rights
+
+          **Access Rights** is the core permission system in MAQSU that controls what each user can see and do within the system. By configuring access rights inside a role, administrators can precisely define which data models a user can interact with and what level of interaction is allowed.
+
+          ![](/img/getting-started/user_account/user_roles/0007.png)
+
+          Access rights are assigned at the Role level, not directly to individual users. Once a role is configured with the appropriate permissions, any user assigned to that role will inherit those access rules automatically. This makes it easy to manage permissions for groups of users consistently.
+
+          **For example**, an Accountant role would be given access only to accounting-related models, a Sales role would have access limited to sales and CRM data, and an Admin role would have full control across all modules in the system. If a user's role does not include access to a specific module or model, that user will not be able to open or interact with it at all.
+
+          ![](/img/getting-started/account-security/0009.png)
+
+
+          Inside each role's configuration form, the **Access tab** (highlighted in the screenshot) is where data-level permissions are defined. Each row in the access table represents a specific data model and its allowed operations. The columns are as follows:
+          The access rules are defined as follows:
+
+          1. **Model Description**: The specific data model the rule applies to, such as Sales Order.
+          2. **Model Category**: The broader module the model is grouped under, such as Sales and CRMs.
+          3. **Filter**: Restricts which specific records within that model the user can access. For example, a filter rule for a Sales Order model could limit access to only orders from a specific region, customer, or date range.
+          4. **Read**: The user can view records of this model.
+          5. **Create**: The user can add new records of this model.
+          6. **Write**: The user can edit existing records of this model.
+          7. **Delete**: The user can remove records of this model.
+
+          To add a new access rule to a role, click **Add a line** (highlighted in the screenshot) to insert a single rule, or Add multi-line to add several rules at once. After adding a line, select the target model and check the appropriate permission boxes based on what the role should be allowed to do.
+
+          ---
+
+          ### Restriction Access
+
+          Based on the screenshot, here is the explanation focusing on all three restriction tabs — Hide Menu, Hide Action, and Hide Button/Tab — highlighted in the Roles / Accountant configuration:
+
+          ![](/img/getting-started/account-security/00010.png)
+
+          Beyond data-level permissions set in the Access tab, MAQSU provides three additional tabs that give administrators fine-grained control over what users can see and interact with in the interface. These three tabs — **Hide Menu**, **Hide Action**, and **Hide Button/Tab** — work together to create a fully restricted and role-appropriate experience for each user.
+
+          #### 1. Hide Menu
+
+          The **Hide Menu** tab controls which top-level navigation menus are hidden from users assigned to this role.
+
+          ![](/img/getting-started/account-security/00011.png)
+
+          In this example, the Accountant role has four menus configured to be hidden — **Sales**, **Purchase**, **Inventory**, and **Settings**. This means users with the **Accountant** role will only see the modules not included in this list when they log in, preventing them from navigating to unrelated areas of the system entirely. Each entry has a drag handle on the left for reordering and an × button on the right to remove it from the hidden list. The Add a line option at the bottom allows adding more menus to restrict.
+
+          #### 2. Hide Action
+
+          The **Hide Action** tab takes restriction a step further by hiding specific action buttons or options that appear within a module's interface. Even if a user can access a module through the menu, certain actions — such as confirming an order, validating a delivery, or printing a report — can be hidden so the user cannot perform those operations. This is useful when a user should be able to view a module but should not be able to trigger certain workflows or processes within it.
+
+          ![](/img/getting-started/account-security/00012.png)
+
+          This page configures the **Accountant** role's access control for **Journal Entries** under **Accounting**. The screenshot shows the following settings:
+
+          * **Role:** Accountant
+          * **Users:** SCT is assigned to this role
+          * **Access Rules:** 5 rules attached to the role
+          * Open tab: **Hide Action**
+          * Model: **Journal Entries** under **Accounting**
+
+          To restrict what accountants can do in the **Journal Entries** module:
+
+          1. Hide the **New Invoice1** and **Invoice 01** reports from the accountant.
+          2. Prevent the accountant from posting entries, reversing them, or sending and printing them.
+          3. Hide the **Graph**, **Pivot**, **Calendar**, **Diagram**, **Gantt**, **Activity**, and **Grid** views from the accountant.
+
+          To restrict an accountant from modifying journal entries, you would typically:
+
+          1. Tick **Hide Create**
+          2. Tick **Hide Edit**
+          3. Tick **Hide Delete**
+          4. Tick **Hide Export** if needed
+          5. Click **Save**
+
+          This page controls **what accountants can see or do** in the **Journal Entries** module, ensuring that they can only view and interact with the data as intended by the system administrator.
+
+          #### 3. Hide Button/Tab
+
+          This page controls the visibility of specific actions and tabs within the **Journal Entries** module, for users assigned to the **Accountant** role.
+
+          ![](/img/getting-started/account-security/00013.png)
+
+          The available buttons that can be hidden are:
+          * **Post** (`action_post`): this button is used to post a new journal entry after filling in all required fields.
+          * **Add Payment** (`action_invoice_register_payment`): this button is used to register a payment for a customer invoice.
+          * **Capture Transaction** (`payment_action_capture`): this button is used to capture and confirm a payment transaction.
+          * **Void Transaction** (`payment_action_void`): this button is used to cancel a payment transaction.
+          * **Add Credit Note** (`action_reverse`): this button is used to add a credit note to a customer invoice.
+          * **Duplicate** (`action_duplicate`): this button is used to duplicate an existing journal entry.
+          * **Cancel Entry** (`button_cancel`): this button is used to cancel an existing journal entry.
+
+          The available tabs/pages that can be hidden are:
+
+          * **Invoice Lines**: this tab is used to view all the lines of a customer invoice.
+          * **Journal Items**: this tab is used to view all the journal entries of a customer invoice.
+          * **Valuations**: this tab is used to view all the valuation entries of a customer invoice.
+          * **Other Info**: this tab is used to view all the other information of a customer invoice.
+
+          By selecting specific buttons or tabs here and saving, those items will be hidden from users in the **Accountant** role.
+
+          For example, if you want to restrict accountants from posting, duplicating, or seeing Other Info, simply select the corresponding items and save.
+
+
   - link: setup-master-datas#setup-master-data
     uid: setup-master-datas
     title: Setting Up Master Data
@@ -1525,11 +1452,11 @@ groupSections:
         title: Help & Reference
         body: |
 
-          ### Units of Measure Types
+          #### Units of Measure Types
 
           Choose **Type** based on how your new unit compares to the main unit in that **Category**.
 
-          **1. Reference Unit of Measure for this category**
+          ##### 1. Reference Unit of Measure for this category
           Use this for the **base unit** in the category.
           Example:
 
@@ -1558,31 +1485,6 @@ groupSections:
           * If it is the **main/base unit** ‣ choose **Reference**
           * If it is **larger than the base** ‣ choose **Bigger**
           * If it is **smaller than the base** ‣ choose **Smaller**
-
-          Examples by common setup:
-
-          * **Unit category**
-
-            * **Units** ‣ Reference
-            * **Dozen** ‣ Bigger
-
-          * **Weight category**
-
-            * **kg** ‣ Reference
-            * **g** ‣ Smaller
-            * **Ton** ‣ Bigger
-
-          * **Length category**
-
-            * **m** ‣ Reference
-            * **cm** ‣ Smaller
-            * **km** ‣ Bigger
-
-          * **Volume category**
-
-            * **L** ‣ Reference
-            * **ml** ‣ Smaller
-            * **gallon** ‣ Bigger
 
     body: |
       Just new to MAQSU? Get off to a flying start, learn how to create an

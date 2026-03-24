@@ -915,8 +915,6 @@ const GlobalStyles = () => (
     }
 
     .pq-section-content p {
-      font-size: 15px;
-      line-height: 1.72;
       color: #334155;
       margin-bottom: 12px;
     }
@@ -955,7 +953,6 @@ const GlobalStyles = () => (
     }
 
     .pq-section-content a {
-      color: var(--c-accent);
       text-decoration: none;
       border-bottom: 1px solid transparent;
       transition: border-color var(--transition), color var(--transition);
