@@ -528,7 +528,7 @@ const GlobalStyles = () => (
       --c-bg: #ffffff;
       --c-surface: #ffffff;
       --c-border: #d9dfec;
-      --c-accent: #4f46e5;
+      --c-accent: #497194;
       --c-accent-2: #4338ca;
       --c-accent-bg: #eef0ff;
       --c-text: #111827;
@@ -547,7 +547,6 @@ const GlobalStyles = () => (
 
     .page-divider {
       width: 75%;
-      height: 1px;
       margin: 0 auto 25px;
       background-color: var(--c-border);
     }
@@ -860,19 +859,20 @@ const GlobalStyles = () => (
       margin: 0;
       color: var(--c-text) !important;
       letter-spacing: -0.02em;
+      border-top: 1px solid var(--c-border);
     }
 
     .pq-section-title-main {
       font-size: clamp(2rem, 4.4vw, 2.8rem) !important;
       font-weight: 700 !important;
-      line-height: 1.15 !important;
+      line-height: 1.85 !important;
       letter-spacing: -0.03em !important;
     }
 
     .pq-section-title-sub {
       font-size: clamp(1.5rem, 2.5vw, 1.9rem) !important;
-      font-weight: 700 !important;
-      line-height: 1.25 !important;
+      font-weight: 600 !important;
+      line-height: 2.85 !important;
     }
 
     .pq-section-content h2 {
@@ -951,7 +951,7 @@ const GlobalStyles = () => (
 
     .pq-section-content a {
       text-decoration: none;
-      border-bottom: 1px solid transparent;
+      border-bottom: 1px solid var(--c-border);
       transition: border-color var(--transition), color var(--transition);
     }
 

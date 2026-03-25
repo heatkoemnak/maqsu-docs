@@ -20,35 +20,31 @@ groupSections:
         title: Introduction
         body: ''
     sections:
-
-      - link: /dashboard
-        title: Dashboard
+      - link: /operations
+        title: Operations
         body: |
+            The main dashboard provides an overview of inventory operations and warehouse activities. It displays cards for each warehouse and operation type, providing a quick glance at the status of your inventory operations:
 
-            ![Creating a new Goods Receipt](/img/inventory/introduction/0002.png)
+            <CardGrid
+            cards={[
+              {
+                title: "Goods Receipts",
+                description: "Shows pending receipts to be processed",
+                link: "/inventory/goods-receipts#goods-receipts"
+              },
+              {
+                title: "Internal Transfers",
+                description: "Tracks movements within or between warehouses",
+                link: "/inventory/stock-transfers#stock-transfers"
+              },
+              {
+                title: "Delivery Orders",
+                description: "Lists customer shipments to be processed",
+                link: "/inventory/delivery-order#delivery-order"
+              },
 
-            The main dashboard displays cards for each warehouse and operation type:
-
-            #### [Goods Receipts](/inventory/goods-receipts#goods-receipts)
-            - Shows pending receipts to be processed
-            - Displays counts for Waiting, Late, and Back Orders
-            - `0 To Do` indicates current workload
-
-            ---
-
-            #### [Internal Transfers](/inventory/stock-transfers#stock-transfers)
-            - Tracks movements within or between warehouses
-            - Monitors transfer status and timing
-            - `0 To Do` when no transfers are pending
-
-            ---
-
-            #### [Delivery Orders](/inventory/delivery-order#delivery-order)
-            - Lists customer shipments to be processed
-            - Shows status counts for outbound operations
-            - `0 To Do` indicates ready-to-ship orders
-
-            ---
+            ]}
+             />
 
       - link: /setup
         title: Set Up
@@ -56,18 +52,41 @@ groupSections:
 
           Before beginning inventory operations, you must configure essential master data in the system. Proper setup ensures smooth operations and accurate tracking.
 
-            - [Warehouses](/getting-started/setup-master-datas#setup-warehouse) – Define a physical building or facility where goods are stored and managed.
-            - [Locations](/getting-started/setup-master-datas#setup-location) – Define a specific place inside a warehouse where items are stored.
-            - [Product Category](/getting-started/setup-master-datas#setup-product-category) – To group or classification of similar products.
-            - [Product UOM (Units of Measure)](/getting-started/setup-master-datas#setup-product-uom) – Standard unit used to measure, store, buy, or sell in an inventory
-            - [Products](/getting-started/setup-master-datas#products) – Item that is bought, sold, or stored.
+          <CardGrid
+            cards={[
+              {
+                title: "Warehouses",
+                description: "Define a physical building or facility where goods are stored and managed.",
+                link: "/getting-started/setup-master-datas#setup-warehouse"
+              },
+              {
+                title: "Locations",
+                description: "Define a specific place inside a warehouse where items are stored.",
+                link: "/getting-started/setup-master-datas#setup-location"
+              },
+              {
+                title: "Product Category",
+                description: "To group or classification of similar products.",
+                link: "/getting-started/setup-master-datas#setup-product-category"
+              },
+              {
+                title: "Units of Measure",
+                description: "Standard unit used to measure, store, buy, or sell in an inventory.",
+                link: "/getting-started/setup-master-datas#setup-product-uom"
+              },
+              {
+                title: "Products",
+                description: "Item that is bought, sold, or stored.",
+                link: "/getting-started/setup-master-datas#products"
+              }
+            ]}
+          />
 
-          ---
     body: |
 
-          Welcome to the MAQSU ERP Inventory Module. This comprehensive guide will help you understand and effectively use the inventory management system to track, manage, and control your stock across multiple warehouses and locations.
+          Inventory management is one of the crucial aspects of business operations that needs to be monitored with utmost attention and accuracy. Even a simple error in the movement of inventory has the potential to harm your business and that’s why entrepreneurs always prioritize effective inventory management. As the company expands, the need for a dedicated inventory management system also grows. Here comes the MAQSU Inventory management system for your help with advanced strategic plans that optimizes the operations of organizing, monitoring, and managing inventory in real-time. MAQSU ensures accurate inventory tracking that helps your business to handle orders as early as possible.
 
-          ##### By mastering this module, you will gain the skills to:
+            MAQSU ensures the availability of all necessary features with advanced performance in the Inventory module that are significantly required to streamline inventory management. With this completely packed inventory management system offered by MAQSU, a company can accomplish the benefits of inventory management such as
 
             - **Track Stock Levels** – Monitor inventory quantities across all warehouses and locations in real-time
             - **Manage Receipts and Deliveries** – Process incoming goods from vendors and outgoing shipments to customers
@@ -76,8 +95,6 @@ groupSections:
             - **Scrap Products** – Record damaged, expired, or obsolete items removed from inventory
             - **Batch Processing** – Group multiple operations together for efficient execution
             - **Generate Reports** – Analyze inventory levels, movements, and valuation
-
-          ---
 
   - link: stock-transfers#stock-transfers
     uid: stock-transfers
@@ -281,10 +298,10 @@ groupSections:
               ![](/img/inventory/internal-transfers/0006.png)
 
               The status progression typically follows this pattern:
-              - **Draft** → Initial state while editing
-              - **Waiting** → Products reserved but not yet available
-              - **Ready** → Products available and ready to be moved
-              - **Done** → Transfer completed and inventory updated
+              - **Draft** ‣ Initial state while editing
+              - **Waiting** ‣ Products reserved but not yet available
+              - **Ready** ‣ Products available and ready to be moved
+              - **Done** ‣ Transfer completed and inventory updated
 
               <Noted type="info" title="Note" image="/img/icon/notes.png">
               After validation, you can no longer freely edit the transfer. If you need to make changes, you may need to use the "Unreserve" button to return to Draft status, or create a new transfer for corrections.
@@ -448,7 +465,7 @@ groupSections:
               </Noted>
 
 
-              ##### Step 1 — Go to Batch Transfers
+              ##### Step 1 — Navigation
 
               From the left sidebar, click **Inventory**. From the Dashboard, hover over the **Transfers** menu and click on **Batch Transfers** from the dropdown menu.
 
@@ -594,7 +611,7 @@ groupSections:
 
           ![](/img/inventory/transfer/0001.png)
 
-          Using the Filters and Group By options, you can effortlessly accomplish the sorting operations. Additionally, you will get Kanban, Calendar, and Location views for this platform. Now, let’s check how Odoo helps you to create a new transfer for the movement of products from one location to another. For this, click on the Create button.
+          Using the Filters and Group By options, you can effortlessly accomplish the sorting operations. Additionally, you will get Kanban, Calendar, and Location views for this platform. Now, let’s check how MAQSU helps you to create a new transfer for the movement of products from one location to another. For this, click on the Create button.
 
   - link: stock-adjustments#stock-adjustments
     uid: stock-adjustments
@@ -929,6 +946,16 @@ groupSections:
       - link:
         title: Traceability
         body: ''
+    body: |
+
+      The **Product Traceability** feature offered by MAQSU will assist in tracing and tracking each and every component of a product. Tracking a product at each stage of stock movement is necessary to bring all operations under control. In order to ensure effective monitoring of the stock movement, lots and serial numbers play an important role. From manufacturing processes to delivery operations, product traceability will keep a proper track that improves the efficiency of stock management. Proper monitoring is required to reduce the risk factors during the stock movements of any company. The MAQSU ERP system will record exact details of the stock movement of each component of a product in inventory in the form of a traceability report. The user can observe the whole production to distribution procedures in the inventory using the lots and serial numbers.
+
+      **Lots** and **Serial Numbers** are not exactly the same. Commonly we use a lot as a unique identification number to identify a group of products of the same type. If the products are small or can not count as individual products, you can put them together in a single pack and allot a lot number. They are picked as batches in the inventory. For individual products, you can assign serial numbers. The serial number is considered to identify individual products in the inventory.
+
+      You can assign lots and serial numbers to the products while configuring them in the Inventory module so that you can easily keep the traceability report of the respective products thereafter.
+
+      In order to get the complete features of the traceability in the Inventory module, you are requested to activate the **Lots & Serial Numbers** option from the **Settings** menu.
+
     sections:
       - link: /traceability-config
         title: Configurations
@@ -939,7 +966,6 @@ groupSections:
             To enable all these features, you must log in as **Admin** to enable or modify Traceability settings.
             </Noted>
 
-            ---
 
             ### Lots & Serial Number
 
@@ -977,7 +1003,7 @@ groupSections:
 
             Each product in your system can have one of three tracking methods. The tracking method you choose depends on the nature of the product and your business requirements.
 
-            You can set the tracking of the product by using **Unique Serial Number** or **Lots** from this window. If you don’t want to track the product, you can select the **No Tracking** option. [Learn more about Traceability options](#traceability-help-references-traceabilityoptions)
+            You can set the tracking of the product by using **Unique Serial Number** or **Lots** from this window. If you don’t want to track the product, you can select the **No Tracking** option. [Learn more about Traceability options](/inventory/traceability#help-references)
 
             You can assign lots/serial numbers to products while receiving them in the inventory. After confirming a purchase order, you will be able to manage lots and serial numbers for the products before receiving them. In order to understand this precisely, let’s create a new purchase order and confirm it. See how to [Receiving Products with Traceability from Purchase module](#traceability-help-references-receivingproductswithtraceabilityfrompurchasemodule)
 
@@ -1027,56 +1053,54 @@ groupSections:
             4. Find the **Consignment** checkbox in the Traceability section, then click the checkbox to enable this feature.
             5. Click the **Save** button at the top of the page, after enabling consignment.
 
-            ---
-
       - link: /lots-and-serial-numbers
         title: Goods Receipt Tracking
         body: |
-
-          This section focuses on receiving stock and assigning lot/serial numbers.
+          This section provides a step-by-step guide on how to receive stock and assign lot/serial numbers in the Inventory module.
 
             <Noted type="info" title="Before You Start" image="/img/icon/notes.png">
               Make sure each product is configured with **Lots & Serial Number** before you deliver stock. See how to [Configure Product](#traceability-traceability-config-configureproduct)
             </Noted>
 
-          ---
-
           ##### Step 1 — Open Transfers
-          Go to **Inventory → Operations → Transfers**.
-          This is the main list of stock movements, including receipts and deliveries.
+          Navigate to **Inventory** ‣ **Operations** ‣ **Transfers**, which displays all stock movements, including receipts and deliveries. This is the central hub for managing inventory operations.
           ![](/img/inventory/traceability/operations/0001.png)
 
           ##### Step 2 — Create a New Receipt
           Click **Create** to start a new transfer.
-          Use an operation type like **Goods Receipts** when you are receiving stock from a vendor.
           ![](/img/inventory/traceability/operations/0002.png)
+          Use an operation type like **Goods Receipts** when you are receiving stock from a vendor.
 
-          ##### Step 3 —  Complete the Header
-          Set the header fields such as **Receive From**, **Operation Type**, and **Destination Location**.
+          ##### Step 3 —  Select operation type
+          Fill in the header fields such as **Receive From**, **Operation Type**, and **Destination Location**.
           The header defines where stock is coming from and where it will be stored.
           ![](/img/inventory/traceability/operations/0003.png)
 
-          ##### Step 4 — Add Products and Demand Quantity
-          ![](/img/inventory/traceability/operations/0004.png)
-          ![](/img/inventory/traceability/operations/0005.png)
+          ##### Step 4 — Add products and demand
           In the **Operations** tab, click **Add a line**, select the product, and enter the expected quantity in **Demand**.
           **Demand** is the planned quantity; you will confirm the actual received quantity later.
+          ![](/img/inventory/traceability/operations/0004.png)
 
-          ##### Step 5 — Save and Mark as Todo
+          ##### Step 5 — Save
+
+          After filling in the operation details, click **Save** to update the transfer status.
           ![](/img/inventory/traceability/operations/0006.png)
-          ![](/img/inventory/traceability/operations/0007.png)
-          Click **Save**, then click **Mark as Todo** to move the transfer to **Ready**.
+
+          ##### Step 5 — Mark as Todo
+          Click **Mark as Todo** to move the transfer to **Ready**.
           Marking as Todo prepares the transfer for detailed lot/serial entry and validation.
+          This step is necessary to advance the transfer to the next stage, where you can start confirming the received quantities and assigning lot/serial numbers.
+          ![](/img/inventory/traceability/operations/0007.png)
 
           ##### Step 6 — Open Detailed Operations
-          ![](/img/inventory/traceability/operations/0008.png)
           Open **Detailed Operations** from the product line.
           Use this dialog to assign lot/serial numbers and confirm what was actually received.
+          ![](/img/inventory/traceability/operations/0008.png)
 
           ##### Step 7 — Add Lot/Serial Lines
-          ![](/img/inventory/traceability/operations/0009.png)
           Click **Add a line** to create lot/serial assignments.
           Add one line per lot (batch) or per serial (unit), depending on the tracking method.
+          ![](/img/inventory/traceability/operations/0009.png)
 
           ##### Step 8 — Enter Lot/Serial and Done Quantity
           ![](/img/inventory/traceability/operations/0010.png)
@@ -1195,12 +1219,10 @@ groupSections:
             Use consignment when you need accurate ownership reporting while still managing the physical stock in your warehouse locations.
             </Noted>
 
-            ---
-
       - link: /help-references
         title: Help & References
         body: |
-           ### Traceability options
+           #### Traceability options
 
            ##### By Unique Serial Number
             - Each individual unit has a unique identifier
@@ -1222,7 +1244,7 @@ groupSections:
 
             ---
 
-            ### Receiving Products with Traceability from Purchase module
+            #### Receiving Products with Traceability from Purchase module
 
             Learn how to assign lot numbers or serial numbers to products when receiving them from vendors, ensuring complete traceability from receipt through delivery.
 
@@ -1265,19 +1287,6 @@ groupSections:
 
              This report provides a complete audit trail of the product movement.
 
-
-    body: |
-
-      The **Product Traceability** feature offered by MAQSU will assist in tracing and tracking each and every component of a product. Tracking a product at each stage of stock movement is necessary to bring all operations under control. In order to ensure effective monitoring of the stock movement, lots and serial numbers play an important role. From manufacturing processes to delivery operations, product traceability will keep a proper track that improves the efficiency of stock management. Proper monitoring is required to reduce the risk factors during the stock movements of any company. The MAQSU ERP system will record exact details of the stock movement of each component of a product in inventory in the form of a traceability report. The user can observe the whole production to distribution procedures in the inventory using the lots and serial numbers.
-
-      **Lots** and **Serial Numbers** are not exactly the same. Commonly we use a lot as a unique identification number to identify a group of products of the same type. If the products are small or can not count as individual products, you can put them together in a single pack and allot a lot number. They are picked as batches in the inventory. For individual products, you can assign serial numbers. The serial number is considered to identify individual products in the inventory.
-
-      You can assign lots and serial numbers to the products while configuring them in the Inventory module so that you can easily keep the traceability report of the respective products thereafter.
-
-      In order to get the complete features of the traceability in the Inventory module, you are requested to activate the **Lots & Serial Numbers** option from the **Settings** menu.
-
-      ---
-
   - link: reporting#reporting
     uid: reporting
     title: Reporting
@@ -1292,40 +1301,40 @@ groupSections:
       - link:
         title: Reporting
         body: ''
+    body: |
+        The **Reporting** section in the Inventory module provides a comprehensive suite of analytical tools to track stock levels, monitor product movements, and evaluate financial performance. It serves as a central hub for generating real-time data to optimize your supply chain and warehouse operations.
+
+        Proper monitoring of the inventory operations will help you to easily analyze and understand the workflow in managing the inventory. MAQSU can offer you a dedicated platform especially for generating reports for the inventory operations done in your organization with an accurate representation of data in graphical and tabular views. You can customize your reports in real-time to get meticulous reports as per your requirements. In the Reporting menu of the MAQSU Inventory module, you will be able to get the reports of **Balance**, **Valuation**, **Analysis**, **Count**, and more. Let’s take a look at each of these reporting platforms in detail.
+
+        ![](/img/inventory/reporting/balance/0001_1.png)
+
+        The reporting menu offers various specialized views to help you manage your inventory effectively:
+
+        * **Stock Monitoring**: Track current quantities through Inventory Balance, Inventory Valuation, and Forecasted Inventory reports.
+
+        * **Performance Analysis**: Evaluate efficiency using Inventory Analysis, Product Margin, and Inventory Age metrics.
+
+        * **Operational Tracking**: Audit movements with the Inventory Ledger, Product Move, and Inventory Count logs.
+
+        * **Alerts & Expiries**: Stay proactive with Inventory Overstocked, Product Expiry, and Low Inventory Notify reports.
+
+
     sections:
       - link: /inventory-balance
         title: Inventory Balance
         body: |
 
-            The **Inventory Balance Report** is a comprehensive view of all product quantities and values across your warehouse locations. In MAQSU ERP, this report provides real-time visibility into what products you have, where they are located, their quantities, and their current inventory values. It's an essential tool for inventory management, planning, and financial reporting.
+            The **Inventory Balance Report** is a comprehensive view of all product quantities and values across your warehouse locations. In MAQSU, this report provides real-time visibility into what products you have, where they are located, their quantities, and their current inventory values. It's an essential tool for inventory management, planning, and financial reporting.
 
-            > **Note:** The Inventory Balance report shows the current state of your inventory as of a specific date and time. It includes all storable products with their on-hand quantities, locations, and valuations. This report is crucial for stock analysis, reordering decisions, and inventory audits.
+            <Noted type="info" title="Note" image="/img/icon/notes.png">
+            The Inventory Balance report shows the current state of your inventory as of a specific date and time. It includes all storable products with their on-hand quantities, locations, and valuations. This report is crucial for stock analysis, reordering decisions, and inventory audits.
+            </Noted>
 
-            ---
-
-            ### Go to Inventory Balance Report
+            #### Open Report
 
             From the Inventory Dashboard, click on **Inventory** in the left sidebar. Then click on the **Reporting** dropdown menu at the top of the screen and select **Inventory Balance** from the list of available reports.
 
             ![](/img/inventory/reporting/balance/0001.png)
-
-            The Reporting menu includes many inventory report options:
-            - **Inventory Balance** – Current stock quantities and values by product and location
-            - Inventory Balance by UOM
-            - Inventory Balance by Locations
-            - Inventory Balance by Multi-Level UOM
-            - Inventory Balance by Converted UOM
-            - Inventory Valuation
-            - Inventory Analysis
-            - Inventory Analysis by Locations
-            - Inventory Ledger
-            - Product Move
-            - Product Margin
-            - And many more...
-
-            ---
-
-            ### Inventory Balance Report Overview
 
             Once you navigate to the **Inventory Balance** report, you will see a comprehensive list of all products with inventory. The report displays the following columns:
 
@@ -1342,9 +1351,7 @@ groupSections:
             The report only shows products that have inventory (quantity on hand > 0). Products with zero inventory are not displayed in the standard view. The values shown may be $0.00 if product costs have not been configured or if using a specific costing method.
             </Noted>
 
-            ---
-
-            ### Inventory at Date
+            #### Inventory at Date
 
             One of the most powerful features of the Inventory Balance report is the ability to view inventory as it existed at any specific date and time in the past. This is useful for:
 
@@ -1353,13 +1360,11 @@ groupSections:
             - Reconciliation and audit purposes
             - Comparing inventory levels over time
 
-            #### How to Use Inventory at Date
-
             1. Click the **Inventory at Date** button at the top-left of the report
 
             ![](/img/inventory/reporting/balance/0003.png)
 
-            2. A dialog box titled "MAQSU" will appear with a date/time picker
+            2. A dialog box will appear with a date/time picker
 
             ![](/img/inventory/reporting/balance/0004.png)
 
@@ -1368,20 +1373,16 @@ groupSections:
 
             The report will refresh to show inventory quantities and values as they existed at the selected date and time. This takes into account all stock movements up to that moment.
 
-            **Use Cases for Historical Inventory:**
-            - View inventory at the end of last month for month-end reporting
-            - Check stock levels before a major sale or promotion
-            - Analyze inventory before and after a physical count
-            - Verify stock levels at the time of a specific transaction
-            - Generate year-end inventory reports for accounting
+            Use Cases for Historical Inventory:
+            1. View inventory at the end of last month for month-end reporting
+            2. Check stock levels before a major sale or promotion
+            3. Analyze inventory before and after a physical count
+            4. Verify stock levels at the time of a specific transaction
+            5. Generate year-end inventory reports for accounting
 
-            ---
-
-            ### Filtering the Report
+            #### Filters
 
             The Inventory Balance report includes powerful filtering capabilities to help you focus on specific subsets of inventory.
-
-            #### Available Filters
 
             Click the **Filters** button to access the filter dropdown menu:
 
@@ -1397,34 +1398,15 @@ groupSections:
             6. **Reservations** – Shows reserved quantities for pending orders
             7. **Add Custom Filter** – Create your own custom filter criteria
 
-            #### Using Filters
-
-            The default filter is **Internal Locations**, which shows only products in your physical warehouse locations (not in customer or vendor locations). This is the most commonly used view for day-to-day inventory management.
-
-            **Filter Examples:**
-
-            - **On Hand** – View only products currently in stock (excludes zero inventory)
-            - **Negative Stock** – Identify stock discrepancies where system shows negative quantities (usually indicates an error)
-            - **Transit Locations** – See products currently being moved between warehouses
-            - **Reservations** – View quantities reserved for pending sales orders or manufacturing
-
-            To apply a filter:
-            1. Click **Filters**
-            2. Select the desired filter option
-            3. The report updates immediately
-            4. The active filter is shown as a badge/pill (e.g., "Internal Locations" with an X to remove)
-
             <Noted type="info" title="Tip" image="/img/icon/notes.png">
             You can combine multiple filters for more refined views. For example, use "Internal Locations" + "On Hand" to see only products with positive stock in your warehouses. Use the X icon on filter badges to remove individual filters.
             </Noted>
 
-            ---
+            #### Group By
 
-            ### Grouping and Organizing Data
+            The **Group By** feature offers advanced hierarchical grouping capabilities to help you analyze your inventory data from different angles.
 
-            The **Group By** feature allows you to organize the report data in different hierarchical structures for better analysis.
-
-            Click the **Group By** button to access grouping options:
+            Click the **Group By** button to access the grouping options and organize choose one or more fields to group the report data by. This will help you to better understand your inventory structure and identify trends, patterns, and correlations between different data points.
 
             ![](/img/inventory/reporting/balance/0006.png)
 
@@ -1435,87 +1417,32 @@ groupSections:
             3. **Location** – Group by warehouse location (then by product within each location)
             4. **Add Custom Group** – Create your own custom grouping
 
-            #### Grouping by Product > Location
+            #### Export
 
-            When you select **Product > Location** grouping, the report reorganizes to show:
+            The Inventory Balance report can be exported in a variety of formats to facilitate further analysis, reporting, or archiving. This feature is particularly useful for creating custom reports, performing advanced data analysis, or integrating with other business systems.
 
-            - **Product Level** (expandable/collapsible)
-              - Product code and name
-              - Total quantity across all locations
-              - Total value
-            - **Location Level** (nested under each product)
-              - Specific location where product is stored
-              - Quantity at that location
-              - Value at that location
-
-            ![](/img/inventory/reporting/balance/0006.png)
-
-            **Example of Grouped View:**
-
-            **▼ [1AC-431-001] ACB electrical cabinet-4000A-3P (New) (1)**
-            - Total: 1.00 Pcs, $0.00
-              - **▼ WH/Stock (1)**
-                - 1.00 Pcs, $0.00
-                - **[1AC-431-001] ACB electrical cabinet-4000A-3P (New)** – WH/Stock – 1.00 Pcs – $0.00
-
-            The number in parentheses (1) indicates how many location records exist for this product.
-
-            **Benefits of Grouping:**
-            - **By Product** – See total inventory per product across all locations
-            - **By Location** – Analyze inventory composition at each warehouse
-            - **By Category** – Review stock levels by product category for strategic planning
-
-            ---
-
-            ### Exporting the Report
-
-            The Inventory Balance report can be exported for further analysis, reporting, or archival purposes.
-
-            Click the **Export** button at the top of the report to download the data.
+            To export the report, click the **Export** button at the top of the report. This will trigger a download of the data in the selected format.
 
             ![](/img/inventory/reporting/balance/0003.png)
 
-            **Export Options:**
-            - The data is typically exported as a spreadsheet (Excel/CSV format)
-            - Includes all columns visible in the current view
-            - Respects current filters and groupings
-            - Contains the same data shown on screen
-
-            **Use Cases for Export:**
-            - Import into Excel for pivot tables and advanced analysis
-            - Share with management or external auditors
-            - Archive for regulatory compliance
-            - Create custom reports or dashboards
-            - Perform variance analysis between periods
-
-            **Best Practices for Exporting:**
-            - Apply filters first to export only relevant data
-            - Use meaningful filenames with dates (e.g., "Inventory_Balance_2026-03-02.xlsx")
-            - Export at consistent times (e.g., end of month) for trend analysis
-            - Store exports securely for audit trail
-            - Document any adjustments made after export
-
+            **Export Options:** Export as spreadsheet (Excel/CSV format) with all visible columns, respecting current filters and groupings, for further analysis, sharing, archiving, or custom reporting.
       - link: /inventory-valuation
         title: Inventory Valuation
         body: |
 
             The **Inventory Valuation Report** provides a detailed view of your inventory value based on stock movements and costing methods. In MAQSU ERP, this report is essential for financial reporting, cost accounting, and understanding the true value of your inventory assets. Unlike the Inventory Balance report which shows current quantities, the Inventory Valuation report focuses on the financial value and movement history of your inventory.
 
-              > **Note:** The Inventory Valuation report is organized chronologically by transaction date, showing how inventory value changes over time. This report is crucial for month-end financial closing, cost analysis, and reconciling inventory values with your accounting records.
+              <Noted type="info" title="Note" image="/img/icon/notes.png">
+                The Inventory Valuation report is organized chronologically by transaction date, showing how inventory value changes over time. This report is crucial for month-end financial closing, cost analysis, and reconciling inventory values with your accounting records.
+              </Noted>
 
-              ---
-
-              ### Go to Inventory Valuation Report
+              #### Open Report
 
               From the Inventory Dashboard, click on **Inventory** in the left sidebar. Then click on the **Reporting** dropdown menu at the top of the screen and select **Inventory Valuation** from the list of available reports.
 
               ![](/img/inventory/reporting/valuation/0001.png)
 
               The Reporting menu includes the Inventory Valuation option among other inventory reports. This report is specifically designed for financial and accounting purposes.
-
-              ---
-
-              ### Inventory Valuation Report Overview
 
               Once you navigate to the **Inventory Valuation** report, you will see a chronological list of all inventory transactions with their associated values. The report displays the following columns:
 
@@ -1528,27 +1455,13 @@ groupSections:
               5. **UOM** – The unit of measure (Pcs, m, Set, kg, etc.)
               6. **Total Value** – The total value of the transaction
 
-              #### Report Header Summary
-
-              At the top of the report, you'll see:
-              - **Active Filter:** "Create Date: Month" indicating the report is filtered by the current month
-              - **Period Grouping:** ▼ **February 2026 (213)** – Shows the month being viewed with the number of transactions in parentheses
-              - **Period Totals:**
-                - Total Quantity: 58,687.50
-                - Total Value: 33,008.10
-              - **Pagination:** "1-20 | 213" showing you're viewing records 1-20 out of 213 total transactions
-
               <Noted type="info" title="Understanding Negative Quantities" image="/img/icon/notes.png">
               Negative quantities in the Inventory Valuation report indicate stock decreases such as deliveries to customers, scrap, or adjustments. Positive quantities indicate stock increases from receipts, adjustments, or production. The report shows all movements chronologically, allowing you to track how inventory value changes over time.
               </Noted>
 
-              ---
-
-              ### Inventory at Date Feature
+              #### Inventory at Date
 
               Similar to the Inventory Balance report, the Inventory Valuation report supports historical date viewing. This allows you to see the inventory valuation as it existed at any point in the past.
-
-              #### How to Use Inventory at Date
 
               1. Click the **Inventory at Date** button at the top-left of the report
 
@@ -1565,184 +1478,88 @@ groupSections:
 
               This indicates you're now viewing the inventory valuation as it existed at that specific moment. The report will show all transactions up to and including that date/time.
 
-              **Use Cases for Historical Valuation:**
-              - Month-end financial reporting (select last day of month at 23:59:59)
+              Historical Valuation Use Cases:
+              - Month-end financial reporting (e.g., selecting the last day of the month at 23:59:59)
               - Year-end inventory valuation for annual financial statements
-              - Period-over-period comparison (export data for multiple periods)
-              - Audit compliance (provide historical snapshots)
-              - Variance analysis (compare actual vs. budgeted inventory values)
+              - Period-over-period comparison (exporting data for multiple periods)
+              - Audit compliance (providing historical snapshots)
+              - Variance analysis (comparing actual vs. budgeted inventory values)
               - Cost trend analysis over time
 
-              ---
-
-              ### Exporting the Reports
+              #### Export
 
               Click the **Export** button to download the Inventory Valuation report for external analysis.
 
               ![](/img/inventory/reporting/valuation/0003.png)
 
-              **Export Details:**
-              - Downloads in spreadsheet format (Excel/CSV)
-              - Includes all visible columns and data
-              - Respects current filters and groupings
-              - Contains the period or date range specified
-
-              **Use Cases for Export:**
-              - Financial reporting packages for management
-              - Reconciliation with general ledger
-              - Detailed variance analysis in Excel
-              - Audit documentation and compliance
-              - Long-term archival of inventory valuations
-              - Integration with other accounting systems
-
-              ---
-
-              ### Understanding Inventory Valuation
-
               #### How Valuation is Calculated
 
               The Total Value for each transaction depends on your inventory costing method:
 
-              **FIFO (First In, First Out)**
+              ###### FIFO (First In, First Out)
               - Values stock based on the cost of the oldest inventory
               - When stock is sold/used, the cost of the oldest purchase is applied
               - Remaining inventory is valued at more recent purchase prices
               - Best for products where older inventory is sold first
 
-              **AVCO (Average Cost)**
+              ###### AVCO (Average Cost)
               - Calculates a weighted average cost of all inventory
               - Average cost is recalculated with each purchase
               - All units are valued at the current average cost
               - Best for interchangeable commodities or bulk materials
 
-              **Standard Cost**
+              ###### Standard Cost
               - Uses a predetermined fixed cost per unit
               - Cost doesn't change unless manually updated
               - Variances between standard and actual are tracked separately
               - Best for manufacturing with stable material costs
 
-              #### Why Some Values Show $0.00
-
-              You may notice some transactions show a value of $0.00. This can occur when:
-
-              1. **Products without cost data** – The product master doesn't have a cost configured
-              2. **Inventory adjustments** – Some systems don't value adjustments until reconciliation
-              3. **Zero-cost receipts** – Products received without a purchase price
-              4. **Scrapped inventory** – Items removed from inventory with no salvage value
-              5. **Configuration issues** – Costing method not properly set up
-
               <Noted type="warning" title="Important" image="/img/icon/notes.png">
               Zero-value transactions indicate missing cost data. For accurate financial reporting, ensure all products have proper cost information configured. Review and update product costs regularly, especially after receiving new purchases at different prices.
               </Noted>
 
-              #### Transaction Types in the Report
-
-              The Inventory Valuation report includes various transaction types:
-
-              - **Receipts** – Goods received from suppliers (positive quantity, increases value)
-              - **Deliveries** – Products shipped to customers (negative quantity, decreases value)
-              - **Adjustments** – Inventory corrections from physical counts (positive or negative)
-              - **Transfers** – Movements between locations (appears as decrease at source, increase at destination)
-              - **Scrap** – Damaged or obsolete items removed (negative quantity)
-              - **Production** – Finished goods from manufacturing (positive quantity)
-              - **Consumption** – Materials used in production (negative quantity)
-
-              ---
-
-              ### Differences Between Inventory Reports
-
-              #### Inventory Valuation vs. Inventory Balance
-
-              **Inventory Valuation:**
-              - Transaction-based view (one line per movement)
-              - Shows historical changes over time
-              - Includes positive and negative quantities
-              - Organized chronologically by date
-              - Focus on value changes and cost analysis
-              - Used for financial reporting and cost accounting
-
-              **Inventory Balance:**
-              - Current status view (one line per product per location)
-              - Shows only current on-hand quantities
-              - Only positive quantities (what you have now)
-              - Organized by product or location
-              - Focus on stock availability and levels
-              - Used for operations and inventory management
-
-              #### When to Use Each Report
-
-              **Use Inventory Valuation for:**
-              - Month-end and year-end financial closing
-              - Cost accounting and variance analysis
-              - Audit documentation and compliance
-              - Reconciliation with general ledger
-              - Understanding value trends over time
-              - Detailed transaction traceability
-
-              **Use Inventory Balance for:**
-              - Daily operational management
-              - Stock availability checks
-              - Reorder point monitoring
-              - Physical count preparation
-              - Quick inventory status overview
-              - Location-based stock analysis
-
-              ---
-
-              For more details on inventory reporting and financial management, see the [Inventory Module Overview](/inventory/inventory-overview) and [Inventory Balance Report](/inventory/inventory-balance-report).
-
       - link: /inventory-analysis
         title: Inventory Analysis
         body: |
-
           The **Inventory Analysis** report provides a comprehensive overview of stock movements and balances for products over a specified period. Its primary purpose is to help businesses track inventory flow, manage stock levels, and ensure financial accuracy by reconciling physical quantities with system records.
 
-          ![](/img/inventory/reporting/inventory-analysis/0001.png)
-
-          ### Purpose of the Report
-          * **Track Stock Movement**: It monitors how inventory changes through Purchases, Sales, and Other Operations (such as adjustments or internal transfers).
-          * **Balance Reconciliation**: The report calculates the Ending quantity and Current Balance to show exactly how much stock remains after all transactions.
-          * **Trend Analysis**: By filtering by Date Range, users can analyze inventory trends for specific months or quarters to aid in future purchasing decisions.
-          * **Audit Support**: It serves as an audit trail for accounting, showing the B/F (Brought Forward) balance from previous periods alongside current activity.
-
-          ### Go to the Report
+          #### Open Report
 
           From the Inventory Dashboard, click on **Inventory** in the left sidebar. Then click on the **Reporting** dropdown menu at the top of the screen and select **Inventory Analysis** from the list of available reports.
 
           ![](/img/inventory/reporting/inventory-analysis/0002.png)
 
+          ![](/img/inventory/reporting/inventory-analysis/0001.png)
+
+          #### Purpose of the Report
+          * **Track Stock Movement**: It monitors how inventory changes through Purchases, Sales, and Other Operations (such as adjustments or internal transfers).
+          * **Balance Reconciliation**: The report calculates the Ending quantity and Current Balance to show exactly how much stock remains after all transactions.
+          * **Trend Analysis**: By filtering by Date Range, users can analyze inventory trends for specific months or quarters to aid in future purchasing decisions.
+          * **Audit Support**: It serves as an audit trail for accounting, showing the B/F (Brought Forward) balance from previous periods alongside current activity.
+          * **Cost Analysis**: The report displays the value of all transactions, highlighting the total cost of goods sold and the value of stock purchased.
+          * **Inventory Turnover**: The report shows the rate at which inventory is selling and replacing, allowing for optimization of stock levels and purchasing decisions.
+
       - link: /inventory-count
         title: Inventory Count
         body: |
+          The **Inventory Count** report serves as a snapshot or audit log of stock levels at a specific point in time. It provides a comprehensive overview of physical stock levels, helping businesses:
 
-          The **Inventory Count** report serves as a snapshot or audit log of stock levels at a specific point in time.
+          * Verify the accuracy of system records
+          * Identify discrepancies between expected and actual stock levels
+          * Optimize stock levels and reduce inventory costs
+          * Improve supply chain management and vendor relationships
+          * Enhance financial reporting and planning with accurate data
 
-          ![](/img/inventory/reporting/count/0001.png)
-
-          * **Audit Trail**: It lists specific products alongside their Location (e.g., WH/Stock) and the exact Date and time the inventory was recorded.
-          * **Reference**: Each entry is tagged with a reference (e.g., "Inventory"), indicating it is part of a formal counting or validation process.
-
-          ### To view the Report
+          #### Open Report
 
           From the Inventory Dashboard, click on **Inventory** in the left sidebar. Then click on the **Reporting** dropdown menu at the top of the screen and select **Inventory Count** from the list of available reports.
 
           ![](/img/inventory/reporting/count/0002.png)
 
-    body: >
-      The **Reporting** section in the Inventory module provides a comprehensive suite of analytical tools to track stock levels, monitor product movements, and evaluate financial performance. It serves as a central hub for generating real-time data to optimize your supply chain and warehouse operations.
 
+          ![](/img/inventory/reporting/count/0001.png)
 
-      Key Reporting Capabilities
-
-
-      The reporting menu offers various specialized views to help you manage your inventory effectively:
-
-      * *Stock Monitoring*: Track current quantities through Inventory Balance, Inventory Valuation, and Forecasted Inventory reports.
-
-      * *Performance Analysis*: Evaluate efficiency using Inventory Analysis, Product Margin, and Inventory Age metrics.
-
-      * *Operational Tracking*: Audit movements with the Inventory Ledger, Product Move, and Inventory Count logs.
-
-      * *Alerts & Expiries*: Stay proactive with Inventory Overstocked, Product Expiry, and Low Inventory Notify reports.
+          * **Audit Trail**: It lists specific products alongside their Location (e.g., WH/Stock) and the exact Date and time the inventory was recorded.
+          * **Reference**: Each entry is tagged with a reference (e.g., "Inventory"), indicating it is part of a formal counting or validation process.
 
 
