@@ -602,7 +602,7 @@ groupSections:
 
   - link: invoicing#invoicing
     uid: invoicing
-    title: Invoicing
+    title: Create Invoice
     date: '2026-02-20T03:00:38.571Z'
     breadcrumbs:
       - link: /
@@ -612,66 +612,58 @@ groupSections:
         title: Sales
         body: ''
       - link: /invoicing
-        title: Invoicing
+        title: Create Invoice
         body: ''
-    sections:
-      - link: issued-customer-invoice#issued-customer-invoice
-        uid: issued-customer-invoice
-        title: Generate Customer Invoice
-        body: |
-          To generte custome invoice form sales order, go to:
-
-          ### 1. Open created sales order
-
-          ![](/img/sales/invoice/0002.png)
-
-          ### 2. Click create invoice
-
-          Click the **Create Invoice** button to generate an invoice for the
-          customer.
-
-          ![](/img/sales/invoice/0001.png)
-
-          Upon clicking the **Create Invoice** button, a payment options modal
-          will appear, allowing you to select the preferred payment method and
-          finalize the transaction.
-
-          > Payment Options– select payment options:
-
-          * **Regular Invoice** – full payment - **Down Payment** (Percentage %)
-          * **Down Payment** (Fixed Amount $)
-
-          ![](/img/sales/invoice/0003.png)
-
-          ### 3. Post Invoice
-
-          then, click **Post** to validate the journal entry and update the
-          accounting records accordingly. This step ensures that the sales
-          transaction is properly recorded in the accounting system.
-
-          ![](/img/sales/invoice/0004.png)
-
-          Once the invoice is posted, returning to the sales order page will
-          display two buttons: **1 Delivery** and **1 Invoice**, indicating that
-          one delivery and one invoice have been successfully processed for this
-          sales order.
-
-          ![](/img/sales/invoice/0005.png)
-
-          ***
-    body: >
-      After validating a delivery order, you can proceed to generate a customer
-      invoice from the sales order.
-
-
-      Please follow the steps below how to generate custome invoice from sales
+    body: |
+      Generating invoices for sales orders is an easy task with the assistance of the MAQSU ERP system. When you confirm a sales order, you will get an additional button on the sales window to create an invoice as marked in the screenshot below. Please follow the steps below how to generate custome invoice from sales
       order.
 
+       To generte custome invoice form sales order, go to:
 
-      ***
+      ##### Step 1 — Open the Order
+
+      ![](/img/sales/invoice/0002.png)
+
+      ##### Step 2 — Create Invoice
+
+      Click the **Create Invoice** button to generate an invoice for the
+      customer.
+
+      ![](/img/sales/invoice/0001.png)
+
+      Upon clicking the **Create Invoice** button, a payment options modal
+      will appear, allowing you to select the preferred payment method and
+      finalize the transaction.
+
+      > Payment Options– select payment options:
+
+      * **Regular Invoice** – full payment - **Down Payment** (Percentage %)
+      * **Down Payment** (Fixed Amount $)
+
+      ![](/img/sales/invoice/0003.png)
+
+      ##### Step 3 — Post Invoice
+
+      then, click **Post** to validate the journal entry and update the
+      accounting records accordingly. This step ensures that the sales
+      transaction is properly recorded in the accounting system.
+
+      ![](/img/sales/invoice/0004.png)
+
+      Once the invoice is posted, returning to the sales order page will
+      display two buttons: **1 Delivery** and **1 Invoice**, indicating that
+      one delivery and one invoice have been successfully processed for this
+      sales order.
+
+      ![](/img/sales/invoice/0005.png)
+
+      <Noted type="info" title="Next Step" image="/img/icon/sparkles.png">
+            Once the invoice is posted, the next step is to **Add Payment** to record the actual payment made to the customer against this invoice.
+          </Noted>
+
   - link: payments#payments
     uid: payments
-    title: Payments
+    title: Add Payment
     date: '2026-02-20T03:00:59.180Z'
     breadcrumbs:
       - link: /
@@ -681,45 +673,37 @@ groupSections:
         title: Sales
         body: ''
       - link: ''
-        title: Payments
+        title: Add Payment
         body: ''
-    body: >
+    body: |
       A **Add Payment** is the step in the sales process where a payment is made
-      against an invoice after the customer has accepted it.
-
+      against an invoice after the customer has accepted it. This step is crucial
+      as it allows you to record the payment in the accounting system and update
+      the invoice status accordingly. It is also important to note that the **Add
+      Payment** step can be used to record partial payments, which can be useful
+      for businesses that allow their customers to pay for their orders in installments.
 
       Please follow the steps below how to add a payment.
 
-
-      ***
-
-
-      ### 1. Open Issued Invoice
-
+      ##### Step 1 — Open Issued Invoice
 
       On Sales Order, Click on button Invoice Counts
 
-
       ![](/img/sales/add-payment/0001.png)
 
-
-      ### 2. Click Add Payment
-
+      ##### Step 2 — Add Payment
 
       To proceed with the payment, click the **Add Payment** button. This will
       allow you to record the payment against the invoice and update the
       accounting records accordingly.
 
-
       ![](/img/sales/add-payment/0002.png)
 
 
-      ### 3. Click Validate Payment
-
+      ##### Step 3 — Validate
 
       When you click the **Add Payment** button, a payment modal will appear,
       allowing you to record and track the payment against the invoice.
-
 
       1. **Select Journal:**
          Choose where you are recording the payment from (Bank, Cash, etc.).
@@ -734,15 +718,11 @@ groupSections:
 
       ![](/img/sales/add-payment/0003.png)
 
-
       After the payment is validated, the invoice status will be updated to
       **Paid**, indicating that the invoice has been fully settled.
 
-
       ![](/img/sales/add-payment/0004.png)
 
-
-      ***
   - link: reporting#reporting
     uid: reporting
     title: Reporting
