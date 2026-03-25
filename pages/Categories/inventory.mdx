@@ -335,7 +335,7 @@ groupSections:
             Delivery orders are typically created after confirming a sales order or quotation. They serve as the link between order management and inventory, ensuring products are properly allocated and shipped to customers. Accurate delivery processing is vital for customer satisfaction and inventory control.
             </Noted>
 
-            ##### Step 1 — Go to Delivery Orders
+            ##### Step 1 — Navigation
 
             From the left sidebar, click **Inventory**. Then from the Dashboard, locate and click on the **Delivery Orders** card in the inventory operations section.
 
@@ -471,9 +471,6 @@ groupSections:
 
               ![](/img/inventory/batch-transfers/0001.png)
 
-
-              ##### Step 2 — Batch Transfers List Overview
-
               Once you navigate to **Batch Transfers**, you will see the list view. If no batch transfers have been created yet, you'll see an empty state with the message:
 
               **"Create a new batch transfer"**
@@ -491,13 +488,13 @@ groupSections:
               - **Status** – Draft, In Progress, or Done
               - **Transfer Count** – Number of transfers included in the batch
 
-              ##### Step 3 — Create a New Batch Transfer
+              ##### Step 2 — Create a New Batch Transfer
 
               Click the **Create** button at the top-left of the Batch Transfers page to open a new blank batch transfer form.
 
               ![](/img/inventory/batch-transfers/0003.png)
 
-              ##### Step 4 — Fill Out the Batch Transfer Form
+              ##### Step 3 — Fill Out the Batch Transfer Form
 
               The new batch transfer form will open in **Draft** status with a default name of "New". Fill in the following fields:
 
@@ -507,7 +504,7 @@ groupSections:
 
               ![](/img/inventory/batch-transfers/0004.png)
 
-              ##### Step 5 — Add Transfers to the Batch
+              ##### Step 4 — Add Transfers to the Batch
 
               Under the **Transfers** tab, you need to add the individual transfer operations that should be grouped together in this batch. The tab displays a table with the following columns:
 
@@ -523,7 +520,7 @@ groupSections:
               ![](/img/inventory/batch-transfers/0005.png)
 
 
-              ##### Step 6 — Select Transfers from the Dialog
+              ##### Step 5 — Select Transfers from the Dialog
 
               A modal dialog titled **"Add: Transfers"** will appear, showing all available transfer operations that can be added to the batch. The dialog displays a searchable, filterable list of transfers with the following information:
 
@@ -544,7 +541,7 @@ groupSections:
               Only transfers that are not already assigned to another batch can be added. Transfers that are already part of a batch will either be filtered out or clearly marked. You can group different types of transfers (receipts, deliveries, internal transfers) in the same batch if they need to be processed together.
               </Noted>
 
-              ##### Step 7 — Review Selected Transfers
+              ##### Step 6 — Review Selected Transfers
 
               After clicking **Select**, the chosen transfers will be added to the **Transfers** tab in your batch. The table will now display all the selected transfer operations with their details.
 
@@ -566,13 +563,13 @@ groupSections:
 
               ---
 
-              ##### Step 8 — Save the Batch Transfer
+              ##### Step 7 — Save the Batch Transfer
 
               Once you have added all the transfers that should be grouped together, click the **Save** button at the top of the form to save the batch transfer. At this stage, the batch remains in **Draft** status.
 
               ---
 
-              ##### Step 9 — Confirm the Batch Transfer
+              ##### Step 8 — Confirm the Batch Transfer
 
               When you are ready to activate the batch and begin processing, click the **Confirm** button. This will:
 
@@ -591,7 +588,7 @@ groupSections:
 
               ---
 
-              ##### Step 10 — Process Transfers and Complete the Batch
+              ##### Step 9 — Process Transfers and Complete the Batch
 
               Once the batch is confirmed and in **In Progress** status, the responsible person should:
 
@@ -641,16 +638,12 @@ groupSections:
 
             ![](/img/inventory/adjustments/0001.png)
 
-
-            ##### Step 2 — Master List
-
             Once you navigate to **Inventory Adjustments**, you will see the master list of all existing inventory adjustment records. The list displays the following columns:
+            ![](/img/inventory/adjustments/0002.png)
 
             1. **Inventory Reference** – The name or reference of the inventory adjustment (e.g., "Inventory")
             2. **Inventory Date** – The date and time when the adjustment was created or validated
             3. **Status** – The current document status, either **Draft**, **In Progress**, or **Validated**
-
-            ![](/img/inventory/adjustments/0002.png)
 
             The list shows all historical adjustments. In the example, two adjustments are shown:
             - **Inventory** – 14/02/2026 15:08:29 – Validated
@@ -658,19 +651,17 @@ groupSections:
 
             Both adjustments have been completed and their status shows as **Validated**, meaning the inventory changes have been applied to the system.
 
-            ##### Step 3 — Click Create
+            ##### Step 2 — Click Create
 
             Click the **Create** button at the top-left of the Inventory Adjustments list page to open a new blank adjustment form.
 
             ![](/img/inventory/adjustments/0003.png)
 
-            ##### Step 4 — Fill Out the Inventory Adjustment Form
+            ##### Step 3 — Fill Out the Inventory Adjustment Form
 
             The new inventory adjustment form will open in **Draft** status with a default name of "Inventory". The form includes several important configuration options:
 
             ![](/img/inventory/adjustments/0004.png)
-
-            ##### Header Fields
 
             **Inventory Reference**
             - The name or reference for this adjustment
@@ -748,7 +739,7 @@ groupSections:
             Setting "Counted Quantities" to "Default to stock on hand" is useful for cycle counts where most items match and you only need to correct discrepancies. Setting it to "Default to zero" is better for full physical counts where you want to enter all counted quantities manually to ensure accuracy.
             </Noted>
 
-            ##### Step 5 — Start Inventory
+            ##### Step 4 — Start Inventory
 
             After configuring the locations, products, and options, click the **Start Inventory** button to generate the adjustment lines. This will:
 
@@ -761,7 +752,7 @@ groupSections:
 
             Alternatively, you can click **Start Scan** to use barcode scanning to add products to the adjustment. This is useful for mobile barcode counting workflows.
 
-            ##### Step 6 — Review the Lines Tab
+            ##### Step 5 — Review the Lines Tab
 
             After starting the inventory, switch to the **Lines** tab to see all products that need to be counted. The Lines tab displays a table with the following columns:
 
@@ -774,23 +765,7 @@ groupSections:
             - **Difference** – Automatically calculated as: Counted - On Hand
             - **UoM** – The unit of measure for the product (Pcs, kg, etc.)
 
-            In the example shown, two products have been counted:
-
-            1. **[1CT-300-001] Current Transformer - CT LV 2000/5A Brand Thaimaxwell**
-              - Location: WH/Stock
-              - On Hand: 0.00
-              - Counted: 3.00
-              - Difference: 3.00 Pcs
-              - *This indicates 3 pieces were found that weren't in the system*
-
-            2. **[1ED-492-001] EDMI Meter set up CT LV 2000/5A**
-              - Location: WH/Stock
-              - On Hand: 0.00
-              - Counted: 1.00
-              - Difference: 1.00 Pcs
-              - *This indicates 1 piece was found that wasn't in the system*
-
-            ##### Step 7 — Enter Counted Quantities
+            ##### Step 6 — Enter Counted Quantities
 
             For each product line, enter the actual physical quantity you counted in the warehouse in the **Counted** column:
 
@@ -813,7 +788,7 @@ groupSections:
             Enter only the actual counted quantity, not the difference. The system will automatically calculate the adjustment needed. For example, if the system shows 10 pieces but you counted 8, enter "8" in the Counted column. The system will calculate a difference of -2 and reduce inventory by 2 pieces.
             </Noted>
 
-            ##### Step 8 — Review Differences
+            ##### Step 7 — Review Differences
 
             Before validating, carefully review all differences to understand what adjustments will be made:
 
@@ -839,7 +814,7 @@ groupSections:
             - Consider recounting items with large differences
             - Document reasons for significant adjustments
 
-            ##### Step 9 — Validate the Adjustment
+            ##### Step 8 — Validate the Adjustment
 
             Once all counted quantities are entered and differences reviewed, validate the adjustment to apply the changes to inventory:
 
@@ -860,71 +835,93 @@ groupSections:
 
             After validation, the adjustment is complete and your inventory records now match your physical count.
 
-      - link: /help
-        title: Help & References
+      - link: /inventory-scrap
+        title: Scrap
         body: |
+            **Scrap** in inventory is considered useless or damaged products. The date expired products can be also included in scraps. While managing inventory, there may be chances to find expired or damaged products in the inventory. Removing these items from the stock as soon as possible is important because we can not sell damaged or expired products. In most cases, the products with negligible damages are used for repairing processes. The reusable parts of the scraps can be used for the recycling processes. A smarter scrap management solution will help you to save your money and most importantly the environment around us also. The scraper collected from the inventory can be moved to a **scrap location**.
 
-            ##### Print Option
+            From the storage locations available in the warehouse, you can allot a location for scrap. Let’s look at how MAQSU helps you to manage scrap location in your storage. We already discussed the configuration and management of storage locations in the MAQSU Inventory.
 
-            ![](/img/inventory/adjustments/0012.png)
+            ### Configure location
 
-            After validation, you can print the adjustment report:
-            1. Click the **Print** button at the top of the form
-            2. Select the report format
-            3. Generate a PDF document showing all adjustments
+            ##### Step 1 — Navigation
 
-            The printed report is useful for:
-            - Management review and approval
-            - Audit documentation
-            - Filing with physical count sheets
-            - Variance analysis reports
+            To configure a scrap location, you need to navigate to the Locations menu available under the Configuration menu. A new window will open as shown below. This is where you can create a new location or edit an existing one.
 
-            ##### Product Moves
+            ![](/img/inventory/scrap/0001.png)
 
-            ![](/img/inventory/adjustments/0010.png)
+            ##### Step 2 — Click on the default location
 
-            Click the **Product Moves** button (icon with arrows) to view the detailed inventory movements created by this adjustment. This shows:
-            - Each individual stock movement
-            - Source and destination locations
-            - Quantities moved
-            - Date and time stamps
-            - Full traceability of changes
+            Click on the default location to open the location detail page. Here you can configure the location details such as the location name, parent location, and location type.
 
-            ![](/img/inventory/adjustments/0011.png)
+            ![](/img/inventory/scrap/0002.png)
 
-            ##### Editing Draft Adjustments
+            Following the same method, you can configure a location for scrap also.
 
-            While an adjustment is in **Draft** or **In Progress** status, you can:
-            - Click **Edit** to modify the configuration
-            - Change locations or products
-            - Adjust the inventory date
-            - Delete lines that aren't needed
-            - Start over if necessary
+            ##### Step 3 — Enable Is a Scrap Location?
 
-            Once **Validated**, adjustments cannot be edited. If you find an error after validation, you must create a new adjustment to correct it.
+            To mark a location as a scrap location, you need to enable the **Is a Scrap Location?** checkbox. This will determine that the location is for damaged or unusable goods. Items moved here are typically considered write-offs.
 
-            ---
+            ![](/img/inventory/scrap/0003.png)
 
-            ##### Troubleshooting Common Issues
+            <Noted type="info" title="Important" image="/img/icon/warning.png">
+              MAQSU has created a Scrap Location by default. If you want to create a new one, you can do so by following the same steps as above.
+            </Noted>
 
-            **Issue: Cannot find a product in the list**
-            - **Solution:** Check if you've filtered by location or products. Remove filters to see all items. Verify the product exists and is set as "storable" product type.
+            Now let's follow how to create a scraping product, which can be used to track write-offs or expired products. A scrap product can be created by following the same steps as creating a normal product. The only difference is that you need to enable the **Is a Scrap Product?** checkbox when creating the product. This will automatically set the product as a scrap product. Let's follow step down below:
 
-            **Issue: On Hand quantity seems wrong**
-            - **Solution:** Check the "On Hand Quantity" setting. Try "Current Date" vs. "Based on Inventory Date". Review recent stock movements for unposted transactions.
+            ### Scrap
 
-            **Issue: Large unexpected differences**
-            - **Solution:** Don't validate immediately. Recount the physical stock. Check for pending receipts or deliveries. Verify you're looking at the correct location. Review recent transfers.
+            Scraping a product in MAQSU allows you to write off damaged or expired goods. Scraping a product involves creating a new product with the **Is a Scrap Product?** checkbox enabled. This will automatically set the product as a scrap product. Let's follow the steps below:
 
-            **Issue: Cannot validate the adjustment**
-            - **Solution:** Ensure all required fields are filled. Check for error messages. Verify you have proper user permissions. Ensure counted quantities are entered for products with differences.
+            ##### Step 1 — Navigation
 
-            **Issue: Need to reverse a validated adjustment**
-            - **Solution:** You cannot reverse a validated adjustment directly. Create a new adjustment with the opposite corrections. Document clearly that it's a reversal.
+            To scrap a product, you need to navigate to the Scrap menu available under the Inventory menu. A new window will open as shown below. This is where you can scrap a product.
 
-            ---
+            ![](/img/inventory/scrap/0004.png)
 
-            For more details on inventory management and related operations, see the [Inventory Module Overview](/inventory/inventory-overview).
+            ##### Step 1 — Create
+
+            To scrap a product, click the **Create** button at the top-left of the Scrap menu. This will open a blank Scrap Product form ready for you to fill in.
+
+            ![](/img/inventory/scrap/0005.png)
+
+            ##### Step 1 — Choose product
+
+            In the new scrap form, select the **Product** to scrap, enter the **Quantity**, then confirm the **Source Location** and **Scrap Location**. After completing these fields, click **Save** and then **Validate** to confirm the scrap operation.
+
+            ![](/img/inventory/scrap/0006.png)
+
+            ##### Step 1 — View Report
+
+            To verify the scrap result, go to **Inventory ‣ Reporting ‣ Inventory Valuation**. In the valuation list, find your product line and confirm the scrap transaction appears with a negative **Quantity** and **Total Value** (for example, `-2.00` units and `-$10.00`), which indicates stock has been written off.
+
+            ![](/img/inventory/scrap/0007.png)
+
+            <Noted type="info" title="Important" image="/img/icon/warning.png">
+              Scrapped quantity is removed from usable stock, so those units cannot be sold. You can still purchase the same product again, and newly purchased units can be sold normally.
+            </Noted>
+
+             ### Batch Scrap
+
+             Use **Batch Scrap** when you need to scrap multiple products (or multiple lines) at once instead of creating individual scrap records one by one. This saves time, reduces manual entry mistakes, and keeps write-off operations consistent for audits and inventory reconciliation.
+
+
+            ![](/img/inventory/scrap/0008.png)
+
+             In the **Batch Scrap** list view, click the **Create** button to open a new batch scrap form. This starts a new document where you can add multiple scrap lines in one entry.
+
+            ![](/img/inventory/scrap/0009.png)
+
+            In the batch scrap form, set the **Source Location** and **Scrap Location**, then add each item in the **Scraps** lines with its **Product** and **Quantity**. After reviewing all lines, click **Save** and then **Validate** to post all scrap entries together.
+
+            ![](/img/inventory/scrap/00010.png)
+
+            After validation, click **Product Moves** to review the generated stock movements for each scrapped item. Confirm each line shows movement from **WH/Stock** to **Virtual Locations/My Company: Scrap**, with the correct **Quantity Done** and **Done** status.
+
+            ![](/img/inventory/scrap/00011.png)
+
+
     body : |
       A **Adjustments** is a feature used to correct inventory quantities in the system to match the actual physical stock. In MAQSU, stock adjustments are essential for maintaining accurate inventory records by reconciling system quantities with physical counts, recording found or lost inventory, and correcting data entry errors.
 
