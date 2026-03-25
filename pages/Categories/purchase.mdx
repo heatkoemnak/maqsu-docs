@@ -474,33 +474,40 @@ groupSections:
       - link: /purchase/receiving-goods
         title: Receiving Goods
         body: ''
-    sections:
-      - link: /receiving-goods
-        title: Receiving Goods
-        body: |
-          Once a Purchase Order has been confirmed, the next step is to receive
+    body: |
+      Receiving goods is a critical step in the purchasing process in MAQSU ERP.
+      It confirms that the ordered products have been physically delivered by
+      the supplier, updates your inventory stock levels, and prepares the
+      Purchase Order for vendor billing.
+
+
+      <Noted type="info" title="Note" image="/img/icon/sparkles.png">
+        Always verify that the quantities and products received match the Purchase Order
+        before validating the goods receipt. Any discrepancies should be resolved with the
+        supplier before completing the process.
+      </Noted>
+
+      Once a Purchase Order has been confirmed, the next step is to receive
           the goods from the supplier. Follow the steps below to complete the
           goods receiving process in MAQSU ERP.
 
-          ##### Step 1 — Go to Purchase Orders
+          ##### Step 1 — Navigattion
 
           From the left sidebar, click **Purchase**. Then from the top
           navigation menu, go to **Orders** ‣ **Purchase Orders**.
 
           ![](/img/purchase/receiving/0001.png)
 
-          ##### Step 2 — Find the Purchase Order
+          ##### Step 2 — Find the Order
 
-          You need to find the Purchase Order you want to receive goods for. Use
-          the **Filters** to narrow down the list quickly.
-
-          Click the **Filters** button at the top-right of the list, then look
-          for **Billing Status is "Nothing to Bill"** from the filter options
-          and click it.
+          Locate the Purchase Order you want to receive goods for by utilizing
+          the **Filters** feature. Click the **Filters** button at the top-right
+          of the list, then select **Billing Status is "Nothing to Bill"** from the
+          filter options to narrow down the results.
 
           ![](/img/purchase/receiving/0002.png)
 
-          <Noted type="info" title="Can't find the filter?"
+          <Noted type="info" title="Filters"
           image="/img/icon/sparkles.png">
             If **Billing Status is "Nothing to Bill"** does not appear in the standard filter list, you can use a **Custom Filter** instead. Click **Add Custom Filter**, then set the conditions as follows:
 
@@ -511,14 +518,12 @@ groupSections:
             Then click **Apply** to apply the custom filter.
           </Noted>
 
-          ![](/img/purchase/receiving/0003.png)
-
           After applying the filter, the list will show only Purchase Orders
           with a **Billing Status** of **Nothing to Bill**.
 
-          ![](/img/purchase/receiving/0004.png)
+          ![](/img/purchase/receiving/0003.png)
 
-          ##### Step 3 — Open the Purchase Order
+          ##### Step 3 — Open Order
 
           Click on the **Order Number** of the Purchase Order you want to
           receive goods for to open it.
@@ -528,15 +533,26 @@ groupSections:
           and amounts. Note that the **Received** column will show **0.00**,
           indicating that no goods have been received yet.
 
-          ![](/img/purchase/receiving/0005.png)
+          ![](/img/purchase/receiving/0004.png)
 
-          ##### Step 4 — Click Receive Products
+          ##### Step 4 — Receive Products
 
           Click the **Receive Products** button at the top of the Purchase Order
           form to start the goods receiving process.
 
           This will open the **Goods Receipt** form (e.g., WH/IN/00004) which
           shows all products from the Purchase Order that are pending receipt.
+
+          ![](/img/purchase/receiving/0005.png)
+
+          <Noted type="info" title="Note" image="/img/icon/sparkles.png">
+            The status bar at the top right shows the current stage of the receipt: **Draft → Waiting → Ready → Done**. When you open the receipt, it will be in **Ready** status, meaning the goods are ready to be validated.
+          </Noted>
+
+          ##### Step 5 — Validate
+
+          After reviewing the goods receipt, click the **Validate** button to
+          confirm that the goods have been physically received.
 
           ![](/img/purchase/receiving/0006.png)
 
@@ -555,18 +571,8 @@ groupSections:
           * **Operations Tab** – Lists each product with its **Demand** (ordered
           quantity) and **Done** (received quantity).
 
-          <Noted type="info" title="Note" image="/img/icon/sparkles.png">
-            The status bar at the top right shows the current stage of the receipt: **Draft → Waiting → Ready → Done**. When you open the receipt, it will be in **Ready** status, meaning the goods are ready to be validated.
-          </Noted>
 
-          ##### Step 5 — Click Validate
-
-          After reviewing the goods receipt, click the **Validate** button to
-          confirm that the goods have been physically received.
-
-          ![](/img/purchase/receiving/0007.png)
-
-          ##### Step 6 — Click Apply on the Confirmation Dialog
+          ##### Step 6 — Apply
 
           A confirmation dialog — **Immediate Transfer?** — will appear. This
           dialog informs you that you have not yet recorded the **Done**
@@ -581,7 +587,7 @@ groupSections:
             If you want to record partial receipts or specify exact done quantities manually before validating, click **Cancel** on this dialog, update the **Done** column for each product, then click **Validate** again.
           </Noted>
 
-          ##### Step 7 — Verify the Status Changed to Done
+          ##### Step 7 — Verify
 
           After clicking **Apply**, the goods receipt status will automatically
           update to **Done**. You will also notice that:
@@ -598,25 +604,12 @@ groupSections:
           ![](/img/purchase/receiving/0009.png)
 
           <Noted type="info" title="Next Step" image="/img/icon/sparkles.png">
-            Once goods are received, the next step is to **Create a Vendor Bill** to record the supplier invoice and process payment against the Purchase Order.
+            Once goods are received, the next step is to **Create a Bill** to record the supplier invoice and process payment against the Purchase Order.
           </Noted>
-
-    body: |
-      Receiving goods is a critical step in the purchasing process in MAQSU ERP.
-      It confirms that the ordered products have been physically delivered by
-      the supplier, updates your inventory stock levels, and prepares the
-      Purchase Order for vendor billing.
-
-
-      <Noted type="info" title="Note" image="/img/icon/sparkles.png">
-        Always verify that the quantities and products received match the Purchase Order
-        before validating the goods receipt. Any discrepancies should be resolved with the
-        supplier before completing the process.
-      </Noted>
 
   - link: create-vendor-bill#create-vendor-bill
     uid: create-vendor-bill
-    title: Generate Bill
+    title: Create Bill
     date: '2026-02-23T09:51:49.000Z'
     breadcrumbs:
       - link: /
@@ -626,30 +619,41 @@ groupSections:
         title: Purchase
         body: ''
       - link: /purchase/create-vendor-bill
-        title: Create Vendor Bill
+        title: Create Bill
         body: ''
-    sections:
-      - link: /create-vendor-bill
-        title: Create Vendor Bill
-        body: |
-          After goods have been received, the next step is to create a **Vendor
+    body: |
+        Creating a **Vendor Bill** in MAQSU ERP records the supplier's invoice
+        into your accounting system after goods have been received. It ensures
+        that your financial records accurately reflect what is owed to the
+        supplier and prepares the transaction for payment.
+
+
+        <Noted type="info" title="Note" image="/img/icon/sparkles.png">
+          A vendor bill can only be created after the goods have been
+          received and the Purchase Order billing status is **Waiting Bills**.
+          Always verify the invoice details match the Purchase Order before posting
+          the bill.
+        </Noted>
+
+        After goods have been received, the next step is to create a **Vendor
           Bill** to record the supplier invoice and process payment. Follow the
           steps below:
 
-          ##### Step 1 — Go to Purchase Orders
+          ##### Step 1 — Navigation
 
           From the left sidebar, click **Purchase**. Then from the top
           navigation menu, go to **Orders** ‣ **Purchase Orders**.
 
           ![](/img/purchase/vendor-bill/0001.png)
 
-          ##### Step 2 — Find the Purchase Order
+          ##### Step 2 — Find the Order
 
-          You need to find the Purchase Order that is ready for billing. Use the
-          **Filters** to narrow down the list quickly.
+          To locate the Purchase Order that is ready for billing, utilize the
+          **Filters** feature to efficiently narrow down the list.
 
-          Click the **Filters** button at the top-right of the list, then select
-          **Billing Status is "Waiting Bills"** from the filter options.
+          Click the **Filters** button at the top-right of the list, and then select
+          **Billing Status is "Waiting Bills"** from the filter options to retrieve only
+          Purchase Orders with a billing status of **Waiting Bills**.
 
           ![](/img/purchase/vendor-bill/0002.png)
 
@@ -671,7 +675,7 @@ groupSections:
 
           ![](/img/purchase/vendor-bill/0004.png)
 
-          ##### Step 3 — Open the Purchase Order
+          ##### Step 3 — Open the Order
 
           Click on the **Order Number** of the Purchase Order you want to create
           a vendor bill for to open it.
@@ -684,14 +688,14 @@ groupSections:
 
           ![](/img/purchase/vendor-bill/0005.png)
 
-          ##### Step 4 — Click Create Bill
+          ##### Step 4 — Create Bill
 
           Click the **Create Bill** button at the top of the Purchase Order form
           to start the billing process.
 
           ![](/img/purchase/vendor-bill/0006.png)
 
-          ##### Step 5 — Choose Bill Type and Confirm
+          ##### Step 5 — Payment Type
 
           A **Create Bill** dialog will appear. The bill will be created in
           **Draft** status so you can review it before posting. Select the
@@ -747,23 +751,9 @@ groupSections:
           <Noted type="info" title="Next Step" image="/img/icon/sparkles.png">
             Once the vendor bill is posted, the next step is to **Register Payment** to record the actual payment made to the supplier against this bill.
           </Noted>
-
-    body: |
-        Creating a **Vendor Bill** in MAQSU ERP records the supplier's invoice
-        into your accounting system after goods have been received. It ensures
-        that your financial records accurately reflect what is owed to the
-        supplier and prepares the transaction for payment.
-
-
-        <Noted type="info" title="Note" image="/img/icon/sparkles.png">
-          A vendor bill can only be created after the goods have been
-          received and the Purchase Order billing status is **Waiting Bills**.
-          Always verify the invoice details match the Purchase Order before posting
-          the bill.
-        </Noted>
   - link: register-payment#register-payment
     uid: register-payment
-    title: Register Payment
+    title: Add Payment
     date: '2026-02-23T09:51:49.000Z'
     breadcrumbs:
       - link: /
@@ -773,13 +763,21 @@ groupSections:
         title: Purchase
         body: ''
       - link: /purchase/register-payment
-        title: Register Payment
+        title: Add Payment
         body: ''
-    sections:
-      - link: /register-payment
-        title: Register Payment
-        body: |
-          After the vendor bill has been posted, the final step in the
+    body: |
+      **Registering Payment** is the final step in the MAQSU ERP purchasing
+      workflow. It records the actual payment made to the supplier against the
+      posted vendor bill, updates your accounting records, and marks the bill as
+      fully settled.
+
+
+      <Noted type="info" title="Note" image="/img/icon/sparkles.png">
+        Always ensure the vendor bill has been posted before registering payment.
+        Payments cannot be registered against a bill that is still in **Draft** status.
+      </Noted>
+
+      After the vendor bill has been posted, the final step in the
           purchasing process is to **Register Payment** to record the actual
           payment made to the supplier. Follow the steps below:
 
@@ -791,7 +789,7 @@ groupSections:
           ![](/img/purchase/register-payment/0001.png)
 
 
-          ##### Step 2 — Find the Purchase Order
+          ##### Step 2 — Find the Order
 
           You need to find the Purchase Order that has been fully billed. Use
           the **Filters** to narrow down the list quickly.
@@ -817,22 +815,14 @@ groupSections:
           After applying the filter, the list will display only Purchase Orders
           with a **Billing Status** of **Fully Billed**.
 
-          ![](/img/purchase/register-payment/0004.png)
-
-          ##### Step 3 — Open the Purchase Order
+          ##### Step 3 — Open the Order
 
           Click on the **Order Number** of the Purchase Order you want to
           register payment for to open it.
 
-          ![](/img/purchase/register-payment/0009.png)
+          ![](/img/purchase/register-payment/0004.png)
 
-          ##### Step 3 — Click the Vendor Bills Button
-
-          On the Purchase Order detail page, you can confirm that both goods
-          have been received and billed by checking the **Received** and
-          **Billed** columns in the Order Lines — both should now show matching
-          quantities (e.g., 100.00). You will also see the **1 Vendor Bills**
-          smart button at the top right of the form.
+          ##### Step 3 — Open Vendor Bills
 
           Click the **1 Vendor Bills** smart button at the top right of the
           Purchase Order form. This will open the posted vendor bill linked to
@@ -845,7 +835,7 @@ groupSections:
           accounting date, payment terms, journal, and invoice lines. The **Add
           Payment** button will be visible at the top of the form.
 
-          ##### Step 4 — Click Add Payment
+          ##### Step 4 — Add Payment
 
           Click the **Add Payment** button at the top of the Vendor Bill form to
           open the payment dialog.
@@ -897,18 +887,6 @@ groupSections:
           <Noted type="info" title="Note" image="/img/icon/sparkles.png">
             If you registered a partial payment, the bill status will show **Partially Paid** instead of **PAID**. You can click **Add Payment** again to register the remaining balance.
           </Noted>
-
-    body: |
-      **Registering Payment** is the final step in the MAQSU ERP purchasing
-      workflow. It records the actual payment made to the supplier against the
-      posted vendor bill, updates your accounting records, and marks the bill as
-      fully settled.
-
-
-      <Noted type="info" title="Note" image="/img/icon/sparkles.png">
-        Always ensure the vendor bill has been posted before registering payment.
-        Payments cannot be registered against a bill that is still in **Draft** status.
-      </Noted>
   - link: reporting#reporting
     uid: reporting
     title: Reporting
