@@ -657,98 +657,50 @@ groupSections:
             2. **Inventory Date** – The date and time when the adjustment was created or validated
             3. **Status** – The current document status, either **Draft**, **In Progress**, or **Validated**
 
-            The list shows all historical adjustments. In the example, two adjustments are shown:
-            - **Inventory** – 14/02/2026 15:08:29 – Validated
-            - **Inventory** – 10/02/2026 23:26:03 – Validated
-
             Both adjustments have been completed and their status shows as **Validated**, meaning the inventory changes have been applied to the system.
 
-            ##### Step 2 — Click Create
+            ##### Step 2 — Create
 
             Click the **Create** button at the top-left of the Inventory Adjustments list page to open a new blank adjustment form.
 
             ![](/img/inventory/adjustments/0003.png)
 
-            ##### Step 3 — Fill Out the Inventory Adjustment Form
+            ##### Step 3 — Fill Out the Form
 
-            The new inventory adjustment form will open in **Draft** status with a default name of "Inventory". The form includes several important configuration options:
+            The new inventory adjustment form will open in **Draft** status with a default name of **Inventory**. The form includes several important configuration options:
 
             ![](/img/inventory/adjustments/0004.png)
 
-            **Inventory Reference**
-            - The name or reference for this adjustment
-            - Defaults to "Inventory" but can be customized for better tracking
-            - Example: "Q1 2026 Physical Count", "Cycle Count - Section A", "Correction - Damaged Goods"
-
-            **Action Buttons**
-            - **Start Inventory** – Begin the adjustment process and populate products
-            - **Start Scan** – Use barcode scanning to add products to the adjustment
-
-            ##### Configuration Options
-
-            1. **Locations** *(Required)*
-              - Select which warehouse location(s) to adjust inventory for
-              - You can select one or multiple locations
-              - Click the dropdown to see available locations
+            1. **Inventory Reference** – The name or reference for this adjustment.e.,g: (Q1 2026 Physical Count, Cycle Count - Section A, "Correction - Damaged Goods)
 
             ![](/img/inventory/adjustments/0005.png)
 
-            Available locations may include:
-            - Installation warehouse
-            - Physical Locations/My Company: Transit Location
-            - WH/B-Kheang
-            - WH/Installation Warehouse
-            - WH/Sen Sok
-            - WH/Stock
+            2. **Locations** *(Required)* – Select which warehouse location(s) to adjust inventory for. You can select multiple locations if you're conducting adjustments across different areas.
 
-            You can select multiple locations if you're conducting adjustments across different areas.
-
-            2. **Products** *(Optional)*
-              - Filter which products to include in the adjustment
-              - Leave blank to include all products in the selected location(s)
-              - Click the dropdown to select specific products
 
             ![](/img/inventory/adjustments/0006.png)
 
-            The product dropdown shows all available products with their codes and descriptions:
-            - [1AB-438-001] ABB SN 564406 Z78/2301-002 (Second Hand)
-            - [1AC-111-001] ACB-2000A (3P), LV with metal enclose (Complete Set)
-            - [1AC-112-001] ACB-2000A (4P), LV with metal enclose (Complete Set)
-            - [1AC-113-001] ACB-2500A (3P), LV with metal enclose (Complete Set)
-            - [1AC-114-001] ACB-2500A (4P), LV with metal enclose (Complete Set)
-            - [1AC-115-001] ACB-3000A (4P), LV with metal enclose (Complete Set)
-            - [1AC-116-001] ACB-4000A (3P), LV with metal enclose (Complete Set)
-
-            Click "Search More..." to browse additional products.
+            3. **Products** *(Optional)* – Click the dropdown to select specific products then filter which products to include in the adjustment. Click **Search More...** to browse additional products.
 
             <Noted type="info" title="Tip" image="/img/icon/notes.png">
-            If you're conducting a full physical count, leave the Products field empty to include all items. If you're only adjusting specific products (spot check or correction), select only those products to reduce the list size.
+              If you're conducting a full physical count, leave the Products field empty to include all items. If you're only adjusting specific products (spot check or correction), select only those products to reduce the list size.
             </Noted>
-
-            3. **Accounting Date** *(Optional)*
-              - The date when this adjustment should be recorded in accounting
-              - Defaults to the current date
-              - Important for month-end and period closings
-
-            4. **Inventory Date** *(Required)*
-              - The date and time when the physical count was conducted
-              - Defaults to the current date and time
-              - This determines which stock movements are included in the calculation
 
             ![](/img/inventory/adjustments/0007.png)
 
-            5. **On Hand Quantity**
-              - Determines which quantities are shown in the "On Hand" column
-              - **Current Date** (default) – Shows the current system quantity as of now
-              - **Based on Inventory Date** – Shows the system quantity as of the specified Inventory Date
+            4. **Accounting Date** *(Optional)* – Select the date when this adjustment should be recorded in accounting
+            5. **Inventory Date** *(Required)* – Select the date and time when the physical count was conducted.
 
-            6. **Counted Quantities**
-              - Determines the default values in the "Counted" column
-              - **Default to stock on hand** (default) – Pre-fills counted quantities with current system quantities
-              - **Default to zero** – Leaves counted quantities blank or at zero, requiring manual entry
+            6. **On Hand Quantity** – Which quantities are shown in the "On Hand" column
+                - **Current Date** (default) – Shows the current system quantity as of now
+                - **Based on Inventory Date** – Shows the system quantity as of the specified Inventory Date
+
+            6. **Counted Quantities** - Determines the default values in the "Counted" column:
+                - **Default to stock on hand** (default) – Pre-fills counted quantities with current system quantities
+                - **Default to zero** – Leaves counted quantities blank or at zero, requiring manual entry
 
             <Noted type="info" title="Important" image="/img/icon/notes.png">
-            Setting "Counted Quantities" to "Default to stock on hand" is useful for cycle counts where most items match and you only need to correct discrepancies. Setting it to "Default to zero" is better for full physical counts where you want to enter all counted quantities manually to ensure accuracy.
+            Setting **Counted Quantities** to **Default to stock on hand** is useful for cycle counts where most items match and you only need to correct discrepancies. Setting it to "Default to zero" is better for full physical counts where you want to enter all counted quantities manually to ensure accuracy.
             </Noted>
 
             ##### Step 4 — Start Inventory
@@ -770,32 +722,9 @@ groupSections:
 
             ![](/img/inventory/adjustments/0009.png)
 
-            - **Product** – The product code and name
-            - **Location** – The warehouse location where the product is stored
-            - **On Hand** – The current system quantity (what the system thinks you have)
-            - **Counted** – The actual physical quantity (what you counted in the warehouse)
-            - **Difference** – Automatically calculated as: Counted - On Hand
-            - **UoM** – The unit of measure for the product (Pcs, kg, etc.)
-
             ##### Step 6 — Enter Counted Quantities
 
-            For each product line, enter the actual physical quantity you counted in the warehouse in the **Counted** column:
-
-            1. Conduct the physical count in the warehouse
-            2. Locate each product in the Lines tab
-            3. Enter the exact quantity counted in the **Counted** field
-            4. The **Difference** column will automatically calculate
-            5. Positive differences indicate found inventory (system was lower than reality)
-            6. Negative differences indicate lost inventory (system was higher than reality)
-
-            **Best Practices for Counting:**
-            - Count systematically by location or product category
-            - Use a second person to verify counts for high-value items
-            - Take photos or notes for significant discrepancies
-            - Count at a time when warehouse activity is minimal
-            - Use barcode scanners when available for accuracy
-            - Document any damaged or expired items found during counting
-
+            For each product line, enter the actual physical quantity you counted in the warehouse in the **Counted** column.
             <Noted type="warning" title="Important" image="/img/icon/notes.png">
             Enter only the actual counted quantity, not the difference. The system will automatically calculate the adjustment needed. For example, if the system shows 10 pieces but you counted 8, enter "8" in the Counted column. The system will calculate a difference of -2 and reduce inventory by 2 pieces.
             </Noted>
@@ -804,48 +733,10 @@ groupSections:
 
             Before validating, carefully review all differences to understand what adjustments will be made:
 
-            **Positive Differences (Counted > On Hand)**
-            - Inventory will be increased
-            - Indicates found stock, counting errors, or unrecorded receipts
-            - Common causes: products received but not entered, previous counting errors, products returned but not recorded
-
-            **Negative Differences (Counted < On Hand)**
-            - Inventory will be decreased
-            - Indicates lost stock, shrinkage, theft, or unrecorded shipments
-            - Common causes: products shipped but not entered, damage or scrap not recorded, theft, previous counting errors
-
-            **Zero Differences (Counted = On Hand)**
-            - No adjustment needed
-            - System quantity matches physical reality
-            - These lines can remain but will not create inventory movements
-
-            **Investigate Large Discrepancies:**
-            - Check for recent unposted transactions
-            - Verify product identification (correct SKU)
-            - Review recent movements in location
-            - Consider recounting items with large differences
-            - Document reasons for significant adjustments
-
             ##### Step 8 — Validate the Adjustment
+            Upon completing the physical count and reviewing all differences, validate the adjustment to officially apply the changes to inventory. Once validated, the status changes from **In Progress** to **Validated**, inventory quantities are updated in all locations, and stock movements are recorded in the system.
 
-            Once all counted quantities are entered and differences reviewed, validate the adjustment to apply the changes to inventory:
-
-            1. Review all entries one final time
-            2. Ensure all discrepancies are explained and documented
-            3. Click the **Validate** button (or select **Validated** from the status pills)
-            4. The system will process the adjustment
-
-            ![](/img/inventory/adjustments/0009.png)
-
-            When you validate the adjustment:
-            - The status changes from **In Progress** to **Validated**
-            - Inventory quantities are updated in all locations
-            - Stock movements are recorded for each adjustment
-            - Accounting entries are posted (if configured)
-            - The adjustment is locked and can no longer be edited
-            - Inventory valuation is recalculated
-
-            After validation, the adjustment is complete and your inventory records now match your physical count.
+            Following validation, the adjustment is complete, and your inventory records now accurately reflect your physical count.
 
       - link: /inventory-scrap
         title: Scrap
