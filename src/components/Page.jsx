@@ -863,7 +863,7 @@ const GlobalStyles = () => (
     }
 
     .pq-section-title-main {
-      font-size: clamp(2rem, 4.4vw, 2.8rem) !important;
+      font-size: clamp(1rem, 2.4vw, 2.8rem) !important;
       font-weight: 700 !important;
       line-height: 1.85 !important;
       letter-spacing: -0.03em !important;
@@ -872,7 +872,8 @@ const GlobalStyles = () => (
     .pq-section-title-sub {
       font-size: clamp(1.5rem, 2.5vw, 1.9rem) !important;
       font-weight: 600 !important;
-      line-height: 2.85 !important;
+      line-height: 1.85 !important;
+      padding-top: 18px !important;
     }
 
     .pq-section-content h2 {
