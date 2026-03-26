@@ -171,6 +171,74 @@ export default function Page() {
   }, [posts]);
 
   useEffect(() => {
+    if (!posts.length) return;
+
+    const targetIds = [];
+
+    posts.forEach((group) => {
+      group.sections?.forEach((sub) => {
+        const subId = sub.uid || sub.link?.replace('/', '');
+        if (!subId) return;
+
+        targetIds.push(subId);
+
+        headings[subId]?.forEach((heading) => {
+          if (heading?.id) targetIds.push(heading.id);
+        });
+      });
+    });
+
+    if (!targetIds.length) return;
+
+    const uniqueIds = Array.from(new Set(targetIds));
+    let ticking = false;
+
+    const updateActiveOnScroll = () => {
+      const anchorTop = 92;
+      let lastPassed = null;
+      let firstUpcoming = null;
+
+      uniqueIds.forEach((id) => {
+        const el = document.getElementById(id);
+        if (!el) return;
+
+        const top = el.getBoundingClientRect().top;
+        if (top <= anchorTop) {
+          if (!lastPassed || top > lastPassed.top) {
+            lastPassed = { id, top };
+          }
+        } else if (!firstUpcoming || top < firstUpcoming.top) {
+          firstUpcoming = { id, top };
+        }
+      });
+
+      const nextActive = lastPassed?.id || firstUpcoming?.id || null;
+      if (nextActive) {
+        setActive((prev) => (prev === nextActive ? prev : nextActive));
+      }
+    };
+
+    const onScroll = () => {
+      if (ticking) return;
+      ticking = true;
+
+      window.requestAnimationFrame(() => {
+        updateActiveOnScroll();
+        ticking = false;
+      });
+    };
+
+    updateActiveOnScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('resize', onScroll);
+    };
+  }, [posts, headings]);
+
+  useEffect(() => {
     const handleWindowScroll = () => {
       setShowScrollTop(window.scrollY > 320);
     };
