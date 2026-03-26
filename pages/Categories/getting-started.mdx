@@ -100,36 +100,31 @@ groupSections:
         body: ''
       - title: System Interface
         body: ''
+    body: |
+      This interface follows a **dashboard layout** pattern, which is commonly
+      used in business management and Enterprise Resource Planning (ERP) systems
+      to provide an overview of key performance indicators and facilitate quick
+      access to core modules.
+
+      ![](/img/getting-started/interface/0001.png)
+
     sections:
       - link: modules#module
         uid: module
-        title: 1. Modules
-        body: >
-          This is the main navigation menu that gives access to all core
-          modules. Each icon and label represents a specific module of the
-          system:
-
-
-          The modules are represented by the following icons and labels:
-
-
-          * **Sales**: manage quotations, sales orders, and invoices.
-
-          * **Purchase**: for managing supplier purchases, RFQs, and bills.
-
-          * **Accounting**: contains ledgers, journals, financial statements,
-          etc.
-
-          * **Inventory**: tracks stock movements, warehouses, and products.
-
-          * **Settings**: system settings, user roles, and permissions.
-
+        title: 1. Module
+        body: |
 
           ![](/img/getting-started/interface/0008.png)
+
+          Main navigation panel to switch modules (e.g., Sales, Purchase, Accounting) like clicking Accounting to manage invoices.
+
       - link: collap-tools#collap-tools
         uid: collap-tools
         title: 2. Collaboration Tools
-        body: >
+        body: |
+
+          ![](/img/getting-started/interface/0007.png)
+
           This is the user control area — it contains quick actions and user
           information.
 
@@ -141,71 +136,69 @@ groupSections:
 
           * **Message**: `1` badge: number of *unread notifications or
           messages*.
-
-
-          ![](/img/getting-started/interface/0007.png)
       - link: profile#profile
         uid: profile
-        title: 3 .Profile
-        body: >
-          * **Administrator**: displays the logged-in user account: clicking it
+        title: 3. Profile
+        body: |
+          ![](/img/getting-started/interface/0006.png)
+
+          **Administrator**: displays the logged-in user account: clicking it
           often opens settings like profile, preferences, or logout.
 
-
-          ![](/img/getting-started/interface/0006.png)
       - link: menu-items#menu-items
         uid: menu-items
         title: 4. Menu Items
         body: |
-          The primary horizontal menu provides access to different business
-          modules. The Customers tab is currently selected (highlighted in
-          grey).
-
-          The primary horizontal menu provides access to different business
-          modules. The Customers tab is currently selected (highlighted in
-          grey).
-
-          * **Banking**: Manage bank accounts, reconciliations, and cash flow.
-          * **Customers**: Access sales-related documents and client lists.
-          * **Vendors**: Manage suppliers, purchase orders, and bills.
-          * **Accounting**: General ledger, journal entries, and chart of
-            accounts.
-          * **Compliance**: Tax filings, regulatory reports, or audit logs.
-          * **Reporting**: Financial statements (P\&L, Balance Sheet) and custom
-            data views.
-          * **Configuration**: System settings, user permissions, and
-            integrations.
-
           ![](/img/getting-started/interface/0009.png)
+          Secondary navigation providing quick access to related actions and sub-menu items within each module. For example, under the **Customers** dropdown, items such as **Invoice**, **Credit Notes**, **Payment**, **Product**, and **Customer** are displayed.
       - link: document-actions#document-actions
         uid: document-actions
-        title: 5. Document Actions
+        title: 5. Actions
         body: |
-          * **Create**: Create a new document or record.
-          * **Import**: Import data from an external source.
-          * **Upload**: Upload files to the system.
-          * **Download**: Download or export information from the system.
 
           ![](/img/getting-started/interface/00010.png)
+
+          The Action Buttons section allows users to quickly perform key invoice operations such as creating, importing, uploading, or exporting data.
+
+          * **Create** – Used to manually add a new invoice (e.g., click *Create* to enter a new customer sale).
+          * **Import** – Upload structured data (like Excel/CSV) to bulk-create invoices (e.g., import 100 invoices at once).
+          * **Upload** – Attach or upload supporting documents/files (e.g., upload a scanned invoice or receipt).
+          * **Download** – Export or download invoice data (e.g., download invoice list as a report or file).
+
       - link: bookmark#bookmark
         uid: bookmark
-        title: 6. Bookmarks
-        body: >
+        title: 6. Bookmarks and Search
+        body: |
+          ### 1. Bookmarks
+
+          ![](/img/getting-started/interface/00011.png)
+
           A **bookmark** is a quick link to a specific page or module in MAQSU
           ERP. Users can create bookmarks to frequently accessed pages or
           modules for faster navigation.
 
-          ![](/img/getting-started/interface/00011.png)
+          ---
+
+          ### 2. Search
+
+          Search function allows users to quickly find specific
+          records across the system. The search bar is located at the top of the
+          interface and is accessible from any page.
+
+          ![](/img/getting-started/interface/00012.png)
+
+          ##### Example
 
 
-          <tabsesctions
-            lists={[
-              {
-                label: "Use Case",
-                children: "![](/img/getting-started/interface/00014.png)\n"
-              }
-            ]}
-          />
+          ![](/img/getting-started/interface/00013.png)
+
+
+          1. **Type your search**: Start typing the name, number, or keyword you're looking for. The search function will immediately begin suggesting relevant results.
+
+          2. **Select a Search Option**: Click on the search suggestion that matches what you're looking for. The system will navigate to the relevant page and display filtered results.
+
+
+          ![](/img/getting-started/interface/00013-1.png)
       - link: view-recordd#view-record
         uid: view-record
         title: 7. Views
@@ -215,7 +208,7 @@ groupSections:
 
           ---
 
-          #### 1. List
+          ### 1. List
 
           ![](/img/getting-started/interface/00015.png)
 
@@ -236,7 +229,7 @@ groupSections:
 
           ---
 
-          #### 2. Kanban
+          ### 2. Kanban
 
           ![](/img/getting-started/interface/00016.png)
 
@@ -257,7 +250,7 @@ groupSections:
 
           ---
 
-          #### 3. Activity
+          ### 3. Activity
 
           ![](/img/getting-started/interface/00017.png)
 
@@ -277,111 +270,43 @@ groupSections:
 
           It helps users stay organized and maintain consistent communication and task completion.
 
-      - link: search-record#search-record
-        uid: search-record
-        title: 8. Search
-        body: >
-          Search function allows users to quickly find specific
-          records across the system. The search bar is located at the top of the
-          interface and is accessible from any page.
-
-          ![](/img/getting-started/interface/00012.png)
-
-          #### Example
-
-
-          ![](/img/getting-started/interface/00013.png)
-
-
-          1. **Type your search**: Start typing the name, number, or keyword you're looking for. The search function will immediately begin suggesting relevant results.
-
-          2. **Select a Search Option**: Click on the search suggestion that matches what you're looking for. The system will navigate to the relevant page and display filtered results.
-
-
-          ![](/img/getting-started/interface/00013-1.png)
-
       - link: pagination#pagination
         uid: pagination
-        title: 9. Pagination
+        title: 8. Pagination
         body: |
+
+
+          ![](/img/getting-started/interface/00018.png)
 
           Pagination feature allows users to navigate through large
           datasets efficiently. Records are organized into pages, with
           navigation arrows to move between pages.
 
-          ![](/img/getting-started/interface/00018.png)
-
-          The pagination feature offers two options for navigating through large datasets:
-
-          #### 1. Using Arrow Button
-
-          ![](/img/getting-started/interface/00018-1.png)
-
-          Once you have set a limit (like 20 per page), you click the Right Arrow (>) to see the next set of invoices.
-
-          #### 2. Manual Enter
-
-          ![](/img/getting-started/interface/00018-2.png)
-
-          Click directly on the numbers (e.g., the "20"). This usually opens a dropdown or an input box.
-
       - link: filters#filters
         uid: filters
-        title: 10. Filters
-        body: >
-          MAQSU ERP's filtering feature allows users to quickly narrow down
+        title: 9. Filters
+        body: |
+          ![](/img/getting-started/interface/00019-1.png)
+
+          Filters feature allows users to quickly narrow down
           large datasets based on specific criteria. Filtering can be applied to
           records, including customer, vendor, product, and sales order records.
 
-          ![](/img/getting-started/interface/00019.png)
-
-          #### 1. Use Default Filter
-
-          ![](/img/getting-started/interface/00019-1.png)
-
-          #### 2. Add Custom Filter
-
-          ![](/img/getting-started/interface/00019-2.png)
-
-          ![](/img/getting-started/interface/00019-3.png)
-
       - link: group-by#group-by
         uid: group-by
-        title: 11. Group By
+        title: 10. Group By
         body: |
+          ![](/img/getting-started/interface/00020.png)
           Grouping feature allows users to organize the records
           based on specific criteria. Grouping can be applied to records,
           including Saleperson, Partner, Status and more.
 
-          ![](/img/getting-started/interface/00020.png)
-
-      - link: sorting-records#sorting-records
-        uid: sorting-records
-        title: 12. Sorting Records
-        body: >
-          MAQSU ERP's sorting feature allows users to quickly sort records based
-          on specific criteria. Sorting can be applied to records, including
-          customer, vendor, product, and sales order records.
-
-          ![](/img/getting-started/interface/00022.png)
       - link: show-oportunistic-fields#show-oportunistic-fields
         uid: show-oportunistic-fields
-        title: 13. Show Optional Columns
-        body: >
-          MAQSU ERP's opportunistic fields feature allows users to quickly view
-          additional information about a record. Opportunistic fields are
-          displayed in a pop-up window and can be configured to display specific
-          fields based on the record type.
-
+        title: 11. Show optional columns
+        body: |
           ![](/img/getting-started/interface/00021.png)
-    body: |
-      This interface follows a **dashboard layout** pattern, which is commonly
-      used in business management and Enterprise Resource Planning (ERP) systems
-      to provide an overview of key performance indicators and facilitate quick
-      access to core modules.
-
-      ![](/img/getting-started/interface/0001.png)
-
+          Click on three dots to show aditional columns.
   - link: user-account#user-account
     uid: user-account
     title: Account and Security
@@ -507,7 +432,7 @@ groupSections:
           perform within the system.
 
           ### Roles
-          
+
           This is the Roles management page, where administrators can create and manage user roles within the system. Roles are used to define a specific set of access rules and permissions that can be assigned to one or more users, helping control what each user can see and do inside the system.
 
           Here's the typical step-by-step:
