@@ -4,6 +4,53 @@ import styles from "./styles.module.css";
 import useGlobalData from "@docusaurus/useGlobalData";
 import Link from "@docusaurus/Link";
 
+const stripMarkdown = (text = "") =>
+  String(text)
+    .replace(/!\[.*?\]\(.*?\)/g, " ")
+    .replace(/\[([^\]]+)\]\([^)]+\)/g, "$1")
+    .replace(/#{1,6}\s/g, " ")
+    .replace(/\*\*([^*]+)\*\*/g, "$1")
+    .replace(/\*([^*]+)\*/g, "$1")
+    .replace(/`([^`]+)`/g, "$1")
+    .replace(/<[^>]+>/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+
+const buildExcerpt = (content = "", max = 140) => {
+  const clean = stripMarkdown(content);
+  if (!clean) return "";
+  return clean.length > max ? `${clean.slice(0, max).trimEnd()}...` : clean;
+};
+
+const MAX_RESULTS = 30;
+
+const calculateSearchScore = (item, query, searchTerms) => {
+  const title = (item?.title || "").toLowerCase();
+  const category = (item?.category || "").toLowerCase();
+  const content = (item?.content || "").toLowerCase();
+  const safeQuery = (query || "").toLowerCase().trim();
+
+  let score = 0;
+
+  if (title === safeQuery) score += 300;
+  if (title.startsWith(safeQuery)) score += 180;
+  if (title.includes(safeQuery)) score += 120;
+  if (category.includes(safeQuery)) score += 60;
+  if (content.includes(safeQuery)) score += 45;
+
+  searchTerms.forEach((term) => {
+    if (title.includes(term)) score += 24;
+    if (title.startsWith(term)) score += 20;
+    if (category.includes(term)) score += 10;
+    if (content.includes(term)) score += 5;
+  });
+
+  // Prefer concise titles when scores are close.
+  score += Math.max(0, 30 - title.length * 0.15);
+
+  return score;
+};
+
 const Search = () => {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState([]);
@@ -55,6 +102,7 @@ const Search = () => {
         title: group.title,
         link: `/${baseSlug}/${group.uid || group.link}`,
         category: category.title, // Now shows "Accounting" or "Inventory"
+        content: stripMarkdown(group.body || group.description || ""),
       });
 
       // Add nested sections
@@ -70,6 +118,7 @@ const Search = () => {
           title: section.title,
           link: finalLink,
           category: group.title,
+          content: stripMarkdown(section.body || section.description || section.content || ""),
         });
       });
     });
@@ -140,12 +189,32 @@ const Search = () => {
 
     const lowerValue = value.toLowerCase();
 
-    const filtered = searchIndex.filter((item) => {
-      const title = item?.title?.toLowerCase() || "";
-      return title.includes(lowerValue);
-    });
+    const searchTerms = lowerValue.split(/\s+/).filter(Boolean);
 
-    setResults(filtered);
+    const ranked = searchIndex.map((item, index) => {
+      const title = item?.title?.toLowerCase() || "";
+      const category = item?.category?.toLowerCase() || "";
+      const content = item?.content?.toLowerCase() || "";
+      const haystack = `${title} ${category} ${content}`;
+      const isMatch = searchTerms.every((term) => haystack.includes(term));
+
+      if (!isMatch) return null;
+
+      return {
+        ...item,
+        _rank: calculateSearchScore(item, lowerValue, searchTerms),
+        _index: index,
+      };
+    })
+    .filter(Boolean)
+    .sort((a, b) => {
+      if (b._rank !== a._rank) return b._rank - a._rank;
+      return a._index - b._index;
+    })
+    .slice(0, MAX_RESULTS)
+    .map(({ _rank, _index, ...item }) => item);
+
+    setResults(ranked);
   };
 
   return (
@@ -268,6 +337,11 @@ const Search = () => {
                       <span className={styles.resultCategory}>
                         {result.category}
                       </span>
+                      {result.content ? (
+                        <span className={styles.resultExcerpt}>
+                          {buildExcerpt(result.content)}
+                        </span>
+                      ) : null}
                     </div>
                   </a>
                 </li>

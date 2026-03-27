@@ -265,6 +265,13 @@
   color: #64748b;
 }
 
+.resultExcerpt {
+  margin-top: 0.2rem;
+  font-size: 0.75rem;
+  line-height: 1.35;
+  color: #6b7280;
+}
+
 .noResults {
   padding: 2rem 1rem;
   text-align: center;
