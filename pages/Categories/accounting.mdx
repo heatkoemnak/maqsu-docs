@@ -3817,19 +3817,25 @@ groupSections:
         body: |
           Generate tax reports required for government e-filing submissions, including sales tax, purchase tax, withholding tax, and monthly tax payment reports.
 
-          > **Note:** e-Filing reports must be generated and submitted to tax authorities according to the official filing schedule. Ensure all invoices and bills for the reporting period are posted before generating reports.
+          <Noted type="info" title="Note" image="/img/icon/notes.png">
+            e-Filing reports must be generated and submitted to tax authorities according to the official filing schedule. Ensure all invoices and bills for the reporting period are posted before generating reports.
+          </Noted>
 
           ***
 
-          ### Sales Tax Reports
+          ### Sales
 
           Sales tax reports show all VAT collected from customers on sales transactions during the reporting period. These reports are required for monthly or quarterly VAT filing with tax authorities.
+
+          ---
 
           ###### Step 1 — Configure Sales Tax
 
           For more information on how to configure tax for sales reports, see the [Configuration Guide](/accounting/compliance#compliance-consfiguration-configuresalestax).
 
-          ###### Step 2 — Navigate to Sales Report
+          ---
+
+          ###### Step 2 — Navigation
 
           From the top navigation menu, click **Compliance**. Under the **E-Filing** section, select **Sales**.
 
@@ -3861,7 +3867,7 @@ groupSections:
 
           The Sales report is available in two formats:
 
-          #### Web Format
+          ###### Web Format
 
           Click the **Web** tab to view the report in a browser-friendly format with detailed information:
 
@@ -3869,7 +3875,7 @@ groupSections:
 
           The Web format displays all details in a readable table with bilingual headers (Khmer and English) for easy review before filing.
 
-          #### Desktop Format
+          ###### Desktop Format
 
           Click the **Desktop** tab to view the report in a simplified format optimized for export and e-filing:
 
@@ -3900,7 +3906,6 @@ groupSections:
 
           ***
 
-          {' '}
           <Noted type="warning" title="Important" image="/img/icon/notes.png">
             Only include transactions with valid tax numbers in your e-filing reports. Verify that all
             customer TIN/BIN/TID information is accurate before filing, as errors may result in rejected
@@ -3909,13 +3914,15 @@ groupSections:
 
           ***
 
-          ### Purchase Tax Reports
+          ### Purchase
 
           Purchase tax reports show all VAT paid to suppliers on purchase transactions during the reporting period. These reports document your input VAT that can be claimed as credits against your output VAT liability.
 
           ###### Step 1 — Configure Purchase Tax
 
           For more information on how to configure tax for sales reports, see the [Configuration Guide](/accounting/compliance#compliance-consfiguration-configurepurchasetax).
+
+          ---
 
           ###### Step 2 — Navigate to Purchase Report
 
@@ -3967,7 +3974,7 @@ groupSections:
 
           ***
 
-          ###### Step 5 — Export the Report
+          ###### Step 5 — Export
 
           To export the report for submission to tax authorities:
 
@@ -3986,20 +3993,6 @@ groupSections:
 
           5. Upload the file to the government e-filing portal according to their submission process
 
-          ***
-
-          #### Input VAT Credit Claims
-
-          The VAT paid on purchases can be used to reduce your VAT liability:
-
-          - **Creditable Input VAT** – VAT paid on business-related purchases that can be claimed
-          - **Non-creditable Input VAT** – VAT on personal or non-business expenses that cannot be claimed
-          - Ensure all purchase bills have valid supplier tax numbers to claim input VAT credits
-          - Keep original tax invoices from suppliers as supporting documentation
-
-          ***
-
-          {' '}
           <Noted type="warning" title="Important" image="/img/icon/notes.png">
             Only purchases with valid tax invoices from registered VAT suppliers can be claimed as input
             VAT credits. Ensure you have proper documentation for all purchases included in your e-filing
@@ -4008,17 +4001,17 @@ groupSections:
 
           ***
 
-          For more information on compliance management, see the [Compliance Guide](/accounting/compliance).
-
-          ***
-
-          ### Withholding Tax Reports
+          ### Withholding Tax
 
           Withholding tax reports document taxes withheld from vendor payments and employee compensation as required by tax law. These reports show your compliance with withholding obligations and the amounts remitted to tax authorities.
+
+          ---
 
           ###### Step 1 — Configure Witholding Tax
 
           For more information on how to configure tax for sales reports, see the [Configuration Guide](/accounting/compliance#compliance-consfiguration-configurewithholdingtax).
+
+          ---
 
           ###### Step 2 — Navigate to Withholding Tax Report
 
@@ -4095,22 +4088,19 @@ groupSections:
 
           ***
 
-          {' '}
           <Noted type="warning" title="Important" image="/img/icon/notes.png">
             Failure to properly withhold and remit taxes can result in penalties for your company. Ensure
             withholding rates are correctly applied based on payment type and that all withheld amounts
             are remitted to tax authorities on time.
           </Noted>
 
-          ***
+          ---
 
-          For more information on compliance management, see the [Compliance Guide](/accounting/compliance).
-
-          ***
-
-          ### Monthly Tax Payment Reports
+          ### Monthly Tax Payment
 
           Monthly Tax Payment reports consolidate all tax obligations for the reporting period, including VAT, withholding tax, and other tax payments. These reports provide a comprehensive view of your total tax liability and help ensure timely payment to tax authorities.
+
+          ---
 
           ###### Step 1 — Configure Monthly Tax Payment
 
@@ -4180,7 +4170,6 @@ groupSections:
 
           ***
 
-          {' '}
           <Noted type="info" title="Configuration Note" image="/img/icon/notes.png">
             Tax configuration settings apply system-wide. Any changes made here will affect all Monthly
             Tax Payment reports going forward. Ensure all settings are correct before saving.
@@ -4250,7 +4239,6 @@ groupSections:
 
           2. Select your preferred export format:
 
-
               - **Monthly Tax Payment PDF** – Formatted PDF document for printing or digital submission
               - **Monthly Tax Payment XLSX** – Standard Excel file with formatting
               - **Monthly Tax Payment Detail XLSX** – Detailed Excel file with transaction-level information
@@ -4269,35 +4257,15 @@ groupSections:
               - Accounting records and audit trail
               - Payment processing and remittance
 
-          ***
-
-          #### Understanding Monthly Tax Obligations
-
-          The Monthly Tax Payment report helps you manage various tax types:
-
-          - **Withholding Tax** – Taxes withheld from payments to vendors and employees
-          - **Property Rental Tax** – Tax on rental and lease payments for movable and immovable property
-          - **Dividend Tax** – Tax on dividend distributions to shareholders
-          - **VAT Obligations** – Net VAT payable after crediting input VAT against output VAT
-
-          **Key Features:** – Bilingual headers (Khmer and English) for easy reference
-          - Multi-currency reporting (USD and KHR)
-          - Automatic calculation of tax amounts based on rates
-          - Summary section for VAT reconciliation
-          - Service fee tracking capability
 
           ***
 
-          {' '}
           <Noted type="warning" title="Important" image="/img/icon/notes.png">
             Ensure all tax payments are remitted to tax authorities by the statutory deadline to avoid
             penalties and interest charges. Review the Monthly Tax Payment report carefully before
             submission to verify all amounts are accurate and complete.
           </Noted>
 
-          ***
-
-          For more information on compliance management, see the [Compliance Guide](/accounting/compliance).
       - link: /consfiguration
         title: Configuration
         body: |
@@ -4350,19 +4318,7 @@ groupSections:
 
           1. Click on the **Taxes** dropdown for a category (e.g., "VAT on Sale")
 
-          2. A searchable dropdown will appear showing all available taxes in your system:
-
-             - VAT - Sales of Goods 10%
-             - Non - Taxable Sales 0%
-             - VAT - Sales of Services 10%
-             - VAT - Exports 0%
-             - Public Lighting Tax 3%
-             - Accommodation Tax 2%
-             - SPC - Soft Drinks 20%
-             - SPC - Cigarettes 15%
-             - SPC - Entertainment Services 10%
-             - SPC - Telephone Services 3%
-             - And more...
+          2. A searchable dropdown will appear showing all available taxes in your system.
 
           3. Select one or multiple taxes to assign to the category
 
@@ -4374,7 +4330,7 @@ groupSections:
 
           ***
 
-          ###### Step 4 — Save Configuration
+          ###### Step 4 — Save
 
           1. Review all tax category assignments to ensure they're correct
 
@@ -4382,7 +4338,6 @@ groupSections:
 
           3. The configuration will be applied to all future Sales e-filing reports
 
-          {' '}
           <Noted type="info" title="Tip" image="/img/icon/notes.png">
             You can assign multiple tax rates to a single category. For example, "VAT on Sale" might
             include both "VAT - Sales of Goods 10%" and "VAT - Sales of Services 10%" to consolidate
@@ -4433,7 +4388,6 @@ groupSections:
 
           2. Click **Save** to apply the configuration
 
-          {' '}
           <Noted type="warning" title="Important" image="/img/icon/notes.png">
             Ensure "Local Taxable Purchase" includes only creditable VAT. Non-creditable purchases should
             be assigned to the "Non Creditable Purchase" category to maintain accurate input VAT
@@ -4515,26 +4469,12 @@ groupSections:
 
       ***
 
-      ### Available Compliance Features
-
-      #### e-Filing Reports
-
       Generate comprehensive tax reports for electronic filing with tax authorities, including:
 
-      - [Sales Tax Reports](/accounting/compliance#compliance-sales-tax-reports) – VAT collected from customers on sales transactions
+      - [Sales](/accounting/compliance#compliance-sales-tax-reports) – VAT collected from customers on sales transactions
       - [Purchase Tax Reports](/accounting/compliance#compliance-purchase-tax-reports) – VAT paid to suppliers on purchases
       - [Withholding Tax Reports](/accounting/compliance#compliance-withholding-tax-reports) – Tax withheld from vendor payments and employee compensation
       - [Monthly Tax Payment Reports](/accounting/compliance#compliance-monthly-tax-payment-reports) – Summary of tax obligations for the period
-
-      [Learn more about e-Filing Reports →](/accounting/compliance#e-filing-reports)
-
-      #### CIFRS Reports
-
-      Create Cambodia Integrated Financial Reporting System (CIFRS) reports that meet Ministry of Economy and Finance requirements. MAQSU formats your financial data according to CIFRS specifications for seamless government submission.
-
-      [Learn more about CIFRS Reports →]()
-
-      ***
 
       <Noted type="info" title="Important" image="/img/icon/notes.png">
         Always consult with your tax advisor or accountant to ensure your reports meet current

@@ -161,24 +161,6 @@ const Footer = () => {
           >
             Support
           </a>
-          <a
-            href="#"
-            style={styles.link}
-            onMouseEnter={(e) => e.currentTarget.style.textDecoration = 'underline'}
-            onMouseLeave={(e) => e.currentTarget.style.textDecoration = 'none'}
-          >
-            Privacy
-            <span style={styles.externalIcon}>↗</span>
-          </a>
-          <a
-            href="#"
-            style={styles.link}
-            onMouseEnter={(e) => e.currentTarget.style.textDecoration = 'underline'}
-            onMouseLeave={(e) => e.currentTarget.style.textDecoration = 'none'}
-          >
-            Terms of Use
-          </a>
-
           <span style={styles.copyright}>© MAQSU 2026</span>
         </div>
       </div>

@@ -1,6 +1,6 @@
 .hero_page {
   width: 100%;
-  padding: clamp(4.5rem, 9vw, 7rem) 0;
+  padding: clamp(2.2rem, 4.5vw, 3.5rem) 0;
   margin: 0 auto;
   display: flex;
   justify-content: center;
@@ -9,30 +9,30 @@
 }
 
 .features {
-  width: min(1120px, calc(100% - 2rem));
-  margin: 20px auto 100px;
-  border-radius: 0% 30% 0% 0% / 0% 10% 0 30%;
+  width: min(1040px, calc(100% - 2rem));
+  margin: 16px auto 72px;
+  border-radius: 0;
 }
 
 @media (max-width: 768px) {
   .hero_page {
-    padding: 4rem 0 3.5rem;
+    padding: 2rem 0 2.2rem;
   }
 
   .features {
-    width: min(100%, calc(100% - 1.5rem));
-    margin-bottom: 72px;
+    width: min(100%, calc(100% - 1.25rem));
+    margin-bottom: 56px;
   }
 }
 
 @media (max-width: 480px) {
   .hero_page {
-    padding: 3.25rem 0 3rem;
+    padding: 1.8rem 0 2rem;
   }
 
   .features {
     width: calc(100% - 1rem);
-    margin-top: 16px;
-    margin-bottom: 56px;
+    margin-top: 12px;
+    margin-bottom: 48px;
   }
 }
