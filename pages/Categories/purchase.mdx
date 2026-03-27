@@ -462,7 +462,7 @@ groupSections:
 
   - link: receiving-goods#receiving-goods
     uid: receiving-goods
-    title: Receiving Goods
+    title: Goods Receipts
     date: '2026-02-22T07:20:55.556Z'
     breadcrumbs:
       - link: /
@@ -472,7 +472,7 @@ groupSections:
         title: Purchase
         body: ''
       - link: /purchase/receiving-goods
-        title: Receiving Goods
+        title: Goods Receipts
         body: ''
     body: |
       Receiving goods is a critical step in the purchasing process in MAQSU ERP.
@@ -766,81 +766,45 @@ groupSections:
         title: Add Payment
         body: ''
     body: |
-      **Registering Payment** is the final step in the MAQSU ERP purchasing
-      workflow. It records the actual payment made to the supplier against the
+      **Add Payment** is the final step in the purchasing
+      workflow. It records the actual payment made to the vendor against the
       posted vendor bill, updates your accounting records, and marks the bill as
       fully settled.
 
+      ![](/img/purchase/register-payment/0001_1.png)
+
+      This confirmation dialog will appear when you click the **Create Bill** button in the previous step. It confirms that the vendor bill has been successfully created in **Draft** status and provides a link to view the bill immediately.
 
       <Noted type="info" title="Note" image="/img/icon/sparkles.png">
         Always ensure the vendor bill has been posted before registering payment.
         Payments cannot be registered against a bill that is still in **Draft** status.
       </Noted>
 
-      After the vendor bill has been posted, the final step in the
-          purchasing process is to **Register Payment** to record the actual
-          payment made to the supplier. Follow the steps below:
+    sections:
+      - link: /regular-bill
+        title: Regular Bill
+        body: |
+          A **Regular Bill** is a standard vendor bill that accounts for the full amount of the purchase order. It is the most commonly used bill type for normal purchases.
 
-          ##### Step 1 — Go to Purchase Orders
+          ![](/img/purchase/regular-bill/0001.png)
 
-          From the left sidebar, click **Purchase**. Then from the top
-          navigation menu, go to **Orders** ‣ **Purchase Orders**.
+          Click **Create and View Bill** to create the vendor bill in **Draft** status and open it immediately for review.
 
-          ![](/img/purchase/register-payment/0001.png)
+          ---
 
+          ##### Step 1 — Post
 
-          ##### Step 2 — Find the Order
+          In the **Draft Bill** form, review all the details carefully before posting.
 
-          You need to find the Purchase Order that has been fully billed. Use
-          the **Filters** to narrow down the list quickly.
+          ![](/img/purchase/regular-bill/0002.png)
 
-          Click the **Filters** button at the top-right of the list, then select
-          **Billing Status is "Fully Billed"** from the filter options.
+          ---
 
-          ![](/img/purchase/register-payment/0002.png)
+          ##### Step 2 — Add Payment
 
-          <Noted type="info" title="Can't find the filter?"
-          image="/img/icon/sparkles.png">
-            If **Billing Status is "Fully Billed"** does not appear in the standard filter list, use a **Custom Filter** instead. Click **Add Custom Filter**, then set the conditions as follows:
+          After the vendor bill is successfully posted, the **Add Payment** button will appear at the top of the Vendor Bill form. Click this button to open the payment dialog and register the actual payment made to the vendor against the posted bill.
 
-            1. **Field:** Billing Status
-            2. **Operator:** is
-            3. **Value:** Fully Billed
-
-            Then click **Apply** to apply the custom filter.
-          </Noted>
-
-          ![](/img/purchase/register-payment/0003.png)
-
-          After applying the filter, the list will display only Purchase Orders
-          with a **Billing Status** of **Fully Billed**.
-
-          ##### Step 3 — Open the Order
-
-          Click on the **Order Number** of the Purchase Order you want to
-          register payment for to open it.
-
-          ![](/img/purchase/register-payment/0004.png)
-
-          ##### Step 3 — Open Vendor Bills
-
-          Click the **1 Vendor Bills** smart button at the top right of the
-          Purchase Order form. This will open the posted vendor bill linked to
-          this purchase order.
-
-          ![](/img/purchase/register-payment/0005.png)
-
-          The Vendor Bill (e.g., BILL/2026/0004) will open in **Posted** status.
-          You will see the bill details including the vendor, bill date,
-          accounting date, payment terms, journal, and invoice lines. The **Add
-          Payment** button will be visible at the top of the form.
-
-          ##### Step 4 — Add Payment
-
-          Click the **Add Payment** button at the top of the Vendor Bill form to
-          open the payment dialog.
-
-          ![](/img/purchase/register-payment/0006.png)
+          ![](/img/purchase/regular-bill/0003.png)
 
           A payment wizard window will appear. Fill in the following details:
 
@@ -863,14 +827,18 @@ groupSections:
           payment remark. This is auto-populated from the Purchase Order number
           by default.
 
-          ##### Step 5 — Click Validate
+          ---
+
+          ##### Step 3 — Validate
 
           After reviewing all the payment details, click the **Validate** button
           to confirm and post the payment.
 
           ![](/img/purchase/register-payment/0007.png)
 
-          ##### Step 6 — Verify the Bill Status Changed to PAID
+          ---
+
+          ##### Step 4 — Verify
 
           Once validated, the vendor bill status will immediately update. A
           green **PAID** stamp will appear on the top right of the bill form,
@@ -887,6 +855,124 @@ groupSections:
           <Noted type="info" title="Note" image="/img/icon/sparkles.png">
             If you registered a partial payment, the bill status will show **Partially Paid** instead of **PAID**. You can click **Add Payment** again to register the remaining balance.
           </Noted>
+
+      - link: /down-payment-percentage
+        title: Down Payment (Percentage)
+        body: |
+          **Down Payment (Percentage)** is used to record an advance payment made by a customer in a percentage of the total invoice amount. The remaining balance is calculated based on the percentage of down payment. This feature is useful when the exact amount of down payment is not known in advance.
+
+          ![](/img/purchase/down-payment-percentage/0001.png)
+
+           Click **Create and View Bill** to create the vendor bill in **Draft** status and open it immediately for review.
+
+          ---
+
+          ##### Step 1 — Select Bill
+
+          After the **Draft Bill** is created, you will see the bill broken down into separate components based on the percentage of down payment, providing a clear overview of the payment structure.
+
+          ![](/img/purchase/down-payment-percentage/0002.png)
+
+          Select a bill to which you want to apply a down payment.
+
+          ---
+
+          ##### Step 2 — Post
+
+          In the **Draft Bill** form, review all the details carefully before posting.
+
+          ![](/img/purchase/down-payment-percentage/0003.png)
+
+          ---
+
+          ##### Step 3 — Add Payment
+
+          After the vendor bill is successfully posted, the **Add Payment** button will appear at the top of the Vendor Bill form. Click this button to open the payment dialog and register the actual payment made to the vendor against the posted bill.
+
+          ![](/img/purchase/down-payment-percentage/0004.png)
+
+          A payment wizard window will appear. Fill in the following details:
+
+          1. **Journal** – Select the payment method or account the payment is
+          made from (e.g., Bank (USD), Cash). This determines which financial
+          account is debited.
+
+          2. **Doc. No.** – This is automatically generated by the system. You
+          can leave it as is or enter a custom reference such as a check number
+          or bank transfer ID.
+
+          3. **Amount** – The payment amount is automatically pre-filled based
+          on the outstanding balance on the bill. You can adjust this for a
+          partial payment if needed.
+
+          4. **Payment Date** – The date the payment was made to the vendor.
+          This defaults to today's date but can be changed.
+
+          5. **Memo** – An optional internal note for reference, such as a
+          payment remark. This is auto-populated from the Purchase Order number
+          by default.
+
+          ---
+
+          ##### Step 3 — Validate
+
+          After reviewing all the payment details, click the **Validate** button
+          to confirm and post the payment.
+
+          ![](/img/purchase/down-payment-percentage/0005.png)
+
+          ---
+
+          ##### Step 4 — Verify
+          After validating the payment, you can verify that one bill has been fully settled, while the other remains open and awaiting payment.
+
+          ![](/img/purchase/down-payment-percentage/0006.png)
+
+      - link: /down-payment-fixed
+        title: Down Payment (Fixed Amount)
+        body: |
+          **Down Payment (Fixed Amount)** is when the customer pays a fixed amount to the vendor. This is usually used when the advance payment is a set amount rather than a percentage.
+
+          ![](/img/purchase/down-payment-fixed/0001.png)
+
+          Enter the fixed amount and click **Create and View Bill** to generate the vendor bill in **Draft** status and open it immediately for review. This allows you to review and confirm all details before posting the bill.
+
+          ![](/img/purchase/down-payment-fixed/0001_1.png)
+
+          ---
+
+          ##### Step 1 — Post
+
+          To officially post the vendor bill, click the **Vendor Bill** icon.
+
+          ![](/img/purchase/down-payment-fixed/0002_1.png)
+
+          Once you've reviewed and confirmed all the information is correct, click the **Post** button to finalize the bill. This will change the bill status from **Draft** to **Posted** and record the corresponding journal entries in accounting.
+
+          ![](/img/purchase/down-payment-fixed/0002.png)
+
+
+          ---
+
+          ##### Step 2 — Add Payment
+
+          After the vendor bill is successfully posted, simply scroll down you will get to see the button **Make Payment**, click on it to confirm payment.
+
+          ![](/img/purchase/down-payment-fixed/0003.png)
+          ---
+
+          ##### Step 3 — Verify
+
+          After making the payment, you can verify that one bill has been fully settled,
+
+          ![](/img/purchase/down-payment-fixed/0003.png)
+
+          Note that a status of **PAID** does not necessarily mean that the bill has been fully settled. It simply indicates that a first payment has been made, while the remaining balance is still outstanding.
+
+          ![](/img/purchase/down-payment-fixed/0005.png)
+
+          Observe that the **Create Bill** button remains blue, indicating that the payment is not yet fully settled. To finalize the payment, simply click on it and select **Regular Bill** to make a complete payment for this purchase. This will update the bill status to **PAID** and ensure that all payment records are accurately reflected in your accounting records.
+
   - link: reporting#reporting
     uid: reporting
     title: Reporting

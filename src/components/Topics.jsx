@@ -24,7 +24,7 @@ export default function Topics({ topics }) {
   const globalData = useGlobalData();
   const [topicData, setTopicData] = useState([]);
   const [loading, setLoading] = useState(true);
-  const itemsPerPage = 7;
+  const itemsPerPage = 10;
   const totalPages = Math.ceil((topics?.groupSections?.length ?? 0) / itemsPerPage);
   const startIndex = (currentPage - 1) * itemsPerPage;
 

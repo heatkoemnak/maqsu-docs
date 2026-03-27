@@ -71,6 +71,10 @@ h6{
 p em{
   font-size: 17px !important;
 }
+p strong {
+  color:rgb(16, 16, 16) !important;
+  font-weight: 500 !important;
+}
 section h3{
   font-size: 20px !important;
   font-weight: 500 !important;
