@@ -743,41 +743,76 @@ groupSections:
       - link: sales-analysis-report#sales-analysis-report
         uid: sales-analysis-report
         title: Sales Analysis
-        body: >
-          This report provides a detailed analysis of all sales transactions. It
-          can
+        body: |
+          The **Sales Analysis** report helps you evaluate sales performance
+          across time, products, customers, and teams. Use it to identify growth
+          trends, compare results by category, and monitor revenue behavior for
+          better planning and decision-making.
 
-          be filtered by date, customer, item, and other criteria to provide
-
-          insights into sales trends and customer behavior.
-
+          ---
 
           ### **Graph**
 
+          The **Graph** view helps you visualize sales data to quickly identify
+          trends, comparisons, and contribution patterns. You can switch between
+          different chart types depending on whether you want to compare values,
+          track changes over time, or analyze percentage share.
 
-          <tabsesctions
-            lists={[
-              {
-                label: "Bar Chart",
-                children:
-                  "A Bar Chart compares sales values across categories or periods side-by-side. It is best used when you want to clearly see which category performs better than others, such as sales by product, customer, salesperson, or month. Each bar represents a discrete value, making it easy to identify the highest and lowest performers at a glance. Bar charts are ideal for operational analysis and performance comparison because they highlight differences in magnitude between categories.nn\n\nKey Uses:\n\n* Compare sales by product, customer, or branch\n* Monthly or quarterly sales comparison\n* Performance analysis by salesperson\n\nTip: Use a Bar Chart when your data is grouped by category rather than continuous time trends.nn![](/img/sales/reporting/0006.png)\n"
-              },
-              {
-                label: "Line Chart",
-                children:
-                  "A Line Chart shows the trend of sales over time by connecting data points across a timeline. It is especially useful for identifying growth, decline, seasonality, and patterns in sales performance. This chart helps management understand how sales evolve over days, months, or years and supports forecasting and strategic decision-making.nn\n\nKey Uses:\n\n* Track monthly or yearly sales trends\n* Identify seasonal sales patterns\n* Monitor business growth or decline over time\n\nTip: Use a Line Chart when your data is time-based (daily, monthly, yearly) and you want to analyze trends instead of category comparison.nn![](/img/sales/reporting/0007.png)\n"
-              },
-              {
-                label: "Pie Chart",
-                children:
-                  "A Pie Chart shows how total sales are distributed across different categories, displaying each category as a percentage of the whole. It is useful for understanding contribution and share, such as which customer, product, or category generates the most revenue. Pie charts provide a quick visual summary of proportion rather than detailed comparisons.nn\n\nKey Uses:\n\n* Sales distribution by customer or product\n* Revenue contribution by category or branch\n* Market share or segment analysis\n\nTip: Use a Pie Chart when you want to visualize proportional contribution. For best readability, limit the number of categories (ideally fewer than 6–8) to avoid cluttered slices.nn![](/img/sales/reporting/0008.png)\n"
-              }
-            ]}
-          />
+          ##### 1. Bar Chart View
 
+          A Bar Chart compares sales values across categories or periods side-by-side. It is best used when you want to clearly see which category performs better than others, such as sales by product, customer, salesperson, or month. Each bar represents a discrete value, making it easy to identify the highest and lowest performers at a glance. Bar charts are ideal for operational analysis and performance comparison because they highlight differences in magnitude between categories.
+
+          ![](/img/sales/reporting/0006.png)
+
+          Key Uses:
+
+          * Compare sales by product, customer, or branch
+          * Monthly or quarterly sales comparison
+          * Performance analysis by salesperson
+
+          Tip: Use a Bar Chart when your data is grouped by category rather than continuous time trends.
+
+
+          ##### 2. Line Chart View
+
+          A Line Chart shows the trend of sales over time by connecting data points across a timeline. It is especially useful for identifying growth, decline, seasonality, and patterns in sales performance. This chart helps management understand how sales evolve over days, months, or years and supports forecasting and strategic decision-making.
+
+          ![](/img/sales/reporting/0007.png)
+
+          Key Uses:
+
+          * Track monthly or yearly sales trends
+          * Identify seasonal sales patterns
+          * Monitor business growth or decline over time
+
+          Tip: Use a Line Chart when your data is time-based (daily, monthly, yearly) and you want to analyze trends instead of category comparison.
+
+
+          ##### 3. Pie Chart View
+
+          A Pie Chart shows how total sales are distributed across different categories, displaying each category as a percentage of the whole. It is useful for understanding contribution and share, such as which customer, product, or category generates the most revenue. Pie charts provide a quick visual summary of proportion rather than detailed comparisons.
+
+          ![](/img/sales/reporting/0008.png)
+
+          Key Uses:
+
+          * Sales distribution by customer or product
+          * Revenue contribution by category or branch
+          * Market share or segment analysis
+
+          Tip: Use a Pie Chart when you want to visualize proportional contribution. For best readability, limit the number of categories (ideally fewer than 6-8) to avoid cluttered slices.
+
+
+          ---
 
           ### **Measures**
 
+          The **Measures** menu lets you choose which sales metrics are shown in
+          the report. Select the measures relevant to your analysis to focus on
+          quantities, invoicing status, revenue, margins, discounts, and
+          logistics performance.
+
+          ![](/img/sales/reporting/0003.png)
 
           * **Qty Ordered**: Total quantity customers ordered (from Sales
           Orders).
@@ -813,31 +848,53 @@ groupSections:
           depending
             on view).
 
-          ![](/img/sales/reporting/0003.png)
 
-
-          ***
       - link: sales-register-report#sales-register-report
         uid: sales-register
         title: Sales Register
-        body: >
-          **Sales Register** = a list of all confirmed sales lines for the
-          selected
-
-          period (In your case: Date → This Month)
-
+        body: |
+          The **Sales Register** provides a line-by-line list of confirmed sales
+          transactions for the selected period. It helps you review what has been
+          ordered, delivered, invoiced, and still pending so teams can track
+          revenue recognition and billing progress accurately.
 
           ![](/img/sales/reporting/0004.png)
 
+          ---
 
-          ### Filtering
+
+          ---
+
+          ### Views
+
+          Use **Views** to change how sales data is displayed. Switch between
+          table, pivot, and chart layouts to review details, totals, and trends
+          in the format that best fits your analysis.
+
+          ##### 1. List
+
+          **List** view displays each sales record as rows with key columns such
+          as date, customer, product, quantity, and amount. Use it when you want
+          a clear, line-by-line view for quick checking and review.
+
+          ![](/img/sales/reporting/00012.png)
+
+          ##### 1. Pivot
+
+          **Pivot** view shows sales data in a structured table with grouped
+          rows and calculated totals. It is useful for detailed analysis when
+          you need to compare metrics across products, customers, or periods.
+
+          ![](/img/sales/reporting/00011.png)
 
 
-          These filters help you distinguish between preliminary leads and
-          confirmed
+          ---
 
-          revenue:
+          ### Filters
 
+          Use these filters to separate draft records from confirmed sales.
+
+          ![](/img/sales/reporting/0005.png)
 
           * **Quotations**: Shows only draft or sent offers that have not yet
           been
@@ -866,26 +923,35 @@ groupSections:
           * **Add Custom Filter**: Used to create highly specific views, such as
             filtering for a specific customer, salesperson, or product type.
 
-          ![](/img/sales/reporting/0005.png)
-    body: >
+
+          ---
+
+          ### Group By
+
+          Use **Group By** to organize sales records into meaningful sections so
+          you can analyze totals faster. You can group by **Customer**,
+          **Product**, **Date**, or **Salesperson**, and you can also use
+          **Add Custom Group** for advanced analysis based on your reporting
+          needs.
+
+          ![](/img/sales/reporting/00010.png)
+
+          ---
+
+          ### Export
+
+          Use **Export** to download the current Sales report data into a file
+          for sharing, offline analysis, or audit documentation. The export
+          respects your active filters, groupings, and selected measures so the
+          output matches exactly what you are viewing.
+
+          ![](/img/sales/reporting/0009.png)
+
+    body: |
       **Sales Reporting** allows you to view, analyze, and track sales
       performance using structured reports. These reports help sales,
       operations, and accounting teams understand revenue, delivery status, and
       billing progress.
-
-
-      ***
-
-
-      Navigate to: **Sales → Reporting**
-
-      You will see two main reports:
-
-
-      * **Sales Analysis** – Analytical and trend-based reporting
-
-      * **Sales Register** – Transaction-level sales records
-
 
       ![](/img/sales/reporting/0001.png)
 ---

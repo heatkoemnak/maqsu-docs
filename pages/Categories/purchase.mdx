@@ -996,50 +996,51 @@ groupSections:
           spending trends, track order volumes, and evaluate supplier
           performance over time.
 
-          ##### Step 1 — Go to Purchase Analysis
+          ---
 
-          From the top navigation menu, click **Reporting** ‣ **Purchase
-          Analysis**.
+          ### Graph
 
-          ![](/img/purchase/reporting/0001.png)
+          The **Graph** view helps you visualize purchase data quickly. Use it to
+          compare spending, identify trends over time, and understand how each
+          group contributes to total purchases.
 
-          ##### Step 2 — Understand the Report Views
+          ###### 1. Line Chart
 
-          The Purchase Analysis report offers multiple view modes so you can
-          analyze your data in different ways. Use the view toggle icons at the
-          top-left of the report to switch between views:
-
-          #### Line Chart View
-
-          Displays purchase data as a continuous line or area chart over time.
-          This is useful for tracking purchase trends across a date range, such
-          as daily or monthly spending patterns.
-
+          **Line Chart** displays purchase values across the selected grouping
+          (such as Product, Vendor, or Date) and helps you quickly see upward or
+          downward trends, peaks, and drops in spending.
 
           ![](/img/purchase/reporting/0002.png)
 
-          #### Bar Chart View
+          ###### 2. Bar Chart
 
-          Displays purchase data as vertical bars grouped by a selected
-          dimension such as Confirmation Date, Vendor, or Product. This makes it
-          easy to compare purchase volumes or totals between groups at a glance.
-
+          **Bar Chart** shows purchase values by category in side-by-side bars,
+          making it easy to compare totals and quickly identify the highest and
+          lowest purchase groups.
 
           ![](/img/purchase/reporting/0003.png)
 
-          #### Pie Chart View
+          ###### 3. Pie Chart
 
-          Displays purchase data as a proportional pie chart. This is ideal for
-          understanding the share or percentage contribution of each group
-          (e.g., by date, vendor, or product) relative to the total.
+          **Pie Chart** displays each purchase group as a share of the total,
+          helping you understand contribution percentages and quickly see which
+          categories take the largest portion of spending.
 
           ![](/img/purchase/reporting/0004.png)
 
-          #### Pivot Table View
+          ---
 
-          Displays purchase data in a structured table format with rows,
-          columns, and subtotals. This is the most detailed view and is useful
-          for in-depth data analysis and exporting reports.
+          ### Views
+
+          Use **Views** to change how purchase data is displayed. Switch to the
+          layout that best fits your task, whether you need detailed records,
+          grouped totals, or visual trend analysis.
+
+          ###### 1. Pivot
+
+          **Pivot** view organizes purchase data into grouped rows and summary
+          columns, making it easy to compare totals, counts, and billed
+          quantities across products, vendors, or time periods.
 
           ![](/img/purchase/reporting/0005.png)
 
@@ -1047,13 +1048,16 @@ groupSections:
             You can switch between the **Pivot Table** and **Chart** views at any time using the view toggle icons on the right side of the toolbar. Each view retains your current filters and groupings.
           </Noted>
 
+          ---
 
-          ##### Step 3 — Customize Measures
+
+          #### Measures
 
           Click the **Measures** button at the top-left to select which data
           columns or metrics you want to display in the report. You can enable
           or disable any combination of the following measures:
 
+          ![](/img/purchase/reporting/0006.png)
 
           1. **# of Lines** – The total number of purchase order lines included
           in the analysis.
@@ -1091,29 +1095,42 @@ groupSections:
           13. **Count** – The total number of purchase order records included in
           the report.
 
-
-          ![](/img/purchase/reporting/0006.png)
-
-
           Tick or untick any measure to add or remove it from the current view.
           Active measures are shown with a checkmark.
 
-
           ![](/img/purchase/reporting/0007.png)
 
-          ##### Step 4 — Filter and Group the Data
+          ---
 
-          Use the toolbar options to further refine your report:
+          ### Filters
 
-          * **Filters** – Narrow the data by date range, vendor, order status,
-          or other conditions.
+          Use **Filters** to narrow report data to specific document types or
+          conditions. For example, you can show only **Requests for Quotation**,
+          only **Purchase Orders**, or apply **Add Custom Filter** for more
+          detailed analysis.
 
-          * **Group By** – Group results by fields such as Vendor, Product,
-          Purchase Representative, or Confirmation Date.
+          ![](/img/purchase/reporting/0008.png)
 
-          * **Time Ranges** – Quickly apply predefined date ranges such as This
-          Month, This Quarter, or This Year to focus the analysis on a specific
-          period.
+          ### Group By
+
+          Use **Group By** to organize purchase data into categories such as
+          **Vendor**, **Vendor Country**, **Purchase Representative**,
+          **Product**, or by **Order/Confirmation Date**. This helps you compare
+          totals by each dimension and makes patterns easier to read.
+
+          ![](/img/purchase/reporting/0009.png)
+
+          ---
+
+          ### Time Ranges
+
+          Use **Time Ranges** to filter the report by a specific period such as
+          this week, month, quarter, or year. Select the date basis
+          (for example, **Order Date**), choose the range, and click **Apply**.
+          You can also enable **Compare To** to analyze performance across two
+          periods.
+
+          ![](/img/purchase/reporting/00010.png)
 
           <Noted type="info" title="Tip" image="/img/icon/sparkles.png">
             Combining **Group By** with **Measures** gives you the most powerful analysis. For example, grouping by **Vendor** and measuring **Total** and **Qty Ordered** lets you instantly compare spending across all your suppliers.
@@ -1128,19 +1145,12 @@ groupSections:
           each individual order line with its full transaction details — making
           it ideal for auditing, reconciliation, and financial reporting.
 
-          ##### Step 1 — Go to Purchase Register
-
-          From the top navigation menu, click **Reporting** ‣ **Purchase
-          Register**.
-
-          ![](/img/purchase/reporting/register/0001.png)
-
-          ##### Step 2 — Understand the Report Views
+          ### Views
 
           The Purchase Register offers two view modes you can switch between
           using the view toggle icons at the top of the report:
 
-          #### List View
+          ##### 1. List
 
           Displays all purchase order lines in a flat, row-by-row format. Each
           row represents a single order line and shows the following columns:
@@ -1170,7 +1180,7 @@ groupSections:
 
           ![](/img/purchase/reporting/register/0002.png)
 
-          #### Pivot Table View
+          ##### 2. Pivot
 
           Displays the purchase register data in a structured pivot table
           grouped by product and period (e.g., January 2026, February 2026).
@@ -1183,7 +1193,7 @@ groupSections:
 
           ![](/img/purchase/reporting/register/0003.png)
 
-          ##### Step 3 — Customize Measures (Pivot View)
+          ### Measures
 
           When in **Pivot Table View**, click the **Measures** button to select
           which columns are displayed. The available measures for the Purchase
@@ -1219,7 +1229,7 @@ groupSections:
           </Noted>
 
 
-          ##### Step 4 — Filter the Data
+          ### Filters
 
           Click the **Filters** button to narrow down the records displayed in
           the report. The available filter options are:
@@ -1242,7 +1252,7 @@ groupSections:
 
           ![](/img/purchase/reporting/register/0005.png)
 
-          ##### Step 5 — Group the Data
+          ### Group By
 
           Click the **Group By** button to organize the report records into
           logical groups. The available grouping options are:
@@ -1274,3 +1284,5 @@ groupSections:
       analytical tools to help you monitor and evaluate your purchasing
       activities. Use these reports to gain insights into spending trends,
       supplier performance, and order fulfillment efficiency.
+
+      ![](/img/purchase/reporting/0001.png)
