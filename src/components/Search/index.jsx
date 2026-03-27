@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect, useMemo } from "react";
-import { Search as SearchIcon, X, ChevronDown, FileText, ChevronRight } from "lucide-react";
+import { Search as SearchIcon, X, ChevronDown, FileText } from "lucide-react";
 import styles from "./styles.module.css";
 import useGlobalData from "@docusaurus/useGlobalData";
 import Link from "@docusaurus/Link";
@@ -55,6 +55,7 @@ const Search = () => {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState([]);
   const [showDropdown, setShowDropdown] = useState(false);
+  const [isMegaMenuFullscreen, setIsMegaMenuFullscreen] = useState(false);
   const dropdownRef = useRef(null);
 
   const globalData = useGlobalData();
@@ -133,6 +134,7 @@ const Search = () => {
     function handleClickOutside(event) {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
         setShowDropdown(false);
+        setIsMegaMenuFullscreen(false);
       }
     }
 
@@ -153,6 +155,7 @@ const Search = () => {
         setQuery("");
         setResults([]);
         setShowDropdown(false);
+        setIsMegaMenuFullscreen(false);
       }
     }
 
@@ -236,7 +239,13 @@ const Search = () => {
       <div className={styles.topics} ref={dropdownRef}>
         <button
           type="button"
-          onClick={() => setShowDropdown(!showDropdown)}
+          onClick={() => {
+            const next = !showDropdown;
+            setShowDropdown(next);
+            if (!next) {
+              setIsMegaMenuFullscreen(false);
+            }
+          }}
           className={styles.dropDownTopic}
         >
           <span>All Topics</span>
@@ -244,47 +253,56 @@ const Search = () => {
         </button>
 
         {showDropdown && (
-          <div className={styles.megaMenuContainer}>
-            <div className={styles.megaMenuGrid}>
-              {categories.map((category) => {
-                const baseSlug = category.slug || category.uid || category.link || "docs";
-                const groups = category.groupSections || [];
+          <div
+            className={`${styles.megaMenuContainer} ${
+              isMegaMenuFullscreen ? styles.megaMenuContainerFullscreen : ""
+            }`}
+          >
+            <div className={styles.megaMenuInner}>
+              <div className={styles.megaMenuGrid}>
+                {categories.map((category) => {
+                  const baseSlug = category.slug || category.uid || category.link || "docs";
+                  const groups = category.groupSections || [];
 
-                return (
-                  <div key={baseSlug} className={styles.megaMenuColumn}>
-                    <Link
-                      to={`/${baseSlug}`}
-                      className={styles.categoryTitleLink}
-                      onClick={() => setShowDropdown(false)}
-                    >
-                      {category.title || baseSlug}
-                    </Link>
+                  return (
+                    <div key={baseSlug} className={styles.megaMenuColumn}>
+                      <Link
+                        to={`/${baseSlug}`}
+                        className={styles.categoryTitleLink}
+                        onClick={() => setShowDropdown(false)}
+                      >
+                        {category.title || baseSlug}
+                      </Link>
 
-                    {/* {category.description && (
-                      <p className={styles.categoryDescription}>{category.description}</p>
-                    )} */}
-
-                    <div className={styles.groupList}>
-                      {groups.map((group) => {
-                        const groupSlug = group.uid || String(group.link || "").split("#")[0];
-                        return (
-                          <Link
-                            key={`${baseSlug}-${groupSlug}`}
-                            to={`/${baseSlug}/${groupSlug}`}
-                            className={styles.megaMenuItem}
-                            onClick={() => setShowDropdown(false)}
-                          >
-                            <div className={styles.itemText}>
-                              <ChevronRight size={14} className={styles.itemLeadIcon} />
+                      <div className={styles.groupList}>
+                        {groups.map((group) => {
+                          const groupSlug = group.uid || String(group.link || "").split("#")[0];
+                          return (
+                            <Link
+                              key={`${baseSlug}-${groupSlug}`}
+                              to={`/${baseSlug}/${groupSlug}`}
+                              className={styles.megaMenuItem}
+                              onClick={() => setShowDropdown(false)}
+                            >
                               <span className={styles.itemTitle}>{group.title}</span>
-                            </div>
-                          </Link>
-                        );
-                      })}
+                            </Link>
+                          );
+                        })}
+                      </div>
                     </div>
-                  </div>
-                );
-              })}
+                  );
+                })}
+              </div>
+
+              <div className={styles.megaMenuFooter}>
+                <button
+                  type="button"
+                  className={styles.megaMenuFooterLink}
+                  onClick={() => setIsMegaMenuFullscreen((prev) => !prev)}
+                >
+                  {isMegaMenuFullscreen ? "Exit full screen" : "Browse all Topics"}
+                </button>
+              </div>
             </div>
           </div>
         )}
