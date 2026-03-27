@@ -134,9 +134,7 @@ export default function Topics({ topics }) {
         </div>
       </div>
 
-      {/* Main layout */}
       <div className={clsx(styles.mainLayout)}>
-        {/* Left sidebar */}
         {visibleCards?.length > 0 &&
          <aside className={clsx(styles.sidebar)}>
           <div className={clsx(styles.sidebarInner)}>
@@ -155,17 +153,15 @@ export default function Topics({ topics }) {
           </div>
         </aside>
         }
-
-            <main className={clsx(visibleCards?.length > 0 && styles.articleList, viewMode === 'grid' && styles.articleGrid)}>
-
+          <main className={clsx(visibleCards?.length > 0 && styles.articleList, viewMode === 'grid' && styles.articleGrid)}>
           {
-            visibleCards?.map((props, idx) =>
-              viewMode === 'grid' ? (
-                <ArticleCard key={startIndex + idx} idx={startIndex + idx} {...props} root_path={location.pathname} />
-              ) : (
-                <ArticleRow key={startIndex + idx} idx={startIndex + idx} {...props} root_path={location.pathname} />
-              )
-            )}
+          visibleCards?.map((props, idx) =>
+            viewMode === 'grid' ? (
+              <ArticleCard key={startIndex + idx} idx={startIndex + idx} {...props} root_path={location.pathname} />
+            ) : (
+              <ArticleRow key={startIndex + idx} idx={startIndex + idx} {...props} root_path={location.pathname} />
+            )
+          )}
           </main>
 
 

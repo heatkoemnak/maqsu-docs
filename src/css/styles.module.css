@@ -239,16 +239,16 @@
   flex: 1;
   min-width: 0;
   /* border: 1px solid #e8edf2; */
-  border-radius: 20px;
   background: transparent;
   padding: 0;
   overflow: hidden;
 }
 
+
 .articleRow {
   border: 1px solid #e2ebf3;
-  border-radius: 18px;
   background: #ffffff;
+  border-radius: 8px;
   transition: background 0.15s, border-color 0.15s, box-shadow 0.15s, transform 0.15s;
   margin: 0 0 10px;
 }
@@ -362,7 +362,7 @@
   gap: 10px;
   padding: 14px 16px;
   border: 1px solid #dbe6f1;
-  border-radius: 20px;
+  border-radius: 8px !important;
   background: #ffffff;
   text-decoration: none;
   color: #315581;
@@ -454,7 +454,7 @@
 /* ── Grid Card ─────────────────────────────── */
 .articleCard {
   border: 1px solid #e8edf2;
-  border-radius: 12px;
+  border-radius: 8px !important;
   background: #fff;
   transition: transform 0.15s, box-shadow 0.15s;
 }
@@ -829,11 +829,11 @@
   }
 
   .sidebarInner {
-    padding: 18px;
+    padding: 8px !important;
   }
 
   .articleCardLink {
-    padding: 16px;
+    padding: 8px !important;
   }
 
   .pageNavigation {
