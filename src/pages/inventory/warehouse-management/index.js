@@ -1,5 +1,5 @@
 import Page from "../../../components/Page";
-export default function ProductManagement() {
+export default function WarehouseManagement() {
 
   return (
     <Page/>

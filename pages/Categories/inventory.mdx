@@ -88,6 +88,196 @@ groupSections:
             - **Batch Processing** – Group multiple operations together for efficient execution
             - **Generate Reports** – Analyze inventory levels, movements, and valuation
 
+  - link: warehouse-management#warehouse-management
+    uid: warehouse-management
+    title: Warehouse Management
+    date: '2026-02-19T07:20:05.517Z'
+    body: |
+         **Warehouse management** is a critical component of inventory management that focuses on the efficient organization, tracking, and control of goods within a warehouse. Proper warehouse management ensures that inventory is stored in an optimal manner, allowing for easy access, accurate tracking, and timely fulfillment of orders. In MAQSU ERP, the Warehouse Management module provides tools and features to help businesses manage their warehouses effectively.
+
+         In this section, we will explore the key features and functionalities of warehouse management in MAQSU, including how to set up warehouses, manage locations, and setup automatic inventory tracking which is called "Putaway Rules".
+
+         ![](/img/inventory/warehouse-management/0001.png)
+
+         <Noted type="info" title="Note" image="/img/icon/notes.png">
+            A warehouse represents a physical location where goods are stored. It is important to set up your warehouses correctly to ensure accurate inventory tracking and efficient operations.
+            </Noted>
+
+
+    breadcrumbs:
+      - link: /
+        title: All Categories
+        body: ''
+      - link: /inventory
+        title: Inventory
+        body: ''
+      - link:
+        title: Warehouse Management
+        body: ''
+    sections:
+
+      - link: /warehouse
+        title: Warehouse
+        body: |
+
+            A **warehouse** in inventory refers to a physical place where goods or materials are stored before they are sold, distributed, or used in production.
+
+            In **MAQSU**, a warehouse is a digital representation of your physical storage facility, allowing you to accurately track, manage, and optimize your inventory. Now let's set up a warehouse for efficient inventory management.
+
+            ---
+
+            To setup a warehouse, please following these step:
+
+            ###### Step 1  — Navigation
+
+            Navigate to **Inventory ‣ Configuration ‣ Warehouses**, where you can view and manage all active warehouses in your system.
+
+            ![](/img/inventory/warehouse-management/warehouse/0001.png)
+
+            If you already have warehouses configured, this screen will display a list of all active ones. To modify an existing warehouse, simply click on the desired entry to edit its details. Otherwise, you can create a new warehouse by clicking the **Create** button.
+
+            ---
+
+            ###### Step 2 — Define Basic Information
+
+            ![](/img/inventory/warehouse-management/warehouse/0002.png)
+
+            1. Warehouse Name — The full descriptive name for reports (e.g., Main Warehouse - Phnom Penh).
+            2. Short Name — A concise internal code used for stock locations and references (e.g., WH-01).
+            3. Address — Link the warehouse to a specific company address to ensure correct details appear on delivery slips and logistics paperwork.
+
+            ---
+
+            ###### Step 3 — Define Shipments
+
+            ![](/img/inventory/warehouse-management/warehouse/0003.png)
+
+            ###### 1. Incomming Shipments
+
+            Select the method for receiving goods based on your operational complexity:
+
+            - **Receive Directly (1 step)** — `Vendor` ‣ `Stock`. Best for simple, fast receiving without staging.
+            - **Input then Stock (2 steps)** — `Vendor` ‣ `Input` ‣ `Stock`. Ideal for staging or counting items before final storage.
+            - **Input, Quality, then Stock (3 steps)** — `Vendor` ‣ `Input` ‣ `Quality` ‣ `Stock`. Essential if your process requires a formal quality inspection.
+
+            ###### 2. Outgoing Shipments
+
+            Choose how products are dispatched to customers:
+
+            - **Deliver Directly (1 step)** — Ship directly from stock to the customer.
+            - **Output then Deliver (2 steps)** — `Stock` ‣ `Output` ‣ `Customer`. Move goods to a staging area for order consolidation before shipping.
+            - **Pack, Output, then Deliver (3 steps)** — `Stock` ‣ `Pack` ‣ `Output` ‣ `Customer`. Best for workflows requiring a dedicated packing phase.
+
+            ---
+
+            ###### Step 5 — Resupply *(Optional)*
+
+            Define how the system should replenish stock when levels are low:
+
+            ![](/img/inventory/warehouse-management/warehouse/0004.png)
+
+            **Buy to Resupply** — When checked, MAQSU will automatically generate Purchase Orders to replenish stock from suppliers.
+
+            ---
+
+            ###### Step 6 — Save
+            Click **Save** to apply your configurations. Your warehouse is now active and will dictate the movement paths for all inventory transactions.
+
+      - link: /locations
+        title: Locations
+        body: |
+           Location is a specific place inside a warehouse where items are stored. It can be a shelf, bin, or any defined area that helps organize inventory within the warehouse. In MAQSU ERP, you can set up and manage locations to optimize your warehouse organization and improve inventory tracking.
+
+           #### Enable Storage Location
+
+           Before we track location in MAQSU, we need to make sure the storange location feature is turned on. To enable it, we're just go to click on **Configuration** under **Inventory** and then click on **Settings**.
+
+            ![](/img/inventory/warehouse-management/location/0001.png)
+
+             And then you 're going to scroll to the very bottom to our warehouse section.
+
+            ![](/img/inventory/warehouse-management/location/0002.png)
+
+            And here we just want to make sure that the **Storage Location** feature is ticked and enabled. So just click on the checkbox and then click on the save button.
+
+
+            ---
+
+            #### Setup a Location
+
+            Now we have enabled the storage location feature in MAQSU, we can start to set up the locations for our warehouses.
+
+            ![](/img/inventory/warehouse-management/location/0003.png)
+
+            To set up locations, we need to click on the **Locations** link directly under **Storage Location** or we could click back to **Locations** under the Configuration menu. Both of these will take us to the same page where we can manage our locations.
+
+            ![](/img/inventory/warehouse-management/location/0004.png)
+
+            This page will show you all the locations that you have set up in my database. Every location with location type is considered as a storage location.
+
+            ![](/img/inventory/warehouse-management/location/0005.png)
+
+            To create a new location, please follow the steps below:
+
+            ###### Step 1 — Create
+
+              click on the **Create** button at the top left. This will open a new form where you can fill in the details of the location.
+
+            ![](/img/inventory/warehouse-management/location/0006.png)
+
+              1. **Location Name** *(Required)* — The name of the location (e.g., Shelf A1, Bin B2).
+              2. **Parent Location** *(Optional)* — If this location is a sub-location of another, select the parent location here.
+              3. **Location Type** *(Required)* — Choose the type of location (e.g., Vendor Location, Internal Location, Customer Location, Transit Location ) to define its role in inventory operations. Right now  we just keep it as "Internal Location" for the storage location.
+              4. **Is a Scrap Location** *(Optional)* — If this location is designated for scrapped or damaged goods, check this box to categorize it accordingly.
+              5. **Is a Return Location** *(Optional)* — If this location is designated for returned goods, check this box to categorize it accordingly.
+              6. **Remove Strategy** *(Optional)* — Define the default method for removing items from this location (e.g., FIFO, LIFO, FEFO) to optimize inventory turnover and reduce waste.
+
+              ![](/img/inventory/warehouse-management/location/0007.png)
+
+              Example: If you have a parent location named "WH/Stock/Shelf 2", you might create locations like "Music", "Bin B2", and "Pallet C3" under that warehouse.
+
+              ###### Step 2 — Save
+
+              After filling in the required and optional fields, click **Save** to create the new location.
+              ![](/img/inventory/warehouse-management/location/0008.png)
+
+               Now the location will now be available for use in inventory operations. You can assign products to this location, track inventory levels, and manage stock movements to and from this location as needed.
+
+      - link: /putaway-rules
+        title: Putaway Rules
+        body: |
+          Putaway rules define where incoming products should be stored inside your warehouse. They help keep inventory organized, reduce picking time, and improve space usage by automatically assigning products to suitable locations.
+
+          In MAQSU ERP, putaway rules are used to automate location assignment during receiving operations.
+
+          To set up a putaway rule, follow the steps below:
+
+          ###### Step 1 — Navigation
+
+          Go to **Inventory ‣ Configuration ‣ Putaway Rules**. This page will show you all existing putaway rules in your system. If no rules have been created yet, you'll see an empty state with the message:
+          ![](/img/inventory/warehouse-management/putaway-rules/0001.png)
+
+          ###### Step 2 — Create
+
+          Click the **Create** button to add a new putaway rule.
+          ![](/img/inventory/warehouse-management/putaway-rules/0002.png)
+
+          ###### Step 3 — Configure Rule Details
+
+          Fill in the key fields:
+
+          1. **Rule Name** — Enter a clear name for the rule (e.g., `Heavy Items to Ground Rack`).
+          2. **Product Category** — Select the category this rule applies to.
+          3. **When Product Arrives In** — Select the source or arrival location that triggers this rule.
+          4. **Store To** — Select the destination location where matching products should be stored.
+
+          ![](/img/inventory/warehouse-management/putaway-rules/0003.png)
+
+          ###### Step 4 — Save
+
+          Click **Save** to activate the rule.
+
+          Once saved, MAQSU will automatically suggest or assign the configured destination location for products that match the rule criteria, making warehouse operations faster and more consistent.
   - link: stock-transfers#stock-transfers
     uid: stock-transfers
     title: Operation Transfers
@@ -1461,5 +1651,6 @@ groupSections:
 
           * **Audit Trail**: It lists specific products alongside their Location (e.g., WH/Stock) and the exact Date and time the inventory was recorded.
           * **Reference**: Each entry is tagged with a reference (e.g., "Inventory"), indicating it is part of a formal counting or validation process.
+
 
 
