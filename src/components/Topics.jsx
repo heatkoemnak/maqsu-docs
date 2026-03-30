@@ -7,6 +7,7 @@ import Link from '@docusaurus/Link';
 import useGlobalData from "@docusaurus/useGlobalData";
 import { motion } from "framer-motion";
 import { FileText, Loader2 } from "lucide-react";
+import { SlNotebook } from "react-icons/sl";
 
 import {
   HiMiniChevronLeft,
@@ -136,22 +137,47 @@ export default function Topics({ topics }) {
 
       <div className={clsx(styles.mainLayout)}>
         {visibleCards?.length > 0 &&
-         <aside className={clsx(styles.sidebar)}>
-          <div className={clsx(styles.sidebarInner)}>
-            <div className={clsx(styles.sidebarHeader)}>
-              <PiInfo size={28} />
-              <h2 className={clsx(styles.sidebarTitle)}>{topics?.title}</h2>
-            </div>
-            <div className={clsx(styles.sidebarDivider)} />
-            {topics?.description && (
-              <span className={clsx(styles.sidebarDescription)}>{topics?.description}</span>
-            )}
-            <div className={clsx(styles.sidebarMeta)}>
-              <span className={clsx(styles.sidebarMetaLabel)}>Articles</span>
-              <span className={clsx(styles.sidebarMetaValue)}>{topics?.groupSections?.length}</span>
+          <div className={clsx(styles.sidebar1)}>
+            <div className={clsx(styles.sidebarInner)}>
+              {/* Header */}
+              <div className={clsx(styles.sidebarHeader)}>
+                <PiInfo size={28} color='rgb(127, 127, 127)' />
+                <span className={clsx(styles.sidebarTitle)}>{topics?.title}</span>
+              </div>
+
+              <div className={clsx(styles.sidebarDivider)} />
+
+              {/* Description */}
+              {topics?.description && (
+                <span className={clsx(styles.sidebarDescription)}>
+                  {topics?.description}
+                </span>
+              )}
+
+              {/* Meta box */}
+              <div className={clsx(styles.sidebarMeta)}>
+                {/* Last updated row */}
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                  <span className={clsx(styles.sidebarMetaLabel)}>Last updated</span>
+                  <span className={clsx(styles.sidebarMetaValue)}><TimeAgo date={topics?.groupSections?.[0]?.date} /></span>
+                </div>
+
+                {/* Divider line */}
+                <div style={{ height: '1px', background: '#ebf1f5', margin: '8px 0' }} />
+
+                {/* Articles row */}
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                    <SlNotebook size={16} />
+                    <span className={clsx(styles.sidebarMetaLabel)}>Articles</span>
+                  </div>
+                  <span className={clsx(styles.sidebarMetaValue)}>
+                    {topics?.groupSections?.length || 10}
+                  </span>
+                </div>
+              </div>
             </div>
           </div>
-        </aside>
         }
           <main className={clsx(visibleCards?.length > 0 && styles.articleList, viewMode === 'grid' && styles.articleGrid)}>
           {

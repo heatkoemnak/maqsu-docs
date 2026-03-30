@@ -160,16 +160,17 @@
 }
 
 /* ── Sidebar ────────────────────────────────────────── */
-.sidebar {
+.sidebar1 {
   width: var(--topics-sidebar-w);
   flex-shrink: 0;
   position: sticky;
   top: 92px;
+  background-color: transparent;
 }
 
 .sidebarInner {
-  border: 1px solid #e5ecf3;
-  border-radius: 20px;
+  border-radius: 8px !important;
+  border: 1px solid #e8e9e9;
   padding: 24px;
   background: #ffffff;
   display: flex;
@@ -182,17 +183,16 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border-radius: 16px;
+  border-radius: 5px;
   padding: 18px 18px 16px;
-  background: #f5f8fb;
   color: #357ba7;
   text-align: center;
 }
 
 .sidebarTitle {
-  font-size: 1.45rem;
-  font-weight: 650;
-  color: #1e293b;
+  font-size: 1.25rem;
+  font-weight: 550;
+  color: #4e5661;
   text-align: center;
   margin: 14px 0 0;
   line-height: 1.3;
@@ -200,22 +200,23 @@
 
 .sidebarDivider {
   height: 1px;
-  background: #e8edf2;
+  background: #f3f3f4;
   margin: 18px 0 14px;
 }
 
 .sidebarDescription {
   font-size: 0.95rem;
-  color: #6f8096;
+  color: #8e99a6;
+  text-align: center;
   line-height: 1.8;
-  font-weight: 400;
+  font-weight: 300;
   margin: 0 0 20px;
 }
 
 .sidebarMeta {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
+  gap: 12px;
   padding: 13px 14px;
   background: #f7fafc;
   border: 1px solid #ebf1f5;
@@ -228,10 +229,17 @@
 }
 
 .sidebarMetaValue {
-  font-size: 0.98rem;
-  font-weight: 700;
-  color: #1e293b;
+  font-size: 13px;
+  font-weight: 400;
+  color: #424955;
   font-family: "IBM Plex Mono", monospace;
+}
+
+.sidebarMetaItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
 }
 
 /* ── Article list ───────────────────────────────────── */
@@ -257,6 +265,16 @@
   border-color: #bdd2e6;
   box-shadow: 0 10px 22px rgba(24, 45, 74, 0.05);
   transform: translateY(-1px);
+}
+.sidebarMetaItem:first-child {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+}
+.sidebarMetaItem:last-child {
+  border-top: 1px solid #ebf1f5;
+  padding-top: 12px;
+  margin-top: 4px;
 }
 
 .articleRowLink {
