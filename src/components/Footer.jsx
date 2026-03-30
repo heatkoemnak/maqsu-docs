@@ -20,7 +20,7 @@ const Footer = () => {
       // marginRight: '-50vw',
     },
     container: {
-      maxWidth: '100%',
+      maxWidth: '70%',
       margin: '0 auto',
       padding: '16px 24px',
       display: 'flex',
@@ -138,7 +138,7 @@ const Footer = () => {
             <div style={styles.privacyIcon}>✓</div>
             <span>Your Privacy Choices</span>
           </button> */}
-
+{/*
           <button
             style={styles.button}
             onClick={toggleTheme}
@@ -147,7 +147,7 @@ const Footer = () => {
           >
             {theme === 'dark' ? <MoonIcon /> : <SunIcon />}
             <span>Theme</span>
-          </button>
+          </button> */}
         </div>
 
         {/* Right Section - Links */}
