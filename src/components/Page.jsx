@@ -1023,6 +1023,9 @@ const GlobalStyles = () => (
       border-bottom: 1px solid var(--c-border);
       transition: border-color var(--transition), color var(--transition);
     }
+    p a{
+        color: rgb(29, 117, 168) !important;
+      }
 
     .pq-section-content a:hover {
       border-color: var(--c-accent);

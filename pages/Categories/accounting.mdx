@@ -2440,24 +2440,23 @@ groupSections:
       - link: /accounting
         title: Accounting
         body: ''
-      - link: ''
+      - link: null
         title: Assets Management
         body: ''
     body: |
-      **Asset management** is the process of organizing, monitoring, and selling a firm’s assets. Assets like machinery, cars, and computers are fixed assets used for multiple years. As time passes, their value reduces (depreciates). Tracking this helps determine business gain or loss.
+      Asset management is the process of organizing, tracking, and maintaining long-term company assets such as computers, vehicles, machinery, and furniture. These assets gradually lose value over time through depreciation, so accurate records are required for reporting and decision-making.
 
-      **Asset management** now becomes easier with the guidance of the MAQSU Accounting module. MAQSU offers dedicated platforms in the module for managing assets that are purchased for long-term use. As time passes, the fixed assets will undergo depreciation and their value will reduce eventually.
+      In MAQSU, you can manage the full fixed-asset lifecycle from one place: define asset categories, purchase and register assets, run depreciation, and review status for each asset.
 
-      To manage the asset management in MAQSU accounting module. The easay just get into the **Accounting** module. And under accounting tab you can see **Assets**.
+      ![](/img/accounting/assets/0001.png)
 
-        ![](/img/accounting/assets/0001.png)
+      <Noted type="info" title="Key Takeaway" image="/img/icon/tip.png">
+      * Use **Asset Categories** first to define depreciation and accounting behavior.
+      * Record purchases with an **Asset Category** so MAQSU creates proper asset tracking.
+      * Confirm assets to activate depreciation and keep financial statements accurate.
+      </Noted>
 
-        If you want to create a new asset for your organization. Simply click on the **Create** button
-
-      ---
-
-      First, let’s create **Asset Categories** from the **Configuration** menu of the module. The product you purchase as an asset will be added to the corresponding asset model in MAQSU.
-      Please follow the steps below to configure your fixed assets in a professional and systematic manner.
+      The sections below guide you through setup and day-to-day asset operations in a practical sequence.
     sections:
       - link: /asset-categories
         title: Asset Categories
@@ -2474,21 +2473,14 @@ groupSections:
 
           This will open the Asset Categories page where you can view, create, and manage all your asset category templates.
 
-          ***
-
-          ##### Step 2 — Asset Categories List Overview
-
-          The Asset Categories list displays all existing categories in your system:
+          The asset categories list displays all existing categories in your system:
 
           ![](/img/accounting/asset-categories/0002.png)
 
-          **List Columns:** – **Asset Category** – The name of the category (e.g., "Computer Equipment", "Office Furniture")
-          - **Journal** – Which journal is used for depreciation entries for this category
-          - **Computation Method** – How depreciation is calculated (e.g., "Straight Line", "Declining Balance")
-
-          In the example, we can see one existing category:
-
-          - **Computer Equipment** – Uses Miscellaneous Operations journal with Straight Line depreciation method
+          1. **Asset Category** – The name of the category (e.g., "Computer Equipment", "Office Furniture")
+          2. **Journal** – Which journal is used for depreciation entries for this category
+          3. **Computation Method** – How depreciation is calculated (e.g., "Straight Line", "Declining Balance")
+          4. **Computer Equipment** – Uses Miscellaneous Operations journal with Straight Line depreciation method
 
           ***
 
@@ -2508,30 +2500,13 @@ groupSections:
 
           ![](/img/accounting/asset-categories/0005.png)
 
-          ##### 1. Category Name
+          1. **Category Name** — Enter a clear asset type name such as "Computer Equipment", "Office Furniture", or "Vehicles".
 
-          - **Field:** The large text field at the top
-          - **Purpose:** Enter a descriptive name for this asset category
-          - **Example:** "Computer Equipment", "Office Furniture", "Vehicles"
-          - **Best Practice:** Use clear, specific names that describe the type of assets in this category
+          2. **Computation Method**
 
-          ##### 2. Computation Method
-
-          Choose how depreciation will be calculated:
-
-          **Option 1: Straight Line (Most Common)** – **How it works:** Equal depreciation amount each period
-           - **Formula:** (Asset Cost - Salvage Value) ÷ Number of Periods
-          - **Example:** $10,000 asset over 5 years = $2,000 per year
-          - **Best for:** Most assets with predictable useful life (computers, furniture, vehicles)
-          - **Accounting standard:** Matches expected pattern of asset use
-
-          **Option 2: Declining Balance** – **How it works:** Higher depreciation in early years, decreasing over time
-          - **Formula:** Asset Value x Depreciation Rate each period
-          - **Example:** $10,000 asset at 20% rate = Year 1: $2,000, Year 2: $1,600, etc.
-          - **Best for:** Assets that lose value quickly (technology, vehicles)
-          - **Tax advantage:** Accelerates deductions in early years
-
-          **Selection:** Click the radio button next to your chosen method. For most business assets, **Straight Line** is recommended.
+              - **Straight Line** - Uses equal depreciation each period and is best for most standard business assets.
+              - **Declining Balance** - Uses higher depreciation in early periods and is best for assets that lose value quickly.
+              - **Selection** - Choose the method that matches your accounting policy; **Straight Line** is recommended for most cases.
 
           ***
 
@@ -2539,45 +2514,15 @@ groupSections:
 
           ![](/img/accounting/asset-categories/0006.png)
 
-          ##### 1. Period Type
+          1. **Period Type**
+              - **Number of Entries** - Define a fixed count of depreciation entries (common for monthly schedules).
+              - **Ending Date** - Depreciate until a specific target date (useful for leases or planned end dates).
+              - **Yearly** - Create one depreciation entry per year for simpler annual tracking.
+              - **Selection** - Use **Number of Entries** for most standard fixed-asset setups.
 
-          Determines how the depreciation timeline is defined:
+          2. **Number of Depreciations** — Enter the total entry count for the full useful life (for example, 60 for 5 years x 12 months).
 
-          **Option 1: Number of Entries (Most Common)** – **Use this when:** You want a specific number of depreciation periods
-          - **Example:** 24 entries for monthly depreciation over 2 year
-          - **Example:** 60 entries for monthly depreciation over 5 years
-          - **Best for:** Standard depreciation schedules with fixed periods
-
-          **Option 2: Ending Date** – **Use this when:** You want depreciation to end on a specific date
-          - **Example:** Depreciate until lease end date
-          - **Best for:** Leased assets or assets with known retirement dates
-
-          **Option 3: Yearly** – **Use this when:** You want annual depreciation entries
-          - **Example:** One entry per year for the asset's useful life
-          - **Best for:** Simple annual depreciation tracking
-
-          **Selection:** For this example, **Number of Entries** is selected.
-
-          ##### 2. Number of Depreciations
-
-          - **Purpose:** How many depreciation entries will be created over the asset's life
-          - **Example in screenshot:** 12 entries
-          - **Common values:** – 12 entries = 1 year (monthly)
-            - 24 entries = 2 years (monthly)
-            - 36 entries = 3 years (monthly)
-            - 60 entries = 5 years (monthly)
-          - **Calculation:** Years x Periods per Year
-          - **Computer equipment example:** 5 years x 12 months = 60 entries
-
-          ##### 3. Period Interval
-
-          - **Purpose:** How often depreciation entries are created
-          - **Example in screenshot:** 1 month
-          - **Common values:** – 1 month = Monthly depreciation (most common)
-            - 3 months = Quarterly depreciation
-            - 12 months = Annual depreciation
-          - **Best practice:** Monthly intervals provide the most accurate financial reporting
-
+          3. **Period Interval** — Define how often entries are posted (for example, 1 month for monthly depreciation).
           ***
 
           ##### Step 6 — Configure Accounting Section
@@ -2586,47 +2531,13 @@ groupSections:
 
           This section defines which accounting accounts will be used for assets in this category.
 
-          ##### 1. Journal
+          1. **Journal** — Select the journal used for depreciation entries (typically "Miscellaneous Operations (USD)").
 
-          - **Field:** Journal dropdown
-          - **Purpose:** Which journal to use for depreciation entries
-          - **Example:** "Miscellaneous Operations (USD)"
-          - **Options:** – Miscellaneous Operations (USD) – Most common for depreciation
-            - General Journal
-            - Custom depreciation journal if created
-          - **Impact:** Determines where depreciation entries appear in reports
+          2. **Asset Account** — Select the fixed-asset balance sheet account that records the original asset cost.
 
-          ##### 2. Asset Account
+          3. **Depreciation Account** — Select the accumulated depreciation contra-asset account that reduces net asset value.
 
-          - **Field:** Asset Account dropdown
-          - **Purpose:** Balance sheet account where the asset's cost is recorded
-          - **Example:** "108210 Computer Equipment"
-          - **Account Type:** Fixed Asset account
-          - **Financial Statement:** Balance Sheet (Assets section)
-          - **Normal Balance:** Debit
-          - **What it tracks:** Original cost of assets in this category
-
-          ##### 3. Depreciation Account
-
-          - **Field:** Depreciation Account dropdown
-          - **Purpose:** Balance sheet account where accumulated depreciation is tracked
-          - **Example:** "108220 Acc.Depre of Computer Equipment"
-          - **Account Type:** Contra-asset account
-          - **Financial Statement:** Balance Sheet (reduces asset value)
-          - **Normal Balance:** Credit
-          - **What it tracks:** Total depreciation taken on assets over time
-          - **Note:** This is a contra-asset account that reduces the net book value of assets
-
-          ##### 4. Expense Account
-
-          - **Field:** Expense Account dropdown
-          - **Purpose:** Income statement account where depreciation expense is recorded
-          - **Example:** "604500 Amortization/Depletion and/or Depreciation Expense"
-          - **Account Type:** Expense account
-          - **Financial Statement:** Income Statement (reduces profit)
-          - **Normal Balance:** Debit
-          - **What it tracks:** Depreciation expense for each period
-          - **Impact:** Reduces net income each period
+          4. **Expense Account** — Select the income-statement expense account where periodic depreciation is recognized.
 
           ***
 
@@ -2634,104 +2545,62 @@ groupSections:
 
           ![](/img/accounting/asset-categories/0008.png)
 
-          ##### 1. Auto-Confirm Assets
+          1. **Auto-Confirm Assets** — Enable to confirm assets automatically at creation time, or disable to keep manual review.
 
-          - **Purpose:** Automatically confirm assets when they are created
-          - **When enabled:** Assets move directly from draft to confirmed status
-          - **When disabled:** Assets stay in draft and must be manually confirmed
-          - **Recommendation:** Leave disabled for review workflow; enable for streamlined processing
+          2. **Group Journal Entries** — Enable to combine depreciation for multiple assets into one entry per period.
 
-          ##### 2. Group Journal Entries
+          3. **Depreciation Date** — Choose **Manual (Defaulted on Purchase Date)** for flexibility or **Automatic** for system-driven start dates.
 
-          - **Purpose:** Combine multiple asset depreciation entries into one journal entry
-          - **When enabled:** All assets in this category create one combined journal entry per period
-          - **When disabled:** Each asset creates its own separate journal entry
-          - **Example:** 10 computers all create one journal entry instead of 10 separate entries
-          - **Recommendation:** Enable to reduce journal entry volume
-
-          ##### 3. Depreciation Date
-
-          - **Options:** – **Manual (Defaulted on Purchase Date)** – Starts on asset purchase date but can be manually changed
-            - **Automatic** – System automatically sets depreciation start date
-          - **Default in screenshot:** Manual (Defaulted on Purchase Date)
-          - **Best practice:** Manual provides flexibility for special cases
-
-          ##### 4. Accounting Date
-
-          - **Options:** – **On Actual Run Date** – Records depreciation on the date it's calculated
-            - **On Depreciation Date** – Records depreciation on the asset's depreciation date
-          - **Default in screenshot:** On Actual Run Date
-          - **Impact:** Affects which accounting period entries appear in
+          4. **Accounting Date** — Choose **On Actual Run Date** or **On Depreciation Date** based on posting policy.
 
           ***
 
-          ##### Step 8 —: Save the Asset Category
+          ##### Step 8 — Save
 
           Once you've configured all settings, click the **Save** button at the top-left of the form.
 
           ![](/img/accounting/asset-categories/0009.png)
 
-          **After saving:** – The category is now available for use when creating assets
+          <Noted type="info" title="After Saving" image="/img/icon/notes.png">
+          The category is now available for use when creating assets
           - You can create assets and assign them to this category
           - Depreciation will be calculated automatically based on these settings
           - You can edit the category later if needed (affects new assets only)
+          </Noted>
 
-          ***
-
-          Asset categories are the foundation of fixed asset management in MAQSU ERP. Taking time to set them up correctly ensures accurate depreciation and simplified asset tracking throughout your assets' lives.
       - link: /purchase-asset
         title: Purchase an Asset
         body: |
-          When you purchase a fixed asset - such as computer equipment, furniture, vehicles, or machinery - you need to record it properly in MAQSU ERP. Purchasing an asset creates a vendor bill that tracks the expense and automatically links the asset to the appropriate asset category for depreciation tracking.
+          Record fixed assets like computer equipment, furniture, vehicles, or machinery to track expenses and depreciation.
+          **Recording a Purchase in MAQSU:**
 
-          **The Process:**
           When you purchase an asset in MAQSU ERP, you create a vendor bill and assign an **Asset Category** to the line item. The system automatically:
 
-          1. Records the purchase in accounts payable
-          2. Assigns the asset to the correct asset account
-          3. Creates an asset record for depreciation tracking
-          4. Calculates depreciation based on the category settings
+          1. **Accounts Payable** — Records the purchase as a payable amount to the vendor.
+          2. **Asset Accounting** — Assigns the asset to the correct asset account on the balance sheet.
+          3. **Depreciation Tracking** — Creates an asset record for tracking and calculating depreciation.
+          4. **Depreciation Calculation** — Calculates depreciation based on the category settings and posts to the income statement.
 
           ***
 
-          #### Before You Begin
-
-          Before purchasing an asset, make sure you have:
-
-          - **Asset Categories Set Up** – Configure categories with depreciation settings (see [Prepare Asset Categories](/accounting/fixed-assets#prepare-fixed-assets) guide)\
-           - **Vendor Information** – Ensure the vendor exists in your system\
-           - **Asset Details** – Have purchase documentation ready (invoice, receipt, specifications)\
-           - **Account Structure** – Verify asset accounts are in your chart of accounts
+          <Noted type="info" title="Prerequisites" image="/img/icon/notes.png">
+          Ensure you have set up **Asset Categories** with depreciation settings before proceeding with the purchase of an asset. Let's see how to setup [Asset Categories](/accounting/fixed-assets#prepare-fixed-assets)
+          </Noted>
 
           ***
 
-          ##### Step 1 — Navigate to Bills
+          ###### Step 1 — Navigation
 
           From the left sidebar, click **Accounting**. Then from the top navigation menu, go to **Vendors** ‣ **Bills**.
 
           ![](/img/accounting/purchase-asset/0001.png)
 
-          This will open the Bills page where you can create a new vendor bill to record your asset purchase.
+          This will open the Bills page where you can create a new vendor bill to record your asset purchase. The Bills page displays all vendor bills in your system, providing a comprehensive overview of your payables.
 
-          ***
-
-          ##### Step 2 — Bills List Overview
-
-          The Bills list displays all vendor bills in your system:
+          Now, you'll create a new bill for your asset purchase. This will allow you to record the purchase and track the asset's depreciation over time.
 
           ![](/img/accounting/purchase-asset/0002.png)
 
-          **List Columns:** – **Number** – Bill reference number (e.g., BILL/2026/0004)
-          - **Reference** – Vendor's invoice number or description
-          - **Bill Date** – Date on the vendor's invoice
-          - **Vendor** – Supplier name (e.g., LY CHANIMOUY, Mr. Chanda)
-          - **Due Date** – Payment due date
-          - **Total** – Total bill amount including taxes
-          - **Amount Due** – Outstanding balance to be paid
-          - **Status** – Posted or Draft
-          - **Payment** – Payment status (Paid or Not Paid)
-
-          You can see existing bills in the list. Now you'll create a new bill for your asset purchase.
 
           ***
 
@@ -2749,75 +2618,15 @@ groupSections:
 
           ![](/img/accounting/purchase-asset/0004.png)
 
-          Complete the following header fields:
-
-          #### Vendor
-
-          - **Purpose:** Select the supplier you're purchasing the asset from
-          - **Example:** [000005] LY CHANIMOUY
-          - **Action:** Click the dropdown and search for the vendor name
-          - **If vendor doesn't exist:** Use the "Create and Edit" option to add a new vendor
-          - **Important:** Selecting the correct vendor ensures proper accounts payable tracking
-
-          #### Reference
-
-          - **Purpose:** Enter a description of the asset purchase
-          - **Example:** "Buy a used iBook laptop with 12 months of depreciation."
-          - **Best Practice:** Include:
-            - What asset you're purchasing
-            - Key specifications or details
-            - Any special terms (depreciation period, warranty)
-          - **This appears:** On reports and helps identify the transaction later
-
-          #### Bill Date
-
-          - **Purpose:** The date on the vendor's invoice
-          - **Example:** 26/02/2026
-          - **Important:** Use the vendor's invoice date, not today's date
-          - **Impact:** Affects accounting period and payment due date calculation
-
-          #### Doc No.
-
-          - **Purpose:** System-assigned bill number
-          - **Default:** Auto Numbering
-          - **Action:** Leave as default unless you need custom numbering
-          - **Assigned:** When bill is posted (e.g., BILL/2026/0006)
-
-          #### Accounting Date
-
-          - **Purpose:** Date to record this transaction in your accounting books
-          - **Example:** 26/02/2026
-          - **Typically:** Same as bill date
-          - **Can differ:** If you want to record in a different accounting period
-
-          #### Payment Terms
-
-          - **Purpose:** When payment is due
-          - **Options:** Immediate Payment, Net 30, Net 60, etc.
-          - **Example:** Select "Terms" or specific payment term
-          - **Impact:** Automatically calculates due date
-          - **Can override:** Due date field on right if needed
-
-          #### Journal
-
-          - **Purpose:** Which journal to use for this bill
-          - **Default:** Vendor Bills (USD)
-          - **Action:** Leave as default for standard vendor bills
-          - **Impact:** Determines number sequence and report categorization
-
-          #### Currency
-
-          - **Purpose:** Currency of the transaction
-          - **Default:** USD (or your company's base currency)
-          - **Multi-currency:** Select different currency if purchasing from foreign vendor
-          - **Exchange rates:** Applied automatically if not base currency
-
-          #### Auto-complete
-
-          - **Purpose:** Link to purchase order or previous bill
-          - **Optional:** Leave blank for new asset purchases
-          - **Use when:** Receiving against a purchase order
-
+          1. **Vendor** — Select the supplier for this asset purchase to ensure correct accounts payable tracking.
+          2. **Reference** — Enter a short purchase description (for example, asset type, model, and terms).
+          3. **Bill Date** — Use the date shown on the vendor invoice.
+          4. **Doc No.** — Keep auto numbering unless your process requires a custom sequence.
+          5. **Accounting Date** — Set the posting date for accounting books (usually same as bill date).
+          6. **Payment Terms** — Select due terms (for example, Immediate, Net 30, Net 60) to auto-calculate due date.
+          7. **Journal** — Keep the default vendor bills journal unless you need a special journal.
+          8. **Currency** — Select the bill currency and apply exchange rates when needed.
+          9. **Auto-complete** — Use only when linking from an existing PO or prior document; otherwise leave blank.
           ***
 
           ##### Step 5 — Add Invoice Line with Asset Category
@@ -2826,155 +2635,59 @@ groupSections:
 
           ![](/img/accounting/purchase-asset/0005.png)
 
-          In the **Invoice Lines** tab, you'll see a table with these columns:
+          In the **Invoice Lines** tab, use these fields:
 
-          #### Product (Optional)
+          1. **Product (Optional)** — Select an existing product if the asset is tracked in inventory.
+          2. **Description** — Enter a clear asset description including model or identifying details.
+          3. **Asset Category (Critical)** — Select the fixed-asset category so MAQSU applies depreciation and asset accounting.
+          4. **Account** — Confirm the line uses the correct asset account instead of an expense account.
+          5. **Quantity** — Enter units purchased (for example, 1.00 or 5.00 for identical assets).
+          6. **UOM** — Choose the matching unit of measure (for example, Units, Each, Pieces).
+          7. **Price** — Enter unit price before taxes.
+          8. **Discount** — Enter line discount if applicable.
+          9. **Taxes** — Apply the correct purchase tax profile.
+          10. **Subtotal** — Review auto-calculated pre-tax line total (Quantity x Price - Discount).
 
-          - **Purpose:** Link to a product in your inventory
-          - **Example:** "Laptop iBook"
-          - **Action:** Search and select if the asset is a product you track
-          - **Can be blank:** Not required for one-time asset purchases
-
-          #### Description
-
-          - **Purpose:** Detailed description of the asset
-          - **Example:** "Laptop iBook"
-          - **Best Practice:** Include:
-            - Asset type
-            - Model or specification
-            - Serial number (if known)
-          - **Important:** Clear descriptions help with asset tracking
-
-           #### Asset Category – **CRITICAL FIELD**  **Purpose:** Assigns this purchase to an asset category for depreciation
-          - **Example:** "Computer Equipment"
-          - **Action:** Click the dropdown to select from available categories
-          - **Options shown:** – Computer Equipment
-            - Create and Edit... (to create new category)
-          - **Why it matters:** – This tells MAQSU this is a fixed asset, not just an expense
-            - Automatically applies depreciation settings from the category
-            - Creates an asset record for tracking
-            - Assigns correct asset accounts
-
-          **Without an asset category, this will be treated as a regular expense, not a fixed asset!**
-
-          #### Account
-
-          - **Purpose:** Specifies which account to debit
-          - **Example:** "108210 Computer Equipment"
-          - **Auto-filled:** When you select an asset category
-          - **Should be:** An asset account (100000-199999 range)
-          - **Verification:** Make sure it's an asset account, not an expense account
-
-          #### Quantity
-
-          - **Purpose:** Number of units purchased
-          - **Example:** 1.00
-          - **Units:** Usually "Units" but could be "Each", "Items", etc.
-          - **Multiple assets:** If buying 5 identical computers, enter 5.00
-
-          #### UOM (Unit of Measure)
-
-          - **Purpose:** Unit type
-          - **Default:** Units
-          - **Other options:** Each, Items, Pieces, etc.
-          - **Consistency:** Use same UOM for similar assets
-
-          #### Price
-
-          - **Purpose:** Unit price per asset
-          - **Example:** 1,200.00
-          - **Important:** Enter the amount before taxes
-          - **Per unit:** If quantity is 2 and total is $2,400, price is $1,200
-
-          #### Discount
-
-          - **Purpose:** Any discount applied
-          - **Example:** 0.00 (no discount)
-          - **Format:** Enter as percentage (10.00 %) or fixed amount
-          - **Calculation:** Applied before taxes
-
-          #### Taxes
-
-          - **Purpose:** Tax rates applied to this purchase
-          - **Example:** "VAT - Local Purchases 10%"
-          - **Multiple taxes:** Can select multiple tax types
-          - **Auto-calculated:** Tax amount shown in summary
-           - **Dropdown:** Shows "Taxes ▼" to select applicable taxes
-
-          #### Subtotal
-
-          - **Purpose:** Line total (Quantity x Price - Discount)
-          - **Example:** $1,200.00
-          - **Auto-calculated:** Updates as you change quantity or price
-          - **Before tax:** Does not include tax amounts
+          <Noted type="warning" title="Important" image="/img/icon/warning.png">
+          Without an asset category, MAQSU records the line as expense instead of fixed asset.
+          </Noted>
 
           ***
 
-          ##### Step 6 — Save the Bill
+          ##### Step 6 — Save
 
-          Before posting, click the **Save** button to save your work as a draft.
-
-          **Why save as draft first:** – Allows for review and approval
-          - Can make corrections if needed
-          - Prevents accidental posting
-          - Others can review before finalizing
-
-          The bill status will show **Draft**, meaning it's not yet recorded in your accounting books.
+          Save as a draft before posting by clicking **Save**. This updates the bill status to **Draft**.
 
           ***
 
-          ##### Step 7 — Review the Complete Bill
+          ##### Step 7 — Review
 
           ![](/img/accounting/purchase-asset/0006.png)
 
-          After saving, review the complete bill to ensure everything is correct:
-
-          **Header Information:** – **Vendor:** LY CHANIMOUY -
-          - **Reference:** Buy a used iBook laptop with 12 months of depreciation -
-          - **Bill Date:** 26/02/2026 -
-          - **Accounting Date:** 26/02/2026 -
-          - **Payment Terms:** 26/02/2026 (immediate payment) -
-          - **Journal:** Vendor Bills (USD) -
-          - **Currency:** USD -
-
-          **Invoice Line:** – **Product:** Laptop iBook -
-          - **Description:** Laptop iBook -
-          - **Asset Category:** Computer Equipment - (This is the key field!)
-          - **Account:** 108210 Computer Equipment -
-          - **Quantity:** 1.00 Units -
-          - **Price:** 1,200.00 -
-          - **Discount:** 0.00 % -
-          - **Taxes:** VAT - Local Purchases 10% -
-          - **Subtotal:** $1,200.00 -
-
-          **If everything looks correct, you're ready to post the bill.**
+          Review the complete bill to ensure all information is accurate and complete. Verify that all fields, including header information, invoice lines, and totals, match the original document.
 
           ***
 
-          ##### Step 8 —: Post the Bill
+          ##### Step 8 — Post
 
           Once you've reviewed and confirmed all information is correct, click the **Post** button to finalize the bill.
 
           ![](/img/accounting/purchase-asset/0007.png)
 
           By properly recording asset purchases with asset categories, you ensure accurate financial reporting, automate depreciation tracking, and maintain complete records of your company's fixed assets from acquisition through disposal.
+
       - link: /create-asset-manual
         title: Create an Asset
         body: |
           In some situations, you may need to create an asset record directly without going through a vendor bill purchase. This is useful when you already own assets that need to be added to your system, such as when migrating from another system, recording donated equipment, or entering opening balances for existing assets.
 
-          **When to Create Assets Manually:** – Migrating existing assets from another accounting system
-          - Recording assets owned before implementing MAQSU ERP
-          - Entering donated or gifted equipment
-          - Recording assets acquired through non-purchase means
-          - Creating opening balances for fixed assets
-          - Transferring assets between locations or entities
-
-          **Note:** For new purchases, use the vendor bill method with asset category assignment (see "Purchase an Asset" guide). Manual asset creation is primarily for existing assets that need to be registered in the system.
+          <Noted type="info" title="Note" image="/img/icon/notes.png">
+            For new purchases, use the vendor bill method with asset category assignment (see "Purchase an Asset" guide). Manual asset creation is primarily for existing assets that need to be registered in the system.
+          </Noted>
 
           ***
 
-          ##### Step 1 — Navigate to Assets
+          ##### Step 1 — Navigation
 
           From the left sidebar, click **Accounting**. Then from the top navigation menu, click **Assets**.
 
@@ -2982,32 +2695,21 @@ groupSections:
 
           This will open the Assets page where you can view all your fixed assets and create new ones.
 
-          ***
-
-          ##### Step 2 — Assets List Overview
-
-          The Assets list displays all fixed assets in your system:
-
           ![](/img/accounting/create-asset/0002.png)
 
-          **List Columns:** – **Asset Code** – Unique identifier for each asset
-          - **Asset Name** – Description of the asset (e.g., "Laptop iBook")
-          - **Asset Category** – Category assigned (e.g., "Computer Equipment")
-          - **Date** – Purchase or acquisition date
-          - **Vendor** – Supplier (if purchased)
-          - **Gross Value** – Original cost
-          - **Residual Value** – Current book value after depreciation
-          - **Currency** – USD or other currency
-          - **Status** – Draft or Running
-
-          **Action Buttons:** – **Create** – Add a new asset manually
-          - **Import** – Import multiple assets from file
-          - **Export** – Export asset list
-          - **Run Depreciation** – Process depreciation entries for all assets
+          1. **Asset Code** — Unique identifier for each asset (e.g., "LAP-001")
+          2. **Asset Name** — Description of the asset (e.g., "Laptop iBook")
+          3. **Asset Category** — Category assigned (e.g., "Computer Equipment")
+          4. **Date** — Purchase or acquisition date (e.g., "2022-01-01")
+          5. **Vendor** — Supplier (if purchased), with link to original vendor bill
+          6. **Gross Value** — Original cost of the asset (e.g., $2,000.00)
+          7. **Residual Value** — Current book value after depreciation (e.g., $1,500.00)
+          8. **Currency** — USD or other currency (e.g., "USD")
+          9. **Status** — Draft or Running (indicates whether the asset is active and depreciation is being posted)
 
           ***
 
-          ##### Step 3 — Click Create
+          ##### Step 2 — Click Create
 
           Click the **Create** button at the top-left of the Assets page to open a new asset form.
 
@@ -3015,66 +2717,36 @@ groupSections:
 
           ***
 
-          ##### Step 4 — Fill in Asset Details
+          ##### Step 3 — Fill in Asset Details
 
           ![](/img/accounting/create-asset/0003.png)
 
-          Complete the following fields:
-
-          **Asset Name** – Enter a descriptive name for the asset (e.g., "Desktop Computer")
-          - Use clear, specific names for easy identification
-
-          **Asset Category** – Select the appropriate category (e.g., "Computer Equipment")
-          - Category determines depreciation settings
-          - Required field
-
-          **Asset Code** – Enter a unique identifier (e.g., "1001")
-          - Can be numeric or alphanumeric
-          - Used for asset tracking and inventory
-
-          **Reference** – Optional description or internal reference
-          - Can include serial number, location, or notes
-
-          **Date** – Acquisition or purchase date
-          - Affects depreciation start date
-
-          **Depreciation Dates** – **Manual** – Manually set depreciation dates
-          - **Automatic** – System calculates automatically
-
-          **First Depreciation Date** – Date when depreciation begins
-          - Usually same as acquisition date
-
-          **Currency** – Select currency (USD, EUR, etc.)
-          - Should match your accounting currency
-
-          **Gross Value** – Original cost or fair market value
-          - Amount before any depreciation
-
-          **Salvage Value** – Estimated residual value at end of useful life
-          - Usually $0.00 for fully depreciated assets
-
-          **Residual Value** – Current book value
-          - Equals Gross Value for new assets
-          - Auto-calculated as depreciation occurs
-
-          **Vendor** – Optional: Select vendor if purchased
-          - Can be left blank for donated or existing assets
-
-          **Invoice** – Optional: Link to vendor bill if applicable
-
+          1. **Asset Name** – Enter a clear asset name for identification and reporting.
+          2. **Asset Category** – Select the category that controls depreciation and accounting behavior.
+          3. **Asset Code** – Enter a unique tracking code (numeric or alphanumeric).
+          4. **Reference** – Add optional internal notes such as serial number or location.
+          5. **Date** – Enter acquisition date to determine depreciation timing.
+          6. **Depreciation Dates** – Choose manual or automatic depreciation scheduling mode.
+          7. **First Depreciation Date** – Set the first depreciation start date.
+          8. **Currency** – Select the transaction currency.
+          9. **Gross Value** – Enter original asset cost before depreciation.
+          10. **Salvage Value** – Enter expected value at end of useful life.
+          11. **Residual Value** – Review current book value (usually equals gross value at creation).
+          12. **Vendor** – Select vendor if purchased, or leave blank for non-purchase assets.
+          13. **Invoice** – Link related vendor bill when available.
           ***
 
-          ##### Step 5 — Review Depreciation Board
+          ##### Step 4 — Review Depreciation Board
 
           ![](/img/accounting/create-asset/0004.png)
 
           The **Depreciation Board** tab shows the complete depreciation schedule:
 
-          **Columns:** – **Depreciation Date** – When each depreciation entry occurs
-          - **Depreciation** – Amount depreciated each period
-          - **Cumulative Depreciation** – Total depreciation to date
-          - **Residual** – Remaining book value
-          - **Linked** – Link to journal entry (after posting)
+          1. **Depreciation Date** – When each depreciation entry occurs
+          2. **Depreciation** – Amount depreciated each period
+          3. **Cumulative Depreciation** – Total depreciation to date
+          4. **Residual** – Remaining book value
+          5. **Linked** – Link to journal entry (after posting)
 
           **Example Schedule:** – Initial Gross Value: $2,000.00
           - Monthly Depreciation: $166.67
@@ -3082,43 +2754,39 @@ groupSections:
 
           ***
 
-          ##### Step 6 — View Depreciation Information
+          ##### Step 5 — View Depreciation Information
 
           ![](/img/accounting/create-asset/0005.png)
 
           The **Depreciation Information** tab displays settings inherited from the asset category:
+          The depreciation settings are inherited from the asset category and provide a consistent approach to calculating depreciation across all assets in the category:
 
-          **Computation Method** – Straight Line or Declining Balance
-          - Inherited from category
+          **Computation Method** – The method used to calculate depreciation, either Straight Line or Declining Balance.
 
-          **Period Type** – Number of Entries, Ending Date, or Yearly
-          - Determines depreciation schedule
+          **Period Type** – The type of period used to determine depreciation, either Number of Entries, Ending Date, or Yearly.
 
-          **Period Count** – Total number of depreciation periods (e.g., 12)
+          **Period Count** – The total number of periods over which depreciation will be calculated.
 
-          **Period Interval** – How often depreciation occurs (e.g., 1 month)
-
-          These settings come from the asset category and ensure consistent depreciation treatment.
+          **Period Interval** – The frequency at which depreciation will be recorded, such as monthly or yearly.
 
           ***
 
-          ##### Step 7 — Save and Confirm Asset
+          ##### Step 6 — Save and Confirm Asset
 
           ![](/img/accounting/create-asset/0006.png)
 
-          After filling in all details:
+          After completing all fields:
 
-          1. Click **Save** to save the asset as draft
-          2. Review all information for accuracy
-          3. Click **Confirm** to activate the asset
+          1. Click **Save** to save the asset as a draft
+          2. Thoroughly review all information for accuracy and completeness
+          3. Click **Confirm** to activate the asset and make it available for depreciation processing
 
-          **After Confirming:** – Asset status changes from **Draft** to **Running** – Depreciation schedule becomes active
-          - Asset appears in financial reports
-          - Ready for depreciation processing
+          **After Confirmation:** – Asset status changes from **Draft** to **Running**
+          - The depreciation schedule becomes active and the asset appears in financial reports, ready for depreciation processing.
 
           ***
 
-          ##### Step 8 —: Asset is Running
+          ##### Step 7 — Asset is Running
 
           ![](/img/accounting/create-asset/0007.png)
 
@@ -3127,186 +2795,12 @@ groupSections:
           **Status Indicators:** – Red dots in **Linked** column indicate depreciation entries not yet posted
           - Will turn green after running depreciation
 
-          **Available Actions:** – **Sell or Dispose** – Record asset disposal
+          **Available Actions** – **Sell or Dispose** – Record asset disposal
           - **Set to Draft** – Revert to draft if needed (before depreciation)
           - **Edit** – Modify asset details
           - **Action** – Additional options menu
 
           The asset is now active and will be included when you run depreciation entries.
-
-          ***
-
-          ## Summary: Quick Steps
-
-          1. **Navigate** to Accounting → Assets
-          2. **Click Create** to open new asset form
-          3. **Enter asset name** and details
-          4. **Select asset category** (required)
-          5. **Enter asset code** for tracking
-          6. **Set dates** (acquisition and depreciation)
-          7. **Enter gross value** (original cost)
-          8. **Set salvage value** (if applicable)
-          9. **Review depreciation board** schedule
-          10. **Save** as draft
-          11. **Confirm** to activate asset
-          12. **Status changes** to Running
-
-          Manual asset creation provides flexibility for entering existing assets into MAQSU ERP, ensuring your complete fixed asset register is maintained in one system.
-      - link: /help
-        title: Help & Reference
-        body: |
-          ### What is an Asset Category
-
-                  An **Asset Category** is a template that defines:
-
-                  #### Depreciation Settings
-                  * **Computation Method** – How depreciation is calculated (Straight Line or Declining Balance)
-                  * **Period Type** – Whether depreciation is calculated based on number of entries, ending date, or yearly
-                  * **Number of Depreciations** – How many periods the asset will be depreciated over
-                  * **Period Interval** – How often depreciation entries are created (monthly, quarterly, yearly)
-
-                  #### Accounting Configuration
-                  * **Journal** – Which journal to use for depreciation entries
-                  * **Asset Account** – Where the asset value is recorded on the balance sheet
-                  * **Depreciation Account** – Where accumulated depreciation is tracked
-                  * **Expense Account** – Where depreciation expense is recorded on the income statement
-
-                  #### Automation Options
-                  * **Auto-Confirm Assets** – Automatically confirm assets when created
-                  * **Group Journal Entries** – Combine multiple depreciation entries into one journal entry
-                  * **Split Monthly Entry** – Create separate entries for each month
-                  * **Depreciation Date** – When to start depreciation (purchase date or manual)
-                  * **Accounting Date** – When to record depreciation in accounting books
-
-                  By setting up asset categories properly, you can ensure accurate and consistent depreciation accounting across all your fixed assets.
-
-                  ### Why Asset Categories Are Important
-
-                  * Define depreciation methods and rates for each asset type
-                  * Ensure consistent accounting treatment for similar assets
-                  * Automate depreciation calculations and journal entries
-                  * Organize assets by type for better tracking and reporting
-                  * Simplify asset setup - just select a category instead of configuring each asset individually
-
-                  **Common Asset Categories:**
-                  * Computer Equipment (laptops, desktops, servers)
-                  * Office Furniture (desks, chairs, cabinets)
-                  * Vehicles (cars, trucks, delivery vans)
-                  * Machinery and Equipment (production equipment)
-                  * Buildings and Property
-                  * Leasehold Improvements
-
-
-                  ### Straight Line vs Declining Balance
-
-                  #### Straight Line Depreciation
-
-                  **How it works:**
-                  * Same amount of depreciation each period
-                  * Most common and simplest method
-                  * Matches consistent use pattern of assets
-
-                  **Formula:**
-                  ```
-                   Annual Depreciation = (Asset Cost - Salvage Value) ÷ Useful Life in Years
-                  ```
-
-                  **Example:**
-                  * Asset Cost: $10,000
-                  * Salvage Value: $1,000 (value at end of life)
-                  * Useful Life: 5 years
-                   * Annual Depreciation: ($10,000 - $1,000) ÷ 5 = $1,800 per year
-                   * Monthly Depreciation: $1,800 ÷ 12 = $150 per month
-
-                  **Depreciation Schedule:**
-                  | Year | Beginning Value | Depreciation | Ending Value |
-                  |------|----------------|--------------|--------------|
-                  | 1 | $10,000 | $1,800 | $8,200 |
-                  | 2 | $8,200 | $1,800 | $6,400 |
-                  | 3 | $6,400 | $1,800 | $4,600 |
-                  | 4 | $4,600 | $1,800 | $2,800 |
-                  | 5 | $2,800 | $1,800 | $1,000 |
-
-                  **Journal Entry Each Period:**
-                  ```
-                  Debit: Depreciation Expense    $150
-                  Credit: Accumulated Depreciation    $150
-                  ```
-
-                  ---
-
-                  #### Declining Balance Depreciation
-
-                  **How it works:**
-                  * Higher depreciation in early years
-                  * Depreciation amount decreases over time
-                  * Reflects faster loss of value for some assets
-
-                  **Formula:**
-                  ```
-                  Depreciation = Current Book Value x Depreciation Rate
-                  ```
-
-                  **Common rates:**
-                  * 20% (5-year asset, 200% declining balance)
-                  * 40% (2.5-year asset, 200% declining balance)
-
-                  **Example:**
-                  * Asset Cost: $10,000
-                  * Depreciation Rate: 20%
-                  * Method: Double Declining Balance
-
-                  **Depreciation Schedule:**
-                  | Year | Beginning Value | Depreciation (20%) | Ending Value |
-                  |------|----------------|-------------------|--------------|
-                  | 1 | $10,000 | $2,000 | $8,000 |
-                  | 2 | $8,000 | $1,600 | $6,400 |
-                  | 3 | $6,400 | $1,280 | $5,120 |
-                  | 4 | $5,120 | $1,024 | $4,096 |
-                  | 5 | $4,096 | $819 | $3,277 |
-
-                  **When to use:**
-                  * Technology assets (computers, phones)
-                  * Vehicles
-                  * Equipment that loses value quickly
-                  * When tax benefits are important
-
-                  ---
-
-                  ### Key Differences: Manual vs Purchase
-
-                  #### Manual Asset Creation
-                  * - Direct entry without vendor bill
-                  * - Used for existing assets
-                  * - No accounts payable created
-                  * - Full control over all fields
-                  * - No vendor payment tracking
-                  * - Manual journal entry needed for accounting
-
-                  #### Purchase via Vendor Bill
-                  * - Automatic asset creation from bill
-                  * - Accounts payable tracked
-                  * - Vendor payment recorded
-                  * - Complete audit trail
-                  * - Journal entries automatic
-                  * - Requires vendor bill process
-
-                  ---
-
-                  ### When to Use Manual Asset Creation
-
-                  **Use manual creation for:**
-                  * Assets owned before MAQSU implementation
-                  * Donated or gifted equipment
-                  * Assets transferred from another entity
-                  * Opening balance entries
-                  * Assets with no vendor tracking needed
-
-                  **Use vendor bill method for:**
-                  * New purchases from vendors
-                  * Assets requiring payment tracking
-                  * Standard procurement process
-                  * When vendor bill exists
 
   - link: 'deferred#deferred'
     uid: deferred
