@@ -8,6 +8,7 @@ import useGlobalData from "@docusaurus/useGlobalData";
 import { motion } from "framer-motion";
 import { FileText, Loader2 } from "lucide-react";
 import { SlNotebook } from "react-icons/sl";
+import { IoIosArrowRoundForward } from "react-icons/io";
 
 import {
   HiMiniChevronLeft,
@@ -16,7 +17,8 @@ import {
 import { PiInfo } from "react-icons/pi";
 import { LiaAngleRightSolid } from "react-icons/lia";
 import { useLocation } from '@docusaurus/router';
-import { BsList, BsGrid } from "react-icons/bs";
+import { BsList, BsGrid, BsSliders2, BsJournals } from "react-icons/bs";
+import { MdKeyboardArrowRight } from 'react-icons/md';
 
 export default function Topics({ topics }) {
   const location = useLocation();
@@ -25,9 +27,24 @@ export default function Topics({ topics }) {
   const globalData = useGlobalData();
   const [topicData, setTopicData] = useState([]);
   const [loading, setLoading] = useState(true);
+  const categoriesBySlug = globalData?.["categories-data"]?.default?.bySlug ?? {};
   const itemsPerPage = 10;
   const totalPages = Math.ceil((topics?.groupSections?.length ?? 0) / itemsPerPage);
   const startIndex = (currentPage - 1) * itemsPerPage;
+  const currentSlug = topics?.slug || String(location.pathname || "").replace(/^\/+/, "").split("/")[0];
+  const orderedSlugs = topicData
+    .map((item) => String(item?.link || "").replace(/^\/+/, "").split("/")[0])
+    .filter(Boolean);
+  const orderMap = new Map(orderedSlugs.map((slug, idx) => [slug, idx]));
+  const otherCategories = Object.entries(categoriesBySlug)
+    .map(([slug, data]) => ({ slug, ...(data || {}) }))
+    .filter((category) => category.slug && category.slug !== currentSlug)
+    .sort((a, b) => {
+      const aOrder = orderMap.has(a.slug) ? orderMap.get(a.slug) : Number.POSITIVE_INFINITY;
+      const bOrder = orderMap.has(b.slug) ? orderMap.get(b.slug) : Number.POSITIVE_INFINITY;
+      if (aOrder !== bOrder) return aOrder - bOrder;
+      return String(a.title || a.slug).localeCompare(String(b.title || b.slug));
+    });
 
   const currentIndex = topicData?.findIndex(
     (item) => item.link === location.pathname
@@ -168,7 +185,8 @@ export default function Topics({ topics }) {
                 {/* Articles row */}
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <SlNotebook size={16} />
+                    {/* <SlNotebook size={16} /> */}
+                    <BsJournals  size={16} color='rgb(131, 132, 132)'/>
                     <span className={clsx(styles.sidebarMetaLabel)}>Articles</span>
                   </div>
                   <span className={clsx(styles.sidebarMetaValue)}>
@@ -177,6 +195,28 @@ export default function Topics({ topics }) {
                 </div>
               </div>
             </div>
+
+            {otherCategories.length > 0 && (
+              <div className={clsx(styles.otherCategoriesCard)}>
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                <span className={clsx(styles.otherCategoriesTitle)}>Other categories </span>
+                  <BsSliders2 color='rgb(86, 89, 89)'/>
+                </div>
+                <div className={clsx(styles.otherCategoriesDivider)} />
+                <div className={clsx(styles.otherCategoriesList)}>
+                  {otherCategories.map((category) => (
+                    <Link
+                      key={category.slug}
+                      to={`/${category.slug}`}
+                      className={clsx(styles.otherCategoryLink)}
+                    >
+                      {category.title || category.slug}
+                      <MdKeyboardArrowRight  className={clsx(styles.IoIosArrowRoundForward)} />
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
         }
           <main className={clsx(visibleCards?.length > 0 && styles.articleList, viewMode === 'grid' && styles.articleGrid)}>

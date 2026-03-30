@@ -190,7 +190,7 @@
 }
 
 .sidebarTitle {
-  font-size: 1.25rem;
+  font-size: 1.45rem;
   font-weight: 550;
   color: #4e5661;
   text-align: center;
@@ -240,6 +240,62 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
+}
+
+.otherCategoriesCard {
+  margin-top: 12px;
+  border: 1px solid #e8e9e9;
+  border-radius: 8px;
+  background: #ffffff;
+  padding: 18px 25px;
+}
+
+.otherCategoriesTitle {
+  margin: 0;
+  text-align: center;
+  font-size: 1rem;
+  line-height: 1.2;
+  font-weight: 500;
+  color: #2d3b4f;
+}
+
+.otherCategoriesDivider {
+  margin: 12px 0 14px;
+  height: 1px;
+  width: 100%;
+  background: #d8e3ee;
+}
+
+.otherCategoriesList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.IoIosArrowRoundForward{
+  color: white;
+}
+
+.otherCategoryLink {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #255f7e;
+  text-decoration: none;
+  font-size: 0.94rem;
+  line-height: 1.2;
+  font-weight: 400;
+}
+
+.otherCategoryLink:hover {
+  color: #1e6fa2;
+  text-decoration: none;
+}
+
+.otherCategoryLink:hover .IoIosArrowRoundForward {
+  color: #1e6fa2;
+  transform: translateX(2px);
+  transition: transform 0.15s, color 0.15s;
 }
 
 /* ── Article list ───────────────────────────────────── */
