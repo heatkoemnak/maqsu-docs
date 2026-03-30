@@ -864,9 +864,10 @@
     align-items: stretch;
   }
 
-  .sidebar {
+  .sidebar1 {
     width: 100%;
     position: static;
+    top: auto;
   }
 
   .articleList {
@@ -891,6 +892,12 @@
     padding-left: 12px;
     padding-right: 12px;
     box-sizing: border-box;
+  }
+
+  .sidebar1 {
+    width: 100%;
+    position: static;
+    top: auto;
   }
 
   .articleGrid {
