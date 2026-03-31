@@ -932,7 +932,7 @@ groupSections:
         title: Scrap
         body: |
             **Scrap** in inventory refers to damaged or expired products. These items should be removed from stock and sent to a **scrap location**.
-            
+
             ---
 
             ### Scrap
@@ -995,6 +995,63 @@ groupSections:
       <Noted type="info" title="Important Note" image="/img/icon/notes.png">
         Stock adjustments directly impact your inventory values and financial records. They should be used carefully and only when there is a verified discrepancy between system records and physical reality. All adjustments should be documented with clear reasons for audit and control purposes.
       </Noted>
+
+  - link: reordering-rule#reordering-rule
+    uid: reordering-rule
+    title: Reordering Rules
+    date: '2026-02-19T07:20:05.517Z'
+    breadcrumbs:
+      - link: /
+        title: All Categories
+        body: ''
+      - link: /inventory
+        title: Inventory
+        body: ''
+      - link:
+        title: Reordering Rules
+        body: ''
+    body: |
+        **Reordering Rules** help automate replenishment by defining when to reorder and how much to buy for each product. You can set a minimum quantity, maximum quantity, and reorder multiple. When stock drops below the minimum, MAQSU creates a replenishment request to bring stock back toward the maximum level.
+
+        To access this feature, go to **Inventory ‣ Products ‣ Reordering Rules**.
+
+
+        ![](/img/inventory/reordering-rules/0001.png)
+
+        When creating a reordering rule, complete the following fields:
+
+        ![](/img/inventory/reordering-rules/0002.png)
+
+        1. **Reference** - Auto-generated identifier for the reordering rule.
+        2. **Product Name** - Product covered by this rule.
+        3. **Warehouse** - Warehouse where the stock is managed.
+        4. **Location** - Storage location inside the warehouse.
+        5. **Min Quantity** - Minimum on-hand quantity that triggers replenishment.
+        6. **Max Quantity** - Target quantity to replenish up to.
+        7. **Quantity Multiple** - Quantity increment used when generating replenishment (for example, order in packs of 5).
+        8. **Lead Time** - Number of days needed to purchase and receive the product (set in the **Purchase** tab).
+
+            - **Day to purchase** - Number of days it takes for the supplier to deliver the product after placing the order.
+            - **Daye to get the products** - Number of days it takes to receive the product and have it ready for use or sale (for example, time needed for quality checks, repackaging, or internal processing after receiving the product).
+
+        ![](/img/inventory/reordering-rules/0003.png)
+        After entering the required values, click **Save**. MAQSU will then monitor stock for the selected product and location. If on-hand quantity falls below **Min Quantity**, the system generates replenishment based on the rule.
+
+        ![](/img/inventory/reordering-rules/0004.png)
+        <Noted type="info" title="Important Note" image="/img/icon/notes.png">
+          Reordering rules help prevent stockouts and reduce manual purchasing work. Review them regularly and adjust quantities based on demand trends, supplier lead times, and seasonality to avoid overstocking or understocking.
+        </Noted>
+        ![](/img/inventory/reordering-rules/0005.png)
+
+        At the top of the form, click **Run the scheduler** to trigger reordering immediately instead of waiting for the automatic schedule. Once run the system will evaluate all reordering rules and generate purchase orders for products that are select in the form.
+
+        ![](/img/inventory/reordering-rules/0006.png)
+
+        To see the generated purchase orders, go to **Purchases ‣ Requests for Quotation**. You will find new draft purchase orders created for the products that triggered the reordering rules. YOu can click on **Confirm** to confirm the purchase orders and proceed with the procurement process.
+
+         <Noted type="info" title="Important Note" image="/img/icon/notes.png">
+          Reordering rules are a powerful tool for inventory management, but they require regular review and adjustment. Monitor their performance, update quantities based on changing demand, and ensure they align with your overall inventory strategy to maintain optimal stock levels.
+        </Noted>
 
   - link: traceability#traceability
     uid: traceability
