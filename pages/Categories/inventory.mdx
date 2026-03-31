@@ -1015,12 +1015,25 @@ groupSections:
 
         To access this feature, go to **Inventory ‣ Products ‣ Reordering Rules**.
 
-
         ![](/img/inventory/reordering-rules/0001.png)
 
-        When creating a reordering rule, complete the following fields:
+        Let's create and process a reordering rule by following the steps below:
+
+        ---
+
+        ###### Step 1 — Create
 
         ![](/img/inventory/reordering-rules/0002.png)
+
+        Click **Create** on the Reordering Rules page to open a new form.
+
+        ---
+
+        ###### Step 2 — Basic information
+
+        ![](/img/inventory/reordering-rules/0003.png)
+
+        Fill in the following fields:
 
         1. **Reference** - Auto-generated identifier for the reordering rule.
         2. **Product Name** - Product covered by this rule.
@@ -1029,28 +1042,37 @@ groupSections:
         5. **Min Quantity** - Minimum on-hand quantity that triggers replenishment.
         6. **Max Quantity** - Target quantity to replenish up to.
         7. **Quantity Multiple** - Quantity increment used when generating replenishment (for example, order in packs of 5).
-        8. **Lead Time** - Number of days needed to purchase and receive the product (set in the **Purchase** tab).
+        8. **Lead Time** - Total time required to purchase and receive the product (configured in the **Purchase** tab).
+        9. **Days to Purchase** - Supplier lead time after placing the purchase order.
+        10. **Days to Get Products** - Additional internal processing time before products are ready for use or sale.
 
-            - **Day to purchase** - Number of days it takes for the supplier to deliver the product after placing the order.
-            - **Daye to get the products** - Number of days it takes to receive the product and have it ready for use or sale (for example, time needed for quality checks, repackaging, or internal processing after receiving the product).
+        ---
 
-        ![](/img/inventory/reordering-rules/0003.png)
-        After entering the required values, click **Save**. MAQSU will then monitor stock for the selected product and location. If on-hand quantity falls below **Min Quantity**, the system generates replenishment based on the rule.
+        ###### Step 3 — Save
 
         ![](/img/inventory/reordering-rules/0004.png)
-        <Noted type="info" title="Important Note" image="/img/icon/notes.png">
-          Reordering rules help prevent stockouts and reduce manual purchasing work. Review them regularly and adjust quantities based on demand trends, supplier lead times, and seasonality to avoid overstocking or understocking.
+
+        After entering all required values, click **Save** to activate monitoring for this rule.
+
+        <Noted type="info" title="Note" image="/img/icon/notes.png">
+          Verify that **Min Quantity** is lower than **Max Quantity** and that lead-time values are realistic for your supplier.
         </Noted>
+
+        ###### Step 4 — Run scheduler
+
         ![](/img/inventory/reordering-rules/0005.png)
 
-        At the top of the form, click **Run the scheduler** to trigger reordering immediately instead of waiting for the automatic schedule. Once run the system will evaluate all reordering rules and generate purchase orders for products that are select in the form.
+        Click **Run the scheduler** to trigger reordering immediately instead of waiting for the automatic schedule. The system evaluates active reordering rules and creates draft purchase orders for eligible products.
+
+        ###### Step 5 — Review RFQ and confirm
 
         ![](/img/inventory/reordering-rules/0006.png)
 
-        To see the generated purchase orders, go to **Purchases ‣ Requests for Quotation**. You will find new draft purchase orders created for the products that triggered the reordering rules. YOu can click on **Confirm** to confirm the purchase orders and proceed with the procurement process.
+        Open **Purchases ‣ Requests for Quotation** to review generated draft RFQs. Click **Confirm** to proceed with procurement.
 
-         <Noted type="info" title="Important Note" image="/img/icon/notes.png">
-          Reordering rules are a powerful tool for inventory management, but they require regular review and adjustment. Monitor their performance, update quantities based on changing demand, and ensure they align with your overall inventory strategy to maintain optimal stock levels.
+        ![](/img/inventory/reordering-rules/0004.png)
+        <Noted type="info" title="Important Note" image="/img/icon/notes.png">
+          Reordering rules require periodic review. Update quantities and lead-time values based on demand trends, supplier performance, and seasonality to maintain optimal stock levels.
         </Noted>
 
   - link: traceability#traceability

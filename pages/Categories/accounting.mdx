@@ -1318,8 +1318,9 @@ groupSections:
 
             - **Journal Items** – Shows the accounting entries
             - **1 Invoice** – Indicates this payment is matched to 1 bill
-
-            > **Critical:** The presence of "1 Invoice" button means this payment is matched (reconciled) to a bill. You **must unmatch it first** before you can delete it.
+            <Noted type="warning" title="Critical" image="/img/icon/warning.png">
+              The presence of "1 Invoice" button means this payment is matched (reconciled) to a bill. You **must unmatch it first** before you can delete it.
+            </Noted>
 
             ![](/img/accounting/unmatch-delete/0003.png)
 
@@ -1393,20 +1394,22 @@ groupSections:
 
           Once in edit mode, you'll see the **Confirm** and **Cancel** buttons appear. Now click the **Action** dropdown button at the top of the page.
 
-          > **Important:** Before deleting a payment, you must first **unmatch** it from any linked bills. A payment that is still matched to a bill cannot be deleted directly.
-
+          <Noted type="warning" title="Important" image="/img/icon/warning.png">
+            Before deleting a payment, you must first **unmatch** it from any linked bills. A payment that is still matched to a bill cannot be deleted directly.
+          </Noted>
 
           From the Action menu, select **Delete**.
 
           ![](/img/accounting/unmatch-delete/0007.png)
 
           A confirmation dialog will appear asking you to confirm the deletion. Click **OK** or **Delete** to permanently remove the payment record.
-
-          > **Warning:** Deleting a payment is permanent and cannot be undone. Make sure you have unmatched it from all bills first and that you truly want to remove this record from your system.
+          <Noted type="warning" title="Warning" image="/img/icon/warning.png">
+            Deleting a payment is permanent and cannot be undone. Make sure you have unmatched it from all bills first and that you truly want to remove this record from your system.
+          </Noted>
 
           ***
 
-          ###### Step 8 — - Verify Payment is Deleted
+          ###### Step 8 — Verify Payment is Deleted
 
           After confirming deletion, you'll be redirected back to the Payments list. The payment **SUPP.OUT/2026/0003** will no longer appear in the list, confirming it has been successfully deleted from the system.
 
@@ -1688,7 +1691,7 @@ groupSections:
 
             ##### Step 2 — Navigation
 
-            From the left sidebar, click **Accounting**. Then from the top navigation menu, go to **Customers → AI Invoice Upload**.
+            From the left sidebar, click **Accounting**. Then from the top navigation menu, go to **Customers ‣ AI Invoice Upload**.
 
             ![](/img/accounting/ai-ocr/0001.png)
 
