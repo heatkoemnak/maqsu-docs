@@ -141,6 +141,8 @@ groupSections:
 
           ![](/img/sales/quotations/0004.png)
 
+          ---
+
           ###### Step 3 — Fill Out the Quotation Form
 
           The new quotation form will open in **Quotation** status. Fill in the following required and optional fields:
@@ -198,7 +200,6 @@ groupSections:
           - **Taxes** – The total tax amount applied.
           - **Total** – The grand total including taxes.
 
-
           ![](/img/sales/quote/0006.png)
 
           <Noted type="info" title="Note" image="/img/icon/notes.png">
@@ -226,37 +227,6 @@ groupSections:
           - Allow you to proceed with delivery and invoicing
           - Create a permanent sales order number
 
-          You can also:
-          - **Create Alternative** – To create a revised version of the quotation with different terms
-          - **Cancel** – To cancel the quotation if the customer declines or the opportunity is lost
-          - **Preview** – To view how the quotation appears to the customer
-
-          ---
-
-          You can also create **Alternative Quotations** to present different options to the customer without losing the original quote.
-
-          ---
-
-          ##### Frequently Asked Questions
-
-          **Q: Can I modify a quotation after sending it?**
-          A: Yes, but it's better to create an alternative version. If you must edit a sent quotation, notify the customer of the changes.
-
-          **Q: What happens when a quotation expires?**
-          A: The quotation remains in the system but should be marked as expired or cancelled. You can create a new quotation with updated pricing if the customer is still interested.
-
-          **Q: Can I convert multiple quotations to one order?**
-          A: No, each quotation converts to one sales order. If you need to combine items, create a new quotation with all items.
-
-          **Q: How do I handle pricing negotiations?**
-          A: Create alternative quotations with different pricing options, or adjust the discount percentages on individual lines.
-
-          **Q: Can I attach documents to a quotation?**
-          A: Yes, use the attachment feature to add technical specifications, terms and conditions, or supporting documents.
-
-          ---
-
-          For more details on managing the sales process, see the [Sales Order Guide](/sales/create-sales-order) and [Customer Invoice Guide](/accounting/create-customer-invoice).
 
       - link: delete-quotation
         uid: delete-quotation
@@ -383,6 +353,8 @@ groupSections:
         body: |
           To confirm an existing quotation, navigate to the **Sales  ‣  Orders** dashboard and locate the quotation with status *Posted*. Click on it to open the quotation form and confirm the sales order. This action will convert the quotation into a sales order, allowing you to create an invoice and collect payment.
 
+          ---
+
           ###### Step 1 — Open an existing Quotation
 
           From the sales dashboard, navigate to **Sales  ‣  Orders** find
@@ -390,11 +362,15 @@ groupSections:
 
           ![](/img/sales/sales-order/0004.png)
 
+          ---
+
           ###### Step 2 — Create Order
 
           After creating the quotation, you will see the **Create Order** button. Clicking this will automatically convert the quotation into a sales order.
 
           ![](/img/sales/sales-order/0005.png)
+
+          ---
 
           ###### Step 3 — Post
 
@@ -413,15 +389,17 @@ groupSections:
         body: |
           You can use this option if you don't want to create it from scratch or from a quotation. This can be useful if you want to create an order from an existing customer or supplier, or if you want to reuse an existing order template.
 
+          ---
+
           ###### Step 1 — Open Sales Order
 
           From the sales dashboard, navigate to **Sales  ‣  Orders** find the *Sales
           Order* menu, click on it to open the sales order list page. From there, you
           can filter the list to find the order you want to create.
 
-
           ![](/img/sales/sales-order/0007.png)
 
+          ---
 
           ###### Step 2 — Create
 
@@ -429,6 +407,7 @@ groupSections:
 
           ![](/img/sales/sales-order/0008.png)
 
+          ---
 
           ###### Step 3 — Complete the required fields
 
@@ -453,7 +432,9 @@ groupSections:
           7. **Payment Terms:** Specifies the agreed payment time frame or
              conditions (e.g., Due in 30 days).
 
+          After filling in the required fields, you can proceed to add products or services to the sales quotation.
 
+          ---
 
           ###### Step 4 —  Add products or services
 
@@ -491,13 +472,14 @@ groupSections:
              **Subtotal = (Quantity × Unit Price) – Discount**.\
              The subtotal for all lines is summed at the bottom of the sales quotation, before taxes are added.
 
-
           Additionally, you can structure the sales quotation by:
 
           * **Add a section:** Organize and categorize related items or services on the sales quotation for enhanced clarity and presentation.
           * **Add a note:** Insert any supplementary comments or instructions for the customer or for your own reference. These notes will appear on the sales quotation.
 
           These supplementary fields assist in providing a clearer sales quotation for the customer and can be viewed or downloaded from the sales quotation record.
+
+          ---
 
           ###### Step 5 — Review Total Summary
 
@@ -519,7 +501,10 @@ groupSections:
             Carefully verify that all amounts are correct. If any discrepancies are found, review and adjust the corresponding sales quotation lines or tax settings before continuing.
           </Noted>
 
+          ---
+
           ##### Step 6 — Save
+
           Once all necessary fields are completed, click **Save** to create a new sales order. Subsequently, click **Post** to finalize the sales order, making it visible to the customer and updating the accounting records accordingly.
 
           ![](/img/sales/sales-order/0012.png)
@@ -550,15 +535,22 @@ groupSections:
       to customers.
 
       Please follow the steps below how to create a delivery order.
+
+      ---
+
       ##### Step 1 — Open existing sales order
 
       Open an existing sales order that you want to deliver by clicking on the sales order number. This will open the sales order form where you can review the details of the sales order.
+
+      ---
 
       ##### Step 2 — Delivery
 
       Click the **Delivery** button to create a delivery order based on the sales order. This will allow you to track the delivery status, update inventory levels, and manage any potential product returns.
 
       ![](/img/sales/delivery_order/0001.png)
+
+      ---
 
       ##### Step 3 — Validate
 
@@ -573,14 +565,18 @@ groupSections:
       The **Delivery Address** shows Seng Somaly as the customer receiving this shipment. The **Operation Type** is set to My Company: **Delivery Orders**, which defines the warehouse operation category being performed. The **Source Location** is **WH/Stock**, meaning items will be picked from the main warehouse stock. On the right side, the **Scheduled Date** is 24/03/2026 23:59:00, which is the planned deadline for completing the delivery. The **Source Document** shows New, referencing the originating sales order or transfer that triggered this delivery.
 
       <Noted type="caution" title="Important" image="/img/icon/sparkles.png">
-            Before clicking Validate, ensure the Done quantity is correctly filled in. If left at 0.00, the system may prompt a warning or automatically create a backorder for the remaining quantity.
-          </Noted>
+        Before clicking Validate, ensure the Done quantity is correctly filled in. If left at 0.00, the system may prompt a warning or automatically create a backorder for the remaining quantity.
+      </Noted>
+
+      ---
 
       ##### Step 4 — Apply
 
       Click the **Apply** button to confirm the delivery order and update the inventory levels.
 
       ![](/img/sales/delivery_order/0004.png)
+
+      ---
 
       ##### Step 5 — Verify
 
@@ -589,6 +585,8 @@ groupSections:
       are updated accordingly.
 
       ![](/img/sales/delivery_order/0005.png)
+
+      ---
 
       ##### Step 5 — View Quantity Sold
 
@@ -611,16 +609,23 @@ groupSections:
         title: Create Invoice
         body: ''
     body: |
-      Generating invoices for sales orders is an easy task with the assistance of the MAQSU ERP system. When you confirm a sales order, you will get an additional button on the sales window to create an invoice as marked in the screenshot below. Please follow the steps below how to generate custome invoice from sales
-      order.
+      When you confirm a sales order, you will get an additional button on the sales window to create an invoice as marked in the screenshot below. Please follow the steps below to generate a custome invoice from sales order.
 
-       To generte custome invoice form sales order, go to:
+      ![](/img/sales/invoice/0001.png)
 
-      ##### Step 1 — Open the Order
+      To create invoice directly from a sales order, navigate to the sales order form and click the **Create Invoice** button. This will generate a new invoice based on the sales order details.
 
       ![](/img/sales/invoice/0002.png)
 
-      ##### Step 2 — Create Invoice
+      In the Sales Orders list, the **Sales Progress** column helps you quickly track billing status. When an order shows **Pending Invoice** (as highlighted), it means the order is confirmed but an invoice has not been created or posted yet. Open that sales order and click **Create Invoice** to continue the billing process.
+
+      ---
+
+      Now let's see how to create an invoice from an existing sales order.
+
+      ---
+
+      ##### Step 1 — Create Invoice
 
       Click the **Create Invoice** button to generate an invoice for the
       customer.
@@ -628,17 +633,19 @@ groupSections:
       ![](/img/sales/invoice/0001.png)
 
       Upon clicking the **Create Invoice** button, a payment options modal
-      will appear, allowing you to select the preferred payment method and
-      finalize the transaction.
+      will appear, providing you with the flexibility to select the desired
+      payment method and finalize the transaction accordingly.
 
-      > Payment Options– select payment options:
-
-      * **Regular Invoice** – full payment - **Down Payment** (Percentage %)
-      * **Down Payment** (Fixed Amount $)
+      Payment Options– select payment options:
+      * **Regular Invoice** – full payment
+      * **Down Payment** (Percentage %) – partial payment with a percentage of the total invoice amount
+      * **Down Payment** (Fixed Amount $) – partial payment with a fixed amount of the total invoice amount
 
       ![](/img/sales/invoice/0003.png)
 
-      ##### Step 3 — Post Invoice
+      ---
+
+      ##### Step 2 — Post
 
       then, click **Post** to validate the journal entry and update the
       accounting records accordingly. This step ensures that the sales
@@ -681,11 +688,15 @@ groupSections:
 
       Please follow the steps below how to add a payment.
 
+      ---
+
       ##### Step 1 — Open Issued Invoice
 
       On Sales Order, Click on button Invoice Counts
 
       ![](/img/sales/add-payment/0001.png)
+
+      ---
 
       ##### Step 2 — Add Payment
 
@@ -695,6 +706,7 @@ groupSections:
 
       ![](/img/sales/add-payment/0002.png)
 
+      ---
 
       ##### Step 3 — Validate
 

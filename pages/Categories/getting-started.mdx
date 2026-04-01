@@ -586,32 +586,52 @@ groupSections:
         title: Company
         body: |
 
-          MAQSU allows you to set up and manage your organization's core information used across all modules. To update existing company information, please following step:
+          A **Company** represents a legal entity or business unit within MAQSU ERP. It serves as the primary organizational unit for managing financial transactions, reporting, and compliance. Each company can have its own set of master data, including customers, vendors, products, and financial accounts.
+
+          To set up a company in MAQSU ERP, follow the steps outlined below:
+
+          ---
 
           ###### Step 1 —  Navigation
 
-          From the left sidebar, click **Settings**. Then, from the top navigation menu, go to **Users & Companies** ‣ **Companies**.
+          Navigate to **Settings** ‣ **Users & Companies** ‣ **Companies** from the top navigation menu.
 
           ![](/img/getting-started/company/0001.png)
 
-          You will see a list of all registered companies. Click on an existing company (e.g., **My Company**) to edit it, or click **Create** to add a new one.
+          By default, MAQSU has one company record created during the initial setup, which you can edit to update your company information. To create a new company, click the **Create** button to open a blank company form.
 
           ![](/img/getting-started/masters/company/0004.png)
 
-          ###### Step 2 — Enter Company Name and Logo
+          <Noted type="info" title="Note" image="/img/icon/notes.png">
+            If your organization operates **multiple companies**, you can create separate company records for each entity. This allows you to manage transactions, reporting, and compliance for each company independently while still using the same MAQSU ERP instance.
+          </Noted>
+
+          ---
+
+          ###### Step 2 — Open Default Company
+
+          ![](/img/getting-started/company/0002.png)
+
+          Click on the existing company record (e.g., `My Company`) to open the company form. This is where you can update your company's information, including name, logo, address, contact details, and compliance information.
+
+          ---
+
+          ###### Step 3 — Company Name and Logo
+
+
+          ![](/img/getting-started/company/0003.png)
+
           On the company form, enter your official company name in the **Company Name** field (e.g., `MAQSU GROUP CO,.LTD`).
 
-          ![](/img/getting-started/masters/company/0001.png)
+          To update the **company logo**, hover your mouse over the logo, two icons will appear — a **pencil icon** to upload a new image and a **trash icon** to remove the existing one.
 
-          To update the **company logo**, hover your mouse over the logo thumbnail in the top-right corner of the form. Two icons will appear — a **pencil icon** to upload a new image and a **trash icon** to remove the existing one.
+          ---
 
-          ![](/img/getting-started/masters/company/0003.png)
-
-          ###### Step 3 — General Information
+          ###### Step 4 — General Information
 
           Under the **General Information** tab, fill in the following fields:
 
-          ![](/img/getting-started/masters/company/0006.png)
+          ![](/img/getting-started/company/0004.png)
 
           1. **Address 1 / Address 2** – Your company's street address.
           2. **City** – City name and postal code.
@@ -623,19 +643,25 @@ groupSections:
           8. **Company Registry** – The official registry number.
           9. **Currency** – Select the operating currency (e.g., USD).
 
-          ###### Step 4 — Cambodia Compliance(Optional)
+          ---
+
+          ###### Step 5 — Cambodia Compliance *(Optional)*
 
           If your company operates in Cambodia, click the **Cambodia Compliance** tab to fill in localized information required for compliance:
-          ![](/img/getting-started/company_info/0007.png)
 
-          - **Company Name (KH)** – Company name in Khmer script.
-          - **Email (KH)** / **Phone (KH)** – Contact details in local format.
-          - **Registry Date** – The official registration date.
-          - **Business Activities** – Brief description of business type (e.g., Software Solution).
-          - **Business Operations** – Detailed description of operations.
-          - **Address fields** – Nº, Street, Village, Commune/Sangkat, District/Khan, Province/Capital, and Zip.
+          ![](/img/getting-started/company/0005.png)
 
-          ###### Step 5 — Save and Verify
+          1. **Company Name (KH)** – Company name in Khmer script.
+          2. **Email (KH)** / **Phone (KH)** – Contact details in local format.
+          3. **Registry Date** – The official registration date.
+          4. **Business Activities** – Brief description of business type (e.g., Software Solution).
+          5. **Business Operations** – Detailed description of operations.
+          6. **Address fields** – Nº, Street, Village, Commune/Sangkat, District/Khan, Province/Capital, and Zip.
+
+          ---
+
+          ###### Step 6 — Save
+
           Once all information is filled in, click **Save** to apply your changes.
 
           <Noted type="info" title="Best Practice" image="/img/icon/notes.png">
@@ -652,11 +678,17 @@ groupSections:
             MAQSU ERP comes with commonly used currencies already available. You can activate existing currencies or create new ones to match the markets where your business operates.
           </Noted>
 
+          To set up a new currency or manage existing ones, please follow the steps below:
+
+          ---
+
           ###### Step 1 — Navigation
 
           From the left sidebar, click **Accounting**. Then, from the top navigation menu, go to **Configuration** ‣ **Currencies**.
 
           ![](/img/getting-started/currencies/0001.png)
+
+          ---
 
           ###### Step 2 — Create
 
@@ -664,41 +696,51 @@ groupSections:
 
           ![](/img/getting-started/currencies/0003.png)
 
+          ---
+
           ###### Step 3 — Fill Out Currency Information
 
-          ##### 1. Top-Level Configuration
           ![](/img/getting-started/currencies/0004.png)
 
-          * **Currency Name** – The ISO code or name (e.g., USD, KHR).
-          * **Currency Unit** – The full name of the primary unit (e.g., Dollar, Riel).
-          * **Currency Subunit** – The name of the fractional unit (e.g., Cents, Sen).
-          * **Active** – Ensure this checkbox is selected so the currency is available for use in transactions.
+          1. **Currency Name** – The ISO code or name (e.g., USD, KHR).
+          2. **Currency Unit** – The full name of the primary unit (e.g., Dollar, Riel).
+          3. **Currency Subunit** – The name of the fractional unit (e.g., Cents, Sen).
+          4. **Active** – Ensure this checkbox is selected so the currency is available for use in transactions.
 
-          ##### 2. Exchange Rate Configuration
-          This section determines how the currency is converted relative to your company’s base currency.
+          ---
+
+          ###### Step 4 — Update Exchange Rate
+
+          You can set the exchange rate for this currency relative to your company’s base currency. This is crucial for accurate financial reporting and valuation in the General Ledger.
 
           ![](/img/getting-started/currencies/0005.png)
 
           1. Click on the **Rates** smart button at the top of the form.
           2. Click the **Create** button to add a specific rate.
-          3. Enter the **Rate**: The conversion value (e.g., if 1 USD = 4000 KHR, enter `4000`).
-          4. Enter the **Date**: The effective date for this specific exchange rate (DD-MM-YYYY).
 
           ![](/img/getting-started/currencies/0006.png)
 
-          5. Save
+          3. Enter the **Rate**: The conversion value (e.g., if 1 USD = 4000 KHR, enter `4000`).
+          4. Enter the **Date**: The effective date for this specific exchange rate (DD-MM-YYYY).
 
-          Once all details are verified, click the **Save** button. Your currency settings will now be applied across all modules, including Invoices, Payments, and Financial Statements.
+          ---
 
-          <Noted type="info" title="Automatic Exchange Rate Update (NVC)" image="/img/icon/tip.png">
-          MAQSU ERP can automatically fetch and update exchange rates based on the National Bank (NVC). This reduces manual data entry and ensures your financial valuations remain accurate and compliant with the latest official rates.
+          ###### Step 5 — Save
+
+          Once all details are verified, click the **Save** button.
+
+          ![](/img/getting-started/currencies/0007.png)
+
+          Now this currency and its exchange rate will be available for use in all financial transactions, ensuring accurate valuations in your General Ledger.
+
+          <Noted type="info" title="Automatic Exchange Rate Update (NBC)" image="/img/icon/tip.png">
+          MAQSU ERP can automatically fetch and update exchange rates based on the **National Bank Currency (NBC)**. This reduces manual data entry and ensures your financial valuations remain accurate and compliant with the latest official rates.
           </Noted>
 
       - link: /chart-of-accounts
         title: Chart of Accounts
         body: |
-          The **Chart of Accounts** (COA) is an organized system for categorizing and tracking every financial transaction in your business. Think of these as specific "folders" where activities are sorted to keep your General Ledger structured, accurate, and ready for reporting.
-
+          The **Chart of Accounts** is a structured list of all the financial accounts used in your business. It serves as the foundation for organizing and categorizing all financial transactions in MAQSU ERP, ensuring that your General Ledger is accurate and compliant with accounting standards.
 
           <Noted type="info" title="Note" image="/img/icon/tip.png">
           MAQSU ERP comes pre-configured with a standard Chart of Accounts. You can add, edit, or deactivate accounts to better fit your specific business structure.
@@ -706,17 +748,23 @@ groupSections:
 
           To create a new chart of account, please following step below:
 
+          ---
+
           ###### Step 1 — Navigation
 
-          From the left sidebar, click **Accounting**. Then, from the top navigation menu, go to **Configuration** ‣ **Accounting** ‣ **Chart of Accounts**.
+          Navigate to **Accounting** ‣ **Configuration** ‣ **Chart of Accounts** from the top navigation menu.
 
           ![](/img/getting-started/chart-of-accounts/001.png)
+
+          ---
 
           ###### Step 2 — Create
 
           Click the **Create** button to open a new account entry line. This allows you to define a new category for your financial tracking.
 
           ![](/img/getting-started/chart-of-accounts/003.png)
+
+          ---
 
           ###### Step 3 — Fill Out Account Information
 
@@ -736,7 +784,10 @@ groupSections:
               * **Tags**: add tags if needed
               * **Account Currency**: choose the currency, here **USD**
               * **Internal Type** and **Internal Group** are usually filled automatically based on the selected type/group
-          7. Click **Save**.
+
+          ---
+
+          ###### Step 4 — Save
 
           Once the information is verified, click the **Save** button. The new account will now be available for selection in journals, invoices, and manual entries.
 
@@ -746,23 +797,27 @@ groupSections:
 
           Completing your **Chart of Accounts** ensures that your financial reports, like the Balance Sheet, are accurate from day one.
 
-          For more details on setting up the rules that govern these accounts, see the [Setup Taxes Guide](/getting-started/setup-master-datas#taxes).
-
       - link: /taxes
         title: Taxes
         body: |
 
-          A **Tax** is a levy imposed by the government on a taxpayer's income or profits. In MAQSU ERP, taxes are configured as specific rules that automate the calculation of government levies on sales and purchases, ensuring your General Ledger remains organized and compliant.
+          A **Tax** is a financial charge or levy imposed by a government on sales, purchases, or other transactions. In MAQSU ERP, taxes are configured to ensure that all financial transactions comply with local tax regulations and that the correct tax amounts are calculated.
 
           <Noted type="info" title="Note" image="/img/icon/notes.png">
             By default, MAQSU ERP comes pre-configured with standard taxes for sales and purchasing. If your business requires additional or custom tax rates, follow the systematic steps below to define them.
           </Noted>
 
+          To setup a new tax, please follow the steps outlined below:
+
+          ---
+
           ###### Step 1 — Navigation
 
-          From the left sidebar, click **Accounting**. Then, from the top navigation menu, go to **Configuration** ‣ **Taxes**.
+          Navigate to **Accounting** ‣ **Configuration** ‣ **Taxes** to access the Taxes configuration page.
 
           ![](/img/getting-started/taxes/0001.png)
+
+          ---
 
           ###### Step 2 — Create
 
@@ -770,63 +825,103 @@ groupSections:
 
           ![](/img/getting-started/taxes/1.png)
 
+          ---
+
           ###### Step 3 — Fill Out Tax Information
 
           Define the properties and behavior of your new tax by filling in the following sections:
 
-          ##### 1. Top-Level Configuration
-
-          ![](/img/getting-started/taxes/0004_1.png)
+          ![](/img/getting-started/taxes/0003.png)
 
           1. **Tax Name** – The label displayed to users (e.g., VAT - Sales of Goods 10%).
-          2. **Tax Computation** – Usually set to **Percentage of Price**. For example, a $100 sale with a 10% tax will calculate a $10 tax amount.
-          3. **Tax Scope** – Select **Sales** (for Customer Invoices) or **Purchase** (for Vendor Bills).
-          4. **Amount** – The numerical percentage value (e.g., 10.00%).
-          5. **Active** – Ensure this is checked so the tax is available for use in transactions.
+          2. **Tax Computation** *(Dropdown)* – Controls how MAQSU calculates tax:
+             - **Group of Taxes**: Combines multiple taxes into one selectable tax group.
+             - **Fixed**: Applies a fixed amount per line (not a percentage).
+             - **Percentage of Price**: Calculates tax as a percentage on the untaxed line amount. Example: $100 x 10% = $10 tax.
+             - **Percentage of Price Tax Included**: Treats the entered price as tax-inclusive and extracts the tax portion from it.
+          3. **Tax Scope** *(Dropdown)* – Defines where this tax can be used:
+             - **Sales**: For customer invoices and sales transactions.
+             - **Purchase**: For vendor bills and purchase transactions.
+          4. **E-Filing Type** *(Dropdown, optional)* – Used for electronic tax filing classification based on your local tax authority requirements.
+          5. **Amount** – The numerical tax value (e.g., 10.00 for 10% when using percentage-based computation).
+          6. **Active** – Ensure this is checked so the tax is available for use in transactions.
 
-          ##### 2. Repartition for Invoices
-          This section maps the tax to your General Ledger (GL) accounts.
+          ---
 
-            * **Base (Empty)** – Tracks the "Untaxed Amount" (posted to your Sales/Income account).
-            * **100% of Tax** – Assign the liability account where the tax collected will be stored (e.g., **201900 VAT Output**).
+          Under **Definition** tab, you can also specify the tax's behavior in different contexts:
 
-          ![](/img/getting-started/taxes/0004_2.png)
+           ###### 1. Repartition for Invoices
 
-          ##### 3. Repartition for Credit Notes
-          This section mirrors the invoice settings to ensure taxes are **reversed** correctly when issuing refunds.
-          * Using the same account (e.g., **201900 VAT Output**) will decrease your tax liability when a sale is reversed.
+           This table defines how invoice tax entries are split into accounting lines. Configure two lines as shown:
 
-          ![](/img/getting-started/taxes/0004_3.png)
+           * **Line 1: Base**
+             - **%**: leave empty for the base line.
+             - **Based On**: set to **Base**.
+             - **Account**: usually left empty so the untaxed amount follows the product's income account.
+             - **Tax Grids**: optional reporting tag, if required by localization.
 
-          ##### 4. Advanced Options
+           * **Line 2: Tax**
+             - **%**: set to **100.00**.
+             - **Based On**: set to **of tax**.
+             - **Account**: select the tax liability account (e.g., **201900 VAT Output**).
+             - **Tax Grids**: optional reporting tag used for tax reports/e-filing.
+
+          ![](/img/getting-started/taxes/0004.png)
+
+          ###### 2. Repartition for Credit Notes
+
+          This section mirrors the invoice repartition fields and is used when issuing refunds. Use the same structure:
+          * **Line 1: Base** – **Based On = Base** (untaxed amount line).
+          * **Line 2: Tax** – **100.00 of tax** with the same tax account (e.g., **201900 VAT Output**), so tax is reversed correctly on credit notes.
+
+          ![](/img/getting-started/taxes/0005.png)
+
+          ---
+
+          Under **Advanced Options** tab, you can further customize the tax's behavior:
+
           1. **Label on Invoices** – The specific text that prints on the customer's physical document.
           2. **Tax Group** – Used to group similar taxes for financial reporting (e.g., VAT 10%).
           3. **Included in Price** – If unchecked (Tax Exclusive), tax is added on top of the price ($100 + $10). If checked (Tax Inclusive), the tax is extracted from the price.
           4. **Affect Base of Subsequent Taxes** – Check this to enable **compounding**, where a second tax is calculated on the (Price + first tax).
 
-          ![](/img/getting-started/taxes/0004_4.png)
+          ![](/img/getting-started/taxes/0006.png)
+
+          ---
+
+          ###### Step 4 — Save
 
           After entering all required details, click the **Save** button. Your tax configuration is now active and will be applied throughout the system.
 
           <Noted type="info" title="Pro Tip" image="/img/icon/notes.png">
-          Completing the Tax Setup accurately is critical for automated accounting. Always double-check your **Tax Name** and **GL Accounts** to avoid discrepancies in your financial statements later.
+          Completing the Tax Setup accurately is critical for automated accounting. Always double-check your **Tax Name** to avoid discrepancies in your financial statements later.
           </Noted>
 
       - link: /customer-vendor
-        title: Customer / Vendor
+        title: Customers / Vendors
         body: |
 
-          The **Customer & Vendor** section allows you to manage your contacts — whether they are customers, vendors, or both — directly from the Accounting module.
+          The **Customer & Vendor** master data module is where you create and manage all your business contacts, including customers who purchase from you and vendors who supply goods or services to you. Properly setting up your customers and vendors ensures that all transactions are accurately recorded.
 
           <Noted type="info" title="Note" image="/img/icon/notes.png">
             A contact can be configured as a Customer, a Vendor, or both simultaneously. This flexibility allows you to maintain a single record for partners who both buy from and sell to your company.
           </Noted>
 
+          To create a new customer or vendor, please follow the steps outlined below:
+
+          ---
+
           ###### Step 1 — Navigation
 
-          From the left sidebar, click **Accounting**. Then, from the top navigation menu, go to **Customers** ‣ **Customers**.
+          To create a customer, navigate to **Accounting** ‣ **Customers** ‣ **Customers**  from the top navigation menu.
 
           ![](/img/getting-started/customers/0001.png)
+
+          To create a vendor, navigate to **Accounting** ‣ **Vendors** ‣ **Vendors**. Both paths lead to the same master list of contacts, where you can manage all your business partners in one place.
+
+          ![](/img/getting-started/customers/0001_1.png)
+
+          ---
 
           ###### Step 2 — Create
 
@@ -834,51 +929,82 @@ groupSections:
 
           ![](/img/getting-started/customers/0002.png)
 
-          ###### Step 3 — Contact Type
+          ---
 
-          At the top of the form, select the type of contact:
-
-          - **Customer** – for customers only
-          - **Vendor** – for vendors only
-          - **Customer & Vendor** – for contacts who are both
-
-           ###### Step 4 — Basic Information
+          ###### Step 3 — Basic Information
 
            In the main section of the form, fill in:
           ![](/img/getting-started/customers/0003.png)
 
-          - **Individual / Company** – Select whether the contact is an individual person or a company.
-          - **Name (English)** – Enter the contact's full name in English (e.g., `LY CHAIMOUY`).
-          - **Name (Khmer)** *(Optional)* – Enter the name in Khmer script.
-          - **Customer / Vendor checkboxes** – Check the appropriate box to classify the contact.
-          - **Photo** *(Optional)* – Upload a profile photo using the image field in the top-right corner.
+          1. **Individual / Company** – Select whether the contact is an individual person or a company.
+          2. **Name (English)** – Enter the contact's full name in English (e.g., `Kun Sopheaktra`).
+          3. **Name (Khmer)** *(Optional)* – Enter the name in Khmer script.
+          4. **Customer / Vendor checkboxes** – Check the appropriate box to classify the contact.
+          5. **Photo** *(Optional)* – Upload a profile photo using the image field in the top-right corner.
 
-          ###### Step 5 — General Information Tab
+          ---
 
-          ##### 1. Address
+          ###### Step 4 — General Information
+
+          In the **General Information** tab, complete the following sections:
+
           ![](/img/getting-started/customers/0004.png)
 
-          - **Address 1** – Full street address (e.g., St 2004, Sleng Rolerng Village, Sangkat Terk Thla, Khan Sensok, Phnom Penh).
-          - **Address 2** – Additional address details (e.g., Phnom Penh Capital, Cambodia).
-          - **Country** – Select the country from the dropdown (e.g., Cambodia).
+          1. **Address** *(Optional)*
+             - **Address 1** – Enter the primary street address (house number, street, village, commune, district, city/province).
+             - **Address 2** *(Optional)* – Add extra location details such as city, province/state, or landmark.
+             - **Country** *(Dropdown)* – Select the country of the customer/vendor.
 
-           ##### 2. Contact
+          2. **Contact** *(Optional)*
+             - **Phone** – Main contact phone number.
+             - **Mobile** – Mobile number used for direct communication.
+             - **Email** – Official email address used for invoices, statements, and notifications.
+             - **Website** *(Optional)* – Company/personal website URL (e.g., `https://example.com`).
+             - **Category** *(Dropdown, optional)* – Assign a contact category/tag for segmentation and filtering.
+
+          3. **Identification Registry** *(Optional)*
+             - **VAT TIN** – Tax identification number used for VAT and legal tax reporting.
+             - **Tax Type** *(Dropdown)* – Select the taxpayer classification (for example, Taxable Person).
+             - **Customer Code** – Internal unique code used to identify the contact in transactions and reports.
+
+          ---
+
+          ###### Step 4 — Contacts
+
+          In the **Contact** tab, you can add multiple contact methods for the customer or vendor. This is useful for maintaining up-to-date communication channels.
+
           ![](/img/getting-started/customers/0005.png)
 
-          - **Phone** – Primary phone number.
-          - **Mobile** – Mobile number.
-          - **Email** – Email address.
-          - **Website** *(Optional)* – Website URL.
-          - **Category** *(Optional)* – Assign a contact category for grouping.
+          Click **Add** in the **Contacts** tab to open the **Create Contact** popup, then complete these fields:
 
-          ##### 3. Identification Registry *(Optional)*
-          ![](/img/getting-started/customers/0006.png)
+          1. **Contact Type** *(Radio options)*
+             - **Contact**: General person to contact at this company (sales/admin point of contact).
+             - **Invoice Address**: Address/contact used for billing documents.
+             - **Delivery Address**: Address used for shipping and delivery operations.
+             - **Other Address**: Additional branch/location for operational use.
+             - **Private Address**: Personal/private address for an individual contact record.
 
-          - **VAT TIN** – The customer's VAT Tax Identification Number (e.g., `L001-100305542`).
-          - **Tax Type** – Select the applicable tax type (e.g., Taxable Person).
-          - **Customer Code** – A unique customer code, which can be auto-generated by the system (e.g., `CUST-000001`).
+          2. **Contact Identity**
+             - **Name (English / Khmer)**: Enter the contact name as needed for documents and communication.
+             - **Photo** *(Optional)*: Upload contact image/avatar.
 
-          Once all required information is filled in, click **Save** to store the new customer or vendor record.
+          3. **Address**
+             - **Address 1**: Primary street and location details.
+             - **Address 2** *(Optional)*: Additional address line (city/province/landmark).
+             - **Country** *(Dropdown)*: Country for this specific contact/address.
+
+          4. **Communication Fields**
+             - **Email**: Main email for this contact type.
+             - **Phone**: Telephone number.
+             - **Mobile** *(Optional)*: Mobile number.
+             - **Notes** *(Optional)*: Internal notes about this contact/address.
+
+          5. **Save Actions**
+             - **Save & Close**: Save this contact and return to the contact form.
+             - **Save & New**: Save and immediately create another contact line.
+             - **Discard**: Cancel without saving changes.
+
+          ---
 
           ###### Step 6 — Save
           Once all required information is filled in, click **Save** to store the new customer or vendor record.
@@ -887,28 +1013,40 @@ groupSections:
           Maintaining clean contact data, including proper Khmer names where applicable, ensures that your tax reports and official government filings are generated without errors.
           </Noted>
 
-          For more details on managing sales for these contacts, see the [Create Customer Invoice Guide](/accounting/create-new-customer-invoice).
 
       - link: /payment-terms
         title: Payment Terms
         body: |
 
-          Payment Terms define when customer invoices and vendor bills are due (for example, `Immediate Payment`, `30 Days`, or `50% Advance`).
+          Payment Terms define the conditions under which a customer must pay an invoice or a vendor must be paid for a bill. They specify the due date and the amount that is expected to be paid, which can be based on a percentage of the total or a fixed amount. Properly setting up payment terms ensures that your accounts receivable and accounts payable are managed effectively, improving cash flow and financial planning.
+
+           <Noted type="info" title="Note" image="/img/icon/notes.png">
+            MAQSU ERP comes with standard payment terms like "Net 30" or "Due on Receipt". You can create custom payment terms to fit your specific business needs, such as offering discounts for early payments or defining multi-line terms for partial payments.
+          </Noted>
+
+          To create a new payment term, please follow the steps outlined below:
+
+          ---
 
           ###### Step 1 — Navigation
 
-          From the left sidebar, click **Accounting**. Then, from the top navigation menu, go to **Configuration** ‣ **Payment Terms**.
+          Navigate to **Accounting** ‣ **Configuration** ‣ **Payment Terms** from the top navigation menu.
 
           ![](/img/getting-started/payment-terms/0001.png)
 
           Once you navigate to Payment Terms, you will see the master list of all existing Payment Terms. The list displays the following columns:
 
-          ![](/img/getting-started/payment-terms/0002.png)
+          ![](/img/getting-started/payment-terms/0001_1.png)
+
+          ---
 
           ###### Step 2 — Create
-          Click the Create button at the top-left of the Payment Terms list page to open a new blank payment terms form.
 
-          ![](/img/getting-started/payment-terms/0003.png)
+          To create a new payment term, click the **Create** button at the top-left of the Payment Terms list page, which will open a new blank payment terms form. This form will allow you to define the conditions under which a customer must pay an invoice or a vendor must be paid for a bill.
+
+          ![](/img/getting-started/payment-terms/0002.png)
+
+          ---
 
           ###### Step 3 — Complete the Header
 
@@ -917,6 +1055,8 @@ groupSections:
           * **Note** (optional): add a short description (for internal reference or for printing, depending on your setup).
 
           ![](/img/getting-started/payment-terms/0004.png)
+
+          ---
 
           ###### Step 4 — Define the Terms
 
@@ -942,7 +1082,11 @@ groupSections:
           * **Of the following month**: sets the due date within the *next month after the invoice month*.
             Example: Invoice Date **March 17, 2026**, **Specifically on Day #** = `5`. Due Date: **April 5, 2026**.
 
-          > **Tip:** If you use **Specifically on Day #**, choose a day between `1` and `31`. If a month does not have that day (for example, `31` in April), MAQSU may adjust the due date. Verify the result on a test invoice.
+          <Noted type="info" title="Tip" image="/img/icon/notes.png">
+            If you use **Specifically on Day #**, choose a day between `1` and `31`. If a month does not have that day (for example, `31` in April), MAQSU may adjust the due date. Verify the result on a test invoice.
+          </Noted>
+
+          ---
 
           ###### Step 5 — Save
 
@@ -955,156 +1099,178 @@ groupSections:
       - link: /journals
         title: Journals
         body: |
-          **Journals** are used to record all financial transactions. Each journal corresponds to a specific type of accounting operation such as sales, purchases, cash, or bank transactions.
+          **Journals** are the primary organizational units for recording financial transactions in MAQSU ERP. Each journal represents a specific type of transaction (e.g., Sales, Purchases, Cash, Bank) and contains the necessary configuration to ensure that all entries are properly categorized and accounted for in the General Ledger.
+
+           <Noted type="info" title="Note" image="/img/icon/notes.png">
+            MAQSU ERP comes with default journals for common transaction types. You can create additional journals to better organize your financial data or to meet specific reporting requirements.
+          </Noted>
+
+          To create a new journal, please follow the steps outlined below:
+
+          ---
 
           ###### Step 1 — Navigation
 
-          1. Go to the **Accounting** module from the left sidebar.
-          2. Click on **Configuration** in the top navigation menu.
-          3. Select **Journals** from the dropdown under the **Invoicing** section.
+          Navigate to **Accounting** ‣ **Configuration** ‣ **Journals** from the top navigation menu.
 
           ![](/img/getting-started/journal/0001.png)
 
-          The journals list displays all configured journals with their corresponding types:
+          Here you get to see a list of all existing journals in the system, which are used to record different types of financial transactions.
 
           ![](/img/getting-started/journal/0002.png)
-
-          Above is a list of all existing journals
+          ---
 
           ###### Step 2 — Create
 
-          Click the **Create** button on the Journals list page to open a new journal form.
+          Click the **Create** button at the top-left of the Journals list page to open a new blank journal configuration form.
 
           ![](/img/getting-started/journal/0003.png)
+
+          ---
 
           ###### Step 3 — Basic Information
 
           Fill in the following required fields at the top of the form:
 
-          - **Journal Name** – Enter a descriptive name for the journal (e.g., `Petty Cash Office`).
-          - **Type** – Select the journal type from the dropdown. Available types include Sales, Purchase, Cash, Bank, and Miscellaneous.
-
-          ###### Understanding Journal Types
-          1.  **Sales**: Records all customer invoices and accounts receivable.
-          2.  **Purchase**: Records all vendor bills and accounts payable.
-          3.  **Cash & Bank**: Tracks liquid money movements (deposits, transfers, and petty cash).
-          4.  **Miscellaneous**: Used for non-cash entries like depreciation or internal adjustments.
 
           ![](/img/getting-started/journal/0004.png)
 
-          ###### Step 4 — Journal Entries Tab
+          1. **Journal Name** – Enter a descriptive name for the journal (e.g., `Petty Cash Office`).
+          2. **Type** – Select the journal type from the dropdown. Available types include Sales, Purchase, Cash, Bank, and Miscellaneous.
+              -  **Sales**: Records all customer invoices and accounts receivable.
+              -  **Purchase**: Records all vendor bills and accounts payable.
+              -  **Cash & Bank**: Tracks liquid money movements (deposits, transfers, and petty cash).
+              -  **Miscellaneous**: Used for non-cash entries like depreciation or internal adjustments.
+
+          ---
+
+          ###### Step 4 — Journal Entries
 
           Under the **Journal Entries** tab, configure the following:
 
-          - **Short Code** – Enter a short abbreviation for the journal (e.g., `PCO`). This is used as a prefix for journal entry numbers.
-          - **Next Number** – The sequence number for the next journal entry (defaults to `1`).
-          - **Default Debit Account** – Select the default account to use for debit entries (e.g., `102002 Petty Cash Office`).
-          - **Default Credit Account** – Select the default account to use for credit entries (e.g., `102002 Petty Cash Office`).
-          - **Currency** – Select the currency for this journal (e.g., `USD`).
-
           ![](/img/getting-started/journal/0005.png)
 
-          ###### Step 4 — Save
+          1. **Short Code** – Enter a short abbreviation for the journal (e.g., `PCO`). This is used as a prefix for journal entry numbers.
+          2. **Next Number** – The sequence number for the next journal entry (defaults to `1`).
+          3. **Default Debit Account** – Select the default account to use for debit entries (e.g., `102002 Petty Cash Office`).
+          4. **Default Credit Account** – Select the default account to use for credit entries (e.g., `102002 Petty Cash Office`).
+          5. **Currency** – Select the currency for this journal (e.g., `USD`).
+
+          ---
+
+          ###### Step 5 — Save
 
           Click the **Save** button. This journal is now ready to be used in your daily accounting entries and financial reports.
 
-      - link: /setup-product-category
-        title: Product Category
+      - link: /setup-product-categories
+        title: Product Categories
         body: |
-          **Product Categories** serve as the foundation for how groups of products are handled in terms of logistics, accounting, and automated valuation. By setting these properties at the category level, all products assigned to a specific group (e.g., "Drinks") will inherit these rules, ensuring consistency across your inventory and financial records.
-
-          >**Note**: Proper category configuration is essential for automated accounting and accurate inventory valuation in compliance with local standards.
-
-          ###### Step 1 — Navigation
-          From the main dashboard, select the Inventory module. Then, navigate to the top menu and click Configuration ‣ Product Categories.
+          **Product Categories** are used to organize your products into a hierarchical structure, allowing for better inventory management, reporting, and financial tracking. Properly categorizing your products ensures that inventory valuation and cost of goods sold are accurately calculated in compliance with local accounting standards.
 
           <Noted type="info" title="Note" image="/img/icon/notes.png">
             Proper category configuration is essential for automated accounting and accurate inventory valuation in compliance with local standards.
           </Noted>
+
+          To set up a new product category, please follow the steps outlined below:
+
+          ---
+
+          ###### Step 1 — Navigation
+
+          Navigate to **Inventory** ‣ **Configuration** ‣ **Product Categories** from the top navigation menu.
+
           ![](/img/getting-started/product-category/0001.png)
 
-          ###### Step 2 — Product Category List Overview
+          There you will see a list of all pre-configured product categories. If you want to create a new category, click the **Create** button to open a blank category form.
 
           ![](/img/getting-started/product-category/0002.png)
 
-          Once you navigate to Product Categories, you will see a list of all existing categories. This view allows you to organize your products into a hierarchical structure (e.g., Panasonic / AC Product / PAC).
+          ---
 
-          ###### Step 3 — Click Create
+          ###### Step 3 — Create
+
+          Let's create a new one by clicking the **Create** button. This will open a blank form where you can define the properties of the new product category.
 
           ![](/img/getting-started/product-category/0003.png)
 
-          Click the Create button at the top-left of the categories list page to open a new configuration form.
+          ---
 
-          ###### Step 4 — Configure Category Details
+          ###### Step 4 — Fill in General Information
 
           Fill in the required information to define how the system should manage products within this category.
 
           ![](/img/getting-started/product-category/0004.png)
 
-          * **Name** *(Required)*: Enter the name of the category (e.g., Drinks, Labor Costs, or Beauty Equipment).
-          * **Parent Category** *(Optional)*: Select a parent category if you are creating a sub-category to help in grouping products for reporting.
+          1. **Name** *(Required)* – provide a clear and descriptive name for the category (e.g., `Office Supplies`, `Music`, `Storable`).
+          2. **Parent Category** *(Optional)* – you have an option to select a parent category to create a hierarchical structure (for example, `Office Supplies` could be a child of `Consumables`).
+          3. **Route** *(Optional)* – Select the default route for products in this category (e.g., **Receive in 1 step** or **Delivery in 1 step**). You can't always see this field, it only appears if you enabled the **Multi-Step Routes** feature in Inventory settings.
+          4. **Force Removal Strategy** *(Optional)* – Defines the specific strategy used to pick items from stock, such as **FIFO** (First In First Out), **LIFO** (Last In First Out), or **FEFO** (First Expiry First Out).
 
-          #### 1. Logistics
-          * **Force Removal Strategy**: Defines the specific strategy used to pick items from stock, such as **FIFO** (First In First Out), **LIFO** (Last In First Out), or **FEFO** (First Expiry First Out).
-
-          #### 2. Inventory Valuation
-          This section controls how the value of your stock is calculated and recorded in your books.
-
-          * **Costing Method**: Determines how the cost of products is calculated:
+          5. **Costing Method** *(Optional)* – Determines how the cost of products is calculated:
               * **Standard Price**: Products are valued at a manually fixed cost.
               * **Average Cost (AVCO)**: Cost is a weighted average of remaining stock and new purchases.
               * **First In First Out (FIFO)**: Cost is based on the actual price paid for the oldest units.
-          * **Inventory Valuation**:
+          6. **Inventory Valuation** *(Optional)* – Defines how inventory value is recorded.
               * **Manual**: Periodic manual entries are required to update stock value in accounting.
               * **Automated**: The system automatically creates journal entries whenever stock moves in or out of the warehouse.
+          7. **Income Account** – The account used to record revenue when a customer is invoiced (e.g., *401100 Sales of Goods*).
+          8. **Expense Account** – The account used to record the cost of the items sold during the transaction (e.g., *501100 Cost of Goods Sold*).
+          9. **Stock Input Account** – A temporary "bridge" account that holds value when goods are received but not yet invoiced.
+          10. **Stock Output Account** – A temporary account that holds value when goods are delivered but the customer hasn't been invoiced yet.
+          11. **Stock Valuation Account** – The balance sheet account representing the current value of your physical inventory (e.g., *107100 Inventory*).
+          12. **Stock Journal** – The specific accounting journal where all automated inventory entries will be recorded (e.g., *Inventory Valuation USD*).
 
-          ###### Step 5 — Define Account Properties
-
-          These settings determine where the financial value is recorded during sales and purchases.
-
-          ![](/img/getting-started/product-category/0005.png)
-
-          #### Account Properties
-          * **Income Account**: The account used to record revenue when a customer is invoiced (e.g., *401100 Sales of Goods*).
-          * **Expense Account**: The account used to record the cost of the items sold during the transaction (e.g., *501100 Cost of Goods Sold*).
-
-          #### Account Stock Properties
-          These fields are required for **Automated Inventory Valuation** to function:
-          * **Stock Input Account**: A temporary "bridge" account that holds value when goods are received but not yet invoiced.
-          * **Stock Output Account**: A temporary account that holds value when goods are delivered but the customer hasn't been invoiced yet.
-          * **Stock Valuation Account**: The balance sheet account representing the current value of your physical inventory (e.g., *107100 Inventory*).
-          * **Stock Journal**: The specific accounting journal where all automated inventory entries will be recorded (e.g., *Inventory Valuation USD*).
+          ---
 
           ###### Step 6 — Save
 
-          After completing all required fields, click the **Save** button to apply your changes. At this stage, you can also view the number of **Products** currently assigned to this category or set up **Putaway Rules** via the smart buttons at the top right.
+          Once all information is filled in, click **Save** to create the new product category.
+
+          ![](/img/getting-started/product-category/0005.png)
+
+          You can now assign products to this category by click on the category and using the **Products** smart button to manage which products belong to this category.
 
           <Noted type="info" title="Best Practice" image="/img/icon/notes.png">
-            Ensure your **Stock Valuation Account** matches your physical asset account in the Chart of Accounts to maintain accurate financial statements and Cambodian tax compliance.
+          For accurate inventory valuation and financial reporting, ensure that you assign the correct **Costing Method** and **Inventory Valuation** settings based on your business model and local accounting requirements.
           </Noted>
 
       - link: /uom
         title: Units of Measure
         body: |
-          The **Units of Measure** (UOM) play a crucial role in managing invenotry, sales and purchase operations efficiently and they allow you to define and manage difference unit for your product esuring accurate calculations and reporting.
 
-          In some cases, handling products in different units of measure is necessary. For example, a business can buy products from a country that uses the metric system, and then sell those products in a country that uses the imperial system. In that case, the business needs to convert the units.
+          **Units of Measure (UoM)** are used to define how products are quantified in MAQSU ERP. Properly setting up UoMs allows you to manage inventory, sales, and purchasing in the units that make the most sense for your business operations while ensuring accurate conversions and reporting.
 
-          Another case for unit conversion is when a business buys products in a big pack from a supplier, and then sells those products in individual units.
+          <Noted type="info" title="Note" image="/img/icon/notes.png">
+            MAQSU ERP comes with a set of standard units of measure. You can create custom UoMs to fit your specific product measurement needs, such as boxes, packs, or pieces.
+          </Noted>
 
-          MAQSU can be set up to use different units of measure (UoM) for one product. To set units of measure, please following steps down below:
+          To create a new unit of measure, please follow the steps outlined below:
+
+          ---
 
           ###### Step 1 — Navigation
 
-          From the left sidebar, click **Inventory**. Then, from the top navigation menu, go to **Configuration** ‣ **Units of Measure**.
+          Navigate to **Inventory** ‣ **Configuration** ‣ **Units of Measure** from the top navigation menu.
 
           ![](/img/getting-started/uom/0001.png)
 
-           From the Units of Measure page, click the **Create** button to define a new unit of measure.
-
-          ###### Step 2 — Fill out UOM details
+          Here you see a list of all existing units of measure in the system. To create a new one, click the **Create** button to open a blank UoM form.
 
           ![](/img/getting-started/uom/0002.png)
+
+          ---
+
+          ###### Step 2 — Create
+
+          Click the **Create** button to open a blank form where you can define the properties of the new unit of measure.
+
+          ![](/img/getting-started/uom/0003.png)
+
+          ---
+
+          ###### Step 3 — Fill out UOM details
+
+          ![](/img/getting-started/uom/0004.png)
 
           On this form, create the UoM like this:
 
@@ -1118,105 +1284,94 @@ groupSections:
               * **Smaller than the reference Unit of Measure**: use this when the new UoM is smaller than the base unit.
           4. Keep **Active** checked if you want to use it immediately.
           5. Set **Rounding Precision** as needed.
-          6. Click **Save**.
+
+          ---
+
+          ###### Step 3 — Save
 
           If you want, I can also explain which **Type** to choose for your specific unit. See the expaination [Units of Measure Type](#help-reference)
 
       - link: /products
         title: Products
         body: |
-          Creating accurate **Product Records** is essential for inventory control, automated pricing, and seamless integration across Sales, Purchasing, and Accounting.
+          **Products** are the core items that your business sells or purchases. Properly setting up products in MAQSU ERP allows you to manage inventory, track sales and purchases, and ensure accurate financial reporting. Each product can be categorized, priced, and tracked according to your business needs.
+
+          <Noted type="info" title="Note" image="/img/icon/notes.png">
+            MAQSU ERP comes with a default set of products. You can create custom products to fit your specific inventory and sales requirements.
+          </Noted>
+
+          To create a new product, please follow the steps outlined below:
+
+          ---
 
           ###### Step 1 — Navigation
-          From the left sidebar, click **Inventory**. Then, from the top navigation menu, go to **Products** ‣ **Products**.
+
+          There are multiple ways to create a product in MAQSU ERP. You can start from the **Products** menu or directly from a sales order or purchase order line.
+
+          To create a new product from **Inventory**, navigate to **Sales** ‣ **Products** ‣ **Products** from the top navigation menu.
 
           ![](/img/getting-started/products/0001.png)
 
+          To create a new product from **Sales**, navigate to **Sales** ‣ **Products** ‣ **Products**.
+
+          ![](/img/getting-started/products/0001_2.png)
+
+          To create a new product from **Purchases**, navigate to **Purchases** ‣ **Products** ‣ **Products**.
+
+          ![](/img/getting-started/products/0001_3.png)
+
+          To create a new product from **Accounting**, navigate to **Accounting** ‣ **Customers** ‣ **Products**.
+
+          ![](/img/getting-started/products/0001_4.png)
+
+          Choose whichever path is most convenient for you. All paths lead to the same product list page, where you can manage all your products in one place.
+
+          ---
+
           ###### Step 2 — Create
-          Click the **Create** button to open a blank product template.
 
-          ![](/img/getting-started/products/0002-1.png)
+          Let's create a new product by clicking the **Create** button. This will open a blank form where you can define the properties of the new product.
 
-          ###### Step 3 — Enter Product Details
-          Provide the necessary information to manage the product throughout its lifecycle:
+          ![](/img/getting-started/products/0002.png)
 
-          ##### 1. General Identification
-          * **Product Name** – Enter a clear name (e.g., "MacBook Pro 14").
-          * **Can be Sold / Can be Purchased** – Check these boxes to determine if the item appears in Sales or Purchase menus.
-          * **Product Image** – Upload a visual for easy identification.
+          ---
+
+          ###### Step 3 — Fill out Product details
 
           ![](/img/getting-started/products/0003.png)
 
-          ##### 2. Product Type & Classification
-          * **Product Type**:
+          1. **Product Name** – Enter a clear name (e.g., "MacBook Pro 14").
+          2. **Can be Sold** – Check this if you will sell this product to customers.
+          3. **Can be Purchased** – Check this if you will buy this product from vendors.
+          4. **Product Photo** – Upload a visual for easy identification.
+
+          Under **General Information** tab, fill in the following details:
+
+          ![](/img/getting-started/products/0004.png)
+
+          1. **Product Type** *(Dropdown)* – Choose the type that best describes your product:
               * **Storable**: Physical goods tracked in inventory (e.g., Hardware).
               * **Service**: Non-physical labor or consulting.
               * **Consumable**: Items used quickly without precise stock tracking (e.g., Office Supplies).
-          * **Category**: Group the product for organized reporting.
-          * **Product Code / Barcode**: Assign unique identifiers for SKUs and scanning.
+          2. **Category** – Group the product for organized reporting.
+          3. **Product Code** – A unique identifier for internal use (e.g., `MBP14`).
+          4. **Barcode** *(Optional)* – A scannable code for retail or warehouse use.
+          5. **Internal Notes** *(Optional)* – Add any internal comments or instructions for warehouse/sales teams.
+          6. **Sales Price** *(Optional)* – Your standard selling price.
+          7. **Cost** – Your internal purchase or manufacturing cost.
+          8. **Customer Taxes** *(Optional)* – The default tax applied at checkout.
+          9. **UOM (Unit of Measure)** *(Required)* – How you count the item (e.g., Pieces, Kg, Boxes).
 
-          ![](/img/getting-started/products/image1.png)
+          ---
 
-          #### 3. Pricing & Units
-          * **Sales Price**: Your standard selling price.
-          * **Cost**: Your internal purchase or manufacturing cost.
-          * **Customer Taxes**: The default tax applied at checkout.
-          * **UOM (Unit of Measure)**: How you count the item (e.g., Pieces, Kg, Boxes).
+          ###### Step 4 — Save
 
-          ![](/img/getting-started/products/0006.png)
-
-          ###### Step 4 — Save Product
-          Review your settings—especially **Type** and **UOM** as they are difficult to change once transactions begin—then click **Save**.
-
-          <Noted type="info" title="Note" image="/img/icon/notes.png">
-          Adding **Internal Notes** can help your warehouse and sales teams with specific handling or shipping instructions that aren't visible to the customer.
-          </Noted>
-
-          For more details on managing stock for these products, see the [Goods Receipts Guide](/inventory/goods-receipts).
-
-      - link: /help-reference
-        title: Help & Reference
-        body: |
-
-          #### Units of Measure Types
-
-          Choose **Type** based on how your new unit compares to the main unit in that **Category**.
-
-          ##### 1. Reference Unit of Measure for this category
-          Use this for the **base unit** in the category.
-          Example:
-
-          * Category: **Unit**
-          * Reference UoM: **Units**
-          * Meaning: this is the standard unit everything else converts to
-
-          **2. Bigger than the reference Unit of Measure**
-          Use this when the new unit contains **more** than the base unit.
-          Examples:
-
-          * **Dozen** is bigger than **Unit** because 1 Dozen = 12 Units
-          * **kg** is bigger than **g** because 1 kg = 1000 g
-          * **Box** is bigger than **Piece** if 1 Box = 24 Pieces
-
-          **3. Smaller than the reference Unit of Measure**
-          Use this when the new unit is **less** than the base unit.
-          Examples:
-
-          * **cm** is smaller than **m**
-          * **g** is smaller than **kg** if kg is the reference
-          * **ml** is smaller than **L**
-
-          A simple way to decide:
-
-          * If it is the **main/base unit** ‣ choose **Reference**
-          * If it is **larger than the base** ‣ choose **Bigger**
-          * If it is **smaller than the base** ‣ choose **Smaller**
+          Click the **Save** button to create the product.
 
     body: |
-      Just new to MAQSU? Get off to a flying start, learn how to create an
-      company, customers, vendors, chart of accounts
+      In this section, we will cover the essential master data that you need to set up in MAQSU ERP to ensure that your financial and inventory operations run smoothly. This includes configuring your Chart of Accounts, Taxes, Customers/Vendors, Payment Terms, Journals, Product Categories, Units of Measure, and Products.
 
       <Noted type="info" title="Note" image="/img/icon/notes.png">
-      To set up all these things, you must log in as Administrator.
+        To configure all these master data, you must login as *Administrator* or a user with the necessary access rights to manage accounting and inventory settings. If you don't have the required permissions, please contact your system administrator to grant you access or to assist with the setup process.
       </Noted>
 ---
