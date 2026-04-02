@@ -88,196 +88,6 @@ groupSections:
             - **Batch Processing** – Group multiple operations together for efficient execution
             - **Generate Reports** – Analyze inventory levels, movements, and valuation
 
-  - link: warehouse-management#warehouse-management
-    uid: warehouse-management
-    title: Warehouse Management
-    date: '2026-02-19T07:20:05.517Z'
-    body: |
-         **Warehouse management** is a critical component of inventory management that focuses on the efficient organization, tracking, and control of goods within a warehouse. Proper warehouse management ensures that inventory is stored in an optimal manner, allowing for easy access, accurate tracking, and timely fulfillment of orders. In MAQSU ERP, the Warehouse Management module provides tools and features to help businesses manage their warehouses effectively.
-
-         In this section, we will explore the key features and functionalities of warehouse management in MAQSU, including how to set up warehouses, manage locations, and setup automatic inventory tracking which is called "Putaway Rules".
-
-         ![](/img/inventory/warehouse-management/0001.png)
-
-         <Noted type="info" title="Note" image="/img/icon/notes.png">
-            A warehouse represents a physical location where goods are stored. It is important to set up your warehouses correctly to ensure accurate inventory tracking and efficient operations.
-            </Noted>
-
-
-    breadcrumbs:
-      - link: /
-        title: All Categories
-        body: ''
-      - link: /inventory
-        title: Inventory
-        body: ''
-      - link:
-        title: Warehouse Management
-        body: ''
-    sections:
-
-      - link: /warehouse
-        title: Warehouse
-        body: |
-
-            A **warehouse** in inventory refers to a physical place where goods or materials are stored before they are sold, distributed, or used in production.
-
-            In **MAQSU**, a warehouse is a digital representation of your physical storage facility, allowing you to accurately track, manage, and optimize your inventory. Now let's set up a warehouse for efficient inventory management.
-
-            ---
-
-            To setup a warehouse, please following these step:
-
-            ###### Step 1  — Navigation
-
-            Navigate to **Inventory ‣ Configuration ‣ Warehouses**, where you can view and manage all active warehouses in your system.
-
-            ![](/img/inventory/warehouse-management/warehouse/0001.png)
-
-            If you already have warehouses configured, this screen will display a list of all active ones. To modify an existing warehouse, simply click on the desired entry to edit its details. Otherwise, you can create a new warehouse by clicking the **Create** button.
-
-            ---
-
-            ###### Step 2 — Define Basic Information
-
-            ![](/img/inventory/warehouse-management/warehouse/0002.png)
-
-            1. Warehouse Name — The full descriptive name for reports (e.g., Main Warehouse - Phnom Penh).
-            2. Short Name — A concise internal code used for stock locations and references (e.g., WH-01).
-            3. Address — Link the warehouse to a specific company address to ensure correct details appear on delivery slips and logistics paperwork.
-
-            ---
-
-            ###### Step 3 — Define Shipments
-
-            ![](/img/inventory/warehouse-management/warehouse/0003.png)
-
-            ###### 1. Incomming Shipments
-
-            Select the method for receiving goods based on your operational complexity:
-
-            - **Receive Directly (1 step)** — `Vendor` ‣ `Stock`. Best for simple, fast receiving without staging.
-            - **Input then Stock (2 steps)** — `Vendor` ‣ `Input` ‣ `Stock`. Ideal for staging or counting items before final storage.
-            - **Input, Quality, then Stock (3 steps)** — `Vendor` ‣ `Input` ‣ `Quality` ‣ `Stock`. Essential if your process requires a formal quality inspection.
-
-            ###### 2. Outgoing Shipments
-
-            Choose how products are dispatched to customers:
-
-            - **Deliver Directly (1 step)** — Ship directly from stock to the customer.
-            - **Output then Deliver (2 steps)** — `Stock` ‣ `Output` ‣ `Customer`. Move goods to a staging area for order consolidation before shipping.
-            - **Pack, Output, then Deliver (3 steps)** — `Stock` ‣ `Pack` ‣ `Output` ‣ `Customer`. Best for workflows requiring a dedicated packing phase.
-
-            ---
-
-            ###### Step 5 — Resupply *(Optional)*
-
-            Define how the system should replenish stock when levels are low:
-
-            ![](/img/inventory/warehouse-management/warehouse/0004.png)
-
-            **Buy to Resupply** — When checked, MAQSU will automatically generate Purchase Orders to replenish stock from suppliers.
-
-            ---
-
-            ###### Step 6 — Save
-            Click **Save** to apply your configurations. Your warehouse is now active and will dictate the movement paths for all inventory transactions.
-
-      - link: /locations
-        title: Locations
-        body: |
-           Location is a specific place inside a warehouse where items are stored. It can be a shelf, bin, or any defined area that helps organize inventory within the warehouse. In MAQSU ERP, you can set up and manage locations to optimize your warehouse organization and improve inventory tracking.
-
-           #### Enable Storage Location
-
-           Before we track location in MAQSU, we need to make sure the storange location feature is turned on. To enable it, we're just go to click on **Configuration** under **Inventory** and then click on **Settings**.
-
-            ![](/img/inventory/warehouse-management/location/0001.png)
-
-             And then you 're going to scroll to the very bottom to our warehouse section.
-
-            ![](/img/inventory/warehouse-management/location/0002.png)
-
-            And here we just want to make sure that the **Storage Location** feature is ticked and enabled. So just click on the checkbox and then click on the save button.
-
-
-            ---
-
-            #### Setup a Location
-
-            Now we have enabled the storage location feature in MAQSU, we can start to set up the locations for our warehouses.
-
-            ![](/img/inventory/warehouse-management/location/0003.png)
-
-            To set up locations, we need to click on the **Locations** link directly under **Storage Location** or we could click back to **Locations** under the Configuration menu. Both of these will take us to the same page where we can manage our locations.
-
-            ![](/img/inventory/warehouse-management/location/0004.png)
-
-            This page will show you all the locations that you have set up in my database. Every location with location type is considered as a storage location.
-
-            ![](/img/inventory/warehouse-management/location/0005.png)
-
-            To create a new location, please follow the steps below:
-
-            ###### Step 1 — Create
-
-              click on the **Create** button at the top left. This will open a new form where you can fill in the details of the location.
-
-            ![](/img/inventory/warehouse-management/location/0006.png)
-
-              1. **Location Name** *(Required)* — The name of the location (e.g., Shelf A1, Bin B2).
-              2. **Parent Location** *(Optional)* — If this location is a sub-location of another, select the parent location here.
-              3. **Location Type** *(Required)* — Choose the type of location (e.g., Vendor Location, Internal Location, Customer Location, Transit Location ) to define its role in inventory operations. Right now  we just keep it as "Internal Location" for the storage location.
-              4. **Is a Scrap Location** *(Optional)* — If this location is designated for scrapped or damaged goods, check this box to categorize it accordingly.
-              5. **Is a Return Location** *(Optional)* — If this location is designated for returned goods, check this box to categorize it accordingly.
-              6. **Remove Strategy** *(Optional)* — Define the default method for removing items from this location (e.g., FIFO, LIFO, FEFO) to optimize inventory turnover and reduce waste.
-
-              ![](/img/inventory/warehouse-management/location/0007.png)
-
-              Example: If you have a parent location named "WH/Stock/Shelf 2", you might create locations like "Music", "Bin B2", and "Pallet C3" under that warehouse.
-
-              ###### Step 2 — Save
-
-              After filling in the required and optional fields, click **Save** to create the new location.
-              ![](/img/inventory/warehouse-management/location/0008.png)
-
-               Now the location will now be available for use in inventory operations. You can assign products to this location, track inventory levels, and manage stock movements to and from this location as needed.
-
-      - link: /putaway-rules
-        title: Putaway Rules
-        body: |
-          Putaway rules define where incoming products should be stored inside your warehouse. They help keep inventory organized, reduce picking time, and improve space usage by automatically assigning products to suitable locations.
-
-          In MAQSU ERP, putaway rules are used to automate location assignment during receiving operations.
-
-          To set up a putaway rule, follow the steps below:
-
-          ###### Step 1 — Navigation
-
-          Go to **Inventory ‣ Configuration ‣ Putaway Rules**. This page will show you all existing putaway rules in your system. If no rules have been created yet, you'll see an empty state with the message:
-          ![](/img/inventory/warehouse-management/putaway-rules/0001.png)
-
-          ###### Step 2 — Create
-
-          Click the **Create** button to add a new putaway rule.
-          ![](/img/inventory/warehouse-management/putaway-rules/0002.png)
-
-          ###### Step 3 — Configure Rule Details
-
-          Fill in the key fields:
-
-          1. **Rule Name** — Enter a clear name for the rule (e.g., `Heavy Items to Ground Rack`).
-          2. **Product Category** — Select the category this rule applies to.
-          3. **When Product Arrives In** — Select the source or arrival location that triggers this rule.
-          4. **Store To** — Select the destination location where matching products should be stored.
-
-          ![](/img/inventory/warehouse-management/putaway-rules/0003.png)
-
-          ###### Step 4 — Save
-
-          Click **Save** to activate the rule.
-
-          Once saved, MAQSU will automatically suggest or assign the configured destination location for products that match the rule criteria, making warehouse operations faster and more consistent.
   - link: stock-transfers#stock-transfers
     uid: stock-transfers
     title: Operation Transfers
@@ -390,10 +200,6 @@ groupSections:
           Always compare the "Source Document" (e.g., NPO-260005) against the vendor's physical packing slip before clicking Validate to ensure 100% inventory accuracy.
           </Noted>
 
-          ---
-
-          For details on moving items between internal warehouse locations, see the [Internal Transfers Guide](/inventory/internal-transfers).
-
       - link: /internal-transfers
         title: Internal Transfers
         body: |
@@ -402,6 +208,8 @@ groupSections:
               <Noted type="info" title="Note" image="/img/icon/notes.png">
               Internal transfers are used to move stock between your own locations, such as from one warehouse to another, or from stock to a quality control area. These transfers maintain accurate inventory levels across all locations and ensure proper traceability of product movements.
               </Noted>
+
+              ---
 
               ##### Step 1 — Navigation
 
@@ -463,6 +271,8 @@ groupSections:
               The source and destination locations must be different. You cannot transfer products from a location to itself. Ensure you select the correct source and destination to maintain accurate inventory tracking across your warehouses.
               </Noted>
 
+              ---
+
               ##### Step 5 — Add Products to Transfer
 
               Under the **Detailed Operations** tab, add the products that need to be moved between locations. The system may auto-populate products if this transfer was created from another document, or you can add them manually.
@@ -493,11 +303,15 @@ groupSections:
               Verify that all product codes, quantities, and locations are correct before proceeding. Internal transfers affect inventory levels in both the source and destination locations, so accuracy is essential for proper stock management.
               </Noted>
 
+              ---
+
               ##### Step 6 — Save the Internal Transfer
 
               After completing all required fields and adding product lines, click **Save** to save the internal transfer. At this stage, the transfer remains in **Draft** status and can still be edited or cancelled.
 
               The **Save** button is located at the top-left of the form.
+
+              ---
 
               ##### Step 7 — Click Validate to Confirm the Transfer
 
@@ -519,6 +333,8 @@ groupSections:
               <Noted type="info" title="Note" image="/img/icon/notes.png">
               After validation, you can no longer freely edit the transfer. If you need to make changes, you may need to use the "Unreserve" button to return to Draft status, or create a new transfer for corrections.
               </Noted>
+
+              ---
 
               ##### Step 8 — Update Done Quantities and Complete the Transfer
 
@@ -548,6 +364,8 @@ groupSections:
             Delivery orders are typically created after confirming a sales order or quotation. They serve as the link between order management and inventory, ensuring products are properly allocated and shipped to customers. Accurate delivery processing is vital for customer satisfaction and inventory control.
             </Noted>
 
+            ---
+
             ##### Step 1 — Navigation
 
             From the left sidebar, click **Inventory**. Then from the Dashboard, locate and click on the **Delivery Orders** card in the inventory operations section.
@@ -572,12 +390,15 @@ groupSections:
 
             ![](/img/inventory/delivery-orders/0002.png)
 
+            ---
+
             ##### Step 2 — Click Create
 
             Click the **Create** button at the top-left of the Delivery Orders list page to open a new blank delivery order form.
 
             ![](/img/inventory/delivery-orders/0003.png)
 
+            ---
 
             ##### Step 3 — Fill Out the Delivery Order Form
 
@@ -601,6 +422,7 @@ groupSections:
 
             Once you fill in the delivery address and other header details, the form will update to show the selected information.
 
+            ---
 
             ##### Step 4 — Add Products
 
@@ -624,6 +446,7 @@ groupSections:
             Carefully verify that all quantities are correct before validating the delivery. The "Reserved" quantity shows what should be shipped, while the "Done" quantity tracks what has actually been picked and prepared.
             </Noted>
 
+            ---
 
             ##### Step 6 — Save the Delivery Order
 
@@ -631,7 +454,9 @@ groupSections:
 
             ![](/img/inventory/delivery-orders/0006.png)
 
-            ##### Step 7 — Click Validate to Confirm Availability
+            ---
+
+            ##### Step 7 — Validate
 
             Once you have reviewed the delivery order, click the **Validate** button to check product availability and reserve the quantities. This will:
 
@@ -646,6 +471,8 @@ groupSections:
             ![](/img/inventory/delivery-orders/0007.png)
 
             After validation, the delivery order cannot be edited unless you unreserve it first. The **Done** column becomes editable, allowing you to track the actual picked quantities.
+
+            ---
 
             ##### Step 8 — Update Done Quantities and Complete Delivery
 
@@ -677,10 +504,13 @@ groupSections:
                 Batch transfers help improve operational efficiency by grouping transfers that should be done together, assigning them to specific team members, or scheduling them for coordinated execution. This is particularly useful for warehouse operations that involve multiple related movements or when managing workload distribution among staff.
               </Noted>
 
+              To create a batch transfer, let's go through the step-by-step process:
+
+              ---
 
               ##### Step 1 — Navigation
 
-              From the left sidebar, click **Inventory**. From the Dashboard, hover over the **Transfers** menu and click on **Batch Transfers** from the dropdown menu.
+              Navigate to **Inventory** ‣ **Operations** ‣ **Batch Transfers** from the top navigation menu.
 
               ![](/img/inventory/batch-transfers/0001.png)
 
@@ -701,7 +531,9 @@ groupSections:
               - **Status** – Draft, In Progress, or Done
               - **Transfer Count** – Number of transfers included in the batch
 
-              ##### Step 2 — Create a New Batch Transfer
+              ---
+
+              ##### Step 2 — Create
 
               Click the **Create** button at the top-left of the Batch Transfers page to open a new blank batch transfer form.
 
@@ -732,8 +564,9 @@ groupSections:
 
               ![](/img/inventory/batch-transfers/0005.png)
 
+              ---
 
-              ##### Step 5 — Select Transfers from the Dialog
+              ##### Step 5 — Select Transfers
 
               A modal dialog titled **"Add: Transfers"** will appear, showing all available transfer operations that can be added to the batch. The dialog displays a searchable, filterable list of transfers with the following information:
 
@@ -753,6 +586,8 @@ groupSections:
               <Noted type="info" title="Important" image="/img/icon/notes.png">
               Only transfers that are not already assigned to another batch can be added. Transfers that are already part of a batch will either be filtered out or clearly marked. You can group different types of transfers (receipts, deliveries, internal transfers) in the same batch if they need to be processed together.
               </Noted>
+
+              ---
 
               ##### Step 6 — Review Selected Transfers
 
@@ -834,6 +669,10 @@ groupSections:
 
             This section will guide you through the process of creating and managing inventory adjustments. It will cover the different types of adjustments, how to create and validate them, and how to manage and track adjustments over time.
 
+            To make an adjustment, let's follow the steps below:
+
+            ---
+
             ##### Step 1 — Navigation
 
             From the Inventory Dashboard, click on **Inventory** in the left sidebar. Then hover over the **Adjustments** menu section and click on **Inventory Adjustments** from the dropdown menu.
@@ -849,11 +688,15 @@ groupSections:
 
             Both adjustments have been completed and their status shows as **Validated**, meaning the inventory changes have been applied to the system.
 
+            ---
+
             ##### Step 2 — Create
 
             Click the **Create** button at the top-left of the Inventory Adjustments list page to open a new blank adjustment form.
 
             ![](/img/inventory/adjustments/0003.png)
+
+            ---
 
             ##### Step 3 — Fill Out the Form
 
@@ -893,6 +736,8 @@ groupSections:
             Setting **Counted Quantities** to **Default to stock on hand** is useful for cycle counts where most items match and you only need to correct discrepancies. Setting it to "Default to zero" is better for full physical counts where you want to enter all counted quantities manually to ensure accuracy.
             </Noted>
 
+            ---
+
             ##### Step 4 — Start Inventory
 
             After configuring the locations, products, and options, click the **Start Inventory** button to generate the adjustment lines. This will:
@@ -906,11 +751,15 @@ groupSections:
 
             Alternatively, you can click **Start Scan** to use barcode scanning to add products to the adjustment. This is useful for mobile barcode counting workflows.
 
+            ---
+
             ##### Step 5 — Review the Lines Tab
 
             After starting the inventory, switch to the **Lines** tab to see all products that need to be counted. The Lines tab displays a table with the following columns:
 
             ![](/img/inventory/adjustments/0009.png)
+
+            ---
 
             ##### Step 6 — Enter Counted Quantities
 
@@ -918,6 +767,8 @@ groupSections:
             <Noted type="warning" title="Important" image="/img/icon/notes.png">
             Enter only the actual counted quantity, not the difference. The system will automatically calculate the adjustment needed. For example, if the system shows 10 pieces but you counted 8, enter "8" in the Counted column. The system will calculate a difference of -2 and reduce inventory by 2 pieces.
             </Noted>
+
+            ---
 
             ##### Step 7 — Review Differences
 
@@ -939,11 +790,15 @@ groupSections:
 
             Scraping a product in MAQSU allows you to write off damaged or expired goods. Scraping a product involves creating a new product with the **Is a Scrap Product?** checkbox enabled. This will automatically set the product as a scrap product. Let's follow the steps below:
 
+            ---
+
             ##### Step 1 — Navigation
 
             To scrap a product, you need to navigate to the Scrap menu available under the Inventory menu. A new window will open as shown below. This is where you can scrap a product.
 
             ![](/img/inventory/scrap/0004.png)
+
+            ---
 
             ##### Step 1 — Create
 
@@ -951,11 +806,15 @@ groupSections:
 
             ![](/img/inventory/scrap/0005.png)
 
+            ---
+
             ##### Step 1 — Choose product
 
             In the new scrap form, select the **Product** to scrap, enter the **Quantity**, then confirm the **Source Location** and **Scrap Location**. After completing these fields, click **Save** and then **Validate** to confirm the scrap operation.
 
             ![](/img/inventory/scrap/0006.png)
+
+            ---
 
             ##### Step 1 — View Report
 
@@ -967,11 +826,9 @@ groupSections:
               Scrapped quantity is removed from usable stock, so those units cannot be sold. You can still purchase the same product again, and newly purchased units can be sold normally.
             </Noted>
 
-            ---
+            ### Batch Scrap
 
-             ### Batch Scrap
-
-             Use **Batch Scrap** when you need to scrap multiple products (or multiple lines) at once instead of creating individual scrap records one by one. This saves time, reduces manual entry mistakes, and keeps write-off operations consistent for audits and inventory reconciliation.
+            Use **Batch Scrap** when you need to scrap multiple products (or multiple lines) at once instead of creating individual scrap records one by one. This saves time, reduces manual entry mistakes, and keeps write-off operations consistent for audits and inventory reconciliation.
 
 
             ![](/img/inventory/scrap/0008.png)
@@ -1058,11 +915,15 @@ groupSections:
           Verify that **Min Quantity** is lower than **Max Quantity** and that lead-time values are realistic for your supplier.
         </Noted>
 
+        ---
+
         ###### Step 4 — Run scheduler
 
         ![](/img/inventory/reordering-rules/0005.png)
 
         Click **Run the scheduler** to trigger reordering immediately instead of waiting for the automatic schedule. The system evaluates active reordering rules and creates draft purchase orders for eligible products.
+
+        ---
 
         ###### Step 5 — Review RFQ and confirm
 
@@ -1108,17 +969,19 @@ groupSections:
 
           Activate lot and serial number tracking to gain full traceability of products from receipt to delivery
 
-            To enable Lots & Serial Number, please following these steps:
+          To enable Lots & Serial Number, please following these steps:
 
-            ![](/img/inventory/traceability/0001.png)
+          ![](/img/inventory/traceability/0001.png)
 
-              1. From the left sidebar, click **Settings** (gear icon)
-              2. In the **Settings** menu, select **Inventory** from the left navigation panel
-              3. Locate traceability section, by scroll down to the **Traceability** section on the Inventory Settings page. This section contains all options related to product tracking and traceability.
-              4. Find the **Lots and Serial Numbers** checkbox in the Traceability section
-              5. Click the checkbox to enable this feature
+          1. From the left sidebar, click **Settings** (gear icon)
+          2. In the **Settings** menu, select **Inventory** from the left navigation panel
+          3. Locate traceability section, by scroll down to the **Traceability** section on the Inventory Settings page. This section contains all options related to product tracking and traceability.
+          4. Find the **Lots and Serial Numbers** checkbox in the Traceability section
+          5. Click the checkbox to enable this feature
 
-              After activating this feature, you will get the **Lots/Serial Numbers** option under the **Products** menu.
+          After activating this feature, you will get the **Lots/Serial Numbers** option under the **Products** menu.
+
+          ---
 
           ##### Step 2 — Configure Product
 
@@ -1148,12 +1011,14 @@ groupSections:
           ---
 
           ##### Step 3 — Open Transfers
+
           Navigate to **Inventory** ‣ **Operations** ‣ **Transfers**, which displays all stock movements, including receipts and deliveries. This is the central hub for managing inventory operations.
           ![](/img/inventory/traceability/operations/0001.png)
 
           ---
 
           ##### Step 4 — Create a New Receipt
+
           Click **Create** to start a new transfer.
           ![](/img/inventory/traceability/operations/0002.png)
           Use an operation type like **Goods Receipts** when you are receiving stock from a vendor.
@@ -1161,6 +1026,7 @@ groupSections:
           ---
 
           ##### Step 5 —  Select Operation Type
+
           Fill in the header fields such as **Receive From**, **Operation Type**, and **Destination Location**.
           The header defines where stock is coming from and where it will be stored.
           ![](/img/inventory/traceability/operations/0003.png)
@@ -1168,6 +1034,7 @@ groupSections:
           ---
 
           ##### Step 6 — Add Products and Demand
+
           In the **Operations** tab, click **Add a line**, select the product, and enter the expected quantity in **Demand**.
           **Demand** is the planned quantity; you will confirm the actual received quantity later.
           ![](/img/inventory/traceability/operations/0004.png)
@@ -1281,6 +1148,7 @@ groupSections:
             ---
 
             ##### Step 2 — Assign Owner
+
             While receiving products in your inventory, you can assign an owner to them with this feature. Let’s create a receipt for the consignment stock and assign an owner for the stock.
             ![](/img/inventory/traceability/consignments/0002_1.png)
 
@@ -1344,51 +1212,6 @@ groupSections:
             - Inventory tracked by total quantity only
             - Use for: Low-value items, consumables, commodities
             - Example: Office supplies, packaging materials
-
-            ---
-
-            #### Receiving Products with Traceability from Purchase module
-
-            Learn how to assign lot numbers or serial numbers to products when receiving them from vendors, ensuring complete traceability from receipt through delivery.
-
-            Before you can assign lots/serial numbers during receiving:
-
-            - **Enabled Lots and Serial Numbers:** "Lots and Serial Numbers" must be enabled in Inventory Settings
-            - **Product Configuration:** The product must be configured for lot or serial number tracking in its product settings
-            - **Purchase Order:** A confirmed purchase order must exist for the products being received
-            - **User Permissions:** You must have permission to validate inventory receipts
-
-
-            <Noted type="info" title="Note" image="/img/icon/notes.png">
-              Assigning lot or serial numbers during receiving is a critical step in maintaining product traceability. This process creates the foundation for tracking products throughout your supply chain, from vendor to customer.
-            </Noted>
-
-            ![](/img/inventory/traceability/assign-lots/0001.png)
-            Open the purchase order you want to receive (e.g., P00001). This status indicates that the purchase order is confirmed and ready for receipt.   Here, you will get a smart button to manage the Receipt of the purchase. Click this button.
-
-            ![](/img/inventory/traceability/assign-lots/0002.png)
-            Click the **detailed operations icon** (≡) on the far right of the product line
-
-            ![](/img/inventory/traceability/assign-lots/0003.png)
-            Here, you can specify the Lot/Serial number in the corresponding fields using the **Add a Line** button. Click the **Confirm** button.
-
-            ![](/img/inventory/traceability/assign-lots/0004.png)
-            Now, you can **validate** the receipt and receive the product in your inventory. This lot/serial number will be added to the product details window of this newly purchased product.
-
-            ![](/img/inventory/traceability/assign-lots/0005.png)
-             After validation, you get to see **Receipt Status** Changes to "Done" (shown in status bar), click the **Traceability** button (↑↓ icon) in the top right to view reports.
-
-            ![](/img/inventory/traceability/assign-lots/0006.png)
-             The Traceability Report will open, showing:
-             - **Reference:** WH/IN/00004
-             - **Product:** [00001] Buger
-             - **Date:** 18/03/2026 13:42:11
-             - **Lot/Serial #:** SN-000003 (or whatever you assigned)
-             - **From:** Vendors
-             - **To:** Stock
-             - **Quantity:** 5.00 Units
-
-             This report provides a complete audit trail of the product movement.
 
   - link: reporting#reporting
     uid: reporting
@@ -1664,6 +1487,313 @@ groupSections:
 
           * **Audit Trail**: It lists specific products alongside their Location (e.g., WH/Stock) and the exact Date and time the inventory was recorded.
           * **Reference**: Each entry is tagged with a reference (e.g., "Inventory"), indicating it is part of a formal counting or validation process.
+  - link: 'configurations#configurations'
+    uid: configurations
+    title: Configuration
+    date: '2026-02-23T09:51:49.000Z'
+    body: |
+      The **Configurations** section in the Inventory module allows you to manage settings that affect how inventory is tracked, valued, and reported. This includes defining currencies for inventory transactions, setting up costing methods, and configuring traceability options such as lot and serial number tracking.
+
+    breadcrumbs:
+      - link: /
+        title: All Categories
+        body: ''
+      - link: /accounting
+        title: Accounting
+        body: ''
+      - link: ''
+        title: Configuration
+        body: ''
+    sections:
+
+      - link: /warehouse
+        title: Warehouse
+        body: |
+
+            A **warehouse** in inventory refers to a physical place where goods or materials are stored before they are sold, distributed, or used in production.
+
+            In **MAQSU**, a warehouse is a digital representation of your physical storage facility, allowing you to accurately track, manage, and optimize your inventory. Now let's set up a warehouse for efficient inventory management.
+
+            ---
+
+            To setup a warehouse, please following these step:
+
+            ###### Step 1  — Navigation
+
+            Navigate to **Inventory ‣ Configuration ‣ Warehouses**, where you can view and manage all active warehouses in your system.
+
+            ![](/img/inventory/warehouse-management/warehouse/0001.png)
+
+            If you already have warehouses configured, this screen will display a list of all active ones. To modify an existing warehouse, simply click on the desired entry to edit its details. Otherwise, you can create a new warehouse by clicking the **Create** button.
+
+            ---
+
+            ###### Step 2 — Define Basic Information
+
+            ![](/img/inventory/warehouse-management/warehouse/0002.png)
+
+            1. **Warehouse Name** – The full descriptive name for reports (e.g., Main Warehouse - Phnom Penh).
+            2. **Short Name** – A concise internal code used for stock locations and references (e.g., WH-01).
+            3. **Address** – Link the warehouse to a specific company address to ensure correct details appear on delivery slips and logistics paperwork.
+
+            ---
+
+            ###### Step 3 — Define Shipments
+
+            ![](/img/inventory/warehouse-management/warehouse/0003.png)
+
+            ###### 1. Incomming Shipments
+
+            Select the method for receiving goods based on your operational complexity:
+
+            - **Receive Directly (1 step)** – `Vendor` ‣ `Stock`. Best for simple, fast receiving without staging.
+            - **Input then Stock (2 steps)** – `Vendor` ‣ `Input` ‣ `Stock`. Ideal for staging or counting items before final storage.
+            - **Input, Quality, then Stock (3 steps)** – `Vendor` ‣ `Input` ‣ `Quality` ‣ `Stock`. Essential if your process requires a formal quality inspection.
+
+            ###### 2. Outgoing Shipments
+
+            Choose how products are dispatched to customers:
+
+            - **Deliver Directly (1 step)** – Ship directly from stock to the customer.
+            - **Output then Deliver (2 steps)** – `Stock` ‣ `Output` ‣ `Customer`. Move goods to a staging area for order consolidation before shipping.
+            - **Pack, Output, then Deliver (3 steps)** – `Stock` ‣ `Pack` ‣ `Output` ‣ `Customer`. Best for workflows requiring a dedicated packing phase.
+
+            ---
+
+            ###### Step 5 — Resupply *(Optional)*
+
+            Define how the system should replenish stock when levels are low:
+
+            ![](/img/inventory/warehouse-management/warehouse/0004.png)
+
+            **Buy to Resupply** — When checked, MAQSU will automatically generate Purchase Orders to replenish stock from suppliers.
+
+            ---
+
+            ###### Step 6 — Save
+            Click **Save** to apply your configurations. Your warehouse is now active and will dictate the movement paths for all inventory transactions.
+
+      - link: /locations
+        title: Locations
+        body: |
+           Location is a specific place inside a warehouse where items are stored. It can be a shelf, bin, or any defined area that helps organize inventory within the warehouse. In MAQSU ERP, you can set up and manage locations to optimize your warehouse organization and improve inventory tracking.
+
+           #### Enable Storage Location
+
+           Before we track location in MAQSU, we need to make sure the storange location feature is turned on. To enable it, we're just go to click on **Configuration** under **Inventory** and then click on **Settings**.
+
+            ![](/img/inventory/warehouse-management/location/0001.png)
+
+             And then you 're going to scroll to the very bottom to our warehouse section.
+
+            ![](/img/inventory/warehouse-management/location/0002.png)
+
+            And here we just want to make sure that the **Storage Location** feature is ticked and enabled. So just click on the checkbox and then click on the save button.
 
 
+            ---
 
+            #### Setup a Location
+
+            Now we have enabled the storage location feature in MAQSU, we can start to set up the locations for our warehouses.
+
+            ![](/img/inventory/warehouse-management/location/0003.png)
+
+            To set up locations, we need to click on the **Locations** link directly under **Storage Location** or we could click back to **Locations** under the Configuration menu. Both of these will take us to the same page where we can manage our locations.
+
+            ![](/img/inventory/warehouse-management/location/0004.png)
+
+            This page will show you all the locations that you have set up in my database. Every location with location type is considered as a storage location.
+
+            ![](/img/inventory/warehouse-management/location/0005.png)
+
+            To create a new location, please follow the steps below:
+
+            ###### Step 1 — Create
+
+              click on the **Create** button at the top left. This will open a new form where you can fill in the details of the location.
+
+            ![](/img/inventory/warehouse-management/location/0006.png)
+
+              1. **Location Name** *(Required)* – The name of the location (e.g., Shelf A1, Bin B2).
+              2. **Parent Location** *(Optional)* – If this location is a sub-location of another, select the parent location here.
+              3. **Location Type** *(Required)* – Choose the type of location (e.g., Vendor Location, Internal Location, Customer Location, Transit Location ) to define its role in inventory operations. Right now  we just keep it as "Internal Location" for the storage location.
+              4. **Is a Scrap Location** *(Optional)* – If this location is designated for scrapped or damaged goods, check this box to categorize it accordingly.
+              5. **Is a Return Location** *(Optional)* – If this location is designated for returned goods, check this box to categorize it accordingly.
+              6. **Remove Strategy** *(Optional)* – Define the default method for removing items from this location (e.g., FIFO, LIFO, FEFO) to optimize inventory turnover and reduce waste.
+
+              ![](/img/inventory/warehouse-management/location/0007.png)
+
+              Example: If you have a parent location named "WH/Stock/Shelf 2", you might create locations like "Music", "Bin B2", and "Pallet C3" under that warehouse.
+
+              ###### Step 2 — Save
+
+              After filling in the required and optional fields, click **Save** to create the new location.
+              ![](/img/inventory/warehouse-management/location/0008.png)
+
+               Now the location will now be available for use in inventory operations. You can assign products to this location, track inventory levels, and manage stock movements to and from this location as needed.
+
+      - link: /putaway-rules
+        title: Putaway Rules
+        body: |
+          Putaway rules define where incoming products should be stored inside your warehouse. They help keep inventory organized, reduce picking time, and improve space usage by automatically assigning products to suitable locations.
+
+          In MAQSU ERP, putaway rules are used to automate location assignment during receiving operations.
+
+          To set up a putaway rule, follow the steps below:
+
+          ###### Step 1 — Navigation
+
+          Go to **Inventory ‣ Configuration ‣ Putaway Rules**. This page will show you all existing putaway rules in your system. If no rules have been created yet, you'll see an empty state with the message:
+          ![](/img/inventory/warehouse-management/putaway-rules/0001.png)
+
+          ###### Step 2 — Create
+
+          Click the **Create** button to add a new putaway rule.
+          ![](/img/inventory/warehouse-management/putaway-rules/0002.png)
+
+          ###### Step 3 — Configure Rule Details
+
+          Fill in the key fields:
+
+          1. **Rule Name** – Enter a clear name for the rule (e.g., `Heavy Items to Ground Rack`).
+          2. **Product Category** – Select the category this rule applies to.
+          3. **When Product Arrives In** – Select the source or arrival location that triggers this rule.
+          4. **Store To** – Select the destination location where matching products should be stored.
+
+          ![](/img/inventory/warehouse-management/putaway-rules/0003.png)
+
+          ###### Step 4 — Save
+
+          Click **Save** to activate the rule.
+
+          Once saved, MAQSU will automatically suggest or assign the configured destination location for products that match the rule criteria, making warehouse operations faster and more consistent.
+
+      - link: /setup-product-categories
+        title: Product Categories
+        body: |
+          **Product Categories** are used to organize your products into a hierarchical structure, allowing for better inventory management, reporting, and financial tracking. Properly categorizing your products ensures that inventory valuation and cost of goods sold are accurately calculated in compliance with local accounting standards.
+
+          <Noted type="info" title="Note" image="/img/icon/notes.png">
+            Proper category configuration is essential for automated accounting and accurate inventory valuation in compliance with local standards.
+          </Noted>
+
+          To set up a new product category, please follow the steps outlined below:
+
+          ---
+
+          ###### Step 1 — Navigation
+
+          Navigate to **Inventory** ‣ **Configuration** ‣ **Product Categories** from the top navigation menu.
+
+          ![](/img/getting-started/product-category/0001.png)
+
+          There you will see a list of all pre-configured product categories. If you want to create a new category, click the **Create** button to open a blank category form.
+
+          ![](/img/getting-started/product-category/0002.png)
+
+          ---
+
+          ###### Step 3 — Create
+
+          Let's create a new one by clicking the **Create** button. This will open a blank form where you can define the properties of the new product category.
+
+          ![](/img/getting-started/product-category/0003.png)
+
+          ---
+
+          ###### Step 4 — Fill in General Information
+
+          Fill in the required information to define how the system should manage products within this category.
+
+          ![](/img/getting-started/product-category/0004.png)
+
+          1. **Name** *(Required)* – provide a clear and descriptive name for the category (e.g., `Office Supplies`, `Music`, `Storable`).
+          2. **Parent Category** *(Optional)* – you have an option to select a parent category to create a hierarchical structure (for example, `Office Supplies` could be a child of `Consumables`).
+          3. **Route** *(Optional)* – Select the default route for products in this category (e.g., **Receive in 1 step** or **Delivery in 1 step**). You can't always see this field, it only appears if you enabled the **Multi-Step Routes** feature in Inventory settings.
+          4. **Force Removal Strategy** *(Optional)* – Defines the specific strategy used to pick items from stock, such as **FIFO** (First In First Out), **LIFO** (Last In First Out), or **FEFO** (First Expiry First Out).
+
+          5. **Costing Method** *(Optional)* – Determines how the cost of products is calculated:
+              * **Standard Price**: Products are valued at a manually fixed cost.
+              * **Average Cost (AVCO)**: Cost is a weighted average of remaining stock and new purchases.
+              * **First In First Out (FIFO)**: Cost is based on the actual price paid for the oldest units.
+          6. **Inventory Valuation** *(Optional)* – Defines how inventory value is recorded.
+              * **Manual**: Periodic manual entries are required to update stock value in accounting.
+              * **Automated**: The system automatically creates journal entries whenever stock moves in or out of the warehouse.
+          7. **Income Account** – The account used to record revenue when a customer is invoiced (e.g., *401100 Sales of Goods*).
+          8. **Expense Account** – The account used to record the cost of the items sold during the transaction (e.g., *501100 Cost of Goods Sold*).
+          9. **Stock Input Account** – A temporary "bridge" account that holds value when goods are received but not yet invoiced.
+          10. **Stock Output Account** – A temporary account that holds value when goods are delivered but the customer hasn't been invoiced yet.
+          11. **Stock Valuation Account** – The balance sheet account representing the current value of your physical inventory (e.g., *107100 Inventory*).
+          12. **Stock Journal** – The specific accounting journal where all automated inventory entries will be recorded (e.g., *Inventory Valuation USD*).
+
+          ---
+
+          ###### Step 6 — Save
+
+          Once all information is filled in, click **Save** to create the new product category.
+
+          ![](/img/getting-started/product-category/0005.png)
+
+          You can now assign products to this category by click on the category and using the **Products** smart button to manage which products belong to this category.
+
+          <Noted type="info" title="Best Practice" image="/img/icon/notes.png">
+          For accurate inventory valuation and financial reporting, ensure that you assign the correct **Costing Method** and **Inventory Valuation** settings based on your business model and local accounting requirements.
+          </Noted>
+
+      - link: /uom
+        title: Units of Measure
+        body: |
+
+          **Units of Measure (UoM)** are used to define how products are quantified in MAQSU ERP. Properly setting up UoMs allows you to manage inventory, sales, and purchasing in the units that make the most sense for your business operations while ensuring accurate conversions and reporting.
+
+          <Noted type="info" title="Note" image="/img/icon/notes.png">
+            MAQSU ERP comes with a set of standard units of measure. You can create custom UoMs to fit your specific product measurement needs, such as boxes, packs, or pieces.
+          </Noted>
+
+          To create a new unit of measure, please follow the steps outlined below:
+
+          ---
+
+          ###### Step 1 — Navigation
+
+          Navigate to **Inventory** ‣ **Configuration** ‣ **Units of Measure** from the top navigation menu.
+
+          ![](/img/getting-started/uom/0001.png)
+
+          Here you see a list of all existing units of measure in the system. To create a new one, click the **Create** button to open a blank UoM form.
+
+          ![](/img/getting-started/uom/0002.png)
+
+          ---
+
+          ###### Step 2 — Create
+
+          Click the **Create** button to open a blank form where you can define the properties of the new unit of measure.
+
+          ![](/img/getting-started/uom/0003.png)
+
+          ---
+
+          ###### Step 3 — Fill out UOM details
+
+          ![](/img/getting-started/uom/0004.png)
+
+          On this form, create the UoM like this:
+
+          1. In **Name**, enter the unit name, for example **Box**, **Pack**, or **Piece**.
+          2. In **Category**, choose the matching category.
+            Units in the same category can be converted into each other.
+          3. In **Type**, choose one of these:
+
+              * **Reference Unit of Measure for this category**: the base unit in that category.
+              * **Bigger than the reference Unit of Measure**: use this when the new UoM is larger than the base unit.
+              * **Smaller than the reference Unit of Measure**: use this when the new UoM is smaller than the base unit.
+          4. Keep **Active** checked if you want to use it immediately.
+          5. Set **Rounding Precision** as needed.
+
+          ---
+
+          ###### Step 3 — Save
+
+          If you want, I can also explain which **Type** to choose for your specific unit. See the expaination [Units of Measure Type](#help-reference)

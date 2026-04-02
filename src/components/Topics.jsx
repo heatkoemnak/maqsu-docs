@@ -28,7 +28,7 @@ export default function Topics({ topics }) {
   const [topicData, setTopicData] = useState([]);
   const [loading, setLoading] = useState(true);
   const categoriesBySlug = globalData?.["categories-data"]?.default?.bySlug ?? {};
-  const itemsPerPage = 10;
+  const itemsPerPage = 12;
   const totalPages = Math.ceil((topics?.groupSections?.length ?? 0) / itemsPerPage);
   const startIndex = (currentPage - 1) * itemsPerPage;
   const currentSlug = topics?.slug || String(location.pathname || "").replace(/^\/+/, "").split("/")[0];

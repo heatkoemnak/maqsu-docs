@@ -247,12 +247,16 @@ groupSections:
 
           Let's create a new customer invoice by following steps down below:
 
+          ---
+
           ###### Step 1 — Create
 
           ![](/img/accounting/invoices/create/0003.png)
           Click the **Create** button at the top-left of the Invoices list page to open a new blank invoice form.
 
           ![](/img/accounting/invoices/create/0004.png)
+
+          ---
 
           ###### Step 2 — Basic information
 
@@ -269,6 +273,7 @@ groupSections:
 
           Once you fill in the customer and other header details, the form will update to show the entered information.
 
+          ---
 
           ###### Step 3 — Add products or services
 
@@ -294,6 +299,8 @@ groupSections:
           - **VAT** – The total tax amount applied.
           - **Total** – The grand total due including taxes.
 
+          ---
+
           ###### Step 5 — Save
 
           <Noted type="info" title="Note" image="/img/icon/notes.png">
@@ -302,6 +309,8 @@ groupSections:
           </Noted>
 
           After completing all required fields, click **Save** to save the invoice as a **Draft**. At this stage the invoice is not yet posted to accounting  -  you can still edit it.
+
+          ---
 
           ###### Step 6 — Post
 
@@ -319,21 +328,23 @@ groupSections:
             Draft status for editing, then re-post it once corrections are made.
           </Noted>
 
-          ***
-
-
+          ---
 
           ### Add Payment
 
           Once the customer gets this invoice, they can check the details and pay the invoice. So now you can record their payment using the **Add Payment** button.
 
-          ###### Step 1 — Click add payment
+          ---
+
+          ###### Step 1 — Add payment
 
           On the posted invoice, click the **Add Payment** button at the top of the invoice form.
 
           ![](/img/accounting/payments/0004.png)
 
-          ###### Step 2 — Add payment detials
+          ---
+
+          ###### Step 2 — Add payment details
 
           MAQSU generates a pop-up window to confirm the details of the payment registration. The window will show the:
 
@@ -347,7 +358,9 @@ groupSections:
 
           You can make changes to the available details if needed. Now, click the **Validate** button. The payment registration can be completed by this step. Once the customer pays the invoice, the status of the invoice can be observed as Paid.
 
-          ###### Step 3 — Verify the Invoice
+          ---
+
+          ###### Step 3 — Verify
 
           After validating, the invoice will be updated immediately. A green **PAID** stamp will appear on the top-right corner of the invoice form, confirming the invoice has been fully settled and the payment has been recorded in your accounting.
 
@@ -562,6 +575,8 @@ groupSections:
 
           This method allows you to create a standalone payment record first and then match it to one or more outstanding invoices. It is useful when you receive a payment from a customer before an invoice is created, or when matching payments to multiple invoices.
 
+          ---
+
           ###### Step 1 — Navigation
 
           From the left sidebar, click **Accounting**. Then from the top navigation menu, go to **Customers** ‣ **Payments**.
@@ -587,7 +602,7 @@ groupSections:
 
           ![](/img/accounting/payments/0009.png)
 
-          ***
+          ---
 
           ###### Step 3 — Fill in the payment detials
 
@@ -643,18 +658,26 @@ groupSections:
 
           ---
 
-          ### Down Payment
+          ### Deposit / Down Payment
 
           In this section we will discuss about the use of down payment. We know down payment is also known as prepayment or the advanced payment made by the customers to the suppliers. So down payment is mainly used to reduce or to cut down the burden of making a high amount of payment to the supplier. So this can be easily manageed in MAQSU. You can use down payment as a fixed amount or  percentage of amount. So let's walk through an example for this.
 
+          ---
+
           ##### Step 1 — Open the invoice
+
           Choose invoice to make down payment. e.g, INV/2026/0006 (Chay Sokly, $132.00). then click the invoice row to open it. Once click on it, it will show the invoice form with button *Add payment*, *Add Credit Note*, and *Reset to Draft*.
 
           ![](/img/accounting/invoices/down-payment/0001.png)
 
+          ---
+
           ##### Step 2 — **Click** Add Payment
+
           At the top of the invoice, click the *Add Payment* button.The invoice must be in Posted status (not Draft). A payment dialog box will appear
           ![](/img/accounting/invoices/down-payment/0002.png)
+
+          ---
 
           ##### Step 3 — Enter partial amount
 
@@ -662,28 +685,10 @@ groupSections:
 
           ![](/img/accounting/invoices/down-payment/0003.png)
 
-          * **Keep Open** — Invoice remains partially unpaid; remaining $66 still owed
-          * **Mark invoice as fully paid** — Writes off the $66 difference; closes the invoice
+          1. **Keep Open** — Invoice remains partially unpaid; remaining $66 still owed
+          2. **Mark invoice as fully paid** — Writes off the $66 difference; closes the invoice
 
           Here is a detailed comparison of both options:Here is the detailed explanation of each option:
-
-          ---
-
-          **Keep open** — choose this when the customer genuinely owes you the remaining $66 and will pay it later. After you validate:
-          - The invoice stays open and shows as partially paid
-          - MAQSU tracks that $66 is still receivable (the customer still owes it)
-          - You can go back to the same invoice and click "Add Payment" again to record the second payment whenever the customer pays
-          - Your accounts receivable balance still includes the $66
-
-          ---
-
-          **Mark invoice as fully paid** — choose this when you decide to forgive or write off the $66, meaning you will never collect it. After you validate:
-          - The invoice is permanently closed and marked as Paid
-          - MAQSU posts the $66 difference to a write-off account (usually a loss or discount expense account)
-          - You cannot go back to collect the $66 anymore — the invoice is done
-          - Use this for situations like: giving a discount after the fact, forgiving a small balance, or recording a bad debt that the customer cannot pay
-
-          ---
 
           <Noted type="info" title="In short" image="/img/icon/tip.png">
             if the money is still expected to come in → **Keep open**. If the money is being forgiven or written off → **Mark as fully paid**.
@@ -738,29 +743,34 @@ groupSections:
 
           ![](/img/accounting/vendor-bills/0002.png)
 
-           1. **Number** - The unique bill number assigned to each record (for example, BILL/2026/0004). Bills still in Draft status display as **/** until they are posted.
-           2. **Reference** - An optional vendor reference or external document number.
-           3. **Bill Date** - The date the bill was issued by the vendor.
-           4. **Vendor** - The supplier who issued the bill.
-           5. **Due Date** - The payment due date based on the selected payment terms.
-           6. **Total** - The total bill amount including taxes.
-           7. **Amount Due** - The remaining outstanding balance to be paid.
-           8. **Status** - The document status, such as **Draft** or **Posted**.
-           9. **Payment** - The payment status, such as **Paid** or **Not Paid**.
+           1. **Number** – The unique bill number assigned to each record (for example, BILL/2026/0004). Bills still in Draft status display as **/** until they are posted.
+           2. **Reference** – An optional vendor reference or external document number.
+           3. **Bill Date** – The date the bill was issued by the vendor.
+           4. **Vendor** – The supplier who issued the bill.
+           5. **Due Date** – The payment due date based on the selected payment terms.
+           6. **Total** – The total bill amount including taxes.
+           7. **Amount Due** – The remaining outstanding balance to be paid.
+           8. **Status** – The document status, such as **Draft** or **Posted**.
+           9. **Payment** – The payment status, such as **Paid** or **Not Paid**.
 
 
           Using the default **Filters**, you can filter bills by Draft, Posted, Canceled, To Check, Unpaid, Paid, Overdue, Bill Date, and Due Date. You can also create custom filters using **Add Custom Filter**.
           In the **Group By** option, you can group bills by Vendor, Status, Bill Date, Due Date, Journal, and other available fields. Use **Add Custom Group** to create your own grouping logic.
           From the view options menu, you can enable or disable list columns such as Bill Date, Due Date, Reference, Journal, Total, Amount Due, Payment Status, and Status.
           ***
+
           ### Create Bill
 
           Let's create a new vendor bill by following steps down below:
 
-           ###### Step 1 — Create
+          ---
+
+          ###### Step 1 — Create
           Click the **Create** button at the top-left of the Bills list page to open a new blank vendor bill form.
 
           ![](/img/accounting/vendor-bills/0003.png)
+
+          ---
 
           ###### Step 2 — Basic information
 
@@ -768,42 +778,48 @@ groupSections:
 
           ![](/img/accounting/vendor-bills/0004.png)
 
-          1. **Vendor** _(Required)_ - Search and select the supplier who issued this bill. Start typing and select the correct entry from the dropdown list.
-          2. **Reference** _(Optional)_ - Enter the vendor's own document or invoice number for cross-referencing.
-          3. **Auto-complete** _(Optional)_ - Select a related purchase order or existing bill to auto-populate bill lines.
-          4. **Bill Date** - The date the bill was issued by the vendor. This defaults to today's date but can be adjusted.
-          5. **Doc. No.** - Automatically generated by the system after saving.
-          6. **Accounting Date** - The date used for accounting purposes and period recognition.
-          7. **Payment Terms** - Select the agreed payment timeframe (for example, Immediate Payment or 30 Days). This determines the due date.
-          8. **Journal** - The accounting journal where the bill will be posted. This defaults to **Vendor Bills (USD)**.
-          9. **Currency** - The currency of the bill based on vendor or document settings.
+          1. **Vendor** _(Required)_ – Search and select the supplier who issued this bill. Start typing and select the correct entry from the dropdown list.
+          2. **Reference** _(Optional)_ – Enter the vendor's own document or invoice number for cross-referencing.
+          3. **Auto-complete** _(Optional)_ – Select a related purchase order or existing bill to auto-populate bill lines.
+          4. **Bill Date** – The date the bill was issued by the vendor. This defaults to today's date but can be adjusted.
+          5. **Doc. No.** – Automatically generated by the system after saving.
+          6. **Accounting Date** – The date used for accounting purposes and period recognition.
+          7. **Payment Terms** – Select the agreed payment timeframe (for example, Immediate Payment or 30 Days). This determines the due date.
+          8. **Journal** – The accounting journal where the bill will be posted. This defaults to **Vendor Bills (USD)**.
+          9. **Currency** – The currency of the bill based on vendor or document settings.
 
           ![](/img/accounting/vendor-bills/0005.png)
 
           Once you fill in the vendor and other header details, the form will update to show the entered information.
 
+          ---
 
-          ###### Step 3 — Add bill lines
+          ###### Step 3 — Add a line
+
           Under the **Invoice Lines** tab, add the products, services, or expenses being billed. Click **Add a line** and fill in the following fields for each line:
 
           ![](/img/accounting/vendor-bills/0006.png)
 
-          1. **Description** - Enter the description of the item, service, or expense being billed.
-          2. **Account** - Select the expense account to classify this bill line (for example, Utility Expenses or Cost of Goods Sold).
-          3. **Quantity** - The number of units for this line.
-          4. **UOM** - The unit of measure for the item.
-          5. **Price** - The unit cost for this line item.
-          6. **Discount** - Enter any percentage discount applied on this line.
-          7. **Subtotal** - Automatically calculated as: **Subtotal = (Quantity x Price) - Discount**.
+          1. **Description** – Enter the description of the item, service, or expense being billed.
+          2. **Account** – Select the expense account to classify this bill line (for example, Utility Expenses or Cost of Goods Sold).
+          3. **Quantity** – The number of units for this line.
+          4. **UOM** – The unit of measure for the item.
+          5. **Price** – The unit cost for this line item.
+          6. **Discount** – Enter any percentage discount applied on this line.
+          7. **Subtotal** – Automatically calculated as: **Subtotal = (Quantity x Price) - Discount**.
+
           At the bottom of the Invoice Lines section, the **Total Summary** shows:
-          - **Untaxed Amount** - The sum of all line subtotals before taxes.
-          - **Total** - The grand total due including taxes.
+              - **Untaxed Amount** – The sum of all line subtotals before taxes.
+              - **Total** – The grand total due including taxes.
           You can also use **Add Multi Products** to add multiple products at once, or **Discount** to apply a global discount across all lines.
+
+          ---
 
           ###### Step 4 — Save
 
           After completing all required fields, click **Save** to save the bill as a **Draft**. At this stage the bill is not yet posted to accounting - you can still edit it.
 
+          ---
 
           ###### Step 5 — Post
 
@@ -844,14 +860,12 @@ groupSections:
 
           1. **Credit Method** – Select one of three options:
 
-            * **Refund** – Creates a partial refund. The credit note is auto-validated and reconciled with the invoice.
-            * **Full Refund** – Creates a complete refund for the entire bill amount (recommended for full refunds).
-            * **Full refund and new draft invoice** – Creates a full refund and simultaneously generates a new draft bill to replace the original.
+              * **Refund** – Creates a partial refund. The credit note is auto-validated and reconciled with the invoice.
+              * **Full Refund** – Creates a complete refund for the entire bill amount (recommended for full refunds).
+              * **Full refund and new draft invoice** – Creates a full refund and simultaneously generates a new draft bill to replace the original.
 
-          2. **Reason** – Enter the reason for issuing the credit note (e.g., "Vendor registered twice in system", "Incorrect billing", "Returned goods").
-
+          2. **Reason** – Enter the reason for issuing the credit note (e.g., "Refund for damaged goods").
           3. **Refund Date** – The date of the credit note. Defaults to the original bill date (24/02/2026).
-
           4. **Use Specific Journal** – (Optional) Select a different journal if needed. By default, it uses the same journal as the original bill.
 
           After filling in all fields, click the **Reverse** button to create the credit note.
@@ -2461,122 +2475,10 @@ groupSections:
 
       The sections below guide you through setup and day-to-day asset operations in a practical sequence.
     sections:
-      - link: /asset-categories
-        title: Asset Categories
-        body: |
-          Before you can start tracking and depreciating fixed assets in MAQSU, you need to set up **Asset Categories**. Asset categories define how different types of assets will be depreciated, which accounts to use, and how depreciation entries will be generated automatically.
-
-          ***
-
-          ##### Step 1 — Navigation
-
-          From the left sidebar, click **Accounting**. Then from the top navigation menu, click **Asset Categories**.
-
-          ![](/img/accounting/asset-categories/0001.png)
-
-          This will open the Asset Categories page where you can view, create, and manage all your asset category templates.
-
-          The asset categories list displays all existing categories in your system:
-
-          ![](/img/accounting/asset-categories/0002.png)
-
-          1. **Asset Category** – The name of the category (e.g., "Computer Equipment", "Office Furniture")
-          2. **Journal** – Which journal is used for depreciation entries for this category
-          3. **Computation Method** – How depreciation is calculated (e.g., "Straight Line", "Declining Balance")
-          4. **Computer Equipment** – Uses Miscellaneous Operations journal with Straight Line depreciation method
-
-          ***
-
-          ##### Step 3 — Click Create
-
-          To create a new asset category, click the **Create** button at the top-left of the Asset Categories list page.
-
-          ![](/img/accounting/asset-categories/0003.png)
-
-          This will open a blank asset category form where you can configure all the settings for your new category.
-
-          ![](/img/accounting/asset-categories/0004.png)
-
-          ***
-
-          ##### Step 4 — Enter Category Name and Depreciation Method
-
-          ![](/img/accounting/asset-categories/0005.png)
-
-          1. **Category Name** — Enter a clear asset type name such as "Computer Equipment", "Office Furniture", or "Vehicles".
-
-          2. **Computation Method**
-
-              - **Straight Line** - Uses equal depreciation each period and is best for most standard business assets.
-              - **Declining Balance** - Uses higher depreciation in early periods and is best for assets that lose value quickly.
-              - **Selection** - Choose the method that matches your accounting policy; **Straight Line** is recommended for most cases.
-
-          ***
-
-          ##### Step 5 — Configure Period Type and Depreciation Schedule
-
-          ![](/img/accounting/asset-categories/0006.png)
-
-          1. **Period Type**
-              - **Number of Entries** - Define a fixed count of depreciation entries (common for monthly schedules).
-              - **Ending Date** - Depreciate until a specific target date (useful for leases or planned end dates).
-              - **Yearly** - Create one depreciation entry per year for simpler annual tracking.
-              - **Selection** - Use **Number of Entries** for most standard fixed-asset setups.
-
-          2. **Number of Depreciations** — Enter the total entry count for the full useful life (for example, 60 for 5 years x 12 months).
-
-          3. **Period Interval** — Define how often entries are posted (for example, 1 month for monthly depreciation).
-          ***
-
-          ##### Step 6 — Configure Accounting Section
-
-          ![](/img/accounting/asset-categories/0007.png)
-
-          This section defines which accounting accounts will be used for assets in this category.
-
-          1. **Journal** — Select the journal used for depreciation entries (typically "Miscellaneous Operations (USD)").
-
-          2. **Asset Account** — Select the fixed-asset balance sheet account that records the original asset cost.
-
-          3. **Depreciation Account** — Select the accumulated depreciation contra-asset account that reduces net asset value.
-
-          4. **Expense Account** — Select the income-statement expense account where periodic depreciation is recognized.
-
-          ***
-
-          ##### Step 7 — Configure Automation Options
-
-          ![](/img/accounting/asset-categories/0008.png)
-
-          1. **Auto-Confirm Assets** — Enable to confirm assets automatically at creation time, or disable to keep manual review.
-
-          2. **Group Journal Entries** — Enable to combine depreciation for multiple assets into one entry per period.
-
-          3. **Depreciation Date** — Choose **Manual (Defaulted on Purchase Date)** for flexibility or **Automatic** for system-driven start dates.
-
-          4. **Accounting Date** — Choose **On Actual Run Date** or **On Depreciation Date** based on posting policy.
-
-          ***
-
-          ##### Step 8 — Save
-
-          Once you've configured all settings, click the **Save** button at the top-left of the form.
-
-          ![](/img/accounting/asset-categories/0009.png)
-
-          <Noted type="info" title="After Saving" image="/img/icon/notes.png">
-          The category is now available for use when creating assets
-          - You can create assets and assign them to this category
-          - Depreciation will be calculated automatically based on these settings
-          - You can edit the category later if needed (affects new assets only)
-          </Noted>
 
       - link: /purchase-asset
         title: Purchase an Asset
         body: |
-          Record fixed assets like computer equipment, furniture, vehicles, or machinery to track expenses and depreciation.
-          **Recording a Purchase in MAQSU:**
-
           When you purchase an asset in MAQSU ERP, you create a vendor bill and assign an **Asset Category** to the line item. The system automatically:
 
           1. **Accounts Payable** — Records the purchase as a payable amount to the vendor.
@@ -2607,7 +2509,7 @@ groupSections:
 
           ***
 
-          ##### Step 3 — Click Create
+          ##### Step 3 — Create
 
           Click the **Create** button at the top-left of the Bills page to open a new vendor bill form.
 
@@ -2617,19 +2519,21 @@ groupSections:
 
           ***
 
-          ##### Step 4 — Fill in Bill Header Information
+          ##### Step 4 — Fill Out Bill Header
+
+           In the bill header, fill out the following fields to provide the necessary information about the purchase:
 
           ![](/img/accounting/purchase-asset/0004.png)
 
-          1. **Vendor** — Select the supplier for this asset purchase to ensure correct accounts payable tracking.
-          2. **Reference** — Enter a short purchase description (for example, asset type, model, and terms).
-          3. **Bill Date** — Use the date shown on the vendor invoice.
-          4. **Doc No.** — Keep auto numbering unless your process requires a custom sequence.
-          5. **Accounting Date** — Set the posting date for accounting books (usually same as bill date).
-          6. **Payment Terms** — Select due terms (for example, Immediate, Net 30, Net 60) to auto-calculate due date.
-          7. **Journal** — Keep the default vendor bills journal unless you need a special journal.
-          8. **Currency** — Select the bill currency and apply exchange rates when needed.
-          9. **Auto-complete** — Use only when linking from an existing PO or prior document; otherwise leave blank.
+          1. **Vendor** – Select the supplier for this asset purchase to ensure correct accounts payable tracking.
+          2. **Reference** – Enter a short purchase description (for example, asset type, model, and terms).
+          3. **Bill Date** – Use the date shown on the vendor invoice.
+          4. **Doc No.** – Keep auto numbering unless your process requires a custom sequence.
+          5. **Accounting Date** – Set the posting date for accounting books (usually same as bill date).
+          6. **Payment Terms** – Select due terms (for example, Immediate, Net 30, Net 60) to auto-calculate due date.
+          7. **Journal** – Keep the default vendor bills journal unless you need a special journal.
+          8. **Currency** – Select the bill currency and apply exchange rates when needed.
+          9. **Auto-complete** – Use only when linking from an existing PO or prior document; otherwise leave blank.
           ***
 
           ##### Step 5 — Add Invoice Line with Asset Category
@@ -2640,16 +2544,16 @@ groupSections:
 
           In the **Invoice Lines** tab, use these fields:
 
-          1. **Product (Optional)** — Select an existing product if the asset is tracked in inventory.
-          2. **Description** — Enter a clear asset description including model or identifying details.
-          3. **Asset Category (Critical)** — Select the fixed-asset category so MAQSU applies depreciation and asset accounting.
-          4. **Account** — Confirm the line uses the correct asset account instead of an expense account.
-          5. **Quantity** — Enter units purchased (for example, 1.00 or 5.00 for identical assets).
-          6. **UOM** — Choose the matching unit of measure (for example, Units, Each, Pieces).
-          7. **Price** — Enter unit price before taxes.
-          8. **Discount** — Enter line discount if applicable.
-          9. **Taxes** — Apply the correct purchase tax profile.
-          10. **Subtotal** — Review auto-calculated pre-tax line total (Quantity x Price - Discount).
+          1. **Product (Optional)** – Select an existing product if the asset is tracked in inventory.
+          2. **Description** – Enter a clear asset description including model or identifying details.
+          3. **Asset Category (Critical)** – Select the fixed-asset category so MAQSU applies depreciation and asset accounting.
+          4. **Account** – Confirm the line uses the correct asset account instead of an expense account.
+          5. **Quantity** – Enter units purchased (for example, 1.00 or 5.00 for identical assets).
+          6. **UOM** – Choose the matching unit of measure (for example, Units, Each, Pieces).
+          7. **Price** – Enter unit price before taxes.
+          8. **Discount** – Enter line discount if applicable.
+          9. **Taxes** – Apply the correct purchase tax profile.
+          10. **Subtotal** – Review auto-calculated pre-tax line total (Quantity x Price - Discount).
 
           <Noted type="warning" title="Important" image="/img/icon/warning.png">
           Without an asset category, MAQSU records the line as expense instead of fixed asset.
@@ -2700,15 +2604,15 @@ groupSections:
 
           ![](/img/accounting/create-asset/0002.png)
 
-          1. **Asset Code** — Unique identifier for each asset (e.g., "LAP-001")
-          2. **Asset Name** — Description of the asset (e.g., "Laptop iBook")
-          3. **Asset Category** — Category assigned (e.g., "Computer Equipment")
-          4. **Date** — Purchase or acquisition date (e.g., "2022-01-01")
-          5. **Vendor** — Supplier (if purchased), with link to original vendor bill
-          6. **Gross Value** — Original cost of the asset (e.g., $2,000.00)
-          7. **Residual Value** — Current book value after depreciation (e.g., $1,500.00)
-          8. **Currency** — USD or other currency (e.g., "USD")
-          9. **Status** — Draft or Running (indicates whether the asset is active and depreciation is being posted)
+          1. **Asset Code** – Unique identifier for each asset (e.g., "LAP-001")
+          2. **Asset Name** – Description of the asset (e.g., "Laptop iBook")
+          3. **Asset Category** – Category assigned (e.g., "Computer Equipment")
+          4. **Date** – Purchase or acquisition date (e.g., "2022-01-01")
+          5. **Vendor** – Supplier (if purchased), with link to original vendor bill
+          6. **Gross Value** – Original cost of the asset (e.g., $2,000.00)
+          7. **Residual Value** – Current book value after depreciation (e.g., $1,500.00)
+          8. **Currency** – USD or other currency (e.g., "USD")
+          9. **Status** – Draft or Running (indicates whether the asset is active and depreciation is being posted)
 
           ***
 
@@ -4398,7 +4302,452 @@ groupSections:
             Monitor the **61-90** and **91-120** buckets closely to avoid late fees and ensure your credit
             standing remains strong with key suppliers.
           </Noted>
+  - link: 'configurations#configurations'
+    uid: configurations
+    title: Configurations
+    date: '2026-02-23T09:51:49.000Z'
+    breadcrumbs:
+      - link: /
+        title: All Categories
+        body: ''
+      - link: /accounting
+        title: Accounting
+        body: ''
+      - link: ''
+        title: Configurations
+        body: ''
+    sections:
+
+      - link: /currencies
+        title: Currencies
+        body: |
+
+          A **Currency** represents the system of money used for recording and valuing transactions in MAQSU ERP (e.g., USD, KHR, EUR).
+
+            <Noted type="info" title="Note" image="/img/icon/tip.png">
+            MAQSU ERP comes with commonly used currencies already available. You can activate existing currencies or create new ones to match the markets where your business operates.
+          </Noted>
+
+          To set up a new currency or manage existing ones, please follow the steps below:
+
+          ---
+
+          ###### Step 1 — Navigation
+
+          Navigate to **Accounting** ‣ **Configuration** ‣ **Currencies** to access the currency management page.
+
+          ![](/img/getting-started/currencies/0001.png)
+
+          ---
+
+          ###### Step 2 — Create
+
+          Click the **Create** button to add a new currency or define a new exchange rate. This opens the currency form where you can define how the currency behaves across accounting transactions and reports.
+
+          ![](/img/getting-started/currencies/0003.png)
+
+          ---
+
+          ###### Step 3 — Fill Out Currency Information
+
+          ![](/img/getting-started/currencies/0004.png)
+
+          1. **Currency Name** – The ISO code or name (e.g., USD, KHR).
+          2. **Currency Unit** – The full name of the primary unit (e.g., Dollar, Riel).
+          3. **Currency Subunit** – The name of the fractional unit (e.g., Cents, Sen).
+          4. **Active** – Ensure this checkbox is selected so the currency is available for use in transactions.
+
+          ---
+
+          ###### Step 4 — Update Exchange Rate
+
+          You can set the exchange rate for this currency relative to your company’s base currency. This is crucial for accurate financial reporting and valuation in the General Ledger.
+
+          ![](/img/getting-started/currencies/0005.png)
+
+          1. Click on the **Rates** smart button at the top of the form.
+          2. Click the **Create** button to add a specific rate.
+
+          ![](/img/getting-started/currencies/0006.png)
+
+          3. Enter the **Rate**: The conversion value (e.g., if 1 USD = 4000 KHR, enter `4000`).
+          4. Enter the **Date**: The effective date for this specific exchange rate (DD-MM-YYYY).
+
+          ---
+
+          ###### Step 5 — Save
+
+          Once all details are verified, click the **Save** button.
+
+          ![](/img/getting-started/currencies/0007.png)
+
+          Now this currency and its exchange rate will be available for use in all financial transactions, ensuring accurate valuations in your General Ledger.
+
+          <Noted type="info" title="Automatic Exchange Rate Update (NBC)" image="/img/icon/tip.png">
+          MAQSU ERP can automatically fetch and update exchange rates based on the **National Bank Currency (NBC)**. This reduces manual data entry and ensures your financial valuations remain accurate and compliant with the latest official rates.
+          </Noted>
+
+      - link: /payment-terms
+        title: Payment Terms
+        body: |
+
+          **Payment Terms** define the conditions under which a customer must pay an invoice or a vendor must be paid for a bill. They specify the due date and the amount that is expected to be paid, which can be based on a percentage of the total or a fixed amount. Properly setting up payment terms ensures that your accounts receivable and accounts payable are managed effectively, improving cash flow and financial planning.
+
+           <Noted type="info" title="Note" image="/img/icon/notes.png">
+            MAQSU ERP comes with standard payment terms like "Net 30" or "Due on Receipt". You can create custom payment terms to fit your specific business needs, such as offering discounts for early payments or defining multi-line terms for partial payments.
+          </Noted>
+
+          To create a new payment term, please follow the steps outlined below:
+
+          ---
+
+          ##### Step 1 — Navigation
+
+          Navigate to **Accounting** ‣ **Configuration** ‣ **Payment Terms** from the top navigation menu.
+
+          ![](/img/getting-started/payment-terms/0001.png)
+
+          Once you navigate to Payment Terms, you will see the master list of all existing Payment Terms. The list displays the following columns:
+
+          ![](/img/getting-started/payment-terms/0001_1.png)
+
+          ---
+
+          ##### Step 2 — Create
+
+          To create a new payment term, click the **Create** button at the top-left of the Payment Terms list page, which will open a new blank payment terms form. This form will allow you to define the conditions under which a customer must pay an invoice or a vendor must be paid for a bill.
+
+          ![](/img/getting-started/payment-terms/0002.png)
+
+          ---
+
+          ##### Step 3 — Complete the Header
+
+          In the Payment Terms form, enter:
+          * **Payment Terms**: a clear name (e.g., `7 Days`, `Net 30`, `50% Advance`).
+          * **Note** (optional): add a short description (for internal reference or for printing, depending on your setup).
+
+          ![](/img/getting-started/payment-terms/0004.png)
+
+          ---
+
+          ##### Step 4 — Define the Terms
+
+          On the **Terms** tab, click **Add a line** and configure one or more lines. Each line represents a due amount and a due date rule.
+
+          ![](/img/getting-started/payment-terms/0005.png)
+
+          **1. Type options**
+          * **Balance**: the remaining amount that is still unpaid.
+          * **Percent**: a percentage of the invoice total.
+          * **Fixed Amount**: a fixed amount in your company currency.
+
+          **2. Due date fields**
+          * **On the**: number used to compute the due date.
+          * **Rule** (dropdown): chooses how the due date is calculated (for example, *days after the invoice date*).
+          * **Specifically on Day #** (optional): forces the due date to a specific day of the month.
+
+          **3. Rule details (dropdown)**
+          * **Days after the invoice date**: sets the due date to *Invoice Date + On the (days)*.
+            Example: Invoice Date **March 17, 2026**, **On the** = `7`. Due Date: **March 24, 2026**.
+          * **Of the current month**: sets the due date within the *same month as the invoice* (commonly used for month-end or fixed day-of-month collections).
+            Example: Invoice Date **March 17, 2026**, **Specifically on Day #** = `25`. Due Date: **March 25, 2026**.
+          * **Of the following month**: sets the due date within the *next month after the invoice month*.
+            Example: Invoice Date **March 17, 2026**, **Specifically on Day #** = `5`. Due Date: **April 5, 2026**.
+
+          <Noted type="info" title="Tip" image="/img/icon/notes.png">
+            If you use **Specifically on Day #**, choose a day between `1` and `31`. If a month does not have that day (for example, `31` in April), MAQSU may adjust the due date. Verify the result on a test invoice.
+          </Noted>
+
+          ---
+
+          ##### Step 5 — Save
+
+          Click **Save** to create the payment term.
+
+          <Noted type="info" title="Where It Shows Up" image="/img/icon/notes.png">
+          Payment terms affect the invoice/bill due dates and the amounts shown in aging reports (Aged Receivable/Aged Payable). For multi-line terms, MAQSU splits the total into multiple due dates.
+          </Noted>
+
+      - link: /taxes
+        title: Taxes
+        body: |
+
+          A **Tax** is a financial charge or levy imposed by a government on sales, purchases, or other transactions. In MAQSU ERP, taxes are configured to ensure that all financial transactions comply with local tax regulations and that the correct tax amounts are calculated.
+
+          <Noted type="info" title="Note" image="/img/icon/notes.png">
+            By default, MAQSU ERP comes pre-configured with standard taxes for sales and purchasing. If your business requires additional or custom tax rates, follow the systematic steps below to define them.
+          </Noted>
+
+          To setup a new tax, please follow the steps outlined below:
+
+          ---
+
+          ###### Step 1 — Navigation
+
+          Navigate to **Accounting** ‣ **Configuration** ‣ **Taxes** to access the Taxes configuration page.
+
+          ![](/img/getting-started/taxes/0001.png)
+
+          ---
+
+          ###### Step 2 — Create
+
+          Click the **Create** button at the top-left of the Taxes list page to open a new blank tax configuration form.
+
+          ![](/img/getting-started/taxes/1.png)
+
+          ---
+
+          ###### Step 3 — Fill Out Tax Information
+
+          Define the properties and behavior of your new tax by filling in the following sections:
+
+          ![](/img/getting-started/taxes/0003.png)
+
+          1. **Tax Name** – The label displayed to users (e.g., VAT - Sales of Goods 10%).
+          2. **Tax Computation** *(Dropdown)* – Controls how MAQSU calculates tax:
+             - **Group of Taxes**: Combines multiple taxes into one selectable tax group.
+             - **Fixed**: Applies a fixed amount per line (not a percentage).
+             - **Percentage of Price**: Calculates tax as a percentage on the untaxed line amount. Example: $100 x 10% = $10 tax.
+             - **Percentage of Price Tax Included**: Treats the entered price as tax-inclusive and extracts the tax portion from it.
+          3. **Tax Scope** *(Dropdown)* – Defines where this tax can be used:
+             - **Sales**: For customer invoices and sales transactions.
+             - **Purchase**: For vendor bills and purchase transactions.
+          4. **E-Filing Type** *(Dropdown, optional)* – Used for electronic tax filing classification based on your local tax authority requirements.
+          5. **Amount** – The numerical tax value (e.g., 10.00 for 10% when using percentage-based computation).
+          6. **Active** – Ensure this is checked so the tax is available for use in transactions.
+
+          ---
+
+          Under **Definition** tab, you can also specify the tax's behavior in different contexts:
+
+           ###### 1. Repartition for Invoices
+
+           This table defines how invoice tax entries are split into accounting lines. Configure two lines as shown:
+
+           * **Line 1: Base**
+             - **%**: leave empty for the base line.
+             - **Based On**: set to **Base**.
+             - **Account**: usually left empty so the untaxed amount follows the product's income account.
+             - **Tax Grids**: optional reporting tag, if required by localization.
+
+           * **Line 2: Tax**
+             - **%**: set to **100.00**.
+             - **Based On**: set to **of tax**.
+             - **Account**: select the tax liability account (e.g., **201900 VAT Output**).
+             - **Tax Grids**: optional reporting tag used for tax reports/e-filing.
+
+          ![](/img/getting-started/taxes/0004.png)
+
+          ###### 2. Repartition for Credit Notes
+
+          This section mirrors the invoice repartition fields and is used when issuing refunds. Use the same structure:
+          * **Line 1: Base** – **Based On = Base** (untaxed amount line).
+          * **Line 2: Tax** – **100.00 of tax** with the same tax account (e.g., **201900 VAT Output**), so tax is reversed correctly on credit notes.
+
+          ![](/img/getting-started/taxes/0005.png)
+
+          ---
+
+          Under **Advanced Options** tab, you can further customize the tax's behavior:
+
+          1. **Label on Invoices** – The specific text that prints on the customer's physical document.
+          2. **Tax Group** – Used to group similar taxes for financial reporting (e.g., VAT 10%).
+          3. **Included in Price** – If unchecked (Tax Exclusive), tax is added on top of the price ($100 + $10). If checked (Tax Inclusive), the tax is extracted from the price.
+          4. **Affect Base of Subsequent Taxes** – Check this to enable **compounding**, where a second tax is calculated on the (Price + first tax).
+
+          ![](/img/getting-started/taxes/0006.png)
+
+          ---
+
+          ###### Step 4 — Save
+
+          After entering all required details, click the **Save** button. Your tax configuration is now active and will be applied throughout the system.
+
+          <Noted type="info" title="Pro Tip" image="/img/icon/notes.png">
+          Completing the Tax Setup accurately is critical for automated accounting. Always double-check your **Tax Name** to avoid discrepancies in your financial statements later.
+          </Noted>
+
+
+      - link: /journals
+        title: Journals
+        body: |
+          **Journals** are the primary organizational units for recording financial transactions in MAQSU ERP. Each journal represents a specific type of transaction (e.g., Sales, Purchases, Cash, Bank) and contains the necessary configuration to ensure that all entries are properly categorized and accounted for in the General Ledger.
+
+           <Noted type="info" title="Note" image="/img/icon/notes.png">
+            MAQSU ERP comes with default journals for common transaction types. You can create additional journals to better organize your financial data or to meet specific reporting requirements.
+          </Noted>
+
+          To create a new journal, please follow the steps outlined below:
+
+          ---
+
+          ###### Step 1 — Navigation
+
+          Navigate to **Accounting** ‣ **Configuration** ‣ **Journals** from the top navigation menu.
+
+          ![](/img/getting-started/journal/0001.png)
+
+          Here you get to see a list of all existing journals in the system, which are used to record different types of financial transactions.
+
+          ![](/img/getting-started/journal/0002.png)
+          ---
+
+          ###### Step 2 — Create
+
+          Click the **Create** button at the top-left of the Journals list page to open a new blank journal configuration form.
+
+          ![](/img/getting-started/journal/0003.png)
+
+          ---
+
+          ###### Step 3 — Basic Information
+
+          Fill in the following required fields at the top of the form:
+
+
+          ![](/img/getting-started/journal/0004.png)
+
+          1. **Journal Name** – Enter a descriptive name for the journal (e.g., `Petty Cash Office`).
+          2. **Type** – Select the journal type from the dropdown. Available types include Sales, Purchase, Cash, Bank, and Miscellaneous.
+              -  **Sales**: Records all customer invoices and accounts receivable.
+              -  **Purchase**: Records all vendor bills and accounts payable.
+              -  **Cash & Bank**: Tracks liquid money movements (deposits, transfers, and petty cash).
+              -  **Miscellaneous**: Used for non-cash entries like depreciation or internal adjustments.
+
+          ---
+
+          ###### Step 4 — Journal Entries
+
+          Under the **Journal Entries** tab, configure the following:
+
+          ![](/img/getting-started/journal/0005.png)
+
+          1. **Short Code** – Enter a short abbreviation for the journal (e.g., `PCO`). This is used as a prefix for journal entry numbers.
+          2. **Next Number** – The sequence number for the next journal entry (defaults to `1`).
+          3. **Default Debit Account** – Select the default account to use for debit entries (e.g., `102002 Petty Cash Office`).
+          4. **Default Credit Account** – Select the default account to use for credit entries (e.g., `102002 Petty Cash Office`).
+          5. **Currency** – Select the currency for this journal (e.g., `USD`).
+
+          ---
+
+          ###### Step 5 — Save
+
+          Click the **Save** button. This journal is now ready to be used in your daily accounting entries and financial reports.
+
+      - link: /asset-categories
+        title: Asset Categories
+        body: |
+          Before you can start tracking and depreciating fixed assets in MAQSU, you need to set up **Asset Categories**. Asset categories define how different types of assets will be depreciated, which accounts to use, and how depreciation entries will be generated automatically.
+
+          To create a new asset category, please follow the steps outlined below:
+
+          ***
+
+          ##### Step 1 — Navigation
+
+          From the left sidebar, click **Accounting**. Then from the top navigation menu, click **Asset Categories**.
+
+          ![](/img/accounting/asset-categories/0001.png)
+
+          This will open the Asset Categories page where you can view, create, and manage all your asset category templates.
+
+          The asset categories list displays all existing categories in your system:
+
+          ![](/img/accounting/asset-categories/0002.png)
+
+          1. **Asset Category** – The name of the category (e.g., "Computer Equipment", "Office Furniture")
+          2. **Journal** – Which journal is used for depreciation entries for this category
+          3. **Computation Method** – How depreciation is calculated (e.g., "Straight Line", "Declining Balance")
+          4. **Computer Equipment** – Uses Miscellaneous Operations journal with Straight Line depreciation method
+
+          ***
+
+          ##### Step 3 — Click Create
+
+          To create a new asset category, click the **Create** button at the top-left of the Asset Categories list page.
+
+          ![](/img/accounting/asset-categories/0003.png)
+
+          This will open a blank asset category form where you can configure all the settings for your new category.
+
+          ![](/img/accounting/asset-categories/0004.png)
+
+          ***
+
+          ##### Step 4 — Enter Category Name and Depreciation Method
+
+          ![](/img/accounting/asset-categories/0005.png)
+
+          1. **Category Name** — Enter a clear asset type name such as "Computer Equipment", "Office Furniture", or "Vehicles".
+
+          2. **Computation Method**
+
+              - **Straight Line** - Uses equal depreciation each period and is best for most standard business assets.
+              - **Declining Balance** - Uses higher depreciation in early periods and is best for assets that lose value quickly.
+              - **Selection** - Choose the method that matches your accounting policy; **Straight Line** is recommended for most cases.
+
+          ***
+
+          ##### Step 5 — Configure Period Type and Depreciation Schedule
+
+          ![](/img/accounting/asset-categories/0006.png)
+
+          1. **Period Type**
+              - **Number of Entries** - Define a fixed count of depreciation entries (common for monthly schedules).
+              - **Ending Date** - Depreciate until a specific target date (useful for leases or planned end dates).
+              - **Yearly** - Create one depreciation entry per year for simpler annual tracking.
+              - **Selection** - Use **Number of Entries** for most standard fixed-asset setups.
+
+          2. **Number of Depreciations** — Enter the total entry count for the full useful life (for example, 60 for 5 years x 12 months).
+
+          3. **Period Interval** — Define how often entries are posted (for example, 1 month for monthly depreciation).
+          ***
+
+          ##### Step 6 — Configure Accounting Section
+
+          ![](/img/accounting/asset-categories/0007.png)
+
+          This section defines which accounting accounts will be used for assets in this category.
+
+          1. **Journal** — Select the journal used for depreciation entries (typically "Miscellaneous Operations (USD)").
+
+          2. **Asset Account** — Select the fixed-asset balance sheet account that records the original asset cost.
+
+          3. **Depreciation Account** — Select the accumulated depreciation contra-asset account that reduces net asset value.
+
+          4. **Expense Account** — Select the income-statement expense account where periodic depreciation is recognized.
+
+          ***
+
+          ##### Step 7 — Configure Automation Options
+
+          ![](/img/accounting/asset-categories/0008.png)
+
+          1. **Auto-Confirm Assets** — Enable to confirm assets automatically at creation time, or disable to keep manual review.
+
+          2. **Group Journal Entries** — Enable to combine depreciation for multiple assets into one entry per period.
+
+          3. **Depreciation Date** — Choose **Manual (Defaulted on Purchase Date)** for flexibility or **Automatic** for system-driven start dates.
+
+          4. **Accounting Date** — Choose **On Actual Run Date** or **On Depreciation Date** based on posting policy.
+
+          ***
+
+          ##### Step 8 — Save
+
+          Once you've configured all settings, click the **Save** button at the top-left of the form.
+
+          ![](/img/accounting/asset-categories/0009.png)
+
+          <Noted type="info" title="After Saving" image="/img/icon/notes.png">
+          The category is now available for use when creating assets
+          - You can create assets and assign them to this category
+          - Depreciation will be calculated automatically based on these settings
+          - You can edit the category later if needed (affects new assets only)
+          </Noted>
 
     body: |
-      MAQSU provides serveral reporting to support your business needs.
+      **Configurations** in MAQSU ERP allow you to customize various settings and parameters to tailor the system to your specific business needs. In the Accounting module, configurations include setting up payment terms, tax rates, chart of accounts, and more.
 ---
