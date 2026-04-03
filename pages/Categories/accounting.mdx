@@ -3,7 +3,7 @@ link: accounting
 uid: accounting
 title: Accounting
 slug: accounting
-description: Manage finances with MAQSU's Accounting module, tracking accounts receivable and payable, managing journal entries, and generating financial reports.
+description: The Accounting module will guide you through managing finances, including tracking accounts receivable and payable, managing journal entries, and generating financial reports.
 groupSections:
   - link: introduction
     uid: introduction
@@ -343,7 +343,7 @@ groupSections:
           3. **Amount** *(Auto)* – Pre-filled with the outstanding invoice balance. Adjust for partial payments if needed.
           4. **Payment Date** *(Auto)* – The date the payment was received from the customer. Defaults to today.
           5. **Memo** *(Auto)* – Auto-populated with the invoice number for reference (e.g., INV/2026/0007).
-  
+
           You can make changes to the available details if needed. Now, click the **Validate** button. The payment registration can be completed by this step. Once the customer pays the invoice, the status of the invoice can be observed as Paid.
 
           ---
@@ -644,52 +644,69 @@ groupSections:
 
           ![](/img/accounting/invoices/payments/0008.png)
 
+      - link: /help-articles
+        title: Help Articles
+        body: |
+          If you have any questions or need assistance with managing accounts receivable, invoices, or payments in MAQSU, you can refer to our comprehensive help articles. These articles provide step-by-step guides, tips, and best practices to help you navigate the system effectively.
+
           ---
 
           ### Deposit / Down Payment
 
-          In this section we will discuss about the use of down payment. We know down payment is also known as prepayment or the advanced payment made by the customers to the suppliers. So down payment is mainly used to reduce or to cut down the burden of making a high amount of payment to the supplier. So this can be easily manageed in MAQSU. You can use down payment as a fixed amount or  percentage of amount. So let's walk through an example for this.
+          A **Deposit** or **Down Payment** is a partial payment made by a customer before the full amount of an invoice is due. In MAQSU, you can record a down payment against a posted invoice to reflect the amount received while keeping the remaining balance open until it is fully paid.
+
+          Let's see how to record a down payment for a posted customer invoice in MAQSU:
 
           ---
 
-          ##### Step 1 — Open the invoice
+          ##### Step 1 — Select an invoice
 
-          Choose invoice to make down payment. e.g, INV/2026/0006 (Chay Sokly, $132.00). then click the invoice row to open it. Once click on it, it will show the invoice form with button *Add payment*, *Add Credit Note*, and *Reset to Draft*.
+            From the list of invoices, select the invoice you want to record a down payment for. For example, let's select the invoice *INV/2026/0001* with a total amount of $110.
 
-          ![](/img/accounting/invoices/down-payment/0001.png)
+          ![](/img/accounting/receivable/help/deposit/0001.png)
 
           ---
 
-          ##### Step 2 — **Click** Add Payment
+          ##### Step 2 — Add Payment
 
-          At the top of the invoice, click the *Add Payment* button.The invoice must be in Posted status (not Draft). A payment dialog box will appear
-          ![](/img/accounting/invoices/down-payment/0002.png)
+            Click the **Action** menu, then choose **Add Payment** for the selected invoice.
+
+          ![](/img/accounting/receivable/help/deposit/0002.png)
 
           ---
 
           ##### Step 3 — Enter partial amount
 
-          In the dialog, change the Amount from $132 to your partial amount (e.g. **$66**). Select Keep open so the remaining $66 stays as an outstanding balance, then click **Validate**.
+          In the dialog, change the Amount from $110 to your partial amount (e.g. **$60**). You can use math operations here, for example, you can enter **$110-50** to automatically calculate the half of the total amount. Then **Enter**.
 
-          ![](/img/accounting/invoices/down-payment/0003.png)
+          ![](/img/accounting/receivable/help/deposit/0003.png)
 
-          1. **Keep Open** — Invoice remains partially unpaid; remaining $66 still owed
-          2. **Mark invoice as fully paid** — Writes off the $66 difference; closes the invoice
+          ---
 
-          Here is a detailed comparison of both options:Here is the detailed explanation of each option:
+          ##### Step 4 — Choose between Keep Open or Mark as Fully Paid
+
+          Choose whether to keep the invoice open with the remaining balance or mark it as fully paid by writing off the difference. In this example, we will choose **Keep Open** to keep the invoice open with the remaining $50 still owed.
+
+          ![](/img/accounting/receivable/help/deposit/0004.png)
+
+          1. **Keep Open** — Invoice remains partially unpaid; remaining $50 still owed
+          2. **Mark invoice as fully paid** — Writes off the $50 difference; closes the invoice
 
           <Noted type="info" title="In short" image="/img/icon/tip.png">
             if the money is still expected to come in → **Keep open**. If the money is being forgiven or written off → **Mark as fully paid**.
           </Noted>
 
-           ##### Step 4 — Payment summary
+          ---
 
-           The partial payment was successfully recorded! Here's what the screen is showing: Payment summary for INV/2026/0006
+          ##### Step 5 — Validate
+          Click **Validate** to confirm the partial payment and update the invoice status accordingly.
 
-          ![](/img/accounting/invoices/down-payment/0004.png)
+          ---
 
-          The "Keep open" option worked correctly — $66 was paid today (24/03/2026) via Bank (USD), and the invoice remains open with $66 still outstanding.
-          At the bottom you can see the Make Payment button is ready for when Chay Sokly pays the remaining **$66**. When that time comes, just click **Make Payment**, enter $66, and the invoice will be fully closed.
+          ##### Step 6 — Verify
+          After validating, the invoice will update to reflect the partial payment. The **Amount Due** will show the remaining balance (e.g., $50), and the invoice status will indicate it is partially paid.
+
+          ![](/img/accounting/receivable/help/deposit/0005.png)
 
   - link: 'account-payable#account-payable'
     uid: account-payable
@@ -4372,8 +4389,53 @@ groupSections:
           Now this currency and its exchange rate will be available for use in all financial transactions, ensuring accurate valuations in your General Ledger.
 
           <Noted type="info" title="Automatic Exchange Rate Update (NBC)" image="/img/icon/tip.png">
-          MAQSU ERP can automatically fetch and update exchange rates based on the **National Bank Currency (NBC)**. This reduces manual data entry and ensures your financial valuations remain accurate and compliant with the latest official rates.
+          MAQSU ERP can automatically fetch and update exchange rates based on the **National Bank of Cambodia (NBC)**. This reduces manual data entry and ensures your financial valuations remain accurate and compliant with the latest official rates.
           </Noted>
+
+      - link: /nbc-exchange-rate
+        title: Automatic Exchange Rate (NBC)
+        body: |
+
+          The **Automatic Exchange Rate (NBC)** feature in MAQSU allows you to automatically fetch and update currency exchange rates based on the official rates published by the National Bank of Cambodia (NBC). This ensures that your financial transactions and reports reflect the most current exchange rates without requiring manual updates.
+
+          <Noted type="info" title="Note" image="/img/icon/tip.png">
+            This feature is particularly useful for businesses that operate in multiple currencies or have frequent foreign currency transactions, as it helps maintain accurate financial records and compliance with local regulations.
+          </Noted>
+
+          To enable and configure the Automatic Exchange Rate (NBC) feature, please follow the steps outlined below:
+
+          ---
+
+          ##### Step 1 — Navigation
+
+          Navigate to **Accounting** ‣ **Configuration** ‣ **Settings**
+
+          ![](/img/accounting/configuration/nbc/0001.png)
+
+          ---
+
+          ##### Step 2 — Enable Automatic Exchange Rate
+
+          Click on the **Automatically Update Exchange Rates** checkbox to enable the feature.
+
+          ![](/img/accounting/configuration/nbc/0002.png)
+
+          ---
+
+          ##### Step 3 — Configure Update Frequency
+
+          Choose how often you want MAQSU to fetch updated exchange rates from NBC. Options may include daily, weekly, or monthly updates.
+
+          ![](/img/accounting/configuration/nbc/0003.png)
+
+          ---
+
+          ##### Step 4 — Save Configuration
+
+          After configuring your preferences, click **Save** to apply the settings.
+
+          Now, MAQSU ERP will automatically update exchange rates based on the latest data from NBC according to your specified frequency. This ensures that all your financial transactions and reports are using accurate and up-to-date exchange rates.
+
 
       - link: /payment-terms
         title: Payment Terms

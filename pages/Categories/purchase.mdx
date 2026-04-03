@@ -3,7 +3,7 @@ link: purchase
 uid: purchase
 title: Purchase
 slug: purchase
-description: Learn how to manage your procurement process with MAQSU Purchase module, including creating purchase orders, receiving goods, and handling vendor bills and payments.
+description: Within the Purchase module, learn how to manage the procurement process, covering requests for quotation, purchase orders, goods receipts, vendor bills, and payments.
 groupSections:
   - link: introduction#introduction
     uid: introduction
@@ -103,6 +103,8 @@ groupSections:
 
           Use the following steps to create a request for quotation:
 
+          ---
+
           ##### Step 1 — Navigation
 
           From the left sidebar, click on **Purchase** to open the Purchase
@@ -137,6 +139,8 @@ groupSections:
             You can use the **Filters**, **Group By**, and **Search** bar at the top right to quickly find specific records. You can also switch between **List**, **Kanban**, and **Calendar** views using the view icons.
           </Noted>
 
+          ---
+
           ##### Step 2 — Create
 
           To start a new purchase request, click the **Create** button at the
@@ -147,6 +151,8 @@ groupSections:
           fill in.
 
           ![](/img/purchase/requests/0003.png)
+
+          ---
 
           ##### Step 3 — Complete the Fields
 
@@ -186,6 +192,8 @@ groupSections:
           <Noted type="info" title="Tip" image="/img/icon/tips.png">
             You can also click **Add a section** to group your order lines, or **Add a note** to include internal remarks on a specific line.
           </Noted>
+
+          ---
 
           ##### Step 4 — Save
 
@@ -1249,11 +1257,15 @@ groupSections:
       - link: /purchase/configurations
         title: Configuration
         body: ''
+    body: |
+      The **Configuration** section allows you to customize various settings in the Purchase module to fit your business needs. These configurations help you manage vendor pricing, control invoice creation, and maintain the integrity of your purchase orders.
     sections:
       - link: /purchase-vendor-pricelist
         title: Vendor Pricelist
         body: |
           If one product has multiple prices from different vendors, use the **Vendor Pricelist** to manage supplier-specific pricing.
+
+          To add a vendor pricelist for a product, follow the steps below:
 
           ---
 
@@ -1336,4 +1348,48 @@ groupSections:
 
           <Noted type="info" title="Tip" image="/img/icon/sparkles.png">
             Enabling this configuration is highly recommended for businesses that require strict control over their purchasing process and want to minimize errors or unauthorized changes to confirmed orders.
+          </Noted>
+      - link: /vendor-product-warning
+        title: Vendor / Product Warning
+        body: |
+
+          The **Vendor/Product Warning** configuration allows you to set up alerts for specific vendor and product combinations. This is useful for flagging potential issues such as known supply chain disruptions, quality concerns, or any other important notes that should be considered when purchasing a particular product from a specific vendor.
+
+          To set up a vendor/product warning, follow these steps:
+
+          ---
+
+          ##### Step 1 - Navigation
+
+          Navigate to **Purchase** ‣ **Configuration** ‣ **Vendor/Product Warnings**.
+
+          ![](/img/purchase/configuration/vendor-product-warning/0001.png)
+
+          ##### Step 2 - Create Warning
+
+          Click the **Create** button to start a new warning.
+
+          ![](/img/purchase/configuration/vendor-product-warning/0002.png)
+
+          ---
+
+          ##### Step 3 - Enter Warning Details
+
+          In the warning form, fill in the following details:
+
+          1. **Vendor** *(Required)* – Select the supplier for which this warning applies.
+          2. **Product** *(Required)* – Select the product that is associated with this warning.
+          3. **Warning Message** *(Required)* – Enter the message that should be displayed when this vendor/product combination is selected in a purchase order.
+          4. **Active** – Toggle this switch to activate or deactivate the warning.
+
+          ![](/img/purchase/configuration/vendor-product-warning/0003.png)
+
+          ---
+
+          ##### Step 4 - Save
+
+          After entering all the necessary details, click **Save** to add this warning to the system.
+
+          <Noted type="info" title="Tip" image="/img/icon/sparkles.png">
+            Once a vendor/product warning is set up and active, it will automatically trigger an alert message whenever that specific combination is selected in a purchase order. This helps ensure that important considerations are not overlooked during the purchasing process.
           </Noted>
