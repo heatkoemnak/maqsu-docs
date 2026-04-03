@@ -215,42 +215,28 @@ groupSections:
         body: ''
 
     body: |
-      A **Purchase Order** is a critical document in the procurement process, as it represents a binding agreement between your organization and the supplier. It outlines the specific products or services to be delivered, along with the agreed-upon terms and conditions.
+        A **Purchase Order** is a formal document that confirms the purchase of products or services from a supplier. It serves as a legally binding agreement between the buyer and the vendor, outlining the details of the purchase such as quantities, prices, delivery dates, and terms of payment.
 
-      Once you complete the creation of the request for quotation, you can send it to the respective vendor to get their approval. After sending RFQ to the vendor, the next step is the confirmation of the purchase order. In MAQSU, you will get a dedicated platform in the **Orders** menu of the Purchase module for the management of the **Purchase Orders**.
+        In MAQSU ERP, you can create a Purchase Order by either confirming an existing Request for Quotation (RFQ) or by creating a new one directly from scratch. Both methods will lead you to the same Purchase Order form where you can manage your purchase details.
 
-      This page provides a step-by-step guide on how to create and manage Purchase Orders in the MAQSU ERP system. It is organized in two options:
-
-      <CardGrid
-        cards={[
-          {
-            title: "Confirm Order",
-            description: "Convert an existing RFQ into a purchase order",
-            image: "/img/icon/quote.png"
-          },
-          {
-            title: "Create New",
-            description: "Create directly in the Purchase Order menu",
-            image: "/img/icon/Sales-Order-256.png"
-          }
-        ]}
-      />
-
-      Let's dive deeper into the creation of a Purchase Order. You can choose one of the two options below, depending on your procurement workflow.
+        Let's dive deeper into the creation of a Purchase Order. You can choose one of the two options below, depending on your procurement workflow.
 
     sections:
       - link: /confirm-existing-order
-        title: Confirm Order
+        title: Confirm Existing RFQ
         body: |
           If you have an existing **Request for Quotation (RFQ)** that has been
           approved by the vendor, you can directly confirm it into a Purchase
           Order without creating a new one from scratch. This streamlines the
           procurement process and saves time. Follow the steps below:
 
+          ---
+
           ##### Step 1 — Open RFQ
 
-          From the left sidebar, click **Purchase**. Then from the top
-          navigation menu, go to **Orders** ‣ **Requests for Quotation**. Then, select one of the existing RFQs to confirm into a Purchase Order.
+          From the left sidebar, click **Purchase**. Then from the top navigation menu, go to **Orders** ‣ **Requests for Quotation**. Locate the RFQ you want to confirm into a Purchase Order and click on its **RFQ Number** to open it.
+
+          ---
 
           ##### Step 2 — Confirm Order
 
@@ -260,8 +246,9 @@ groupSections:
 
           ![](/img/purchase/orders/0009.png)
 
+          ---
 
-          ##### Step 3 — Check the Status
+          ##### Step 3 — Verify
 
           After confirming, the document status will automatically change from
           **RFQ** to **Purchase Order**. The document number remains the same.
@@ -278,7 +265,11 @@ groupSections:
         title: Create New
         body: |
           If you do not have an existing Request for Quotation, you can create a
-          Purchase Order directly from scratch. Follow the steps below:
+          Purchase Order directly from scratch.
+
+          Follow the steps below:
+
+          ---
 
           ##### Step 1 — Navigation
 
@@ -316,16 +307,18 @@ groupSections:
           9. **Billing Status** – Indicates the billing progress, such as
           **Waiting Bills** or **Fully Billed**.
 
+          ---
 
-          ##### Step 2 — Click Create
+          ##### Step 2 — Create
 
           Click the **Create** button at the top-left of the Purchase Orders
           list page to open a new blank purchase order form.
 
           ![](/img/purchase/orders/0003.png)
 
+          ---
 
-          ##### Step 3 — Fill in the Required Fields
+          ##### Step 3 — Complete the Fields
 
           The new purchase order form will open in **New** status. Fill in the
           following fields:
@@ -363,6 +356,8 @@ groupSections:
             You can click **Add a section** to group your order lines, or **Add a note** to include internal remarks on a specific line.
           </Noted>
 
+          ---
+
           ##### Step 4 — Save
 
           After filling in all required fields, click the **Save** button at the
@@ -373,6 +368,8 @@ groupSections:
           to review later.
 
           ![](/img/purchase/orders/0006.png)
+
+          ---
 
           ##### Step 5 — Verity
           After confirming, the document status will automatically change from
@@ -385,17 +382,6 @@ groupSections:
           <Noted type="info" title="Next Step" image="/img/icon/sparkles.png">
             Once the Purchase Order is confirmed, the next step is **Receiving Goods**. You will receive the products and validate the receipt against the Purchase Order.
           </Noted>
-
-      - link: /lock-confirmed-order
-        title: Lock Confirmed Orders
-        body: |
-           In MAQSU, it is possible to automatically lock purchase orders to prevent editing. This can be done by activating the **Lock Confirmed Orders** from the **Settings** menu of the module.
-
-           ![](/img/purchase/lock/0001.png)
-
-           Once you activate this feature, the confirmed orders will be automatically locked. If you want to make any changes to a purchase order, you can click on the **Unlock** button.
-
-           ![](/img/purchase/lock/0002.png)
 
   - link: receiving-goods#receiving-goods
     uid: receiving-goods
@@ -425,124 +411,137 @@ groupSections:
       </Noted>
 
       Once a Purchase Order has been confirmed, the next step is to receive
-          the goods from the supplier. Follow the steps below to complete the
-          goods receiving process in MAQSU ERP.
+      the goods from the supplier. Follow the steps below to complete the
+      goods receiving process in MAQSU ERP.
 
-          ##### Step 1 — Navigattion
+      ---
 
-          From the left sidebar, click **Purchase**. Then from the top
-          navigation menu, go to **Orders** ‣ **Purchase Orders**.
+      ##### Step 1 — Navigattion
 
-          ![](/img/purchase/receiving/0001.png)
+      From the left sidebar, click **Purchase**. Then from the top
+      navigation menu, go to **Orders** ‣ **Purchase Orders**.
 
-          ##### Step 2 — Find the Order
+      ![](/img/purchase/receiving/0001.png)
 
-          Locate the Purchase Order you want to receive goods for by utilizing
-          the **Filters** feature. Click the **Filters** button at the top-right
-          of the list, then select **Billing Status is "Nothing to Bill"** from the
-          filter options to narrow down the results.
+      ---
 
-          ![](/img/purchase/receiving/0002.png)
+      ##### Step 2 — Find the Order
 
-          <Noted type="info" title="Filters"
-          image="/img/icon/sparkles.png">
-            If **Billing Status is "Nothing to Bill"** does not appear in the standard filter list, you can use a **Custom Filter** instead. Click **Add Custom Filter**, then set the conditions as follows:
+      Locate the Purchase Order you want to receive goods for by utilizing
+      the **Filters** feature. Click the **Filters** button at the top-right
+      of the list, then select **Billing Status is "Nothing to Bill"** from the
+      filter options to narrow down the results.
 
-            1. **Field:** Billing Status
-            2. **Operator:** is
-            3. **Value:** Nothing to Bill
+      ![](/img/purchase/receiving/0002.png)
 
-            Then click **Apply** to apply the custom filter.
-          </Noted>
+      <Noted type="info" title="Filters"
+      image="/img/icon/sparkles.png">
+        If **Billing Status is "Nothing to Bill"** does not appear in the standard filter list, you can use a **Custom Filter** instead. Click **Add Custom Filter**, then set the conditions as follows:
 
-          After applying the filter, the list will show only Purchase Orders
-          with a **Billing Status** of **Nothing to Bill**.
+        1. **Field:** Billing Status
+        2. **Operator:** is
+        3. **Value:** Nothing to Bill
 
-          ![](/img/purchase/receiving/0003.png)
+        Then click **Apply** to apply the custom filter.
+      </Noted>
 
-          ##### Step 3 — Open Order
+      After applying the filter, the list will show only Purchase Orders
+      with a **Billing Status** of **Nothing to Bill**.
 
-          Click on the **Order Number** of the Purchase Order you want to
-          receive goods for to open it.
+      ![](/img/purchase/receiving/0003.png)
 
-          You will see the Purchase Order detail page showing the vendor, order
-          date, and the **Order Lines** with the ordered products, quantities,
-          and amounts. Note that the **Received** column will show **0.00**,
-          indicating that no goods have been received yet.
+      ---
 
-          ![](/img/purchase/receiving/0004.png)
+      ##### Step 3 — Open Order
 
-          ##### Step 4 — Receive Products
+      Click on the **Order Number** of the Purchase Order you want to
+      receive goods for to open it.
 
-          Click the **Receive Products** button at the top of the Purchase Order
-          form to start the goods receiving process.
+      You will see the Purchase Order detail page showing the vendor, order
+      date, and the **Order Lines** with the ordered products, quantities,
+      and amounts. Note that the **Received** column will show **0.00**,
+      indicating that no goods have been received yet.
 
-          This will open the **Goods Receipt** form (e.g., WH/IN/00004) which
-          shows all products from the Purchase Order that are pending receipt.
+      ![](/img/purchase/receiving/0004.png)
 
-          ![](/img/purchase/receiving/0005.png)
+      ---
 
-          <Noted type="info" title="Note" image="/img/icon/sparkles.png">
-            The status bar at the top right shows the current stage of the receipt: **Draft → Waiting → Ready → Done**. When you open the receipt, it will be in **Ready** status, meaning the goods are ready to be validated.
-          </Noted>
+      ##### Step 4 — Receive Products
 
-          ##### Step 5 — Validate
+      Click the **Receive Products** button at the top of the Purchase Order
+      form to start the goods receiving process.
 
-          After reviewing the goods receipt, click the **Validate** button to
-          confirm that the goods have been physically received.
+      This will open the **Goods Receipt** form (e.g., WH/IN/00004) which
+      shows all products from the Purchase Order that are pending receipt.
 
-          ![](/img/purchase/receiving/0006.png)
+      ![](/img/purchase/receiving/0005.png)
 
-          The Goods Receipt form displays:
+      <Noted type="info" title="Note" image="/img/icon/sparkles.png">
+        The status bar at the top right shows the current stage of the receipt: **Draft → Waiting → Ready → Done**. When you open the receipt, it will be in **Ready** status, meaning the goods are ready to be validated.
+      </Noted>
 
-          * **Receive From** – The vendor supplying the goods.
+      ---
 
-          * **Operation Type** – The warehouse operation type, typically **Goods
-          Receipts**.
+      ##### Step 5 — Validate
 
-          * **Scheduled Date** – The expected date of receipt.
+      After reviewing the goods receipt, click the **Validate** button to
+      confirm that the goods have been physically received.
 
-          * **Source Document** – The Purchase Order number this receipt is
-          linked to.
+      ![](/img/purchase/receiving/0006.png)
 
-          * **Operations Tab** – Lists each product with its **Demand** (ordered
-          quantity) and **Done** (received quantity).
+      The Goods Receipt form displays:
 
+      * **Receive From** – The vendor supplying the goods.
 
-          ##### Step 6 — Apply
+      * **Operation Type** – The warehouse operation type, typically **Goods
+      Receipts**.
 
-          A confirmation dialog — **Immediate Transfer?** — will appear. This
-          dialog informs you that you have not yet recorded the **Done**
-          quantities manually, and that clicking **Apply** will instruct MAQSU
-          to automatically process all quantities as received.
+      * **Scheduled Date** – The expected date of receipt.
 
-          Click **Apply** to confirm and complete the goods receipt.
+      * **Source Document** – The Purchase Order number this receipt is
+      linked to.
 
-          ![](/img/purchase/receiving/0008.png)
+      * **Operations Tab** – Lists each product with its **Demand** (ordered
+      quantity) and **Done** (received quantity).
 
-          <Noted type="info" title="Note" image="/img/icon/sparkles.png">
-            If you want to record partial receipts or specify exact done quantities manually before validating, click **Cancel** on this dialog, update the **Done** column for each product, then click **Validate** again.
-          </Noted>
+      ---
 
-          ##### Step 7 — Verify
+      ##### Step 6 — Apply
 
-          After clicking **Apply**, the goods receipt status will automatically
-          update to **Done**. You will also notice that:
+      A confirmation dialog — **Immediate Transfer?** — will appear. This
+      dialog informs you that you have not yet recorded the **Done**
+      quantities manually, and that clicking **Apply** will instruct MAQSU
+      to automatically process all quantities as received.
 
-          * The **Done** column now shows the received quantities matching the
-          **Demand**.
+      Click **Apply** to confirm and complete the goods receipt.
 
-          * An **Effective Date** has been recorded, showing the exact date and
-          time the goods were received.
+      ![](/img/purchase/receiving/0008.png)
 
-          * The available action buttons change to **Return**, **Scrap**, and
-          **Unlock**, confirming the receipt is complete.
+      <Noted type="info" title="Note" image="/img/icon/sparkles.png">
+        If you want to record partial receipts or specify exact done quantities manually before validating, click **Cancel** on this dialog, update the **Done** column for each product, then click **Validate** again.
+      </Noted>
 
-          ![](/img/purchase/receiving/0009.png)
+      ---
 
-          <Noted type="info" title="Next Step" image="/img/icon/sparkles.png">
-            Once goods are received, the next step is to **Create a Bill** to record the supplier invoice and process payment against the Purchase Order.
-          </Noted>
+      ##### Step 7 — Verify
+
+      After clicking **Apply**, the goods receipt status will automatically
+      update to **Done**. You will also notice that:
+
+      * The **Done** column now shows the received quantities matching the
+      **Demand**.
+
+      * An **Effective Date** has been recorded, showing the exact date and
+      time the goods were received.
+
+      * The available action buttons change to **Return**, **Scrap**, and
+      **Unlock**, confirming the receipt is complete.
+
+      ![](/img/purchase/receiving/0009.png)
+
+      <Noted type="info" title="Next Step" image="/img/icon/sparkles.png">
+        Once goods are received, the next step is to **Create a Bill** to record the supplier invoice and process payment against the Purchase Order.
+      </Noted>
 
   - link: create-vendor-bill#create-vendor-bill
     uid: create-vendor-bill
@@ -576,12 +575,16 @@ groupSections:
           Bill** to record the supplier invoice and process payment. Follow the
           steps below:
 
+          ---
+
           ##### Step 1 — Navigation
 
           From the left sidebar, click **Purchase**. Then from the top
           navigation menu, go to **Orders** ‣ **Purchase Orders**.
 
           ![](/img/purchase/vendor-bill/0001.png)
+
+          ---
 
           ##### Step 2 — Find the Order
 
@@ -612,6 +615,8 @@ groupSections:
 
           ![](/img/purchase/vendor-bill/0004.png)
 
+          ---
+
           ##### Step 3 — Open the Order
 
           Click on the **Order Number** of the Purchase Order you want to create
@@ -625,12 +630,16 @@ groupSections:
 
           ![](/img/purchase/vendor-bill/0005.png)
 
+          ---
+
           ##### Step 4 — Create Bill
 
           Click the **Create Bill** button at the top of the Purchase Order form
           to start the billing process.
 
           ![](/img/purchase/vendor-bill/0006.png)
+
+          ---
 
           ##### Step 5 — Payment Type
 
@@ -657,6 +666,8 @@ groupSections:
           <Noted type="info" title="Note" image="/img/icon/sparkles.png">
             If you click **Create Bill** instead of **Create and View Bill**, the bill will be created in the background without opening it. You can find it later under the **Accounting** module → **Vendor Bills**.
           </Noted>
+
+          ---
 
           ##### Step 6 — Review the Draft Bill and Click Post
 
@@ -1223,3 +1234,106 @@ groupSections:
       supplier performance, and order fulfillment efficiency.
 
       ![](/img/purchase/reporting/0001.png)
+
+  - link: configurations#configurations
+    uid: configurations
+    title: Configuration
+    date: '2026-02-23T09:51:49.000Z'
+    breadcrumbs:
+      - link: /
+        title: All Categories
+        body: ''
+      - link: /purchase
+        title: Purchase
+        body: ''
+      - link: /purchase/configurations
+        title: Configuration
+        body: ''
+    sections:
+      - link: /purchase-vendor-pricelist
+        title: Vendor Pricelist
+        body: |
+          If one product has multiple prices from different vendors, use the **Vendor Pricelist** to manage supplier-specific pricing.
+
+          ---
+
+          ##### Step 1 - Navigation
+
+          Navigate to **Purchase** ‣ **Products** ‣ **Products**.
+
+          ![](/img/purchase/configuration/pricelist/0001.png)
+
+          ##### Step 2 - Open a Product
+
+          Open a product and go to the **Purchase** tab.
+
+          ![](/img/purchase/configuration/pricelist/0002.png)
+
+          ---
+
+          ##### Step 3 - Add a line
+
+          In the **Purchase** tab, click **Add a line**.
+
+          ![](/img/purchase/configuration/pricelist/0003.png)
+
+          ---
+
+          ##### Step 4 - Enter Vendor Price Details
+
+          In the new line, fill in the following details:
+
+          ![](/img/purchase/configuration/pricelist/0004.png)
+
+          1. **Vendor** *(Required)* – Select the supplier for this price.
+          2. **Vendor Product Name** *(Optional)* – Enter the product name used by the supplier (if different from your internal product name).
+          3. **Vendor Product Code** *(Optional)* – Enter the supplier product code/SKU for this item.
+          4. **Product Variant** *(Optional)* – Select the specific variant this vendor price applies to (if variants exist).
+          5. **Delivery Lead Time** *(Optional)* – Number of days the vendor usually takes to deliver after order confirmation.
+          6. **Quantity** *(Required)* – Minimum quantity required for this price to apply.
+          7. **Price** *(Required)* – Unit purchase cost offered by the supplier.
+          8. **Currency** *(Auto)* – Currency used for the vendor price.
+          9. **Validity** *(Optional)* – Start and end dates during which this price is active.
+
+          ---
+
+          ##### Step 5 - Save
+
+          After entering all the necessary details, click **Save** to add this vendor price to the product.
+
+      - link: /invoice-policy
+        title: Invoice Policy
+        body: |
+
+          The **Control Policy** configuration allows you to set whether invoice is create before or after the receipt of goods.
+
+          To set up the control policy, navigate to **Product**, then click the **Purchase** tab, and find the field **Control Policy**. You can select the radio button to set the control policy as either **On ordered quantities** or **On received quantities**.
+
+          ![](/img/purchase/configuration/control-policy/0001.png)
+
+          1. **On ordered quantities** – This means that the vendor bill can be created based on the quantities ordered, regardless of whether the goods have been received or not. This is typically used when you want to process invoices as soon as the order is placed.
+
+          2. **On received quantities** – This means that the vendor bill can only be created based on the quantities that have been physically received. This is typically used when you want to ensure that you are only invoiced for goods that have actually been delivered.
+
+          <Noted type="info" title="Tip" image="/img/icon/sparkles.png">
+            This configuration is only applied when you create a bill from the purchase order with this product. If you create a bill with other product that not set up with the control policy, the system will follow the default setting which is **On received quantities**.
+          </Noted>
+
+          You can setup the control policy for all products in your system under settings. Navigate to **Purchase** ‣  **Configuration** ‣ **Settings**. In the settings form, find the field **Bill Control** under the section **Invoicing**. You can select the radio button to set the default control policy as either **Ordered quantities** or **Received quantities**.
+
+          ![](/img/purchase/configuration/control-policy/0002.png)
+
+      - link: /lock-confirmed-orders
+        title: Lock Confirmed Orders
+        body: |
+          The **Lock Confirmed Orders** configuration allows you to prevent any modifications to purchase orders once they have been confirmed. This is a crucial control mechanism to maintain the integrity of your purchasing process and ensure that all confirmed orders are final and cannot be altered without proper authorization.
+
+          To enable this configuration, navigate to **Purchase** ‣ **Configuration** ‣ **Settings**. In the settings form, find the field **Lock Confirmed Orders** under the section **Orders**. Toggle the switch to enable this feature.
+
+          ![](/img/purchase/configuration/lock-confirmed-orders/0001.png)
+
+          Once enabled, any purchase order that has been confirmed will be locked from further edits. This means that users will not be able to change any details of the order, such as quantities, prices, or delivery dates, without first canceling the order and creating a new one.
+
+          <Noted type="info" title="Tip" image="/img/icon/sparkles.png">
+            Enabling this configuration is highly recommended for businesses that require strict control over their purchasing process and want to minimize errors or unauthorized changes to confirmed orders.
+          </Noted>
