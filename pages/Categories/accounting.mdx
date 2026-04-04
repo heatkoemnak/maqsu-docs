@@ -195,9 +195,22 @@ groupSections:
       - link: /invoices
         title: Invoices
         body: |
-          An **Invoice** is an official document sent to a customer that details goods or services provided, their quantities, unit prices, taxes, and the total amount due. In MAQSU ERP, invoices are crucial for tracking sales, managing customer payments, and ensuring proper financial records.
 
-          There are several methods available in MAQSU that automate customer invoice creation depending on the operation you perform and the module you use. While discussing the **Sales** module, we mentioned the management of invoices. Once you confirm a sales order, you will get a draft customer invoice in MAQSU. You just need to validate the draft invoices and send them to the respective customers. All such automated invoices will be recorded and managed in the Invoices platform available under the **Customers** menu of the **Accounting** module. This platform will allow you to create invoices manually also.
+          An **Invoice** is a commercial document issued by a seller to a buyer, indicating the products or services provided, their quantities, prices, and the total amount due. In MAQSU ERP, invoices are used to bill customers for goods or services rendered. They are essential for tracking sales, managing accounts receivable, and ensuring timely payments.
+
+          The **Invoices** feature in MAQSU allows you to create, manage, and track all customer invoices in one place. You can generate invoices directly from sales orders or create them manually. Once an invoice is posted, you can register payments against it and monitor outstanding balances.
+
+          Let's explore how to manage customer invoices in MAQSU:
+
+          ***
+
+          ### Create Invoice
+
+          Let's create a new customer invoice by following steps down below:
+
+          ---
+
+          ###### Step 1 — Navigation
 
           From the left sidebar, click **Accounting**. Then from the top navigation menu, go to **Customers** ‣ **Invoices**.
 
@@ -206,46 +219,6 @@ groupSections:
           Once you navigate to **Invoices**, you will see the master list of all existing customer invoices. The list displays the following columns:
 
           ![](/img/accounting/invoices/create/0002.png)
-
-           1. **Number** – The unique system-generated invoice identifier following the format **INV/YEAR/SEQUENCE** (e.g., INV/2026/0001, INV/2026/0006). Automatically assigned when an invoice is created.
-
-           2. **Reference** – An optional field for adding external reference numbers, such as a purchase order (PO) number or any internal reference code from the customer. All invoices here have no reference filled in.
-
-           3. **Invoice Date** – The official date the invoice was issued to the customer. All invoices here are dated **20/03/2026**.
-
-           4. **Customer** – The name of the customer the invoice was billed to (e.g., Sin Piseth, LY CHAIMOUY, Seng Somaly, Mr. Bunleng, Chay Sokly).
-
-           5. **Due Date** – The deadline by which the customer must complete payment. All invoices here share the same due date **20/03/2026**, matching the invoice date.
-
-           6. **Total** – The full invoice amount including all products, services, and taxes (e.g., $8.99, $5.50, $1,524.60, $132.00).
-
-           7. **Amount Due** – The **remaining balance** still owed by the customer. Shows **$0.00** for fully paid invoices (e.g., INV/2026/0005 – Mr. Bunleng) and the outstanding amount for unpaid ones.
-
-           8. **Status** – The current processing stage of the invoice:
-             - **Posted** – Invoice has been confirmed and sent (e.g., INV/2026/0001, INV/2026/0004)
-             - **Draft** – Invoice has been created but not yet confirmed (e.g., INV/2026/0003 – Seng Somaly, shown in blue)
-
-           9. **Payment** – Indicates whether the invoice has been settled:
-             - **Paid** – Payment has been received in full (e.g., INV/2026/0005 – Mr. Bunleng, $0.00 remaining)
-             - **Not Paid** – Payment is still outstanding (e.g., INV/2026/0001 – Sin Piseth, $8.99 still due)
-
-          ![](/img/accounting/invoices/0003.png)
-
-          Using the default **Filters**, you can filter the invoices based on My Invoices, Draft, Posted, Canceled, To Check, Unpaid, Paid, Overdue, Invoice Date, and Due Date. You are allowed to create custom filters for invoices using the Add Custom Filter button.
-
-          ![](/img/accounting/invoices/0004.png)
-
-          In the **Group By** option, you can group the available invoices according to the Salesperson, Status, Sales Team, Electronic Invoicing State, Preferred Payment Method, Invoice Date, Due Date, and Referrer. The Add Custom Group button helps you to create custom group options.
-
-          ![](/img/accounting/invoices/0005.png)
-
-           From this menu, you can enable or disable required fields for the list view of the customer invoice. It includes the Invoice Date, Due Date, Source Document, Reference, Salesperson, Sales Team, Activities, Company, Tax Excluded, Tax, Total, Total in Currency, Amount Due, Invoice Currency, To Check, Payment Status, Electronic Invoicing, and Status.
-
-          ***
-
-          ### Create Invoice
-
-          Let's create a new customer invoice by following steps down below:
 
           ---
 
@@ -805,7 +778,46 @@ groupSections:
 
           A **Batch Payment** is a group of payments that are processed together as a single transaction. In MAQSU, you can create batch payments to efficiently manage and process multiple payments at once, whether they are incoming customer payments or outgoing vendor payments.
 
+          Let's see how to create a batch payment in MAQSU:
+
           ---
+
+          ##### Step 1 — Select Invoices
+
+          From the list of invoices, use the checkboxes to select multiple invoices that you want to include in the batch payment. For example, you can select three posted invoices that are ready to be paid.
+
+          ![](/img/accounting/receivable/help/batch-payment/0001.png)
+
+          ---
+
+          ##### Step 2 — Add Payment
+
+          After selecting the invoices, click on the **Action** button at the top of the list, then click **Add Payment** from the dropdown menu.
+
+          ![](/img/accounting/receivable/help/batch-payment/0002.png)
+
+          ---
+
+          ##### Step 3 — Create Payment
+          In the payment creation form, you will see some fields such as:
+          1. **Payment Method Type** *(Auto)* – This field will automatically set by the system as **Manual** since you are creating a payment for multiple invoices.
+          2. **Journal** – Select the bank or cash account the payment will be processed
+          4. **Group Payment** *(Optional)* – If you check this box, the system will group the selected invoices into a single payment entry. If left unchecked, separate payment entries will be created for each invoice.
+          5. **Payment Date** – The date the batch payment will be processed.
+
+          ![](/img/accounting/receivable/help/batch-payment/0003.png)
+
+           After filling in the required fields, click **Create Payment** to create the batch payment.
+
+          ---
+
+          ##### Step 4 — Verify
+
+            After creating the batch payment, you will be taken to the payment detail page where you can verify the payment information and see the list of invoices included in the batch.
+
+          ![](/img/accounting/receivable/help/batch-payment/0004.png)
+
+
   - link: 'account-payable#account-payable'
     uid: account-payable
     title: Account Payable

@@ -165,8 +165,9 @@ p{
 }
 
 p img{
-  border:1px solid rgb(158, 158, 158);
+  border:1px solid rgb(191, 190, 190);
   margin-top:10px !important;
+  border-radius: 5px !important;
 }
 
 a{
