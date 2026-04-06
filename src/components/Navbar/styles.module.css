@@ -18,7 +18,7 @@
   justify-content: space-between;
   width: 90%;
   margin: 0 auto;
-  padding: 0.15rem clamp(1rem, 4vw, 5rem);
+  padding: 0.45rem clamp(1rem, 4vw, 5rem);
   gap: clamp(0.65rem, 1.6vw, 1.5rem);
   background: var(--color-primary);
   color: var(--color-white);
