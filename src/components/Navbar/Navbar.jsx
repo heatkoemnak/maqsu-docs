@@ -68,9 +68,6 @@ export default function Navbar() {
           <Link to="https://maqsu.com/en/blog" className={styles.navItem}>
             <span>Blog</span>
           </Link>
-          <Link to="/getting-started" className={styles.ctaButton}>
-            Get Started
-          </Link>
         </div>
 
         <button
@@ -124,13 +121,6 @@ export default function Navbar() {
                 onClick={closeMobileMenu}
               >
                 Blog
-              </Link>
-              <Link
-                to="/getting-started"
-                className={styles.mobileCtaButton}
-                onClick={closeMobileMenu}
-              >
-                Get Started
               </Link>
             </div>
           </div>

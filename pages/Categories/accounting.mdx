@@ -414,7 +414,7 @@ groupSections:
 
           ***
 
-          ###### Step 2 — Click Create
+          ###### Step 2 — Create
 
           Click the **Create** button at the top-left to open a new blank Credit Note form.
           ![](/img/accounting/credit-notes/0002.png)
@@ -459,7 +459,7 @@ groupSections:
 
           ***
 
-          ###### Step 5 — Save and Click Post
+          ###### Step 5 — Post
 
           After completing all fields, click **Save** to save the credit note as a Draft. Then click **Post** to officially post the credit note.
 
@@ -843,35 +843,15 @@ groupSections:
 
       ![](/img/accounting/vendor-bills/0001.png)
 
-      ---
-
     sections:
       - link: /bills
         title: Bills
         body: |
-          A **Vendor Bill** is an official document received from a supplier that records the amount your business owes for goods or services purchased. In MAQSU ERP, vendor bills are crucial for tracking payables, managing vendor payments, and maintaining accurate expense records.
-          There are several methods available in MAQSU that automate vendor bill creation depending on the operation you perform and the module you use. Bills can be generated from purchase orders in the **Purchase** module, or created manually for expenses and services not linked to a purchase order.
-          From the left sidebar, click **Accounting**. Then from the top navigation menu, go to **Vendors** > **Bills**.
+
+          A **Bill** (also known as a Vendor Bill or Supplier Invoice) is a document received from a supplier that details the goods or services provided, the amount owed, and the payment terms. In MAQSU ERP, bills are used to record and manage your accounts payable obligations. When you create and post a bill, it represents an outstanding liability that you need to pay to your vendor.
+
           ![](/img/accounting/vendor-bills/0001_1.png)
 
-          Once you navigate to **Bills**, you will see the master list of all existing vendor bills. The list displays the following columns:
-
-          ![](/img/accounting/vendor-bills/0002.png)
-
-           1. **Number** – The unique bill number assigned to each record (for example, BILL/2026/0004). Bills still in Draft status display as **/** until they are posted.
-           2. **Reference** – An optional vendor reference or external document number.
-           3. **Bill Date** – The date the bill was issued by the vendor.
-           4. **Vendor** – The supplier who issued the bill.
-           5. **Due Date** – The payment due date based on the selected payment terms.
-           6. **Total** – The total bill amount including taxes.
-           7. **Amount Due** – The remaining outstanding balance to be paid.
-           8. **Status** – The document status, such as **Draft** or **Posted**.
-           9. **Payment** – The payment status, such as **Paid** or **Not Paid**.
-
-
-          Using the default **Filters**, you can filter bills by Draft, Posted, Canceled, To Check, Unpaid, Paid, Overdue, Bill Date, and Due Date. You can also create custom filters using **Add Custom Filter**.
-          In the **Group By** option, you can group bills by Vendor, Status, Bill Date, Due Date, Journal, and other available fields. Use **Add Custom Group** to create your own grouping logic.
-          From the view options menu, you can enable or disable list columns such as Bill Date, Due Date, Reference, Journal, Total, Amount Due, Payment Status, and Status.
           ***
 
           ### Create Bill
@@ -881,6 +861,7 @@ groupSections:
           ---
 
           ###### Step 1 — Create
+
           Click the **Create** button at the top-left of the Bills list page to open a new blank vendor bill form.
 
           ![](/img/accounting/vendor-bills/0003.png)
@@ -1010,13 +991,17 @@ groupSections:
 
           This is the quickest method. It automatically pre-fills the payment amount and links it directly to the bill being paid.
 
+          ---
+
           ###### Step 1 — Open a Bill
 
-          From the left sidebar, click **Accounting**. Then from the top navigation menu, go to **Vendors** ‣ **Bills**.
+          Navigate to the **Bills** list under **Vendors ‣ Bills**. Click on a posted bill that you want to register a payment for. For example, let's select the bill *BILL/2026/0005* with a total amount of $120.
 
           Use the **Search bar** to find the bill you want to register payment for. Type the bill number (e.g., BILL/2026/0005) and select **Search Invoice for: BILL/2026/0005** from the dropdown suggestions.
 
-          ###### Step 3 — Click Add Payment
+          ---
+
+          ###### Step 2 — Add Payment
 
           On the posted bill, click the **Add Payment** button at the top of the bill form.
 
@@ -1037,7 +1022,7 @@ groupSections:
 
           ***
 
-          ###### Step 4 — Verify the Bill is Marked as PAID
+          ###### Step 3 — Verify
 
           After validating, the bill will be updated immediately. A green **PAID** stamp will appear on the top-right corner of the bill form, confirming the bill has been fully settled and the payment has been recorded in your accounting.
 
@@ -1132,28 +1117,19 @@ groupSections:
         body: |
           A **Vendor Refund** (also called a Vendor Credit Note) is a document that records a credit issued by a supplier or a return of amounts paid to a vendor. In MAQSU ERP, vendor refunds are managed under the Accounting module and are essential for correcting billing errors, recording returned goods, or handling duplicate vendor registrations.
 
-            > **Note:** Vendor refunds can be created in two ways: directly from an existing vendor bill (recommended) or manually from the Refunds menu for standalone credit notes not linked to a specific bill.
+            <Noted type="info" title="Note" image="/img/icon/notes.png">
+              Vendor refunds can be created in two ways: directly from an existing vendor bill (recommended) or manually from the Refunds menu for standalone credit notes not linked to a specific bill.
+            </Noted>
 
             Use this method when you need to create a standalone credit note that is not directly linked to an existing bill, or when you need more control over the refund details.
 
             ***
 
-            ###### Step 1 — Navigate to Refunds
+            ###### Step 1 — Navigation
 
             From the left sidebar, click **Accounting**. Then from the top navigation menu, go to **Vendors** ‣ **Refunds**.
 
             ![](/img/accounting/refunds/0007.png)
-
-            ***
-
-            ###### Step 2 — Refunds List Overview
-
-            The Refunds page displays a message: **"Create a vendor credit note"** along with a helpful note:
-
-            <Noted type="info" title="Important" image="/img/icon/tip.png">
-              Note that the easiest way to create a vendor credit note is to do it directly from the vendor
-              bill.
-            </Noted>
 
             If no refunds have been created yet, the list will be empty. Click the **Create** button to start a new refund.
 
@@ -1161,7 +1137,7 @@ groupSections:
 
             ***
 
-            ###### Step 3 — Click Create
+            ###### Step 2 — Create
 
             Click the **Create** button at the top-left of the Refunds page to open a new blank refund form.
 
@@ -1169,9 +1145,11 @@ groupSections:
 
             ***
 
-            ###### Step 4 — Fill Out the Draft Refund Form
+            ###### Step 3 — Fill in Refund Details
 
             The new refund form will open with **Draft** status. Fill in the following fields:
+
+            ![](/img/accounting/refunds/00010.png)
 
             1. **Vendor** _(Required)_ – Search and select the vendor who will receive the credit note. Start typing and select from the dropdown (e.g., [000003] EZCOM Cambodia).
 
@@ -1193,13 +1171,14 @@ groupSections:
 
             10. **Currency** – The currency of the refund. Defaults to **USD** based on the vendor's settings.
 
-            ![](/img/accounting/refunds/00010.png)
 
             ***
 
-            ###### Step 5 — Add Invoice Lines
+            ###### Step 4 — Add a line
 
             Under the **Invoice Lines** tab, add the items or expenses being refunded. Click **Add a line** and fill in:
+
+            ![](/img/accounting/refunds/00011.png)
 
             1. **Description** – Enter a description of the item or service being refunded.
 
@@ -1219,11 +1198,9 @@ groupSections:
 
             You can use **Add a section** to group related lines or **Add a note** for additional information.
 
-            ![](/img/accounting/refunds/00011.png)
-
             ***
 
-            ###### Step 6 — Save and Click Post
+            ###### Step 5 — Post
 
             After completing all fields, click **Save** to save the refund as a **Draft**. Then click **Post** to officially post the vendor credit note.
 
@@ -1231,39 +1208,9 @@ groupSections:
 
             ***
 
-            ###### Step 7 — Payment Matching Dialog (If Applicable)
+            ###### Step 6 — Verify
 
-            After posting, if there are outstanding debits for this vendor, a **Payment Matching** dialog will appear:
-
-            The dialog shows:
-
-            - A yellow notice: "Please select the outstanding payment you want to match. Only amounts up to 120.00 can be matched."
-            - **Bill** dropdown showing the refund document (e.g., RBILL/2026/0002)
-            - **Outstanding** section listing unpaid bills for this vendor
-
-            **Columns in Outstanding List**:
-
-            1. **Move Number** – The bill number (e.g., BILL/2026/0005)
-            2. **Date** – Bill date (24/02/2026)
-            3. **Journal** – Vendor Bills (USD)
-            4. **Outstanding** – Amount owed (120.00)
-
-            Check the box next to the bill you want to match against the credit note, then click **Match** to allocate the refund.
-
-            ![](/img/accounting/refunds/00013.png)
-
-            ***
-
-            ###### Step 8 — - Verify the Matched Refund
-
-            After matching, the refund document will show:
-
-            - **Number**: RBILL/2026/0002 with vendor reference
-            - **Status**: Posted
-            - **Payment Status**: Not Paid (until settlement is complete)
-            - A blue notice: "You have outstanding debits for this supplier. You can allocate them to mark this bill as paid."
-            - All header and line details preserved
-            - **Add Payment** and **Reset to Draft** buttons available
+            After posting, the refund will be created with a unique number (e.g., RBILL/2026/0002) and will be in **Posted** status. The reference field will show "Reversal of: BILL/2026/0005". The invoice reference and date will link back to the original bill.
 
             ![](/img/accounting/refunds/00014.png)
 
@@ -1296,7 +1243,15 @@ groupSections:
 
           This method allows you to create a standalone payment record first and then match it to one or more outstanding bills. It is useful when you make a payment to a vendor before a bill is created, or when matching payments to multiple bills.
 
+          ---
+
           ### Send Money
+
+          A **Send Money** payment is an outgoing payment made to a vendor to settle a bill. In MAQSU ERP, you can create a Send Money payment and then match it to the corresponding bill(s) to ensure accurate recording and reconciliation.
+
+          Let's see how to create a Send Money payment and match it to a bill:
+
+          ---
 
           ###### Step 1 — Navigation
 
@@ -1316,7 +1271,7 @@ groupSections:
 
           ***
 
-          ###### Step 2 — Click Create
+          ###### Step 2 — Create
 
           Click the **Create** button at the top-left of the Payments list page to open a new blank payment form.
 
@@ -1407,11 +1362,24 @@ groupSections:
             payment journal and matching process.
           </Noted>
 
-
+          ---
 
             ### Unmatch Payment
 
             In MAQSU ERP, you may need to **unmatch** or **delete** a payment record in certain situations, such as when a payment was matched to the wrong bill, when a payment needs to be corrected, or when a payment record was created by mistake. Understanding the proper workflow for unmatching and deleting payments ensures your accounting records remain accurate.
+
+              <Noted type="warning" title="Important" image="/img/icon/warning.png">
+                Before unmatching or deleting a payment, always verify the payment details and linked bills to avoid unintended consequences on your financial records. Unmatching a payment will change the status of the associated bill back to unpaid, and deleting a payment is permanent.
+              </Noted>
+
+              There are two main actions you can take with payments:
+
+              1. **Unmatch** – This action removes the link between a payment and its matched bill(s), changing the bill's status back to unpaid while keeping the payment record for correction or re-matching.
+              2. **Delete** – This action permanently removes the payment record from the system. You must unmatch any linked bills first before you can delete a payment.
+
+              Let's go through the steps to unmatch a payment from a bill and then delete it:
+
+              ---
 
             ###### Step 1 — Navigation
 
@@ -1612,7 +1580,7 @@ groupSections:
 
            ***
 
-           ###### Step 2 — Click Create
+           ###### Step 2 — Create
 
            Click the **Create** button at the top-left of the Journal Entries list page to open a new journal entry form.
 
@@ -2731,7 +2699,7 @@ groupSections:
 
           ***
 
-          ##### Step 2 — Click Create
+          ##### Step 2 — Create
 
           Click the **Create** button at the top-left of the Assets page to open a new asset form.
 
@@ -3326,9 +3294,15 @@ groupSections:
         body: ''
     sections:
       - link: /e-filing-reports
-        title: e-Filing Reports
+        title: e-Filing
         body: |
-          Generate tax reports required for government e-filing submissions, including sales tax, purchase tax, withholding tax, and monthly tax payment reports.
+          **e-Filing** feature simplifies tax compliance by generating government-mandated tax reports directly from your accounting data. This ensures accurate, timely, and error-free submissions to tax authorities, reducing the risk of penalties and audits.
+
+          - [Sales](/accounting/compliance#compliance-e-filing-reports-sales) – VAT collected from customers on sales transactions
+          - [Purchase](/accounting/compliance#compliance-e-filing-reports-purchase) – VAT paid to suppliers on purchases
+          - [Withholding](/accounting/compliance#compliance-e-filing-reports-withholdingtax) – Tax withheld from vendor payments and employee compensation
+          - [Monthly Tax Payment](/accounting/compliance#compliance-e-filing-reports-monthlytaxpayment) – Summary of tax obligations for the period
+
 
           <Noted type="info" title="Note" image="/img/icon/notes.png">
             e-Filing reports must be generated and submitted to tax authorities according to the official filing schedule. Ensure all invoices and bills for the reporting period are posted before generating reports.
@@ -3342,13 +3316,13 @@ groupSections:
 
           ---
 
-          ###### Step 1 — Configure Sales Tax
+          ##### Step 1 — Configuration
 
-          For more information on how to configure tax for sales reports, see the [Configuration Guide](/accounting/compliance#compliance-consfiguration-configuresalestax).
+          For more information on how to configure tax for sales reports, see the [Configuration Guide](/accounting/compliance#compliance-help-articles-configuresalestax).
 
           ---
 
-          ###### Step 2 — Navigation
+          ##### Step 2 — Navigation
 
           From the top navigation menu, click **Compliance**. Under the **E-Filing** section, select **Sales**.
 
@@ -3356,27 +3330,7 @@ groupSections:
 
           ***
 
-          ###### Step 3 — Configure Report Parameters
-
-          At the top of the Sales report page, configure the following parameters:
-
-          1. **Period Type** – Select **Month** for monthly reporting or **Year** for annual reporting.
-
-          2. **Period Selection** – Choose the specific month (e.g., January) or year (e.g., 2026) for the report.
-
-          3. **Currency** – Select the currency for the report (e.g., USD). This determines which transactions are included.
-
-          4. **Date Filter** – Click the **Date** dropdown to select a specific date range if needed.
-
-          5. **Journals Filter** – Click the **Journals** dropdown to filter by specific sales journals.
-
-          6. **Options** – Click the **Options** dropdown to customize report display settings.
-
-          7. **Apply** – Click the **Apply** button to generate the report with your selected parameters.
-
-          ***
-
-          ###### Step 4 — Choose Report Format
+          ##### Step 3 — Choose Report Format
 
           The Sales report is available in two formats:
 
@@ -3398,7 +3352,7 @@ groupSections:
 
           ***
 
-          ###### Step 5 — Export the Report
+          ##### Step 4 — Export the Report
 
           To export the report for submission to tax authorities:
 
@@ -3431,13 +3385,13 @@ groupSections:
 
           Purchase tax reports show all VAT paid to suppliers on purchase transactions during the reporting period. These reports document your input VAT that can be claimed as credits against your output VAT liability.
 
-          ###### Step 1 — Configure Purchase Tax
+          ##### Step 1 — Configuration
 
-          For more information on how to configure tax for sales reports, see the [Configuration Guide](/accounting/compliance#compliance-consfiguration-configurepurchasetax).
+          For more information on how to configure tax for sales reports, see the [Configuration Guide](/accounting/compliance#compliance-help-articles-configurepurchasetax).
 
           ---
 
-          ###### Step 2 — Navigate to Purchase Report
+          ##### Step 2 — Navigate to Purchase Report
 
           From the top navigation menu, click **Compliance**. Under the **E-Filing** section, select **Purchase**.
 
@@ -3445,27 +3399,7 @@ groupSections:
 
           ***
 
-          ###### Step 3 — Configure Report Parameters
-
-          At the top of the Purchase report page, configure the following parameters:
-
-          1. **Period Type** – Select **Month** for monthly reporting or **Year** for annual reporting.
-
-          2. **Period Selection** – Choose the specific month (e.g., February) or year (e.g., 2026) for the report.
-
-          3. **Currency** – Select the currency for the report (e.g., KHR for Khmer Riel). This determines which transactions are included.
-
-          4. **Date Filter** – Click the **Date** dropdown to select a specific date range if needed.
-
-          5. **Journals Filter** – Click the **Journals** dropdown to filter by specific purchase journals.
-
-          6. **Options** – Click the **Options** dropdown to customize report display settings.
-
-          7. **Apply** – Click the **Apply** button to generate the report with your selected parameters.
-
-          ***
-
-          ###### Step 4 — Choose Report Format
+          ##### Step 3 — Choose Report Format
 
           The Purchase report is available in two formats:
 
@@ -3487,7 +3421,7 @@ groupSections:
 
           ***
 
-          ###### Step 5 — Export
+          ##### Step 4 — Export
 
           To export the report for submission to tax authorities:
 
@@ -3520,13 +3454,13 @@ groupSections:
 
           ---
 
-          ###### Step 1 — Configure Witholding Tax
+          ##### Step 1 — Configure Witholding Tax
 
-          For more information on how to configure tax for sales reports, see the [Configuration Guide](/accounting/compliance#compliance-consfiguration-configurewithholdingtax).
+          For more information on how to configure tax for sales reports, see the [Configuration Guide](/accounting/compliance#compliance-help-articles-configurewithholdingtax).
 
           ---
 
-          ###### Step 2 — Navigate to Withholding Tax Report
+          ##### Step 2 — Navigate to Withholding Tax Report
 
           From the top navigation menu, click **Compliance**. Under the **E-Filing** section, select **Withholding Tax**.
 
@@ -3534,27 +3468,7 @@ groupSections:
 
           ***
 
-          ###### Step 3 — Configure Report Parameters
-
-          At the top of the Withholding Tax report page, configure the following parameters:
-
-          1. **Period Type** – Select **Month** for monthly reporting or **Year** for annual reporting.
-
-          2. **Period Selection** – Choose the specific month (e.g., February) or year (e.g., 2026) for the report.
-
-          3. **Currency** – Select the currency for the report (e.g., KHR for Khmer Riel). This determines which transactions are included.
-
-          4. **Date Filter** – Click the **Date** dropdown to select a specific date range if needed.
-
-          5. **Journals Filter** – Click the **Journals** dropdown to filter by specific journals.
-
-          6. **Options** – Click the **Options** dropdown to customize report display settings.
-
-          7. **Apply** – Click the **Apply** button to generate the report with your selected parameters.
-
-          ***
-
-          ###### Step 4 — Choose Report Format
+          ##### Step 3 — Choose Report Format
 
           The Withholding Tax report is available in two formats:
 
@@ -3576,7 +3490,7 @@ groupSections:
 
           ***
 
-          ###### Step 5 — Export the Report
+          ##### Step 4 — Export
 
           To export the report for submission to tax authorities:
 
@@ -3613,112 +3527,24 @@ groupSections:
 
           Monthly Tax Payment reports consolidate all tax obligations for the reporting period, including VAT, withholding tax, and other tax payments. These reports provide a comprehensive view of your total tax liability and help ensure timely payment to tax authorities.
 
-          ---
-
-          ###### Step 1 — Configure Monthly Tax Payment
-
           Before generating Monthly Tax Payment reports, you need to configure the tax settings that determine how taxes are calculated and tracked.
 
-          ##### Access Tax Configuration
+          ---
 
-          From the Monthly Tax Payment report page, click the **Options** dropdown in the top-right corner, then select **Configuration**.
+          ##### Step 1 — Configuration
+          For more information on how to configure tax for sales reports, see the [Configuration Guide](/accounting/compliance#compliance-help-articles-configuremonthlytaxpayment).
 
-          ![](/img/accounting/compliance/e-filing/monthly-tax-payment/0001.png)
+          ---
 
-          ##### Click on Configuration
-
-          This will show you the Tax Configuration Dialog Settings
-
-          ![](/img/accounting/compliance/e-filing/monthly-tax-payment/0006.png)
-
-          ##### Configure General Settings
-
-          In the Tax Configuration dialog, configure the following general settings:
-
-          1. **Carry Forward Account** – Select the account for tracking VAT credits carried forward from previous periods (e.g., 106200 VAT Credit Carry Forward)
-
-          2. **Tax On Salary** – Select the account for salary tax payable (e.g., 202100 Salary Tax Payable)
-
-          3. **Fringe Tax** – Select the account for fringe benefit tax payable (e.g., 202200 Fringe Benefit Tax Payable)
-
-          4. **Salary Journal** – Select the journal used for salary transactions (e.g., Miscellaneous Operations (USD))
-
-          ![](/img/accounting/compliance/e-filing/monthly-tax-payment/0007.png)
-
-          ##### Configure Tax Labels
-
-          In the **Tax Label** section, you can view and manage all tax types that will appear in your Monthly Tax Payment report:
-
-          The tax label list includes various withholding tax categories with their applicable rates:
-
-          - **Performance of Services, Royalty for Intangibles, Interests in Minerals** – 15%
-          - **Payment of Interest to None Bank** – 15%
-          - **Payment of Interest to Taxpayers with Fixed Term Deposit Accounts** – 6%
-          - **Payment of Interest to Taxpayers with Non-Fixed Term Deposit Accounts** – 4%
-          - **Payment for Rental/Lease of Movable and Immovable Property (Individual)** – 10%
-          - **Payment for Rental/Lease of Movable and Immovable Property (Legal Person)** – 10%
-          - **Payment of Interest** – 10%
-          - **Payment of Royalty, Rental/Leasing, and Income Related to the Use of Property** – 14%
-          - **Payment of Management Fee and Technical Services** – 14%
-          - **Payment of Dividend** – 14%
-
-          Each tax label includes:
-
-          - **Label** – The tax type description
-          - **Rate** – The withholding tax percentage
-          - **Display On Zero** – Option to show/hide taxes with zero amounts in reports
-          - **Note** – Additional information or comments
-
-          ##### Save Configuration
-
-          ![](/img/accounting/compliance/e-filing/monthly-tax-payment/0008.png)
-
-          After configuring all settings:
-
-          1. Review all account selections and tax labels to ensure accuracy
-
-          2. Click the **Save** button at the bottom of the dialog to save your configuration
-
-          3. The configuration will be applied to all future Monthly Tax Payment reports
-
-          ***
-
-          <Noted type="info" title="Configuration Note" image="/img/icon/notes.png">
-            Tax configuration settings apply system-wide. Any changes made here will affect all Monthly
-            Tax Payment reports going forward. Ensure all settings are correct before saving.
-          </Noted>
-
-          ***
-
-          ###### Step 2 — Navigate to Monthly Tax Payment Report
+          ##### Step 2 — Navigation
 
           From the top navigation menu, click **Compliance**. Under the **E-Filing** section, select **Monthly Tax Payment**.
 
           ![](/img/accounting/compliance/e-filing/monthly-tax-payment/0001.png)
 
-          ***
+          ---
 
-          ###### Step 3 — Configure Report Parameters
-
-          At the top of the Monthly Tax Payment report page, configure the following parameters:
-
-          1. **Period Type** – Select **Month** for monthly reporting or **Year** for annual reporting.
-
-          2. **Period Selection** – Choose the specific month (e.g., February) or year (e.g., 2026) for the report.
-
-          3. **Currency** – Select the currency for the report (e.g., KHR for Khmer Riel, USD for US Dollars). This determines which transactions are included.
-
-          4. **Date Filter** – Click the **Date** dropdown to select a specific date range if needed.
-
-          5. **Journals Filter** – Click the **Journals** dropdown to filter by specific journals (e.g., Customer Invoices, Vendor Bills, Customer Refund, Debit Notes).
-
-          6. **Options** – Click the **Options** dropdown to customize report display settings.
-
-          7. **Apply** – Click the **Apply** button to generate the report with your selected parameters.
-
-          ***
-
-          ###### Step 4 — Review Monthly Tax Payment Report
+          ##### Step 3 — Review Report
 
           The Monthly Tax Payment report displays all tax obligations for the selected period in a comprehensive table format:
 
@@ -3744,7 +3570,7 @@ groupSections:
 
           ***
 
-          ###### Step 5 — Export the Report
+          ##### Step 4 — Export
 
           To export the report for submission to tax authorities or record-keeping:
 
@@ -3779,8 +3605,8 @@ groupSections:
             submission to verify all amounts are accurate and complete.
           </Noted>
 
-      - link: /consfiguration
-        title: Configuration
+      - link: /help-articles
+        title: Help Articles
         body: |
           Additional configuration and setup guides to help you get the most out of MAQSU ERP's compliance features.
 
@@ -3790,42 +3616,27 @@ groupSections:
 
           Set up the tax categories that will appear in your Sales e-filing reports.
 
-          ###### Step 1 — Access Sales Report Configuration
+          Now let's configure the tax categories for your Sales e-filing reports. This setup determines how different tax rates are grouped and reported in your sales tax filings.
 
-          1. Navigate to **Compliance** ‣ **E-Filing** ‣ **Sales**
-          2. On the Sales report page, click the **Configuration** button (gear icon) in the options area
+          ---
+
+          ##### Step 1 — Navigation
+
+          Navigate to **Compliance** ‣ **E-Filing** ‣ **Sales**
 
           ![](/img/accounting/compliance/e-filing/config/sales/0001.png)
 
+          ---
+
+          ##### Step 2 — Click Configuration
+
+          On the Sales report page, click the **Configuration** button. This will open the Sales Tax Configuration modal where you can review and assign tax rates to categories.
+
           ![](/img/accounting/compliance/e-filing/config/sales/0002.png)
 
-          ***
+          ---
 
-          ###### Step 2 — Review Tax Category Structure
-
-          The Configuration modal displays all available tax categories for Sales reports:
-
-          **Left Column - Category Names:** – VAT 0%
-          - VAT on Sale
-          - VAT on Export
-          - Public Lighting Tax (Domestic Manufacturing)
-          - Public Lighting Tax (Suppliers)
-          - Specific Tax (Goods)
-          - Specific Tax (Services)
-          - Accommodation Tax
-          - VAT (State Charge) for Taxable Person
-          - VAT (State Charge) for Non-Taxable Person
-          - Others Tax
-          - VAT Treasury
-
-          **Right Column - Assigned Taxes:**
-          Shows which specific tax rates are assigned to each category.
-
-          ![](/img/accounting/compliance/e-filing/config/sales/0003.png)
-
-          ***
-
-          ###### Step 3 — Configure Tax Assignments
+          ##### Step 3 — Assign Taxes to Categories
 
           For each tax category, select which specific taxes should be included:
 
@@ -3841,15 +3652,11 @@ groupSections:
 
           ![](/img/accounting/compliance/e-filing/config/sales/0004.png)
 
-          ***
+          ---
 
-          ###### Step 4 — Save
+          ##### Step 4 — Save
 
-          1. Review all tax category assignments to ensure they're correct
-
-          2. Click the **Save** button at the bottom of the modal
-
-          3. The configuration will be applied to all future Sales e-filing reports
+          Once you have assigned the appropriate taxes to each category, click the **Save** button to apply your configuration. This will ensure that when you generate your Sales e-filing report, transactions with the assigned tax rates will be grouped under the correct categories.
 
           <Noted type="info" title="Tip" image="/img/icon/notes.png">
             You can assign multiple tax rates to a single category. For example, "VAT on Sale" might
@@ -3857,49 +3664,43 @@ groupSections:
             similar taxes in your report.
           </Noted>
 
-          ***
+          ---
 
           ### Configure Purchase Tax
 
           Set up the tax categories for your Purchase e-filing reports.
 
-          ###### Step 1 — Access Purchase Report Configuration
+          ---
 
-          1. Navigate to **Compliance** ‣ **E-Filing** ‣ **Purchase**
-          2. Click the **Configuration** button (gear icon) in the options area
+          ##### Step 1 — Navigation
+
+          Navigate to **Compliance** ‣ **E-Filing** ‣ **Purchase**
 
           ![](/img/accounting/compliance/e-filing/config/purchase/0001.png)
 
+          ---
+
+          ##### Step 2 — Click Configuration
+
+          Click the **Configuration** button in the options area to open the Purchase Tax Configuration modal.
+
           ![](/img/accounting/compliance/e-filing/config/purchase/0002.png)
 
-          ***
+          ---
 
-          ###### Step 2 — Assign Taxes to Categories
+          ##### Step 3 — Assign Taxes to Categories
 
           1. Click the **Taxes** dropdown for each category
-
-          2. Select from available purchase-related taxes:
-
-             - VAT - Local Purchases 10%
-             - Non - Taxable 0%
-             - VAT - Import 0%
-             - WHT - Interest 4%
-             - WHT - Interest 6%
-             - WHT - Property 10%
-             - WHT - Rental (Physical Person) 10%
-             - And more...
-
+          2. Select from available purchase-related taxes.
           3. Assign appropriate taxes to each category based on your business needs
 
           ![](/img/accounting/compliance/e-filing/config/purchase/0003.png)
 
-          ***
+          ---
 
-          ###### Step 3 — Save Purchase Configuration
+          ##### Step 3 — Save
 
-          1. Verify all assignments are correct
-
-          2. Click **Save** to apply the configuration
+          After assigning taxes to all categories, click the **Save** button to apply your configuration. This will ensure that when you generate your Purchase e-filing report, transactions with the assigned tax rates will be grouped under the correct categories.
 
           <Noted type="warning" title="Important" image="/img/icon/notes.png">
             Ensure "Local Taxable Purchase" includes only creditable VAT. Non-creditable purchases should
@@ -3913,81 +3714,102 @@ groupSections:
 
           Set up withholding tax categories and their corresponding accounts.
 
-          ###### Step 1 — Access Withholding Tax Configuration
+          ---
 
-          1. Navigate to **Compliance** ‣ **E-Filing** ‣ **Withholding Tax**
-          2. Click the **Configuration** button in the options area
+          ##### Step 1 — Navigation
+
+          Navigate to **Compliance** ‣ **E-Filing** ‣ **Withholding Tax**
 
           ![](/img/accounting/compliance/e-filing/config/witholding/0001.png)
 
+          ---
+
+          ##### Step 1 — Click Configuration
+
+          Click the **Configuration** button to open the Withholding Tax Configuration modal where you can review and assign accounts to each withholding tax category.
+
           ![](/img/accounting/compliance/e-filing/config/witholding/0002.png)
 
-          ***
+          ---
 
-          ###### Step 2 — Review Withholding Tax Structure
+          ##### Step 2 — Assign Taxes to Category
 
-          The Withholding Tax Configuration shows:
-
-           **Left Column - Tax Categories (in Khmer and percentages):** – Withholding Tax on Services 14%
-           - Withholding Tax on Interest 14%
-           - Withholding Tax on Interest 6%
-           - Withholding Tax on Interest 4%
-           - Rental - Physical Person 10%
-           - Rental - Legal Person 10%
-           - Non-Resident Dividend 14%
-           - Non-Resident Interest 14%
-           - Non-Resident Royalty/Leasing 14%
-          - And more...
-
-          **Right Column - Linked Accounts:**
-          Shows the chart of accounts entries for each withholding category:
-
-          - 202400 Withholding Tax on Services (15%) - Payable
-          - 202500 Withholding Tax on Interest (15%) - Payable
-          - 202700 Withholding Tax on Interest (6%) - Payable
-          - 202800 Withholding Tax on Interest (4%) - Payable
-          - 203300 Withholding Tax on Rental (Physical Person) (10%)
-          - 203400 Withholding Tax on Rental (Legal Person) (10%)
-          - 203200 Withholding Tax on Non-Resident (Dividend) (14%) - Payable
-          - 202900 Withholding Tax on Non-Resident (Interest) (14%) - Payable
-          - 203000 Withholding Tax on Non-Resident (Royalty/Leasing) (14%) - Payable
-          - 203100 Withholding Tax on Non-Resident (Mgmt/Technical) (14%) - Payable
+          For each withholding tax category, select the corresponding tax accounts:
 
           ![](/img/accounting/compliance/e-filing/config/witholding/0003.png)
 
-          ***
+          ---
 
-          ###### Step 3 — Save Withholding Tax Configuration
+          ##### Step 3 — Save
 
-          1. After reviewing all linkages, click **Save** if any changes were made
+          After assigning accounts to all withholding tax categories, click the **Save** button to apply your configuration. This will ensure that when you generate your Withholding Tax e-filing report, transactions with the assigned tax rates will be grouped under the correct categories.
 
-          2. Click **Discard** to cancel without saving
-
-          ***
-
-          {' '}
           <Noted type="warning" title="Important" image="/img/icon/notes.png">
             Changes to tax configuration affect all future reports but do not retroactively change
             historical data. If you need to restate a previous period's report, make the configuration
             change, then regenerate the report for that period.
           </Noted>
 
-          ***
+          ---
 
-          For more information on generating e-filing reports, see the [E-Filing Reports Guide](/compliance/e-filing-reports).
+          ### Configure Monthly Tax Payment
+
+          Set up the tax accounts and parameters that determine how your Monthly Tax Payment report is generated.
+
+          ---
+
+          ##### Step 1 — Navigation
+
+          Navigate to Monthly Tax Payment Reports by clicking **Compliance** from the top navigation menu. Under the **E-Filing** section, select **Monthly Tax Payment**.
+
+          ![](/img/accounting/compliance/e-filing/monthly-tax-payment/0001.png)
+
+          ---
+
+          ##### Step 2 — Click on Configuration
+
+          This will show you the Tax Configuration Dialog Settings
+
+          ![](/img/accounting/compliance/e-filing/monthly-tax-payment/0006.png)
+
+          ---
+
+          ##### Step 3 — Configure Accounts
+
+          In the Tax Configuration dialog, configure the following general settings:
+
+          1. **Carry Forward Account** – Select the account for tracking VAT credits carried forward from previous periods (e.g., 106200 VAT Credit Carry Forward)
+
+          2. **Tax On Salary** – Select the account for salary tax payable (e.g., 202100 Salary Tax Payable)
+
+          3. **Fringe Tax** – Select the account for fringe benefit tax payable (e.g., 202200 Fringe Benefit Tax Payable)
+
+          4. **Salary Journal** – Select the journal used for salary transactions (e.g., Miscellaneous Operations (USD))
+
+          ![](/img/accounting/compliance/e-filing/monthly-tax-payment/0007.png)
+
+          Each tax label includes:
+
+          - **Label** – The tax type description
+          - **Rate** – The withholding tax percentage
+          - **Display On Zero** – Option to show/hide taxes with zero amounts in reports
+          - **Note** – Additional information or comments
+
+          ---
+
+          ##### Step 4 — Save
+
+          After configuring all settings, click the **Save** button at the bottom of the dialog to save your configuration
+
+          <Noted type="info" title="Configuration Note" image="/img/icon/notes.png">
+            Tax configuration settings apply system-wide. Any changes made here will affect all Monthly
+            Tax Payment reports going forward. Ensure all settings are correct before saving.
+          </Noted>
+
     body: |
       **Compliance** in MAQSU ERP helps you meet government regulatory requirements by automating tax calculations, generating required reports, and maintaining proper documentation for audits and government submissions.
 
       MAQSU automates tax calculations based on current rates, generates government-required reports instantly, and maintains complete audit trails automatically. The system keeps all transaction data organized and ready for e-filing, ensures consistency across reports, and helps you meet deadlines with automated report generation. You can export data in the formats required by government systems like CIFRS, reducing manual work and compliance risk.
-
-      ***
-
-      Generate comprehensive tax reports for electronic filing with tax authorities, including:
-
-      - [Sales](/accounting/compliance#compliance-sales-tax-reports) – VAT collected from customers on sales transactions
-      - [Purchase Tax Reports](/accounting/compliance#compliance-purchase-tax-reports) – VAT paid to suppliers on purchases
-      - [Withholding Tax Reports](/accounting/compliance#compliance-withholding-tax-reports) – Tax withheld from vendor payments and employee compensation
-      - [Monthly Tax Payment Reports](/accounting/compliance#compliance-monthly-tax-payment-reports) – Summary of tax obligations for the period
 
       <Noted type="info" title="Important" image="/img/icon/notes.png">
         Always consult with your tax advisor or accountant to ensure your reports meet current

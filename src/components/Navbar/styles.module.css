@@ -1,8 +1,11 @@
 .navbarRoot {
   position: sticky;
   top: 0;
+  width: 100%;
+  margin: 0 auto;
   z-index: 1000;
   transition: box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  background: var(--color-primary);
 }
 
 .scrolled {
@@ -13,9 +16,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
+  width: 90%;
   margin: 0 auto;
-  padding: 0.55rem clamp(1rem, 4vw, 5rem);
+  padding: 0.15rem clamp(1rem, 4vw, 5rem);
   gap: clamp(0.65rem, 1.6vw, 1.5rem);
   background: var(--color-primary);
   color: var(--color-white);
@@ -71,8 +74,6 @@
 }
 
 .ctaButton {
-  padding: 0.55rem 1.3rem;
-  background: linear-gradient(135deg, #567ba3 0%, #3e3949 100%);
   color: white;
   font-weight: 600;
   font-size: 0.92rem;
@@ -232,7 +233,7 @@
   transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
   padding: 0.95rem 1rem;
   position: relative;
-  border-radius: 14px;
+  border-radius: 5px;
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
@@ -254,20 +255,20 @@
   justify-content: center;
   width: 100%;
   padding: 1rem 1.25rem;
-  background: linear-gradient(135deg, #f0f5fb 0%, #d6e2ee 100%);
-  color: #173445;
+  color: #ffffff;
   font-weight: 700;
   font-size: 1rem;
-  border-radius: 14px;
+  border-radius: 5px;
   text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.12);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
   margin-top: 0.5rem;
 }
 
 .mobileCtaButton:hover {
   transform: translateY(-1px);
   text-decoration: none;
+  color: #d7dde4;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.18);
 }
 

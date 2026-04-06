@@ -18,6 +18,8 @@ import Navbar from './Navbar/Navbar';
 import Footer from './Footer';
 import { formatDistanceToNow } from 'date-fns';
 import CardList from './CardList/CardList';
+import { BsArrowRightCircle, BsCaretLeftSquare } from "react-icons/bs";
+import { BsCaretRightSquare } from "react-icons/bs";
 
 export default function Page() {
   const location = useLocation();
@@ -27,7 +29,7 @@ export default function Page() {
   const [active, setActive] = useState(null);
   const [expandedSections, setExpandedSections] = useState({});
   const [allGroups, setAllGroups] = useState([]);
-  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [sidebarOpen, setSidebarOpen] = useState(true);
   const [headings, setHeadings] = useState({});
   const [modalImage, setModalImage] = useState(null);
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -299,6 +301,16 @@ export default function Page() {
   const scrollToTop = useCallback(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, []);
+  const hasSubcategories = useMemo(
+    () => posts.some((group) => (group.sections?.length || 0) > 0),
+    [posts],
+  );
+
+  useEffect(() => {
+    if (!hasSubcategories && sidebarOpen) {
+      setSidebarOpen(true);
+    }
+  }, [hasSubcategories, sidebarOpen]);
 
   /* -----------------------------------
      🔥 NEXT & PREV
@@ -378,7 +390,7 @@ export default function Page() {
       )}
 
       {/* ── BREADCRUMB ── */}
-      {sidebarOpen && (
+      {hasSubcategories && sidebarOpen && (
         <div className="pq-content-breadcrumb">
           {posts?.map((post, i) => (
             <div key={i} className="pq-breadcrumb-row">
@@ -400,7 +412,7 @@ export default function Page() {
       {/* ── LAYOUT ── */}
       <div className="pq-layout">
         {/* Sidebar */}
-        {sidebarOpen && (
+        {hasSubcategories && sidebarOpen && (
           <div
             className="pq-sidebar-backdrop"
             onClick={() => setSidebarOpen(false)}
@@ -408,7 +420,7 @@ export default function Page() {
           />
         )}
 
-        {sidebarOpen && (
+        {hasSubcategories && sidebarOpen && (
           <nav className="pq-sidebar">
             <div className="pq-sidebar-mobile-bar">
               <span className="pq-sidebar-mobile-title">Menu</span>
@@ -484,13 +496,15 @@ export default function Page() {
             </button>
           )}
 
-          <button
-            onClick={() => setSidebarOpen((prev) => !prev)}
-            className="pq-toggle-btn"
-            aria-label="Toggle sidebar"
-          >
-            {sidebarOpen ? <BiExpandAlt size={15} /> : <BiCollapseAlt size={15} />}
-          </button>
+          {hasSubcategories && (
+            <div
+              onClick={() => setSidebarOpen((prev) => !prev)}
+              className={`pq-toggle-btn${sidebarOpen ? ' is-sidebar-open' : ''}`}
+            >
+              {sidebarOpen ? <BsCaretLeftSquare /> : <BsCaretRightSquare />}
+              {/* {sidebarOpen ? <BiExpandAlt size={15} /> : <BiCollapseAlt size={15} />} */}
+            </div>
+          )}
 
           <div className={`pq-docs-body${!sidebarOpen ? ' full-width' : ''}`}>
             <div className={`pq-inline-breadcrumb${!sidebarOpen ? ' full-width' : ''}`}>
@@ -518,13 +532,13 @@ export default function Page() {
                 >
                   <div className="pq-section-head">
                     <h1 className="pq-section-title pq-section-title-main">{group.title}</h1>
-                    <TimeAgo date={group.date} />
                   </div>
                   {group.body && (
                     <div className="pq-section-content">
                       <MdxString source={group.body} components={tinaComponents} />
                     </div>
                   )}
+                  <TimeAgo date={group.date} />
                 </section>
 
                 {group.sections?.map((sub, si) => {
@@ -546,43 +560,44 @@ export default function Page() {
                             <MdxString source={sub.body} components={tinaComponents} />
                           </div>
                         )}
+
                       </section>
                     </div>
                   );
                 })}
+                {/* ── PAGINATION ── */}
+                  {endPath && (
+                    <div className={`pq-pagination${!sidebarOpen ? ' full-width' : ''}`}>
+                      {prevItem ? (
+                        <Link to={buildUrl(prevItem.uid)} className="pq-nav-link prev">
+                          <HiMiniChevronLeft size={20} className="pq-nav-icon" />
+                          <div>
+                            <div className="pq-nav-label">Previous</div>
+                            <div className="pq-nav-title">{prevItem.title}</div>
+                          </div>
+                        </Link>
+                      ) : (
+                        <div className="pq-spacer" />
+                      )}
+
+                      {nextItem && (
+                        <Link to={buildUrl(nextItem.uid)} className="pq-nav-link next">
+                          <div>
+                            <div className="pq-nav-label">Next</div>
+                            <div className="pq-nav-title">{nextItem.title}</div>
+                          </div>
+                          <HiMiniChevronRight size={20} className="pq-nav-icon" />
+                        </Link>
+                      )}
+                    </div>
+                  )}
               </div>
             ))}
           </div>
         </div>
       </div>
 
-      {/* ── PAGINATION ── */}
-      {endPath && (
-        <div className={`pq-pagination${!sidebarOpen ? ' full-width' : ''}`}>
-          {prevItem ? (
-            <Link to={buildUrl(prevItem.uid)} className="pq-nav-link prev">
-              <HiMiniChevronLeft size={20} className="pq-nav-icon" />
-              <div>
-                <div className="pq-nav-label">Previous</div>
-                <div className="pq-nav-title">{prevItem.title}</div>
-              </div>
-            </Link>
-          ) : (
-            <div className="pq-spacer" />
-          )}
 
-          {nextItem && (
-            <Link to={buildUrl(nextItem.uid)} className="pq-nav-link next">
-              <div>
-                <div className="pq-nav-label">Next</div>
-                <div className="pq-nav-title">{nextItem.title}</div>
-              </div>
-              <HiMiniChevronRight size={20} className="pq-nav-icon" />
-            </Link>
-          )}
-        </div>
-      )}
-      <Footer />
     </div>
   );
 }
@@ -604,7 +619,7 @@ const GlobalStyles = () => (
       --c-faint: #9aa3b6;
       --c-sidebar: #ffffff;
       --sidebar-w: 250px;
-      --content-max: 960px;
+      --content-max: 720px;
       --content-pad: clamp(16px, 3vw, 34px);
       --nav-h: 60px;
       --radius: 12px;
@@ -632,6 +647,8 @@ const GlobalStyles = () => (
       min-height: 100vh;
       background-color: var(--c-bg);
       overflow-x: hidden;
+
+
     }
 
     .pq-content-breadcrumb {
@@ -639,22 +656,21 @@ const GlobalStyles = () => (
     }
 
     .pq-inline-breadcrumb {
-      width: 75%;
+      width: min(var(--content-max), 100%);
       margin: 0  auto;
-      padding: 18px 0 10px;
+      padding: 15px 0;
       display: flex;
       align-items: center;
       position: relative;
     }
 
     .pq-inline-breadcrumb.full-width {
-      width: 80%;
+      width: min(calc(var(--content-max) + 120px), 100%);
     }
 
     .pq-breadcrumb-row {
       display: flex;
       align-items: center;
-      gap: 3px;
       font-size: 12px;
       font-weight: 500;
       color: var(--c-muted);
@@ -664,14 +680,11 @@ const GlobalStyles = () => (
     .pq-breadcrumb-row a {
       color: var(--c-muted);
       text-decoration: none;
-      padding: 2px 4px;
-      border-radius: 6px;
       transition: color var(--transition), background var(--transition);
     }
 
     .pq-breadcrumb-row a:hover {
       color: var(--c-accent);
-      background: var(--c-accent-bg);
     }
 
     .pq-breadcrumb-row .sep {
@@ -683,20 +696,18 @@ const GlobalStyles = () => (
     .pq-layout {
       display: flex;
       background: var(--c-bg);
-      min-height: 100vh;
+
     }
 
     .pq-sidebar {
       width: var(--sidebar-w);
       flex-shrink: 0;
-      padding: 20px 0 26px;
+      padding: 10px 0 26px;
       height: calc(100vh - var(--nav-h));
       position: fixed;
       left: 0;
-      top: var(--nav-h);
       overflow-y: auto;
       background: var(--c-sidebar);
-      border-right: 1px solid var(--c-border);
       display: flex;
       flex-direction: column;
       gap: 2px;
@@ -723,7 +734,7 @@ const GlobalStyles = () => (
     }
 
     .pq-group-header {
-      padding: 8px 18px 4px;
+      padding: 38px 18px 4px;
     }
 
     .pq-group-title {
@@ -833,15 +844,31 @@ const GlobalStyles = () => (
     }
 
     .pq-docs-body {
-      width: 90%;
+      width: 100%;
+      max-width: 1400px;
+      height: calc(98vh - var(--nav-h));
       margin: 0 auto;
       border: 0;
       border-radius: 0;
       box-shadow: none;
+      scrollbar-color: rgb(236, 236, 237) transparent;
     }
 
+    .pq-docs-body::-webkit-scrollbar {
+        width: 10px;
+        height: 10px;
+      }
+    .pq-docs-body::-webkit-scrollbar-track {
+        background: rgb(255, 255, 255);
+      }
+      .pq-docs-body::-webkit-scrollbar-thumb {
+        background: rgb(236, 236, 237);
+        border-radius: 10px;
+      }
+
     .pq-docs-body.full-width {
-      width:70%;
+      width: 100%;
+      max-width: 1480px;
       margin: 0 auto;
       border: 0;
       border-radius: 0;
@@ -850,27 +877,20 @@ const GlobalStyles = () => (
 
     .pq-toggle-btn {
       position: fixed;
-      left: 14px;
-      bottom: 82px;
+      top: calc(var(--nav-h) + 10px);
+      left: 5px;
+      padding: 0 12px;
       z-index: 60;
-      display: inline-flex;
+      display: block;
       align-items: center;
       justify-content: center;
       margin: 0;
-      width: 36px;
+      fzont-size: 10px;
+      width: 106px;
       height: 36px;
-      border-radius: 10px;
-      border: 1px solid var(--c-border);
-      background: var(--c-surface);
       color: var(--c-muted);
       cursor: pointer;
-      box-shadow: var(--shadow-sm);
       transition: background var(--transition), color var(--transition), box-shadow var(--transition);
-    }
-
-    .pq-toggle-btn:hover {
-      color: var(--c-accent);
-      box-shadow: var(--shadow-md);
     }
 
     .pq-scroll-top-btn {
@@ -900,14 +920,14 @@ const GlobalStyles = () => (
     .pq-section,
     .pq-sub-section {
       margin: 0  auto;
-      width: 75%;
-      scroll-margin-top: 84px;
+      width: min(var(--content-max), 100%);
+      scroll-margin-top: 30px;
       padding-top: 6px;
     }
 
     .pq-section.full-width,
     .pq-sub-section.full-width {
-      width: 80%;
+      width: min(calc(var(--content-max) + 120px), 100%);
     }
 
     .pq-section-shell {
@@ -957,9 +977,10 @@ const GlobalStyles = () => (
       font-weight: 650 !important;
       color: #444444 !important;
       line-height: 1.4 !important;
-      margin-top: 22px !important;
+      margin-top: 32px !important;
       padding-top: 8px !important;
       margin-bottom: 10px !important;
+      scroll-margin-top: 70px;
     }
 
     .pq-section-content h4 {
@@ -1043,13 +1064,13 @@ const GlobalStyles = () => (
       width: 100%;
       margin: 0 auto;
       padding: 0 2px;
-      height: 1px;
       background: var(--c-border);
     }
 
     .pq-pagination {
-      width: 60%;
-      margin: 30px 420px;
+      width: min(var(--content-max), 100%);
+      margin: 30px auto;
+      padding: 30px 0px;
       display: flex;
       justify-content: space-between;
       align-items: stretch;
@@ -1057,7 +1078,7 @@ const GlobalStyles = () => (
     }
 
     .pq-pagination.full-width {
-      width: 60%;
+      width: min(calc(var(--content-max) + 120px), 100%);
       margin: 30px auto;
     }
 
@@ -1306,8 +1327,13 @@ const GlobalStyles = () => (
       }
 
       .pq-toggle-btn {
+        top: calc(var(--nav-h) + 10px);
         left: 12px;
-        bottom: 72px;
+        bottom: auto;
+      }
+
+      .pq-toggle-btn.is-sidebar-open {
+        left: calc(min(82vw, 300px) - 42px);
       }
 
       .pq-scroll-top-btn {

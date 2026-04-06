@@ -218,7 +218,7 @@ export default function Topics({ topics }) {
               </div>
             )}
           </div>
-        }
+          }
           <main className={clsx(visibleCards?.length > 0 && styles.articleList, viewMode === 'grid' && styles.articleGrid)}>
           {
           visibleCards?.map((props, idx) =>
