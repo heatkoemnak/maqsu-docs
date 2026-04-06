@@ -60,7 +60,7 @@ export default function Topics({ topics }) {
 
   if (!topics) {
     return (
-      <div className={clsx(styles.pageRoot)}>
+      <div className={clsx(styles.pageRoot, styles.zoomOutLayout)}>
         <div className={clsx(styles.mainLayout)} style={{ padding: 24 }}>
           <div>
             <h2 style={{ margin: 0 }}>Category not found</h2>
@@ -99,7 +99,7 @@ export default function Topics({ topics }) {
   };
 
   return (
-    <div className={clsx(styles.pageRoot)}>
+    <div className={clsx(styles.pageRoot, styles.zoomOutLayout)}>
       {/* Top bar */}
       <div className={clsx(styles.topBar)}>
         <div className={clsx(styles.breadcrumbLeft)}>
@@ -232,7 +232,6 @@ export default function Topics({ topics }) {
 
 
       </div>
-
       {/* Prev / Next navigation */}
       {(prevItem || nextItem) && visibleCards?.length > 0 && (
         <div className={clsx(styles.pageNavigation)}>
@@ -261,6 +260,7 @@ export default function Topics({ topics }) {
           )}
         </div>
       )}
+
 
     </div>
   );

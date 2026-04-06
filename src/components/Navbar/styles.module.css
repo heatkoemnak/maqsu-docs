@@ -45,7 +45,7 @@
 .searchContainer {
   flex: 1;
   min-width: 0;
-  max-width: 560px;
+  max-width: 595px;
   display: flex;
   align-items: center;
 }
