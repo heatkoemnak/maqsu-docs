@@ -424,13 +424,13 @@ export default function Page() {
           <nav className="pq-sidebar">
             <div className="pq-sidebar-mobile-bar">
               <span className="pq-sidebar-mobile-title">Menu</span>
-              <button
+              {/* <button
                 className="pq-sidebar-close"
                 onClick={() => setSidebarOpen(false)}
                 aria-label="Close sidebar"
               >
                 <IoClose size={18} />
-              </button>
+              </button> */}
             </div>
 
             {posts.map((group) => (
@@ -658,14 +658,14 @@ const GlobalStyles = () => (
     .pq-inline-breadcrumb {
       width: min(var(--content-max), 100%);
       margin: 0  auto;
-      padding: 15px 0;
+      padding: 12px 0;
       display: flex;
       align-items: center;
       position: relative;
-    }
+      }
 
-    .pq-inline-breadcrumb.full-width {
-      width: min(calc(var(--content-max) + 120px), 100%);
+      .pq-inline-breadcrumb.full-width {
+        width: min(calc(var(--content-max) + 120px), 100%);
     }
 
     .pq-breadcrumb-row {
@@ -1294,7 +1294,7 @@ const GlobalStyles = () => (
       }
 
       .pq-inline-breadcrumb {
-        padding-top: 14px;
+        padding-top: 15px;
         width: 92%;
         margin: 0 auto;
       }
