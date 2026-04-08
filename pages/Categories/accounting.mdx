@@ -508,37 +508,17 @@ groupSections:
       - link: /payments
         title: Payments
         body: |
-          A **Payment** is a record in MAQSU ERP that tracks money received from a customer against a posted invoice. Registering a payment correctly ensures your accounting records are accurate, your invoices are marked as settled, and your cash flow is properly reflected.
+          Payment feature in MAQSU allows you to manage and track all customer payments in one place.
 
-          MAQSU offers a dedicated platform in the Accounting module to record all payments from customers. You can check payment records from the **Payments** option available under the **Customers** menu. The preview of the list view shows the Date, Number, Journal, Payment Method, Partner, Batch Payment, Amount, and Status.
+          In this feature, you can **send** to customer or **receive** money from customers, and record payments related to customer invoices. This platform provides a comprehensive view of all payment activities, allowing you to easily track outstanding balances and ensure timely collections.
 
           ![](/img/accounting/invoices/payments/0001.png)
 
-          The view of the platform can be altered between List, Kanban, and Graph as per your demand. As sorting options, you will get filters and group by options.
-
-          ![](/img/accounting/invoices/payments/0002.png)
-
-          MAQSU offers Customer Payments, Vendor Payments, Transfers, Batch Payments, Draft, Posted, Sent, Reconciled and Payment Date to Print as default filters. Adding custom filters is an easy task using the **Add Custom Filters** option.
-
-          ![](/img/accounting/invoices/payments/0003.png)
-
-          You are allowed to group the payments according to the Customer/Vendor, Journal, Payment Method, Status, Payment Date, and Currency. If required, you can use the **Add Custom Group** option to create customized grouping options.
-
-          <Noted type="info" title="Note" image="/img/icon/tip.png">
-          In MAQSU ERP, there are **two ways** to register a customer payment:
-           - **Option 1 – Add Payment Directly on Invoice:** Add payment directly on a posted customer invoice using the **Add Payment** button.
-           - **Option 2 – Create New Payment:** Create a standalone payment record from the Customers → Payments menu and link it to an outstanding invoice.
-          </Noted>
-
-          ***
-
-          ### Receive Money
-
-          This method allows you to create a standalone payment record first and then match it to one or more outstanding invoices. It is useful when you receive a payment from a customer before an invoice is created, or when matching payments to multiple invoices.
+          Now let's explore how to receive a payment from customer in MAQSU:
 
           ---
 
-          ###### Step 1 — Navigation
+          ##### Step 1 — Navigation
 
           From the left sidebar, click **Accounting**. Then from the top navigation menu, go to **Customers** ‣ **Payments**.
 
@@ -557,7 +537,7 @@ groupSections:
 
           ***
 
-          ###### Step 2 — Create
+          ##### Step 2 — Create
 
           Click on the Create button to create a payment record manually.
 
@@ -565,7 +545,7 @@ groupSections:
 
           ---
 
-          ###### Step 3 — Fill in the payment detials
+          ##### Step 3 — Fill in the payment detials
 
           ![](/img/accounting/invoices/payments/0005.png)
 
@@ -583,7 +563,7 @@ groupSections:
 
           ***
 
-          ###### Step 4 — Confirm
+          ##### Step 4 — Confirm
 
           After filling in all required fields, click **Confirm** to post the payment.
           ![](/img/accounting/invoices/payments/0006.png)
@@ -598,7 +578,7 @@ groupSections:
 
           ***
 
-          ###### Step 6 — Verify
+          ##### Step 6 — Verify
           After confirming, the payment record will update to **Validated** status. The payment detail page (e.g., CUST.IN/2026/0011) will display:
 
           ![](/img/accounting/invoices/payments/0007.png)
@@ -608,7 +588,7 @@ groupSections:
 
           ***
 
-          ###### Step 7 — Printing *(Optional)*
+          ##### Step 7 — Printing *(Optional)*
 
           After the payment is validated, you can print a receipt or voucher for the customer. Click the **Print** button at the top of the payment form and select the appropriate document:
 
@@ -616,14 +596,6 @@ groupSections:
           - **Deposit Receipt** – Prints a deposit receipt if the payment is a deposit or advance.
 
           ![](/img/accounting/invoices/payments/0008.png)
-
-          ---
-
-          ### Send Money
-
-          You can use **Send Maney** payment type to record outgoing payments or refunds to customers. The process is the same as described above, but you will select **Send Money** as the payment type and choose the appropriate journal for outgoing payments.
-
-          
 
       - link: /help-articles
         title: Help Articles
@@ -1250,39 +1222,25 @@ groupSections:
         title: Payments
         body: |
 
-          This method allows you to create a standalone payment record first and then match it to one or more outstanding bills. It is useful when you make a payment to a vendor before a bill is created, or when matching payments to multiple bills.
+          In this feature, you will learn how to create a vendor payment in MAQSU and match it to an outstanding bill. This process ensures that your accounts payable records are accurate and that your bills are properly settled.
 
-          ---
-
-          ### Send Money
-
-          A **Send Money** payment is an outgoing payment made to a vendor to settle a bill. In MAQSU ERP, you can create a Send Money payment and then match it to the corresponding bill(s) to ensure accurate recording and reconciliation.
-
-          Let's see how to create a Send Money payment and match it to a bill:
+          Let's see how to create a Vendor Payment
 
           ---
 
           ##### Step 1 — Navigation
 
-          From the left sidebar, click **Accounting**. Then from the top navigation menu, go to **Vendors** ‣ **Payments**.
+          Navigate to the **Payments** list under **Vendors ‣ Payments**. This page shows all existing vendor payment records, including their status and details.
 
           ![](/img/accounting/vendor-bills/payment/0001.png)
-
-          The Payments list shows all existing vendor payment records. The list displays the following columns:
-          ![](/img/accounting/bill-payments/0008.png)
-
-          1. **Number** – The unique payment number assigned to each record (e.g., SUPP.OUT/2026/0001). Vendor payments are prefixed with **SUPP.OUT** to indicate outgoing payments to suppliers.
-          2. **Payment Date** – The date the payment was made.
-          3. **Vendor** – The vendor who received the payment.
-          4. **Journal** – The bank or cash account the payment was paid from.
-          5. **Amount** – The total payment amount.
-          6. **Status** – The current status of the payment: **Validated** (posted but not yet matched to a bill) or **Reconciled** (matched and settled against a bill).
 
           ***
 
           ##### Step 2 — Create
 
           Click the **Create** button at the top-left of the Payments list page to open a new blank payment form.
+
+          ![](/img/accounting/bill-payments/0008.png)
 
           ***
 
@@ -1370,6 +1328,11 @@ groupSections:
             better suited for advance payments, bulk matching, or when you need more control over the
             payment journal and matching process.
           </Noted>
+
+
+      - link: /help-articles
+        title: Help Articles
+        body: |
 
           ---
 
@@ -1520,7 +1483,6 @@ groupSections:
 
           The total amount shown at the bottom of the list will also be updated to reflect the removal of this payment.
 
-
   - link: 'general-journal#general-journal'
     uid: general-journal
     title: General Journal
@@ -1564,7 +1526,9 @@ groupSections:
 
           ---
 
-          ### Create Journal Entry
+          ### Create New Journal Entry
+
+          Now let's create a journal entry to record an owner's capital deposit.
 
           ---
 
@@ -1586,7 +1550,6 @@ groupSections:
            6. **Total** – The total amount of the journal entry
            7. **Company Currency** – The amount in the company's base currency
            8. **Status** – Current status: **Draft** or **Posted**
-
 
            ***
 
@@ -1631,23 +1594,6 @@ groupSections:
 
            ![](/img/accounting/journal_entry/create/0006.png)
 
-           ---
-
-          ### Cancel Entry
-
-           The entry can be canceled before posting it on the journal using the **Cancel Entry** button. After posting the journal entry, you will get the option for **Reverse Entry**.
-
-           ![](/img/accounting/journal_entry/create/0009.png)
-
-           The **Reversal Date** will automatically appear as soon as you select the Reversal Date as Specific. The **Reversal Date** can be set as the same as that of the Journal Entry Date by selecting the respective option. Click the Reverse button and the journal entry will be reversed.
-
-           ---
-
-          ### Reverse Entry
-
-           Using this button, you can easily reverse a posted journal entry. A pop-up will appear to specify the Reversal Date and Specific Journal.
-
-           ![](/img/accounting/journal_entry/create/0008.png)
 
       - link: /journal-items
         title: Journal Items
@@ -1668,20 +1614,28 @@ groupSections:
           6. **Credit** – Enter the credit amount for the line.
 
           Every journal entry must contain at least one debit line and one credit line, and the total debit must equal the total credit.
-      - link: /more-resource
-        title: Help & Reference
+
+      - link: /help-articles
+        title: Help Articles
         body: |
 
-          #### Quick Rules Before You Post
+          ---
 
-          - Total **debit** must equal total **credit** – Use the correct **accounting date** for the period you want to affect
-          - Choose the correct **journal** – Write a short but clear **reference** – Review each journal item before posting
+          ### Quick Rules Before You Post
 
-          #### Status
+          1. Total **debit** must equal total **credit**
+          2. Use the correct **accounting date** for the period you want to affect
+          3. Choose the correct **journal**
+          4. Write a short but clear **reference**
+          5. Review each journal item before posting
+
+          ---
+
+          ### Underanding Status
 
           Journal entries in MAQSU move through different statuses:
 
-          #### 1. Draft
+          ##### 1. Draft
 
           - Entry is created but not yet posted
           - Can be freely edited or deleted
@@ -1693,7 +1647,7 @@ groupSections:
 
           ![](/img/accounting/journal-entry/0003.png)
 
-          #### 2. Posted
+          ##### 2. Posted
 
           - Entry is finalized and recorded in accounting books
           - DOES affect all financial reports and statements
@@ -1703,40 +1657,31 @@ groupSections:
 
           ![](/img/accounting/journal-entry/0004.png)
 
-          #### 3. Cancelled (Reversed)
+          ##### 3. Cancelled (Reversed)
 
           - Entry has been reversed with a counter-entry
           - Original entry remains visible for audit trail
           - Reversing entry neutralizes the effect on accounts
 
           ![](/img/accounting/journal-entry/0005.png)
-          ***
 
-          #### Common Mistakes to Avoid
+          ---
 
-          **Unbalanced entries** – Debits don't equal credits
+          ### Cancel Entry
 
-          - Solution: Always check totals before posting
+           The entry can be canceled before posting it on the journal using the **Cancel Entry** button. After posting the journal entry, you will get the option for **Reverse Entry**.
 
-          **Wrong account types** – Debiting equity or crediting expenses incorrectly
+           ![](/img/accounting/journal_entry/create/0009.png)
 
-          - Solution: Review double-entry bookkeeping rules
+           The **Reversal Date** will automatically appear as soon as you select the Reversal Date as Specific. The **Reversal Date** can be set as the same as that of the Journal Entry Date by selecting the respective option. Click the Reverse button and the journal entry will be reversed.
 
-          **Incorrect dates** – Using current date instead of opening period date
+           ---
 
-          - Solution: Set accounting date to the first day of your period
+          ### Reverse Entry
 
-          **Missing documentation** – No reference or unclear descriptions
+           Using this button, you can easily reverse a posted journal entry. A pop-up will appear to specify the Reversal Date and Specific Journal.
 
-          - Solution: Always include clear references explaining the entry
-
-          **Wrong journal type** – Using vendor bills journal for capital entries
-
-          - Solution: Use "Miscellaneous Operations" for most opening balances
-
-          **Duplicate entries** – Recording the same opening balance twice
-
-          - Solution: Review journal entries list before creating new entries
+           ![](/img/accounting/journal_entry/create/0008.png)
 
   - link: 'ai-ocr#ai-ocr'
     uid: ai-ocr
@@ -2370,7 +2315,7 @@ groupSections:
 
   - link: 'bank-reconcile#bank-reconcile'
     uid: bank-reconcile
-    title: Bank Reconcilation
+    title: Bank Reconciliation
     date: '2026-02-23T09:51:49.000Z'
     breadcrumbs:
       - link: /
@@ -2380,14 +2325,10 @@ groupSections:
         title: Accounting
         body: ''
       - link: null
-        title: Bank Reconcilation
+        title: Bank Reconciliation
         body: ''
     body: |
-      In this section, we're goinign to talk about how to manage bank reconciliation in MAQSU accounting module.
-
-      **Bank reconciliation** is the process of matching your bank transactions with your business records, such as customer invoices, vendor bills, and payments. Not only is this compulsory for most businesses, but it also offers several benefits, such as reduced risk of errors in financial reports, detection of fraudulent activities, and improved cash flow management.
-
-      Bank reconciliation is essential to check if there is any difference in the accounts used for business transactions by comparing them. If any variances are detected, you can immediately correct them by taking remedial actions. It will be difficult to match bank records with account statements manually. In business, cash transactions are recorded in cash accounts and it is important to sync with the bank accounts. To ensure this, it is needed to confirm that the bank account matches the cash account. Performing all these operations manually will be difficult and consume lots of time and effort. You can rely on the MAQSU Accounting module in order to simplify the reconciliation process.
+      In this section, we're goinign to talk about bank reconciliation, which is the process of matching your internal financial records with your bank statements to ensure accuracy and identify any discrepancies.
 
       You can easily perform reconciliation operations from the Accounting Dashboard itself.
 
@@ -2558,9 +2499,7 @@ groupSections:
         title: Assets Management
         body: ''
     body: |
-      Asset management is the process of organizing, tracking, and maintaining long-term company assets such as computers, vehicles, machinery, and furniture. These assets gradually lose value over time through depreciation, so accurate records are required for reporting and decision-making.
-
-      In MAQSU, you can manage the full fixed-asset lifecycle from one place: define asset categories, purchase and register assets, run depreciation, and review status for each asset.
+      **Asset Management** feature in MAQSU allows you to efficiently track and manage your company's fixed assets throughout their lifecycle. From acquisition to disposal, you can maintain accurate records, calculate depreciation, and ensure compliance with accounting standards.
 
       ![](/img/accounting/assets/0001.png)
 
@@ -2576,33 +2515,22 @@ groupSections:
       - link: /purchase-asset
         title: Purchase an Asset
         body: |
-          When you purchase an asset in MAQSU ERP, you create a vendor bill and assign an **Asset Category** to the line item. The system automatically:
 
-          1. **Accounts Payable** — Records the purchase as a payable amount to the vendor.
-          2. **Asset Accounting** — Assigns the asset to the correct asset account on the balance sheet.
-          3. **Depreciation Tracking** — Creates an asset record for tracking and calculating depreciation.
-          4. **Depreciation Calculation** — Calculates depreciation based on the category settings and posts to the income statement.
+          Purchase an Asset is the same as creating a vendor bill. However, the critical step is to assign an **Asset Category** to the bill line. This ensures that MAQSU recognizes the purchase as a fixed asset and applies the correct accounting and depreciation rules.
 
           ***
 
           <Noted type="info" title="Prerequisites" image="/img/icon/notes.png">
-          Ensure you have set up **Asset Categories** with depreciation settings before proceeding with the purchase of an asset. Let's see how to setup [Asset Categories](/accounting/fixed-assets#prepare-fixed-assets)
+          Before purchasing an asset, ensure you have set up **Asset Categories** with depreciation settings. Let's see how to setup [Asset Categories](/accounting/configurations#asset-categories)
           </Noted>
 
           ***
 
           ###### Step 1 — Navigation
 
-          From the left sidebar, click **Accounting**. Then from the top navigation menu, go to **Vendors** ‣ **Bills**.
+          Navigate to the **Bills** page by going to **Accounting** ‣ **Vendors** ‣ **Bills** from the left sidebar.
 
           ![](/img/accounting/purchase-asset/0001.png)
-
-          This will open the Bills page where you can create a new vendor bill to record your asset purchase. The Bills page displays all vendor bills in your system, providing a comprehensive overview of your payables.
-
-          Now, you'll create a new bill for your asset purchase. This will allow you to record the purchase and track the asset's depreciation over time.
-
-          ![](/img/accounting/purchase-asset/0002.png)
-
 
           ***
 
@@ -2659,30 +2587,70 @@ groupSections:
 
           ***
 
-          ##### Step 6 — Save
+          ##### Step 6 — Post
 
-          Save as a draft before posting by clicking **Save**. This updates the bill status to **Draft**.
+           Click on the **Post** button. Once you've reviewed and confirmed all information is correct. This will create the vendor bill and automatically generate the corresponding asset record in MAQSU with the correct category and depreciation settings.
 
-          ***
+          ---
 
-          ##### Step 7 — Review
+          ##### Step 7 — View the Asset Record
+
+          After posting the bill, you can immediately view the created asset record by clicking the **View Asset** button.
 
           ![](/img/accounting/purchase-asset/0006.png)
 
-          Review the complete bill to ensure all information is accurate and complete. Verify that all fields, including header information, invoice lines, and totals, match the original document.
+          ---
 
-          ***
+          ##### Step 8 — View the Asset Record
 
-          ##### Step 8 — Post
-
-          Once you've reviewed and confirmed all information is correct, click the **Post** button to finalize the bill.
+          Clicking **Asset List** will take you to the asset's detailed page where you can see all relevant information about the asset, including its category, depreciation schedule, and financial details.
 
           ![](/img/accounting/purchase-asset/0007.png)
 
-          By properly recording asset purchases with asset categories, you ensure accurate financial reporting, automate depreciation tracking, and maintain complete records of your company's fixed assets from acquisition through disposal.
+          ---
+
+          ##### Step 9 — View Asset Details
+
+          The asset record will show all relevant details.
+
+          ![](/img/accounting/purchase-asset/0008.png)
+          ---
+
+          ##### Step 10 — Confirm
+
+          After reviewing the asset details, click the **Confirm** button to activate the asset. This will change its status from **Draft** to **Running**, making it available for depreciation processing and financial reporting.
+
+          ![](/img/accounting/purchase-asset/0009.png)
+
+          ##### Step 11 — View Running Asset
+          Once confirmed, the asset will show as **Running** in the asset list, indicating it is active and ready for depreciation.
+
+          ![](/img/accounting/purchase-asset/00010.png)
+
+           The asset is now fully registered in the system and will be included in all relevant financial reports and depreciation calculations.
+
+          ---
+
+          ##### Step 12 — Book an Entry
+
+          You can book depreciation for the asset by clicking on the **Red** dots in the Linked column, which indicates that depreciation entries are not yet posted. Once you run depreciation, these will turn green, showing that the asset is being depreciated according to its schedule.
+
+          ![](/img/accounting/purchase-asset/00011.png)
+
+          ---
+
+          ##### Step 13 — Post Depreciation
+
+          Once it books the depreciation, the red dots will turn yellow, mean the depreciation is booked but not yet posted. So now let's click on the smart **Smart Items** button to view and post the depreciation entries.
+
+          ![](/img/accounting/purchase-asset/00012.png)
+          
+          Click **Post**  to reconignize the depreciation in the system. After posting, the dots will turn green, indicating that the depreciation has been successfully recorded.
+
+          ![](/img/accounting/purchase-asset/00013.png)
 
       - link: /create-asset-manual
-        title: Create an Asset
+        title: Create Manual Assets
         body: |
           In some situations, you may need to create an asset record directly without going through a vendor bill purchase. This is useful when you already own assets that need to be added to your system, such as when migrating from another system, recording donated equipment, or entering opening balances for existing assets.
 
@@ -2694,23 +2662,11 @@ groupSections:
 
           ##### Step 1 — Navigation
 
-          From the left sidebar, click **Accounting**. Then from the top navigation menu, click **Assets**.
+          Navigate to the **Assets** page by going to **Accounting** ‣ **Assets** from the left sidebar.
 
           ![](/img/accounting/create-asset/0001.png)
 
-          This will open the Assets page where you can view all your fixed assets and create new ones.
-
-          ![](/img/accounting/create-asset/0002.png)
-
-          1. **Asset Code** – Unique identifier for each asset (e.g., "LAP-001")
-          2. **Asset Name** – Description of the asset (e.g., "Laptop iBook")
-          3. **Asset Category** – Category assigned (e.g., "Computer Equipment")
-          4. **Date** – Purchase or acquisition date (e.g., "2022-01-01")
-          5. **Vendor** – Supplier (if purchased), with link to original vendor bill
-          6. **Gross Value** – Original cost of the asset (e.g., $2,000.00)
-          7. **Residual Value** – Current book value after depreciation (e.g., $1,500.00)
-          8. **Currency** – USD or other currency (e.g., "USD")
-          9. **Status** – Draft or Running (indicates whether the asset is active and depreciation is being posted)
+          If you have already created assets through vendor bills, they will appear in this list. To add a new asset manually, you will create a new asset record from this page.
 
           ***
 
@@ -4645,50 +4601,103 @@ groupSections:
           ###### Step 5 — Save
 
           Click the **Save** button. This journal is now ready to be used in your daily accounting entries and financial reports.
+      - link: /bank-accounts
+        title: Bank Accounts
+        body: |
+          **Bank Accounts** in MAQSU ERP represent the various bank accounts your company uses for financial transactions. Each bank account is linked to a specific journal (usually of type "Bank") and is associated with a particular currency. Properly setting up your bank accounts ensures accurate tracking of cash flow, reconciliation, and financial reporting.
+
+           <Noted type="info" title="Note" image="/img/icon/notes.png">
+            MAQSU ERP allows you to manage multiple bank accounts, which is essential for businesses that operate in different regions or maintain separate accounts for various purposes (e.g., operational account, payroll account).
+          </Noted>
+
+          To create a new bank account, please follow the steps outlined below:
+
+          ---
+
+          ##### Step 1 — Navigation
+
+          Navigate to **Accounting** ‣ **Configuration** ‣ **Bank Accounts** from the top navigation menu.
+
+          ![](/img/accounting/configuration/bank-accounts/0001.png)
+
+          You may see no bank accounts if you haven't set any up yet. Once you create bank accounts, they will be listed here with their details. Let's see how to set up a new one in the next steps.
+
+          ![](/img/accounting/configuration/bank-accounts/0002.png)
+
+          ---
+
+          ##### Step 2 — Create New Bank Account
+
+          Click the **Create** button at the top-left of the Bank Accounts list page to open a new blank bank account configuration form.
+
+          ![](/img/accounting/configuration/bank-accounts/0003.png)
+
+          ---
+
+          ##### Step 3 — Fill Out Bank Account Information
+
+          Define the properties of your new bank account by filling in the following fields:
+
+          ![](/img/accounting/configuration/bank-accounts/0004.png)
+
+          1. **Account Number** – Enter the bank account number (e.g., `500 321 234`).
+          2. **Account Holder** – Select the account holder from the dropdown who is holding this bank account (e.g., `My Company`). You can add new account holders in the **Account Holders** configuration if needed.
+          3. **Holder Name** – Enter the full name of the account holder (e.g., `LYDIANA CHESTINA`).
+          4. **Bank** – Select the bank from the dropdown (e.g., `ABA`). You can add new banks in the **Banks** configuration if your bank is not listed.
+          5. **Currency** – Select the currency for this bank account (e.g., `USD`).
+
+          ---
+
+          ##### Step 4 — Save
+
+          After entering all required details, click the **Save** button. Your new bank account is now active and can be used for recording transactions, reconciling statements, and generating financial reports.
+
+          ---
+
+          ##### Step 5 — Add Bank Account to a Journal
+
+          To use this bank account for recording transactions, you need to link it to a journal of type "Bank".
+
+          1. Open the **Journals** configuration page (Accounting ‣ Configuration ‣ Journals).
+          2. Edit the relevant journal (e.g., `ABA Bank`)
+          3. Under **Bank Account** tab, select the **Bank Account** to the corresponding accounts of this bank account.
+
+          ![](/img/accounting/configuration/bank-accounts/0005.png)
+
+          Finally, click **Save** on the journal form. Now, when you record transactions in this journal, they will be associated with the correct bank account for accurate tracking and reconciliation.
 
       - link: /asset-categories
         title: Asset Categories
         body: |
-          Before you can start tracking and depreciating fixed assets in MAQSU, you need to set up **Asset Categories**. Asset categories define how different types of assets will be depreciated, which accounts to use, and how depreciation entries will be generated automatically.
+          Here you can define **Asset Categories** to classify your fixed assets (e.g., machinery, vehicles, office equipment) for accounting and depreciation purposes. Each category has specific settings that determine how assets in that category are depreciated and which accounts are used for recording asset values and depreciation expenses.
+
+          <Noted type="info" title="Note" image="/img/icon/notes.png">
+          MAQSU allows you to create multiple asset categories to accommodate different types of assets with varying useful lives and depreciation methods. Properly categorizing your assets ensures accurate financial reporting and compliance with accounting standards.
+          </Noted>
 
           To create a new asset category, please follow the steps outlined below:
 
-          ***
+          ---
 
           ##### Step 1 — Navigation
 
-          From the left sidebar, click **Accounting**. Then from the top navigation menu, click **Asset Categories**.
+          Navigate to **Accounting** ‣ **Configuration** ‣ **Asset Categories** from the top navigation menu.
 
           ![](/img/accounting/asset-categories/0001.png)
 
-          This will open the Asset Categories page where you can view, create, and manage all your asset category templates.
+          ---
 
-          The asset categories list displays all existing categories in your system:
+          ##### Step 2 — Create
+
+          Click the **Create** button at the top-left of the Asset Categories list page to open a new blank asset category configuration form.
 
           ![](/img/accounting/asset-categories/0002.png)
 
-          1. **Asset Category** – The name of the category (e.g., "Computer Equipment", "Office Furniture")
-          2. **Journal** – Which journal is used for depreciation entries for this category
-          3. **Computation Method** – How depreciation is calculated (e.g., "Straight Line", "Declining Balance")
-          4. **Computer Equipment** – Uses Miscellaneous Operations journal with Straight Line depreciation method
+          ---
 
-          ***
-
-          ##### Step 3 — Click Create
-
-          To create a new asset category, click the **Create** button at the top-left of the Asset Categories list page.
+          ##### Step 3 — Enter Basic Information
 
           ![](/img/accounting/asset-categories/0003.png)
-
-          This will open a blank asset category form where you can configure all the settings for your new category.
-
-          ![](/img/accounting/asset-categories/0004.png)
-
-          ***
-
-          ##### Step 4 — Enter Category Name and Depreciation Method
-
-          ![](/img/accounting/asset-categories/0005.png)
 
           1. **Category Name** — Enter a clear asset type name such as "Computer Equipment", "Office Furniture", or "Vehicles".
 
@@ -4696,28 +4705,21 @@ groupSections:
 
               - **Straight Line** - Uses equal depreciation each period and is best for most standard business assets.
               - **Declining Balance** - Uses higher depreciation in early periods and is best for assets that lose value quickly.
-              - **Selection** - Choose the method that matches your accounting policy; **Straight Line** is recommended for most cases.
 
-          ***
-
-          ##### Step 5 — Configure Period Type and Depreciation Schedule
-
-          ![](/img/accounting/asset-categories/0006.png)
-
-          1. **Period Type**
-              - **Number of Entries** - Define a fixed count of depreciation entries (common for monthly schedules).
+          3. **Period Type**
+              - **Number of Entries** - Define how many entry will generate for the full useful life.
               - **Ending Date** - Depreciate until a specific target date (useful for leases or planned end dates).
               - **Yearly** - Create one depreciation entry per year for simpler annual tracking.
-              - **Selection** - Use **Number of Entries** for most standard fixed-asset setups.
 
-          2. **Number of Depreciations** — Enter the total entry count for the full useful life (for example, 60 for 5 years x 12 months).
+          4. **Number of Depreciations** — Enter the total entry count for the full useful life (for example, 60 for 5 years x 12 months).
 
-          3. **Period Interval** — Define how often entries are posted (for example, 1 month for monthly depreciation).
+          5. **Period Interval** — Define how often entries are posted (for example, 1 month for monthly depreciation).
+
           ***
 
-          ##### Step 6 — Configure Accounting Section
+          ##### Step 4 — Configure Accounting
 
-          ![](/img/accounting/asset-categories/0007.png)
+          ![](/img/accounting/asset-categories/0004.png)
 
           This section defines which accounting accounts will be used for assets in this category.
 
@@ -4729,27 +4731,23 @@ groupSections:
 
           4. **Expense Account** — Select the income-statement expense account where periodic depreciation is recognized.
 
-          ***
+          5. **Auto-Confirm Assets** — Enable to confirm assets automatically at creation time, or disable to keep manual review.
 
-          ##### Step 7 — Configure Automation Options
+          6. **Group Journal Entries** — Enable to combine depreciation for multiple assets into one entry per period.
 
-          ![](/img/accounting/asset-categories/0008.png)
+          7. **Depreciation Date** — Choose **Manual (Defaulted on Purchase Date)** for flexibility or **Based on Last Day of Purchase Period** for system-driven start dates.
+              - **Manual (Defaulted on Purchase Date)**: Depreciation starts from the asset's purchase date, but you can adjust it when creating the asset.
+              - **Based on Last Day of Purchase Period**: Depreciation starts from the last
 
-          1. **Auto-Confirm Assets** — Enable to confirm assets automatically at creation time, or disable to keep manual review.
-
-          2. **Group Journal Entries** — Enable to combine depreciation for multiple assets into one entry per period.
-
-          3. **Depreciation Date** — Choose **Manual (Defaulted on Purchase Date)** for flexibility or **Automatic** for system-driven start dates.
-
-          4. **Accounting Date** — Choose **On Actual Run Date** or **On Depreciation Date** based on posting policy.
+          8. **Accounting Date** — Choose **On Actual Run Date** or **On Planned Date** based on posting policy.
+              - **On Actual Run Date**: Depreciation entries are posted on the date you run the depreciation process.
+              - **On Planned Date**: Depreciation entries are posted on the scheduled date regardless of when you run the process.
 
           ***
 
-          ##### Step 8 — Save
+          ##### Step 5 — Save
 
           Once you've configured all settings, click the **Save** button at the top-left of the form.
-
-          ![](/img/accounting/asset-categories/0009.png)
 
           <Noted type="info" title="After Saving" image="/img/icon/notes.png">
           The category is now available for use when creating assets
