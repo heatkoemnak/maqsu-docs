@@ -1269,13 +1269,15 @@ groupSections:
 
           ---
 
-          ##### Step 1 - Navigation
+          ##### Step 1 — Navigation
 
           Navigate to **Purchase** ‣ **Products** ‣ **Products**.
 
           ![](/img/purchase/configuration/pricelist/0001.png)
 
-          ##### Step 2 - Open a Product
+          ---
+
+          ##### Step 2 — Open a Product
 
           Open a product and go to the **Purchase** tab.
 
@@ -1283,7 +1285,7 @@ groupSections:
 
           ---
 
-          ##### Step 3 - Add a line
+          ##### Step 3 — Add a line
 
           In the **Purchase** tab, click **Add a line**.
 
@@ -1291,7 +1293,7 @@ groupSections:
 
           ---
 
-          ##### Step 4 - Enter Vendor Price Details
+          ##### Step 4 — Enter Vendor Price Details
 
           In the new line, fill in the following details:
 
@@ -1309,7 +1311,7 @@ groupSections:
 
           ---
 
-          ##### Step 5 - Save
+          ##### Step 5 — Save
 
           After entering all the necessary details, click **Save** to add this vendor price to the product.
 
@@ -1349,46 +1351,47 @@ groupSections:
           <Noted type="info" title="Tip" image="/img/icon/sparkles.png">
             Enabling this configuration is highly recommended for businesses that require strict control over their purchasing process and want to minimize errors or unauthorized changes to confirmed orders.
           </Noted>
-      - link: /vendor-product-warning
-        title: Vendor / Product Warning
+      - link: /warnings
+        title: Warnings
         body: |
 
-          The **Vendor/Product Warning** configuration allows you to set up alerts for specific vendor and product combinations. This is useful for flagging potential issues such as known supply chain disruptions, quality concerns, or any other important notes that should be considered when purchasing a particular product from a specific vendor.
+          The **Warnings** feature allows you to set up warning alerts in orders for products or vendors. This is useful for flagging potential issues such as known supply chain disruptions, quality concerns, or any other important notes that should be considered when purchasing a particular product from a specific vendor.
+
+          ---
+
+          ### Product Warning
+
+          A product warning is an alert that is triggered when a specific product is selected in a RFQ. This can be used to notify users of important information related to that product, such as supply issues, quality concerns, expiration dates, or special handling instructions.
+
+          ![](/img/purchase/configuration/warnings/0001_1.png)
+
+          ---
+
+          ##### Vendor Warning
 
           To set up a vendor/product warning, follow these steps:
 
           ---
 
-          ##### Step 1 - Navigation
+          ##### Step 1 — Navigation
 
-          Navigate to **Purchase** ‣ **Configuration** ‣ **Vendor/Product Warnings**.
+          Navigate to **Purchase** ‣ **Configuration** ‣ **Settings**.
 
-          ![](/img/purchase/configuration/vendor-product-warning/0001.png)
-
-          ##### Step 2 - Create Warning
-
-          Click the **Create** button to start a new warning.
-
-          ![](/img/purchase/configuration/vendor-product-warning/0002.png)
+          ![](/img/purchase/configuration/warnings/0001.png)
 
           ---
 
-          ##### Step 3 - Enter Warning Details
+          ##### Step 2 — Enable Warnings
 
-          In the warning form, fill in the following details:
+          Click the checkbox next to **Warnings** to enable this feature in the system. This will allow you to create and manage warnings for specific vendor/product combinations.
 
-          1. **Vendor** *(Required)* – Select the supplier for which this warning applies.
-          2. **Product** *(Required)* – Select the product that is associated with this warning.
-          3. **Warning Message** *(Required)* – Enter the message that should be displayed when this vendor/product combination is selected in a purchase order.
-          4. **Active** – Toggle this switch to activate or deactivate the warning.
-
-          ![](/img/purchase/configuration/vendor-product-warning/0003.png)
+          ![](/img/purchase/configuration/warnings/0002.png)
 
           ---
 
-          ##### Step 4 - Save
+          ##### Step 3 — Save
 
-          After entering all the necessary details, click **Save** to add this warning to the system.
+          After enabled the warnings, click **Save** to apply the changes.
 
           <Noted type="info" title="Tip" image="/img/icon/sparkles.png">
             Once a vendor/product warning is set up and active, it will automatically trigger an alert message whenever that specific combination is selected in a purchase order. This helps ensure that important considerations are not overlooked during the purchasing process.
