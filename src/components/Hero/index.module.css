@@ -35,8 +35,8 @@
 }
 
 .heroFeatures > div{
-  height:52px;
-  width:170px;
+  height:45px;
+  width:160px;
   padding:8px;
   display:flex;
   box-sizing: border-box;
@@ -108,4 +108,8 @@
   .heroFeatures > div{
     width: 100%;
   }
+}
+
+.icon{
+  color:blue
 }

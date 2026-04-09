@@ -403,7 +403,6 @@ const StyledWrapper = styled.div`
     width: 100%;
     height: 100%;
     object-fit: contain;
-    filter: brightness(0) invert(1);
   }
 
   .card-info {
