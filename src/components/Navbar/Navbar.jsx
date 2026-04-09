@@ -66,7 +66,7 @@ export default function Navbar() {
         </div>
 
         <div className={styles.navLinks}>
-          <Link to="https://maqsu.com/en/blog" className={styles.navItem}>
+          <Link to="/support" className={styles.navItem}>
             <span>Support</span>
           </Link>
           <Link to="https://maqsu.com/en/blog" className={styles.navItem}>

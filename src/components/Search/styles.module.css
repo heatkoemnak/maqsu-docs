@@ -159,7 +159,7 @@
   align-items: center;
   gap: 0.5rem;
   padding: 0.5rem 1rem;
-  font-size: 0.875rem;
+  font-size: 13px;
   font-weight: 500;
   color: #ffffff;
   background: none !important;
@@ -349,8 +349,9 @@
 
   .dropDownTopic {
     padding: 0.55rem 0.8rem;
-    font-size: 0.8125rem;
+    font-size: 0.4125rem;
   }
+
 
   .megaMenuInner {
     padding-top: 1rem;

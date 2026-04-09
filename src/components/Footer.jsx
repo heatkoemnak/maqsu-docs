@@ -22,12 +22,13 @@ const Footer = () => {
     container: {
       maxWidth: '70%',
       margin: '0 auto',
-      padding: '16px 24px',
       display: 'flex',
       flexWrap: 'wrap',
       alignItems: 'center',
-      justifyContent: 'space-between',
+      justifyContent: 'center',
       gap: '16px',
+      padding: '10px 0',
+      fontSize: '14px',
       borderBottom: theme === 'dark' ? '1px solid rgba(100, 116, 139, 0.3)' : '1px solid rgba(100, 116, 139, 0.2)',
     },
     leftSection: {
@@ -65,7 +66,7 @@ const Footer = () => {
       width: '18px',
       height: '18px',
     },
-    rightSection: {
+    centerSection: {
       display: 'flex',
       alignItems: 'center',
       gap: '24px',
@@ -120,15 +121,7 @@ const Footer = () => {
     <footer style={styles.footer}>
       <div style={styles.container}>
         {/* Left Section - Language & Privacy */}
-        <div style={styles.leftSection}>
-          <button
-            style={styles.button}
-            onMouseEnter={(e) => e.currentTarget.style.opacity = '0.8'}
-            onMouseLeave={(e) => e.currentTarget.style.opacity = '1'}
-          >
-            <GlobeIcon />
-            <span>English (United States)</span>
-          </button>
+        {/* <div style={styles.leftSection}> */}
 
           {/* <button
             style={styles.button}
@@ -148,21 +141,10 @@ const Footer = () => {
             {theme === 'dark' ? <MoonIcon /> : <SunIcon />}
             <span>Theme</span>
           </button> */}
-        </div>
+        {/* </div> */}
 
         {/* Right Section - Links */}
-        <div style={styles.rightSection}>
-
-          <a
-            href="/support"
-            style={styles.link}
-            onMouseEnter={(e) => e.currentTarget.style.textDecoration = 'underline'}
-            onMouseLeave={(e) => e.currentTarget.style.textDecoration = 'none'}
-          >
-            Support
-          </a>
           <span style={styles.copyright}>© MAQSU 2026</span>
-        </div>
       </div>
     </footer>
   );

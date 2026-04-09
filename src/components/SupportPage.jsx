@@ -19,17 +19,12 @@ export default function SupportPage() {
           <div className="support-cards">
             <div className="support-card">
               <h3>Email Support</h3>
-              <p>support@example.com</p>
+              <p>support@maqsu.com</p>
             </div>
 
             <div className="support-card">
               <h3>Phone Support</h3>
-              <p>+1 (123) 456-7890</p>
-            </div>
-
-            <div className="support-card">
-              <h3>Help Center</h3>
-              <p>Browse FAQs and guides</p>
+              <p>+(855) 81666271</p>
             </div>
           </div>
         </div>
