@@ -23,7 +23,12 @@
   background: var(--color-primary);
   color: var(--color-white);
 }
-
+.languageSelector{
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 13px;
+}
 .logoLink {
   display: flex;
   align-items: center;
@@ -53,8 +58,9 @@
 .navLinks {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
+  gap: 1rem;
   flex-shrink: 0;
+  font-size: 13px;
 }
 
 .navItem {
@@ -62,7 +68,6 @@
   text-decoration: none;
   color: var(--color-white);
   font-weight: 500;
-  font-size: 0.92rem;
   transition: color 0.3s ease;
   padding: 0.4rem 0;
   white-space: nowrap;

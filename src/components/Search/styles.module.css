@@ -43,7 +43,7 @@
 }
 .megaMenuContainer {
   position: fixed;
-  top: 4.25rem;
+  top: 3.15rem;
   left: 0;
   right: 0;
   width: 100%;
@@ -190,7 +190,7 @@
 .input {
   width: 100%;
   min-width: 0;
-  padding: 0.5rem 0.75rem;
+  padding: 0.5rem 0;
   font-size: 0.875rem;
   color: #fafafb;
   background: transparent;

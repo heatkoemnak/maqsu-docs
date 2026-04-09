@@ -844,10 +844,9 @@ const GlobalStyles = () => (
     }
 
     .pq-docs-body {
-      width: 100%;
-      max-width: 1400px;
+      width: 95%;
+      max-width: 900px;
       height: calc(97vh - var(--nav-h));
-      margin: 0 auto;
       border: 0;
       border-radius: 0;
       box-shadow: none;
