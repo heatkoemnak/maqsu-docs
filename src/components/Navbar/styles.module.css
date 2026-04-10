@@ -16,7 +16,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 91%;
+  width: 92%;
   margin: 0 auto;
   padding: 0.45rem clamp(1rem, 4vw, 5rem);
   gap: clamp(0.65rem, 1.6vw, 1.5rem);
@@ -50,7 +50,7 @@
 .searchContainer {
   flex: 1;
   min-width: 0;
-  max-width: 595px;
+  max-width: 690px;
   display: flex;
   align-items: center;
 }
