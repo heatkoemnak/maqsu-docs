@@ -591,7 +591,7 @@ const handleInputKeyDown = (event) => {
             onChange={(e) => handleSearch(e.target.value)}
             onKeyDown={handleInputKeyDown}
             className={styles.input}
-            placeholder="Search for keywords, article ..."
+            placeholder="Search for keywords, article ...                                                             Ctrl + F"
             aria-label="Search"
           />
 
