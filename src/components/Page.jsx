@@ -1063,7 +1063,7 @@ const GlobalStyles = () => (
     }
 
     .pq-pagination.full-width {
-      width: min(calc(var(--content-max) + 120px), 100%);
+      width: var(--content-max);
       margin: 30px auto;
     }
 
