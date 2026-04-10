@@ -34,6 +34,11 @@
   z-index: 1001;
 }
 
+.activeItem {
+  background: rgba(73, 113, 148, 0.08);
+  border-radius: 8px;
+}
+
 .topics {
   position: relative;
   z-index: 1002;

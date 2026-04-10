@@ -148,6 +148,7 @@ hr{
 blockquote img{
   border:1px solid rgb(164, 43, 43);
   margin-top:10px !important;
+  object-fit: contain;
 }
 .footer{
   margin-top:50px !important;
