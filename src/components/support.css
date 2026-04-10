@@ -39,10 +39,10 @@
 }
 
 .support-card {
-  background: #fff;
+  background: #ffffff;
   padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  border-radius: 5px;
+  border: 1px solid #f3fcfe;
   transition: transform 0.2s ease;
 }
 
@@ -57,10 +57,10 @@
 
 /* Right Section - Form */
 .support-form-card {
-  background: #fff;
-  padding: 30px;
-  border-radius: 16px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  background: #ffffff;
+  padding: 50px;
+  border: 1px solid #f3fcfe;
+  border-radius: 5px;
 }
 
 .support-form-card h2 {
@@ -85,8 +85,8 @@
 
 .form-group input,
 .form-group textarea {
-  padding: 10px 12px;
-  border-radius: 8px;
+  padding: 10px 20px;
+  border-radius: 5px;
   border: 1px solid #ccc;
   font-size: 14px;
   transition: border 0.2s ease;
@@ -95,14 +95,14 @@
 .form-group input:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: #007bff;
+  border-color: #d2e4f7;
 }
 
 /* Button */
 .submit-btn {
   padding: 12px;
   border: none;
-  border-radius: 10px;
+  border-radius: 5px;
   background-color: var(--color-primary);
   color: rgb(255, 255, 255);
   font-size: 16px;
@@ -125,12 +125,12 @@
 .back-btn {
   position: absolute;
   top: 20px;
-  left: 20px;
+  left: 192px;
   padding: 8px 14px;
   border: none;
   border-radius: 8px;
-  background-color: #333;
-  color: #fff;
+  background-color: #fdffff;
+  color: #b5e3f4;
   cursor: pointer;
   font-size: 14px;
   transition: background 0.3s ease;

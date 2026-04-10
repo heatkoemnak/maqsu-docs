@@ -58,7 +58,7 @@ export default function Navbar() {
     <header className={clsx(styles.navbarRoot, isScrolled && styles.scrolled)}>
       <nav className={styles.navbarWrapper}>
         <Link to="/" className={styles.logoLink}>
-          <img width={30} className={styles.logoImage} src={logo} alt="Maqsu Logo" />
+          <img width={25} className={styles.logoImage} src={logo} alt="Maqsu Logo" />
         </Link>
 
         <div className={styles.searchContainer}>

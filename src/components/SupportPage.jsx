@@ -24,7 +24,7 @@ export default function SupportPage() {
 
             <div className="support-card">
               <h3>Phone Support</h3>
-              <p>+(855) 81666271</p>
+              <p>+(855) 81 666 271</p>
             </div>
           </div>
         </div>

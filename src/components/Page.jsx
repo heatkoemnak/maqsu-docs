@@ -20,6 +20,8 @@ import { formatDistanceToNow } from 'date-fns';
 import CardList from './CardList/CardList';
 import { BsArrowRightCircle, BsCaretLeftSquare } from "react-icons/bs";
 import { BsCaretRightSquare } from "react-icons/bs";
+import { FcPrevious,FcNext  } from "react-icons/fc";
+import { TbChevronCompactRight,TbChevronCompactLeft } from "react-icons/tb";
 
 export default function Page() {
   const location = useLocation();
@@ -501,8 +503,7 @@ export default function Page() {
               onClick={() => setSidebarOpen((prev) => !prev)}
               className={`pq-toggle-btn${sidebarOpen ? ' is-sidebar-open' : ''}`}
             >
-              {sidebarOpen ? <BsCaretLeftSquare /> : <BsCaretRightSquare />}
-              {/* {sidebarOpen ? <BiExpandAlt size={15} /> : <BiCollapseAlt size={15} />} */}
+              {sidebarOpen ? <TbChevronCompactLeft color='rgb(174, 192, 192)'  size={25}/> : <TbChevronCompactRight color='rgb(174, 192, 192)' size={25} />}
             </div>
           )}
 
@@ -530,9 +531,9 @@ export default function Page() {
                   id={group.uid}
                   className={`pq-section-shell pq-section${!sidebarOpen ? ' full-width' : ''}`}
                 >
-                  <div className="pq-section-head">
+                  {/* <div className="pq-section-head">
                     <h1 className="pq-section-title pq-section-title-main">{group.title}</h1>
-                  </div>
+                  </div> */}
                   {group.body && (
                     <div className="pq-section-content">
                       <MdxString source={group.body} components={tinaComponents} />
@@ -618,8 +619,8 @@ const GlobalStyles = () => (
       --c-muted: #5b6475;
       --c-faint: #9aa3b6;
       --c-sidebar: #ffffff;
-      --sidebar-w: 250px;
-      --content-max: 720px;
+      --sidebar-w: 280px;
+      --content-max: 800px;
       --content-pad: clamp(16px, 3vw, 34px);
       --nav-h: 60px;
       --radius: 12px;
@@ -665,7 +666,7 @@ const GlobalStyles = () => (
       }
 
       .pq-inline-breadcrumb.full-width {
-        width: min(calc(var(--content-max) + 120px), 100%);
+        width: var(--content-max);
     }
 
     .pq-breadcrumb-row {
@@ -756,7 +757,6 @@ const GlobalStyles = () => (
       border: none;
       text-align: left;
       padding: 8px 12px;
-      border-radius: 8px;
       cursor: pointer;
       font-size: 13px;
       font-weight: 500;
@@ -775,31 +775,25 @@ const GlobalStyles = () => (
       background: #f1f5f9;
       color: #1e293b;
       text-decoration: none;
+      }
+
+      .pq-sub-btn.is-active {
+        color: var(--c-accent);
+        font-weight: 600;
+        background: #f1f5f9;
+        border-bottom:1px solid var(--c-border);
     }
 
-    .pq-sub-btn.is-active {
-      color: var(--c-accent);
-      font-weight: 600;
-      background: #eef2ff;
-    }
-
-    .pq-sub-btn.is-active::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 20%;
-      height: 60%;
-      width: 3px;
-      border-radius: 0 3px 3px 0;
-      background: var(--c-accent);
-    }
 
     .pq-nested-menu {
       display: flex;
       flex-direction: column;
       margin-left: 12px;
       padding-left: 10px;
-      border-left: 1px solid var(--c-border);
+    }
+
+    .pq-nested-menu.is-active {
+      background: rgba(241, 245, 249, 0.9);
     }
 
     .pq-nested-btn {
@@ -807,7 +801,6 @@ const GlobalStyles = () => (
       border: none;
       text-align: left;
       padding: 6px 10px;
-      border-radius: 6px;
       cursor: pointer;
       font-size: 12px;
       font-weight: 500;
@@ -824,9 +817,10 @@ const GlobalStyles = () => (
       background: #f1f5f9;
       color: #1e293b;
       text-decoration: none;
-    }
+      }
 
-    .pq-nested-btn.is-active {
+      .pq-nested-btn.is-active {
+        background: #f1f5f9;
       color: var(--c-accent);
       font-weight: 600;
     }
@@ -876,20 +870,12 @@ const GlobalStyles = () => (
 
     .pq-toggle-btn {
       position: fixed;
-      top: calc(var(--nav-h) + 10px);
-      left: 5px;
-      padding: 0 12px;
-      z-index: 60;
-      display: block;
-      align-items: center;
-      justify-content: center;
-      margin: 0;
-      fzont-size: 10px;
-      width: 106px;
-      height: 36px;
-      color: var(--c-muted);
+      top:50%;
+      padding: 10px;
       cursor: pointer;
-      transition: background var(--transition), color var(--transition), box-shadow var(--transition);
+      transform: translateY(-50%);
+      z-index: 40;
+
     }
 
     .pq-scroll-top-btn {
@@ -926,7 +912,7 @@ const GlobalStyles = () => (
 
     .pq-section.full-width,
     .pq-sub-section.full-width {
-      width: min(calc(var(--content-max) + 120px), 100%);
+      width: var(--content-max);
     }
 
     .pq-section-shell {
