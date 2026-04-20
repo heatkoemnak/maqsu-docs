@@ -335,7 +335,7 @@
 
 
 .articleRow {
-  border: 1px solid #e2ebf3;
+  border: 1px solid #eaf5fe;
   background: #ffffff;
   border-radius: 8px;
   transition: background 0.15s, border-color 0.15s, box-shadow 0.15s, transform 0.15s;
@@ -562,7 +562,7 @@
 
 /* ── Grid Card ─────────────────────────────── */
 .articleCard {
-  border: 1px solid #e8edf2;
+  border: 1px solid #ebf5ff;
   border-radius: 8px !important;
   background: #fff;
   transition: transform 0.15s, box-shadow 0.15s;
