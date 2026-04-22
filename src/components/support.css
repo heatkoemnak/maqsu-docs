@@ -144,3 +144,60 @@
 .support-container {
   position: relative;
 }
+
+/* -- Dark Mode Support --------------------------- */
+[data-theme='dark'] .support-container {
+  background-color: #0f172a;
+  color: #f1f5f9;
+}
+
+[data-theme='dark'] .support-info h1,
+[data-theme='dark'] .support-info h3,
+[data-theme='dark'] .support-form-card h2 {
+  color: #f1f5f9 !important;
+}
+
+[data-theme='dark'] .support-info p {
+  color: #94a3b8;
+}
+
+[data-theme='dark'] .support-card,
+[data-theme='dark'] .support-form-card {
+  background: rgba(30, 41, 59, 0.4);
+  border-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+[data-theme='dark'] .form-group label {
+  color: #cbd5e1;
+}
+
+[data-theme='dark'] .form-group input,
+[data-theme='dark'] .form-group textarea {
+  background-color: rgba(15, 23, 42, 0.6);
+  border-color: rgba(255, 255, 255, 0.1);
+  color: #f1f5f9;
+}
+
+[data-theme='dark'] .form-group input::placeholder,
+[data-theme='dark'] .form-group textarea::placeholder {
+  color: #475569;
+}
+
+[data-theme='dark'] .form-group input:focus,
+[data-theme='dark'] .form-group textarea:focus {
+  border-color: #38bdf8;
+  background-color: rgba(15, 23, 42, 0.8);
+}
+
+[data-theme='dark'] .back-btn {
+  background-color: rgba(30, 41, 59, 0.6);
+  color: #94a3b8;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+[data-theme='dark'] .back-btn:hover {
+  background-color: #1e293b;
+  color: #f1f5f9;
+}

@@ -766,3 +766,51 @@
         display: none;
       }
     }
+/* -- Dark Mode Overrides --------------------------- */
+[data-theme='dark'] {
+  --c-bg: #0f172a;
+  --c-surface: #1e293b;
+  --c-border: rgba(255, 255, 255, 0.1);
+  --c-accent: #38bdf8;
+  --c-accent-2: #7dd3fc;
+  --c-accent-bg: rgba(56, 189, 248, 0.1);
+  --c-text: #f1f5f9;
+  --c-muted: #94a3b8;
+  --c-faint: #64748b;
+  --c-sidebar: #0f172a;
+}
+
+[data-theme='dark'] .pq-section-content h3,
+[data-theme='dark'] .pq-section-content h4,
+[data-theme='dark'] .pq-section-content h5 {
+  color: #f1f5f9 !important;
+}
+
+[data-theme='dark'] .pq-section-content p {
+  color: #cbd5e1 !important;
+}
+
+[data-theme='dark'] .pq-section-content code {
+  background: #1e293b;
+  border-color: #334155;
+  color: #f472b6;
+}
+
+[data-theme='dark'] .pq-nav-link {
+  background: rgba(30, 41, 59, 0.5);
+  color: #f1f5f9;
+}
+
+[data-theme='dark'] .pq-nav-link:hover {
+  background: #1e293b;
+}
+
+[data-theme='dark'] .pq-nav-title {
+  color: #f1f5f9;
+}
+
+[data-theme='dark'] .pq-sub-btn:hover,
+[data-theme='dark'] .pq-nested-btn:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: #f1f5f9;
+}

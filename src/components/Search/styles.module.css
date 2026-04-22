@@ -429,3 +429,51 @@
   }
 }
 
+
+
+/* -- Dark Mode --------------------------- */
+[data-theme='dark'] .megaMenuContainer,
+[data-theme='dark'] .resultsList,
+[data-theme='dark'] .megaMenuFooter {
+  background-color: #0f172a;
+  border-color: rgba(255, 255, 255, 0.1);
+  color: #f1f5f9;
+}
+
+[data-theme='dark'] .categoryTitleLink {
+  color: #f1f5f9;
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme='dark'] .megaMenuItem {
+  color: #94a3b8;
+}
+
+[data-theme='dark'] .megaMenuItem:hover {
+  color: #38bdf8;
+}
+
+[data-theme='dark'] .resultTitle {
+  color: #f1f5f9;
+}
+
+[data-theme='dark'] .resultExcerpt {
+  color: #94a3b8;
+}
+
+[data-theme='dark'] .activeItem {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+[data-theme='dark'] .resultWrapper:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #38bdf8;
+}
+
+[data-theme='dark'] .megaMenuFooterLink {
+  color: #f1f5f9;
+}
+
+[data-theme='dark'] .dropDownTopic {
+  color: #f1f5f9;
+}

@@ -12,18 +12,18 @@
   --color-text:#5b5b5b;
   --color-white: #ffffff;
   --color-dark-primary: #25435e;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
+  --ifm-color-primary-dark: #1d4658;
+  --ifm-color-primary-darker: #1a3e4d;
+  --ifm-color-primary-darkest: #15333f;
+  --ifm-color-primary-light: #2d6b87;
+  --ifm-color-primary-lighter: #30718e;
+  --ifm-color-primary-lightest: #3a88ab;
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
   --doc-sidebar-width: 400px !important;
   --ifm-color-emphasis-300:#ffff !important;
-
 }
+
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
@@ -35,6 +35,31 @@
   --ifm-color-primary-lighter: #32d8b4;
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+
+[data-theme='dark'] h1, 
+[data-theme='dark'] h2, 
+[data-theme='dark'] h3, 
+[data-theme='dark'] h4, 
+[data-theme='dark'] h5, 
+[data-theme='dark'] h6 {
+  color: #f1f5f9 !important;
+}
+
+[data-theme='dark'] p,
+[data-theme='dark'] li,
+[data-theme='dark'] span {
+  color: #cbd5e1 !important;
+}
+
+[data-theme='dark'] p strong,
+[data-theme='dark'] li strong {
+  color: #f8fafc !important;
+}
+
+[data-theme='dark'] blockquote {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
 }
 html{
   scroll-behavior: smooth;
@@ -208,4 +233,42 @@ blockquote{
 .pageTitle_src-components-LayoutContents-styles-module{
   color:rgb(70, 94, 121) !important;
   padding: 10px 0 !important;
+}
+
+:root {
+  --card-bg: #ffffff;
+  --card-border: #deebfc;
+  --card-title-color: #1e293b;
+  --card-desc-color: #323232;
+  --card-time-color: #64748b;
+}
+
+[data-theme='dark'] {
+  --card-bg: rgba(30, 41, 59, 0.6);
+  --card-border: rgba(255, 255, 255, 0.1);
+  --card-title-color: #f1f5f9;
+  --card-desc-color: #cbd5e1;
+  --card-time-color: #94a3b8;
+}
+
+
+/* -- Home View Controls Dark Mode ----------- */
+[data-theme='dark'] .view-controls {
+  background: rgba(30, 41, 59, 0.8) !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+[data-theme='dark'] .view-btn {
+  color: #94a3b8 !important;
+}
+
+[data-theme='dark'] .view-btn:hover {
+  background: rgba(255, 255, 255, 0.05) !important;
+  color: #f1f5f9 !important;
+}
+
+[data-theme='dark'] .view-btn.active {
+  background: #334155 !important;
+  color: #38bdf8 !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
 }

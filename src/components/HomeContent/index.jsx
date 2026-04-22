@@ -266,10 +266,15 @@ const StyledWrapper = styled.div`
   .view-controls {
     display: flex;
     gap: 0.5rem;
-    background: #f8fafc !important;
+    background: rgba(248, 250, 252, 1);
     padding: 0.25rem;
     border-radius: 10px;
     border: 1px solid #eeeff1 !important;
+  }
+
+  [data-theme='dark'] .view-controls {
+    background: rgba(30, 41, 59, 0.8) !important;
+    border-color: rgba(255, 255, 255, 0.1) !important;
   }
 
   .view-btn {
@@ -292,8 +297,13 @@ const StyledWrapper = styled.div`
 
   .view-btn.active {
     background: #ffffff;
-    color: #ffffff;
+    color: #1e293b;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+
+  [data-theme='dark'] .view-btn.active {
+    background: #334155 !important;
+    color: #38bdf8 !important;
   }
 
   /* ─── Cards Container ─────────────────────────────────────────── */
@@ -324,14 +334,16 @@ const StyledWrapper = styled.div`
 
   /* ─── Card ─────────────────────────────────────────── */
   .card {
-    background: #ffffff;
-    border: 1px solid #deebfc !important;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border) !important;
     border-radius: 16px;
     padding: 1.5rem;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     overflow: hidden;
     height: 100%;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
   }
 
   .card::before {
@@ -348,8 +360,8 @@ const StyledWrapper = styled.div`
 
   .card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
-    border-color: #cbd5e1;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+    border-color: rgba(255, 255, 255, 0.2) !important;
   }
 
   .card:hover::before {
@@ -396,7 +408,7 @@ const StyledWrapper = styled.div`
     align-items: center;
     justify-content: center;
     padding: 0.45rem;
-    box-shadow: 0 4px 12px rgba(215, 219, 236, 0.2);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   }
 
   .card-icon img {
@@ -413,11 +425,10 @@ const StyledWrapper = styled.div`
   .card-title {
     font-size: 1.25rem;
     font-weight: 600;
-    color: #1e293b;
+    color: var(--card-title-color);
     margin: 0 0 0.5rem 0;
     line-height: 1.1;
     display: -webkit-box;
-    // -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
@@ -428,22 +439,16 @@ const StyledWrapper = styled.div`
 
   .card-time {
     font-size: 0.775rem;
-    color: #64748b !important;
+    color: var(--card-time-color) !important;
     font-weight: 500;
-    // display: inline-flex;
+    display: flex;
     align-items: center;
-    // gap: 0.25rem;
   }
-
-  // .card-time::before {
-  //   content: '•';
-  //   color: #cbd5e1;
-  // }
 
   .card-description {
     font-size: 0.85rem;
     line-height: 1.6;
-    color: #323232 !important;
+    color: var(--card-desc-color) !important;
     margin: 0;
     display: -webkit-box;
     -webkit-line-clamp: 3;
@@ -507,51 +512,19 @@ const StyledWrapper = styled.div`
     }
   }
 
-  /* ─── Dark Mode Support ─────────────────────────────────────────── */
-  @media (prefers-color-scheme: dark) {
-    .card {
-      background: #ffffff;
-      border-color: #334155;
-    }
+  /* ─── Dark Mode Support (Legacy/Overrides) ─────────────────────────── */
+  [data-theme='dark'] .view-controls {
+    background: rgba(30, 41, 59, 0.8) !important;
+    border-color: rgba(255, 255, 255, 0.1) !important;
+  }
 
-    .card:hover {
-      border-color: #475569;
-      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
-    }
+  [data-theme='dark'] .view-btn.active {
+    background: #334155 !important;
+    color: #38bdf8 !important;
+  }
 
-    .all-categories {
-      color: #f1f5f9;
-    }
-
-    .category-count {
-      background: #334155;
-      color: #cbd5e1;
-    }
-
-    .view-controls {
-      background: #1e293b;
-      border-color: #334155;
-    }
-
-    .view-btn.active {
-      background: #334155;
-    }
-
-    .card-title {
-      color: #f1f5f9;
-    }
-
-    .card:hover .card-title {
-      color: #60a5fa;
-    }
-
-    .card-description {
-      color: #cbd5e1;
-    }
-
-    .card-time {
-      color: #94a3b8;
-    }
+  [data-theme='dark'] .view-btn:hover {
+    background: rgba(255, 255, 255, 0.05) !important;
   }
 
   /* ─── Animations ─────────────────────────────────────────── */

@@ -978,3 +978,126 @@
     font-size: 1.1rem;
   }
 }
+
+/* -- Dark Mode Overrides --------------------------- */
+[data-theme='dark'] .breadcrumbLink,
+[data-theme='dark'] .breadcrumbLeft {
+  color: #94a3b8;
+}
+
+[data-theme='dark'] .breadcrumbCurrent {
+  color: #f1f5f9;
+}
+
+[data-theme='dark'] .sidebarTitle {
+  color: #f1f5f9;
+}
+
+[data-theme='dark'] .sidebarDescription {
+  color: #cbd5e1;
+}
+
+[data-theme='dark'] .sidebarMeta {
+  background: rgba(30, 41, 59, 0.5);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme='dark'] .sidebarMetaLabel {
+  color: #94a3b8;
+}
+
+[data-theme='dark'] .sidebarMetaValue {
+  color: #e2e8f0;
+}
+
+[data-theme='dark'] .otherCategoriesTitle {
+  color: #f1f5f9;
+}
+
+[data-theme='dark'] .otherCategoryLink {
+  color: #94a3b8;
+}
+
+[data-theme='dark'] .otherCategoryLink:hover {
+  color: #38bdf8;
+}
+
+[data-theme='dark'] .articleRow {
+  background: rgba(30, 41, 59, 0.4);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme='dark'] .articleRow:hover {
+  background: rgba(30, 41, 59, 0.7);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+[data-theme='dark'] .articleTitle {
+  color: #f1f5f9;
+}
+
+[data-theme='dark'] .articleDate {
+  color: #64748b;
+}
+
+[data-theme='dark'] .navLink {
+  background: rgba(30, 41, 59, 0.6);
+  border-color: rgba(255, 255, 255, 0.1);
+  color: #f1f5f9;
+}
+
+[data-theme='dark'] .navLink:hover {
+  background: rgba(30, 41, 59, 0.9);
+  border-color: rgba(56, 189, 248, 0.5);
+  color: #38bdf8;
+}
+
+[data-theme='dark'] .navIcon {
+  background: rgba(15, 23, 42, 0.6);
+  border-color: rgba(255, 255, 255, 0.1);
+  color: #f1f5f9;
+}
+
+[data-theme='dark'] .articleCard {
+  background: rgba(30, 41, 59, 0.5);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme='dark'] .articleCard:hover {
+  background: rgba(30, 41, 59, 0.8);
+  border-color: rgba(56, 189, 248, 0.5);
+}
+
+[data-theme='dark'] .articleCardIconWrap {
+  background: rgba(15, 23, 42, 0.5);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme='dark'] .articleCardIcon {
+  color: #e2e8f0;
+}
+
+[data-theme='dark'] .viewToggle {
+  background: rgba(30, 41, 59, 0.8);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme='dark'] .viewToggleBtnActive {
+  background: #334155;
+  color: #38bdf8;
+}
+
+[data-theme='dark'] .paginationContainer {
+  background: rgba(30, 41, 59, 0.8);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme='dark'] .pageBtn {
+  background: #1e293b;
+  border-color: #334155;
+  color: #cbd5e1;
+}
+
+[data-theme='dark'] .paginationText {
+  color: #cbd5e1;
+}
