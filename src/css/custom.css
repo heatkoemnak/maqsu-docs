@@ -159,7 +159,13 @@ blockquote img{
   top: -60px !important;
   width: 100% !important;
   margin: 0 !important;
-  background-color:tranparent;
+  background-color: #0f172a !important; /* Dark Blue */
+}
+.navbar__item, .navbar__link, .navbar__brand {
+  color: #f8fafc !important;
+}
+.navbar__link:hover {
+  color: #38bdf8 !important; /* Cyan accent */
 }
 .navbar__inner{
   width: 80% !important;
