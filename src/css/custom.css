@@ -23,7 +23,7 @@
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
   --doc-sidebar-width: 400px !important;
-  --ifm-color-emphasis-300: #ffff !important;
+  --ifm-color-emphasis-300: transparent !important;
 
   /* Global Theme Variables */
   --site-bg: #ffffff;
@@ -66,6 +66,7 @@
 
   /* Dark Mode Overrides */
   --site-bg: radial-gradient(circle at 50% 50%, #1e293b 0%, #0f172a 100%) !important;
+  --site-bg-solid: #0f172a !important;
   --color-primary: #1e293b;
   --card-bg: rgba(30, 41, 59, 0.4) !important;
   --card-border: rgba(255, 255, 255, 0.05) !important;
@@ -119,11 +120,23 @@
   border-color: var(--border-color);
 }
 
-html {
+html, body {
   scroll-behavior: smooth;
-  background: var(--site-bg);
+  background: var(--site-bg, var(--site-bg-solid, #ffffff));
   overflow-x: hidden;
   zoom: 90%;
+}
+
+[data-theme='dark'] .main-wrapper,
+[data-theme='dark'] main,
+[data-theme='dark'] #__docusaurus,
+[data-theme='dark'] .container_src-components-HomeContent-styles-module,
+[data-theme='dark'] .features_src-components-HomeContent-styles-module {
+  background: transparent !important;
+}
+
+[data-theme='dark'] {
+  background: var(--site-bg) !important;
 }
 
 * {

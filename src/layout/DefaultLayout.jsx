@@ -5,7 +5,7 @@ import Navbar from '../components/Navbar/Navbar';
 export default function DefaultLayout({children}) {
   return (
     <Layout noFooter>
-      <div style={{backgroundColor: 'var(--site-bg)'}}>
+      <div style={{background: 'var(--site-bg)'}}>
           <Navbar/>
           {children}
       </div>
