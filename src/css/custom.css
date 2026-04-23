@@ -124,7 +124,6 @@ html, body {
   scroll-behavior: smooth;
   background: var(--site-bg, var(--site-bg-solid, #ffffff));
   overflow-x: hidden;
-  zoom: 90%;
 }
 
 [data-theme='dark'] .main-wrapper,
