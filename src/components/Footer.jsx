@@ -1,21 +1,13 @@
 import React from 'react';
 
 const Footer = () => {
-  const [theme, setTheme] = React.useState('dark');
-
-  // Load saved theme on mount
-  React.useEffect(() => {
-    const savedTheme = document.documentElement.getAttribute('data-theme') || 'dark';
-    setTheme(savedTheme);
-  }, []);
-
   const styles = {
     footer: {
       width: '100%',
-      backgroundColor: theme === 'dark' ? '#1e293b' : '#f8fafc',
-      color: theme === 'dark' ? '#e2e8f0' : '#1e293b',
+      backgroundColor: 'var(--footer-bg)',
+      color: 'var(--footer-text)',
       transition: 'all 0.3s ease',
-      borderTop: theme === 'dark' ? '1px solid rgba(255, 255, 255, 0.1)' : '1px solid rgba(0, 0, 0, 0.05)',
+      borderTop: '1px solid var(--border-color)',
       marginTop: '50px',
     },
     container: {
@@ -29,7 +21,7 @@ const Footer = () => {
     },
     copyright: {
       fontSize: '13px',
-      opacity: '0.6',
+      opacity: '0.8',
     },
   };
 

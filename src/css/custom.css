@@ -42,6 +42,13 @@
   --card-title-color: #1e293b;
   --card-desc-color: #323232;
   --card-time-color: #64748b;
+
+  /* Footer Variables */
+  --footer-bg: #f8fafc;
+  --footer-text: #334155;
+  --footer-heading: #1e293b;
+  --footer-link: #64748b;
+  --footer-link-hover: #0f172a;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -73,6 +80,13 @@
   --card-title-color: #f1f5f9;
   --card-desc-color: #cbd5e1;
   --card-time-color: #94a3b8;
+
+  /* Footer Variables (Dark) */
+  --footer-bg: #0f172a;
+  --footer-text: #94a3b8;
+  --footer-heading: #f1f5f9;
+  --footer-link: #94a3b8;
+  --footer-link-hover: #38bdf8;
 }
 
 [data-theme='dark'] h1, 

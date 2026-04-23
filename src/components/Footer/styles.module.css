@@ -1,39 +1,103 @@
-/* .Footer {
-  font-family: sans-serif;
-  text-align: center;
-}
-.Navfooter {
-  display: grid;
-  grid-area: Navfooter;
-  grid-template-columns: repeat(4, auto);
-  align-items: center;
-  justify-items: center;
-}
-.Navfooter a {
-  color: #fff;
-  font-size: 15px;
-  font-weight: 500;
-  transition: 0.5s;
-  text-decoration: none;
-}
-.Navfooter a:hover {
-  transform: scale(1.1);
-}
-.Navfooter button {
-  padding: 10px;
-  outline: none;
-  border: none;
-  font-size: 10px;
-  color: #fff;
-  font-weight: 600;
-  background-color: #f57328;
-  box-shadow: 0px 5px 0px 0px rgba(255, 0, 0, 0.25);
-  border-radius: 10px;
-  cursor: pointer;
-  transition: 70ms;
+.footerRoot {
+  background: var(--footer-bg);
+  color: var(--footer-text);
+  padding: 3rem 0 1.5rem;
+  border-top: 1px solid var(--border-color);
+  font-family: 'Outfit', sans-serif;
 }
 
-.Navfooter button:active {
-  transform: translateY(3px);
-  box-shadow: 0px 2px 0px 0px rgba(255, 0, 0, 0.25);
-} */
+.footerContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.footerRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: space-between;
+}
+
+.footerCol {
+  flex: 1;
+  min-width: 250px;
+}
+
+.colTitle {
+  color: var(--footer-heading);
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  display: block;
+}
+
+.linkList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.linkList li {
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--footer-text) !important;
+  font-size: 0.9rem;
+}
+
+.linkList li i {
+  color: var(--footer-link);
+  width: 16px;
+}
+
+.footerLink {
+  color: var(--footer-link) !important;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.footerLink:hover {
+  color: var(--footer-link-hover) !important;
+  text-decoration: none;
+}
+
+.bottomBar {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.85rem;
+  color: var(--footer-link) !important;
+}
+
+.socialIcons {
+  display: flex;
+  gap: 1rem;
+}
+
+.socialIcon {
+  color: var(--footer-link) !important;
+  font-size: 1.25rem;
+  transition: color 0.2s ease;
+}
+
+.socialIcon:hover {
+  color: var(--footer-link-hover) !important;
+}
+
+@media (max-width: 768px) {
+  .footerRow {
+    flex-direction: column;
+  }
+  
+  .bottomBar {
+    flex-direction: column;
+    text-align: center;
+  }
+}
