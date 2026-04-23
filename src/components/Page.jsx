@@ -158,24 +158,30 @@ export default function Page() {
   }, [posts]);
 
   /* -----------------------------------
-     🔥 HASH HANDLING (no scroll spy)
+     🔥 HASH HANDLING (Scrolling & Active state)
   ----------------------------------- */
   useEffect(() => {
     if (!posts.length) return;
 
-    // Hash change handler
-    const handleHashChange = () => {
-      const hash = window.location.hash.replace('#', '');
-      setActive(hash || null);
-    };
-
-    handleHashChange();
-    window.addEventListener('hashchange', handleHashChange);
-
-    return () => {
-      window.removeEventListener('hashchange', handleHashChange);
-    };
-  }, [posts]);
+    const hash = location.hash.replace('#', '');
+    if (hash) {
+      setActive(hash);
+      window.isNavigating = true;
+      // Scroll to the element if it exists
+      setTimeout(() => {
+        const el = document.getElementById(hash);
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        // Reset navigating flag after scroll completes
+        setTimeout(() => {
+          window.isNavigating = false;
+        }, 1000);
+      }, 100);
+    } else {
+      setActive(null);
+    }
+  }, [location.hash, posts]);
 
   useEffect(() => {
     if (!posts.length) return;
@@ -226,7 +232,7 @@ export default function Page() {
     };
 
     const onScroll = () => {
-      if (ticking) return;
+      if (ticking || window.isNavigating) return;
       ticking = true;
 
       window.requestAnimationFrame(() => {
@@ -248,10 +254,13 @@ export default function Page() {
   // Scroll the sidebar to the active item
   useEffect(() => {
     if (active) {
-      const activeEl = document.querySelector('.pq-sidebar .is-active');
-      if (activeEl && typeof activeEl.scrollIntoView === 'function') {
-        activeEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-      }
+      const timer = setTimeout(() => {
+        const activeEl = document.querySelector('.pq-sidebar .is-active');
+        if (activeEl && typeof activeEl.scrollIntoView === 'function') {
+          activeEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+      }, 300);
+      return () => clearTimeout(timer);
     }
   }, [active]);
 

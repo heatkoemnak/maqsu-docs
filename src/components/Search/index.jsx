@@ -1,10 +1,14 @@
-import React, { useState, useRef, useEffect, useMemo } from "react";
-import { Search as SearchIcon, X, ChevronDown, FileText } from "lucide-react";
+import React, { useState, useRef, useEffect, useMemo, useCallback } from "react";
+import { Search as SearchIcon, X, ChevronDown, FileText, Command, CornerDownLeft, Sparkles, AlertCircle } from "lucide-react";
 import styles from "./styles.module.css";
 import useGlobalData from "@docusaurus/useGlobalData";
 import Link from "@docusaurus/Link";
+import { useHistory } from "@docusaurus/router";
+import { motion, AnimatePresence } from "framer-motion";
+import Fuse from "fuse.js";
+import clsx from "clsx";
 
-const MAX_RESULTS = 30;
+const MAX_RESULTS = 10;
 
 /* -------------------------
    Helpers
@@ -21,641 +25,273 @@ const stripMarkdown = (text = "") =>
     .replace(/\s+/g, " ")
     .trim();
 
-const buildExcerpt = (content = "", max = 140) => {
+const buildExcerpt = (content = "", max = 150) => {
   const clean = stripMarkdown(content);
   if (!clean) return "";
   return clean.length > max ? `${clean.slice(0, max).trimEnd()}...` : clean;
 };
 
-/**
- * Follow your working link format:
- * account-receivable-invoices-createinvoice
- * not:
- * account-receivable-invoices-create-invoice
- */
+const extractMarkdownBlocks = (markdown = "") => {
+  const text = String(markdown || "").replace(/\r\n/g, "\n");
+  const headingRegex = /^(#{3,4})\s+(.+?)$/gm;
+  const matches = [...text.matchAll(headingRegex)];
+  if (!matches.length) return [];
+  return matches.map((match, index) => {
+    const start = match.index ?? 0;
+    const end = index + 1 < matches.length ? matches[index + 1].index ?? text.length : text.length;
+    const level = match[1].length;
+    const rawTitle = match[2].trim();
+    const rawBlock = text.slice(start, end).trim();
+    return { level, rawTitle, title: stripMarkdown(rawTitle), content: stripMarkdown(rawBlock) };
+  });
+};
+
 const normalizeHeadingText = (text = "") =>
   String(text)
-    .trim()
     .toLowerCase()
     .replace(/[^a-z0-9\s-]/g, "")
     .replace(/\s+/g, "")
     .replace(/-+/g, "");
 
-const buildScopedHeadingId = ({
-  groupUid = "",
-  sectionId = "",
-  headingText = "",
-  usedIds = {},
-}) => {
+const buildScopedHeadingId = ({ groupUid = "", sectionId = "", headingText = "", usedIds = {} }) => {
   const textSlug = normalizeHeadingText(headingText) || "section";
-  const scopePrefix = `${groupUid}-${sectionId}`;
-  const baseId = `${scopePrefix}-${textSlug}`;
-
+  const baseId = sectionId ? `${groupUid}-${sectionId}-${textSlug}` : `${groupUid}-${textSlug}`;
   const nextCount = (usedIds[baseId] || 0) + 1;
   usedIds[baseId] = nextCount;
-
   return nextCount === 1 ? baseId : `${baseId}-${nextCount}`;
 };
 
-/**
- * Extract heading blocks from markdown.
- * Focus on ### / #### because these are the levels
- * you're using for searchable content blocks.
- */
-const extractMarkdownBlocks = (markdown = "") => {
-  const text = String(markdown || "").replace(/\r\n/g, "\n");
-  const headingRegex = /^(#{3,4})\s+(.+?)$/gm;
-  const matches = [...text.matchAll(headingRegex)];
-
-  if (!matches.length) return [];
-
-  return matches.map((match, index) => {
-    const start = match.index ?? 0;
-    const end =
-      index + 1 < matches.length
-        ? matches[index + 1].index ?? text.length
-        : text.length;
-
-    const level = match[1].length;
-    const rawTitle = match[2].trim();
-    const rawBlock = text.slice(start, end).trim();
-
-    return {
-      level,
-      rawTitle,
-      title: stripMarkdown(rawTitle),
-      content: stripMarkdown(rawBlock),
-    };
-  });
-};
-
-const buildSearchItem = ({
-  title,
-  link,
-  category,
-  content,
-  isHeadingBlock = false,
-  headingLevel = null,
-}) => ({
-  title: title || "",
-  link: link || "#",
-  category: category || "",
-  content: stripMarkdown(content || ""),
-  isHeadingBlock,
-  headingLevel,
-});
-
-const dedupeItems = (items = []) => {
-  const seen = new Set();
-
-  return items.filter((item) => {
-    const key = `${item.link}::${item.title}::${item.category}`;
-    if (seen.has(key)) return false;
-    seen.add(key);
-    return true;
-  });
-};
-
-const calculateSearchScore = (item, query, searchTerms) => {
-  const title = (item?.title || "").toLowerCase();
-  const category = (item?.category || "").toLowerCase();
-  const content = (item?.content || "").toLowerCase();
-  const safeQuery = (query || "").toLowerCase().trim();
-
-  let score = 0;
-
-  if (title === safeQuery) score += 300;
-  if (title.startsWith(safeQuery)) score += 180;
-  if (title.includes(safeQuery)) score += 120;
-  if (category.includes(safeQuery)) score += 60;
-  if (content.includes(safeQuery)) score += 45;
-
-  searchTerms.forEach((term) => {
-    if (title.includes(term)) score += 24;
-    if (title.startsWith(term)) score += 20;
-    if (category.includes(term)) score += 10;
-    if (content.includes(term)) score += 5;
-  });
-
-  if (item?.isHeadingBlock) score += 35;
-
-  score += Math.max(0, 30 - title.length * 0.15);
-
-  return score;
-};
-
 const Search = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [showTopics, setShowTopics] = useState(false);
   const [query, setQuery] = useState("");
   const [results, setResults] = useState([]);
+  const [activeIndex, setActiveIndex] = useState(0);
   const inputRef = useRef(null);
-  const [showDropdown, setShowDropdown] = useState(false);
-  const [isMegaMenuFullscreen, setIsMegaMenuFullscreen] = useState(false);
-  const [activeIndex, setActiveIndex] = useState(-1);
-
-  const dropdownRef = useRef(null);
-  const itemRefs = useRef([]);
+  const topicsRef = useRef(null);
+  const history = useHistory();
 
   const globalData = useGlobalData();
-  const topics = globalData?.["topics-data"]?.default?.topics ?? [];
+  const topicsData = globalData?.["topics-data"]?.default?.topics ?? [];
   const categoriesBySlug = globalData?.["categories-data"]?.default?.bySlug ?? {};
 
   const categories = useMemo(() => {
-    const list = Object.entries(categoriesBySlug).map(([slug, data]) => ({
-      slug,
-      ...(data || {}),
-    }));
-
-    const order = new Map(
-      topics
-        .map((topic, idx) => {
-          const slug = String(topic?.link || "")
-            .replace(/^\//, "")
-            .split("/")[0];
-          return slug ? [slug, idx] : null;
-        })
-        .filter(Boolean)
-    );
+    const list = Object.entries(categoriesBySlug).map(([slug, data]) => ({ slug, ...(data || {}) }));
+    const order = new Map(topicsData.map((t, idx) => {
+      const s = String(t?.link || "").replace(/^\//, "").split("/")[0];
+      return s ? [s, idx] : null;
+    }).filter(Boolean));
 
     list.sort((a, b) => {
-      const oa = order.has(a.slug) ? order.get(a.slug) : Number.POSITIVE_INFINITY;
-      const ob = order.has(b.slug) ? order.get(b.slug) : Number.POSITIVE_INFINITY;
-
+      const oa = order.has(a.slug) ? order.get(a.slug) : 999;
+      const ob = order.has(b.slug) ? order.get(b.slug) : 999;
       if (oa !== ob) return oa - ob;
       return String(a.title || a.slug).localeCompare(String(b.title || b.slug));
     });
-
     return list;
-  }, [categoriesBySlug, topics]);
+  }, [categoriesBySlug, topicsData]);
 
-
-  /* -------------------------
-     Keyboard Shortcuts
-  ------------------------- */
-
-  useEffect(() => {
-  const handleKeyDown = (e) => {
-    const isMac = navigator.platform.toUpperCase().includes("MAC");
-
-    if (
-      (isMac && e.metaKey && e.key === "f") || // Cmd + F
-      (!isMac && e.ctrlKey && e.key === "f")   // Ctrl + F
-    ) {
-      e.preventDefault();
-
-      inputRef.current?.focus();
-      setShowDropdown(false); // optional
-    }
-  };
-
-  document.addEventListener("keydown", handleKeyDown);
-
-  return () => {
-    document.removeEventListener("keydown", handleKeyDown);
-  };
-}, []);
-
-  /* -------------------------
-     Build Search Index
-  ------------------------- */
   const searchIndex = useMemo(() => {
-    if (!Array.isArray(categories)) return [];
-
     const items = [];
-
     categories.forEach((category) => {
-      const baseSlug =
-        category.slug ||
-        category.uid ||
-        category.link ||
-        category.title?.toLowerCase().replace(/\s+/g, "-") ||
-        "docs";
-
+      const baseSlug = category.slug || category.uid || "docs";
       (category.groupSections || []).forEach((group) => {
         const groupSlug = group.uid || String(group.link || "").split("#")[0];
         const groupLink = `/${baseSlug}/${groupSlug}`;
-
-        items.push(
-          buildSearchItem({
-            title: group.title,
-            link: groupLink,
-            category: category.title,
-            content: group.body || group.description || "",
-          })
-        );
-
+        items.push({ title: group.title, link: groupLink, category: category.title, content: group.body || group.description || "" });
         const groupBlocks = extractMarkdownBlocks(group.body || group.description || "");
-        if (groupBlocks.length) {
-          const usedGroupIds = {};
-
-          groupBlocks.forEach((block) => {
-            const id = buildScopedHeadingId({
-              groupUid: group.uid || groupSlug,
-              sectionId: "group",
-              headingText: block.rawTitle || block.title,
-              usedIds: usedGroupIds,
-            });
-
-            items.push(
-              buildSearchItem({
-                title: block.title,
-                link: `${groupLink}#${id}`,
-                category: `${category.title} → ${group.title}`,
-                content: block.content,
-                isHeadingBlock: true,
-                headingLevel: block.level,
-              })
-            );
-          });
-        }
-
+        const usedGroupIds = {};
+        groupBlocks.forEach((block) => {
+          const id = buildScopedHeadingId({ groupUid: group.uid || groupSlug, sectionId: "", headingText: block.rawTitle, usedIds: usedGroupIds });
+          items.push({ title: block.title, link: `${groupLink}#${id}`, category: `${category.title} → ${group.title}`, content: block.content });
+        });
         (group.sections || []).forEach((section) => {
-          const raw = section.uid || section.link || "";
-          const rawString = String(raw);
-
-          const subId = rawString.includes("#")
-            ? rawString.split("#")[1]
-            : rawString.replace(/^\//, "");
-
-          const sectionBaseLink = `/${baseSlug}/${groupSlug}`;
-          const sectionLink = subId
-            ? `${sectionBaseLink}#${subId}`
-            : sectionBaseLink;
-
-          const sectionBody =
-            section.body || section.description || section.content || "";
-
-          items.push(
-            buildSearchItem({
-              title: section.title,
-              link: sectionLink,
-              category: group.title,
-              content: sectionBody,
-            })
-          );
-
-          const blocks = extractMarkdownBlocks(sectionBody);
+          const sectionId = section.uid || section.link?.replace("/", "") || "";
+          const sectionLink = `${groupLink}#${sectionId}`;
+          items.push({ title: section.title, link: sectionLink, category: group.title, content: section.body || "" });
+          const blocks = extractMarkdownBlocks(section.body || "");
           const usedHeadingIds = {};
-
           blocks.forEach((block) => {
-            const uniqueId = buildScopedHeadingId({
-              groupUid: group.uid || groupSlug,
-              sectionId: subId,
-              headingText: block.rawTitle || block.title,
-              usedIds: usedHeadingIds,
-            });
-
-            items.push(
-              buildSearchItem({
-                title: block.title,
-                link: `${sectionBaseLink}#${uniqueId}`,
-                category: `${group.title} → ${section.title}`,
-                content: block.content,
-                isHeadingBlock: true,
-                headingLevel: block.level,
-              })
-            );
+            const uniqueId = buildScopedHeadingId({ groupUid: group.uid || groupSlug, sectionId: sectionId, headingText: block.rawTitle, usedIds: usedHeadingIds });
+            items.push({ title: block.title, link: `${groupLink}#${uniqueId}`, category: `${group.title} → ${section.title}`, content: block.content });
           });
         });
       });
     });
-
-    return dedupeItems(items);
+    return items;
   }, [categories]);
 
-  /* -------------------------
-     Reset active selection when results change
-  ------------------------- */
-  useEffect(() => {
-    itemRefs.current = [];
-    setActiveIndex(results.length > 0 ? 0 : -1);
-  }, [results]);
+  const fuse = useMemo(() => new Fuse(searchIndex, {
+    keys: [
+      { name: 'title', weight: 0.8 }, 
+      { name: 'category', weight: 0.3 }, 
+      { name: 'content', weight: 0.2 }
+    ],
+    threshold: 0.25,
+    distance: 1000,
+    ignoreLocation: true,
+    useExtendedSearch: true,
+    includeMatches: true,
+    minMatchCharLength: 2,
+  }), [searchIndex]);
 
-  /* -------------------------
-     Scroll selected item into view
-  ------------------------- */
-  useEffect(() => {
-    if (activeIndex >= 0 && itemRefs.current[activeIndex]) {
-      itemRefs.current[activeIndex].scrollIntoView({
-        block: "nearest",
-      });
-    }
-  }, [activeIndex]);
+  const handleNavigate = useCallback((link) => {
+    setIsOpen(false);
+    setShowTopics(false);
+    setTimeout(() => {
+      history.push(link);
+    }, 100);
+  }, [history]);
 
-  /* -------------------------
-     Close dropdown on outside click
-  ------------------------- */
   useEffect(() => {
-    function handleClickOutside(event) {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-        setShowDropdown(false);
-        setIsMegaMenuFullscreen(false);
+    const handleGlobalKeyDown = (e) => {
+      if ((e.metaKey || e.ctrlKey) && e.key === "k") { e.preventDefault(); setIsOpen(true); }
+      if (e.key === "Escape") { setIsOpen(false); setShowTopics(false); }
+      
+      if (isOpen && results.length > 0) {
+        if (e.key === "ArrowDown") {
+          e.preventDefault();
+          setActiveIndex(prev => (prev < results.length - 1 ? prev + 1 : prev));
+        } else if (e.key === "ArrowUp") {
+          e.preventDefault();
+          setActiveIndex(prev => (prev > 0 ? prev - 1 : prev));
+        } else if (e.key === "Enter") {
+          const selected = results[activeIndex];
+          if (selected) {
+            e.preventDefault();
+            handleNavigate(selected.link);
+          }
+        }
       }
-    }
-
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
-
-  /* -------------------------
-     ESC close + scroll lock
-  ------------------------- */
-  const isActive = Boolean(query) || showDropdown;
-
-  useEffect(() => {
-    if (!isActive) return;
-
-    function handleEsc(event) {
-      if (event.key === "Escape") {
-        setQuery("");
-        setResults([]);
-        setActiveIndex(-1);
-        setShowDropdown(false);
-        setIsMegaMenuFullscreen(false);
-      }
-    }
-
-    const body = document.body;
-    const prevOverflow = body.style.overflow;
-    const prevPaddingRight = body.style.paddingRight;
-
-    const scrollbarWidth =
-      window.innerWidth - document.documentElement.clientWidth;
-
-    body.style.overflow = "hidden";
-    if (scrollbarWidth > 0) {
-      body.style.paddingRight = `${scrollbarWidth}px`;
-    }
-
-    document.addEventListener("keydown", handleEsc);
-
-    return () => {
-      body.style.overflow = prevOverflow;
-      body.style.paddingRight = prevPaddingRight;
-      document.removeEventListener("keydown", handleEsc);
     };
-  }, [isActive]);
+    window.addEventListener("keydown", handleGlobalKeyDown);
+    const handleClickOutside = (e) => { if (topicsRef.current && !topicsRef.current.contains(e.target)) setShowTopics(false); };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => { 
+      window.removeEventListener("keydown", handleGlobalKeyDown); 
+      document.removeEventListener("mousedown", handleClickOutside); 
+    };
+  }, [isOpen, results, activeIndex, handleNavigate]);
 
-  /* -------------------------
-     Search logic
-  ------------------------- */
-  const handleSearch = (value) => {
-    setQuery(value);
-
-    if (!value.trim()) {
-      setResults([]);
-      setActiveIndex(-1);
-      return;
+  useEffect(() => {
+    if (isOpen) { 
+      setTimeout(() => inputRef.current?.focus(), 100);
+      document.body.style.overflow = "hidden"; 
     }
+    else { setQuery(""); setResults([]); document.body.style.overflow = "unset"; }
+  }, [isOpen]);
 
-    const normalizedQuery = value.toLowerCase().trim();
-    const searchTerms = normalizedQuery.split(/\s+/).filter(Boolean);
-
-    const ranked = searchIndex
-      .map((item, index) => {
-        const title = (item?.title || "").toLowerCase();
-        const category = (item?.category || "").toLowerCase();
-        const content = (item?.content || "").toLowerCase();
-        const haystack = `${title} ${category} ${content}`;
-
-        const isMatch = searchTerms.every((term) => haystack.includes(term));
-        if (!isMatch) return null;
-
-        return {
-          ...item,
-          _rank: calculateSearchScore(item, normalizedQuery, searchTerms),
-          _index: index,
-        };
-      })
-      .filter(Boolean)
-      .sort((a, b) => {
-        if (b._rank !== a._rank) return b._rank - a._rank;
-        return a._index - b._index;
-      })
-      .slice(0, MAX_RESULTS)
-      .map(({ _rank, _index, ...item }) => item);
-
-    setResults(ranked);
-    setShowDropdown(false);
+  const handleSearch = (val) => {
+    setQuery(val);
+    if (!val.trim()) { setResults([]); return; }
+    const fuseResults = fuse.search(val).slice(0, MAX_RESULTS);
+    setResults(fuseResults.map(r => r.item));
+    setActiveIndex(0);
   };
-const handleInputKeyDown = (event) => {
-  if (!results.length) return;
 
-  if (event.key === "ArrowDown") {
-    event.preventDefault();
-    setActiveIndex((prev) => (prev < results.length - 1 ? prev + 1 : 0));
-  }
-
-  if (event.key === "ArrowUp") {
-    event.preventDefault();
-    setActiveIndex((prev) => (prev > 0 ? prev - 1 : results.length - 1));
-  }
-
-  if (event.key === "Enter") {
-    event.preventDefault();
-
-    const target = activeIndex >= 0 ? results[activeIndex] : results[0];
-    if (!target?.link) return;
-
-    // close UI first
-    setQuery("");
-    setResults([]);
-    setActiveIndex(-1);
-    setShowDropdown(false);
-    setIsMegaMenuFullscreen(false);
-
-    const currentUrl = `${window.location.pathname}${window.location.hash}`;
-    const targetUrl = new URL(target.link, window.location.origin);
-    const targetPathWithHash = `${targetUrl.pathname}${targetUrl.hash}`;
-
-    if (currentUrl === targetPathWithHash) return;
-
-    // same page, different hash
-    if (window.location.pathname === targetUrl.pathname) {
-      window.location.hash = targetUrl.hash;
-      return;
-    }
-
-    // different page
-    window.location.href = target.link;
-  }
-};
   return (
     <div className={styles.SearchContainer}>
-      {isActive && (
-        <div
-          className={styles.overlay}
-          onClick={() => {
-            setQuery("");
-            setResults([]);
-            setActiveIndex(-1);
-            setShowDropdown(false);
-          }}
-        />
-      )}
-
-      <div className={styles.searchBar}>
-        <div className={styles.topics} ref={dropdownRef}>
-          <button
-            type="button"
-            onClick={() => {
-              const next = !showDropdown;
-              setShowDropdown(next);
-              if (!next) setIsMegaMenuFullscreen(false);
-            }}
-            className={styles.dropDownTopic}
-          >
+      <div className={styles.searchBarWrapper}>
+        <div className={styles.topicsWrapper} ref={topicsRef}>
+          <button className={styles.allTopicsTrigger} onClick={() => setShowTopics(!showTopics)}>
             <span>All Topics</span>
-            <ChevronDown
-              className={showDropdown ? styles.rotate180 : ""}
-              size={16}
-            />
+            <ChevronDown size={14} className={clsx(showTopics && styles.rotated)} />
           </button>
-
-          {showDropdown && (
-            <div
-              className={`${styles.megaMenuContainer} ${
-                isMegaMenuFullscreen ? styles.megaMenuContainerFullscreen : ""
-              }`}
-            >
-              <div className={styles.megaMenuInner}>
-                <div className={styles.megaMenuGrid}>
-                  {categories.map((category) => {
-                    const baseSlug =
-                      category.slug || category.uid || category.link || "docs";
-                    const groups = category.groupSections || [];
-
-                    return (
-                      <div key={baseSlug} className={styles.megaMenuColumn}>
-                        <Link
-                          to={`/${baseSlug}`}
-                          className={styles.categoryTitleLink}
-                          onClick={() => setShowDropdown(false)}
-                        >
-                          {category.title || baseSlug}
-                        </Link>
-
-                        <div className={styles.groupList}>
-                          {groups.map((group) => {
-                            const groupSlug =
-                              group.uid || String(group.link || "").split("#")[0];
-
-                            return (
-                              <Link
-                                key={`${baseSlug}-${groupSlug}`}
-                                to={`/${baseSlug}/${groupSlug}`}
-                                className={styles.megaMenuItem}
-                                onClick={() => setShowDropdown(false)}
-                              >
-                                <span className={styles.itemTitle}>
-                                  {group.title}
-                                </span>
-                              </Link>
-                            );
-                          })}
-                        </div>
-                      </div>
-                    );
-                  })}
-                </div>
-
-                <div className={styles.megaMenuFooter}>
-                  <button
-                    type="button"
-                    className={styles.megaMenuFooterLink}
-                    onClick={() => setIsMegaMenuFullscreen((prev) => !prev)}
-                  >
-                    {isMegaMenuFullscreen
-                      ? "Exit full screen"
-                      : "Browse all Topics"}
-                  </button>
-                </div>
-              </div>
-            </div>
-          )}
         </div>
-
-        <form className={styles.form} onSubmit={(e) => e.preventDefault()}>
-          {/* <input
-            type="text"
-            value={query}
-            onChange={(e) => handleSearch(e.target.value)}
-            onKeyDown={handleInputKeyDown}
-            className={styles.input}
-            placeholder="Search for keywords, article ..."
-            aria-label="Search"
-          /> */}
-          <input
-            ref={inputRef}
-            type="text"
-            value={query}
-            onChange={(e) => handleSearch(e.target.value)}
-            onKeyDown={handleInputKeyDown}
-            className={styles.input}
-            placeholder="Search for keywords, article ...                                                             Ctrl + F"
-            aria-label="Search"
-          />
-
-          <button
-            type="button"
-            onClick={() => {
-              setQuery("");
-              setResults([]);
-              setActiveIndex(-1);
-            }}
-            className={styles.reset}
-          >
-            {query ? <X size={16} /> : <SearchIcon size={16} />}
-          </button>
-        </form>
-
-        {query && (
-          <ul className={styles.resultsList} role="listbox" aria-label="Search results">
-            {results.length > 0 ? (
-              results.map((result, index) => (
-                <li
-                  key={`${result.link}-${index}`}
-                  ref={(el) => {
-                    itemRefs.current[index] = el;
-                  }}
-                  className={index === activeIndex ? styles.activeItem : ""}
-                  role="option"
-                  aria-selected={index === activeIndex}
-                >
-                  <a
-                    href={result.link}
-                    className={styles.resultWrapper}
-                    onMouseEnter={() => setActiveIndex(index)}
-                    onClick={() => {
-                      setQuery("");
-                      setResults([]);
-                      setActiveIndex(-1);
-                    }}
-                  >
-                    <FileText size={26} />
-                    <div className={styles.resultContent}>
-                      <span className={styles.resultTitle}>
-                        {result.title}
-                      </span>
-                      <span className={styles.resultCategory}>
-                        {result.category}
-                      </span>
-                      {result.content ? (
-                        <span className={styles.resultExcerpt}>
-                          {buildExcerpt(result.content)}
-                        </span>
-                      ) : null}
-                    </div>
-                  </a>
-                </li>
-              ))
-            ) : (
-              <li className={styles.noResults}>
-                <p>No results found for "{query}"</p>
-              </li>
-            )}
-          </ul>
-        )}
+        <button className={styles.searchTrigger} onClick={() => setIsOpen(true)}>
+          <SearchIcon size={16} className={styles.triggerIcon} />
+          <span className={styles.triggerText}>Search documentation...</span>
+          <div className={styles.triggerKbd}><Command size={10} /><span>K</span></div>
+        </button>
       </div>
+
+      <AnimatePresence>
+        {showTopics && (
+          <motion.div 
+            initial={{ opacity: 0, y: 10, scale: 0.98 }} 
+            animate={{ opacity: 1, y: 0, scale: 1 }} 
+            exit={{ opacity: 0, y: 10, scale: 0.98 }} 
+            className={styles.megaMenu}
+          >
+            <div className={styles.megaMenuGrid}>
+              {categories.map((cat) => (
+                <div key={cat.slug} className={styles.megaMenuCol}>
+                  <Link to={`/${cat.slug}`} className={styles.megaMenuCategory} onClick={() => setShowTopics(false)}>{cat.title}</Link>
+                  <div className={styles.megaMenuLinks}>
+                    {(cat.groupSections || []).slice(0, 10).map((group) => {
+                      const gSlug = group.uid || String(group.link || "").split("#")[0];
+                      return (<Link key={gSlug} to={`/${cat.slug}/${gSlug}`} className={styles.megaMenuLink} onClick={() => setShowTopics(false)}>{group.title}</Link>);
+                    })}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      <AnimatePresence>
+        {isOpen && (
+          <div className={styles.modalOverlay}>
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.95, y: -20 }} 
+              animate={{ opacity: 1, scale: 1, y: 0 }} 
+              exit={{ opacity: 0, scale: 0.95, y: -20 }} 
+              transition={{ type: "spring", damping: 25, stiffness: 300 }}
+              className={styles.searchModal}
+            >
+              <div className={styles.modalHeader}>
+                <SearchIcon size={20} className={styles.modalSearchIcon} />
+                <input ref={inputRef} type="text" placeholder="What can we help you find?" value={query} onChange={(e) => handleSearch(e.target.value)} className={styles.modalInput} />
+                <button className={styles.closeButton} onClick={() => setIsOpen(false)}><X size={18} /></button>
+              </div>
+              <div className={styles.modalBody}>
+                {results.length > 0 ? (
+                  <div className={styles.resultsList}>
+                    {results.map((item, idx) => (
+                      <div key={idx} className={clsx(styles.resultItem, idx === activeIndex && styles.activeResult)} onClick={() => handleNavigate(item.link)} onMouseEnter={() => setActiveIndex(idx)}>
+                        <div className={styles.resultIcon}><FileText size={18} /></div>
+                        <div className={styles.resultContent}>
+                          <div className={styles.resultTitleWrap}>
+                            <span className={styles.resultCategory}>{item.category}</span>
+                            <span className={styles.resultTitle}>{item.title}</span>
+                          </div>
+                          {item.content && (<p className={styles.resultExcerpt}>{buildExcerpt(item.content)}</p>)}
+                        </div>
+                        {idx === activeIndex && (<div className={styles.enterHint}><span>Go</span><CornerDownLeft size={12} /></div>)}
+                      </div>
+                    ))}
+                  </div>
+                ) : query ? (
+                  <div className={styles.noResults}>
+                    <div className={styles.noResultsIcon}><AlertCircle size={40} /></div>
+                    <p>No results found for "<strong>{query}</strong>"</p>
+                    <span>Try searching for broader terms or check your spelling</span>
+                  </div>
+                ) : (
+                  <div className={styles.searchHome}>
+                    <div className={styles.searchTip}>
+                      <div className={styles.tipIcon}><Sparkles size={20} /></div>
+                      <div className={styles.tipContent}>
+                        <span className={styles.tipTitle}>Quick Search Tips</span>
+                        <p>Search for specific modules like "Accounting", "Sales", or "Inventory" to quickly jump to relevant tutorials and guides.</p>
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </div>
+              <div className={styles.modalFooter}>
+                <div className={styles.footerHints}>
+                  <div className={styles.hint}><kbd>↑↓</kbd> <span>navigate</span></div>
+                  <div className={styles.hint}><kbd>↵</kbd> <span>select</span></div>
+                  <div className={styles.hint}><kbd>esc</kbd> <span>close</span></div>
+                </div>
+                <div className={styles.footerBrand}>MAQSU SEARCH</div>
+              </div>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
     </div>
   );
 };

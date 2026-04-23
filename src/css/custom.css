@@ -116,7 +116,6 @@
 
 html {
   scroll-behavior: smooth;
-  overflow: auto;
   background-color: var(--site-bg);
 }
 
