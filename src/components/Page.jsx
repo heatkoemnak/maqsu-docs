@@ -321,7 +321,7 @@ export default function Page() {
     }));
   }, []);
 
-  const buildUrl = useCallback((uid) => `/${pageSlug}/${uid}`, [pageSlug]);
+  const buildUrl = useCallback((uid) => `/${pageSlug}/${uid}`.replace(/\/+/g, '/'), [pageSlug]);
   const scrollToTop = useCallback(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, []);
@@ -406,7 +406,7 @@ export default function Page() {
                       <LiaAngleRightSolid size={8} />
                     </span>
                   )}
-                  <Link to={word?.link}>{word?.title}</Link>
+                  <Link to={word?.link ? word.link.replace(/\/+/g, '/') : '#'}>{word?.title}</Link>
                 </span>
               ))}
             </div>
@@ -535,7 +535,7 @@ export default function Page() {
                           <LiaAngleRightSolid size={8} />
                         </span>
                       )}
-                      <Link to={word?.link}>{word?.title}</Link>
+                      <Link to={word?.link ? word.link.replace(/\/+/g, '/') : '#'}>{word?.title}</Link>
                     </span>
                   ))}
                 </div>

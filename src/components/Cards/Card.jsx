@@ -10,7 +10,7 @@ export const Card = ({ title, description, link }) => {
         className: clsx(styles.card, styles.card_compact, styles.card_clickable),
         ...(isExternal
           ? { href: link, target: "_blank", rel: "noopener noreferrer" }
-          : { to: link }),
+          : { to: String(link).replace(/\/+/g, "/") }),
       }
     : { className: clsx(styles.card, styles.card_compact) };
 

@@ -295,7 +295,7 @@ const ArticleRow = ({ idx, link, title, root_path, date }) => (
     transition={{ duration: 0.2, delay: idx * 0.05, ease: "easeOut" }}
     className={clsx(styles.articleRow)}
   >
-    <Link to={`${root_path}/${link}`} className={clsx(styles.articleRowLink)}>
+    <Link to={`${root_path}/${link}`.replace(/\/+/g, '/')} className={clsx(styles.articleRowLink)}>
       <div className={clsx(styles.articleRowLeft)}>
         <span className={clsx(styles.articleIcon)}>
           {/* <VscFile size={23} /> */}
@@ -323,7 +323,7 @@ const ArticleCard = ({ idx, link, title, root_path, date }) => (
     transition={{ duration: 0.2, delay: idx * 0.04, ease: "easeOut" }}
     className={clsx(styles.articleCard)}
   >
-    <Link to={`${root_path}/${link}`} className={clsx(styles.articleCardLink)}>
+    <Link to={`${root_path}/${link}`.replace(/\/+/g, '/')} className={clsx(styles.articleCardLink)}>
       <div className={clsx(styles.articleCardTop)}>
         <span className={clsx(styles.articleCardIconWrap)}>
           <span className={clsx(styles.articleCardIcon)}>

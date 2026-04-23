@@ -9,6 +9,7 @@ import Fuse from "fuse.js";
 import clsx from "clsx";
 
 const MAX_RESULTS = 10;
+const cleanUrl = (url = "") => String(url).replace(/\/+/g, "/");
 
 /* -------------------------
    Helpers
@@ -97,7 +98,7 @@ const Search = () => {
       const baseSlug = category.slug || category.uid || "docs";
       (category.groupSections || []).forEach((group) => {
         const groupSlug = group.uid || String(group.link || "").split("#")[0];
-        const groupLink = `/${baseSlug}/${groupSlug}`;
+        const groupLink = cleanUrl(`/${baseSlug}/${groupSlug}`);
         items.push({ title: group.title, link: groupLink, category: category.title, content: group.body || group.description || "" });
         const groupBlocks = extractMarkdownBlocks(group.body || group.description || "");
         const usedGroupIds = {};
@@ -216,11 +217,11 @@ const Search = () => {
             <div className={styles.megaMenuGrid}>
               {categories.map((cat) => (
                 <div key={cat.slug} className={styles.megaMenuCol}>
-                  <Link to={`/${cat.slug}`} className={styles.megaMenuCategory} onClick={() => setShowTopics(false)}>{cat.title}</Link>
+                  <Link to={cleanUrl(`/${cat.slug}`)} className={styles.megaMenuCategory} onClick={() => setShowTopics(false)}>{cat.title}</Link>
                   <div className={styles.megaMenuLinks}>
                     {(cat.groupSections || []).slice(0, 10).map((group) => {
                       const gSlug = group.uid || String(group.link || "").split("#")[0];
-                      return (<Link key={gSlug} to={`/${cat.slug}/${gSlug}`} className={styles.megaMenuLink} onClick={() => setShowTopics(false)}>{group.title}</Link>);
+                      return (<Link key={gSlug} to={cleanUrl(`/${cat.slug}/${gSlug}`)} className={styles.megaMenuLink} onClick={() => setShowTopics(false)}>{group.title}</Link>);
                     })}
                   </div>
                 </div>
