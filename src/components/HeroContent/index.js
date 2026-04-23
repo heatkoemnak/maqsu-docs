@@ -28,21 +28,6 @@ export const HeroContent = ({ data, index }) => {
       key={index}
     >
       <div className="container">
-        {/* <h1 className="hero__title">{pageTitle}</h1> */}
-
-        {/* {data.document && data.documentLabel && (
-          <div className={styles.buttons}>
-            <Link
-              className="button button--secondary button--lg"
-              to={getDocPath(data.document)}
-            >
-              {data.documentLabel
-                ? data.documentLabel
-                : titleFromSlug(data.document)}
-            </Link>
-          </div>
-        )} */}
-
         <Search title={pageTitle} />
       </div>
     </header>

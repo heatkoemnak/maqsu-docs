@@ -1660,9 +1660,12 @@ const DocCategoryCollection = {
 
 
 export default defineConfig({
-  branch: process.env.VERCEL_GIT_COMMIT_REF || "main",
-  clientId:process.env.NEXT_PUBLIC_TINA_CLIENT_ID || "b08a7736-3ca7-4dba-827f-e6abc71f35ef",
-  token: process.env.TINA_TOKEN || "2abaf8eca4a3484174050f4af51e272361a74082",
+  branch: "main",
+  clientId:"b08a7736-3ca7-4dba-827f-e6abc71f35ef",
+  token: "2abaf8eca4a3484174050f4af51e272361a74082",
+  // branch: process.env.VERCEL_GIT_COMMIT_REF || "main",
+  // clientId:process.env.NEXT_PUBLIC_TINA_CLIENT_ID || "b08a7736-3ca7-4dba-827f-e6abc71f35ef",
+  // token: process.env.TINA_TOKEN || "2abaf8eca4a3484174050f4af51e272361a74082",
   build: {
     outputFolder: "admin",
     publicFolder: "static",

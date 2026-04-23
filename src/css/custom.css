@@ -9,6 +9,7 @@
 /* You can override the default Infima variables here. */
 :root {
   --ifm-color-primary: #235369;
+  --ifm-color-scheme: #ffffff;
   --color-primary: #34566d;
   --color-text: #5b5b5b;
   --color-white: #ffffff;
@@ -25,7 +26,7 @@
   --ifm-color-emphasis-300: #ffff !important;
 
   /* Global Theme Variables */
-  --site-bg: rgba(144, 167, 177, 0.1);
+  --site-bg: #ffffff;
   --text-main: rgb(75, 75, 75);
   --text-heading: rgb(86, 89, 92);
   --text-strong: rgb(16, 16, 16);
@@ -36,7 +37,7 @@
   --border-color: rgb(191, 190, 190);
   --scrollbar-track: rgb(0, 0, 0);
   --scrollbar-thumb: rgb(236, 236, 237);
-  
+
   --card-bg: #ffffff;
   --card-border: #deebfc;
   --card-title-color: #1e293b;
@@ -54,6 +55,7 @@
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
   --ifm-color-primary: #cbd2d0;
+  --ifm-color-scheme: #0f172a !important;
   --ifm-color-primary-dark: #21af90;
   --ifm-color-primary-darker: #1fa588;
   --ifm-color-primary-darkest: #1a8870;
@@ -63,8 +65,10 @@
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 
   /* Dark Mode Overrides */
-  --site-bg: #0f172a;
+  --site-bg: radial-gradient(circle at 50% 50%, #1e293b 0%, #0f172a 100%) !important;
   --color-primary: #1e293b;
+  --card-bg: rgba(30, 41, 59, 0.4) !important;
+  --card-border: rgba(255, 255, 255, 0.05) !important;
   --text-main: #cbd5e1;
   --text-heading: #f1f5f9;
   --text-strong: #f8fafc;
@@ -90,11 +94,11 @@
   --footer-link-hover: #38bdf8;
 }
 
-[data-theme='dark'] h1, 
-[data-theme='dark'] h2, 
-[data-theme='dark'] h3, 
-[data-theme='dark'] h4, 
-[data-theme='dark'] h5, 
+[data-theme='dark'] h1,
+[data-theme='dark'] h2,
+[data-theme='dark'] h3,
+[data-theme='dark'] h4,
+[data-theme='dark'] h5,
 [data-theme='dark'] h6 {
   color: var(--text-heading) !important;
 }
@@ -117,7 +121,7 @@
 
 html {
   scroll-behavior: smooth;
-  background-color: var(--site-bg);
+  background: var(--site-bg);
   overflow-x: hidden;
   zoom: 90%;
 }

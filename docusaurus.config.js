@@ -238,11 +238,10 @@ const config = {
           `Copyright © ${new Date().getFullYear()} ` +
           (docusaurusData.footer?.copyright || docusaurusData.title),
       },
-      // prism: {
-      //   theme: lightCodeTheme,
-      //   darkTheme: darkCodeTheme,
-      // },
-
+      prism: {
+        theme: require("prism-react-renderer").themes.github,
+        darkTheme: require("prism-react-renderer").themes.dracula,
+      },
     }),
 };
 
