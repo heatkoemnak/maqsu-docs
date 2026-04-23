@@ -19,20 +19,7 @@
       --transition: 200ms cubic-bezier(0.4, 0, 0.2, 1);
     }
 
-    [data-theme='dark'] {
-      --c-bg: #0b1120;
-      --c-surface: #1e293b;
-      --c-border: rgba(255, 255, 255, 0.08);
-      --c-accent: #38bdf8;
-      --c-accent-2: #7dd3fc;
-      --c-accent-bg: rgba(56, 189, 248, 0.15);
-      --c-text: #f1f5f9;
-      --c-muted: #94a3b8;
-      --c-faint: #475569;
-      --c-sidebar: #0b1120;
-      --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.3);
-      --shadow-md: 0 12px 28px rgba(0, 0, 0, 0.5);
-    }
+
 
     .page-divider {
       width: 75%;
@@ -111,7 +98,7 @@
       position: fixed;
       left: 0;
       overflow-y: auto;
-      background: var(--c-sidebar);
+      background: var(--c-sidebar) !important;
       display: flex;
       flex-direction: column;
       gap: 2px;
@@ -821,16 +808,22 @@
     }
 /* -- Dark Mode Overrides --------------------------- */
 [data-theme='dark'] {
-  --c-bg: #0f172a;
+  --c-bg: #0b1120;
   --c-surface: #1e293b;
-  --c-border: rgba(255, 255, 255, 0.1);
+  --c-border: rgba(255, 255, 255, 0.08);
   --c-accent: #38bdf8;
   --c-accent-2: #7dd3fc;
-  --c-accent-bg: rgba(56, 189, 248, 0.1);
+  --c-accent-bg: rgba(56, 189, 248, 0.15);
   --c-text: #f1f5f9;
   --c-muted: #94a3b8;
-  --c-faint: #64748b;
-  --c-sidebar: #0f172a;
+  --c-faint: #475569;
+  --c-sidebar: #0b1120;
+  --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 12px 28px rgba(0, 0, 0, 0.5);
+}
+
+[data-theme='dark'] .pq-sidebar {
+  background: var(--c-sidebar) !important;
 }
 
 [data-theme='dark'] .pq-section-content h3,
@@ -844,18 +837,19 @@
 }
 
 [data-theme='dark'] .pq-section-content code {
-  background: #1e293b;
-  border-color: #334155;
-  color: #f472b6;
+  background: var(--c-accent-bg);
+  border-color: var(--c-border);
+  color: var(--c-accent);
 }
 
 [data-theme='dark'] .pq-nav-link {
   background: rgba(30, 41, 59, 0.5);
   color: #f1f5f9;
+  border-color: var(--c-border);
 }
 
 [data-theme='dark'] .pq-nav-link:hover {
-  background: #1e293b;
+  background: var(--c-surface);
 }
 
 [data-theme='dark'] .pq-nav-title {
@@ -866,4 +860,10 @@
 [data-theme='dark'] .pq-nested-btn:hover {
   background: rgba(255, 255, 255, 0.05);
   color: #f1f5f9;
+}
+
+[data-theme='dark'] .pq-sub-btn.is-active,
+[data-theme='dark'] .pq-nested-btn.is-active {
+  background: var(--c-accent-bg);
+  color: var(--c-accent);
 }
