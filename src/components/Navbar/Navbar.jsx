@@ -1,6 +1,7 @@
 import clsx from 'clsx'
 import React, {useEffect, useState} from 'react'
 import Link from '@docusaurus/Link'
+import {useColorMode} from '@docusaurus/theme-common';
 import logo from '../../../static/img/maqsu-logo.png'
 import Search from '../Search'
 import styles from './styles.module.css'
@@ -25,7 +26,7 @@ const SunIcon = () => (
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-  const [theme, setTheme] = useState('dark');
+  const {colorMode, setColorMode} = useColorMode();
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20)
@@ -33,16 +34,8 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  // Load saved theme on mount
-  useEffect(() => {
-    const savedTheme = document.documentElement.getAttribute('data-theme') || 'dark';
-    setTheme(savedTheme);
-  }, []);
-
   const toggleTheme = () => {
-    const newTheme = theme === 'dark' ? 'light' : 'dark';
-    setTheme(newTheme);
-    document.documentElement.setAttribute('data-theme', newTheme);
+    setColorMode(colorMode === 'dark' ? 'light' : 'dark');
   };
 
   useEffect(() => {
@@ -103,7 +96,7 @@ export default function Navbar() {
             className={styles.themeToggleBtn}
             aria-label="Toggle theme"
           >
-            {theme === 'dark' ? <SunIcon /> : <MoonIcon />}
+            {colorMode === 'dark' ? <SunIcon /> : <MoonIcon />}
           </button>
 
           <div className={styles.languageSelector}>
@@ -161,8 +154,8 @@ export default function Navbar() {
                 onClick={toggleTheme} 
                 className={styles.mobileThemeToggleBtn}
               >
-                {theme === 'dark' ? <SunIcon /> : <MoonIcon />}
-                <span>{theme === 'dark' ? 'Light Mode' : 'Dark Mode'}</span>
+                {colorMode === 'dark' ? <SunIcon /> : <MoonIcon />}
+                <span>{colorMode === 'dark' ? 'Light Mode' : 'Dark Mode'}</span>
               </button>
               <Link
                 to="/support"

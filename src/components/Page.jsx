@@ -1,3 +1,4 @@
+import Layout from '@theme/Layout';
 import '../css/page.css';
 import { useEffect, useState, useMemo, useCallback } from 'react';
 import { useLocation } from '@docusaurus/router';
@@ -364,7 +365,8 @@ export default function Page() {
   ----------------------------------- */
 
   return (
-    <div className="pq-page">
+    <Layout noFooter noNavbar>
+      <div className="pq-page">
       <Navbar />
 
       {/* ── IMAGE MODAL ── */}
@@ -605,6 +607,7 @@ export default function Page() {
 
 
     </div>
+    </Layout>
   );
 }
 

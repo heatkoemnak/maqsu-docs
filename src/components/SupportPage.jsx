@@ -1,9 +1,11 @@
 import React from "react";
+import Layout from '@theme/Layout';
 import "./support.css";
 
 export default function SupportPage() {
   return (
-    <div className="support-container">
+    <Layout noFooter noNavbar>
+      <div className="support-container">
       <button className="back-btn" onClick={() => window.history.back()}>
         ← Back
       </button>
@@ -55,5 +57,6 @@ export default function SupportPage() {
         </div>
       </div>
     </div>
+    </Layout>
   );
 }

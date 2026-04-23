@@ -1,12 +1,14 @@
-import Navbar from '../components/Navbar/Navbar'
-
+import React from 'react';
+import Layout from '@theme/Layout';
+import Navbar from '../components/Navbar/Navbar';
 
 export default function DefaultLayout({children}) {
   return (
-    <div style={{backgroundColor: 'transparent'}}>
-        <Navbar/>
-        {children}
-        {/* <Footer/> */}
-    </div>
-  )
+    <Layout noFooter>
+      <div style={{backgroundColor: 'transparent'}}>
+          <Navbar/>
+          {children}
+      </div>
+    </Layout>
+  );
 }

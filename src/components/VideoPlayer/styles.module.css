@@ -26,7 +26,16 @@
 
   .video_caption {
     font-size: 0.95rem;
-    color: #555;
+    color: var(--text-em);
     margin-top: 12px;
     font-style: italic;
   }
+
+/* Dark Mode Overrides */
+:global([data-theme='dark']) .video_player_container {
+    background-color: transparent;
+}
+
+:global([data-theme='dark']) .video_wrapper {
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}

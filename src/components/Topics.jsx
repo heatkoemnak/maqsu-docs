@@ -1,4 +1,4 @@
-
+import Layout from '@theme/Layout';
 import { useEffect, useState } from 'react'
 import { formatDistanceToNow } from "date-fns";
 import styles from '../css/styles.module.css'
@@ -99,7 +99,8 @@ export default function Topics({ topics }) {
   };
 
   return (
-    <div className={clsx(styles.pageRoot, styles.zoomOutLayout)}>
+    <Layout noFooter noNavbar>
+      <div className={clsx(styles.pageRoot, styles.zoomOutLayout)}>
       {/* Top bar */}
       <div className={clsx(styles.topBar)}>
         <div className={clsx(styles.breadcrumbLeft)}>
@@ -263,6 +264,7 @@ export default function Topics({ topics }) {
 
 
     </div>
+    </Layout>
   );
 }
 
@@ -293,7 +295,7 @@ const ArticleRow = ({ idx, link, title, root_path, date }) => (
     transition={{ duration: 0.2, delay: idx * 0.05, ease: "easeOut" }}
     className={clsx(styles.articleRow)}
   >
-    <a href={`${root_path}/${link}`} className={clsx(styles.articleRowLink)}>
+    <Link to={`${root_path}/${link}`} className={clsx(styles.articleRowLink)}>
       <div className={clsx(styles.articleRowLeft)}>
         <span className={clsx(styles.articleIcon)}>
           {/* <VscFile size={23} /> */}
@@ -309,7 +311,7 @@ const ArticleRow = ({ idx, link, title, root_path, date }) => (
       <span className={clsx(styles.articleArrow)}>
         <HiMiniChevronRight size={20} />
       </span>
-    </a>
+    </Link>
   </motion.div>
 );
 
@@ -321,7 +323,7 @@ const ArticleCard = ({ idx, link, title, root_path, date }) => (
     transition={{ duration: 0.2, delay: idx * 0.04, ease: "easeOut" }}
     className={clsx(styles.articleCard)}
   >
-    <a href={`${root_path}/${link}`} className={clsx(styles.articleCardLink)}>
+    <Link to={`${root_path}/${link}`} className={clsx(styles.articleCardLink)}>
       <div className={clsx(styles.articleCardTop)}>
         <span className={clsx(styles.articleCardIconWrap)}>
           <span className={clsx(styles.articleCardIcon)}>
@@ -340,6 +342,6 @@ const ArticleCard = ({ idx, link, title, root_path, date }) => (
           Updated <TimeAgo date={date} />
         </span>
       </div>
-    </a>
+    </Link>
   </motion.div>
 );

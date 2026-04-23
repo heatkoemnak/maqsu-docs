@@ -17,7 +17,7 @@
   }
   .step span{
     font-weight: bold;
-    color: #000000;
+    color: var(--text-heading);
   }
   .step_title{
     display: flex;
@@ -28,6 +28,6 @@
   .step_title span{
     font-weight: bold;
     font-size: 16px;
-    color: #000000;
+    color: var(--text-heading);
   }
   

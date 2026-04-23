@@ -202,39 +202,44 @@ const config = {
 
   plugins: [topicsDataPlugin, categoriesDataPlugin],
 
-  // themeConfig:
-  //   /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
-  //   ({
-  //     navbar: {
-  //       title: docusaurusData.title || "Maqsu",
-  //       logo: {
-  //         alt: docusaurusData?.logo?.alt
-  //           ? docusaurusData?.logo?.alt
-  //           : "My Logo",
-  //         src: docusaurusData?.logo?.src
-  //           ? docusaurusData?.logo?.src
-  //           : "img/logo/maqsu.svg",
-  //       },
-  //       items: docusaurusData.navbar.map((item) => {
-  //         return formatNavbarItem(item);
-  //       }),
-  //     },
+  themeConfig:
+    /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
+    ({
+      colorMode: {
+        defaultMode: 'dark',
+        disableSwitch: false,
+        respectPrefersColorScheme: false,
+      },
+      navbar: {
+        title: docusaurusData.title || "Maqsu",
+        logo: {
+          alt: docusaurusData?.logo?.alt
+            ? docusaurusData?.logo?.alt
+            : "My Logo",
+          src: docusaurusData?.logo?.src
+            ? docusaurusData?.logo?.src
+            : "img/logo/maqsu.svg",
+        },
+        items: docusaurusData.navbar.map((item) => {
+          return formatNavbarItem(item);
+        }),
+      },
 
-  //     footer: {
-  //       style: docusaurusData.footer?.style || "dark",
-  //       links: docusaurusData.footer?.links.map((item) => {
-  //         return formatFooterItem(item);
-  //       }),
-  //       copyright:
-  //         `Copyright © ${new Date().getFullYear()} ` +
-  //         (docusaurusData.footer?.copyright || docusaurusData.title),
-  //     },
-  //     prism: {
-  //       theme: lightCodeTheme,
-  //       darkTheme: darkCodeTheme,
-  //     },
+      footer: {
+        style: docusaurusData.footer?.style || "dark",
+        links: docusaurusData.footer?.links.map((item) => {
+          return formatFooterItem(item);
+        }),
+        copyright:
+          `Copyright © ${new Date().getFullYear()} ` +
+          (docusaurusData.footer?.copyright || docusaurusData.title),
+      },
+      // prism: {
+      //   theme: lightCodeTheme,
+      //   darkTheme: darkCodeTheme,
+      // },
 
-  //   }),
+    }),
 };
 
 module.exports = config;

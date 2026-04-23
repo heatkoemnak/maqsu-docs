@@ -117,3 +117,37 @@
   --note-muted: #4b5563;
   --note-chip: #ffe2e2;
 }
+
+/* Dark Mode Overrides */
+[data-theme='dark'] .note {
+  --note-bg: rgba(30, 41, 59, 0.4) !important;
+  --note-border: rgba(255, 255, 255, 0.1) !important;
+  --note-ink: #f1f5f9;
+  --note-muted: #cbd5e1;
+  --note-chip: rgba(255, 255, 255, 0.05);
+  background: rgba(30, 41, 59, 0.4) !important;
+}
+
+[data-theme='dark'] .note--info {
+  --note-accent: #94a3b8;
+  --note-ink: #f8fafc;
+  --note-muted: #cbd5e1;
+}
+
+[data-theme='dark'] .note--warning {
+  --note-accent: #f59e0b;
+  --note-ink: #fef3c7;
+  --note-muted: #fcd34d;
+}
+
+[data-theme='dark'] .note--success {
+  --note-accent: #22c55e;
+  --note-ink: #dcfce7;
+  --note-muted: #86efac;
+}
+
+[data-theme='dark'] .note--danger {
+  --note-accent: #ef4444;
+  --note-ink: #fee2e2;
+  --note-muted: #fca5a5;
+}

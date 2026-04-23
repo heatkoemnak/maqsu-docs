@@ -3,13 +3,14 @@
  * bundles Infima by default. Infima is a CSS framework designed to
  * work well for content-centric websites.
  */
- @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Battambang:wght@100;300;400;700;900&family=Google+Sans+Flex:opsz,wght@6..144,1..1000&display=swap');
+
 /* You can override the default Infima variables here. */
 :root {
   --ifm-color-primary: #235369;
   --color-primary: #34566d;
-  --color-text:#5b5b5b;
+  --color-text: #5b5b5b;
   --color-white: #ffffff;
   --color-dark-primary: #25435e;
   --ifm-color-primary-dark: #1d4658;
@@ -21,9 +22,27 @@
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
   --doc-sidebar-width: 400px !important;
-  --ifm-color-emphasis-300:#ffff !important;
-}
+  --ifm-color-emphasis-300: #ffff !important;
 
+  /* Global Theme Variables */
+  --site-bg: rgba(144, 167, 177, 0.1);
+  --text-main: rgb(75, 75, 75);
+  --text-heading: rgb(86, 89, 92);
+  --text-strong: rgb(16, 16, 16);
+  --text-list: rgb(56, 56, 56);
+  --text-link: rgb(32, 80, 149);
+  --text-em: rgb(88, 78, 78);
+  --text-blockquote-strong: rgb(71, 111, 159);
+  --border-color: rgb(191, 190, 190);
+  --scrollbar-track: rgb(0, 0, 0);
+  --scrollbar-thumb: rgb(236, 236, 237);
+  
+  --card-bg: #ffffff;
+  --card-border: #deebfc;
+  --card-title-color: #1e293b;
+  --card-desc-color: #323232;
+  --card-time-color: #64748b;
+}
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
@@ -35,6 +54,25 @@
   --ifm-color-primary-lighter: #32d8b4;
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+
+  /* Dark Mode Overrides */
+  --site-bg: #0f172a;
+  --text-main: #cbd5e1;
+  --text-heading: #f1f5f9;
+  --text-strong: #f8fafc;
+  --text-list: #cbd5e1;
+  --text-link: #38bdf8;
+  --text-em: #94a3b8;
+  --text-blockquote-strong: #7dd3fc;
+  --border-color: rgba(255, 255, 255, 0.1);
+  --scrollbar-track: #0f172a;
+  --scrollbar-thumb: #334155;
+
+  --card-bg: rgba(30, 41, 59, 0.6);
+  --card-border: rgba(255, 255, 255, 0.1);
+  --card-title-color: #f1f5f9;
+  --card-desc-color: #cbd5e1;
+  --card-time-color: #94a3b8;
 }
 
 [data-theme='dark'] h1, 
@@ -43,214 +81,209 @@
 [data-theme='dark'] h4, 
 [data-theme='dark'] h5, 
 [data-theme='dark'] h6 {
-  color: #f1f5f9 !important;
+  color: var(--text-heading) !important;
 }
 
 [data-theme='dark'] p,
 [data-theme='dark'] li,
 [data-theme='dark'] span {
-  color: #cbd5e1 !important;
+  color: var(--text-main) !important;
 }
 
 [data-theme='dark'] p strong,
 [data-theme='dark'] li strong {
-  color: #f8fafc !important;
+  color: var(--text-strong) !important;
 }
 
 [data-theme='dark'] blockquote {
   background: rgba(255, 255, 255, 0.05);
-  border-color: rgba(255, 255, 255, 0.1);
+  border-color: var(--border-color);
 }
-html{
+
+html {
   scroll-behavior: smooth;
   overflow: auto;
-  background-color: rgba(144, 167, 177, 0.1);
-}
-*{
-  /* font-family: 'Helvetica', monospace !important; */
-  /* font-family: Arial, Helvetica, sans-serif; */
-  font-family: "Google Sans Flex", sans-serif !important;
+  background-color: var(--site-bg);
 }
 
 * {
-  scrollbar-color: rgb(236, 236, 237) rgb(0, 0, 0);
+  font-family: "Google Sans Flex", sans-serif !important;
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
   scrollbar-width: thin;
 }
+
 ::-webkit-scrollbar {
   width: 10px;
   height: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: rgb(0, 0, 0);
+  background: var(--scrollbar-track);
 }
 ::-webkit-scrollbar-thumb {
-  background: rgb(236, 236, 237);
+  background: var(--scrollbar-thumb);
   border-radius: 10px;
 }
 
-h3 strong{
-    color:rgb(86, 89, 92) !important;
+h3 strong {
+  color: var(--text-heading) !important;
 }
-h1, h2, h3, h4, h5, h6{
-  color:rgb(86, 89, 92) !important;
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-heading) !important;
 }
-h5{
+
+h5 {
   font-size: 17px !important;
   font-weight: 500 !important;
 }
-h5 strong{
-  color:rgb(86, 89, 92) !important;
+
+h5 strong {
+  color: var(--text-heading) !important;
   font-weight: 500;
 }
-h6{
+
+h6 {
   font-size: 15px !important;
   font-weight: 600 !important;
 }
-p em{
+
+p em {
   font-size: 17px !important;
 }
+
 p strong {
-  color:rgb(16, 16, 16) !important;
+  color: var(--text-strong) !important;
   font-weight: 500 !important;
 }
-section h3{
+
+section h3 {
   font-size: 20px !important;
   font-weight: 500 !important;
 }
-em{
-  color:rgb(88, 78, 78) !important;
+
+em {
+  color: var(--text-em) !important;
   font-weight: 500 !important;
 }
 
-
-blockquote strong{
-  color:rgb(71, 111, 159) !important;
+blockquote strong {
+  color: var(--text-blockquote-strong) !important;
   font-weight: 400 !important;
-
 }
-ul{
-   color:rgb(56, 56, 56) !important;
+
+ul {
+  color: var(--text-list) !important;
   font-weight: 400 !important;
   padding-inline-start: 20px !important;
   font-size: 15px !important;
-
 }
-ul li{
-  color:rgb(56, 56, 56) !important;
+
+ul li {
+  color: var(--text-list) !important;
   font-weight: 400 !important;
   font-size: 15px !important;
-
 }
-ul li strong{
+
+ul li strong {
   font-weight: 500 !important;
 }
 
-ol li{
-  color:rgb(56, 56, 56) !important;
+ol li {
+  color: var(--text-list) !important;
   font-weight: 400 !important;
   font-size: 15px !important;
-
 }
-ol li strong{
+
+ol li strong {
   font-weight: 500 !important;
 }
-ol li ul li{
+
+ol li ul li {
   font-size: 15px !important;
-  color:rgb(56, 56, 56) !important;
+  color: var(--text-list) !important;
   font-weight: 400 !important;
 }
-ol li ul li strong{
-  font-weight: 500 !important;
 
+ol li ul li strong {
+  font-weight: 500 !important;
 }
 
-
-hr{
+hr {
   height: 0.3px !important;
 }
 
-
-blockquote img{
-  border:1px solid rgb(164, 43, 43);
-  margin-top:10px !important;
+blockquote img {
+  border: 1px solid rgb(164, 43, 43);
+  margin-top: 10px !important;
   object-fit: contain;
 }
-.footer{
-  margin-top:50px !important;
+
+.footer {
+  margin-top: 50px !important;
   background-color: #25435e !important;
 }
-.navbar{
+
+.navbar {
   position: sticky !important;
   top: -60px !important;
   width: 100% !important;
   margin: 0 !important;
   background-color: #0f172a !important; /* Dark Blue */
 }
+
 .navbar__item, .navbar__link, .navbar__brand {
   color: #f8fafc !important;
 }
+
 .navbar__link:hover {
   color: #38bdf8 !important; /* Cyan accent */
 }
-.navbar__inner{
+
+.navbar__inner {
   width: 80% !important;
   margin: 0 auto !important;
 }
-.navbar__title{
+
+.navbar__title {
   display: none !important;
 }
-.menu__list{
+
+.menu__list {
   width: 60% !important;
   margin: 0 auto !important;
   margin-top: 30px !important;
 }
 
-
-p{
-  color:rgb(75, 75, 75) !important;
+p {
+  color: var(--text-main) !important;
   font-size: 15px !important;
   font-weight: 400 !important;
 }
 
-p img{
-  border:1px solid rgb(191, 190, 190);
-  margin-top:10px !important;
+p img {
+  border: 1px solid var(--border-color);
+  margin-top: 10px !important;
   border-radius: 5px !important;
 }
 
-a{
-  color:rgb(32, 80, 149)
+a {
+  color: var(--text-link);
 }
-blockquote{
+
+blockquote {
   border-left: none !important;
-  margin: none !important;
+  margin: 0 !important;
   padding: 20px 0 20px 0 !important;
 }
-.main_src-components-LayoutContents-styles-module{
+
+.main_src-components-LayoutContents-styles-module {
   overflow-y: hidden !important;
 }
 
-.pageTitle_src-components-LayoutContents-styles-module{
-  color:rgb(70, 94, 121) !important;
+.pageTitle_src-components-LayoutContents-styles-module {
+  color: rgb(70, 94, 121) !important;
   padding: 10px 0 !important;
 }
-
-:root {
-  --card-bg: #ffffff;
-  --card-border: #deebfc;
-  --card-title-color: #1e293b;
-  --card-desc-color: #323232;
-  --card-time-color: #64748b;
-}
-
-[data-theme='dark'] {
-  --card-bg: rgba(30, 41, 59, 0.6);
-  --card-border: rgba(255, 255, 255, 0.1);
-  --card-title-color: #f1f5f9;
-  --card-desc-color: #cbd5e1;
-  --card-time-color: #94a3b8;
-}
-
 
 /* -- Home View Controls Dark Mode ----------- */
 [data-theme='dark'] .view-controls {
@@ -271,4 +304,9 @@ blockquote{
   background: #334155 !important;
   color: #38bdf8 !important;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Hide default Docusaurus Navbar when using custom Layout wrapping */
+.navbar:not([class*='navbarRoot']) {
+  display: none !important;
 }
