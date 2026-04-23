@@ -1,18 +1,18 @@
 /* Professional note card */
 .note {
   --note-accent: #c7d0de !important;
-  --note-border: #ffffff !important;
-  --note-bg: #eef5f9 !important;
-  --note-ink: #1f2937;
-  --note-muted: #939dad;
-  --note-chip: #f3f4f6;
+  --note-border: var(--c-border) !important;
+  --note-bg: var(--c-surface) !important;
+  --note-ink: var(--c-text);
+  --note-muted: var(--c-muted);
+  --note-chip: var(--c-accent-bg);
 
   margin: 16px 0;
   padding: 14px 16px;
   /* border-radius: 12px; */
   border: 1px solid var(--note-border);
   border-left: 4px solid var(--note-accent);
-  background: linear-gradient(50deg, var(--note-bg) 20%, #ffffff 100%);
+  background: var(--note-bg);
   box-shadow: 0 1px 2px rgba(15, 23, 42, 0.06);
 }
 

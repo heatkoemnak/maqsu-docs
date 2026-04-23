@@ -2,14 +2,14 @@
 
 
 .card{
-  box-shadow: 0 2px 4px 0 rgba(224, 184, 248, 0.2);
+  box-shadow: var(--shadow-sm);
   transition: 0.3s;
   /* border-radius: 15px; */
   padding: 40px 0;
   text-align: center;
   width: 200px;
-  border: 1px solid #eaeaea;
-  background-color: rgb(255, 255, 255);
+  border: 1px solid var(--c-border);
+  background-color: var(--c-surface);
   cursor: pointer;
 }
 
@@ -36,7 +36,8 @@
 }
 
 .card:hover {
-  box-shadow: 0 8px 16px 0 rgba(224, 184, 248, 0.2);
+  box-shadow: var(--shadow-md);
+  background-color: var(--c-accent-bg);
 }
 .cardContent{
   color: var(--maqsu-color-primary);
@@ -70,6 +71,6 @@
 
 .cardLink:hover{
   text-decoration: none;
-  color: #25435e;
+  color: var(--c-accent);
   cursor: pointer;
 }

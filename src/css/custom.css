@@ -130,11 +130,16 @@ html, body {
 [data-theme='dark'] main,
 [data-theme='dark'] #__docusaurus,
 [data-theme='dark'] .container_src-components-HomeContent-styles-module,
-[data-theme='dark'] .features_src-components-HomeContent-styles-module {
+[data-theme='dark'] .features_src-components-HomeContent-styles-module,
+[data-theme='dark'] .pq-page,
+[data-theme='dark'] .pq-layout {
   background: transparent !important;
+  background-color: transparent !important;
 }
 
 [data-theme='dark'] {
+  background-color: #0f172a !important;
+  background-image: var(--site-bg) !important;
   background: var(--site-bg) !important;
 }
 
