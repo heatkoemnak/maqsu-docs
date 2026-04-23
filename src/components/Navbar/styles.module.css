@@ -4,12 +4,20 @@
   width: 100%;
   margin: 0 auto;
   z-index: 1000;
-  transition: box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   background: var(--color-primary);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .scrolled {
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(12px);
+  background: rgba(52, 86, 109, 0.85); /* Slightly transparent primary */
+}
+
+[data-theme='dark'] .scrolled {
+  background: rgba(30, 41, 59, 0.85);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .navbarWrapper {
@@ -20,7 +28,6 @@
   margin: 0 auto;
   padding: 0.45rem clamp(1rem, 2vw, 3rem);
   gap: 1rem;
-  background: var(--color-primary);
   color: var(--color-white);
 }
 .languageSelector{
