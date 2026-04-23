@@ -823,7 +823,7 @@
 }
 
 [data-theme='dark'] .pq-sidebar {
-  background: var(--c-sidebar) !important;
+  background: #0b1120 !important;
 }
 
 [data-theme='dark'] .pq-section-content h3,
