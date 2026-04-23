@@ -509,19 +509,20 @@ export default function Page() {
         {/* Content */}
         <div className={`pq-content${!sidebarOpen ? ' no-sidebar' : ''}`}>
           {showScrollTop && (
-            <button onClick={scrollToTop} className="pq-scroll-top-btn" aria-label="Scroll to top">
-              <HiMiniChevronUp size={18} />
+            <button onClick={scrollToTop} className="pq-header-show-btn" aria-label="Show header">
+              <HiMiniChevronUp size={14} />
+              <span>Show Header</span>
             </button>
           )}
 
-          {hasSubcategories && (
+          {/* {hasSubcategories && (
             <div
               onClick={() => setSidebarOpen((prev) => !prev)}
               className={`pq-toggle-btn${sidebarOpen ? ' is-sidebar-open' : ''}`}
             >
               {sidebarOpen ? <TbChevronCompactLeft color='rgb(174, 192, 192)'  size={25}/> : <TbChevronCompactRight color='rgb(174, 192, 192)' size={25} />}
             </div>
-          )}
+          )} */}
 
           <div className={`pq-docs-body${!sidebarOpen ? ' full-width' : ''}`}>
             <div className={`pq-inline-breadcrumb${!sidebarOpen ? ' full-width' : ''}`}>

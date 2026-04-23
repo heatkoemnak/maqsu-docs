@@ -35,11 +35,9 @@
     }
 
     .pq-page {
-      height: 100vh;
+      min-height: 100vh;
       background-color: var(--c-bg);
       overflow-x: hidden;
-
-
     }
 
     .pq-content-breadcrumb {
@@ -221,7 +219,7 @@
     .pq-content {
       flex: 1;
       min-width: 0;
-      margin-left: var(--sidebar-w);
+      width: 100%;
       position: relative;
       padding-bottom: 32px;
     }
@@ -232,8 +230,8 @@
 
     .pq-docs-body {
       width: 95%;
-      max-width: 900px;
-      height: calc(97vh - var(--nav-h));
+      max-width: 1000px;
+      margin: 0 auto;
       border: 0;
       border-radius: 0;
       box-shadow: none;
@@ -269,6 +267,46 @@
       transform: translateY(-50%);
       z-index: 40;
 
+    }
+
+    .pq-header-show-btn {
+      position: fixed;
+      left: 50%;
+      top: 80px;
+      transform: translateX(-50%);
+      z-index: 100;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      border-radius: 999px;
+      border: 1px solid var(--c-border);
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(8px);
+      color: var(--c-accent);
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+      animation: slideDownFade 0.3s ease-out;
+    }
+
+    @keyframes slideDownFade {
+      from { opacity: 0; transform: translate(-50%, -10px); }
+      to { opacity: 1; transform: translate(-50%, 0); }
+    }
+
+    .pq-header-show-btn:hover {
+      background: #ffffff;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+      transform: translateX(-50%) translateY(-2px);
+    }
+
+    [data-theme='dark'] .pq-header-show-btn {
+      background: rgba(30, 41, 59, 0.9);
+      border-color: rgba(255, 255, 255, 0.1);
+      color: #38bdf8;
     }
 
     .pq-scroll-top-btn {
