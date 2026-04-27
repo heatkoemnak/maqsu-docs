@@ -98,7 +98,7 @@
       position: fixed;
       left: 0;
       overflow-y: auto;
-      background: var(--c-sidebar) !important;
+      /* background: var(--c-sidebar) !important; */
       display: flex;
       flex-direction: column;
       gap: 2px;
@@ -823,7 +823,7 @@
 }
 
 [data-theme='dark'] .pq-sidebar {
-  background: rgba(122, 158, 215, 0.5);
+  background: transparent;
 }
 
 [data-theme='dark'] .pq-section-content h3,
@@ -843,7 +843,7 @@
 }
 
 [data-theme='dark'] .pq-nav-link {
-  background: rgba(30, 41, 59, 0.5);
+  /* background: rgba(51, 73, 108, 0.5); */
   color: #f1f5f9;
   border-color: var(--c-border);
 }
@@ -864,6 +864,6 @@
 
 [data-theme='dark'] .pq-sub-btn.is-active,
 [data-theme='dark'] .pq-nested-btn.is-active {
-  background: var(--c-accent-bg);
-  color: var(--c-accent);
+  background: #374151;
+  color: #2e90d1;
 }
