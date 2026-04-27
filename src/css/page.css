@@ -811,9 +811,9 @@
   --c-bg: #0b1120;
   --c-surface: #1e293b;
   --c-border: rgba(255, 255, 255, 0.08);
-  --c-accent: #38bdf8;
-  --c-accent-2: #7dd3fc;
-  --c-accent-bg: rgba(56, 189, 248, 0.15);
+  --c-accent: #4d7485;
+  --c-accent-2: #212425;
+  --c-accent-bg: rgba(33, 11, 5, 0.15);
   --c-text: #f1f5f9;
   --c-muted: #94a3b8;
   --c-faint: #475569;
@@ -823,7 +823,7 @@
 }
 
 [data-theme='dark'] .pq-sidebar {
-  background: #0b1120 !important;
+  background: rgba(122, 158, 215, 0.5);
 }
 
 [data-theme='dark'] .pq-section-content h3,

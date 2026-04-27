@@ -87,12 +87,12 @@ export default function Navbar() {
         </div>
 
         <div className={styles.navLinks}>
-          <Link to="/support" className={styles.navItem}>
+          {/* <Link to="/support" className={styles.navItem}>
             <span>Support</span>
-          </Link>
-          
-          <button 
-            onClick={toggleTheme} 
+          </Link> */}
+
+          <button
+            onClick={toggleTheme}
             className={styles.themeToggleBtn}
             aria-label="Toggle theme"
           >
@@ -150,20 +150,20 @@ export default function Navbar() {
             </div>
 
             <div className={styles.mobileLinks}>
-              <button 
-                onClick={toggleTheme} 
+              <button
+                onClick={toggleTheme}
                 className={styles.mobileThemeToggleBtn}
               >
                 {colorMode === 'dark' ? <SunIcon /> : <MoonIcon />}
                 <span>{colorMode === 'dark' ? 'Light Mode' : 'Dark Mode'}</span>
               </button>
-              <Link
+              {/* <Link
                 to="/support"
                 className={styles.mobileNavItem}
                 onClick={closeMobileMenu}
               >
                 Support
-              </Link>
+              </Link> */}
             </div>
           </div>
         </aside>

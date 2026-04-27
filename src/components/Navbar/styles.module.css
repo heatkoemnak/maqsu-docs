@@ -24,7 +24,7 @@
   display: grid;
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  width: 96%;
+  width: 87%;
   margin: 0 auto;
   padding: 0.45rem clamp(1rem, 2vw, 3rem);
   gap: 1rem;

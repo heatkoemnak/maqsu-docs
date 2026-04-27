@@ -9,7 +9,6 @@
 /* You can override the default Infima variables here. */
 :root {
   --ifm-color-primary: #235369;
-  --ifm-color-scheme: #ffffff;
   --color-primary: #34566d;
   --color-text: #5b5b5b;
   --color-white: #ffffff;
@@ -26,7 +25,7 @@
   --ifm-color-emphasis-300: transparent !important;
 
   /* Global Theme Variables */
-  --site-bg: #ffffff;
+  --site-bg: #e6ebec;
   --text-main: rgb(75, 75, 75);
   --text-heading: rgb(86, 89, 92);
   --text-strong: rgb(16, 16, 16);
@@ -122,7 +121,7 @@
 
 html, body {
   scroll-behavior: smooth;
-  background: var(--site-bg, var(--site-bg-solid, #ffffff));
+  background: var(--site-bg, var(--site-bg-solid, #cac9c9));
   overflow-x: hidden;
 }
 

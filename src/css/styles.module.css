@@ -181,6 +181,7 @@
   width: 95%;
  margin: 0 auto;
   gap: var(--topics-layout-gap);
+
 }
 
 /* ── Sidebar ────────────────────────────────────────── */
@@ -188,8 +189,10 @@
   width: var(--topics-sidebar-w);
   flex-shrink: 0;
   position: sticky;
-  top: 92px;
-  background-color: transparent;
+  background-color: #ffffff;
+  top: 80px;
+  padding: 5px;
+  border-radius: 15px;
 }
 
 .sidebarInner {
@@ -211,6 +214,7 @@
   padding: 18px 18px 16px;
   color: #357ba7;
   text-align: center;
+
 }
 
 .sidebarTitle {
@@ -268,11 +272,10 @@
 }
 
 .otherCategoriesCard {
-  margin-top: 24px;
   border: none;
   border-radius: 12px;
   background: transparent;
-  padding: 0 16px;
+  padding: 10px 16px;
 }
 
 .otherCategoriesTitle {
@@ -298,7 +301,7 @@
 }
 
 .IoIosArrowRoundForward{
-  color: white;
+  color: rgb(133, 133, 133);
 }
 
 .otherCategoryLink {
@@ -982,6 +985,10 @@
 [data-theme='dark'] .breadcrumbLink,
 [data-theme='dark'] .breadcrumbLeft {
   color: #94a3b8;
+}
+
+[data-theme='dark'] .sidebar1 {
+  background-color: #1e293b;
 }
 
 [data-theme='dark'] .breadcrumbCurrent {
