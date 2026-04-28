@@ -850,7 +850,8 @@
 }
 
 [data-theme='dark'] .pq-nav-link:hover {
-  background: var(--c-surface);
+  color: #fdfdfd;
+  background: #192334;
 }
 
 [data-theme='dark'] .pq-nav-title {
