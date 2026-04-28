@@ -246,6 +246,12 @@ ol li ul li strong {
 
 hr {
   height: 0.3px !important;
+  background-color: #bbc2cb !important;
+}
+
+[data-theme='dark'] hr {
+  height: 0.3px !important;
+  background-color: #535a64;
 }
 
 blockquote img {

@@ -63,15 +63,19 @@
       display: flex;
       align-items: center;
       font-size: 13px;
+      padding-top: 10px;
       font-weight: 500;
-      color: var(--c-muted);
       flex-wrap: wrap;
     }
 
     .pq-breadcrumb-row a {
-      color: var(--c-muted);
+      color: #2d5c8b;
       text-decoration: none;
       transition: color var(--transition), background var(--transition);
+    }
+
+    [data-theme="dark"] .pq-breadcrumb-row a {
+      color: #94c8df;
     }
 
     .pq-breadcrumb-row a:hover {
@@ -863,6 +867,9 @@
 [data-theme='dark'] .pq-nested-btn:hover {
   background: rgba(255, 255, 255, 0.05);
   color: #f1f5f9;
+}
+[data-theme='dark'] .pq-nested-btn {
+  color: #c0d1d2;
 }
 
 [data-theme='dark'] .pq-sub-btn.is-active,
