@@ -796,8 +796,12 @@
   width: 34px;
   height: 34px;
   border-radius: 999px;
-  background: #f8fbfd;
-  border: 1px solid #e6eef5;
+  background: transparent;
+  border: 1px solid #dbe0e2;
+}
+
+[data-theme="dark"] .articleCardArrowWrap {
+  border: 1px solid #4d5153;
 }
 
 .articleCardArrow {
