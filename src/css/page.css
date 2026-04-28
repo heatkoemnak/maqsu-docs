@@ -62,7 +62,7 @@
     .pq-breadcrumb-row {
       display: flex;
       align-items: center;
-      font-size: 12px;
+      font-size: 13px;
       font-weight: 500;
       color: var(--c-muted);
       flex-wrap: wrap;
@@ -845,6 +845,7 @@
 [data-theme='dark'] .pq-nav-link {
   /* background: rgba(51, 73, 108, 0.5); */
   color: #f1f5f9;
+  background: #1e293b;
   border-color: var(--c-border);
 }
 

@@ -400,10 +400,10 @@ export default function Page() {
           {posts?.map((post, i) => (
             <div key={i} className="pq-breadcrumb-row">
               {post?.breadcrumbs?.map((word, j) => (
-                <span key={j} style={{ display: 'flex', alignItems: 'center', gap: 2 }}>
+                <span key={j} style={{ display: 'flex',fontSize: '15px', alignItems: 'center', gap: 2 }}>
                   {j > 0 && (
                     <span className="sep" style={{ margin: '0 2px' }}>
-                      <LiaAngleRightSolid size={8} />
+                      <LiaAngleRightSolid size={32} />
                     </span>
                   )}
                   <Link to={word?.link ? word.link.replace(/\/+/g, '/') : '#'}>{word?.title}</Link>
@@ -511,7 +511,7 @@ export default function Page() {
           {showScrollTop && (
             <button onClick={scrollToTop} className="pq-header-show-btn" aria-label="Show header">
               <HiMiniChevronUp size={14} />
-              <span>Show Header</span>
+              <span>Scroll Top</span>
             </button>
           )}
 
@@ -532,7 +532,7 @@ export default function Page() {
                     <span key={j} style={{ display: 'flex', alignItems: 'center', gap: 2 }}>
                       {j > 0 && (
                         <span className="sep" style={{ margin: '0 2px' }}>
-                          <LiaAngleRightSolid size={8} />
+                          <LiaAngleRightSolid size={10} />
                         </span>
                       )}
                       <Link to={word?.link ? word.link.replace(/\/+/g, '/') : '#'}>{word?.title}</Link>
