@@ -195,7 +195,7 @@ const Search = () => {
       <div className={styles.searchBarWrapper}>
         <div className={styles.topicsWrapper} ref={topicsRef}>
           <button className={styles.allTopicsTrigger} onClick={() => setShowTopics(!showTopics)}>
-            <span>All Topics</span>
+            <span className={styles.allTopicsText}>All Topics</span>
             <ChevronDown size={14} className={clsx(showTopics && styles.rotated)} />
           </button>
         </div>
@@ -237,8 +237,8 @@ const Search = () => {
             <motion.div
               initial={{ opacity: 0, scale: 0.95, y: -20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.95, y: -20 }}
-              transition={{ type: "spring", damping: 25, stiffness: 300 }}
+              exit={{ opacity: 0, scale: 1, y: 0 }}
+              transition={{ type: "spring", damping: 35, stiffness: 400 }}
               className={styles.searchModal}
             >
               <div className={styles.modalHeader}>
