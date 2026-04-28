@@ -842,6 +842,7 @@
   color: var(--c-accent);
 }
 
+
 [data-theme='dark'] .pq-nav-link {
   /* background: rgba(51, 73, 108, 0.5); */
   color: #f1f5f9;
