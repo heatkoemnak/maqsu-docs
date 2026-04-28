@@ -36,6 +36,10 @@
   gap: 0.5rem;
   font-size: 16px;
 }
+.languageSelector span{
+  cursor: pointer;
+  color: #ffffff;
+}
 
 .logoLink {
   display: flex;
@@ -362,21 +366,61 @@
 }
 
 .themeToggleBtn {
-  background: none;
-  border: none;
-  color: var(--color-white);
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0.3rem;
-  border-radius: 50%;
-  transition: background 0.2s ease, transform 0.2s ease;
+  background-color: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  transition: all 0.25s ease;
 }
 
 .themeToggleBtn:hover {
-  background: rgba(255, 255, 255, 0.1);
-  transform: rotate(15deg);
+  transform: scale(1.05);
+}
+
+.themeToggleBtn:active {
+  transform: scale(0.95);
+}
+
+/* Icon wrapper for smooth animation */
+.iconsWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding-right: 20px;
+}
+
+.iconsWrapper > div{
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border:1px solid #5a6470;
+  padding: 5px 10px;
+  border-radius: 16px;
+}
+
+[data-theme="dark"] .iconsWrapper > div {
+  background-color: #252527;
+}
+
+/* Icon style */
+.mode_icon {
+  width: 20px;
+  height: 20px;
+  color: #5a6470;
+  background-color: aliceblue;
+  transition: transform 0.4s ease, opacity 0.3s ease;
+}
+
+/* Rotate animation on hover */
+.themeToggleBtn:hover .mode_icon {
+  transform: rotate(25deg);
 }
 
 .mobileThemeToggleBtn {
@@ -385,8 +429,6 @@
   gap: 12px;
   width: 100%;
   padding: 0.95rem 1rem;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 5px;
   color: white;
   font-size: 1rem;
@@ -397,6 +439,5 @@
 }
 
 .mobileThemeToggleBtn:hover {
-  background: rgba(255, 255, 255, 0.14);
   transform: translateY(-1px);
 }

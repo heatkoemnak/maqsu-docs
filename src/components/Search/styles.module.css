@@ -6,9 +6,9 @@
 .searchBarWrapper {
   display: flex;
   align-items: center;
-  background: rgba(255, 255, 255, 0.05);
+  /* background: rgba(255, 255, 255, 0.05); */
   backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  /* border: 1px solid rgba(255, 255, 255, 0.1); */
   border-radius: 8px;
   padding: 0px;
   gap: 4px;
@@ -132,8 +132,8 @@
   background: transparent;
   border: none;
   cursor: pointer;
-  min-width: 300px;
-  width: 600px;
+  min-width: 340px;
+  width: 660px;
   max-width: 100%;
   color: #94a3b8;
   flex-shrink: 1;
