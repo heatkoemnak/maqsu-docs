@@ -101,166 +101,168 @@ export default function Topics({ topics }) {
   return (
     <Layout noFooter noNavbar>
       <div className={clsx(styles.pageRoot, styles.zoomOutLayout)}>
-      {/* Top bar */}
-      <div className={clsx(styles.topBar)}>
-        <div className={clsx(styles.breadcrumbLeft)}>
-          <Link href="/" className={clsx(styles.breadcrumbLink)}>All Categories</Link>
-          <LiaAngleRightSolid size={11} className={clsx(styles.breadcrumbArrow)} />
-          <span className={clsx(styles.breadcrumbCurrent)}>{topics?.title}</span>
-        </div>
-
-        <div className={clsx(styles.topBarRight)}>
-          <div className={clsx(styles.viewToggle)}>
-            <button
-              onClick={() => setViewMode('row')}
-              className={clsx(styles.viewToggleBtn, viewMode === 'row' && styles.viewToggleBtnActive)}
-              title="List view"
-              aria-label="Switch to list view"
-            >
-              <BsList size={18} />
-            </button>
-            <button
-              onClick={() => setViewMode('grid')}
-              className={clsx(styles.viewToggleBtn, viewMode === 'grid' && styles.viewToggleBtnActive)}
-              title="Grid view"
-              aria-label="Switch to grid view"
-            >
-              <BsGrid size={16} />
-            </button>
+        {/* Top bar */}
+        <div className={clsx(styles.topBar)}>
+          <div className={clsx(styles.breadcrumbLeft)}>
+            <Link href="/" className={clsx(styles.breadcrumbLink)}>All Categories</Link>
+            <LiaAngleRightSolid size={11} className={clsx(styles.breadcrumbArrow)} />
+            <span className={clsx(styles.breadcrumbCurrent)}>{topics?.title}</span>
           </div>
 
-          {totalPages > 1 && (
-            <div className={clsx(styles.paginationContainer)}>
+          <div className={clsx(styles.topBarRight)}>
+            <div className={clsx(styles.viewToggle)}>
               <button
-                onClick={handlePrevPage}
-                disabled={currentPage === 1}
-                className={clsx(styles.pageBtn, currentPage === 1 && styles.pageBtnDisabled)}
+                onClick={() => setViewMode('row')}
+                className={clsx(styles.viewToggleBtn, viewMode === 'row' && styles.viewToggleBtnActive)}
+                title="List view"
+                aria-label="Switch to list view"
               >
-                <HiMiniChevronLeft size={16} />
+                <BsList size={18} />
               </button>
-              <span className={clsx(styles.paginationText)}>
-                {currentPage} <span className={clsx(styles.paginationDivider)}>/</span> {totalPages}
-              </span>
               <button
-                onClick={handleNextPage}
-                disabled={currentPage === totalPages}
-                className={clsx(styles.pageBtn, currentPage === totalPages && styles.pageBtnDisabled)}
+                onClick={() => setViewMode('grid')}
+                className={clsx(styles.viewToggleBtn, viewMode === 'grid' && styles.viewToggleBtnActive)}
+                title="Grid view"
+                aria-label="Switch to grid view"
               >
-                <HiMiniChevronRight size={16} />
+                <BsGrid size={16} />
               </button>
             </div>
-          )}
-        </div>
-      </div>
 
-      <div className={clsx(styles.mainLayout)}>
-        {visibleCards?.length > 0 &&
-          <div className={clsx(styles.sidebar1)}>
-            <div className={clsx(styles.sidebarInner)}>
-              {/* Header */}
-              <div className={clsx(styles.sidebarHeader)}>
-                <PiInfo size={28} color='rgb(127, 127, 127)' />
-                <span className={clsx(styles.sidebarTitle)}>{topics?.title}</span>
-              </div>
-
-              <div className={clsx(styles.sidebarDivider)} />
-
-              {/* Description */}
-              {topics?.description && (
-                <span className={clsx(styles.sidebarDescription)}>
-                  {topics?.description}
+            {totalPages > 1 && (
+              <div className={clsx(styles.paginationContainer)}>
+                <button
+                  onClick={handlePrevPage}
+                  disabled={currentPage === 1}
+                  className={clsx(styles.pageBtn, currentPage === 1 && styles.pageBtnDisabled)}
+                >
+                  <HiMiniChevronLeft size={16} />
+                </button>
+                <span className={clsx(styles.paginationText)}>
+                  {currentPage} <span className={clsx(styles.paginationDivider)}>/</span> {totalPages}
                 </span>
-              )}
-
-              {/* Meta box */}
-              <div className={clsx(styles.sidebarMeta)}>
-                {/* Last updated row */}
-                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                  <span className={clsx(styles.sidebarMetaLabel)}>Last updated</span>
-                  <span className={clsx(styles.sidebarMetaValue)}><TimeAgo date={topics?.groupSections?.[0]?.date} /></span>
-                </div>
-
-                {/* Divider line */}
-                <div style={{ height: '1px', background: '#ebf1f5', margin: '8px 0' }} />
-
-                {/* Articles row */}
-                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    {/* <SlNotebook size={16} /> */}
-                    <BsJournals  size={16} color='rgb(131, 132, 132)'/>
-                    <span className={clsx(styles.sidebarMetaLabel)}>Articles</span>
-                  </div>
-                  <span className={clsx(styles.sidebarMetaValue)}>
-                    {topics?.groupSections?.length || 10}
-                  </span>
-                </div>
-              </div>
-            </div>
-
-            {otherCategories.length > 0 && (
-              <div className={clsx(styles.otherCategoriesCard)}>
-                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                <span className={clsx(styles.otherCategoriesTitle)}>Other categories </span>
-                  <BsSliders2 color='rgb(86, 89, 89)'/>
-                </div>
-                <div className={clsx(styles.otherCategoriesDivider)} />
-                <div className={clsx(styles.otherCategoriesList)}>
-                  {otherCategories.map((category) => (
-                    <Link
-                      key={category.slug}
-                      to={`/${category.slug}`}
-                      className={clsx(styles.otherCategoryLink)}
-                    >
-                      {category.title || category.slug}
-                      <MdKeyboardArrowRight  className={clsx(styles.IoIosArrowRoundForward)} />
-                    </Link>
-                  ))}
-                </div>
+                <button
+                  onClick={handleNextPage}
+                  disabled={currentPage === totalPages}
+                  className={clsx(styles.pageBtn, currentPage === totalPages && styles.pageBtnDisabled)}
+                >
+                  <HiMiniChevronRight size={16} />
+                </button>
               </div>
             )}
           </div>
-          }
-          <main className={clsx(visibleCards?.length > 0 && styles.articleList, viewMode === 'grid' && styles.articleGrid)}>
-          {
-          visibleCards?.map((props, idx) =>
-            viewMode === 'grid' ? (
-              <ArticleCard key={startIndex + idx} idx={startIndex + idx} {...props} root_path={location.pathname} />
-            ) : (
-              <ArticleRow key={startIndex + idx} idx={startIndex + idx} {...props} root_path={location.pathname} />
-            )
-          )}
-          </main>
-
-
-      </div>
-      {/* Prev / Next navigation */}
-      {(prevItem || nextItem) && visibleCards?.length > 0 && (
-        <div className={clsx(styles.pageNavigation)}>
-          {prevItem ? (
-            <Link to={prevItem.link} className={clsx(styles.navLink, styles.navLinkPrev)}>
-              <span className={clsx(styles.navIcon)}>
-                <HiMiniChevronLeft size={18} />
-              </span>
-              <div>
-                <span className={clsx(styles.navLabel)}>Previous</span>
-                <span className={clsx(styles.navTitle)}>{prevItem.title}</span>
-              </div>
-            </Link>
-          ) : <div className={clsx(styles.navPlaceholder)} />}
-
-          {nextItem && (
-            <Link to={nextItem.link} className={clsx(styles.navLink, styles.navLinkNext)}>
-              <span className={clsx(styles.navIcon)}>
-                <HiMiniChevronRight size={18} />
-              </span>
-              <div>
-                <span className={clsx(styles.navLabel)}>Next</span>
-                <span className={clsx(styles.navTitle)}>{nextItem.title}</span>
-              </div>
-            </Link>
-          )}
         </div>
-      )}
+
+        <div className={clsx(styles.mainLayout)}>
+          {visibleCards?.length > 0 &&
+            <div className={clsx(styles.sidebar1)}>
+              <div className={clsx(styles.sidebarInner)}>
+                {/* Header */}
+                <div className={clsx(styles.sidebarHeader)}>
+                  <PiInfo size={28} color='rgb(127, 127, 127)' />
+                  <span className={clsx(styles.sidebarTitle)}>{topics?.title}</span>
+                </div>
+
+                <div className={clsx(styles.sidebarDivider)} />
+
+                {/* Description */}
+                {topics?.description && (
+                  <span className={clsx(styles.sidebarDescription)}>
+                    {topics?.description}
+                  </span>
+                )}
+
+                {/* Meta box */}
+                <div className={clsx(styles.sidebarMeta)}>
+                  {/* Last updated row */}
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                    <span className={clsx(styles.sidebarMetaLabel)}>Last updated</span>
+                    <span className={clsx(styles.sidebarMetaValue)}><TimeAgo date={topics?.groupSections?.[0]?.date} /></span>
+                  </div>
+
+                  {/* Divider line */}
+                  <div style={{ height: '1px', background: '#ebf1f5', margin: '8px 0' }} />
+
+                  {/* Articles row */}
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                      {/* <SlNotebook size={16} /> */}
+                      <BsJournals  size={16} color='rgb(131, 132, 132)'/>
+                      <span className={clsx(styles.sidebarMetaLabel)}>Articles</span>
+                    </div>
+                    <span className={clsx(styles.sidebarMetaValue)}>
+                      {topics?.groupSections?.length || 10}
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              {otherCategories.length > 0 && (
+                <div className={clsx(styles.otherCategoriesCard)}>
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                  <span className={clsx(styles.otherCategoriesTitle)}>Other categories </span>
+                    <BsSliders2 color='rgb(86, 89, 89)'/>
+                  </div>
+                  <div className={clsx(styles.otherCategoriesDivider)} />
+                  <div className={clsx(styles.otherCategoriesList)}>
+                    {otherCategories.map((category) => (
+                      <Link
+                        key={category.slug}
+                        to={`/${category.slug}`}
+                        className={clsx(styles.otherCategoryLink)}
+                      >
+                        {category.title || category.slug}
+                        <MdKeyboardArrowRight  className={clsx(styles.IoIosArrowRoundForward)} />
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+            }
+            <main className={clsx(visibleCards?.length > 0 && styles.articleList, viewMode === 'grid' && styles.articleGrid)}>
+            {
+              visibleCards?.map((props, idx) =>
+                viewMode === 'grid' ? (
+                  <ArticleCard key={startIndex + idx} idx={startIndex + idx} {...props} root_path={location.pathname} />
+                ) : (
+                  <ArticleRow key={startIndex + idx} idx={startIndex + idx} {...props} root_path={location.pathname} />
+                )
+              )}
+            </main>
+
+
+        </div>
+        {/* Prev / Next navigation */}
+        {(prevItem || nextItem) && visibleCards?.length > 0 && (
+          <div className={clsx(styles.pageNavigation)}>
+            <div className={clsx(styles.navContainer)}>
+              {prevItem ? (
+                <Link to={prevItem.link} className={clsx(styles.navLink, styles.navLinkPrev)}>
+                  <span className={clsx(styles.navIcon)}>
+                    <HiMiniChevronLeft size={18} />
+                  </span>
+                  <div>
+                    <span className={clsx(styles.navLabel)}>Previous</span>
+                    <span className={clsx(styles.navTitle)}>{prevItem.title}</span>
+                  </div>
+                </Link>
+              ) : <div className={clsx(styles.navPlaceholder)} />}
+
+              {nextItem && (
+                <Link to={nextItem.link} className={clsx(styles.navLink, styles.navLinkNext)}>
+                  <span className={clsx(styles.navIcon)}>
+                    <HiMiniChevronRight size={18} />
+                  </span>
+                  <div>
+                    <span className={clsx(styles.navLabel)}>Next</span>
+                    <span className={clsx(styles.navTitle)}>{nextItem.title}</span>
+                  </div>
+                </Link>
+              )}
+            </div>
+          </div>
+        )}
 
 
     </div>

@@ -179,7 +179,7 @@
   display: flex;
   align-items: flex-start;
   width: 95%;
- margin: 0 auto;
+  margin: 0 auto;
   gap: var(--topics-layout-gap);
 
 }
@@ -236,7 +236,7 @@
   padding: 0 10px;
   font-size: 1rem;
   color: #4b4b4b;
-  text-align: left;
+  text-align: center;
   line-height: 1.8;
   font-weight: 300;
   margin: 0 0 20px;
@@ -330,7 +330,6 @@
 .articleList {
   flex: 1;
   min-width: 0;
-  /* border: 1px solid #e8edf2; */
   background: transparent;
   padding: 0;
   overflow: hidden;
@@ -368,7 +367,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 24px 26px;
+  padding: 25px 26px;
   text-decoration: none;
   color: inherit;
 }
@@ -413,16 +412,16 @@
 }
 
 .articleTitle {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 500;
-  color: #1f2937;
+  color: #303d4f;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   transition: color 0.15s;
 }
 .articleRow:hover .articleTitle {
-    color: #111827;
+    color: #477ea3;
 }
 
 .articleDate {
@@ -451,31 +450,52 @@
 
 /* ── Page navigation ────────────────────────────────── */
 .pageNavigation {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  display: flex;
+  width: 95%;
+  /* display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr)); */
   gap: 12px;
+  margin: 30px auto;
   margin-top: 20px;
-  margin-left: calc(var(--topics-sidebar-w) +  var(--topics-layout-gap));
-  width: 73.5%;
-  padding-top: 0;
-  padding-left: 35px;
+  /* margin-left: calc(var(--topics-sidebar-w) +  var(--topics-layout-gap)); */
+  /* width: 73.5%; */
+  justify-content: flex-end;
+  /* margin-left: 35px; */
+  /* background-color: #1d5f8b; */
 
+}
+.navContainer{
+  width: 74.8%;
+  display: flex;
+  gap: 15px;
+  /* background-color: #222; */
 }
 
 .navLink {
+  width: 100%;
   display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 30px 16px;
+  border: 1px solid var(--c-border);
+  border-radius: 10px !important;
+  background: var(--c-surface);
+  color: var(--c-accent);
+   transition: border-color 0.18s ease, background 0.18s ease, color 0.18s ease, transform 0.18s ease;
+
+  /* display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 10px;
   padding: 14px 16px;
   border: 1px solid var(--c-border);
-  border-radius: 8px !important;
+  border-radius: 10px !important;
   background: var(--c-surface);
   text-decoration: none;
   color: var(--c-accent);
   transition: border-color 0.18s ease, background 0.18s ease, color 0.18s ease, transform 0.18s ease;
-  width: 100%;
-  min-height: 74px;
+  min-height: 120px; */
 }
 .navLink:hover {
   border-color: #a8c2da;
@@ -917,6 +937,7 @@
     flex-direction: column;
     /* In column mode, stretch children to full width (avoid shrink-to-content cards). */
     align-items: stretch;
+
   }
 
   .sidebar1 {
