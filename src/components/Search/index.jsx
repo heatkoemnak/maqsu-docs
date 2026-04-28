@@ -124,8 +124,8 @@ const Search = () => {
 
   const fuse = useMemo(() => new Fuse(searchIndex, {
     keys: [
-      { name: 'title', weight: 0.8 }, 
-      { name: 'category', weight: 0.3 }, 
+      { name: 'title', weight: 0.8 },
+      { name: 'category', weight: 0.3 },
       { name: 'content', weight: 0.2 }
     ],
     threshold: 0.25,
@@ -148,7 +148,7 @@ const Search = () => {
     const handleGlobalKeyDown = (e) => {
       if ((e.metaKey || e.ctrlKey) && e.key === "k") { e.preventDefault(); setIsOpen(true); }
       if (e.key === "Escape") { setIsOpen(false); setShowTopics(false); }
-      
+
       if (isOpen && results.length > 0) {
         if (e.key === "ArrowDown") {
           e.preventDefault();
@@ -168,16 +168,16 @@ const Search = () => {
     window.addEventListener("keydown", handleGlobalKeyDown);
     const handleClickOutside = (e) => { if (topicsRef.current && !topicsRef.current.contains(e.target)) setShowTopics(false); };
     document.addEventListener("mousedown", handleClickOutside);
-    return () => { 
-      window.removeEventListener("keydown", handleGlobalKeyDown); 
-      document.removeEventListener("mousedown", handleClickOutside); 
+    return () => {
+      window.removeEventListener("keydown", handleGlobalKeyDown);
+      document.removeEventListener("mousedown", handleClickOutside);
     };
   }, [isOpen, results, activeIndex, handleNavigate]);
 
   useEffect(() => {
-    if (isOpen) { 
+    if (isOpen) {
       setTimeout(() => inputRef.current?.focus(), 100);
-      document.body.style.overflow = "hidden"; 
+      document.body.style.overflow = "hidden";
     }
     else { setQuery(""); setResults([]); document.body.style.overflow = "unset"; }
   }, [isOpen]);
@@ -208,10 +208,10 @@ const Search = () => {
 
       <AnimatePresence>
         {showTopics && (
-          <motion.div 
-            initial={{ opacity: 0, y: 10, scale: 0.98 }} 
-            animate={{ opacity: 1, y: 0, scale: 1 }} 
-            exit={{ opacity: 0, y: 10, scale: 0.98 }} 
+          <motion.div
+            initial={{ opacity: 0, y: 10, scale: 0.98 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 10, scale: 0.98 }}
             className={styles.megaMenu}
           >
             <div className={styles.megaMenuGrid}>
@@ -234,10 +234,10 @@ const Search = () => {
       <AnimatePresence>
         {isOpen && (
           <div className={styles.modalOverlay}>
-            <motion.div 
-              initial={{ opacity: 0, scale: 0.95, y: -20 }} 
-              animate={{ opacity: 1, scale: 1, y: 0 }} 
-              exit={{ opacity: 0, scale: 0.95, y: -20 }} 
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95, y: -20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.95, y: -20 }}
               transition={{ type: "spring", damping: 25, stiffness: 300 }}
               className={styles.searchModal}
             >
