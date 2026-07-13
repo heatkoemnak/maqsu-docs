@@ -34,7 +34,7 @@ export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const {colorMode, setColorMode} = useColorMode();
   const [isOpen, setIsOpen] = useState(false);
-  const { toggleMenuOpen,endPath } = useContext(BookContext);
+  const { toggleMenuOpen, endPath } = useContext(BookContext) || {};
   
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20)

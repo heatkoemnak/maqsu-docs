@@ -58,6 +58,9 @@
       "last 1 safari version"
     ]
   },
+  "overrides": {
+    "webpack": "5.94.0"
+  },
   "engines": {
     "node": "24.x"
   }

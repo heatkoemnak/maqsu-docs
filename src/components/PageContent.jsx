@@ -30,7 +30,7 @@ import { BookContext } from '../context/BookContext';
 export default function PageContent() {
   const location = useLocation();
   const globalData = useGlobalData();
-  const { menuOpen, toggleMenuOpen,posts,hasSubcategories, allGroups, active, setActive,pageSlug,endPath  } = useContext(BookContext);
+  const { menuOpen, toggleMenuOpen,posts,hasSubcategories, allGroups, active, setActive,pageSlug,endPath  } = useContext(BookContext) || {};
   const menuRef = useRef(null);
 
   // const [posts, setPosts] = useState([]);
