@@ -190,7 +190,6 @@ function PopupSearch({ isOpen, setIsOpen }) {
       };
 
   return (
-    <div>
         <AnimatePresence>
         {isOpen && (
           <div className={styles.modalOverlay}>
@@ -202,8 +201,8 @@ function PopupSearch({ isOpen, setIsOpen }) {
               className={styles.searchModal}
             >
               <div className={styles.modalHeader}>
-                <SearchIcon size={20} className={styles.modalSearchIcon} />
-                <input ref={inputRef} type="text" placeholder="What can we help you find?" value={query} onChange={(e) => handleSearch(e.target.value)} className={styles.modalInput} />
+                <SearchIcon size={19} className={styles.modalSearchIcon} />
+                <input ref={inputRef}  className={styles.modalInput}  type="text" placeholder="What can we help you find?" value={query} onChange={(e) => handleSearch(e.target.value)}/>
                 <button className={styles.closeButton} onClick={() => setIsOpen(false)}><X size={18} /></button>
               </div>
               <div className={styles.modalBody}>
@@ -253,7 +252,6 @@ function PopupSearch({ isOpen, setIsOpen }) {
           </div>
         )}
       </AnimatePresence>
-    </div>
   )
 }
 

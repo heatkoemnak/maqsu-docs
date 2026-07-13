@@ -456,17 +456,26 @@
   display: flex;
   align-items: center;
   gap: 12px;
-  width: 100%;
-  padding: 0.95rem 1rem;
+  padding: 10px;
   border-radius: 5px;
   color: white;
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.2s ease;
+  background: transparent;
+  border: none;
   text-align: left;
 }
 
 .mobileThemeToggleBtn:hover {
   transform: translateY(-1px);
+}
+
+.mobileMenuControls{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: auto;
 }

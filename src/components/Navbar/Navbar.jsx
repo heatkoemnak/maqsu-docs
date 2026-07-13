@@ -1,41 +1,45 @@
 import clsx from 'clsx'
-import React, {useContext, useEffect, useState} from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import Link from '@docusaurus/Link'
-import {useColorMode} from '@docusaurus/theme-common';
+import { useColorMode } from '@docusaurus/theme-common'
 import logo from '../../../static/img/maqsu-logo.png'
 import Search from '../Search'
 import styles from './styles.module.css'
-import {HiMenuAlt3, HiX} from 'react-icons/hi'
-import { BiFoodMenu } from "react-icons/bi";
-import { BookContext } from '../../context/BookContext';
-import { Search as SearchIcon, X, ChevronDown, FileText, Command, CornerDownLeft, Sparkles, AlertCircle } from "lucide-react";
-import PopupSearch from '../Search/popup-search';
-import ShowTopic from '../Search/show-topic';
-
+import { HiMenuAlt3, HiX } from 'react-icons/hi'
+import { BiFoodMenu } from 'react-icons/bi'
+import { BookContext } from '../../context/BookContext'
+import { Search as SearchIcon } from 'lucide-react'
+import PopupSearch from '../Search/popup-search'
+import ShowTopic from '../Search/show-topic'
+import { IoChevronForwardOutline } from 'react-icons/io5'
 
 const MoonIcon = () => (
   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
   </svg>
-);
+)
 
 const SunIcon = () => (
   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <circle cx="12" cy="12" r="5"/>
-    <line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
-    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
-    <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
-    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+    <circle cx="12" cy="12" r="5" />
+    <line x1="12" y1="1" x2="12" y2="3" />
+    <line x1="12" y1="21" x2="12" y2="23" />
+    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+    <line x1="1" y1="12" x2="3" y2="12" />
+    <line x1="21" y1="12" x2="23" y2="12" />
+    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
   </svg>
-);
+)
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-  const {colorMode, setColorMode} = useColorMode();
-  const [isOpen, setIsOpen] = useState(false);
-  const { toggleMenuOpen, endPath } = useContext(BookContext) || {};
-  
+  const [isOpen, setIsOpen] = useState(false)
+  const { colorMode, setColorMode } = useColorMode()
+  const { toggleMenuOpen, endPath } = useContext(BookContext) || {}
+
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20)
     window.addEventListener('scroll', handleScroll)
@@ -43,8 +47,8 @@ export default function Navbar() {
   }, [])
 
   const toggleTheme = () => {
-    setColorMode(colorMode === 'dark' ? 'light' : 'dark');
-  };
+    setColorMode(colorMode === 'dark' ? 'light' : 'dark')
+  }
 
   useEffect(() => {
     if (!isMobileMenuOpen) {
@@ -85,28 +89,19 @@ export default function Navbar() {
 
   return (
     <header className={clsx(styles.navbarRoot, isScrolled && styles.scrolled)}>
-    {/* <header className={clsx(styles.navbarRoot, isScrolled && styles.scrolled)}> */}
       <nav className={styles.navbarWrapper}>
         <div className={styles.logoContainer}>
-          {
-            endPath && (
-              <button
-              type="button"
-              className={styles.OpenMenuBook}
-              onClick={toggleMenuOpen}
-            >
+          {endPath && (
+            <button type="button" className={styles.OpenMenuBook} onClick={toggleMenuOpen}>
               <BiFoodMenu size={24} />
             </button>
-            )
-          }
-          <div onClick={setIsOpen}  className={styles.pqMobileSearchIcon}>
-            <SearchIcon size={20} className={styles.mobileMenuSearchIcon} />
-          </div>
-          <PopupSearch isOpen={isOpen} setIsOpen={setIsOpen} />
-            
+          )}
+
+
           <Link to="/" className={styles.logoLink}>
             <img width={25} className={styles.logoImage} src={logo} alt="Logo" />
           </Link>
+         
         </div>
 
         <div className={styles.searchContainer}>
@@ -114,35 +109,38 @@ export default function Navbar() {
         </div>
 
         <div className={styles.navLinks}>
-
-          <div
-              onClick={toggleTheme}
-              className={styles.themeToggleBtn}
-            >
-              <div className={styles.iconsWrapper}>
-                {colorMode === 'dark' ? (
-                  <div> Light<SunIcon className={styles.mode_icon} /></div>
-                ) : (
-                  <div><MoonIcon className={styles.mode_icon} /> Dark</div>
-                )}
-              </div>
+          <div onClick={toggleTheme} className={styles.themeToggleBtn}>
+            <div className={styles.iconsWrapper}>
+              {colorMode === 'dark' ? (
+                <div>
+                  Light
+                  <SunIcon className={styles.mode_icon} />
+                </div>
+              ) : (
+                <div>
+                  <MoonIcon className={styles.mode_icon} /> Dark
+                </div>
+              )}
             </div>
-          {/* <div className={styles.languageSelector}>
-            <span>English</span>
-            <svg viewBox="-1.565 -1.565 50 50" fill="none" xmlns="http://www.w3.org/2000/svg" id="Global--Streamline-Solar-Ar" height={20} width={20} ><desc>{"\n    Global Streamline Icon: https://streamlinehq.com\n  "}</desc><path d="M42.96416666666667 23.435000000000002c0 2.564570166666667 -0.5052195416666667 5.1041430000000005 -1.4865601666666668 7.473421500000001 -0.9815359166666668 2.369473791666667 -2.419859041666667 4.522369125000001 -4.233337458333334 6.335847541666667 -1.8134784166666669 1.8134784166666669 -3.9663737500000007 3.251801541666667 -6.335847541666667 4.233337458333334C28.539143000000003 42.458947125 25.99957016666667 42.96416666666667 23.435000000000002 42.96416666666667c-2.564570166666667 0 -5.104103941666667 -0.5052195416666667 -7.473480087500001 -1.4865601666666668 -2.3693956750000003 -0.9815359166666668 -4.522271479166667 -2.419859041666667 -6.335730366666668 -4.233337458333334 -1.8134393583333335 -1.8134784166666669 -3.2519577750000006 -3.9663737500000007 -4.233396045833334 -6.335847541666667C4.410974758333333 28.539143000000003 3.9058333333333337 25.99957016666667 3.9058333333333337 23.435000000000002c0 -2.564570166666667 0.505141425 -5.104103941666667 1.4865796958333335 -7.473499616666667 0.9814187416666668 -2.3693761458333333 2.4199371583333336 -4.522251950000001 4.2333765166666675 -6.335710837500001 1.8134588875000002 -1.8134393583333335 3.966334691666667 -3.2519577750000006 6.335730366666668 -4.233396045833334C18.330896058333334 4.410974758333333 20.870429833333336 3.9058333333333337 23.435000000000002 3.9058333333333337c2.564570166666667 0 5.1041430000000005 0.505141425 7.473421500000001 1.4865796958333335 2.369473791666667 0.9814187416666668 4.522369125000001 2.4199371583333336 6.335847541666667 4.2333765166666675 1.8134784166666669 1.8134588875000002 3.251801541666667 3.966334691666667 4.233337458333334 6.335730366666668C42.458947125 18.330896058333334 42.96416666666667 20.870429833333336 42.96416666666667 23.435000000000002Z" stroke="#ffffff" strokeWidth={3.13} /><path d="M31.24666666666667 23.435000000000002c0 2.564570166666667 -0.202126875 5.1041430000000005 -0.5946631250000001 7.473421500000001 -0.3925362500000001 2.369473791666667 -0.9678655 4.522369125000001 -1.6933740416666667 6.335847541666667 -0.7253132500000001 1.8134784166666669 -1.5865495000000003 3.251801541666667 -2.534299958333334 4.233337458333334C25.476579083333338 42.458947125 24.460867125 42.96416666666667 23.435000000000002 42.96416666666667c-1.025867125 0 -2.0415790833333336 -0.5052195416666667 -2.9893295416666668 -1.4865601666666668 -0.9478285750000001 -0.9815359166666668 -1.8089671791666668 -2.419859041666667 -2.5343585458333338 -4.233337458333334 -0.7253718375 -1.8134784166666669 -1.3007792041666668 -3.9663737500000007 -1.6933545125000002 -6.335847541666667C15.825382091666668 28.539143000000003 15.623333333333335 25.99957016666667 15.623333333333335 23.435000000000002c0 -2.564570166666667 0.20204875833333336 -5.104103941666667 0.5946240666666667 -7.473499616666667 0.3925753083333334 -2.3693761458333333 0.9679826750000001 -4.522251950000001 1.6933545125000002 -6.335710837500001 0.7253913666666667 -1.8134393583333335 1.5865299708333334 -3.2519577750000006 2.5343585458333338 -4.233396045833334C21.393420916666667 4.410974758333333 22.409132875000005 3.9058333333333337 23.435000000000002 3.9058333333333337c1.025867125 0 2.0415790833333336 0.505141425 2.9893295416666668 1.4865796958333335 0.9477504583333335 0.9814187416666668 1.8089867083333335 2.4199371583333336 2.534299958333334 4.2333765166666675 0.7255085416666668 1.8134588875000002 1.300837791666667 3.966334691666667 1.6933740416666667 6.335730366666668C31.04453979166667 18.330896058333334 31.24666666666667 20.870429833333336 31.24666666666667 23.435000000000002Z" stroke="#ffffff" strokeWidth={3.13} /><path d="M3.9058333333333337 23.435000000000002h39.05833333333334" stroke="#ffffff" strokeLinecap="round" strokeWidth={3.13} /></svg>
-          </div> */}
+          </div>
         </div>
+        <div className={styles.mobileMenuControls}>
+          <div onClick={setIsOpen} className={styles.pqMobileSearchIcon}>
+            <SearchIcon size={20} className={styles.mobileMenuSearchIcon} />
+          </div>
+          <PopupSearch isOpen={isOpen} setIsOpen={setIsOpen} />
 
-        <button
-          type="button"
-          className={styles.mobileMenuButton}
-          onClick={toggleMobileMenu}
-          aria-label="Toggle menu"
-          aria-expanded={isMobileMenuOpen}
-          aria-controls="mobile-navigation"
-        >
-          {isMobileMenuOpen ? <HiX size={28} /> : <HiMenuAlt3 size={28} />}
-        </button>
+          <button
+            type="button"
+            className={styles.mobileMenuButton}
+            onClick={toggleMobileMenu}
+            aria-label="Toggle menu"
+            aria-expanded={isMobileMenuOpen}
+            aria-controls="mobile-navigation"
+            >
+            {isMobileMenuOpen ? <HiX size={28} /> : <HiMenuAlt3 size={28} />}
+          </button>
+        </div>
       </nav>
 
       <div
@@ -150,46 +148,35 @@ export default function Navbar() {
         className={clsx(styles.mobileMenu, isMobileMenuOpen && styles.open)}
         aria-hidden={!isMobileMenuOpen}
       >
-            <button
-              type="button"
-              className={styles.mobileMenuBackdrop}
-              onClick={closeMobileMenu}
-              aria-label="Close mobile menu"
-            />
+        <button
+          type="button"
+          className={styles.mobileMenuBackdrop}
+          onClick={closeMobileMenu}
+          aria-label="Close mobile menu"
+        />
 
         <aside className={styles.mobileMenuPanel}>
           <div className={styles.mobileMenuHeader}>
-            <SearchIcon onClick={setIsOpen}  size={20} color="white" />
+            <button onClick={toggleTheme} className={styles.mobileThemeToggleBtn}>
+              {colorMode === 'dark' ? <SunIcon size={20} /> : <MoonIcon size={20} />}
+            </button>
+
             <Link to="/" className={styles.mobileMenuLogo} onClick={closeMobileMenu}>
               <img className={styles.logoImage} src={logo} alt="Maqsu Logo" />
             </Link>
-            
+
             <button
               type="button"
               className={styles.mobileMenuClose}
               onClick={closeMobileMenu}
               aria-label="Close mobile menu"
             >
-              <HiX size={24} />
+              <IoChevronForwardOutline size={20} />
             </button>
           </div>
 
           <div className={styles.mobileMenuContent}>
-
-            <ShowTopic/>
-            {/* <div className={styles.mobileSearch}>
-              <Search />
-            </div> */}
-
-            {/* <div className={styles.mobileLinks}>
-              <button
-                onClick={toggleTheme}
-                className={styles.mobileThemeToggleBtn}
-              >
-                {colorMode === 'dark' ? <SunIcon /> : <MoonIcon />}
-                <span>{colorMode === 'dark' ? 'Light Mode' : 'Dark Mode'}</span>
-              </button>
-            </div> */}
+            <ShowTopic />
           </div>
         </aside>
       </div>

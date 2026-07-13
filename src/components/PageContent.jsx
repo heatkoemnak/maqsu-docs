@@ -59,43 +59,6 @@ export default function PageContent() {
 }, [menuOpen, toggleMenuOpen]);
   
 
-  /* -----------------------------------
-     🔥 GET PAGE + END PATH SEGMENT
-  ----------------------------------- */
-  // const { pageSlug, endPath } = useMemo(() => {
-  //   const cleaned = location.pathname.replace(/\/$/, '');
-  //   const segments = cleaned.split('/').filter(Boolean);
-  //   return {
-  //     pageSlug: segments[0],
-  //     endPath: segments[1] || null,
-  //   };
-  // }, [location.pathname]);
-
-  /* -----------------------------------
-     🔥 FETCH TINA DATA
-  ----------------------------------- */
-  // useEffect(() => {
-  //   if (!pageSlug) return;
-
-  //   const bySlug = globalData?.['categories-data']?.default?.bySlug ?? {};
-  //   const category = bySlug[pageSlug] ?? null;
-  //   const sections = category?.groupSections || [];
-
-  //   setAllGroups(sections);
-
-  //   if (endPath) {
-  //     const matchedGroup = sections.find((group) => group.uid === endPath);
-  //     setPosts(matchedGroup ? [matchedGroup] : sections);
-  //   } else {
-  //     setPosts(sections);
-  //   }
-
-  //   setActive(null);
-  // }, [pageSlug, endPath, globalData]);
-
-  /* -----------------------------------
-     🔥 COMBINED INITIAL SETUP
-  ----------------------------------- */
   useEffect(() => {
     if (!posts.length) return;
 

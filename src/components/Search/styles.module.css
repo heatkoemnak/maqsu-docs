@@ -212,6 +212,7 @@
 
 .modalSearchIcon {
   color: #3b82f6;
+  font-size: 1.5rem;
 }
 
 .modalInput {
@@ -465,15 +466,25 @@
 
 @media (max-width: 640px) {
   .searchModal {
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     max-height: 100vh;
     border-radius: 0;
+    /* background: rgba(15, 23, 42, 0.98); */
+  }
+  .modalHeader{
+    padding: 16px 10px;
   }
     
   .megaMenuGrid {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     gap: 40px;
+  }
+  .modalSearchIcon{
+    font-size: 12px !important;
+  }
+  .modalInput{
+    font-size: 1.1rem;
   }
 }

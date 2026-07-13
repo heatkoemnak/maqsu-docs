@@ -844,7 +844,7 @@
 }
 
 [data-theme='dark'] .pq-sidebar {
-  background: transparent;
+  background: var(--c-surface) !important;
 }
 
 [data-theme='dark'] .pq-section-content h3,
