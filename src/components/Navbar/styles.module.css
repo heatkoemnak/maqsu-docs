@@ -24,7 +24,7 @@
   display: grid;
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  width: 87%;
+  width: 80%;
   margin: 0 auto;
   padding: 0.45rem clamp(1rem, 2vw, 3rem);
   gap: 1rem;
@@ -58,7 +58,11 @@
   width: auto;
   object-fit: contain;
 }
-
+.logoContainer{
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
 .searchContainer {
   justify-self: center;
   width: 100%;
@@ -188,8 +192,6 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
-  padding: 0.25rem 0 1rem;
 }
 
 .mobileMenuLogo {
@@ -197,6 +199,19 @@
   align-items: center;
 }
 
+.OpenMenuBook {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--color-white);
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
 .mobileMenuClose {
   display: inline-flex;
   align-items: center;
@@ -290,6 +305,10 @@
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.18);
 }
 
+.pqMobileSearchIcon{
+    display:none
+  }
+
 @media (max-width: 1180px) {
   .navbarWrapper {
     display: flex;
@@ -343,6 +362,16 @@
   .logoImage {
     height: 32px;
   }
+
+  .pqMobileSearchIcon{
+    display:flex;
+  }
+
+  .navbarWrapper {
+    width: 100%;
+    padding: 0.45rem clamp(1rem, 2vw, 3rem);
+  }
+  
 
   .mobileNavItem {
     font-size: 0.95rem;

@@ -77,10 +77,16 @@ function TimeAgo({ date }) {
       <div className={styles.features}>
         <div className={styles.headerSection}>
           <div className={styles.titleWrapper}>
-            <h2 className={styles.allCategories}>All Categories</h2>
-            {/* <div className={styles.categoryCount}>{cardList.length} items</div> */}
+            <div>
+              <h2 className={styles.allCategories}>All Categories</h2>
+            </div>
+             <div className={clsx(styles.GridControlIcons)}>
+              <RiListCheck2 className={clsx(styles.viewBtn, !gridView && styles.active)} onClick={() => setGridView(false)} size={40} />
+              <MdGridView className={clsx(styles.viewBtn, gridView && styles.active)}  onClick={() => setGridView(true)} size={40} />
+             </div>
           </div>
           <div className={styles.viewControls}>
+
             <button
               onClick={() => setGridView(false)}
               className={clsx(styles.viewBtn, !gridView && styles.active)}

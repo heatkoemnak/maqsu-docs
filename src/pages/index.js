@@ -2,6 +2,7 @@ import React from "react";
 import HomeContent from "../components/HomeContent";
 import DefaultLayout from "../layout/DefaultLayout";
 import Footer from "../components/Footer";
+import { BookProvider } from "../context/BookProvider";
 const pageData = require("../../config/homepage/index.json");
 
 export default function Home() {
@@ -25,9 +26,11 @@ export default function Home() {
   // }, []);
 
   return (
+    <BookProvider>
     <DefaultLayout>
        <HomeContent cardList={pageData.blocks[1].items}/>
       <Footer/>
     </DefaultLayout>
+    </BookProvider>
   );
 }

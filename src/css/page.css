@@ -43,7 +43,8 @@
     }
 
     .pq-content-breadcrumb {
-      display: none;
+      margin: 5px auto;
+      /* display: none; */
     }
 
     .pq-inline-breadcrumb {
@@ -129,7 +130,7 @@
     }
 
     .pq-group-header {
-      padding: 38px 18px 4px;
+      padding: 58px 18px 4px;
     }
 
     .pq-group-title {
@@ -366,7 +367,7 @@
     }
 
     .pq-section-title {
-      margin: 0;
+      margin: 10px 0;
       color: var(--c-text) !important;
       letter-spacing: -0.02em;
       border-top: 1px solid var(--c-border);
@@ -384,6 +385,13 @@
       font-weight: 600 !important;
       line-height: 1.85 !important;
       padding-top: 18px !important;
+    }
+    .pq-section-content{
+      color: var(--c-text);
+      font-size: 1rem;
+      line-height: 1.7;
+      letter-spacing: -0.01em;
+      margin-top: 12px; 
     }
 
     .pq-section-content h2 {
@@ -771,11 +779,15 @@
     @media (max-width: 768px) {
       .pq-sidebar {
         width: min(86vw, 320px);
+        background: var(--c-surface);
+        /* display: none; */
       }
 
       .pq-inline-breadcrumb {
         width: 92%;
+        padding-top: 5px;
       }
+     
 
       .pq-docs-body,
       .pq-docs-body.full-width {
@@ -804,6 +816,11 @@
       .pq-pagination {
         flex-direction: column;
         gap: 10px;
+      }
+      .pq-section-title {
+        margin: 0 0 10px;
+        padding-top: 6px;
+        font-size: 1.2rem !important;
       }
 
       .pq-spacer {

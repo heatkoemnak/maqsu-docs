@@ -16,7 +16,7 @@ const Footer = () => {
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
-      padding: '40px 20px',
+      padding: '14px 20px',
       gap: '12px',
     },
     copyright: {

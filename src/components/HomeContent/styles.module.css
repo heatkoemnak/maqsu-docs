@@ -105,9 +105,8 @@
 
 .titleWrapper {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   gap: 1rem;
-  flex-wrap: wrap;
 }
 
 .allCategories {
@@ -372,14 +371,33 @@
   }
 }
 
+.GridControlIcons{
+  display: none
+}
+
 @media (max-width: 480px) {
   .allCategories {
-    font-size: 1.5rem;
+    font-size: 1rem;
   }
+  
+.GridControlIcons{
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.titleWrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  justify-content: space-between;
+}
 
   .viewControls {
-    width: 100%;
-    justify-content: flex-end;
+    display: none;
+    /* width: 100%; */
+    /* justify-content: flex-end; */
   }
 
   .cardHeader {
