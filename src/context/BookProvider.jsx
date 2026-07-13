@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
+import { useLocation } from "@docusaurus/router";
 import { BookContext } from "./BookContext";
 import globalData from "@generated/globalData";
-import { useLocation } from "@docusaurus/router";
 
 export function BookProvider({ children }) {
   const [menuOpen, setMenuOpen] = useState(false);
