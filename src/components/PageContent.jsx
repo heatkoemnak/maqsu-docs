@@ -26,6 +26,7 @@ import { FcPrevious,FcNext  } from "react-icons/fc";
 import { TbChevronCompactRight,TbChevronCompactLeft } from "react-icons/tb";
 import { motion, AnimatePresence } from 'framer-motion';
 import { BookContext } from '../context/BookContext';
+import { BookProvider } from '../context/BookProvider';
 
 export default function PageContent() {
   const location = useLocation();
@@ -387,7 +388,9 @@ export default function PageContent() {
   return (
     <Layout noFooter noNavbar>
       <div className="pq-page">
-      <Navbar />
+         <BookProvider>
+          <Navbar />
+         </BookProvider>
 
       {/* ── IMAGE MODAL ── */}
       {modalImage && (
