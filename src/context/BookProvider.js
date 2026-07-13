@@ -8,6 +8,7 @@ export function BookProvider({ children }) {
   const [allGroups, setAllGroups] = useState([]);
   const [posts, setPosts] = useState([]);
   const [active, setActive] = useState(null);
+  const location = useLocation();
 
   const toggleMenuOpen = () => {
     setMenuOpen((prev) => !prev);   
