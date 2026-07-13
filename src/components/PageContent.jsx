@@ -1,7 +1,6 @@
 import Layout from '@theme/Layout';
 import '../css/page.css';
 import { useEffect, useState, useMemo, useCallback, useContext, useRef } from 'react';
-import { useLocation } from '@docusaurus/router';
 import useGlobalData from '@docusaurus/useGlobalData';
 import { BiCollapseAlt, BiExpandAlt } from 'react-icons/bi';
 import { LiaAngleRightSolid } from 'react-icons/lia';
@@ -12,6 +11,7 @@ import { CardGrid } from './Cards/CardGrid';
 import CustomTabsPage from './CustomTabsPage';
 import { VideoPlayer } from './VideoPlayer/VideoPlayer';
 import { Lists } from './Cards/Lists';
+import { useLocation } from '@docusaurus/router';
 import { ProcessFlow } from './ProcessFlow/ProcessFlow';
 import { Noted } from './Noted/Noted';
 import { Steps } from './Steps/Steps';
@@ -26,7 +26,6 @@ import { FcPrevious,FcNext  } from "react-icons/fc";
 import { TbChevronCompactRight,TbChevronCompactLeft } from "react-icons/tb";
 import { motion, AnimatePresence } from 'framer-motion';
 import { BookContext } from '../context/BookContext';
-import { BookProvider } from '../context/BookProvider';
 
 export default function PageContent() {
   const location = useLocation();
@@ -388,9 +387,7 @@ export default function PageContent() {
   return (
     <Layout noFooter noNavbar>
       <div className="pq-page">
-         <BookProvider>
           <Navbar />
-         </BookProvider>
 
       {/* ── IMAGE MODAL ── */}
       {modalImage && (
